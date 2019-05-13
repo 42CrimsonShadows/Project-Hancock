@@ -286,99 +286,118 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--View Controller-->
         <scene sceneID="WUO-Ec-vU0">
             <objects>
-                <viewController id="RUS-bZ-poR" sceneMemberID="viewController">
+                <viewController id="RUS-bZ-poR" customClass="ViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0bg-EI-wtc">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="103" translatesAutoresizingMaskIntoConstraints="NO" id="QOp-T9-J3V">
-                                <rect key="frame" x="20" y="40" width="142.5" height="964"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="1Zy-eS-gVq">
+                                <rect key="frame" x="20" y="40" width="728" height="307"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STUDENT NAME:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9D-Lt-A2r">
-                                        <rect key="frame" x="0.0" y="0.0" width="134" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STUDENT NAME:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9D-Lt-A2r">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="student name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFA-XG-hlx">
-                                        <rect key="frame" x="0.0" y="123.5" width="110" height="33.5"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="student name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFA-XG-hlx">
+                                        <rect key="frame" x="0.0" y="53" width="126.5" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="DOB:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVS-jf-fF0">
-                                        <rect key="frame" x="0.0" y="260" width="40.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CSh-BV-Ozy">
-                                        <rect key="frame" x="0.0" y="383.5" width="103" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="GRADE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCj-2L-lYq">
-                                        <rect key="frame" x="0.0" y="516.5" width="60.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="current grade level" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Byp-jY-P7e">
-                                        <rect key="frame" x="0.0" y="640" width="142.5" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwE-xS-SbD">
-                                        <rect key="frame" x="0.0" y="773" width="100" height="44"/>
-                                        <color key="backgroundColor" red="0.9384416937828064" green="0.93565088510513306" blue="0.95562607049942017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="zYf-hQ-2L2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <state key="normal" title="APPLY">
-                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
                                         <connections>
-                                            <segue destination="YuE-k6-YSw" kind="show" id="XK2-FS-MJ8"/>
+                                            <action selector="stuNameTextField:" destination="RUS-bZ-poR" eventType="editingDidEnd" id="9Kp-tj-8k4"/>
+                                            <action selector="stuNameTextField:" destination="oCg-h3-SB0" eventType="editingDidEnd" id="YhJ-O6-wft"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQt-OX-PEX">
-                                        <rect key="frame" x="0.0" y="920" width="100" height="44"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="KGU-ZK-ebJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <state key="normal" title="BACK">
-                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVS-jf-fF0">
+                                        <rect key="frame" x="0.0" y="112" width="47" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CSh-BV-Ozy">
+                                        <rect key="frame" x="0.0" y="165" width="118" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <segue destination="YuE-k6-YSw" kind="show" id="2Q2-TJ-gJR"/>
+                                            <action selector="stuDOBTextField:" destination="oCg-h3-SB0" eventType="editingDidEnd" id="0JY-Ui-tsD"/>
+                                            <action selector="stuDOBTextField:" destination="RUS-bZ-poR" eventType="editingDidEnd" id="8kj-Bv-lTn"/>
                                         </connections>
-                                    </button>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRADE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCj-2L-lYq">
+                                        <rect key="frame" x="0.0" y="224" width="71" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="current grade level" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Byp-jY-P7e">
+                                        <rect key="frame" x="0.0" y="277" width="164.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="StuGradeTextField:" destination="RUS-bZ-poR" eventType="editingDidEnd" id="1Qh-v3-VWe"/>
+                                            <action selector="StuGradeTextField:" destination="oCg-h3-SB0" eventType="editingDidEnd" id="3fU-Ii-xcO"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="iwE-xS-SbD" secondAttribute="bottom" id="JhF-wt-NJF"/>
-                                    <constraint firstAttribute="bottom" secondItem="OQt-OX-PEX" secondAttribute="bottom" id="Z0M-Zr-Fhr"/>
-                                    <constraint firstAttribute="trailing" secondItem="OQt-OX-PEX" secondAttribute="trailing" id="eg2-mz-rxq"/>
-                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwE-xS-SbD">
+                                <rect key="frame" x="30" y="950" width="100" height="44"/>
+                                <color key="backgroundColor" red="0.9384416937828064" green="0.93565088510513306" blue="0.95562607049942017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="4H6-oq-fRX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="APPLY">
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="drgdgdrgr:" destination="RUS-bZ-poR" eventType="touchUpInside" id="gFa-78-uwf"/>
+                                    <action selector="setStudentInfo:" destination="RUS-bZ-poR" eventType="touchUpInside" id="32u-rf-9oP"/>
+                                    <segue destination="YuE-k6-YSw" kind="show" id="XK2-FS-MJ8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQt-OX-PEX">
+                                <rect key="frame" x="638" y="950" width="100" height="44"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="iDH-Cl-O2f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YuE-k6-YSw" kind="show" id="2Q2-TJ-gJR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="QOp-T9-J3V" secondAttribute="bottom" constant="20" id="QhA-C3-Ash"/>
-                            <constraint firstItem="QOp-T9-J3V" firstAttribute="leading" secondItem="0bg-EI-wtc" secondAttribute="leadingMargin" id="k6G-MJ-FBt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QOp-T9-J3V" secondAttribute="trailing" constant="585.5" id="khe-IZ-qsy"/>
-                            <constraint firstItem="QOp-T9-J3V" firstAttribute="top" secondItem="0bg-EI-wtc" secondAttribute="topMargin" constant="20" id="mAT-Kl-K5F"/>
+                            <constraint firstItem="iwE-xS-SbD" firstAttribute="leading" secondItem="0bg-EI-wtc" secondAttribute="leadingMargin" constant="10" id="9R3-Lm-MFi"/>
+                            <constraint firstItem="1Zy-eS-gVq" firstAttribute="top" secondItem="xB4-h2-e18" secondAttribute="top" constant="20" id="J1D-ve-1tg"/>
+                            <constraint firstItem="1Zy-eS-gVq" firstAttribute="leading" secondItem="0bg-EI-wtc" secondAttribute="leadingMargin" id="MfB-FB-vOB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Zy-eS-gVq" secondAttribute="trailing" id="Wfc-z5-GUl"/>
+                            <constraint firstItem="xB4-h2-e18" firstAttribute="bottom" secondItem="OQt-OX-PEX" secondAttribute="bottom" constant="30" id="ZMf-lT-q06"/>
+                            <constraint firstItem="OQt-OX-PEX" firstAttribute="trailing" secondItem="0bg-EI-wtc" secondAttribute="trailingMargin" constant="-10" id="hYa-oz-d7f"/>
+                            <constraint firstItem="xB4-h2-e18" firstAttribute="bottom" secondItem="iwE-xS-SbD" secondAttribute="bottom" constant="30" id="p3m-M9-h63"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xB4-h2-e18"/>
                     </view>
+                    <connections>
+                        <outlet property="dgdgrdgdrg" destination="YCj-2L-lYq" id="LI6-rl-aPh"/>
+                        <outlet property="stuDOBTextField" destination="CSh-BV-Ozy" id="mlD-wf-rif"/>
+                        <outlet property="stuGradeTextField" destination="Byp-jY-P7e" id="txv-7e-hc7"/>
+                        <outlet property="stuNameTextFeild" destination="TFA-XG-hlx" id="9cR-u3-xCp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLB-fe-pGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oCg-h3-SB0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="797.65625" y="-596.484375"/>
+            <point key="canvasLocation" x="796.875" y="-597.0703125"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="BXQ-lc-9JC">
@@ -559,7 +578,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMC-Q0-R1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="-596"/>
+            <point key="canvasLocation" x="2138" y="-597"/>
         </scene>
     </scenes>
     <resources>

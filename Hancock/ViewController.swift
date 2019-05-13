@@ -10,15 +10,26 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+//By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
+class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate {
 
+    //MARK: Properties
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var stuNameTextFeild: UITextField!
+    @IBOutlet weak var stuDOBTextField: UITextField!
+    @IBOutlet weak var stuGradeTextField: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view's delegate
         sceneView.delegate = self
+        
+        // Handle the text field’s user input through delegate callbacks.
+        stuNameTextFeild.delegate = self
+        
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
@@ -29,6 +40,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the scene to the view
         sceneView.scene = scene
     }
+    
+    //MARK: Actions
+    @IBAction func setStudentInfo(_ sender: UIButton) {
+        
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
