@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Handle the text field’s user input through delegate callbacks.
-        stuNameTextFeild.delegate = self
+        //stuNameTextFeild.delegate = self
         
         
         // Show statistics such as fps and timing information
@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate {
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
         
         // Set the scene to the view
-        sceneView.scene = scene
+        sceneView?.scene = scene
     }
     
     //MARK: Actions
