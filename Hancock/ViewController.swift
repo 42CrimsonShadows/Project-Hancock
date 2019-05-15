@@ -24,7 +24,10 @@ class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate, 
     @IBOutlet weak var stuGradeTextField: UITextField!
     
     @IBOutlet weak var crosshair: UIView!
+    @IBOutlet weak var StartStoryBtn: UIButton!
     
+    var focusNode: SCNNode!
+    var shipNode: SCNNode!
     
     var viewCenter: CGPoint {
         let viewBounds = view.bounds
@@ -33,6 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate, 
     
     //MARK: Actions
     
+
     @IBAction func setStudentInfo(_ sender: UIButton) {
         
     }
@@ -89,6 +93,19 @@ class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate, 
         // Pause the view's session
         sceneView.session.pause()
     }
+    
+    /// MARK: - Game Management
+    func startGame() {
+        guard gameState == .hitStartToPlay else { return }
+        DispatchQueue.main.async {
+            createVehiclePhysics()
+            updatePositions()
+            startAccelerometer()
+            groundNode.isHidden = false
+            truckNode.isHidden = false
+            gameState = .playGame
+        }
+    }
 
     /// - Tag: PlaceARContent
     
@@ -103,6 +120,28 @@ class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate, 
         // changes in the plane anchor as plane estimation continues.
         node.addChildNode(plane)
     }
+    
+    func loadModels() {
+        
+        // Load Focus Node
+        let focusScene = SCNScene(named: "art.scnassets/FocusScene.scn")!
+        focusNode = focusScene.rootNode.childNode(withName: "focus", recursively: false)
+        focusNode.isHidden = true
+        sceneView.scene.rootNode.addChildNode(focusNode)
+        
+        // Load Truck Node
+        let shipScene = SCNScene(named: "art.scnassets/ship.scn")!
+        shipNode = shipScene.rootNode.childNode(withName: "ship", recursively: true)
+        shipNode.isHidden = true
+        sceneView.scene.rootNode.addChildNode(shipNode)
+        
+        // Load Ground Node
+        //groundNode = self.createFloorNode()
+        //groundNode.isHidden = true
+        //sceneView.scene.rootNode.addChildNode(groundNode)
+    }
+    
+    
     
     /// - Tag: UpdateARContent
     
@@ -251,7 +290,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate, 
     
     private func resetTracking() {
         let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = [.horizontal, .vertical]
+        //configuration.planeDetection = [.horizontal, .vertical]
+        configuration.planeDetection = .horizontal
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
 }
