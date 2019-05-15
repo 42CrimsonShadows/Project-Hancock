@@ -29,9 +29,30 @@ class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate, 
     var focusNode: SCNNode!
     var shipNode: SCNNode!
     
+<<<<<<< HEAD
     var viewCenter: CGPoint {
         let viewBounds = view.bounds
         return CGPoint(x: viewBounds.width / 2.0, y: viewBounds.height / 2.0)
+=======
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Set the view's delegate
+        sceneView.delegate = self
+        
+        // Handle the text field’s user input through delegate callbacks.
+        stuNameTextFeild.delegate = self
+        
+        
+        // Show statistics such as fps and timing information
+        sceneView.showsStatistics = true
+        
+        // Create a new scene
+        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        
+        // Set the scene to the view
+        sceneView.scene = scene
+>>>>>>> parent of 55d2e78... slight changes
     }
     
     //MARK: Actions
