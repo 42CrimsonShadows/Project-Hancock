@@ -10,136 +10,269 @@ import UIKit
 import SceneKit
 import ARKit
 
-//By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
-class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate, ARSessionDelegate {
+// MARK: - Game State
+enum GameState: Int16 {
+    case detectSurface
+    case hitStartToPlay
+    case playGame
+}
 
-    //MARK: Properties & Outlets
+//By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
+class ViewController: UIViewController, UITextFieldDelegate {
     
+    //MARK: - OUTLETS
     @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet weak var sessionInfoLabel: UILabel!
-    @IBOutlet weak var sessionInfoView: UIView!
-    
     @IBOutlet weak var stuNameTextFeild: UITextField!
     @IBOutlet weak var stuDOBTextField: UITextField!
     @IBOutlet weak var stuGradeTextField: UITextField!
     
-    @IBOutlet weak var crosshair: UIView!
-    @IBOutlet weak var StartStoryBtn: UIButton!
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var resetButton: UIButton!
+    @IBOutlet var startButton: UIButton!
     
+    
+    //MARK: ACTIONS
+    @IBAction func setStudentInfo(_ sender: UIButton) {
+    }
+    @IBAction func startButtonPressed(_ sender: Any) {
+        self.startGame()
+    }
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        self.resetGame()
+    }
+    
+    // MARK: - VARIABLES
+    var trackingStatus: String = ""
+    var statusMessage: String = ""
+    var gameState: GameState = .detectSurface
+    var focusPoint: CGPoint!
     var focusNode: SCNNode!
-    var shipNode: SCNNode!
+    var groundNode: SCNNode!
     
-<<<<<<< HEAD
-    var viewCenter: CGPoint {
-        let viewBounds = view.bounds
-        return CGPoint(x: viewBounds.width / 2.0, y: viewBounds.height / 2.0)
-=======
+    var storyNode: SCNNode!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set the view's delegate
-        sceneView.delegate = self
-        
-        // Handle the text field’s user input through delegate callbacks.
-        stuNameTextFeild.delegate = self
-        
-        
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-        
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
->>>>>>> parent of 55d2e78... slight changes
+        self.initSceneView()
+        self.initScene()
+        self.initARSession()
+        self.loadModels()
     }
     
-    //MARK: Actions
-    
-
-    @IBAction func setStudentInfo(_ sender: UIButton) {
-        
-    }
-    
-    
-    //    override func viewDidLoad() {
-    //        super.viewDidLoad()
-    //
-    //        // Set the view's delegate
-    //        sceneView.delegate = self
-    //
-    //        // Handle the text field’s user input through delegate callbacks.
-    //        //stuNameTextFeild.delegate = self
-    //
-    //
-    //        // Show statistics such as fps and timing information
-    //        sceneView.showsStatistics = true
-    //
-    //        // Create a new scene
-    //        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-    //
-    //        // Set the scene to the view
-    //        sceneView?.scene = scene
-    //    }
-    
-    
-    // MARK: - View Life Cycle
-    
-    /// - Tag: StartARSession
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Start the view's AR session with a configuration that uses the rear camera,
-        // device position and orientation tracking, and plane detection.
-        let configuration = ARWorldTrackingConfiguration()
-        //configuration.planeDetection = [.horizontal, .vertical]
-        configuration.planeDetection = .horizontal
-        sceneView.session.run(configuration)
-        
-        // Set a delegate to track the number of plane anchors for providing UI feedback.
-        sceneView.session.delegate = self
-        
-        // Prevent the screen from being dimmed after a while as users will likely
-        // have long periods of interaction without touching the screen or buttons.
-        UIApplication.shared.isIdleTimerDisabled = true
-        
-        // Show debug UI to view performance metrics (e.g. frames per second).
-        sceneView.showsStatistics = true
+        print("*** ViewWillAppear()")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Pause the view's session
-        sceneView.session.pause()
+        print("*** ViewWillDisappear()")
     }
     
-    /// MARK: - Game Management
-    func startGame() {
-        guard gameState == .hitStartToPlay else { return }
-        DispatchQueue.main.async {
-            createVehiclePhysics()
-            updatePositions()
-            startAccelerometer()
-            groundNode.isHidden = false
-            truckNode.isHidden = false
-            gameState = .playGame
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        print("*** DidReceiveMemoryWarning()")
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeRight
+    }
+    
+    // MARK: Init Functions
+    
+    func initSceneView() {
+        sceneView.delegate = self
+        //sceneView.automaticallyUpdatesLighting = true
+        sceneView.showsStatistics = true
+        //sceneView.preferredFramesPerSecond = 60
+        //sceneView.antialiasingMode = .multisampling2X
+        //sceneView.debugOptions = [
+        //ARSCNDebugOptions.showFeaturePoints,
+        //ARSCNDebugOptions.showWorldOrigin,
+        //SCNDebugOptions.showPhysicsShapes,
+        //SCNDebugOptions.showBoundingBoxes
+        //]
+        
+        focusPoint = CGPoint(x: view.center.x, y: view.center.y + view.center.y * 0.25)
+    }
+    
+    func initScene() {
+        let scene = SCNScene()
+        //scene.lightingEnvironment.contents = "MonsterTruck.scnassets/Textures/Environment_CUBE.jpg"
+        //scene.lightingEnvironment.intensity = 2
+        scene.physicsWorld.speed = 1
+        scene.isPaused = false
+        sceneView.scene = scene
+    }
+    
+    func initARSession() {
+        
+        guard ARWorldTrackingConfiguration.isSupported else {
+            print("*** ARConfig: AR World Tracking Not Supported")
+            return
+        }
+        
+        let config = ARWorldTrackingConfiguration()
+        //config.isLightEstimationEnabled = true
+        config.planeDetection = .horizontal
+        config.worldAlignment = .gravity
+        config.providesAudioData = false
+        sceneView.session.run(config)
+    }
+    
+    func resetARSession() {
+        let config = sceneView.session.configuration as! ARWorldTrackingConfiguration
+        config.planeDetection = .horizontal
+        sceneView.session.run(config,
+                              options: [.resetTracking,
+                                        .removeExistingAnchors])
+    }
+    
+    func suspendARPlaneDetection() {
+        let config = sceneView.session.configuration as! ARWorldTrackingConfiguration
+        config.planeDetection = []
+        sceneView.session.run(config)
+    }
+    
+    
+    // MARK: Helper Functions
+    
+    func createARPlaneNode(planeAnchor: ARPlaneAnchor, color: UIColor) -> SCNNode {
+        
+        // 1 - Create plane geometry using anchor extents
+        let planeGeometry = SCNPlane(width: CGFloat(planeAnchor.extent.x),
+                                     height: CGFloat(planeAnchor.extent.z))
+        
+        // 2 - Create meterial with just a diffuse color
+        let planeMaterial = SCNMaterial()
+        planeMaterial.diffuse.contents = color
+        planeGeometry.materials = [planeMaterial]
+        
+        // 3 - Create plane node
+        let planeNode = SCNNode(geometry: planeGeometry)
+        planeNode.position = SCNVector3Make(planeAnchor.center.x, 0, planeAnchor.center.z)
+        planeNode.transform = SCNMatrix4MakeRotation(-Float.pi / 2, 1, 0, 0)
+        
+        return planeNode
+    }
+    
+    func updateARPlaneNode(planeNode: SCNNode, planeAchor: ARPlaneAnchor) {
+        
+        // 1 - Update plane geometry with planeAnchor details
+        let planeGeometry = planeNode.geometry as! SCNPlane
+        planeGeometry.width = CGFloat(planeAchor.extent.x)
+        planeGeometry.height = CGFloat(planeAchor.extent.z)
+        
+        // 2 - Update plane position
+        planeNode.position = SCNVector3Make(planeAchor.center.x, 0, planeAchor.center.z)
+    }
+    
+    func removeARPlaneNode(node: SCNNode) {
+        for childNode in node.childNodes {
+            childNode.removeFromParentNode()
         }
     }
-
-    /// - Tag: PlaceARContent
     
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        // Place content only for anchors found by plane detection.
-        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+    func createFloorNode() -> SCNNode {
+        let floorGeometry = SCNFloor()
+        floorGeometry.reflectivity = 0.0
+        let floorMaterial = SCNMaterial()
+        floorMaterial.diffuse.contents = UIColor.white
+        floorMaterial.blendMode = .multiply
+        floorGeometry.materials = [floorMaterial]
+        let floorNode = SCNNode(geometry: floorGeometry)
+        floorNode.position = SCNVector3Zero
+        floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+        floorNode.physicsBody?.restitution = 0.5
+        floorNode.physicsBody?.friction = 4.0
+        floorNode.physicsBody?.rollingFriction = 0.0
+        return floorNode
+    }
+    
+    // MARK: Update Functions
+    
+    func updateStatus() {
+        switch gameState {
+        case .detectSurface: statusMessage = "Detecting surfaces..."
+        case .hitStartToPlay: statusMessage = "Hit START to play!"
+        case .playGame: statusMessage = "Story Time!"
+        }
         
-        // Create a custom object to visualize the plane geometry and extent.
-        let plane = Plane(anchor: planeAnchor, in: sceneView)
+        self.statusLabel.text = trackingStatus != "" ?
+            "\(trackingStatus)" : "\(statusMessage)"
+    }
+    
+    func updateFocusNode() {
         
-        // Add the visualization to the ARKit-managed node so that it tracks
-        // changes in the plane anchor as plane estimation continues.
-        node.addChildNode(plane)
+        // Hide Focus Node
+        if gameState == .playGame {
+            self.focusNode.isHidden = true
+            return
+        }
+        
+        // Show Focus Node
+        self.focusNode.isHidden = false
+        
+        let results = self.sceneView.hitTest(self.focusPoint, types: [.existingPlaneUsingExtent])
+        
+        if results.count >= 1 {
+            if let match = results.first {
+                let t = match.worldTransform
+                self.focusNode.position = SCNVector3(x: t.columns.3.x, y: t.columns.3.y, z: t.columns.3.z)
+                self.gameState = .hitStartToPlay
+            }
+        } else {
+            self.gameState = .detectSurface
+        }
+    }
+    
+    func updatePositions() {
+        // Update Truck Node
+        self.storyNode.position = self.focusNode.position
+        //self.storyNode.position.y += 0.20
+        //self.storyNode.physicsBody?.velocity = SCNVector3Zero
+        //self.storyNode.physicsBody?.angularVelocity = SCNVector4Zero
+        //self.storyNode.physicsBody?.resetTransform()
+        
+        // Update Ground Node
+        self.groundNode.position = self.focusNode.position
+        self.groundNode.physicsBody?.resetTransform()
+    }
+    
+    //    override func touchesBegan(_ touches: Set<UITouch>,
+    //                               with event: UIEvent?) {
+    //        isThrottling = true
+    //    }
+    //    override func touchesEnded(_ touches: Set<UITouch>,
+    //                               with event: UIEvent?) {
+    //        isThrottling = false
+    //    }
+    
+    // MARK: Game Management
+    
+    func startGame() {
+        guard self.gameState == .hitStartToPlay else { return }
+        DispatchQueue.main.async {
+            self.updatePositions()
+            self.groundNode.isHidden = false
+            self.storyNode.isHidden = false
+            self.gameState = .playGame
+        }
+    }
+    
+    func resetGame(){
+        guard self.gameState == .playGame else { return }
+        DispatchQueue.main.async {
+            self.storyNode.isHidden = true
+            self.groundNode.isHidden = true
+            self.gameState = .detectSurface
+        }
     }
     
     func loadModels() {
@@ -151,168 +284,103 @@ class ViewController: UIViewController, UITextFieldDelegate, ARSCNViewDelegate, 
         sceneView.scene.rootNode.addChildNode(focusNode)
         
         // Load Truck Node
-        let shipScene = SCNScene(named: "art.scnassets/ship.scn")!
-        shipNode = shipScene.rootNode.childNode(withName: "ship", recursively: true)
-        shipNode.isHidden = true
-        sceneView.scene.rootNode.addChildNode(shipNode)
+        let storyScene = SCNScene(named: "art.scnassets/AnthonyScene.scn")!
+        storyNode = storyScene.rootNode.childNode(withName: "anthony", recursively: true)
+        storyNode.isHidden = true
+        sceneView.scene.rootNode.addChildNode(storyNode)
         
         // Load Ground Node
-        //groundNode = self.createFloorNode()
-        //groundNode.isHidden = true
-        //sceneView.scene.rootNode.addChildNode(groundNode)
+        groundNode = self.createFloorNode()
+        groundNode.isHidden = true
+        sceneView.scene.rootNode.addChildNode(groundNode)
     }
+}
+
+
+
+extension ViewController : ARSCNViewDelegate {
     
-    
-    
-    /// - Tag: UpdateARContent
-    
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        // Update only anchors and nodes set up by `renderer(_:didAdd:for:)`.
-        guard let planeAnchor = anchor as? ARPlaneAnchor,
-            let plane = node.childNodes.first as? Plane
-            else { return }
-        
-        // Update ARSCNPlaneGeometry to the anchor's new estimated shape.
-        if let planeGeometry = plane.meshNode.geometry as? ARSCNPlaneGeometry {
-            planeGeometry.update(from: planeAnchor.geometry)
-        }
-        
-        // Update extent visualization to the anchor's new bounding rectangle.
-        if let extentGeometry = plane.extentNode.geometry as? SCNPlane {
-            extentGeometry.width = CGFloat(planeAnchor.extent.x)
-            extentGeometry.height = CGFloat(planeAnchor.extent.z)
-            plane.extentNode.simdPosition = planeAnchor.center
-        }
-        
-        // Update the plane's classification and the text position
-        if #available(iOS 12.0, *),
-            let classificationNode = plane.classificationNode,
-            let classificationGeometry = classificationNode.geometry as? SCNText {
-            let currentClassification = planeAnchor.classification.description
-            if let oldClassification = classificationGeometry.string as? String, oldClassification != currentClassification {
-                classificationGeometry.string = currentClassification
-                classificationNode.centerAlign()
-            }
-        }
-    }
+    // MARK: - SceneKit Management
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {
-            if let _ = self.sceneView?.hitTest(self.viewCenter,
-                                               types: [.existingPlaneUsingExtent]).first {
-                self.crosshair.backgroundColor = UIColor.green
-            } else {
-                self.crosshair.backgroundColor = UIColor.lightGray
-            }
+            self.updateStatus()
+            self.updateFocusNode()
         }
     }
     
-    
-    
-    // MARK: - ARSCNViewDelegate
-    
-    // Override to create and configure nodes for anchors added to the view's session.
-    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-        guard let frame = session.currentFrame else { return }
-        updateSessionInfoLabel(for: frame, trackingState: frame.camera.trackingState)
-    }
-    
-    func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {
-        guard let frame = session.currentFrame else { return }
-        updateSessionInfoLabel(for: frame, trackingState: frame.camera.trackingState)
-    }
+    // MARK: - AR Session State Management
     
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
-        updateSessionInfoLabel(for: session.currentFrame!, trackingState: camera.trackingState)
+        switch camera.trackingState {
+        case .notAvailable:
+            self.trackingStatus = "Tacking:  Not available!"
+            break
+        case .normal:
+            self.trackingStatus = "" // Tracking Normal
+            break
+        case .limited(let reason):
+            switch reason {
+            case .excessiveMotion:
+                self.trackingStatus = "Tracking: Limited due to excessive motion!"
+                break
+            case .insufficientFeatures:
+                self.trackingStatus = "Tracking: Limited due to insufficient features!"
+                break
+            case .relocalizing:
+                self.trackingStatus = "Tracking: Resuming..."
+                break
+            case .initializing:
+                self.trackingStatus = "Tracking: Initializing..."
+            default:
+                break
+            }
+        }
     }
     
-    
-    
-    
-    
-    
-    // MARK: - ARSessionObserver
+    // MARK: - AR Session Error Managent
     
     func session(_ session: ARSession, didFailWithError error: Error) {
-         //Present an error message to the user
-        sessionInfoLabel.text = "Session failed: \(error.localizedDescription)"
-        guard error is ARError else { return }
-
-        let errorWithInfo = error as NSError
-        let messages = [
-            errorWithInfo.localizedDescription,
-            errorWithInfo.localizedFailureReason,
-            errorWithInfo.localizedRecoverySuggestion
-        ]
-
-        // Remove optional error messages.
-        let errorMessage = messages.compactMap({ $0 }).joined(separator: "\n")
-
-        DispatchQueue.main.async {
-            // Present an alert informing about the error that has occurred.
-            let alertController = UIAlertController(title: "The AR session failed.", message: errorMessage, preferredStyle: .alert)
-            let restartAction = UIAlertAction(title: "Restart Session", style: .default) { _ in
-                alertController.dismiss(animated: true, completion: nil)
-                self.resetTracking()
-            }
-            alertController.addAction(restartAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
+        // Present an error message to the user
+        self.trackingStatus = "AR Session Failure: \(error)"
     }
     
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        //sessionInfoLabel.text = "Session was interrupted"
+        self.trackingStatus = "AR Session Was Interrupted!"
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required        // Reset tracking and/or remove existing anchors if consistent tracking is required.
-        //sessionInfoLabel.text = "Session interruption ended"
-        //resetTracking()
-        
+        // Reset tracking and/or remove existing anchors if consistent tracking is required
+        self.trackingStatus = "AR Session Interruption Ended"
+        self.resetGame()
     }
     
+    // MARK: - Plane Management
     
-    
-    
-    // MARK: - Private methods
-    
-    private func updateSessionInfoLabel(for frame: ARFrame, trackingState: ARCamera.TrackingState) {
-        // Update the UI to provide feedback on the state of the AR experience.
-        let message: String
-        
-        switch trackingState {
-        case .normal where frame.anchors.isEmpty:
-            // No planes detected; provide instructions for this app's AR interactions.
-            message = "Move the device around to detect horizontal and vertical surfaces."
-            
-        case .notAvailable:
-            message = "Tracking unavailable."
-            
-        case .limited(.excessiveMotion):
-            message = "Tracking limited - Move the device more slowly."
-            
-        case .limited(.insufficientFeatures):
-            message = "Tracking limited - Point the device at an area with visible surface detail, or improve lighting conditions."
-            
-        case .limited(.initializing):
-            message = "Initializing AR session."
-            
-        default:
-            // No feedback needed when tracking is normal and planes are visible.
-            // (Nor when in unreachable limited-tracking states.)
-            message = ""
-            
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        DispatchQueue.main.async {
+            let planeNode = self.createARPlaneNode(
+                planeAnchor: planeAnchor,
+                color: UIColor.blue.withAlphaComponent(0))
+            node.addChildNode(planeNode)
         }
-        
-        sessionInfoLabel.text = message
-        sessionInfoView.isHidden = message.isEmpty
     }
     
-    private func resetTracking() {
-        let configuration = ARWorldTrackingConfiguration()
-        //configuration.planeDetection = [.horizontal, .vertical]
-        configuration.planeDetection = .horizontal
-        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        DispatchQueue.main.async {
+            self.updateARPlaneNode(
+                planeNode: node.childNodes[0],
+                planeAchor: planeAnchor)
+        }
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+        guard anchor is ARPlaneAnchor else { return }
+        DispatchQueue.main.async {
+            self.removeARPlaneNode(node: node)
+        }
     }
 }
