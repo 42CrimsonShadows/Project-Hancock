@@ -15,6 +15,8 @@ class AuthenticationViewController: UIViewController,UITextFieldDelegate {
     //MARK: -- Outlets
     
     //MARK: -- Actions
+    @IBAction func EnterName(_ sender: Any) {
+    }
     
     //MARK: -- Variables
     
