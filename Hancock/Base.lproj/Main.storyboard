@@ -68,7 +68,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ofX-cZ-dmU" kind="show" id="rir-zD-Z6a"/>
+                                    <segue destination="ofX-cZ-dmU" kind="presentation" id="9M1-xs-ghF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -181,7 +181,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--Login-->
         <scene sceneID="1KO-3Y-sYB">
             <objects>
-                <viewController title="Login" id="ofX-cZ-dmU" sceneMemberID="viewController">
+                <viewController title="Login" id="ofX-cZ-dmU" customClass="SignInViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PX9-DM-pSP">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,6 +224,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Registration"/>
                                         <connections>
+                                            <action selector="RegisterButton:" destination="ofX-cZ-dmU" eventType="touchUpInside" id="nRZ-eF-3Wb"/>
                                             <segue destination="yUW-2T-k1V" kind="presentation" id="36Q-7A-Vdg"/>
                                         </connections>
                                     </button>
@@ -251,6 +252,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdK-4M-Vz9">
                                 <rect key="frame" x="433.5" y="741" width="157" height="30"/>
                                 <state key="normal" title="Forgot your password?"/>
+                                <connections>
+                                    <action selector="ForgotPasswordPopup:" destination="ofX-cZ-dmU" eventType="touchUpInside" id="aGE-2O-pkQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ax7-Yu-92G">
                                 <rect key="frame" x="462" y="786" width="100" height="58.5"/>
@@ -272,6 +276,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="Login:" destination="ofX-cZ-dmU" eventType="touchUpInside" id="PTg-bt-dli"/>
                                     <segue destination="EbW-Xz-ygt" kind="presentation" id="jS9-a2-O2x"/>
                                 </connections>
                             </button>
@@ -291,6 +296,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Xw-bi-pEg"/>
                     </view>
+                    <connections>
+                        <outlet property="IDField" destination="Wyd-BM-4fX" id="ejE-HR-RDm"/>
+                        <outlet property="PassField" destination="h5L-rN-fiH" id="Nwh-tr-ezf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3q-2t-rfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,7 +310,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
             <objects>
                 <exit id="yQJ-4o-fte" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juF-hh-CnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController title="Registration" id="yUW-2T-k1V" customClass="AuthenticationViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Registration" id="yUW-2T-k1V" customClass="RegisterViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vTK-V2-f2S">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -445,6 +454,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9P-tC-wTX" userLabel="SMSInfo">
                                 <rect key="frame" x="767" y="729" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="RequestSMSInfo:" destination="yUW-2T-k1V" eventType="touchUpInside" id="eQ8-Ya-jgo"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you a Teacher or a Student?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Row-5b-BjL" userLabel="TeacherLabel">
                                 <rect key="frame" x="360" y="834" width="245" height="21"/>
@@ -485,6 +497,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="RequestRegistration:" destination="yUW-2T-k1V" eventType="touchUpInside" id="cza-3g-Kss"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdQ-XL-nkN" userLabel="returntologin">
                                 <rect key="frame" x="430" y="1013" width="106" height="30"/>
@@ -495,6 +510,19 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gHf-pL-wDH"/>
                     </view>
+                    <connections>
+                        <outlet property="CPassField" destination="crQ-yQ-eJA" id="yVi-lI-q7V"/>
+                        <outlet property="NameField" destination="6Y2-5k-XgH" id="424-eW-nOG"/>
+                        <outlet property="PEmailField" destination="ohi-3L-gaK" id="hcM-Xj-XAi"/>
+                        <outlet property="PNumField" destination="Vkp-BR-BNJ" id="7ga-8D-udw"/>
+                        <outlet property="PassField" destination="Bth-R6-AEk" id="CSh-oT-GeN"/>
+                        <outlet property="SMSLabel" destination="DUS-Nr-qec" id="ve5-pt-Iys"/>
+                        <outlet property="SchoolIDField" destination="eiA-E7-6Wr" id="Nud-S1-j4b"/>
+                        <outlet property="StudentLabel" destination="fWa-MI-hDe" id="czK-Kv-d0J"/>
+                        <outlet property="TeacherIDField" destination="Zd4-2T-cZF" id="ng8-3Q-3Tb"/>
+                        <outlet property="TeacherLabel" destination="NGi-tR-FAl" id="NHG-LC-Abs"/>
+                        <outlet property="UsernameField" destination="oP6-ET-bmP" id="eLO-EF-Qze"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="46.875" y="845.9736456808198"/>
