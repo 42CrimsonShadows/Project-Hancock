@@ -186,8 +186,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign-In Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ra1-0k-wUV">
-                                <rect key="frame" x="429" y="59" width="166" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABC GO!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ra1-0k-wUV">
+                                <rect key="frame" x="460.5" y="59" width="103" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -219,16 +219,23 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPt-yu-6XE">
+                                        <rect key="frame" x="147.5" y="270" width="105" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Registration"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Wyd-BM-4fX" firstAttribute="top" secondItem="oCg-eB-0IQ" secondAttribute="bottom" constant="8" id="2d2-oT-uQx"/>
                                     <constraint firstItem="Wyd-BM-4fX" firstAttribute="leading" secondItem="8sD-f2-LVo" secondAttribute="leading" constant="20" id="2yP-0Y-XOU"/>
                                     <constraint firstItem="oCg-eB-0IQ" firstAttribute="top" secondItem="8sD-f2-LVo" secondAttribute="top" constant="20" id="4hu-vl-1OT"/>
+                                    <constraint firstItem="oPt-yu-6XE" firstAttribute="top" secondItem="h5L-rN-fiH" secondAttribute="bottom" constant="20" id="CYf-dj-kLP"/>
                                     <constraint firstItem="ss6-ng-3dX" firstAttribute="top" secondItem="Wyd-BM-4fX" secondAttribute="bottom" constant="90" id="Le4-oZ-S6X"/>
                                     <constraint firstAttribute="trailing" secondItem="h5L-rN-fiH" secondAttribute="trailing" constant="20" id="OGU-To-fqM"/>
                                     <constraint firstAttribute="height" constant="300" id="QJx-zh-5yA"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ss6-ng-3dX" secondAttribute="trailing" constant="20" symbolic="YES" id="Umm-HR-3fv"/>
+                                    <constraint firstItem="oPt-yu-6XE" firstAttribute="centerX" secondItem="8sD-f2-LVo" secondAttribute="centerX" id="Vbs-mr-gGs"/>
                                     <constraint firstItem="ss6-ng-3dX" firstAttribute="leading" secondItem="8sD-f2-LVo" secondAttribute="leading" constant="20" id="Wak-Kb-0MT"/>
                                     <constraint firstAttribute="trailing" secondItem="Wyd-BM-4fX" secondAttribute="trailing" constant="20" id="YjJ-OC-HPx"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oCg-eB-0IQ" secondAttribute="trailing" constant="20" symbolic="YES" id="iNG-mh-lSh"/>
@@ -238,40 +245,28 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <constraint firstItem="oCg-eB-0IQ" firstAttribute="leading" secondItem="8sD-f2-LVo" secondAttribute="leading" constant="20" id="w9d-Kc-l7n"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14K-ha-SdR">
-                                <rect key="frame" x="50" y="1272" width="89" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <state key="normal" title="Teacher">
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YuE-k6-YSw" kind="show" id="vio-UE-Ihq"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdK-4M-Vz9">
+                                <rect key="frame" x="433.5" y="741" width="157" height="30"/>
+                                <state key="normal" title="Forgot your password?"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogn-CS-NiI">
-                                <rect key="frame" x="885" y="1272" width="89" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <state key="normal" title="Student">
-                                    <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="EbW-Xz-ygt" kind="show" id="BsV-yc-Qpi"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax7-Yu-92G">
+                                <rect key="frame" x="455" y="786" width="114" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Log-In"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ra1-0k-wUV" firstAttribute="centerX" secondItem="PX9-DM-pSP" secondAttribute="centerX" id="5Hm-UI-HDq"/>
-                            <constraint firstItem="ogn-CS-NiI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="14K-ha-SdR" secondAttribute="trailing" constant="8" symbolic="YES" id="Dcu-Qj-WWu"/>
+                            <constraint firstItem="ax7-Yu-92G" firstAttribute="top" secondItem="vdK-4M-Vz9" secondAttribute="bottom" constant="15" id="Aae-5U-hgS"/>
                             <constraint firstItem="8sD-f2-LVo" firstAttribute="centerY" secondItem="PX9-DM-pSP" secondAttribute="centerY" constant="-100" id="L6V-3T-Hki"/>
+                            <constraint firstItem="vdK-4M-Vz9" firstAttribute="centerX" secondItem="PX9-DM-pSP" secondAttribute="centerX" id="Pf5-n2-Tql"/>
                             <constraint firstItem="8sD-f2-LVo" firstAttribute="centerX" secondItem="PX9-DM-pSP" secondAttribute="centerX" id="QS6-YV-fL1"/>
-                            <constraint firstItem="14K-ha-SdR" firstAttribute="leading" secondItem="4Xw-bi-pEg" secondAttribute="leading" constant="50" id="VCk-bv-NaN"/>
                             <constraint firstItem="Ra1-0k-wUV" firstAttribute="top" secondItem="4Xw-bi-pEg" secondAttribute="top" constant="39" id="bje-5n-36j"/>
-                            <constraint firstItem="4Xw-bi-pEg" firstAttribute="bottom" secondItem="14K-ha-SdR" secondAttribute="bottom" constant="50" id="d8r-zk-IdE"/>
-                            <constraint firstItem="4Xw-bi-pEg" firstAttribute="bottom" secondItem="ogn-CS-NiI" secondAttribute="bottom" constant="50" id="eXf-ng-YyM"/>
-                            <constraint firstItem="4Xw-bi-pEg" firstAttribute="trailing" secondItem="ogn-CS-NiI" secondAttribute="trailing" constant="50" id="q2S-Fx-vp3"/>
+                            <constraint firstItem="ax7-Yu-92G" firstAttribute="centerX" secondItem="PX9-DM-pSP" secondAttribute="centerX" id="dAQ-jA-iWN"/>
+                            <constraint firstItem="vdK-4M-Vz9" firstAttribute="top" secondItem="8sD-f2-LVo" secondAttribute="bottom" constant="8" id="mLY-cm-7q5"/>
+                            <constraint firstItem="vdK-4M-Vz9" firstAttribute="top" secondItem="8sD-f2-LVo" secondAttribute="bottom" constant="8" id="nur-ka-q6T"/>
+                            <constraint firstItem="ax7-Yu-92G" firstAttribute="top" secondItem="vdK-4M-Vz9" secondAttribute="bottom" constant="15" id="uje-xH-xgU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Xw-bi-pEg"/>
                     </view>
