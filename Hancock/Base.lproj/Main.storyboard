@@ -430,12 +430,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Would you like to recieve Text Updates about your Student Progress?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd5-Qg-09R" userLabel="TextUpdatesLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Would you like to recieve Text Updates about your Student Progress?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd5-Qg-09R" userLabel="TextUpdatesLabel">
                                 <rect key="frame" x="231" y="730" width="528" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="LfY-sX-7pf"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bFi-v9-Url"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -443,6 +440,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEU-Ie-Wmj" userLabel="TextUpdateSwitch">
                                 <rect key="frame" x="447" y="770" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="SMSUpdatesBool:" destination="yUW-2T-k1V" eventType="valueChanged" id="Iv6-z1-dgZ"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUS-Nr-qec" userLabel="SMSSwitchLabel">
                                 <rect key="frame" x="502" y="775" width="28" height="21"/>
@@ -470,6 +470,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="TeacherStudentBool:" destination="yUW-2T-k1V" eventType="valueChanged" id="f4v-QP-vJc"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWa-MI-hDe" userLabel="StudentLabel">
                                 <rect key="frame" x="359" y="880" width="61" height="21"/>
@@ -505,6 +508,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <rect key="frame" x="430" y="1013" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Already a user?"/>
+                                <connections>
+                                    <segue destination="ofX-cZ-dmU" kind="presentation" id="2O5-wy-OoL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -924,5 +930,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2Q2-TJ-gJR"/>
+        <segue reference="2O5-wy-OoL"/>
     </inferredMetricsTieBreakers>
 </document>

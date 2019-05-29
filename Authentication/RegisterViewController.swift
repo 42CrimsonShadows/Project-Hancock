@@ -23,10 +23,45 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var TeacherLabel: UILabel!
     @IBOutlet weak var StudentLabel: UILabel!
     
+    var SMSUpdates: Bool = true
+    var isTeacher: Bool = false
+    
     @IBAction func RequestSMSInfo(_ sender: Any) {
+        print("User requested more info about SMS Updates")
     }
     
     @IBAction func RequestRegistration(_ sender: Any) {
+        print("Attempting to Register")
+    }
+    
+    @IBAction func SMSUpdatesBool(_ sender: Any) {
+        
+        if SMSUpdates {
+            print("User would no longer like SMSUpdates")
+            self.SMSUpdates = false
+            SMSLabel.text = "No"
+            SMSLabel.textColor = UIColor.gray
+        }else {
+            print("User would like SMSUpdates")
+            self.SMSUpdates = true
+            SMSLabel.text = "Yes"
+            SMSLabel.textColor = UIColor.blue
+        }
+    }
+    
+    @IBAction func TeacherStudentBool(_ sender: Any) {
+        
+        if isTeacher {
+            print("The user is a Student")
+            isTeacher = false
+            StudentLabel.textColor = UIColor.blue
+            TeacherLabel.textColor = UIColor.gray
+        }else {
+            print("The user is a Teacher")
+            isTeacher = true
+            TeacherLabel.textColor = UIColor.blue
+            StudentLabel.textColor = UIColor.gray
+        }
     }
     
     override func viewDidLoad() {
