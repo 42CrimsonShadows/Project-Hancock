@@ -20,6 +20,7 @@
 		C939B55C229EF99600D15A2B /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55B229EF99600D15A2B /* AuthenticationViewController.swift */; };
 		C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55D229F302500D15A2B /* SignInViewController.swift */; };
 		C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55F229F305900D15A2B /* RegisterViewController.swift */; };
+		C99A9BE122A058A700554D9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A9BE022A058A700554D9A /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C939B55B229EF99600D15A2B /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		C939B55D229F302500D15A2B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Authentication/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
 		C939B55F229F305900D15A2B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C99A9BE022A058A700554D9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				A0A028BD227CA9F500A7C787 /* art.scnassets */,
 				A0A028BF227CA9F500A7C787 /* ViewController.swift */,
 				A0A028C1227CA9F500A7C787 /* Main.storyboard */,
+				C99A9BE022A058A700554D9A /* HomeViewController.swift */,
 				A0A028C4227CA9F600A7C787 /* Assets.xcassets */,
 				A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */,
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
@@ -240,6 +243,7 @@
 				A0A028C0227CA9F500A7C787 /* ViewController.swift in Sources */,
 				A0A028BC227CA9F500A7C787 /* AppDelegate.swift in Sources */,
 				C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */,
+				C99A9BE122A058A700554D9A /* HomeViewController.swift in Sources */,
 				C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */,
 				C939B55C229EF99600D15A2B /* AuthenticationViewController.swift in Sources */,
 				A07974B322861DB000606889 /* StudentTableViewController.swift in Sources */,

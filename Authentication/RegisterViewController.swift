@@ -40,6 +40,15 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: pass) { user, error in
             if error == nil && user != nil {
                 print("The User was Created")
+                
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = username
+                changeRequest?.commitChanges { error in
+                    if error == nil {
+                        print("displayName has been changed")
+                        self.dismiss(animated: false, completion: nil)
+                    }
+                }
             }else {
                 print("Error Creating the user: \(error!.localizedDescription)")
             }

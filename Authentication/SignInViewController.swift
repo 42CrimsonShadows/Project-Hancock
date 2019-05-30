@@ -33,6 +33,14 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let user = Auth.auth().currentUser{
+            self.performSegue(withIdentifier: "toHomeScreen", sender: self)
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
