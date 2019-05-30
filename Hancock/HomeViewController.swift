@@ -13,11 +13,13 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+          
 
     }
     
     @IBAction func logoutHandler(_ sender: Any) {
         try! Auth.auth().signOut()
+        print("Successfully logged out")
         self.dismiss(animated: false, completion: nil)
     }
     

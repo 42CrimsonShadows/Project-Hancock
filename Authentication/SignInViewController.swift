@@ -20,6 +20,20 @@ class SignInViewController: UIViewController {
     @IBAction func Login(_ sender: Any) {
         
     print("Logging in...")
+        guard let email = IDField.text else { return }
+        guard let pass = PassField.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
+            if error == nil && Auth.auth().currentUser != nil {
+                
+                self.dismiss(animated: false, completion: nil)
+                print("Welcome", Auth.auth().currentUser?.email)
+                
+            } else {
+                print("There was an issue logging in")
+            
+            }
+        }
     }
     
     @IBAction func RegisterButton(_ sender: Any) {
@@ -37,8 +51,9 @@ class SignInViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if let user = Auth.auth().currentUser{
-            self.performSegue(withIdentifier: "toHomeScreen", sender: self)
-        }
+            print("Welcome ", Auth.auth().currentUser?.displayName)
+            }
+        
     }
     
 
