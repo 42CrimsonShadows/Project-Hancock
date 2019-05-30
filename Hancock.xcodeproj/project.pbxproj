@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		119507F8EEE8FFE2A8326505 /* Pods_Hancock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3E28B5AE1CAA606C394F4B /* Pods_Hancock.framework */; };
 		A07974B12285FC4A00606889 /* StudentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */; };
 		A07974B322861DB000606889 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B222861DB000606889 /* StudentTableViewController.swift */; };
 		A0A028BC227CA9F500A7C787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A028BB227CA9F500A7C787 /* AppDelegate.swift */; };
@@ -15,12 +16,15 @@
 		A0A028C3227CA9F500A7C787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C1227CA9F500A7C787 /* Main.storyboard */; };
 		A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C4227CA9F600A7C787 /* Assets.xcassets */; };
 		A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */; };
+		C930366B22A0362B00F84BC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C930366A22A0362B00F84BC1 /* GoogleService-Info.plist */; };
 		C939B55C229EF99600D15A2B /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55B229EF99600D15A2B /* AuthenticationViewController.swift */; };
 		C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55D229F302500D15A2B /* SignInViewController.swift */; };
 		C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55F229F305900D15A2B /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A3E28B5AE1CAA606C394F4B /* Pods_Hancock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hancock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.release.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.release.xcconfig"; sourceTree = "<group>"; };
 		A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsTableViewCell.swift; sourceTree = "<group>"; };
 		A07974B222861DB000606889 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
 		A0A028B8227CA9F500A7C787 /* Hancock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hancock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +35,8 @@
 		A0A028C4227CA9F600A7C787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0A028C7227CA9F600A7C787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0A028C9227CA9F600A7C787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.debug.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.debug.xcconfig"; sourceTree = "<group>"; };
+		C930366A22A0362B00F84BC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C939B55B229EF99600D15A2B /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		C939B55D229F302500D15A2B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Authentication/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
 		C939B55F229F305900D15A2B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -41,18 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119507F8EEE8FFE2A8326505 /* Pods_Hancock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30E36502D6E34303400F401B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A3E28B5AE1CAA606C394F4B /* Pods_Hancock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51A772FE7B4152192F747E3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */,
+				7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A0A028AF227CA9F500A7C787 = {
 			isa = PBXGroup;
 			children = (
 				C939B55A229EF96200D15A2B /* Authentication */,
 				A0A028BA227CA9F500A7C787 /* Hancock */,
 				A0A028B9227CA9F500A7C787 /* Products */,
+				51A772FE7B4152192F747E3F /* Pods */,
+				30E36502D6E34303400F401B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +102,7 @@
 				A0A028C4227CA9F600A7C787 /* Assets.xcassets */,
 				A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */,
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
+				C930366A22A0362B00F84BC1 /* GoogleService-Info.plist */,
 			);
 			path = Hancock;
 			sourceTree = "<group>";
@@ -83,9 +110,9 @@
 		C939B55A229EF96200D15A2B /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				C939B55B229EF99600D15A2B /* AuthenticationViewController.swift */,
 				C939B55D229F302500D15A2B /* SignInViewController.swift */,
 				C939B55F229F305900D15A2B /* RegisterViewController.swift */,
+				C939B55B229EF99600D15A2B /* AuthenticationViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -97,9 +124,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0A028CC227CA9F600A7C787 /* Build configuration list for PBXNativeTarget "Hancock" */;
 			buildPhases = (
+				95C3917065D3EFBE5D9E63B3 /* [CP] Check Pods Manifest.lock */,
 				A0A028B4227CA9F500A7C787 /* Sources */,
 				A0A028B5227CA9F500A7C787 /* Frameworks */,
 				A0A028B6227CA9F500A7C787 /* Resources */,
+				E32D5D500299EEE8C1C5C335 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,12 +182,55 @@
 			files = (
 				A0A028BE227CA9F500A7C787 /* art.scnassets in Resources */,
 				A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */,
+				C930366B22A0362B00F84BC1 /* GoogleService-Info.plist in Resources */,
 				A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */,
 				A0A028C3227CA9F500A7C787 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95C3917065D3EFBE5D9E63B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hancock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E32D5D500299EEE8C1C5C335 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hancock/Pods-Hancock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hancock/Pods-Hancock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hancock/Pods-Hancock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0A028B4227CA9F500A7C787 /* Sources */ = {
@@ -315,6 +387,7 @@
 		};
 		A0A028CD227CA9F600A7C787 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5VSY8CPT7Z;
@@ -332,6 +405,7 @@
 		};
 		A0A028CE227CA9F600A7C787 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5VSY8CPT7Z;

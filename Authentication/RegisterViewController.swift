@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
 
@@ -32,6 +33,19 @@ class RegisterViewController: UIViewController {
     
     @IBAction func RequestRegistration(_ sender: Any) {
         print("Attempting to Register")
+        guard let username = UsernameField.text else { return }
+        guard let email = PEmailField.text else { return }
+        guard let pass = PassField.text else { return }
+        
+        Auth.auth().createUser(withEmail: email, password: pass) { user, error in
+            if error == nil && user != nil {
+                print("The User was Created")
+            }else {
+                print("Error Creating the user: \(error!.localizedDescription)")
+            }
+            
+        }
+        
     }
     
     @IBAction func SMSUpdatesBool(_ sender: Any) {
