@@ -16,7 +16,7 @@
 		A0A028C3227CA9F500A7C787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C1227CA9F500A7C787 /* Main.storyboard */; };
 		A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C4227CA9F600A7C787 /* Assets.xcassets */; };
 		A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */; };
-		C930366B22A0362B00F84BC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C930366A22A0362B00F84BC1 /* GoogleService-Info.plist */; };
+		A0ECFB8522A5B9BC000DF8F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0ECFB8422A5B9BC000DF8F7 /* GoogleService-Info.plist */; };
 		C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55D229F302500D15A2B /* SignInViewController.swift */; };
 		C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55F229F305900D15A2B /* RegisterViewController.swift */; };
 		C99A9BE122A058A700554D9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A9BE022A058A700554D9A /* HomeViewController.swift */; };
@@ -36,8 +36,8 @@
 		A0A028C4227CA9F600A7C787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0A028C7227CA9F600A7C787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0A028C9227CA9F600A7C787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0ECFB8422A5B9BC000DF8F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.debug.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.debug.xcconfig"; sourceTree = "<group>"; };
-		C930366A22A0362B00F84BC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C939B55D229F302500D15A2B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Authentication/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
 		C939B55F229F305900D15A2B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C99A9BE022A058A700554D9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 				C99A9BE022A058A700554D9A /* HomeViewController.swift */,
 				A0A028C4227CA9F600A7C787 /* Assets.xcassets */,
 				A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */,
+				A0ECFB8422A5B9BC000DF8F7 /* GoogleService-Info.plist */,
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
-				C930366A22A0362B00F84BC1 /* GoogleService-Info.plist */,
 			);
 			path = Hancock;
 			sourceTree = "<group>";
@@ -185,7 +185,7 @@
 			files = (
 				A0A028BE227CA9F500A7C787 /* art.scnassets in Resources */,
 				A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */,
-				C930366B22A0362B00F84BC1 /* GoogleService-Info.plist in Resources */,
+				A0ECFB8522A5B9BC000DF8F7 /* GoogleService-Info.plist in Resources */,
 				A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */,
 				A0A028C3227CA9F500A7C787 /* Main.storyboard in Resources */,
 			);
@@ -394,13 +394,13 @@
 			baseConfigurationReference = B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5VSY8CPT7Z;
+				DEVELOPMENT_TEAM = AUZXFUDQS4;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = caseykawamura;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bosiestate.abcgo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -412,13 +412,13 @@
 			baseConfigurationReference = 7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5VSY8CPT7Z;
+				DEVELOPMENT_TEAM = AUZXFUDQS4;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = caseykawamura;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bosiestate.abcgo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
