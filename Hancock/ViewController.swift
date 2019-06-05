@@ -32,6 +32,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: ACTIONS
+    @IBAction func goButtonPressed(_ sender: Any) {
+    }
     @IBAction func setStudentInfo(_ sender: UIButton) {
     }
     @IBAction func startButtonPressed(_ sender: Any) {
