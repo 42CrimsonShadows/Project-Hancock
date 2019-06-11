@@ -19,26 +19,72 @@ class activityViewController: UIViewController {
     
      let canvas = Canvas()
 
+
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
     @IBAction func undoButton(_ sender: Any) {
         canvas.lines.removeAll()
         canvas.checkpointLines.removeAll()
+        
+        
         canvas.setNeedsDisplay()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Add the drawing canvas to the UIView
         view.addSubview(canvas)
-        canvas.backgroundColor = .gray
-        canvas.frame = CGRect(x: 200, y: 200, width: view.frame.size.width * 0.5, height: view.frame.size.height * 0.75)
-       
+        canvas.backgroundColor = UIColor(white: 0.75, alpha: 0)
+        canvas.frame.size.width = view.frame.size.width * 0.5
+        canvas.frame.size.height = view.frame.size.height * 0.5
+        
+        //Add the letter A image to the canvas
+        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/AUnderlay.png")
+        let AUnderlayView = UIImageView(image: AUnderlay)
+        AUnderlayView.frame.size.width = canvas.frame.size.width
+        AUnderlayView.frame.size.height = canvas.frame.size.height
+        
+        //canvas.addSubview(AUnderlayView)
+        //canvas.sendSubviewToBack(AUnderlayView)
+        //self.canvas.sendSubviewToBack(AUnderlayView)
+        //self.view.bringSubviewToFront(canvas)
+        view.insertSubview(AUnderlayView, belowSubview: canvas)
+        //AUnderlayView.layer.zPosition =
+        
     }
+    
 
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        print("changed view")
+        
+        if UIDevice.current.orientation.isLandscape{
+            super.viewDidLoad()
+           //refreshCanvas()
+            print("Landscape")
+            
+        }
+        
+        if UIDevice.current.orientation.isPortrait {
+           
+            
+            super.viewDidLoad()
+            //refreshCanvas()
+            print("Portrait")
+            view.setNeedsLayout()
+            view.layoutIfNeeded()
+        }
+
+    }
+    
 }
+
+
 class Canvas: UIView {
+    
     
     fileprivate var strokeColor = UIColor.black
     fileprivate var strokeWidth: Float = 20
@@ -68,10 +114,6 @@ class Canvas: UIView {
     
     var startingPoint = CGPoint()
     var targetPoint = CGPoint()
-
-    
-    
-    
     
     override func draw(_ rect: CGRect) {
         
@@ -81,31 +123,32 @@ class Canvas: UIView {
         
         
         //make first dot
-        self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.25)
-        self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.25)
+        self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+        self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
         context.move(to: aStartPoint)
         context.addLine(to: aEndPoint)
         
         //make second dot
-        self.bStartPoint = CGPoint(x: bounds.maxX * 0.25, y: bounds.maxY * 0.75)
-        self.bEndPoint = CGPoint(x: bounds.maxX * 0.25, y: bounds.maxY * 0.75)
+        self.bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+        self.bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
         context.move(to: bStartPoint)
         context.addLine(to: bEndPoint)
         
-        self.cStartPoint = CGPoint(x: bounds.maxX * 0.75, y: bounds.maxY * 0.75)
-        self.cEndPoint = CGPoint(x: bounds.maxX * 0.75, y: bounds.maxY * 0.75)
+        self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
+        self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
         context.move(to: cStartPoint)
         context.addLine(to: cEndPoint)
         
-        self.dStartPoint = CGPoint(x: bounds.maxX * 0.375, y: bounds.maxY * 0.5)
-        self.dEndPoint = CGPoint(x: bounds.maxX * 0.375, y: bounds.maxY * 0.5)
+        self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
+        self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
         context.move(to: dStartPoint)
         context.addLine(to: dEndPoint)
         
-        self.eStartPoint = CGPoint(x: bounds.maxX * 0.675, y: bounds.maxY * 0.5)
-        self.eEndPoint = CGPoint(x: bounds.maxX * 0.675, y: bounds.maxY * 0.5)
+        self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
+        self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
         context.move(to: eStartPoint)
         context.addLine(to: eEndPoint)
+        
         
         //draw line
         lines.forEach { (line) in
@@ -141,11 +184,7 @@ class Canvas: UIView {
         context.setLineWidth(20)
         
         context.strokePath()
-        
-        
-        //actually paints the line on the context
-        
-        
+    
     }
     
     
@@ -210,10 +249,44 @@ class Canvas: UIView {
                 lastLine.points.append(lastPoint)
                 lines.append(lastLine)
                 checkpointLines.append(lastLine)
+                layer.zPosition = 100
+                //print (self.layer.zPosition)
                 nextStep()
                 setNeedsDisplay()
+                
+                if AtoB {
+                    //Add the letter A1 image to the canvas
+                    let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1.png")
+                    let A1UnderlayView = UIImageView(image: A1Underlay)
+                    A1UnderlayView.frame.size.width = self.frame.size.width
+                    A1UnderlayView.frame.size.height = self.frame.size.height
+                    
+                    //exchangeSubview(at: 0, withSubviewAt: 1)
+                    //sendSubviewToBack(A1UnderlayView)
+                    //sendSubviewToBack(A1UnderlayView)
+                    //insertSubview(A1UnderlayView, at: 10)
+                    self.insertSubview(A1UnderlayView, belowSubview: self)
+                    
+                }
+                if  AtoC {
+                    //Add the letter A1 image to the canvas
+                    let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2.png")
+                    let A2UnderlayView = UIImageView(image: A2Underlay)
+                    A2UnderlayView.frame.size.width = self.frame.size.width
+                    A2UnderlayView.frame.size.height = self.frame.size.height
+                    //addSubview(A2UnderlayView)
+                    self.insertSubview(A2UnderlayView, belowSubview: self)
+                }
+                if  DtoE {
+                    //Add the letter A1 image to the canvas
+                    let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3.png")
+                    let A3UnderlayView = UIImageView(image: A3Underlay)
+                    A3UnderlayView.frame.size.width = self.frame.size.width
+                    A3UnderlayView.frame.size.height = self.frame.size.height
+                    //addSubview(A3UnderlayView)
+                    self.insertSubview(A3UnderlayView, belowSubview: self)
+                }
             }
-      
     }
     
     func CGPointDistanceSquared(from: CGPoint, to:  CGPoint) -> CGFloat {
@@ -250,13 +323,4 @@ class Canvas: UIView {
             print(letterState)
         }
     }
-    
-//    func getCurrentTarget(target: CGPoint){
-//
-//    }
-//
-//    func getCurrentStart(start: CGPoint){
-//
-//    }
 }
-
