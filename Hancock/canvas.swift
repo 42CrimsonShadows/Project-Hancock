@@ -15,9 +15,59 @@ class Canvas: UIView {
     fileprivate var strokeColor = UIColor.black
     fileprivate var strokeWidth: Float = 20
     //2 dimensional CGPoint array of lines
+    
+    var usePreciseLocations = false {
+        didSet {
+            needsFullRedraw = true
+            setNeedsDisplay()
+        }
+    }
+    var isDebuggingEnabled = false {
+        didSet {
+            needsFullRedraw = true
+            setNeedsDisplay()
+        }
+    }
+    
+    private var needsFullRedraw = true
     var lines = [Line]()
     var checkpointLines = [Line]()
     var dotPoints = [Line]()
+    
+      private let activeLines: NSMapTable<UITouch, Line> = NSMapTable.strongToStrongObjects()
+    /**
+     Holds a map of `UITouch` objects to `Line` objects whose touch has ended but still has points awaiting
+     updates.
+     
+     Use `NSMapTable` to handle association as `UITouch` doesn't conform to `NSCopying`. There is no value
+     in accessing the properties of the touch used as a key in the map table. `UITouch` properties should
+     be accessed in `NSResponder` callbacks and methods called from them.
+     */
+    private let pendingLines: NSMapTable<UITouch, Line> = NSMapTable.strongToStrongObjects()
+    
+    /// A `CGContext` for drawing the last representation of lines no longer receiving updates into.
+    private lazy var frozenContext: CGContext = {
+        let scale = self.window!.screen.scale
+        var size = self.bounds.size
+        
+        size.width *= scale
+        size.height *= scale
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        let context: CGContext = CGContext(data: nil,
+                                           width: Int(size.width),
+                                           height: Int(size.height),
+                                           bitsPerComponent: 8,
+                                           bytesPerRow: 0,
+                                           space: colorSpace,
+                                           bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+        context.setLineCap(.round)
+        let transform = CGAffineTransform(scaleX: scale, y: scale)
+        context.concatenate(transform)
+        
+        return context
+    }()
+     private var frozenImage: CGImage?
     
     var lastTouch = CGPoint.zero
     var aStartPoint = CGPoint()
@@ -49,6 +99,8 @@ class Canvas: UIView {
     var A3GreenLine: UIImageView?
     
     var goodTouch: Bool = false
+    
+    
     
     override func draw(_ rect: CGRect) {
         
