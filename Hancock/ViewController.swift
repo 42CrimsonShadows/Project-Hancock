@@ -30,10 +30,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var startButton: UIButton!
-
-    
-    
-    
     
     //MARK: ACTIONS
     @IBAction func goButtonPressed(_ sender: Any) {
