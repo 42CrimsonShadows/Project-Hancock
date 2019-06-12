@@ -17,6 +17,7 @@ class Canvas: UIView {
     //2 dimensional CGPoint array of lines
     var lines = [Line]()
     var checkpointLines = [Line]()
+    var dotPoints = [Line]()
     
     var lastTouch = CGPoint.zero
     var aStartPoint = CGPoint()
@@ -29,8 +30,10 @@ class Canvas: UIView {
     var dEndPoint = CGPoint()
     var eStartPoint = CGPoint()
     var eEndPoint = CGPoint()
-    var defaultColor = UIColor.blue.cgColor
-    var secondColor = UIColor.red.cgColor
+    var lineColor = UIColor.blue.cgColor
+    var checkPointColor = UIColor.darkGray.cgColor
+    var dotPointColor = UIColor.green.cgColor
+    var defaultColor = UIColor.black.cgColor
     
     var letterState: LetterState = .AtoB
     var currentComplete = false
@@ -45,44 +48,55 @@ class Canvas: UIView {
     var A2GreenLine: UIImageView?
     var A3GreenLine: UIImageView?
     
+    var goodTouch: Bool = false
+    
     override func draw(_ rect: CGRect) {
         
         super.draw(rect)
         
         guard let context = UIGraphicsGetCurrentContext() else { return }
         
-        //make first dot
-        self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-        self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-        context.move(to: aStartPoint)
-        context.addLine(to: aEndPoint)
-        
-        //make second dot
-        self.bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-        self.bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-        context.move(to: bStartPoint)
-        context.addLine(to: bEndPoint)
-        
-        //make second dot
-        self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
-        self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
-        context.move(to: cStartPoint)
-        context.addLine(to: cEndPoint)
-        
-        self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
-        self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
-        context.move(to: dStartPoint)
-        context.addLine(to: dEndPoint)
-        
-        self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
-        self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
-        context.move(to: eStartPoint)
-        context.addLine(to: eEndPoint)
-        
+        if !AtoB {
+            //make first dot
+            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            context.move(to: aStartPoint)
+            context.addLine(to: aEndPoint)
+            
+            //make second dot
+            self.bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+            self.bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+            context.move(to: bStartPoint)
+            context.addLine(to: bEndPoint)
+        }
+        else if AtoB && !AtoC {
+            //make first dot
+            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            context.move(to: aStartPoint)
+            context.addLine(to: aEndPoint)
+            
+            //make second dot
+            self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
+            self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
+            context.move(to: cStartPoint)
+            context.addLine(to: cEndPoint)
+        }
+        else {
+            self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
+            self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
+            context.move(to: dStartPoint)
+            context.addLine(to: dEndPoint)
+            
+            self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
+            self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
+            context.move(to: eStartPoint)
+            context.addLine(to: eEndPoint)
+        }
         
         //draw line
         lines.forEach { (line) in
-            context.setStrokeColor(defaultColor)
+            context.setStrokeColor(lineColor)
             context.setLineCap(.round)
             context.setLineWidth(20)
             for (i, p) in line.points.enumerated() {
@@ -96,7 +110,7 @@ class Canvas: UIView {
         }
         
         checkpointLines.forEach { (line) in
-            context.setStrokeColor(secondColor)
+            context.setStrokeColor(checkPointColor)
             context.setLineCap(.round)
             context.setLineWidth(20)
             for (i, p) in line.points.enumerated() {
@@ -109,7 +123,7 @@ class Canvas: UIView {
             context.strokePath()
         }
         
-        context.setStrokeColor(defaultColor)
+        context.setStrokeColor(dotPointColor)
         context.setLineCap(.round)
         context.setLineWidth(20)
         
@@ -127,12 +141,27 @@ class Canvas: UIView {
             startingPoint = aStartPoint
             targetPoint = bStartPoint
         }
+        if AtoB {
+            startingPoint = aStartPoint
+            targetPoint = cStartPoint
+        }
+        if AtoC {
+            startingPoint = dStartPoint
+            targetPoint = eStartPoint
+        }
         
         guard let firstPoint = touches.first?.location(in: self) else { return }
         print("touches began")
         
+        print("Startpoint= ", startingPoint)
+        print("Targetpoint= ", targetPoint)
+        print("AtoB=", AtoB)
+        print("AtoC=", AtoC)
+        print("DtoE=", DtoE)
+        
         if CGPointDistance(from: firstPoint, to: startingPoint) < 50 {
             lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
+            goodTouch = true
         }
     }
     
@@ -145,7 +174,7 @@ class Canvas: UIView {
         //test where your mouse is when you hold the mouse button
         //print("Point: ", point)
         
-        if !AtoB || !AtoC || !DtoE {
+        if goodTouch {
             guard var lastLine = lines.popLast() else { return }
             
             lastLine.points.append(point)
@@ -161,11 +190,9 @@ class Canvas: UIView {
         guard let lastPoint = touches.first?.location(in: self) else { return }
         guard var lastLine = lines.popLast() else { return }
         
-        
-        
         if CGPointDistance(from: lastPoint , to: targetPoint) > 50 {
             lastLine.points.removeAll()
-            setNeedsDisplay()
+            //setNeedsDisplay()
             print("line not complete")
         }
         else {
@@ -173,48 +200,22 @@ class Canvas: UIView {
             lastLine.points.append(lastPoint)
             lines.append(lastLine)
             checkpointLines.append(lastLine)
+            goodTouch = false
             nextStep()
-            setNeedsDisplay()
+            //setNeedsDisplay()
             print("line complete")
             
             if AtoB {
-                //                    //Add the letter A1 image to the canvas
-                //                    let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1.png")
-                //                    let A1UnderlayView = UIImageView(image: A1Underlay)
-                //                    A1UnderlayView.frame.size.width = self.frame.size.width
-                //                    A1UnderlayView.frame.size.height = self.frame.size.height
-                //
-                //                    //exchangeSubview(at: 0, withSubviewAt: 1)
-                //                    //sendSubviewToBack(A1UnderlayView)
-                //                    //sendSubviewToBack(A1UnderlayView)
-                //                    //insertSubview(A1UnderlayView, at: 10)
-                //                    self.insertSubview(A1UnderlayView, belowSubview: self)
-                //let activity = activityViewController()
-                //activity.A1UnderlayView.isHidden = false
                 A1GreenLine?.isHidden = false
             }
             if  AtoC {
-                
-//                //Add the letter A1 image to the canvas
-//                let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2.png")
-//                let A2UnderlayView = UIImageView(image: A2Underlay)
-//                A2UnderlayView.frame.size.width = self.frame.size.width
-//                A2UnderlayView.frame.size.height = self.frame.size.height
-//                //addSubview(A2UnderlayView)
-//                self.insertSubview(A2UnderlayView, belowSubview: self)
                 A2GreenLine?.isHidden = false
             }
             if  DtoE {
-//                //Add the letter A1 image to the canvas
-//                let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3.png")
-//                let A3UnderlayView = UIImageView(image: A3Underlay)
-//                A3UnderlayView.frame.size.width = self.frame.size.width
-//                A3UnderlayView.frame.size.height = self.frame.size.height
-//                //addSubview(A3UnderlayView)
-//                self.insertSubview(A3UnderlayView, belowSubview: self)
                 A3GreenLine?.isHidden = false
             }
         }
+        setNeedsDisplay()
     }
     
     
@@ -238,18 +239,19 @@ class Canvas: UIView {
         case .AtoB:
             startingPoint = aStartPoint;
             targetPoint = cStartPoint;
+            print("letterstate put target point at", targetPoint)
             letterState = .AtoC
-            self.AtoB = true
+            AtoB = true
         case .AtoC:
             startingPoint = dStartPoint;
             targetPoint = eStartPoint;
             letterState = .DtoE
-            self.AtoC = true
+            AtoC = true
         case .DtoE:
             //startingPoint = aStartPoint;
             //targetPoint = bStartPoint;
             //letterState = .DtoE
-            self.DtoE = true
+            DtoE = true
         }
         print("letterState is now:", letterState)
     }

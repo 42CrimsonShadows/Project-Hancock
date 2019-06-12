@@ -29,7 +29,7 @@ class activityViewController: UIViewController {
         AUnderlayView.translatesAutoresizingMaskIntoConstraints = false
         return AUnderlayView
     }()
-    public let A1UnderlayView: UIImageView = {
+    let A1UnderlayView: UIImageView = {
         //Add the letter A1 image to the canvas
         let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1.png")
         let A1UnderlayView = UIImageView(image: A1Underlay)
@@ -37,7 +37,7 @@ class activityViewController: UIViewController {
         A1UnderlayView.translatesAutoresizingMaskIntoConstraints = false
         return A1UnderlayView
     }()
-    public let A2UnderlayView: UIImageView = {
+    let A2UnderlayView: UIImageView = {
         //Add the letter A2 image to the canvas
         let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2.png")
         let A2UnderlayView = UIImageView(image: A2Underlay)
@@ -45,7 +45,7 @@ class activityViewController: UIViewController {
         A2UnderlayView.translatesAutoresizingMaskIntoConstraints = false
         return A2UnderlayView
     }()
-    public let A3UnderlayView: UIImageView = {
+    let A3UnderlayView: UIImageView = {
         //Add the letter A3 image to the canvas
         let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3.png")
         let A3UnderlayView = UIImageView(image: A3Underlay)
