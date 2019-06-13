@@ -42,6 +42,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func resetButtonPressed(_ sender: Any) {
         self.resetGame()
     }
+    @IBAction func walkButtonPressed(_ sender: Any) {
+        self.anthonyWalk()
+    }
+    
     
     // MARK: - VARIABLES
     var trackingStatus: String = ""
@@ -50,9 +54,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var focusPoint: CGPoint!
     var focusNode: SCNNode!
     var groundNode: SCNNode!
-    
     var storyNode: SCNNode!
+    let animationNode = SCNNode()
+    let walkingNode = SCNNode()
+    let idleNode = SCNNode()
     
+    //var animations = [String: CAAnimation]()
+    var idle: Bool = true
+    
+    var isWalking: Bool = false
+    
+    var player = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +73,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.initScene()
         self.initARSession()
         self.loadModels()
+        
+        //setup audio player
+        let audioPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav")
+        
+        do
+        {
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            player.enableRate = true
+            player.rate = 0.5
+            
+        } catch
+        {
+            //process any errors
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +116,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func initSceneView() {
         sceneView.delegate = self
-        //sceneView.automaticallyUpdatesLighting = true
+        sceneView.automaticallyUpdatesLighting = true
         sceneView.showsStatistics = true
         //sceneView.preferredFramesPerSecond = 60
         //sceneView.antialiasingMode = .multisampling2X
@@ -106,7 +132,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func initScene() {
         let scene = SCNScene()
-        //scene.lightingEnvironment.contents = "MonsterTruck.scnassets/Textures/Environment_CUBE.jpg"
+        //scene.lightingEnvironment.contents = "Hancock.scnassets/Textures/Environment_CUBE.jpg"
         //scene.lightingEnvironment.intensity = 2
         scene.physicsWorld.speed = 1
         scene.isPaused = false
@@ -181,22 +207,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func createFloorNode() -> SCNNode {
-        let floorGeometry = SCNFloor()
-        floorGeometry.reflectivity = 0.0
-        let floorMaterial = SCNMaterial()
-        floorMaterial.diffuse.contents = UIColor.white
-        floorMaterial.blendMode = .multiply
-        floorGeometry.materials = [floorMaterial]
-        let floorNode = SCNNode(geometry: floorGeometry)
-        floorNode.position = SCNVector3Zero
-        floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
-        floorNode.physicsBody?.restitution = 0.5
-        floorNode.physicsBody?.friction = 4.0
-        floorNode.physicsBody?.rollingFriction = 0.0
-        return floorNode
-    }
-    
     // MARK: Update Functions
     
     func updateStatus() {
@@ -235,26 +245,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updatePositions() {
-        // Update Truck Node
+        // Update storyNode Node
         self.storyNode.position = self.focusNode.position
-        //self.storyNode.position.y += 0.20
-        //self.storyNode.physicsBody?.velocity = SCNVector3Zero
-        //self.storyNode.physicsBody?.angularVelocity = SCNVector4Zero
-        //self.storyNode.physicsBody?.resetTransform()
         
-        // Update Ground Node
-        self.groundNode.position = self.focusNode.position
-        self.groundNode.physicsBody?.resetTransform()
+        //Update Animation Node
+        self.animationNode.position = self.focusNode.position
+        self.animationNode.physicsBody?.resetTransform()
     }
-    
-    //    override func touchesBegan(_ touches: Set<UITouch>,
-    //                               with event: UIEvent?) {
-    //        isThrottling = true
-    //    }
-    //    override func touchesEnded(_ touches: Set<UITouch>,
-    //                               with event: UIEvent?) {
-    //        isThrottling = false
-    //    }
+
     
     // MARK: Game Management
     
@@ -262,8 +260,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard self.gameState == .hitStartToPlay else { return }
         DispatchQueue.main.async {
             self.updatePositions()
-            self.groundNode.isHidden = false
+            //self.groundNode.isHidden = false
             self.storyNode.isHidden = false
+            self.idleNode.isHidden = false
             self.gameState = .playGame
         }
     }
@@ -272,7 +271,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard self.gameState == .playGame else { return }
         DispatchQueue.main.async {
             self.storyNode.isHidden = true
-            self.groundNode.isHidden = true
+            ///self.groundNode.isHidden = true
+            self.idleNode.isHidden = true
+            self.walkingNode.isHidden = true
             self.gameState = .detectSurface
         }
     }
@@ -285,16 +286,75 @@ class ViewController: UIViewController, UITextFieldDelegate {
         focusNode.isHidden = true
         sceneView.scene.rootNode.addChildNode(focusNode)
         
-        // Load Truck Node
+        // Load StoryScene Node
         let storyScene = SCNScene(named: "art.scnassets/AnthonyScene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "anthony", recursively: true)
         storyNode.isHidden = true
         sceneView.scene.rootNode.addChildNode(storyNode)
         
-        // Load Ground Node
-        groundNode = self.createFloorNode()
-        groundNode.isHidden = true
-        sceneView.scene.rootNode.addChildNode(groundNode)
+        //Load Idle Animation Node
+        let idleAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Idle.scn")!
+        for child in idleAnthonyScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        //sceneView.scene.rootNode.addChildNode(idleNode)
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
+        walkingNode.position = SCNVector3(0, 0, 0)
+        //loadAnimation(withKey: "walking", sceneName: "art.scnassets/Anthony@WalkFixed", animationIdentifier: "Anthony@WalkFixed-1")
+        idleNode.isHidden = true
+        
+        //Load walking Animation Node
+        let walkingAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Walk.scn")!
+        for child in walkingAnthonyScene.rootNode.childNodes {
+            walkingNode.addChildNode(child)
+        }
+        storyNode.addChildNode(walkingNode)
+        //sceneView.scene.rootNode.addChildNode(walkingNode)
+        walkingNode.position = SCNVector3(0, 0, 0)
+        walkingNode.scale = SCNVector3(0.02, 0.02, 0.02)
+        walkingNode.isHidden = true
+    }
+    
+    func anthonyWalk() {
+        if(idle) {
+            playAnimation()
+            isWalking = true
+        }
+        else {
+            stopAnimation()
+            isWalking = false
+        }
+        idle = !idle
+        return
+    }
+    
+    func playAnimation() {
+        
+        walkingNode.isHidden = false
+        idleNode.isHidden = true
+        
+        //start playing the walking sound
+        player.play()
+        
+        let ground = storyNode.childNode(withName: "BUGScene", recursively: false)
+        //let aPosition = storyNode.childNode(withName: "A", recursively: true)?.position
+        //let anthonyPosition = storyNode.childNode(withName: "walkingNode", recursively: true)
+        if isWalking {
+            
+        }
+        ground?.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
+        walkingNode.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
+        idleNode.position = walkingNode.position
+    }
+    func stopAnimation() {
+        
+        idleNode.isHidden = false
+        walkingNode.isHidden = true
+        player.setVolume(0, fadeDuration: 0.75)
+        //stop playing the walking sound
+        player.stop()
+        player.setVolume(1, fadeDuration: 0)
     }
 }
 

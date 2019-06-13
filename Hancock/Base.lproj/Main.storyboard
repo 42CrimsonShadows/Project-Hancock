@@ -165,13 +165,27 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <segue destination="yGt-pD-ezq" kind="show" id="TqZ-00-exA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gap-S2-cah">
+                                <rect key="frame" x="697" y="1268" width="63" height="48"/>
+                                <color key="backgroundColor" red="0.93844169379999998" green="0.93565088510000005" blue="0.95562607050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" title="Walk">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rM2-ce-0fq"/>
+                                    <action selector="walkButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="bWf-HU-rkj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Rdc-Q4-PCO" firstAttribute="trailing" secondItem="BrB-h1-WRS" secondAttribute="trailing" id="EgC-rB-QXX"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstItem="Rdc-Q4-PCO" firstAttribute="top" secondItem="BrB-h1-WRS" secondAttribute="top" id="Mke-Se-p1Y"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="Gap-S2-cah" secondAttribute="bottom" constant="50" id="Mlh-kU-L06"/>
                             <constraint firstItem="nCK-7W-Jpw" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="SdS-c9-i7C"/>
+                            <constraint firstItem="Lnd-S8-8gH" firstAttribute="leading" secondItem="Gap-S2-cah" secondAttribute="trailing" constant="125" id="Ua5-dZ-Hks"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="Rdc-Q4-PCO" firstAttribute="leading" secondItem="BrB-h1-WRS" secondAttribute="leading" id="XGI-BW-co3"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
