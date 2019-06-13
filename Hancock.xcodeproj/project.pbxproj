@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		119507F8EEE8FFE2A8326505 /* Pods_Hancock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3E28B5AE1CAA606C394F4B /* Pods_Hancock.framework */; };
+		34DC042522B2DA36001C70DB /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC042322B2DA35001C70DB /* CanvasView.swift */; };
+		34DC042622B2DA36001C70DB /* ReticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC042422B2DA36001C70DB /* ReticleView.swift */; };
 		A00678EC22AEEB5B00846A2D /* line.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00678EB22AEEB5B00846A2D /* line.swift */; };
 		A015A9CB22B0FEAD0091650F /* oldCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015A9CA22B0FEAD0091650F /* oldCanvas.swift */; };
 		A02BCC3B22A86EA70059E3D8 /* activityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BCC3A22A86EA70059E3D8 /* activityViewController.swift */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		1A3E28B5AE1CAA606C394F4B /* Pods_Hancock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hancock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34DC042322B2DA35001C70DB /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		34DC042422B2DA36001C70DB /* ReticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReticleView.swift; sourceTree = "<group>"; };
 		7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.release.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.release.xcconfig"; sourceTree = "<group>"; };
 		A00678EB22AEEB5B00846A2D /* line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = line.swift; sourceTree = "<group>"; };
 		A015A9CA22B0FEAD0091650F /* oldCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oldCanvas.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 			children = (
 				A07974B222861DB000606889 /* StudentTableViewController.swift */,
 				A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */,
+				34DC042322B2DA35001C70DB /* CanvasView.swift */,
+				34DC042422B2DA36001C70DB /* ReticleView.swift */,
 				A0A028BB227CA9F500A7C787 /* AppDelegate.swift */,
 				A0A028BD227CA9F500A7C787 /* art.scnassets */,
 				A0A028BF227CA9F500A7C787 /* ViewController.swift */,
@@ -251,7 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A015A9CB22B0FEAD0091650F /* oldCanvas.swift in Sources */,
+				34DC042622B2DA36001C70DB /* ReticleView.swift in Sources */,
 				A0A028C0227CA9F500A7C787 /* ViewController.swift in Sources */,
+				34DC042522B2DA36001C70DB /* CanvasView.swift in Sources */,
 				A0A028BC227CA9F500A7C787 /* AppDelegate.swift in Sources */,
 				C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */,
 				C99A9BE122A058A700554D9A /* HomeViewController.swift in Sources */,

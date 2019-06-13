@@ -223,18 +223,24 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
-                                    <action selector="undoButton:" destination="yGt-pD-ezq" eventType="touchUpInside" id="By9-pd-VCF"/>
+                                    <action selector="clearView:" destination="yGt-pD-ezq" eventType="touchUpInside" id="OmQ-cX-Q5v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55X-dg-y8h">
                                 <rect key="frame" x="278" y="1292" width="95" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Precise"/>
+                                <connections>
+                                    <action selector="toggleUsePreciseLocations:" destination="yGt-pD-ezq" eventType="touchUpInside" id="zT4-Ic-xUR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-K8-aiy">
                                 <rect key="frame" x="157" y="1293" width="87" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Debug"/>
+                                <connections>
+                                    <action selector="toggleDebugDrawingsenderUIButton:" destination="yGt-pD-ezq" eventType="touchUpInside" id="rQZ-pq-QTd"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueY-pM-8oa" userLabel="Separator View" customClass="SerparatorView">
                                 <rect key="frame" x="0.0" y="1206" width="1024" height="66"/>
@@ -347,6 +353,20 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cXE-hm-SxM"/>
                     </view>
+                    <connections>
+                        <outlet property="altitudeAngleLabel" destination="fqo-in-g9e" id="RHl-eB-T0j"/>
+                        <outlet property="azimuthAngleLabel" destination="SYK-kW-jna" id="Rap-ls-foH"/>
+                        <outlet property="azimuthUnitVectorLabel" destination="KBZ-GN-eRo" id="i7z-5a-eOR"/>
+                        <outlet property="canvasView" destination="Las-os-uIu" id="N7y-Jx-Ufa"/>
+                        <outlet property="debugButton" destination="UQ5-K8-aiy" id="7Dt-tO-jcd"/>
+                        <outlet property="forceLabel" destination="msz-5r-FH5" id="2bi-Hu-8YG"/>
+                        <outlet property="locationLabel" destination="9Pa-b7-CmQ" id="JFg-wJ-dop"/>
+                        <outletCollection property="gagueLabelCollection" destination="KBZ-GN-eRo" collectionClass="NSMutableArray" id="d8w-ZM-d3G"/>
+                        <outletCollection property="gagueLabelCollection" destination="fqo-in-g9e" collectionClass="NSMutableArray" id="Zan-X0-t6a"/>
+                        <outletCollection property="gagueLabelCollection" destination="SYK-kW-jna" collectionClass="NSMutableArray" id="LAa-PU-a4F"/>
+                        <outletCollection property="gagueLabelCollection" destination="msz-5r-FH5" collectionClass="NSMutableArray" id="XAa-1d-DsF"/>
+                        <outletCollection property="gagueLabelCollection" destination="9Pa-b7-CmQ" collectionClass="NSMutableArray" id="oc2-fM-Oae"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoG-Ho-9Jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="y0a-H2-t61" userLabel="Exit" sceneMemberID="exit"/>

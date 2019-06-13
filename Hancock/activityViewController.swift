@@ -16,11 +16,33 @@ enum LetterState: Int16 {
     case DtoE
 }
 
-class activityViewController: UIViewController {
+class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     // MARK: - VARIABLES
     
-    let canvas = Canvas()
+    //let canvas = Canvas()
+    
+    private var useDebugDrawing = false
+    
+    private let reticleView: ReticleView = {
+        let view = ReticleView(frame: CGRect.null)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        
+        return view
+    }()
+    
+    //New properties
+    
+    @IBOutlet weak var canvasView: CanvasView!
+    @IBOutlet weak var debugButton: UIButton!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var forceLabel: UILabel!
+    @IBOutlet weak var azimuthAngleLabel: UILabel!
+    @IBOutlet weak var azimuthUnitVectorLabel: UILabel!
+    @IBOutlet weak var altitudeAngleLabel: UILabel!
+    
+    @IBOutlet private var gagueLabelCollection: [UILabel]!
     
     let AUnderlayView: UIImageView = {
         let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/AUnderlay.png")
@@ -61,72 +83,165 @@ class activityViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
-    @IBAction func undoButton(_ sender: Any) {
-        canvas.lines.removeAll()
-        canvas.checkpointLines.removeAll()
-        canvas.setNeedsDisplay()
-    }
+//    @IBAction func undoButton(_ sender: Any) {
+//        canvasView.lines.removeAll()
+//        canvasView.checkpointLines.removeAll()
+//        canvasView.setNeedsDisplay()
+//    }
     
     //MARK: - VIEWDIDLOAD & SETUP
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        canvasView.addSubview(reticalView)
         
-        setupCanvas()
+        toggleDebugDrawing(sender: debugButton)
+        clearGuages()
+        
+        if #available(iOS 12.1, *) {
+            let pencilInteraction = UIPencilInteraction()
+            pencilInteraction.delegate = self
+            view.addInteraction(pencilInteraction)
+        }
+        
+        //setupCanvas()
         setupAUnderlay()
         setupGreenlines()
+        
     }
     
-    private func setupCanvas() {
-        //Add the drawing canvas to the UIView
-        view.addSubview(canvas)
-        canvas.backgroundColor = UIColor(white: 0.5, alpha: 0)
-        
-        //this enables autolayout for our canvas
-        canvas.translatesAutoresizingMaskIntoConstraints = false
-        canvas.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        canvas.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        canvas.widthAnchor.constraint(equalToConstant: 600).isActive = true
-        canvas.heightAnchor.constraint(equalToConstant: 900).isActive = true
-    }
+    //MARK: -- Changes 1
+//    private func setupCanvas() {
+//        //Add the drawing canvas to the UIView
+//        view.addSubview(canvas)
+//        canvas.backgroundColor = UIColor(white: 0.5, alpha: 0)
+//
+//        //this enables autolayout for our canvas
+//        canvas.translatesAutoresizingMaskIntoConstraints = false
+//        canvas.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        canvas.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//        canvas.widthAnchor.constraint(equalToConstant: 600).isActive = true
+//        canvas.heightAnchor.constraint(equalToConstant: 900).isActive = true
+//    }
     
     private func setupAUnderlay() {
         //Add the letter A underlay image to the UIView under the canvas
-        view.insertSubview(AUnderlayView, belowSubview: canvas)
-        AUnderlayView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor).isActive = true
-        AUnderlayView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor).isActive = true
+        view.insertSubview(AUnderlayView, belowSubview: canvasView)
+        AUnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+        AUnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
         AUnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
         AUnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
     }
     public func setupGreenlines() {
         //Add the letter A1 green line to the UIView under the canvas
-        view.insertSubview(A1UnderlayView, belowSubview: canvas)
-        A1UnderlayView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor).isActive = true
-        A1UnderlayView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor).isActive = true
+        view.insertSubview(A1UnderlayView, belowSubview: canvasView)
+        A1UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+        A1UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
         A1UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
         A1UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
         A1UnderlayView.isHidden = true
         
-        canvas.A1GreenLine = A1UnderlayView
+        canvasView.A1GreenLine = A1UnderlayView
         
         //Add the letter A2 green line to the UIView under the canvas
-        view.insertSubview(A2UnderlayView, belowSubview: canvas)
-        A2UnderlayView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor).isActive = true
-        A2UnderlayView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor).isActive = true
+        view.insertSubview(A2UnderlayView, belowSubview: canvasView)
+        A2UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+        A2UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
         A2UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
         A2UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
         A2UnderlayView.isHidden = true
         
-        canvas.A2GreenLine = A2UnderlayView
+        canvasView.A2GreenLine = A2UnderlayView
         
         //Add the letter A3 green line to the UIView under the canvas
-        view.insertSubview(A3UnderlayView, belowSubview: canvas)
-        A3UnderlayView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor).isActive = true
-        A3UnderlayView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor).isActive = true
+        view.insertSubview(A3UnderlayView, belowSubview: canvasView)
+        A3UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+        A3UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
         A3UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
         A3UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
         A3UnderlayView.isHidden = true
         
-        canvas.A3GreenLine = A3UnderlayView
+        canvasView.A3GreenLine = A3UnderlayView
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        canvasView.drawTouches(touches, withEvent: event)
+        
+        touches.forEach { (touch) in updateGagues(with: touch)
+            
+            if useDebugDrawing, touch.type == .pencil {
+                reticleView.isHidden = false
+                updateReticleView(with: touch)
+            }
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        canvasView.drawTouches(touches, withEvent: event)
+        
+        touches.forEach { (touch) in
+            updateGagues(with: touch)
+            
+            if useDebugDrawing, touch.type == .pencil {
+                updateReticleView(with: touch)
+                
+                guard let predictedTouch = event?.predictedTouches(for: touch)?.last else { return }
+                
+                updateReticleView(with: predictedTouch, isPredicted: true)
+            }
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        canvasView.drawTouches(touches, withEvent: event)
+        canvasView.endTouches(touches, cancel: false)
+        
+        touches.forEach { (touch) in
+            clearGagues()
+            
+            if useDebugDrawing, touch.type == .pencil {
+                reticleView.isHidden = true
+            }
+        }
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touches.forEach { (touch) in
+            clearGagues()
+            
+            if useDebugDrawing, touch.type == .pencil {
+                reticleView.isHidden = true
+            }
+        }
+    }
+    
+    override func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
+        canvasView.updateEstimatedPropertiesForTouches(touches)
+    }
+    
+    //MARK: Actions
+    
+    @IBAction func clearView(_ sender: Any) {
+        canvasView.clear()
+    }
+    
+    @IBAction func toggleDebugDrawing(_ sender: UIButton) {
+        canvasView.isDebuggingEnabled = !canvasView.isDebuggingEnabled
+        useDebugDrawing.toggle()
+        sender.isSelected = canvasView.isDebuggingEnabled
+    }
+    
+    @IBAction func toggleUsePreciseLocations(_ sender: UIButton) {
+        canvasView.usePreciseLocations = !canvasView.usePreciseLocations
+        sender.isSelected = canvasView.usePreciseLocations
+    }
+    
+    //MARK: Convenience
+    
+    
+    
+    
+    
+    
+    
 }

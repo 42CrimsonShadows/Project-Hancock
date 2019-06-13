@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Canvas: UIView {
+class canvasView: UIView {
     
     //MARK: - CANVAS VARIABLES
     
