@@ -11,7 +11,7 @@ class Line: NSObject {
     // MARK: Properties
 
     // The live line.
-    private var points = [LinePoint]()
+    var points = [LinePoint]()
 
     // Use the estimation index of the touch to track points awaiting updates.
     private var pointsWaitingForUpdatesByEstimationIndex = [NSNumber: LinePoint]()
