@@ -45,6 +45,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func walkButtonPressed(_ sender: Any) {
         self.anthonyWalk()
     }
+    @IBAction func showAllButtonPressed(_ sender: Any) {
+        if maskingNode.isHidden == true {
+            maskingNode.isHidden = false
+        }
+        else{
+            maskingNode.isHidden = true
+        }
+    }
     
     
     // MARK: - VARIABLES
@@ -58,13 +66,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let animationNode = SCNNode()
     let walkingNode = SCNNode()
     let idleNode = SCNNode()
-    
-    //var animations = [String: CAAnimation]()
+    let maskingNode = SCNNode()
+
     var idle: Bool = true
     
     var isWalking: Bool = false
     
-    var player = AVAudioPlayer()
+    var walkPlayer = AVAudioPlayer()
+    var birdsPlayer = AVAudioPlayer()
+    var narrationPlayer1 = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,17 +85,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.loadModels()
         
         //setup audio player
-        let audioPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav")
+        let walkAudioPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav", inDirectory: "art.scnassets/Sounds")
+        let birdsAudioPath = Bundle.main.path(forResource: "Birds2", ofType: "wav", inDirectory: "art.scnassets/Sounds")
+        //let crack3AudioPath = Bundle.main.path(forResource: "RockBreak1", ofType: "wav")
+        //let narrationAudioPath = Bundle.main.path(forResource: "", ofType: "wav")
         
         do
         {
-            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
-            player.enableRate = true
-            player.rate = 0.5
+            try walkPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: walkAudioPath!))
+            walkPlayer.enableRate = true
+            walkPlayer.rate = 0.5
             
-        } catch
+        } catch {
+            print("WalkPlayer not available!")
+        }
+        do
         {
-            //process any errors
+            try birdsPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: birdsAudioPath!))
+            
+        } catch {
+            print("birdsPlayer not available!")
         }
     }
     
@@ -132,7 +151,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func initScene() {
         let scene = SCNScene()
-        //scene.lightingEnvironment.contents = "Hancock.scnassets/Textures/Environment_CUBE.jpg"
+        //scene.lightingEnvironment.contents = "art.scnassets/Textures/Environment_CUBE.jpg"
         //scene.lightingEnvironment.intensity = 2
         scene.physicsWorld.speed = 1
         scene.isPaused = false
@@ -250,7 +269,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //Update Animation Node
         self.animationNode.position = self.focusNode.position
-        self.animationNode.physicsBody?.resetTransform()
+        //self.animationNode.physicsBody?.resetTransform()
     }
 
     
@@ -260,10 +279,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard self.gameState == .hitStartToPlay else { return }
         DispatchQueue.main.async {
             self.updatePositions()
-            //self.groundNode.isHidden = false
             self.storyNode.isHidden = false
             self.idleNode.isHidden = false
             self.gameState = .playGame
+            self.birdsPlayer.play()
+            self.birdsPlayer.numberOfLoops = -1
         }
     }
     
@@ -271,10 +291,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard self.gameState == .playGame else { return }
         DispatchQueue.main.async {
             self.storyNode.isHidden = true
-            ///self.groundNode.isHidden = true
             self.idleNode.isHidden = true
             self.walkingNode.isHidden = true
             self.gameState = .detectSurface
+            self.birdsPlayer.stop()
+            self.walkPlayer.stop()
         }
     }
     
@@ -289,6 +310,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Load StoryScene Node
         let storyScene = SCNScene(named: "art.scnassets/AnthonyScene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "anthony", recursively: true)
+        storyNode.scale = SCNVector3(1, 1, 1)
+        storyNode.position = SCNVector3(0, -10, 0)
         storyNode.isHidden = true
         sceneView.scene.rootNode.addChildNode(storyNode)
         
@@ -297,11 +320,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         for child in idleAnthonyScene.rootNode.childNodes {
             idleNode.addChildNode(child)
         }
-        //sceneView.scene.rootNode.addChildNode(idleNode)
         storyNode.addChildNode(idleNode)
         idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
         walkingNode.position = SCNVector3(0, 0, 0)
-        //loadAnimation(withKey: "walking", sceneName: "art.scnassets/Anthony@WalkFixed", animationIdentifier: "Anthony@WalkFixed-1")
         idleNode.isHidden = true
         
         //Load walking Animation Node
@@ -310,15 +331,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
             walkingNode.addChildNode(child)
         }
         storyNode.addChildNode(walkingNode)
-        //sceneView.scene.rootNode.addChildNode(walkingNode)
         walkingNode.position = SCNVector3(0, 0, 0)
         walkingNode.scale = SCNVector3(0.02, 0.02, 0.02)
         walkingNode.isHidden = true
+        
+        //Load Scene Mask so we only see immidate area
+        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
+        for child in maskingScene.rootNode.childNodes {
+            maskingNode.addChildNode(child)
+        }
+        //maskingNode.position = SCNVector3(0, 0, 0)
+        //maskingNode.scale = SCNVector3(1, 1, 1)
+        storyNode.addChildNode(maskingNode)
     }
     
     func anthonyWalk() {
         if(idle) {
-            playAnimation()
+            playAnimation1()
             isWalking = true
         }
         else {
@@ -329,20 +358,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return
     }
     
-    func playAnimation() {
+    func playAnimation1() {
         
         walkingNode.isHidden = false
         idleNode.isHidden = true
         
         //start playing the walking sound
-        player.play()
+        walkPlayer.setVolume(0.5, fadeDuration: 0)
+        walkPlayer.play()
         
         let ground = storyNode.childNode(withName: "BUGScene", recursively: false)
-        //let aPosition = storyNode.childNode(withName: "A", recursively: true)?.position
-        //let anthonyPosition = storyNode.childNode(withName: "walkingNode", recursively: true)
-        if isWalking {
-            
-        }
         ground?.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
         walkingNode.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
         idleNode.position = walkingNode.position
@@ -351,10 +376,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         idleNode.isHidden = false
         walkingNode.isHidden = true
-        player.setVolume(0, fadeDuration: 0.75)
+        walkPlayer.setVolume(0, fadeDuration: 0.75)
+        
         //stop playing the walking sound
-        player.stop()
-        player.setVolume(1, fadeDuration: 0)
+        walkPlayer.stop()
+        walkPlayer.setVolume(1, fadeDuration: 0)
     }
 }
 

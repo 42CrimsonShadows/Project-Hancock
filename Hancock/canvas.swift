@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class Canvas: UIView {
     
@@ -49,6 +50,8 @@ class Canvas: UIView {
     var A3GreenLine: UIImageView?
     
     var goodTouch: Bool = false
+    
+    var audioPlayer = AVAudioPlayer()
     
     override func draw(_ rect: CGRect) {
         
@@ -207,12 +210,15 @@ class Canvas: UIView {
             
             if AtoB {
                 A1GreenLine?.isHidden = false
+                playAudioFile(file: "RockBreak1", type: "wav")
             }
             if  AtoC {
                 A2GreenLine?.isHidden = false
+                playAudioFile(file: "RockBreak2", type: "aiff")
             }
             if  DtoE {
                 A3GreenLine?.isHidden = false
+                playAudioFile(file: "RockExplode", type: "wav")
             }
         }
         setNeedsDisplay()
@@ -254,6 +260,20 @@ class Canvas: UIView {
             DtoE = true
         }
         print("letterState is now:", letterState)
+    }
+    
+    func playAudioFile(file: String, type: String) {
+        let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        
+        do
+        {
+            try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            
+        } catch {
+            print("AudioPlayer not available!")
+        }
+        
+        audioPlayer.play()
     }
 }
 

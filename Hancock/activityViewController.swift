@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 // MARK: - Game State
 
@@ -23,7 +24,7 @@ class activityViewController: UIViewController {
     let canvas = Canvas()
     
     let AUnderlayView: UIImageView = {
-        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/AUnderlay.png")
+        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A-Underlay_Yellow.png")
         let AUnderlayView = UIImageView(image: AUnderlay)
         //this enables autolayout for our AUnderlayView
         AUnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +32,7 @@ class activityViewController: UIViewController {
     }()
     let A1UnderlayView: UIImageView = {
         //Add the letter A1 image to the canvas
-        let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1.png")
+        let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1_Cracks.png")
         let A1UnderlayView = UIImageView(image: A1Underlay)
         //this enables autolayout for our AUnderlayView
         A1UnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +40,7 @@ class activityViewController: UIViewController {
     }()
     let A2UnderlayView: UIImageView = {
         //Add the letter A2 image to the canvas
-        let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2.png")
+        let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2_Cracks.png")
         let A2UnderlayView = UIImageView(image: A2Underlay)
         //this enables autolayout for our A2UnderlayView
         A2UnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,14 +48,14 @@ class activityViewController: UIViewController {
     }()
     let A3UnderlayView: UIImageView = {
         //Add the letter A3 image to the canvas
-        let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3.png")
+        let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3_Cracks.png")
         let A3UnderlayView = UIImageView(image: A3Underlay)
         //this enables autolayout for our A3UnderlayView
         A3UnderlayView.translatesAutoresizingMaskIntoConstraints = false
         return A3UnderlayView
     }()
     
-    
+    var player1 = AVAudioPlayer()
     
     //MARK: - ACTIONS
     
@@ -75,6 +76,22 @@ class activityViewController: UIViewController {
         setupCanvas()
         setupAUnderlay()
         setupGreenlines()
+        
+//        let crack1AudioPath = Bundle.main.path(forResource: "RockBreak1", ofType: "wav")
+//        let crack2AudioPath = Bundle.main.path(forResource: "RockBreak2", ofType: "aiff")
+//
+//        do {
+//            try crumblePlayer1 = AVAudioPlayer(contentsOf: URL(fileURLWithPath: crack1AudioPath!))
+//
+//        } catch {
+//            print("AudioPlayer not available!")
+//        }
+//        do {
+//            try crumblePlayer1 = AVAudioPlayer(contentsOf: URL(fileURLWithPath: crack2AudioPath!))
+//
+//        } catch {
+//            print("AudioPlayer not available!")
+//        }
     }
     
     private func setupCanvas() {
