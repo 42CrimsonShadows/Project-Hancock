@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		119507F8EEE8FFE2A8326505 /* Pods_Hancock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3E28B5AE1CAA606C394F4B /* Pods_Hancock.framework */; };
+		3446B59522B8201600C785BE /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3446B59422B8201600C785BE /* Formatters.swift */; };
 		34DC042522B2DA36001C70DB /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC042322B2DA35001C70DB /* CanvasView.swift */; };
 		34DC042622B2DA36001C70DB /* ReticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC042422B2DA36001C70DB /* ReticleView.swift */; };
 		A00678EC22AEEB5B00846A2D /* line.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00678EB22AEEB5B00846A2D /* line.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		1A3E28B5AE1CAA606C394F4B /* Pods_Hancock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hancock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3446B59422B8201600C785BE /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		34DC042322B2DA35001C70DB /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		34DC042422B2DA36001C70DB /* ReticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReticleView.swift; sourceTree = "<group>"; };
 		7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.release.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		A0A028BA227CA9F500A7C787 /* Hancock */ = {
 			isa = PBXGroup;
 			children = (
+				3446B59422B8201600C785BE /* Formatters.swift */,
 				A07974B222861DB000606889 /* StudentTableViewController.swift */,
 				A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */,
 				34DC042322B2DA35001C70DB /* CanvasView.swift */,
@@ -262,6 +265,7 @@
 				34DC042522B2DA36001C70DB /* CanvasView.swift in Sources */,
 				A0A028BC227CA9F500A7C787 /* AppDelegate.swift in Sources */,
 				C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */,
+				3446B59522B8201600C785BE /* Formatters.swift in Sources */,
 				C99A9BE122A058A700554D9A /* HomeViewController.swift in Sources */,
 				C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */,
 				A00678EC22AEEB5B00846A2D /* line.swift in Sources */,

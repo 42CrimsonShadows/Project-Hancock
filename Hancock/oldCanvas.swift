@@ -95,33 +95,33 @@ class canvasView: UIView {
         }
         
         //draw line
-        lines.forEach { (line) in
-            context.setStrokeColor(lineColor)
-            context.setLineCap(.round)
-            context.setLineWidth(20)
-            for (i, p) in line.points.enumerated() {
-                if i == 0 {
-                    context.move(to: p)
-                } else {
-                    context.addLine(to: p)
-                }
-            }
-            context.strokePath()
-        }
-        
-        checkpointLines.forEach { (line) in
-            context.setStrokeColor(checkPointColor)
-            context.setLineCap(.round)
-            context.setLineWidth(20)
-            for (i, p) in line.points.enumerated() {
-                if i == 0 {
-                    context.move(to: p)
-                } else {
-                    context.addLine(to: p)
-                }
-            }
-            context.strokePath()
-        }
+//        lines.forEach { (line) in
+//            context.setStrokeColor(lineColor)
+//            context.setLineCap(.round)
+//            context.setLineWidth(20)
+//            for (i, p) in line.points.enumerated() {
+//                if i == 0 {
+//                    context.move(to: p)
+//                } else {
+//                    context.addLine(to: p)
+//                }
+//            }
+//            context.strokePath()
+//        }
+//
+//        checkpointLines.forEach { (line) in
+//            context.setStrokeColor(checkPointColor)
+//            context.setLineCap(.round)
+//            context.setLineWidth(20)
+//            for (i, p) in line.points.enumerated() {
+//                if i == 0 {
+//                    context.move(to: p)
+//                } else {
+//                    context.addLine(to: p)
+//                }
+//            }
+//            context.strokePath()
+//        }
         
         context.setStrokeColor(dotPointColor)
         context.setLineCap(.round)
@@ -160,7 +160,7 @@ class canvasView: UIView {
         print("DtoE=", DtoE)
         
         if CGPointDistance(from: firstPoint, to: startingPoint) < 50 {
-            lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
+           // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
             goodTouch = true
         }
     }
@@ -177,7 +177,7 @@ class canvasView: UIView {
         if goodTouch {
             guard var lastLine = lines.popLast() else { return }
             
-            lastLine.points.append(point)
+            //lastLine.points.append(point)
             
             lines.append(lastLine)
             
@@ -191,13 +191,13 @@ class canvasView: UIView {
         guard var lastLine = lines.popLast() else { return }
         
         if CGPointDistance(from: lastPoint , to: targetPoint) > 50 {
-            lastLine.points.removeAll()
+            //lastLine.points.removeAll()
             //setNeedsDisplay()
             print("line not complete")
         }
         else {
             defaultColor = UIColor.green.cgColor
-            lastLine.points.append(lastPoint)
+            //lastLine.points.append(lastPoint)
             lines.append(lastLine)
             checkpointLines.append(lastLine)
             goodTouch = false

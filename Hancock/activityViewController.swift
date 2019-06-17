@@ -93,10 +93,10 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        canvasView.addSubview(reticalView)
+        canvasView.addSubview(reticleView)
         
-        toggleDebugDrawing(sender: debugButton)
-        clearGuages()
+        toggleDebugDrawing(debugButton)
+        clearGagues()
         
         if #available(iOS 12.1, *) {
             let pencilInteraction = UIPencilInteraction()
@@ -238,7 +238,56 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     //MARK: Convenience
     
+    /// - Tag: PencilProperties
     
+    private func updateReticleView(with touch: UITouch, isPredicted: Bool = false){
+        guard touch.type == .pencil else { return }
+        
+        reticleView.predictedDotLayer.isHidden = !isPredicted
+        reticleView.predictedLineLayer.isHidden = !isPredicted
+        
+        let azimuthAngle = touch.azimuthAngle(in: canvasView)
+        let azimuthUnitVector = touch.azimuthUnitVector(in: canvasView)
+        let altitudeAngle = touch.altitudeAngle
+        
+        if isPredicted {
+            reticleView.predictedAzimuthAngle = azimuthAngle
+            reticleView.predictedAzimuthUnitVector = azimuthUnitVector
+            reticleView.predictedAltitudeAngle = altitudeAngle
+        } else {
+            let location = touch.preciseLocation(in: canvasView)
+            reticleView.center = location
+            reticleView.actualAzimuthAngle = azimuthAngle
+            reticleView.actualAzimuthUnitVector = azimuthUnitVector
+            reticleView.actualAltitudeAngle  = altitudeAngle
+        }
+    }
+    
+    private func updateGagues(with touch: UITouch) {
+        forceLabel.text = touch.force.valueFormattedForDisplay ?? ""
+        
+        let azimuthUnitVector = touch.azimuthUnitVector(in: canvasView)
+        azimuthUnitVectorLabel.text = azimuthUnitVector.valueFormattedForDisplay ?? ""
+        
+        let azimuthAngle = touch.azimuthAngle(in: canvasView)
+        azimuthAngleLabel.text = azimuthAngle.valueFormattedForDisplay ?? ""
+        
+        altitudeAngleLabel.text = touch.altitudeAngle.valueFormattedForDisplay ?? ""
+        
+    }
+    
+    private func clearGagues() {
+        gagueLabelCollection.forEach { (label) in
+            label.text = ""
+        }
+    }
+    
+    @available(iOS 12.1, *)
+    func pencilInteractionDidTap(_ interaction: UIPencilInteraction) {
+        guard UIPencilInteraction.preferredTapAction == .switchPrevious else { return }
+        
+        toggleDebugDrawing(debugButton)
+    }
     
     
     
