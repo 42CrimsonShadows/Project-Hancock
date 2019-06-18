@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        //sleep(3) //sleep for 3 seconds while on the launchscreen
+        sleep(1) //sleep for 3 seconds while on the launchscreen
         
         return true
     }

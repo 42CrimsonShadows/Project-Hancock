@@ -17,9 +17,17 @@ enum GameState: Int16 {
     case hitStartToPlay
     case playGame
 }
+enum GameProgress: Int16 {
+    case toLetterA
+    case toLetterB
+    case toLetterC
+    case toLetterD
+    case toLetterE
+    case toLetterF
+}
 
 //By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, AVAudioPlayerDelegate {
     
     //MARK: - OUTLETS
     @IBOutlet var sceneView: ARSCNView!
@@ -59,6 +67,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var trackingStatus: String = ""
     var statusMessage: String = ""
     var gameState: GameState = .detectSurface
+    var gameProgress: GameProgress = .toLetterA
     var focusPoint: CGPoint!
     var focusNode: SCNNode!
     var groundNode: SCNNode!
@@ -69,12 +78,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let maskingNode = SCNNode()
 
     var idle: Bool = true
-    
     var isWalking: Bool = false
     
     var walkPlayer = AVAudioPlayer()
     var birdsPlayer = AVAudioPlayer()
-    var narrationPlayer1 = AVAudioPlayer()
+    var narrationPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,16 +104,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
             walkPlayer.enableRate = true
             walkPlayer.rate = 0.5
             
-        } catch {
-            print("WalkPlayer not available!")
-        }
-        do
-        {
             try birdsPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: birdsAudioPath!))
             
         } catch {
-            print("birdsPlayer not available!")
+            print("WalkPlayer not available!")
         }
+//        do
+//        {
+//            try birdsPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: birdsAudioPath!))
+//
+//        } catch {
+//            print("birdsPlayer not available!")
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -285,6 +295,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.birdsPlayer.play()
             self.birdsPlayer.numberOfLoops = -1
         }
+        storyTime()
     }
     
     func resetGame(){
@@ -372,6 +383,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         walkingNode.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
         idleNode.position = walkingNode.position
     }
+    
     func stopAnimation() {
         
         idleNode.isHidden = false
@@ -381,10 +393,49 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //stop playing the walking sound
         walkPlayer.stop()
         walkPlayer.setVolume(1, fadeDuration: 0)
+        
+        if gameProgress == .toLetterA {
+            //wait 2 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                
+                //wait 6 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    //switch to the Letter A ViewController
+                    self.performSegue(withIdentifier: "Letter Page", sender: self)
+                })
+            })
+            
+        }
+    }
+    
+    func storyTime(){
+        playAudioNarrationFile(file: "Line1", type: "mp3")
+        //wait 7 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+            self.anthonyWalk()
+            
+            //wait 3 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                self.playAudioNarrationFile(file: "Line2", type: "mp3")
+            })
+        })
+    }
+    
+    //pass it an audiofile and it will play it!
+    func playAudioNarrationFile(file: String, type: String) {
+        let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        
+        do
+        {
+            try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            
+        } catch {
+            print("AudioPlayer not available!")
+        }
+        self.narrationPlayer.play()
     }
 }
-
-
 
 extension ViewController : ARSCNViewDelegate {
     

@@ -22,6 +22,7 @@ class activityViewController: UIViewController {
     // MARK: - VARIABLES
     
     let canvas = Canvas()
+    var player1 = AVAudioPlayer()
     
     let AUnderlayView: UIImageView = {
         let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A-Underlay_Yellow.png")
@@ -55,8 +56,6 @@ class activityViewController: UIViewController {
         return A3UnderlayView
     }()
     
-    var player1 = AVAudioPlayer()
-    
     //MARK: - ACTIONS
     
     @IBAction func backButton(_ sender: Any) {
@@ -75,23 +74,12 @@ class activityViewController: UIViewController {
         
         setupCanvas()
         setupAUnderlay()
+        //these are the lines with cracks
         setupGreenlines()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.canvas.playAudioFile(file: "Line4", type: "mp3")
+        })
         
-//        let crack1AudioPath = Bundle.main.path(forResource: "RockBreak1", ofType: "wav")
-//        let crack2AudioPath = Bundle.main.path(forResource: "RockBreak2", ofType: "aiff")
-//
-//        do {
-//            try crumblePlayer1 = AVAudioPlayer(contentsOf: URL(fileURLWithPath: crack1AudioPath!))
-//
-//        } catch {
-//            print("AudioPlayer not available!")
-//        }
-//        do {
-//            try crumblePlayer1 = AVAudioPlayer(contentsOf: URL(fileURLWithPath: crack2AudioPath!))
-//
-//        } catch {
-//            print("AudioPlayer not available!")
-//        }
     }
     
     private func setupCanvas() {
@@ -115,6 +103,7 @@ class activityViewController: UIViewController {
         AUnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
         AUnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
     }
+    
     public func setupGreenlines() {
         //Add the letter A1 green line to the UIView under the canvas
         view.insertSubview(A1UnderlayView, belowSubview: canvas)
@@ -145,5 +134,15 @@ class activityViewController: UIViewController {
         A3UnderlayView.isHidden = true
         
         canvas.A3GreenLine = A3UnderlayView
+    }
+    
+    public func goBack() {
+        
+        //dismissItem.dismiss(animated: false, completion: nil)
+        print("Go Back Was Called")
+        //self.performSegue(withIdentifier: "Back To Scene", sender: self)
+        //navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 }

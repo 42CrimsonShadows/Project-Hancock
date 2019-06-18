@@ -53,6 +53,8 @@ class Canvas: UIView {
     
     var audioPlayer = AVAudioPlayer()
     
+
+    
     override func draw(_ rect: CGRect) {
         
         super.draw(rect)
@@ -203,22 +205,51 @@ class Canvas: UIView {
             lastLine.points.append(lastPoint)
             lines.append(lastLine)
             checkpointLines.append(lastLine)
+            //nextStep()
             goodTouch = false
-            nextStep()
-            //setNeedsDisplay()
-            print("line complete")
             
-            if AtoB {
+            switch letterState {
+            case .AtoB:
                 A1GreenLine?.isHidden = false
                 playAudioFile(file: "RockBreak1", type: "wav")
-            }
-            if  AtoC {
+                //wait 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.playAudioFile(file: "Line5", type: "mp3")
+                    
+                    //wait 1 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.playAudioFile(file: "Line6", type: "mp3")
+                    })
+                })
+                letterState = .AtoC
+                AtoB = true
+            case .AtoC:
                 A2GreenLine?.isHidden = false
                 playAudioFile(file: "RockBreak2", type: "aiff")
-            }
-            if  DtoE {
+                //wait 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.playAudioFile(file: "Line7", type: "mp3")
+                    
+                })
+                letterState = .DtoE
+                AtoC = true
+            case .DtoE:
                 A3GreenLine?.isHidden = false
                 playAudioFile(file: "RockExplode", type: "wav")
+                
+                //wait 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.playAudioFile(file: "Line8", type: "mp3")
+                    
+                    //wait 2 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                        activityViewController().goBack()
+                        //activityViewController().dismiss(animated: false, completion: nil)
+                        //activityViewController().performSegue(withIdentifier: "Back To Scene", sender: self)
+                        
+                    })
+                })
+                DtoE = true
             }
         }
         setNeedsDisplay()
@@ -245,7 +276,6 @@ class Canvas: UIView {
         case .AtoB:
             startingPoint = aStartPoint;
             targetPoint = cStartPoint;
-            print("letterstate put target point at", targetPoint)
             letterState = .AtoC
             AtoB = true
         case .AtoC:
