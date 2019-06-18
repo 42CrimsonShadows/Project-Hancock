@@ -10,6 +10,32 @@ import UIKit
 class CanvasView: UIView {
     // MARK: Properties
 
+    var lastTouch = CGPoint.zero
+    var aStartPoint = CGPoint()
+    var aEndPoint = CGPoint()
+    var bStartPoint = CGPoint()
+    var bEndPoint = CGPoint()
+    var cStartPoint = CGPoint()
+    var cEndPoint = CGPoint()
+    var dStartPoint = CGPoint()
+    var dEndPoint = CGPoint()
+    var eStartPoint = CGPoint()
+    var eEndPoint = CGPoint()
+    var lineColor = UIColor.blue.cgColor
+    var checkPointColor = UIColor.darkGray.cgColor
+    var dotPointColor = UIColor.green.cgColor
+    var defaultColor = UIColor.black.cgColor
+    
+    var letterState: LetterState = .AtoB
+    var currentComplete = false
+    var AtoB = false
+    var AtoC = false
+    var DtoE = false
+    
+    var startingPoint = CGPoint()
+    var targetPoint = CGPoint()
+    
+    var goodTouch: Bool = false
     //    var A1GreenLine: UIImageView?
     var A1GreenLine: UIImageView?
     var A2GreenLine: UIImageView?
@@ -211,7 +237,7 @@ class CanvasView: UIView {
         for touch in touches {
             // Skip over touches that do not correspond to an active line.
             guard let line = activeLines.object(forKey: touch) else { continue }
-
+            
             // If this is a touch cancellation, cancel the associated line.
             if cancel { updateRect = updateRect.union(line.cancel()) }
 
@@ -281,6 +307,41 @@ class CanvasView: UIView {
 
         // Store into finished lines to allow for a full redraw on option changes.
         finishedLines.append(line)
+    }
+    
+    func CGPointDistanceSquared(from: CGPoint, to:  CGPoint) -> CGFloat {
+        let calcOne = (from.x - to.x) * (from.x - to.x)
+        let calcTwo = (from.y - to.y) * (from.y - to.y)
+        return (calcOne + calcTwo)
+    }
+    
+    func CGPointDistance(from: CGPoint, to: CGPoint) -> CGFloat {
+        return sqrt(CGPointDistanceSquared(from: from, to: to))
+    }
+    
+    //MARK: - LETTERSTATE SWITCH
+    
+    func nextStep(){
+        
+        switch letterState {
+        case .AtoB:
+            startingPoint = aStartPoint;
+            targetPoint = cStartPoint;
+            print("letterstate put target point at", targetPoint)
+            letterState = .AtoC
+            AtoB = true
+        case .AtoC:
+            startingPoint = dStartPoint;
+            targetPoint = eStartPoint;
+            letterState = .DtoE
+            AtoC = true
+        case .DtoE:
+            //startingPoint = aStartPoint;
+            //targetPoint = bStartPoint;
+            //letterState = .DtoE
+            DtoE = true
+        }
+        print("letterState is now:", letterState)
     }
 }
 

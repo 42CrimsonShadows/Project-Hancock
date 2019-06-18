@@ -35,6 +35,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     //New properties
     
     @IBOutlet weak var canvasView: CanvasView!
+
     @IBOutlet weak var debugButton: UIButton!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var forceLabel: UILabel!
@@ -104,25 +105,25 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             view.addInteraction(pencilInteraction)
         }
         
-        //setupCanvas()
+        setupCanvas()
         setupAUnderlay()
         setupGreenlines()
         
     }
     
     //MARK: -- Changes 1
-//    private func setupCanvas() {
-//        //Add the drawing canvas to the UIView
-//        view.addSubview(canvas)
-//        canvas.backgroundColor = UIColor(white: 0.5, alpha: 0)
-//
-//        //this enables autolayout for our canvas
-//        canvas.translatesAutoresizingMaskIntoConstraints = false
-//        canvas.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        canvas.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-//        canvas.widthAnchor.constraint(equalToConstant: 600).isActive = true
-//        canvas.heightAnchor.constraint(equalToConstant: 900).isActive = true
-//    }
+    private func setupCanvas() {
+       //Add the drawing canvas to the UIView
+       view.addSubview(canvasView)
+        canvasView.backgroundColor = UIColor(white: 0.5, alpha: 0)
+
+        //this enables autolayout for our canvas
+        canvasView.translatesAutoresizingMaskIntoConstraints = false
+        canvasView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        canvasView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        canvasView.widthAnchor.constraint(equalToConstant: 600).isActive = true
+        canvasView.heightAnchor.constraint(equalToConstant: 900).isActive = true
+    }
     
     private func setupAUnderlay() {
         //Add the letter A underlay image to the UIView under the canvas
