@@ -113,6 +113,48 @@ class CanvasView: UIView {
         let context = UIGraphicsGetCurrentContext()!
 
         context.setLineCap(.round)
+        
+        if !AtoB {
+            print("Made the first dot")
+            //make first dot
+            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            context.move(to: aStartPoint)
+            context.addLine(to: aEndPoint)
+            
+            //make second dot
+            self.bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+            self.bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+            context.move(to: bStartPoint)
+            context.addLine(to: bEndPoint)
+            
+        }
+        else if AtoB && !AtoC {
+            //make first dot
+            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            context.move(to: aStartPoint)
+            context.addLine(to: aEndPoint)
+            
+            //make second dot
+            self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
+            self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
+            context.move(to: cStartPoint)
+            context.addLine(to: cEndPoint)
+            
+        }
+        else {
+            self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
+            self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
+            context.move(to: dStartPoint)
+            context.addLine(to: dEndPoint)
+            
+            self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
+            self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
+            context.move(to: eStartPoint)
+            context.addLine(to: eEndPoint)
+            
+        }
 
         if needsFullRedraw {
             setFrozenImageNeedsUpdate()
@@ -134,6 +176,11 @@ class CanvasView: UIView {
         for line in lines {
             line.drawInContext(context, isDebuggingEnabled: isDebuggingEnabled, usePreciseLocation: usePreciseLocations)
         }
+        context.setStrokeColor(dotPointColor)
+        context.setLineCap(.round)
+        context.setLineWidth(20)
+        
+        context.strokePath()
     }
 
     private func setFrozenImageNeedsUpdate() {
