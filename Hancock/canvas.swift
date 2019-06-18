@@ -243,7 +243,7 @@ class Canvas: UIView {
                     
                     //wait 2 second
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                        activityViewController().goBack()
+                        //activityViewController().goBack()
                         //activityViewController().dismiss(animated: false, completion: nil)
                         //activityViewController().performSegue(withIdentifier: "Back To Scene", sender: self)
                         
