@@ -22,6 +22,7 @@ class activityViewController: UIViewController {
     // MARK: - VARIABLES
     
     let canvas = Canvas()
+    
     var player1 = AVAudioPlayer()
     
     let AUnderlayView: UIImageView = {
@@ -76,6 +77,8 @@ class activityViewController: UIViewController {
         setupAUnderlay()
         //these are the lines with cracks
         setupGreenlines()
+        
+        //wait one second
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             self.canvas.playAudioFile(file: "Line4", type: "mp3")
         })
