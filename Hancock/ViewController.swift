@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import AVFoundation
 
 // MARK: - Game State
 enum GameState: Int16 {
@@ -30,8 +31,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var startButton: UIButton!
     
-    
     //MARK: ACTIONS
+    @IBAction func goButtonPressed(_ sender: Any) {
+    }
     @IBAction func setStudentInfo(_ sender: UIButton) {
     }
     @IBAction func startButtonPressed(_ sender: Any) {
