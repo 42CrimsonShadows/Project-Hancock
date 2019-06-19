@@ -286,11 +286,12 @@ class CanvasView: UIView {
     func endTouches(_ touches: Set<UITouch>, cancel: Bool) {
         var updateRect = CGRect.null
         goodTouch = false
-
+        guard let lastPoint = touches.first?.location(in: self) else { return }
+        
         for touch in touches {
             // Skip over touches that do not correspond to an active line.
             guard let line = activeLines.object(forKey: touch) else { continue }
-            line.addPointOfType(.cancelled, for: touch, in: self)
+            
             // If this is a touch cancellation, cancel the associated line.
             if cancel { updateRect = updateRect.union(line.cancel()) }
             
@@ -307,6 +308,13 @@ class CanvasView: UIView {
 
             // This touch is ending, remove the line corresponding to it from `activeLines`.
             activeLines.removeObject(forKey: touch)
+        }
+        if CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
+            
+            lines.removeAll()
+            needsFullRedraw = true
+            setNeedsDisplay()
+            
         }
 
         setNeedsDisplay(updateRect)
@@ -366,8 +374,9 @@ class CanvasView: UIView {
             print("good line")
         } else {
             print("not a good line")
+            
 //            for line in lines {
-//                
+//                line.cancel()
 //            }
             
             
