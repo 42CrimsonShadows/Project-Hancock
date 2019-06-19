@@ -9,6 +9,8 @@ import UIKit
 
 class CanvasView: UIView {
     // MARK: Properties
+    
+    
 
     var lastTouch = CGPoint.zero
     var aStartPoint = CGPoint()
@@ -36,6 +38,7 @@ class CanvasView: UIView {
     var targetPoint = CGPoint()
     
     var goodTouch: Bool = false
+    var goodLine: Bool = false
     //    var A1GreenLine: UIImageView?
     var A1GreenLine: UIImageView?
     var A2GreenLine: UIImageView?
@@ -115,16 +118,16 @@ class CanvasView: UIView {
         context.setLineCap(.round)
         
         if !AtoB {
-            print("Made the first dot")
+            
             //make first dot
-            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+            aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
             context.move(to: aStartPoint)
             context.addLine(to: aEndPoint)
             
             //make second dot
-            self.bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-            self.bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+            bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+            bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
             context.move(to: bStartPoint)
             context.addLine(to: bEndPoint)
             
@@ -201,6 +204,7 @@ class CanvasView: UIView {
     // MARK: Convenience
 
     func drawTouches(_ touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
         var updateRect = CGRect.null
 
         for touch in touches {
@@ -271,6 +275,7 @@ class CanvasView: UIView {
 
             let touchRect = line.addPointOfType(type, for: touch, in: self)
             accumulatedRect = accumulatedRect.union(touchRect)
+            
 
             commitLine(line)
         }
@@ -280,17 +285,20 @@ class CanvasView: UIView {
 
     func endTouches(_ touches: Set<UITouch>, cancel: Bool) {
         var updateRect = CGRect.null
+        goodTouch = false
 
         for touch in touches {
             // Skip over touches that do not correspond to an active line.
             guard let line = activeLines.object(forKey: touch) else { continue }
-            
+            line.addPointOfType(.cancelled, for: touch, in: self)
             // If this is a touch cancellation, cancel the associated line.
             if cancel { updateRect = updateRect.union(line.cancel()) }
+            
 
             // If the line is complete (no points needing updates) or updating isn't enabled, move the line to the `frozenImage`.
             if line.isComplete {
                 finishLine(line)
+                
             }
             // Otherwise, add the line to our map of touches to lines pending update.
             else {
@@ -346,6 +354,7 @@ class CanvasView: UIView {
 
     private func finishLine(_ line: Line) {
         // Have the line draw any remaining segments into the `frozenContext`. All should be fixed now.
+        if goodLine {
         line.drawFixedPointsInContext(frozenContext, isDebuggingEnabled: isDebuggingEnabled, usePreciseLocation: usePreciseLocations, commitAll: true)
         setFrozenImageNeedsUpdate()
 
@@ -354,6 +363,16 @@ class CanvasView: UIView {
 
         // Store into finished lines to allow for a full redraw on option changes.
         finishedLines.append(line)
+            print("good line")
+        } else {
+            print("not a good line")
+//            for line in lines {
+//                
+//            }
+            
+            
+            
+        }
     }
     
     func CGPointDistanceSquared(from: CGPoint, to:  CGPoint) -> CGFloat {

@@ -85,6 +85,7 @@ class Line: NSObject {
     }
 
     func cancel() -> CGRect {
+        
         // Process each point in the line and accumulate the `CGRect` containing all the points.
         let updateRect = points.reduce(CGRect.null) { accumulated, point in
             // Update the type set to include `.Cancelled`.

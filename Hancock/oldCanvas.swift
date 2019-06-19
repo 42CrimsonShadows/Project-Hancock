@@ -134,56 +134,27 @@ class canvasView: UIView {
     //MARK: - TOUCHES
     
     //when figure touches the screen
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //construct an array of CGpoints and add them to an array of lines
-        
-        if !AtoB {
-            startingPoint = aStartPoint
-            targetPoint = bStartPoint
-        }
-        if AtoB {
-            startingPoint = aStartPoint
-            targetPoint = cStartPoint
-        }
-        if AtoC {
-            startingPoint = dStartPoint
-            targetPoint = eStartPoint
-        }
-        
-        guard let firstPoint = touches.first?.location(in: self) else { return }
-        print("touches began")
-        
-        print("Startpoint= ", startingPoint)
-        print("Targetpoint= ", targetPoint)
-        print("AtoB=", AtoB)
-        print("AtoC=", AtoC)
-        print("DtoE=", DtoE)
-        
-        if CGPointDistance(from: firstPoint, to: startingPoint) < 50 {
-           // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
-            goodTouch = true
-        }
-    }
+    
     
     //when finger moves after touches began
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        guard let point = touches.first?.location(in: self) else { return }
-        
-        //print("Distance to aStartPoint: ", CGPointDistance(from: point, to: startingPoint))
-        //test where your mouse is when you hold the mouse button
-        //print("Point: ", point)
-        
-        if goodTouch {
-            guard var lastLine = lines.popLast() else { return }
-            
-            //lastLine.points.append(point)
-            
-            lines.append(lastLine)
-            
-            setNeedsDisplay()
-        }
-    }
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        
+//        guard let point = touches.first?.location(in: self) else { return }
+//        
+//        //print("Distance to aStartPoint: ", CGPointDistance(from: point, to: startingPoint))
+//        //test where your mouse is when you hold the mouse button
+//        //print("Point: ", point)
+//        
+//        if goodTouch {
+//            guard var lastLine = lines.popLast() else { return }
+//            
+//            //lastLine.points.append(point)
+//            
+//            lines.append(lastLine)
+//            
+//            setNeedsDisplay()
+//        }
+//    }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("Touches Ended")

@@ -20,7 +20,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     // MARK: - VARIABLES
     
-    //let canvas = Canvas()
+    let canvas = CanvasView()
     
     private var useDebugDrawing = false
     
@@ -114,7 +114,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     //MARK: -- Changes 1
     private func setupCanvas() {
        //Add the drawing canvas to the UIView
-       view.addSubview(canvasView)
+       //view.addSubview(canvas)
         canvasView.backgroundColor = UIColor(white: 0.5, alpha: 0)
 
         //this enables autolayout for our canvas
@@ -166,18 +166,60 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        canvasView.drawTouches(touches, withEvent: event)
+        //canvasView.drawTouches(touches, withEvent: event)
+        guard let firstPoint = touches.first?.location(in: canvasView) else { return }
+        print("Drawing in touchesBegan activityViewController")
+        print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: canvasView.startingPoint))
+        print(canvasView.startingPoint)
+        print(canvasView.targetPoint)
         
-        touches.forEach { (touch) in updateGagues(with: touch)
+        if !canvasView.AtoB {
+            canvasView.startingPoint = canvasView.aStartPoint
+            canvasView.targetPoint = canvasView.bStartPoint
             
-            if useDebugDrawing, touch.type == .pencil {
-                reticleView.isHidden = false
-                updateReticleView(with: touch)
+        }
+        if canvasView.AtoB {
+            canvasView.startingPoint = canvasView.aStartPoint
+            canvasView.targetPoint = canvasView.cStartPoint
+        }
+        if canvasView.AtoC {
+            canvasView.startingPoint = canvasView.dStartPoint
+            canvasView.targetPoint = canvasView.eStartPoint
+        }
+        print("touches began")
+        
+        print("Startpoint= ", canvasView.startingPoint)
+        print("Targetpoint= ", canvasView.targetPoint)
+        print("AtoB=", canvasView.AtoB)
+        print("AtoC=", canvasView.AtoC)
+        print("DtoE=", canvasView.DtoE)
+        
+        if canvasView.CGPointDistance(from: firstPoint, to: canvasView.startingPoint) < 50 {
+            // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
+            canvasView.goodTouch = true
+            print("Touch was within 50 units")
+            
+            
+           
+            canvasView.drawTouches(touches, withEvent: event)
+            touches.forEach { (touch) in updateGagues(with: touch)
+                
+                if useDebugDrawing, touch.type == .pencil {
+                    reticleView.isHidden = false
+                    updateReticleView(with: touch)
+                }
             }
         }
+        
+        //If close to the starting point
+        
+        
+        
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if canvasView.goodTouch {
         canvasView.drawTouches(touches, withEvent: event)
         
         touches.forEach { (touch) in
@@ -191,11 +233,16 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 updateReticleView(with: predictedTouch, isPredicted: true)
             }
         }
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         canvasView.drawTouches(touches, withEvent: event)
         canvasView.endTouches(touches, cancel: false)
+        canvasView.goodTouch = false
+       
+        guard let lastPoint = touches.first?.location(in: canvasView) else { return }
+        
         
         touches.forEach { (touch) in
             clearGagues()
@@ -204,6 +251,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 reticleView.isHidden = true
             }
         }
+        
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
