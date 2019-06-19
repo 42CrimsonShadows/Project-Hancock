@@ -56,6 +56,54 @@ class activityViewController: UIViewController {
         A3UnderlayView.translatesAutoresizingMaskIntoConstraints = false
         return A3UnderlayView
     }()
+    let BlueDotView: UIImageView = {
+        //Add the Blue Dot image to the canvas
+        let BlueDot = UIImage(named: "art.scnassets/DotImages/BlueDot.png")
+        let BlueDotView = UIImageView(image: BlueDot)
+        //this enables autolayout for our BlueDotView
+        BlueDotView.translatesAutoresizingMaskIntoConstraints = false
+        return BlueDotView
+    }()
+    var GreenDotView: UIImageView = {
+        //Add the Green Dot image to the canvas
+        let GreenDot = UIImage(named: "art.scnassets/DotImages/GreenDot.png")
+        let GreenDotView = UIImageView(image: GreenDot)
+        //this enables autolayout for our GreenDotView
+        GreenDotView.translatesAutoresizingMaskIntoConstraints = false
+        return GreenDotView
+    }()
+    let OrangeDotView: UIImageView = {
+        //Add the Orange Dot image to the canvas
+        let OrangeDot = UIImage(named: "art.scnassets/DotImages/OrangeDot.png")
+        let OrangeDotView = UIImageView(image: OrangeDot)
+        //this enables autolayout for our OrangeDotView
+        OrangeDotView.translatesAutoresizingMaskIntoConstraints = false
+        return OrangeDotView
+    }()
+    let PurpleDotView: UIImageView = {
+        //Add the Purple Dot image to the canvas
+        let PurpleDot = UIImage(named: "art.scnassets/DotImages/PurpleDot.png")
+        let PurpleDotView = UIImageView(image: PurpleDot)
+        //this enables autolayout for our PurpleDotView
+        PurpleDotView.translatesAutoresizingMaskIntoConstraints = false
+        return PurpleDotView
+    }()
+    let RedDotView: UIImageView = {
+        //Add the Red Dot image to the canvas
+        let RedDot = UIImage(named: "art.scnassets/DotImages/RedDot.png")
+        let RedDotView = UIImageView(image: RedDot)
+        //this enables autolayout for our RedDotView
+        RedDotView.translatesAutoresizingMaskIntoConstraints = false
+        return RedDotView
+    }()
+    let YellowDotView: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let YellowDot = UIImage(named: "art.scnassets/DotImages/YellowDot.png")
+        let YellowDotView = UIImageView(image: YellowDot)
+        //this enables autolayout for our YellowDotView
+        YellowDotView.translatesAutoresizingMaskIntoConstraints = false
+        return YellowDotView
+    }()
     
     //MARK: - ACTIONS
     
@@ -77,6 +125,7 @@ class activityViewController: UIViewController {
         setupAUnderlay()
         //these are the lines with cracks
         setupGreenlines()
+        setupDotsImages()
         
         //wait one second
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -139,13 +188,71 @@ class activityViewController: UIViewController {
         canvas.A3GreenLine = A3UnderlayView
     }
     
-    public func goBack() {
+    public func setupDotsImages() {
         
-        //dismissItem.dismiss(animated: false, completion: nil)
-        print("Go Back Was Called")
-        //self.performSegue(withIdentifier: "Back To Scene", sender: self)
-        //navigationController?.popToRootViewController(animated: true)
-        navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
+        //Add the Dot Images to the UIView under the canvas
+        view.insertSubview(BlueDotView, belowSubview: canvas)
+        BlueDotView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor).isActive = true
+        BlueDotView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor, constant: -300).isActive = true
+        BlueDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        BlueDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        BlueDotView.isHidden = true
+        
+        canvas.blueDot = BlueDotView
+
+        view.insertSubview(GreenDotView, belowSubview: canvas)
+        GreenDotView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor).isActive = true
+        GreenDotView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor, constant: -300).isActive = true
+        GreenDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        GreenDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        GreenDotView.isHidden = true
+        
+        canvas.greenDot = GreenDotView
+
+        view.insertSubview(OrangeDotView, belowSubview: canvas)
+        OrangeDotView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor, constant: 225).isActive = true
+        OrangeDotView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor, constant: 300).isActive = true
+        OrangeDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        OrangeDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        OrangeDotView.isHidden = true
+        
+        canvas.orangeDot = OrangeDotView
+
+        view.insertSubview(PurpleDotView, belowSubview: canvas)
+        PurpleDotView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor, constant: -175).isActive = true
+        PurpleDotView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor, constant: 125).isActive = true
+        PurpleDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        PurpleDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        PurpleDotView.isHidden = true
+        
+        canvas.purpleDot = PurpleDotView
+
+        view.insertSubview(RedDotView, belowSubview: canvas)
+        RedDotView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor, constant: -225).isActive = true
+        RedDotView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor, constant: 300).isActive = true
+        RedDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        RedDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        RedDotView.isHidden = true
+        
+        canvas.redDot = RedDotView
+            
+        view.insertSubview(YellowDotView, belowSubview: canvas)
+        YellowDotView.centerXAnchor.constraint(equalTo: canvas.centerXAnchor, constant: 175).isActive = true
+        YellowDotView.centerYAnchor.constraint(equalTo: canvas.centerYAnchor, constant: 125).isActive = true
+        YellowDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        YellowDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        YellowDotView.isHidden = true
+        
+        canvas.yellowDot = YellowDotView
     }
+    
+//    public func goBack() {
+//
+//        //dismissItem.dismiss(animated: false, completion: nil)
+//        print("Go Back Was Called")
+//        //self.performSegue(withIdentifier: "Back To Scene", sender: self)
+//        //navigationController?.popToRootViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
+//        dismiss(animated: true, completion: nil)
+//    }
 }
