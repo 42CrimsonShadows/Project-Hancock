@@ -162,8 +162,16 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <connections>
                                     <action selector="goButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="jf6-8n-Jkp"/>
                                     <action selector="startButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="2wT-CO-6LW"/>
-                                    <segue destination="yGt-pD-ezq" kind="show" id="TqZ-00-exA"/>
+                                    <segue destination="yGt-pD-ezq" kind="show" identifier="Letter Page" id="TqZ-00-exA"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAe-dA-dqL">
+                                <rect key="frame" x="264" y="1268" width="105" height="48"/>
+                                <color key="backgroundColor" red="0.93844169379999998" green="0.93565088510000005" blue="0.95562607050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" title="ShowAll">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,8 +184,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="Rdc-Q4-PCO" firstAttribute="leading" secondItem="BrB-h1-WRS" secondAttribute="leading" id="XGI-BW-co3"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="nCK-7W-Jpw" secondAttribute="bottom" constant="50" id="ZL2-l3-2vU"/>
+                            <constraint firstItem="YAe-dA-dqL" firstAttribute="leading" secondItem="eXw-dN-ay7" secondAttribute="trailing" constant="125" id="bBa-JT-5Ia"/>
                             <constraint firstItem="Lnd-S8-8gH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eXw-dN-ay7" secondAttribute="trailing" constant="8" symbolic="YES" id="crL-Pt-wRs"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="eXw-dN-ay7" secondAttribute="bottom" constant="50" id="dvY-49-dw4"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="YAe-dA-dqL" secondAttribute="bottom" constant="50" id="osp-EQ-h9b"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="Lnd-S8-8gH" secondAttribute="bottom" constant="50" id="ov1-kP-XGq"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="Lnd-S8-8gH" secondAttribute="trailing" constant="50" id="pZe-tl-6Sw"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
@@ -823,7 +833,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-aS-BXI">
-                                <rect key="frame" x="445.5" y="548" width="133" height="48"/>
+                                <rect key="frame" x="445.5" y="164" width="133" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ccf-aS-BXI" secondAttribute="height" multiplier="133:48" id="jQq-Lt-SLZ"/>
@@ -837,7 +847,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chapters_Temp" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-Hd-44g">
-                                <rect key="frame" x="0.0" y="140" width="1024" height="400"/>
+                                <rect key="frame" x="0.0" y="140" width="1024" height="16"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
