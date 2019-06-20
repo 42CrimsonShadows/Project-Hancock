@@ -18,6 +18,15 @@ enum GameState: Int16 {
     case playGame
 }
 
+enum GameProgress: Int16 {
+    case toLetterA
+    case toLetterB
+    case toLetterC
+    case toLetterD
+    case toLetterE
+    case toLetterF
+}
+
 //By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -43,15 +52,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.resetGame()
     }
     
+    @IBAction func showAllButtonPressed(_ sender: Any) {
+        if maskingNode.isHidden == true {
+            maskingNode.isHidden = false
+        }
+        else{
+            maskingNode.isHidden = true
+        }
+    }
+    
     // MARK: - VARIABLES
     var trackingStatus: String = ""
     var statusMessage: String = ""
     var gameState: GameState = .detectSurface
+    var gameProgress: GameProgress = .toLetterA
     var focusPoint: CGPoint!
     var focusNode: SCNNode!
     var groundNode: SCNNode!
-    
     var storyNode: SCNNode!
+    let animationNode = SCNNode()
+    let walkingNode = SCNNode()
+    let idleNode = SCNNode()
+    let maskingNode = SCNNode()
+    
+    var idle: Bool = true
+    var isWalking: Bool = false
+    
+    var walkPlayer = AVAudioPlayer()
+    var birdsPlayer = AVAudioPlayer()
+    var narrationPlayer = AVAudioPlayer()
     
     
     override func viewDidLoad() {
@@ -61,6 +90,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.initScene()
         self.initARSession()
         self.loadModels()
+        
+        //setup audio player
+        let walkAudioPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav", inDirectory: "art.scnassets/Sounds")
+        let birdsAudioPath = Bundle.main.path(forResource: "Birds2", ofType: "wav", inDirectory: "art.scnassets/Sounds")
+        do
+        {
+            try walkPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: walkAudioPath!))
+            walkPlayer.enableRate = true
+            walkPlayer.rate = 0.5
+            
+            try birdsPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: birdsAudioPath!))
+            
+        } catch {
+            print("WalkPlayer not available!")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +134,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func initSceneView() {
         sceneView.delegate = self
-        //sceneView.automaticallyUpdatesLighting = true
+        sceneView.automaticallyUpdatesLighting = true
         sceneView.showsStatistics = true
         //sceneView.preferredFramesPerSecond = 60
         //sceneView.antialiasingMode = .multisampling2X
@@ -237,24 +281,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func updatePositions() {
         // Update Truck Node
         self.storyNode.position = self.focusNode.position
-        //self.storyNode.position.y += 0.20
-        //self.storyNode.physicsBody?.velocity = SCNVector3Zero
-        //self.storyNode.physicsBody?.angularVelocity = SCNVector4Zero
-        //self.storyNode.physicsBody?.resetTransform()
-        
+
         // Update Ground Node
-        self.groundNode.position = self.focusNode.position
-        self.groundNode.physicsBody?.resetTransform()
+        //self.groundNode.position = self.focusNode.position
     }
-    
-    //    override func touchesBegan(_ touches: Set<UITouch>,
-    //                               with event: UIEvent?) {
-    //        isThrottling = true
-    //    }
-    //    override func touchesEnded(_ touches: Set<UITouch>,
-    //                               with event: UIEvent?) {
-    //        isThrottling = false
-    //    }
     
     // MARK: Game Management
     
@@ -262,18 +292,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard self.gameState == .hitStartToPlay else { return }
         DispatchQueue.main.async {
             self.updatePositions()
-            self.groundNode.isHidden = false
             self.storyNode.isHidden = false
+            self.idleNode.isHidden = false
             self.gameState = .playGame
+            self.birdsPlayer.play()
+            self.birdsPlayer.numberOfLoops = -1
         }
+        storyTime()
     }
     
     func resetGame(){
         guard self.gameState == .playGame else { return }
         DispatchQueue.main.async {
             self.storyNode.isHidden = true
-            self.groundNode.isHidden = true
+            self.idleNode.isHidden = true
+            self.walkingNode.isHidden = true
             self.gameState = .detectSurface
+            self.birdsPlayer.stop()
+            self.walkPlayer.stop()
         }
     }
     
@@ -285,16 +321,122 @@ class ViewController: UIViewController, UITextFieldDelegate {
         focusNode.isHidden = true
         sceneView.scene.rootNode.addChildNode(focusNode)
         
-        // Load Truck Node
+        // Load StoryScene Node
         let storyScene = SCNScene(named: "art.scnassets/AnthonyScene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "anthony", recursively: true)
+        storyNode.scale = SCNVector3(1, 1, 1)
+        storyNode.position = SCNVector3(0, -10, 0)
         storyNode.isHidden = true
         sceneView.scene.rootNode.addChildNode(storyNode)
         
-        // Load Ground Node
-        groundNode = self.createFloorNode()
-        groundNode.isHidden = true
-        sceneView.scene.rootNode.addChildNode(groundNode)
+        //Load Idle Animation Node
+        let idleAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Idle.scn")!
+        for child in idleAnthonyScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
+        walkingNode.position = SCNVector3(0, 0, 0)
+        idleNode.isHidden = true
+        
+        //Load walking Animation Node
+        let walkingAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Walk.scn")!
+        for child in walkingAnthonyScene.rootNode.childNodes {
+            walkingNode.addChildNode(child)
+        }
+        storyNode.addChildNode(walkingNode)
+        walkingNode.position = SCNVector3(0, 0, 0)
+        walkingNode.scale = SCNVector3(0.02, 0.02, 0.02)
+        walkingNode.isHidden = true
+        
+        //Load Scene Mask so we only see immidate area
+        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
+        for child in maskingScene.rootNode.childNodes {
+            maskingNode.addChildNode(child)
+        }
+        //maskingNode.position = SCNVector3(0, 0, 0)
+        //maskingNode.scale = SCNVector3(1, 1, 1)
+        storyNode.addChildNode(maskingNode)
+    }
+    
+    func anthonyWalk() {
+        if(idle) {
+            playAnimation1()
+            isWalking = true
+        }
+        else {
+            stopAnimation()
+            isWalking = false
+        }
+        idle = !idle
+        return
+    }
+    
+    func playAnimation1() {
+        
+        walkingNode.isHidden = false
+        idleNode.isHidden = true
+        
+        //start playing the walking sound
+        walkPlayer.setVolume(0.5, fadeDuration: 0)
+        walkPlayer.play()
+        
+        let ground = storyNode.childNode(withName: "BUGScene", recursively: false)
+        ground?.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
+        walkingNode.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
+        idleNode.position = walkingNode.position
+    }
+    
+    func stopAnimation() {
+        
+        idleNode.isHidden = false
+        walkingNode.isHidden = true
+        walkPlayer.setVolume(0, fadeDuration: 0.75)
+        
+        //stop playing the walking sound
+        walkPlayer.stop()
+        walkPlayer.setVolume(1, fadeDuration: 0)
+        
+        if gameProgress == .toLetterA {
+            //wait 2 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                
+                //wait 6 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    //switch to the Letter A ViewController
+                    self.performSegue(withIdentifier: "Letter Page", sender: self)
+                })
+            })
+            
+        }
+    }
+    
+    func storyTime(){
+        playAudioNarrationFile(file: "Line1", type: "mp3")
+        //wait 7 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+            self.anthonyWalk()
+            
+            //wait 3 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                self.playAudioNarrationFile(file: "Line2", type: "mp3")
+            })
+        })
+    }
+    
+    //pass it an audiofile and it will play it!
+    func playAudioNarrationFile(file: String, type: String) {
+        let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        
+        do
+        {
+            try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            
+        } catch {
+            print("AudioPlayer not available!")
+        }
+        self.narrationPlayer.play()
     }
 }
 

@@ -271,15 +271,16 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.yellowDot = YellowDotView
     }
     
-    //    public func goBack() {
-    //
-    //        //dismissItem.dismiss(animated: false, completion: nil)
-    //        print("Go Back Was Called")
-    //        //self.performSegue(withIdentifier: "Back To Scene", sender: self)
-    //        //navigationController?.popToRootViewController(animated: true)
-    //        navigationController?.popViewController(animated: true)
-    //        dismiss(animated: true, completion: nil)
-    //    }
+        public func goBack() {
+    
+            //dismissItem.dismiss(animated: false, completion: nil)
+            print("Go Back Was Called")
+            //self.performSegue(withIdentifier: "Back To Scene", sender: self)
+            //navigationController?.popToRootViewController(animated: true)
+//            navigationController?.popViewController(animated: true)
+//            dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //canvasView.drawTouches(touches, withEvent: event)
