@@ -44,6 +44,13 @@ class CanvasView: UIView {
     var A2GreenLine: UIImageView?
     var A3GreenLine: UIImageView?
     
+    var greenDot: UIImageView?
+    var redDot: UIImageView?
+    var blueDot: UIImageView?
+    var orangeDot: UIImageView?
+    var purpleDot: UIImageView?
+    var yellowDot: UIImageView?
+    
     var usePreciseLocations = false {
         didSet {
             needsFullRedraw = true

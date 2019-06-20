@@ -76,6 +76,54 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         A3UnderlayView.translatesAutoresizingMaskIntoConstraints = false
         return A3UnderlayView
     }()
+    let BlueDotView: UIImageView = {
+        //Add the Blue Dot image to the canvas
+        let BlueDot = UIImage(named: "art.scnassets/DotImages/BlueDot.png")
+        let BlueDotView = UIImageView(image: BlueDot)
+        //this enables autolayout for our BlueDotView
+        BlueDotView.translatesAutoresizingMaskIntoConstraints = false
+        return BlueDotView
+    }()
+    var GreenDotView: UIImageView = {
+        //Add the Green Dot image to the canvas
+        let GreenDot = UIImage(named: "art.scnassets/DotImages/GreenDot.png")
+        let GreenDotView = UIImageView(image: GreenDot)
+        //this enables autolayout for our GreenDotView
+        GreenDotView.translatesAutoresizingMaskIntoConstraints = false
+        return GreenDotView
+    }()
+    let OrangeDotView: UIImageView = {
+        //Add the Orange Dot image to the canvas
+        let OrangeDot = UIImage(named: "art.scnassets/DotImages/OrangeDot.png")
+        let OrangeDotView = UIImageView(image: OrangeDot)
+        //this enables autolayout for our OrangeDotView
+        OrangeDotView.translatesAutoresizingMaskIntoConstraints = false
+        return OrangeDotView
+    }()
+    let PurpleDotView: UIImageView = {
+        //Add the Purple Dot image to the canvas
+        let PurpleDot = UIImage(named: "art.scnassets/DotImages/PurpleDot.png")
+        let PurpleDotView = UIImageView(image: PurpleDot)
+        //this enables autolayout for our PurpleDotView
+        PurpleDotView.translatesAutoresizingMaskIntoConstraints = false
+        return PurpleDotView
+    }()
+    let RedDotView: UIImageView = {
+        //Add the Red Dot image to the canvas
+        let RedDot = UIImage(named: "art.scnassets/DotImages/RedDot.png")
+        let RedDotView = UIImageView(image: RedDot)
+        //this enables autolayout for our RedDotView
+        RedDotView.translatesAutoresizingMaskIntoConstraints = false
+        return RedDotView
+    }()
+    let YellowDotView: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let YellowDot = UIImage(named: "art.scnassets/DotImages/YellowDot.png")
+        let YellowDotView = UIImageView(image: YellowDot)
+        //this enables autolayout for our YellowDotView
+        YellowDotView.translatesAutoresizingMaskIntoConstraints = false
+        return YellowDotView
+    }()
     
     
     
