@@ -20,7 +20,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     // MARK: - VARIABLES
     
-    let canvas = CanvasView()
+    //let canvas = CanvasView()
     
     private var useDebugDrawing = false
     
@@ -164,6 +164,74 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         canvasView.A3GreenLine = A3UnderlayView
     }
+    
+    public func setupDotsImages() {
+        
+        //Add the Dot Images to the UIView under the canvas
+        view.insertSubview(BlueDotView, belowSubview: canvasView)
+        BlueDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+        BlueDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: -300).isActive = true
+        BlueDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        BlueDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        BlueDotView.isHidden = true
+        
+        canvasView.blueDot = BlueDotView
+        
+        view.insertSubview(GreenDotView, belowSubview: canvasView)
+        GreenDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+        GreenDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: -300).isActive = true
+        GreenDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        GreenDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        GreenDotView.isHidden = true
+        
+        canvasView.greenDot = GreenDotView
+        
+        view.insertSubview(OrangeDotView, belowSubview: canvasView)
+        OrangeDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: 225).isActive = true
+        OrangeDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 300).isActive = true
+        OrangeDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        OrangeDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        OrangeDotView.isHidden = true
+        
+        canvasView.orangeDot = OrangeDotView
+        
+        view.insertSubview(PurpleDotView, belowSubview: canvasView)
+        PurpleDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: -175).isActive = true
+        PurpleDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 125).isActive = true
+        PurpleDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        PurpleDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        PurpleDotView.isHidden = true
+        
+        canvasView.purpleDot = PurpleDotView
+        
+        view.insertSubview(RedDotView, belowSubview: canvasView)
+        RedDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: -225).isActive = true
+        RedDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 300).isActive = true
+        RedDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        RedDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        RedDotView.isHidden = true
+        
+        canvasView.redDot = RedDotView
+        
+        view.insertSubview(YellowDotView, belowSubview: canvasView)
+        YellowDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: 175).isActive = true
+        YellowDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 125).isActive = true
+        YellowDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        YellowDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        YellowDotView.isHidden = true
+        
+        canvasView.yellowDot = YellowDotView
+    }
+    
+    //    public func goBack() {
+    //
+    //        //dismissItem.dismiss(animated: false, completion: nil)
+    //        print("Go Back Was Called")
+    //        //self.performSegue(withIdentifier: "Back To Scene", sender: self)
+    //        //navigationController?.popToRootViewController(animated: true)
+    //        navigationController?.popViewController(animated: true)
+    //        dismiss(animated: true, completion: nil)
+    //    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //canvasView.drawTouches(touches, withEvent: event)
@@ -337,9 +405,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         toggleDebugDrawing(debugButton)
     }
-    
-    
-    
     
     
 }
