@@ -46,7 +46,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     @IBOutlet private var gagueLabelCollection: [UILabel]!
     
     let AUnderlayView: UIImageView = {
-        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/AUnderlay.png")
+        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A-Underlay_Yellow.png")
         let AUnderlayView = UIImageView(image: AUnderlay)
         //this enables autolayout for our AUnderlayView
         AUnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +54,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let A1UnderlayView: UIImageView = {
         //Add the letter A1 image to the canvas
-        let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1.png")
+        let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1_Cracks.png")
         let A1UnderlayView = UIImageView(image: A1Underlay)
         //this enables autolayout for our AUnderlayView
         A1UnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +62,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let A2UnderlayView: UIImageView = {
         //Add the letter A2 image to the canvas
-        let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2.png")
+        let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2_Cracks.png")
         let A2UnderlayView = UIImageView(image: A2Underlay)
         //this enables autolayout for our A2UnderlayView
         A2UnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +70,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let A3UnderlayView: UIImageView = {
         //Add the letter A3 image to the canvas
-        let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3.png")
+        let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3_Cracks.png")
         let A3UnderlayView = UIImageView(image: A3Underlay)
         //this enables autolayout for our A3UnderlayView
         A3UnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -152,10 +152,10 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             pencilInteraction.delegate = self
             view.addInteraction(pencilInteraction)
         }
-        
         setupCanvas()
         setupAUnderlay()
         setupGreenlines()
+        setupDotsImages()
         
     }
     

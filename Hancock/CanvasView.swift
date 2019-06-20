@@ -6,6 +6,7 @@ The `CanvasView` tracks `UITouch`es and represents them as a series of `Line`s.
 */
 
 import UIKit
+import AVFoundation
 
 class CanvasView: UIView {
     // MARK: Properties
@@ -50,6 +51,8 @@ class CanvasView: UIView {
     var orangeDot: UIImageView?
     var purpleDot: UIImageView?
     var yellowDot: UIImageView?
+    
+    var audioPlayer = AVAudioPlayer()
     
     var usePreciseLocations = false {
         didSet {
@@ -129,41 +132,49 @@ class CanvasView: UIView {
             //make first dot
             aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
             aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-            context.move(to: aStartPoint)
-            context.addLine(to: aEndPoint)
-            
+            //context.move(to: aStartPoint)
+            //context.addLine(to: aEndPoint)
+            greenDot?.isHidden = false
+
             //make second dot
             bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
             bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-            context.move(to: bStartPoint)
-            context.addLine(to: bEndPoint)
-            
+            //context.move(to: bStartPoint)
+            //context.addLine(to: bEndPoint)
+            redDot?.isHidden = false
+
         }
         else if AtoB && !AtoC {
             //make first dot
             self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
             self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-            context.move(to: aStartPoint)
-            context.addLine(to: aEndPoint)
+            //context.move(to: aStartPoint)
+            //context.addLine(to: aEndPoint)
+            greenDot?.isHidden = true
+            blueDot?.isHidden = false
             
             //make second dot
             self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
             self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
-            context.move(to: cStartPoint)
-            context.addLine(to: cEndPoint)
-            
+            //context.move(to: cStartPoint)
+            //context.addLine(to: cEndPoint)
+            orangeDot?.isHidden = false
+            redDot?.isHidden = true
         }
         else {
             self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
             self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
-            context.move(to: dStartPoint)
-            context.addLine(to: dEndPoint)
+            //context.move(to: dStartPoint)
+            //context.addLine(to: dEndPoint)
+            purpleDot?.isHidden = false
+            blueDot?.isHidden = true
             
             self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
             self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
-            context.move(to: eStartPoint)
-            context.addLine(to: eEndPoint)
-            
+            //context.move(to: eStartPoint)
+            //context.addLine(to: eEndPoint)
+            yellowDot?.isHidden = false
+            orangeDot?.isHidden = true
         }
 
         if needsFullRedraw {
@@ -323,7 +334,56 @@ class CanvasView: UIView {
             setNeedsDisplay()
             
         }
-
+        else {
+            
+            switch letterState {
+            case .AtoB:
+                A1GreenLine?.isHidden = false
+                playAudioFile(file: "RockBreak1", type: "wav")
+                //wait 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.playAudioFile(file: "Line5", type: "mp3")
+                    
+                    //wait 1 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.playAudioFile(file: "Line6", type: "mp3")
+                    })
+                })
+                letterState = .AtoC
+                AtoB = true
+            case .AtoC:
+                A2GreenLine?.isHidden = false
+                playAudioFile(file: "RockBreak2", type: "aiff")
+                //wait 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.playAudioFile(file: "Line7", type: "mp3")
+                    
+                })
+                letterState = .DtoE
+                AtoC = true
+            case .DtoE:
+                A3GreenLine?.isHidden = false
+                playAudioFile(file: "RockExplode", type: "wav")
+                
+                
+                //wait 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.playAudioFile(file: "Line8", type: "mp3")
+                    
+                    self.purpleDot?.isHidden = true
+                    self.yellowDot?.isHidden = true
+                    
+                    //wait 2 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                        //activityViewController().goBack()
+                        //activityViewController().dismiss(animated: false, completion: nil)
+                        //activityViewController().performSegue(withIdentifier: "Back To Scene", sender: self)
+                        
+                    })
+                })
+                DtoE = true
+            }
+        }
         setNeedsDisplay(updateRect)
     }
 
@@ -424,6 +484,20 @@ class CanvasView: UIView {
             DtoE = true
         }
         print("letterState is now:", letterState)
+    }
+        
+    func playAudioFile(file: String, type: String) {
+        let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        
+        do
+        {
+            try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            
+        } catch {
+            print("AudioPlayer not available!")
+        }
+        
+        audioPlayer.play()
     }
 }
 
