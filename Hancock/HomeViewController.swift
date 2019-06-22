@@ -11,10 +11,16 @@ import Firebase
 
 class HomeViewController: UIViewController {
 
+    
+    @IBOutlet weak var upperCaseImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-          
-
+        
+        //set up to perform segue programmatically
+        let tap =  UITapGestureRecognizer(target: self, action: #selector(tappedMe))
+        upperCaseImage.isUserInteractionEnabled = true
+        upperCaseImage.addGestureRecognizer(tap)
     }
     
     @IBAction func logoutHandler(_ sender: Any) {
@@ -23,4 +29,8 @@ class HomeViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
 
+    @objc func tappedMe(){
+        //action to perform segue
+        performSegue(withIdentifier: "toChapterPage", sender: self)
+    }
 }

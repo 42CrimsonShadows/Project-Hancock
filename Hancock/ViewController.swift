@@ -40,6 +40,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var startButton: UIButton!
     
+    
+    
+    
+    
     //MARK: ACTIONS
     @IBAction func goButtonPressed(_ sender: Any) {
     }
@@ -90,6 +94,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.initScene()
         self.initARSession()
         self.loadModels()
+        
+        
         
         //setup audio player
         let walkAudioPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav", inDirectory: "art.scnassets/Sounds")
