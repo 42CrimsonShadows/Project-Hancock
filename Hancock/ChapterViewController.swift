@@ -16,6 +16,19 @@ class ChapterViewController: UIViewController {
         super.viewDidLoad()
 
         GifView.loadGif(name: "BookAnimation")
+        
+        //set up to perform segue programmatically
+        let tap =  UITapGestureRecognizer(target: self, action: #selector(tappedMe))
+        GifView.isUserInteractionEnabled = true
+        GifView.addGestureRecognizer(tap)
+    }
+    
+    @objc func tappedMe(){
+        
+        self.GifView.stopAnimating()
+        
+        //action to perform segue
+        performSegue(withIdentifier: "toARScenePage", sender: self)
     }
     
 }

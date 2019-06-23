@@ -911,6 +911,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <state key="normal" title="CHAPTER">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="toARScenePage" id="axn-ec-MLx"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-Hd-44g">
                                 <rect key="frame" x="100" y="40" width="804" height="1000"/>
