@@ -81,7 +81,7 @@ extension UIImage {
     }
     
     internal class func delayForImageAtIndex(_ index: Int, source: CGImageSource!) -> Double {
-        var delay = 0.01
+        var delay = 5.0
         
         // Get dictionaries
         let cfProperties = CGImageSourceCopyPropertiesAtIndex(source, index, nil)
@@ -109,7 +109,7 @@ extension UIImage {
         if let delayObject = delayObject as? Double, delayObject > 0 {
             delay = delayObject
         } else {
-            delay = 0.01 // Make sure they're not too fast
+            delay = 5.0 // Make sure they're not too fast
         }
         
         return delay
@@ -152,7 +152,7 @@ extension UIImage {
     
     internal class func gcdForArray(_ array: [Int]) -> Int {
         if array.isEmpty {
-            //return 1
+            return 1
         }
         var gcd = array[0]
         

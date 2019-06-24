@@ -42,6 +42,10 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     @IBOutlet weak var azimuthAngleLabel: UILabel!
     @IBOutlet weak var azimuthUnitVectorLabel: UILabel!
     @IBOutlet weak var altitudeAngleLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
+    
+    @IBOutlet weak var grassImage: UIImageView!
+    @IBOutlet weak var antChillImage: UIImageView!    
     
     @IBOutlet private var gagueLabelCollection: [UILabel]!
     
@@ -144,7 +148,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         super.viewDidLoad()
         canvasView.addSubview(reticleView)
         
-        toggleDebugDrawing(debugButton)
+        //to toggle on on start, uncomment this line
+        //toggleDebugDrawing(debugButton)
+        
         clearGagues()
         
         if #available(iOS 12.1, *) {
@@ -157,6 +163,14 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         setupGreenlines()
         setupDotsImages()
         
+        //load animations
+        antChillImage.loadGif(name: "Anthony-Chillaxing")
+        grassImage.loadGif(name: "Grass-Blowing")
+
+        //antChillImage.contentMode = .scaleAspectFit
+        //antChillImage.backgroundColor = UIColor.lightGray
+        //grassImage.contentMode = .scaleAspectFit
+        //grassImage.backgroundColor = UIColor.lightGray
     }
     
     //MARK: -- Changes 1
@@ -324,6 +338,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 if useDebugDrawing, touch.type == .pencil {
                     reticleView.isHidden = false
                     updateReticleView(with: touch)
+                    separatorView.isHidden = false
                 }
             }
         }
@@ -366,6 +381,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             
             if useDebugDrawing, touch.type == .pencil {
                 reticleView.isHidden = true
+                separatorView.isHidden = true
             }
         }
         

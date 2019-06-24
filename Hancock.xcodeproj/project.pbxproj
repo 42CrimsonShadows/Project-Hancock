@@ -20,12 +20,15 @@
 		A08A2D4122BEC4990076B814 /* Swift_Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A2D4022BEC4990076B814 /* Swift_Gif.swift */; };
 		A08A2D4522BED3A40076B814 /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A2D4422BED3A40076B814 /* ChapterViewController.swift */; };
 		A08A2D4922BEDEA20076B814 /* BookAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = A08A2D4822BEDEA20076B814 /* BookAnimation.gif */; };
+		A08A2D5422C02AA40076B814 /* Grass-Blowing.gif in Resources */ = {isa = PBXBuildFile; fileRef = A08A2D5222C02AA30076B814 /* Grass-Blowing.gif */; };
+		A08A2D5522C02AA40076B814 /* Anthony-Chillaxing.gif in Resources */ = {isa = PBXBuildFile; fileRef = A08A2D5322C02AA40076B814 /* Anthony-Chillaxing.gif */; };
 		A0A028BC227CA9F500A7C787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A028BB227CA9F500A7C787 /* AppDelegate.swift */; };
 		A0A028BE227CA9F500A7C787 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A028BD227CA9F500A7C787 /* art.scnassets */; };
 		A0A028C0227CA9F500A7C787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A028BF227CA9F500A7C787 /* ViewController.swift */; };
 		A0A028C3227CA9F500A7C787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C1227CA9F500A7C787 /* Main.storyboard */; };
 		A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C4227CA9F600A7C787 /* Assets.xcassets */; };
 		A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */; };
+		A0E86BE222C08F150009A214 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0E86BE122C08F150009A214 /* Loading.gif */; };
 		A0ECFB8522A5B9BC000DF8F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0ECFB8422A5B9BC000DF8F7 /* GoogleService-Info.plist */; };
 		C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55D229F302500D15A2B /* SignInViewController.swift */; };
 		C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55F229F305900D15A2B /* RegisterViewController.swift */; };
@@ -48,6 +51,8 @@
 		A08A2D4022BEC4990076B814 /* Swift_Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Gif.swift; sourceTree = "<group>"; };
 		A08A2D4422BED3A40076B814 /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 		A08A2D4822BEDEA20076B814 /* BookAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BookAnimation.gif; sourceTree = "<group>"; };
+		A08A2D5222C02AA30076B814 /* Grass-Blowing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Grass-Blowing.gif"; sourceTree = "<group>"; };
+		A08A2D5322C02AA40076B814 /* Anthony-Chillaxing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Anthony-Chillaxing.gif"; sourceTree = "<group>"; };
 		A0A028B8227CA9F500A7C787 /* Hancock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hancock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A028BB227CA9F500A7C787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A028BD227CA9F500A7C787 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 		A0A028C4227CA9F600A7C787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0A028C7227CA9F600A7C787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0A028C9227CA9F600A7C787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0E86BE122C08F150009A214 /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
 		A0ECFB8422A5B9BC000DF8F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.debug.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.debug.xcconfig"; sourceTree = "<group>"; };
 		C939B55D229F302500D15A2B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Authentication/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -115,6 +121,9 @@
 		A0A028BA227CA9F500A7C787 /* Hancock */ = {
 			isa = PBXGroup;
 			children = (
+				A0E86BE122C08F150009A214 /* Loading.gif */,
+				A08A2D5322C02AA40076B814 /* Anthony-Chillaxing.gif */,
+				A08A2D5222C02AA30076B814 /* Grass-Blowing.gif */,
 				A08A2D4822BEDEA20076B814 /* BookAnimation.gif */,
 				A0A028BB227CA9F500A7C787 /* AppDelegate.swift */,
 				A0A028BD227CA9F500A7C787 /* art.scnassets */,
@@ -187,6 +196,7 @@
 				TargetAttributes = {
 					A0A028B7227CA9F500A7C787 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -216,9 +226,12 @@
 			files = (
 				A0A028BE227CA9F500A7C787 /* art.scnassets in Resources */,
 				A08A2D4922BEDEA20076B814 /* BookAnimation.gif in Resources */,
+				A0E86BE222C08F150009A214 /* Loading.gif in Resources */,
 				A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */,
+				A08A2D5522C02AA40076B814 /* Anthony-Chillaxing.gif in Resources */,
 				A0ECFB8522A5B9BC000DF8F7 /* GoogleService-Info.plist in Resources */,
 				A08A2D3F22BEA2C60076B814 /* LaunchScreen.storyboard in Resources */,
+				A08A2D5422C02AA40076B814 /* Grass-Blowing.gif in Resources */,
 				A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */,
 				A0A028C3227CA9F500A7C787 /* Main.storyboard in Resources */,
 			);
@@ -434,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AUZXFUDQS4;
 				INFOPLIST_FILE = Hancock/Info.plist;
@@ -443,6 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bosiestate.abcgo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AUZXFUDQS4;
 				INFOPLIST_FILE = Hancock/Info.plist;
