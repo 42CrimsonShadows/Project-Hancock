@@ -35,6 +35,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     //New properties
     
     @IBOutlet weak var canvasView: CanvasView!
+    @IBOutlet weak var antFace: UIImageView!
+    
 
     @IBOutlet weak var debugButton: UIButton!
     @IBOutlet weak var locationLabel: UILabel!
@@ -42,11 +44,15 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     @IBOutlet weak var azimuthAngleLabel: UILabel!
     @IBOutlet weak var azimuthUnitVectorLabel: UILabel!
     @IBOutlet weak var altitudeAngleLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
+    
+    @IBOutlet weak var grassImage: UIImageView!
+    @IBOutlet weak var antChillImage: UIImageView!    
     
     @IBOutlet private var gagueLabelCollection: [UILabel]!
     
     let AUnderlayView: UIImageView = {
-        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A-Underlay_Yellow.png")
+        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A-Underlay_Grey.png")
         let AUnderlayView = UIImageView(image: AUnderlay)
         //this enables autolayout for our AUnderlayView
         AUnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +60,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let A1UnderlayView: UIImageView = {
         //Add the letter A1 image to the canvas
-        let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1_Cracks.png")
+        let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1_GreyCracks.png")
         let A1UnderlayView = UIImageView(image: A1Underlay)
         //this enables autolayout for our AUnderlayView
         A1UnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +68,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let A2UnderlayView: UIImageView = {
         //Add the letter A2 image to the canvas
-        let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2_Cracks.png")
+        let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2_GreyCracks.png")
         let A2UnderlayView = UIImageView(image: A2Underlay)
         //this enables autolayout for our A2UnderlayView
         A2UnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +76,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let A3UnderlayView: UIImageView = {
         //Add the letter A3 image to the canvas
-        let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3_Cracks.png")
+        let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3_GreyCracks.png")
         let A3UnderlayView = UIImageView(image: A3Underlay)
         //this enables autolayout for our A3UnderlayView
         A3UnderlayView.translatesAutoresizingMaskIntoConstraints = false
@@ -144,7 +150,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         super.viewDidLoad()
         canvasView.addSubview(reticleView)
         
+        //to toggle on on start, uncomment this line
         toggleDebugDrawing(debugButton)
+        
         clearGagues()
         
         if #available(iOS 12.1, *) {
@@ -157,6 +165,16 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         setupGreenlines()
         setupDotsImages()
         
+        //load animations
+        antChillImage.loadGif(name: "Anthony-Chillaxing")
+        grassImage.loadGif(name: "Grass-Blowing")
+        
+        antFace.isHidden = true
+
+        //antChillImage.contentMode = .scaleAspectFit
+        //antChillImage.backgroundColor = UIColor.lightGray
+        //grassImage.contentMode = .scaleAspectFit
+        //grassImage.backgroundColor = UIColor.lightGray
     }
     
     //MARK: -- Changes 1
@@ -324,36 +342,45 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 if useDebugDrawing, touch.type == .pencil {
                     reticleView.isHidden = false
                     updateReticleView(with: touch)
+                    //separatorView.isHidden = false
                 }
             }
         }
-        
-        //If close to the starting point
-        
-        
-        
-        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        //turn on feedback if the pencil angle is good
+        if reticleView.actualAzimuthAngle >= 0 && reticleView.actualAzimuthAngle <= 1 {
+            self.antFace.isHidden = false
+        }
+        else {
+            self.antFace.isHidden = true
+        }
+
+        
         if canvasView.goodTouch {
         canvasView.drawTouches(touches, withEvent: event)
         
-        touches.forEach { (touch) in
-            updateGagues(with: touch)
-            
-            if useDebugDrawing, touch.type == .pencil {
-                updateReticleView(with: touch)
+            touches.forEach { (touch) in
+                updateGagues(with: touch)
                 
-                guard let predictedTouch = event?.predictedTouches(for: touch)?.last else { return }
-                
-                updateReticleView(with: predictedTouch, isPredicted: true)
+                if useDebugDrawing, touch.type == .pencil {
+                    updateReticleView(with: touch)
+                    
+                    guard let predictedTouch = event?.predictedTouches(for: touch)?.last else { return }
+                    
+                    updateReticleView(with: predictedTouch, isPredicted: true)
+                }
             }
-        }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        //turn off feedback
+        self.antFace.isHidden = true
+        
         canvasView.drawTouches(touches, withEvent: event)
         canvasView.endTouches(touches, cancel: false)
         canvasView.goodTouch = false
@@ -366,6 +393,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             
             if useDebugDrawing, touch.type == .pencil {
                 reticleView.isHidden = true
+                separatorView.isHidden = true
             }
         }
         
