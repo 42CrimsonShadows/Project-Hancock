@@ -409,7 +409,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.playAudioNarrationFile(file: "Line3", type: "mp3")
                 
                 //wait 6 seconds
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //switch to the Letter A ViewController
                     self.performSegue(withIdentifier: "Letter Page", sender: self)
                 })

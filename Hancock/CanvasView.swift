@@ -12,7 +12,6 @@ class CanvasView: UIView {
     // MARK: Properties
     
     
-
     var lastTouch = CGPoint.zero
     var aStartPoint = CGPoint()
     var aEndPoint = CGPoint()
@@ -24,22 +23,22 @@ class CanvasView: UIView {
     var dEndPoint = CGPoint()
     var eStartPoint = CGPoint()
     var eEndPoint = CGPoint()
+    var startingPoint = CGPoint()
+    var targetPoint = CGPoint()
     var lineColor = UIColor.blue.cgColor
     var checkPointColor = UIColor.darkGray.cgColor
     var dotPointColor = UIColor.green.cgColor
     var defaultColor = UIColor.black.cgColor
     
     var letterState: LetterState = .AtoB
+    
     var currentComplete = false
     var AtoB = false
     var AtoC = false
     var DtoE = false
-    
-    var startingPoint = CGPoint()
-    var targetPoint = CGPoint()
-    
     var goodTouch: Bool = false
     var goodLine: Bool = false
+    
     //    var A1GreenLine: UIImageView?
     var A1GreenLine: UIImageView?
     var A2GreenLine: UIImageView?
@@ -375,10 +374,8 @@ class CanvasView: UIView {
                     
                     //wait 2 second
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                        activityViewController().goBack()
-                        //activityViewController().dismiss(animated: false, completion: nil)
-                        //activityViewController().performSegue(withIdentifier: "Back To Scene", sender: self)
-                        
+                        //activityViewController().goBack() //activityViewController().performSegue(withIdentifier: "Back To Scene", sender: self)
+                                                
                     })
                 })
                 DtoE = true

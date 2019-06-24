@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="PAv-Ec-jxH">
-                                <rect key="frame" x="100" y="251.5" width="824" height="713"/>
+                                <rect key="frame" x="100" y="251.5" width="850" height="713"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ff-Dd-Stu">
-                                        <rect key="frame" x="344.5" y="0.0" width="135.5" height="21"/>
+                                        <rect key="frame" x="357.5" y="0.0" width="135.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1Ff-Dd-Stu" secondAttribute="height" multiplier="196:31" id="d6j-LJ-uyh"/>
                                         </constraints>
@@ -31,7 +31,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfQ-RG-IAa">
-                                        <rect key="frame" x="96" y="97" width="632.5" height="65"/>
+                                        <rect key="frame" x="109" y="97" width="632.5" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="lfQ-RG-IAa" secondAttribute="height" multiplier="79:8" id="urr-w4-pP9"/>
                                             <constraint firstAttribute="height" constant="65" id="zkG-uz-rdL"/>
@@ -44,7 +44,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ARexample" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-03-3Gr">
-                                        <rect key="frame" x="71" y="238" width="682.5" height="475"/>
+                                        <rect key="frame" x="0.0" y="238" width="850" height="475"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="475" id="8Gb-U0-FIs"/>
                                             <constraint firstAttribute="width" constant="850" id="XjU-xI-kX4"/>
@@ -58,7 +58,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJk-j4-2T1">
-                                <rect key="frame" x="908" y="1272" width="66" height="44"/>
+                                <rect key="frame" x="934" y="1272" width="66" height="44"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aJk-j4-2T1" secondAttribute="height" multiplier="3:2" id="nds-qb-PU6"/>
@@ -245,7 +245,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <action selector="backButton:" destination="y0a-H2-t61" eventType="touchUpInside" id="pjk-6G-cx3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOu-th-KrH">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOu-th-KrH">
                                 <rect key="frame" x="900" y="1286" width="91" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Clear"/>
@@ -253,7 +253,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <action selector="clearView:" destination="yGt-pD-ezq" eventType="touchUpInside" id="OmQ-cX-Q5v"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55X-dg-y8h">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55X-dg-y8h">
                                 <rect key="frame" x="278" y="1292" width="95" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Precise"/>
@@ -261,7 +261,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <action selector="toggleUsePreciseLocations:" destination="yGt-pD-ezq" eventType="touchUpInside" id="zT4-Ic-xUR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-K8-aiy">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-K8-aiy">
                                 <rect key="frame" x="157" y="1293" width="87" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Debug"/>
@@ -269,6 +269,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <action selector="toggleDebugDrawing:" destination="yGt-pD-ezq" eventType="touchUpInside" id="yhV-vz-x37"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AntFace" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-iA-ZV1">
+                                <rect key="frame" x="724" y="20" width="300" height="275"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="275" id="Cij-aJ-XcH"/>
+                                    <constraint firstAttribute="width" constant="300" id="Qkf-Kn-YUc"/>
+                                </constraints>
+                            </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueY-pM-8oa" userLabel="View" customClass="SeparatorView" customModule="Hancock" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1198" width="1024" height="88"/>
                                 <subviews>
@@ -370,7 +377,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <constraints>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="aO0-GI-co4" secondAttribute="bottom" id="19P-QO-ffx"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="UQ5-K8-aiy" secondAttribute="bottom" constant="25" id="2AE-9O-btg"/>
+                            <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="Jib-iA-ZV1" secondAttribute="trailing" id="2b7-wu-vwE"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="kOu-th-KrH" secondAttribute="trailing" constant="33" id="2n2-uo-9s3"/>
+                            <constraint firstItem="Jib-iA-ZV1" firstAttribute="top" secondItem="cXE-hm-SxM" secondAttribute="top" id="4cd-Dt-8DO"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="aTj-Rp-NSZ" secondAttribute="bottom" constant="20" id="75A-YN-8df"/>
                             <constraint firstItem="S0V-F7-tnM" firstAttribute="leading" secondItem="cXE-hm-SxM" secondAttribute="leading" id="8VY-Ra-C6d"/>
                             <constraint firstItem="ueY-pM-8oa" firstAttribute="top" secondItem="cXE-hm-SxM" secondAttribute="bottom" constant="-168" id="8tE-PG-Diq"/>
@@ -391,6 +400,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <connections>
                         <outlet property="altitudeAngleLabel" destination="fqo-in-g9e" id="RHl-eB-T0j"/>
                         <outlet property="antChillImage" destination="aO0-GI-co4" id="KEd-xl-UpM"/>
+                        <outlet property="antFace" destination="Jib-iA-ZV1" id="WRo-oV-a6L"/>
                         <outlet property="azimuthAngleLabel" destination="SYK-kW-jna" id="Rap-ls-foH"/>
                         <outlet property="azimuthUnitVectorLabel" destination="KBZ-GN-eRo" id="i7z-5a-eOR"/>
                         <outlet property="canvasView" destination="Las-os-uIu" id="N7y-Jx-Ufa"/>
@@ -1288,6 +1298,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
     </scenes>
     <resources>
         <image name="ARexample" width="682.5" height="384"/>
+        <image name="AntFace" width="243" height="281.5"/>
         <image name="BookAnimation.gif" width="960" height="540"/>
         <image name="BookLower" width="480" height="270"/>
         <image name="BookUpper" width="480" height="270"/>
