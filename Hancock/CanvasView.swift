@@ -312,17 +312,17 @@ class CanvasView: UIView {
             // If this is a touch cancellation, cancel the associated line.
             if cancel { updateRect = updateRect.union(line.cancel()) }
             
-
+            
             // If the line is complete (no points needing updates) or updating isn't enabled, move the line to the `frozenImage`.
             if line.isComplete {
                 finishLine(line)
                 
             }
-            // Otherwise, add the line to our map of touches to lines pending update.
+                // Otherwise, add the line to our map of touches to lines pending update.
             else {
                 pendingLines.setObject(line, forKey: touch)
             }
-
+            
             // This touch is ending, remove the line corresponding to it from `activeLines`.
             activeLines.removeObject(forKey: touch)
         }
@@ -373,15 +373,11 @@ class CanvasView: UIView {
                     self.yellowDot?.isHidden = true
                     
                     //wait 2 second
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                        //activityViewController().goBack() //activityViewController().performSegue(withIdentifier: "Back To Scene", sender: self)
-                                                
-                    })
+                    
                 })
                 DtoE = true
             }
         }
-        setNeedsDisplay(updateRect)
     }
 
     func updateEstimatedPropertiesForTouches(_ touches: Set<UITouch>) {
@@ -469,16 +465,20 @@ class CanvasView: UIView {
             print("letterstate put target point at", targetPoint)
             letterState = .AtoC
             AtoB = true
+            
+            
         case .AtoC:
             startingPoint = dStartPoint;
             targetPoint = eStartPoint;
             letterState = .DtoE
             AtoC = true
+            
         case .DtoE:
             //startingPoint = aStartPoint;
             //targetPoint = bStartPoint;
-            //letterState = .DtoE
+            //letterState = .D1toE
             DtoE = true
+            
         }
         print("letterState is now:", letterState)
     }

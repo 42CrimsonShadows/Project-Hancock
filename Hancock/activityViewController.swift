@@ -137,6 +137,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
+        print(self)
     }
 //    @IBAction func undoButton(_ sender: Any) {
 //        canvasView.lines.removeAll()
@@ -182,7 +183,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
        //Add the drawing canvas to the UIView
        //view.addSubview(canvas)
         canvasView.backgroundColor = UIColor(white: 0.5, alpha: 0)
-
+        //canvasView.activityVC = self
         //this enables autolayout for our canvas
         canvasView.translatesAutoresizingMaskIntoConstraints = false
         canvasView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -293,6 +294,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
             //dismissItem.dismiss(animated: false, completion: nil)
             print("Go Back Was Called")
+            print(self)
             //self.performSegue(withIdentifier: "Back To Scene", sender: self)
             //navigationController?.popToRootViewController(animated: true)
 //            navigationController?.popViewController(animated: true)
@@ -397,6 +399,17 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             }
         }
         
+        if canvasView.DtoE == true {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                
+                self.dismiss(animated: false, completion: nil)
+                
+                
+                
+            })
+            
+            
+        }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

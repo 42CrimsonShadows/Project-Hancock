@@ -213,7 +213,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <scene sceneID="UCZ-aa-5Qc">
             <objects>
                 <viewController id="yGt-pD-ezq" customClass="activityViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bbg-FV-2dh" userLabel="View">
+                    <view key="view" contentMode="scaleToFill" id="bbg-FV-2dh" userLabel="View" customClass="CanvasView" customModule="Hancock" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -409,6 +409,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="grassImage" destination="S0V-F7-tnM" id="x1V-hO-IGV"/>
                         <outlet property="locationLabel" destination="9Pa-b7-CmQ" id="JFg-wJ-dop"/>
                         <outlet property="separatorView" destination="ueY-pM-8oa" id="L6W-9R-67S"/>
+                        <outlet property="view" destination="Las-os-uIu" id="3lL-49-iqg"/>
                         <outletCollection property="gagueLabelCollection" destination="KBZ-GN-eRo" collectionClass="NSMutableArray" id="d8w-ZM-d3G"/>
                         <outletCollection property="gagueLabelCollection" destination="fqo-in-g9e" collectionClass="NSMutableArray" id="Zan-X0-t6a"/>
                         <outletCollection property="gagueLabelCollection" destination="SYK-kW-jna" collectionClass="NSMutableArray" id="LAa-PU-a4F"/>
