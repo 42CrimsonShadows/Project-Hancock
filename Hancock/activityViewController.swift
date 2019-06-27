@@ -352,26 +352,25 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        //turn on feedback if the pencil angle is good
-        if reticleView.actualAzimuthAngle >= 0 && reticleView.actualAzimuthAngle <= 1 {
-            self.antFace.isHidden = false
-        }
-        else {
-            self.antFace.isHidden = true
-        }
-
-        
         if canvasView.goodTouch {
         canvasView.drawTouches(touches, withEvent: event)
         
+            //turn on feedback if the pencil angle is good
+            if reticleView.actualAzimuthAngle >= 0 && reticleView.actualAzimuthAngle <= 1 {
+                self.antFace.isHidden = false
+            }
+            else {
+                self.antFace.isHidden = true
+            }
+            
             touches.forEach { (touch) in
                 updateGagues(with: touch)
                 
                 if useDebugDrawing, touch.type == .pencil {
                     updateReticleView(with: touch)
-                    
+
                     guard let predictedTouch = event?.predictedTouches(for: touch)?.last else { return }
-                    
+
                     updateReticleView(with: predictedTouch, isPredicted: true)
                 }
             }
