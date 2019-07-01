@@ -8,7 +8,7 @@
 import UIKit
 
 class ChapterViewController: UIViewController {
-
+    
     //ref to the UIImageVIEW on the storyboard
     @IBOutlet weak var GifView: UIImageView!
     @IBOutlet weak var loadingGifView: UIImageView!    
@@ -29,7 +29,7 @@ class ChapterViewController: UIViewController {
         chapter2Label.isHidden = true
         chapter3Label.isHidden = true
         chapter4Label.isHidden = true
-
+        
         //set up to perform segue programmatically
         let tap =  UITapGestureRecognizer(target: self, action: #selector(tappedMe))
         chapter1Label.isUserInteractionEnabled = true
