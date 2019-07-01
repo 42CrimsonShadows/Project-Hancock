@@ -448,9 +448,33 @@
 				DEVELOPMENT_TEAM = AUZXFUDQS4;
 				INFOPLIST_FILE = Hancock/Info.plist;
 <<<<<<< HEAD
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+>>>>>>> 94593e1873af0e92876d974ff1bceadf09875902
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bosiestate.abcgo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0A028CE227CA9F600A7C787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AUZXFUDQS4;
+				INFOPLIST_FILE = Hancock/Info.plist;
 <<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-
+=======
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 >>>>>>> 94593e1873af0e92876d974ff1bceadf09875902
 				LD_RUNPATH_SEARCH_PATHS = (
