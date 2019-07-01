@@ -27,7 +27,7 @@ class CanvasView: UIView {
     var targetPoint = CGPoint()
     var lineColor = UIColor.blue.cgColor
     var checkPointColor = UIColor.darkGray.cgColor
-    var dotPointColor = UIColor.green.cgColor
+    var dotPointColor = UIColor.black.cgColor
     var defaultColor = UIColor.black.cgColor
     
     var letterState: LetterState = .AtoB
