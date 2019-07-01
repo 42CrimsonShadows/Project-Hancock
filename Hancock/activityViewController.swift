@@ -164,17 +164,36 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         setupGreenlines()
         setupDotsImages()
         
+        
         //load animations
         antChillImage.loadGif(name: "Anthony-Chillaxing")
         grassImage.loadGif(name: "Grass-Blowing")
         
         antFace.isHidden = true
         
+
+        
         //antChillImage.contentMode = .scaleAspectFit
         //antChillImage.backgroundColor = UIColor.lightGray
         //grassImage.contentMode = .scaleAspectFit
         //grassImage.backgroundColor = UIColor.lightGray
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("*** ViewWillAppear()")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            //play the pulsate animation for the first dot
+            self.canvasView.greenDot?.pulsate()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                //play the pulsate animation for the second dot
+                self.canvasView.redDot?.pulsate()
+            })
+        })
+    }
+    
     
     //MARK: -- Changes 1
     private func setupCanvas() {

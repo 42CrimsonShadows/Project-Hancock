@@ -140,7 +140,6 @@ class CanvasView: UIView {
             //context.move(to: bStartPoint)
             //context.addLine(to: bEndPoint)
             redDot?.isHidden = false
-            
         }
         else if AtoB && !AtoC {
             //make first dot

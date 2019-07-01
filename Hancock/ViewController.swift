@@ -461,6 +461,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //get ready to shatter a when ViewDidAppear() is called
                     self.shatterLetterA = true
                     
+                    self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                    
                     //switch to the Letter A ViewController
                     self.performSegue(withIdentifier: "Letter Page", sender: self)
                 })
