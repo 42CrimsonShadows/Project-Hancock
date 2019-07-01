@@ -40,7 +40,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var startButton: UIButton!
     
-  
+    
+    
+    
     
     //MARK: ACTIONS
     @IBAction func goButtonPressed(_ sender: Any) {
@@ -76,15 +78,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let walkingNode = SCNNode()
     let idleNode = SCNNode()
     let maskingNode = SCNNode()
-    let letterANode = SCNNode()
     
     var idle: Bool = true
     var isWalking: Bool = false
-    var shatterLetterA: Bool = false
     
     var walkPlayer = AVAudioPlayer()
     var birdsPlayer = AVAudioPlayer()
     var narrationPlayer = AVAudioPlayer()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +94,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.initScene()
         self.initARSession()
         self.loadModels()
+        
         
         
         //setup audio player
@@ -109,24 +111,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print("WalkPlayer not available!")
         }
-        
-        if shatterLetterA == false {
-            //pause the Letter Shatter animation
-            letterANode.isPaused = true
-            print("Shatter Animation Paused")
-            //you can also pause individual animations
-            //storyNode?.childNode(withName: "shard2", recursively: true)?.animationPlayer(forKey: "shard2-Matrix-animation-transform")?.paused = true
-        }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("*** ViewWillAppear()")
-        
-        if shatterLetterA == true {
-            playShatterAnimation()
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -153,14 +142,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sceneView.delegate = self
         sceneView.automaticallyUpdatesLighting = true
         sceneView.showsStatistics = true
-        sceneView.preferredFramesPerSecond = 60
-        sceneView.antialiasingMode = .multisampling2X
-        sceneView.debugOptions = [
-            ARSCNDebugOptions.showFeaturePoints,
-            //ARSCNDebugOptions.showWorldOrigin,
-            //SCNDebugOptions.showPhysicsShapes,
-            //SCNDebugOptions.showBoundingBoxes
-        ]
+        //sceneView.preferredFramesPerSecond = 60
+        //sceneView.antialiasingMode = .multisampling2X
+        //sceneView.debugOptions = [
+        //ARSCNDebugOptions.showFeaturePoints,
+        //ARSCNDebugOptions.showWorldOrigin,
+        //SCNDebugOptions.showPhysicsShapes,
+        //SCNDebugOptions.showBoundingBoxes
+        //]
         
         focusPoint = CGPoint(x: view.center.x, y: view.center.y + view.center.y * 0.25)
     }
@@ -298,7 +287,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func updatePositions() {
         // Update Truck Node
         self.storyNode.position = self.focusNode.position
-        
+
         // Update Ground Node
         //self.groundNode.position = self.focusNode.position
     }
@@ -311,11 +300,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.updatePositions()
             self.storyNode.isHidden = false
             self.idleNode.isHidden = false
-            self.letterANode.isHidden = false
-            self.startButton.isHidden = true
             self.gameState = .playGame
             self.birdsPlayer.play()
-            //set birdsplayer to play infinitly (-1)
             self.birdsPlayer.numberOfLoops = -1
         }
         storyTime()
@@ -327,8 +313,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.storyNode.isHidden = true
             self.idleNode.isHidden = true
             self.walkingNode.isHidden = true
-            self.letterANode.isHidden = true
-            self.startButton.isHidden = false
             self.gameState = .detectSurface
             self.birdsPlayer.stop()
             self.walkPlayer.stop()
@@ -378,20 +362,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         //maskingNode.position = SCNVector3(0, 0, 0)
         //maskingNode.scale = SCNVector3(1, 1, 1)
-        maskingNode.renderingOrder = -2
         storyNode.addChildNode(maskingNode)
-        
-        //Load the shattering A scn into the BugScene
-        let shatterAScene = SCNScene(named: "art.scnassets/LetterA@Shatter.scn")!
-        for child in shatterAScene.rootNode.childNodes {
-            letterANode.addChildNode(child)
-        }
-        letterANode.position = SCNVector3(-13.879, -1, 12)
-        //letterANode.eulerAngles = SCNVector3(0, 0, 0)
-        letterANode.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letterANode.renderingOrder = -5
-        
-        storyNode.childNode(withName: "BUGScene", recursively: true)!.addChildNode(letterANode)
     }
     
     func anthonyWalk() {
@@ -420,24 +391,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         ground?.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
         walkingNode.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
         idleNode.position = walkingNode.position
-        idleNode.eulerAngles = SCNVector3(0, 0.3, 0)
-    }
-    
-    func playAnimation2() {
-        
-        walkingNode.isHidden = false
-        idleNode.isHidden = true
-        
-        //start playing the walking sound
-        walkPlayer.setVolume(0.5, fadeDuration: 0)
-        walkPlayer.play()
-        
-        let ground = storyNode.childNode(withName: "BUGScene", recursively: false)
-        ground?.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopAnimation2)
-        
-        walkingNode.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
-        idleNode.position = walkingNode.position
-        idleNode.eulerAngles = SCNVector3(0, -0.3, 0)
     }
     
     func stopAnimation() {
@@ -457,42 +410,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 //wait 6 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                    
-                    //get ready to shatter a when ViewDidAppear() is called
-                    self.shatterLetterA = true
-                    
                     //switch to the Letter A ViewController
                     self.performSegue(withIdentifier: "Letter Page", sender: self)
                 })
             })
+            
         }
-    }
-    
-    func stopAnimation2() {
-                
-        idleNode.isHidden = false
-        walkingNode.isHidden = true
-        walkPlayer.setVolume(0, fadeDuration: 0.75)
-        
-        //stop playing the walking sound
-        walkPlayer.stop()
-        walkPlayer.setVolume(1, fadeDuration: 0)
-    }
-    
-    func playShatterAnimation () {
-        letterANode.isPaused = false
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.animateLetterHide()
-        })
-    }
-
-    func animateLetterHide(){
-        letterANode.runAction(SCNAction.fadeOpacity(to: 0, duration: 4))
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-            self.playAnimation2()
-        })
     }
     
     func storyTime(){

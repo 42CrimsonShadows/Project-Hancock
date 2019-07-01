@@ -447,11 +447,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AUZXFUDQS4;
 				INFOPLIST_FILE = Hancock/Info.plist;
-<<<<<<< HEAD
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-=======
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
->>>>>>> 94593e1873af0e92876d974ff1bceadf09875902
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,11 +467,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AUZXFUDQS4;
 				INFOPLIST_FILE = Hancock/Info.plist;
-<<<<<<< HEAD
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-=======
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
->>>>>>> 94593e1873af0e92876d974ff1bceadf09875902
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
