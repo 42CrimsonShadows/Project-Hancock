@@ -20,10 +20,10 @@ extension UIView {
         pulse.duration = 0.6
         
         //starts at 95% of its size
-        pulse.fromValue  = 0.95
+        pulse.fromValue  = 1
         
         //ends at %100 of it's size
-        pulse.toValue = 1.0
+        pulse.toValue = 1.25
         
         //reverse the animation when finished
         pulse.autoreverses = true

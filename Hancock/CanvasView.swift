@@ -340,6 +340,16 @@ class CanvasView: UIView {
                     //wait 1 second
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         self.playAudioFile(file: "Line6", type: "mp3")
+                        
+                        //wait 3 seconds
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                            self.blueDot?.pulsate()
+                            
+                            //wait 2 seconds
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                self.orangeDot?.pulsate()
+                            })
+                        })
                     })
                 })
                 letterState = .AtoC
@@ -351,6 +361,15 @@ class CanvasView: UIView {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.playAudioFile(file: "Line7", type: "mp3")
                     
+                    //wait 2 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.purpleDot?.pulsate()
+                        
+                        //wait 2 seconds
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            self.yellowDot?.pulsate()
+                        })
+                    })
                 })
                 letterState = .DtoE
                 AtoC = true

@@ -159,6 +159,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             pencilInteraction.delegate = self
             view.addInteraction(pencilInteraction)
         }
+        
         setupCanvas()
         setupAUnderlay()
         setupGreenlines()
@@ -171,8 +172,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         antFace.isHidden = true
         
-
-        
         //antChillImage.contentMode = .scaleAspectFit
         //antChillImage.backgroundColor = UIColor.lightGray
         //grassImage.contentMode = .scaleAspectFit
@@ -182,6 +181,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("*** ViewWillAppear()")
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             //play the pulsate animation for the first dot

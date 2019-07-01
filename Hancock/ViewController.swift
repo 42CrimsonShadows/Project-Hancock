@@ -461,10 +461,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //get ready to shatter a when ViewDidAppear() is called
                     self.shatterLetterA = true
                     
-                    self.playAudioNarrationFile(file: "Line4", type: "mp3")
-                    
                     //switch to the Letter A ViewController
                     self.performSegue(withIdentifier: "Letter Page", sender: self)
+                    
+                    //wait 6 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                    })
                 })
             })
         }
@@ -511,7 +514,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //pass it an audiofile and it will play it!
-    func playAudioNarrationFile(file: String, type: String) {
+    public func playAudioNarrationFile(file: String, type: String) {
         let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         
         do
