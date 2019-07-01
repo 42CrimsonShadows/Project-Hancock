@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class HomeViewController: UIViewController {
-
+    
     
     @IBOutlet weak var upperCaseImage: UIImageView!
     
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         print("Successfully logged out")
         self.dismiss(animated: false, completion: nil)
     }
-
+    
     @objc func tappedMe(){
         //action to perform segue
         performSegue(withIdentifier: "toChapterPage", sender: self)

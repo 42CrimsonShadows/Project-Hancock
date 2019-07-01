@@ -126,7 +126,7 @@ class Line: NSObject {
             context.move(to: CGPoint(x: priorLocation.x, y: priorLocation.y))
             context.addLine(to: CGPoint(x: location.x, y: location.y))
 
-            context.setLineWidth(point.magnitude + 10)
+            context.setLineWidth(point.magnitude)
             
             context.strokePath()
 
@@ -250,19 +250,19 @@ class Line: NSObject {
             } else if pointType.contains(.needsUpdate) {
                 // One way to see the needs update color is to look at the line just behind the tip of Apple Pencil.
                 // After the update is applied, this flag is removed, and the color of the line segment changes.
-                color = UIColor.black
+                color = UIColor.orange
             } else if pointType.contains(.coalesced) {
                 // With finger input, you are more likely to see the coalesced touch color on devices that
                 // report touches at 60 Hz frequency. Some devices report touches at a higher frequency, so
                 // touch coalescing is less frequent.
-                color = UIColor.black
+                color = UIColor.green
             } else if pointType.contains(.predicted) {
                 // Predicted touches are drawn in this sample for demonstration, but are typically used to influence the
                 // drawing indirectly, such as with a smoothing algorithm. Points derived from predicted touches
                 // should be removed from the line at the next event, so this color appears only briefly.
-                color = UIColor.black
+                color = UIColor.blue
             } else if pointType.contains(.finger) {
-                color = UIColor.black
+                color = UIColor.purple
             }
         } else {
             if pointType.contains(.cancelled) {
