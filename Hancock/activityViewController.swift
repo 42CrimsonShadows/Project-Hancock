@@ -37,6 +37,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var antFace: UIImageView!
     
+
     @IBOutlet weak var debugButton: UIButton!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var forceLabel: UILabel!
@@ -131,17 +132,18 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     
     
+    
     //MARK: - ACTIONS
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
         print(self)
     }
-    //    @IBAction func undoButton(_ sender: Any) {
-    //        canvasView.lines.removeAll()
-    //        canvasView.checkpointLines.removeAll()
-    //        canvasView.setNeedsDisplay()
-    //    }
+//    @IBAction func undoButton(_ sender: Any) {
+//        canvasView.lines.removeAll()
+//        canvasView.checkpointLines.removeAll()
+//        canvasView.setNeedsDisplay()
+//    }
     
     //MARK: - VIEWDIDLOAD & SETUP
     
@@ -171,7 +173,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         grassImage.loadGif(name: "Grass-Blowing")
         
         antFace.isHidden = true
-        
+
         //antChillImage.contentMode = .scaleAspectFit
         //antChillImage.backgroundColor = UIColor.lightGray
         //grassImage.contentMode = .scaleAspectFit
@@ -197,8 +199,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     //MARK: -- Changes 1
     private func setupCanvas() {
-        //Add the drawing canvas to the UIView
-        //view.addSubview(canvas)
+       //Add the drawing canvas to the UIView
+       //view.addSubview(canvas)
         canvasView.backgroundColor = UIColor(white: 0.5, alpha: 0)
         //canvasView.activityVC = self
         //this enables autolayout for our canvas
@@ -307,17 +309,17 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.yellowDot = YellowDotView
     }
     
-    public func goBack() {
-        
-        //dismissItem.dismiss(animated: false, completion: nil)
-        print("Go Back Was Called")
-        print(self)
-        //self.performSegue(withIdentifier: "Back To Scene", sender: self)
-        //navigationController?.popToRootViewController(animated: true)
-        //            navigationController?.popViewController(animated: true)
-        //            dismiss(animated: true, completion: nil)
-        self.dismiss(animated: false, completion: nil)
-    }
+        public func goBack() {
+    
+            //dismissItem.dismiss(animated: false, completion: nil)
+            print("Go Back Was Called")
+            print(self)
+            //self.performSegue(withIdentifier: "Back To Scene", sender: self)
+            //navigationController?.popToRootViewController(animated: true)
+//            navigationController?.popViewController(animated: true)
+//            dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //canvasView.drawTouches(touches, withEvent: event)
@@ -354,7 +356,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             print("Touch was within 50 units")
             
             
-            
+           
             canvasView.drawTouches(touches, withEvent: event)
             touches.forEach { (touch) in updateGagues(with: touch)
                 
@@ -369,17 +371,18 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        //turn on feedback if the pencil angle is good
+        if reticleView.actualAzimuthAngle >= 0 && reticleView.actualAzimuthAngle <= 1 {
+            self.antFace.isHidden = false
+        }
+        else {
+            self.antFace.isHidden = true
+        }
+
+        
         if canvasView.goodTouch {
-            canvasView.drawTouches(touches, withEvent: event)
-            
-            //turn on feedback if the pencil angle is good
-            if reticleView.actualAzimuthAngle >= 0 && reticleView.actualAzimuthAngle <= 1 {
-                self.antFace.isHidden = false
-            }
-            else {
-                self.antFace.isHidden = true
-            }
-            
+        canvasView.drawTouches(touches, withEvent: event)
+        
             touches.forEach { (touch) in
                 updateGagues(with: touch)
                 
@@ -402,8 +405,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.drawTouches(touches, withEvent: event)
         canvasView.endTouches(touches, cancel: false)
         canvasView.goodTouch = false
-        
+       
         guard let lastPoint = touches.first?.location(in: canvasView) else { return }
+        
         
         touches.forEach { (touch) in
             clearGagues()
@@ -416,8 +420,14 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         if canvasView.DtoE == true {
             DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                
                 self.dismiss(animated: false, completion: nil)
+                
+                
+                
             })
+            
+            
         }
     }
     
