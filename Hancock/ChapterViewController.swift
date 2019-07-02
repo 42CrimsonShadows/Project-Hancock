@@ -17,6 +17,10 @@ class ChapterViewController: UIViewController {
     @IBOutlet weak var chapter3Label: UIButton!
     @IBOutlet weak var chapter4Label: UIButton!
     
+    @IBAction func chapter1Touch(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

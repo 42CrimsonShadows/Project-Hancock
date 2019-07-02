@@ -966,7 +966,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <color key="titleColor" red="1" green="0.78308216094379002" blue="0.0066296056843642148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" identifier="toARScenePage" id="axn-ec-MLx"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="toARScenePage" id="Y7K-P0-5Pg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3rH-Cf-awJ">

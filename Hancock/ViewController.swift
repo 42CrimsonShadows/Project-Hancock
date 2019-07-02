@@ -30,6 +30,8 @@ enum GameProgress: Int16 {
 //By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    let chapSelection = ChapterSelection()
+    
     //MARK: - OUTLETS
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var stuNameTextFeild: UITextField!
@@ -55,11 +57,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func showAllButtonPressed(_ sender: Any) {
-        if maskingNode.isHidden == true {
-            maskingNode.isHidden = false
+        if chapSelection.maskingNode.isHidden == true {
+            chapSelection.maskingNode.isHidden = false
         }
         else{
-            maskingNode.isHidden = true
+            chapSelection.maskingNode.isHidden = true
         }
     }
     
@@ -70,13 +72,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var gameProgress: GameProgress = .toLetterA
     var focusPoint: CGPoint!
     var focusNode: SCNNode!
-    var groundNode: SCNNode!
-    var storyNode: SCNNode!
-    let animationNode = SCNNode()
-    let walkingNode = SCNNode()
-    let idleNode = SCNNode()
-    let maskingNode = SCNNode()
-    let letterANode = SCNNode()
+    //var groundNode: SCNNode!
+    //var storyNode: SCNNode!
+    //let animationNode = SCNNode()
+    //let walkingNode = SCNNode()
+    //let idleNode = SCNNode()
+    //let maskingNode = SCNNode()
+    //let letterANode = SCNNode()
     
     var idle: Bool = true
     var isWalking: Bool = false
@@ -86,13 +88,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var birdsPlayer = AVAudioPlayer()
     var narrationPlayer = AVAudioPlayer()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.initSceneView()
         self.initScene()
         self.initARSession()
-        self.loadModels()
+        self.loadModels(chapterNode: chapSelection.loadChapter1Files())
         
         
         //setup audio player
@@ -112,7 +115,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if shatterLetterA == false {
             //pause the Letter Shatter animation
-            letterANode.isPaused = true
+            //letterANode.isPaused = true
+            chapSelection.letterANode.isPaused = true
             print("Shatter Animation Paused")
             //you can also pause individual animations
             //storyNode?.childNode(withName: "shard2", recursively: true)?.animationPlayer(forKey: "shard2-Matrix-animation-transform")?.paused = true
@@ -281,7 +285,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // Show Focus Node
         self.focusNode.isHidden = false
-        
         let results = self.sceneView.hitTest(self.focusPoint, types: [.existingPlaneUsingExtent])
         
         if results.count >= 1 {
@@ -297,8 +300,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func updatePositions() {
         // Update Truck Node
-        self.storyNode.position = self.focusNode.position
-        
+        //self.storyNode.position = self.focusNode.position
+        self.chapSelection.storyNode.position = self.focusNode.position
+
         // Update Ground Node
         //self.groundNode.position = self.focusNode.position
     }
@@ -309,9 +313,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard self.gameState == .hitStartToPlay else { return }
         DispatchQueue.main.async {
             self.updatePositions()
-            self.storyNode.isHidden = false
-            self.idleNode.isHidden = false
-            self.letterANode.isHidden = false
+            //self.storyNode.isHidden = false
+            //self.idleNode.isHidden = false
+            //self.letterANode.isHidden = false
+            self.chapSelection.storyNode.isHidden = false
+            self.chapSelection.idleNode.isHidden = false
+            self.chapSelection.letterANode.isHidden = false
             self.startButton.isHidden = true
             self.gameState = .playGame
             self.birdsPlayer.play()
@@ -324,10 +331,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func resetGame(){
         guard self.gameState == .playGame else { return }
         DispatchQueue.main.async {
-            self.storyNode.isHidden = true
-            self.idleNode.isHidden = true
-            self.walkingNode.isHidden = true
-            self.letterANode.isHidden = true
+            //self.storyNode.isHidden = true
+            //self.idleNode.isHidden = true
+            //self.walkingNode.isHidden = true
+            //self.letterANode.isHidden = true
+            self.chapSelection.storyNode.isHidden = true
+            self.chapSelection.idleNode.isHidden = true
+            self.chapSelection.walkingNode.isHidden = true
+            self.chapSelection.letterANode.isHidden = true
             self.startButton.isHidden = false
             self.gameState = .detectSurface
             self.birdsPlayer.stop()
@@ -335,7 +346,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func loadModels() {
+    func loadModels(chapterNode: [SCNNode]) {
         
         // Load Focus Node
         let focusScene = SCNScene(named: "art.scnassets/FocusScene.scn")!
@@ -343,55 +354,65 @@ class ViewController: UIViewController, UITextFieldDelegate {
         focusNode.isHidden = true
         sceneView.scene.rootNode.addChildNode(focusNode)
         
-        // Load StoryScene Node
-        let storyScene = SCNScene(named: "art.scnassets/AnthonyScene.scn")!
-        storyNode = storyScene.rootNode.childNode(withName: "anthony", recursively: true)
-        storyNode.scale = SCNVector3(1, 1, 1)
-        storyNode.position = SCNVector3(0, -10, 0)
-        storyNode.isHidden = true
-        sceneView.scene.rootNode.addChildNode(storyNode)
-        
-        //Load Idle Animation Node
-        let idleAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Idle.scn")!
-        for child in idleAnthonyScene.rootNode.childNodes {
-            idleNode.addChildNode(child)
+        for child in chapterNode {
+            sceneView.scene.rootNode.addChildNode(child)
         }
-        storyNode.addChildNode(idleNode)
-        idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
-        walkingNode.position = SCNVector3(0, 0, 0)
-        idleNode.isHidden = true
         
-        //Load walking Animation Node
-        let walkingAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Walk.scn")!
-        for child in walkingAnthonyScene.rootNode.childNodes {
-            walkingNode.addChildNode(child)
-        }
-        storyNode.addChildNode(walkingNode)
-        walkingNode.position = SCNVector3(0, 0, 0)
-        walkingNode.scale = SCNVector3(0.02, 0.02, 0.02)
-        walkingNode.isHidden = true
-        
-        //Load Scene Mask so we only see immidate area
-        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
-        for child in maskingScene.rootNode.childNodes {
-            maskingNode.addChildNode(child)
-        }
-        //maskingNode.position = SCNVector3(0, 0, 0)
-        //maskingNode.scale = SCNVector3(1, 1, 1)
-        maskingNode.renderingOrder = -2
-        storyNode.addChildNode(maskingNode)
-        
-        //Load the shattering A scn into the BugScene
-        let shatterAScene = SCNScene(named: "art.scnassets/LetterA@Shatter.scn")!
-        for child in shatterAScene.rootNode.childNodes {
-            letterANode.addChildNode(child)
-        }
-        letterANode.position = SCNVector3(-13.879, -1, 12)
-        //letterANode.eulerAngles = SCNVector3(0, 0, 0)
-        letterANode.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letterANode.renderingOrder = -5
-        
-        storyNode.childNode(withName: "BUGScene", recursively: true)!.addChildNode(letterANode)
+//        // Load Focus Node
+//        let focusScene = SCNScene(named: "art.scnassets/FocusScene.scn")!
+//        focusNode = focusScene.rootNode.childNode(withName: "focus", recursively: false)
+//        focusNode.isHidden = true
+//        sceneView.scene.rootNode.addChildNode(focusNode)
+//
+//        // Load StoryScene Node
+//        let storyScene = SCNScene(named: "art.scnassets/AnthonyScene.scn")!
+//        storyNode = storyScene.rootNode.childNode(withName: "anthony", recursively: true)
+//        storyNode.scale = SCNVector3(1, 1, 1)
+//        storyNode.position = SCNVector3(0, -10, 0)
+//        storyNode.isHidden = true
+//        sceneView.scene.rootNode.addChildNode(storyNode)
+//
+//        //Load Idle Animation Node
+//        let idleAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Idle.scn")!
+//        for child in idleAnthonyScene.rootNode.childNodes {
+//            idleNode.addChildNode(child)
+//        }
+//        storyNode.addChildNode(idleNode)
+//        idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
+//        walkingNode.position = SCNVector3(0, 0, 0)
+//        idleNode.isHidden = true
+//
+//        //Load walking Animation Node
+//        let walkingAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Walk.scn")!
+//        for child in walkingAnthonyScene.rootNode.childNodes {
+//            walkingNode.addChildNode(child)
+//        }
+//        storyNode.addChildNode(walkingNode)
+//        walkingNode.position = SCNVector3(0, 0, 0)
+//        walkingNode.scale = SCNVector3(0.02, 0.02, 0.02)
+//        walkingNode.isHidden = true
+//
+//        //Load Scene Mask so we only see immidate area
+//        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
+//        for child in maskingScene.rootNode.childNodes {
+//            maskingNode.addChildNode(child)
+//        }
+//        //maskingNode.position = SCNVector3(0, 0, 0)
+//        //maskingNode.scale = SCNVector3(1, 1, 1)
+//        maskingNode.renderingOrder = -2
+//        storyNode.addChildNode(maskingNode)
+//
+//        //Load the shattering A scn into the BugScene
+//        let shatterAScene = SCNScene(named: "art.scnassets/LetterA@Shatter.scn")!
+//        for child in shatterAScene.rootNode.childNodes {
+//            letterANode.addChildNode(child)
+//        }
+//        letterANode.position = SCNVector3(-13.879, -1, 12)
+//        //letterANode.eulerAngles = SCNVector3(0, 0, 0)
+//        letterANode.scale = SCNVector3(1.75, 1.75, 1.75)
+//        //letterANode.renderingOrder = -5
+//
+//        storyNode.childNode(withName: "BUGScene", recursively: true)!.addChildNode(letterANode)
     }
     
     func anthonyWalk() {
@@ -409,42 +430,60 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func playAnimation1() {
         
-        walkingNode.isHidden = false
-        idleNode.isHidden = true
+        //walkingNode.isHidden = false
+        //idleNode.isHidden = true
+        chapSelection.walkingNode.isHidden = false
+        chapSelection.idleNode.isHidden = true
         
         //start playing the walking sound
         walkPlayer.setVolume(0.5, fadeDuration: 0)
         walkPlayer.play()
         
-        let ground = storyNode.childNode(withName: "BUGScene", recursively: false)
+        //let ground = storyNode.childNode(withName: "BUGScene", recursively: false)
+        let ground = chapSelection.storyNode.childNode(withName: "BUGScene", recursively: false)
+        
         ground?.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
-        walkingNode.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
-        idleNode.position = walkingNode.position
-        idleNode.eulerAngles = SCNVector3(0, 0.3, 0)
+        //walkingNode.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
+        chapSelection.walkingNode.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
+        //idleNode.position = walkingNode.position
+        //idleNode.eulerAngles = SCNVector3(0, 0.3, 0)
+        chapSelection.idleNode.position = chapSelection.walkingNode.position
+        chapSelection.idleNode.eulerAngles = SCNVector3(0, 0.3, 0)
+
     }
     
     func playAnimation2() {
         
-        walkingNode.isHidden = false
-        idleNode.isHidden = true
+        //walkingNode.isHidden = false
+        //idleNode.isHidden = true
+        chapSelection.walkingNode.isHidden = false
+        chapSelection.idleNode.isHidden = true
         
         //start playing the walking sound
         walkPlayer.setVolume(0.5, fadeDuration: 0)
         walkPlayer.play()
         
-        let ground = storyNode.childNode(withName: "BUGScene", recursively: false)
+        //let ground = storyNode.childNode(withName: "BUGScene", recursively: false)
+        let ground = chapSelection.storyNode.childNode(withName: "BUGScene", recursively: false)
         ground?.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopAnimation2)
         
-        walkingNode.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
-        idleNode.position = walkingNode.position
-        idleNode.eulerAngles = SCNVector3(0, -0.3, 0)
+        //walkingNode.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
+        //idleNode.position = walkingNode.position
+        //idleNode.eulerAngles = SCNVector3(0, -0.3, 0)
+        chapSelection.walkingNode.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
+        chapSelection.idleNode.position = chapSelection.walkingNode.position
+        chapSelection.idleNode.eulerAngles = SCNVector3(0, -0.3, 0)
+        
     }
     
     func stopAnimation() {
         
-        idleNode.isHidden = false
-        walkingNode.isHidden = true
+        //idleNode.isHidden = false
+        //walkingNode.isHidden = true
+        chapSelection.idleNode.isHidden = false
+        chapSelection.walkingNode.isHidden = true
         walkPlayer.setVolume(0, fadeDuration: 0.75)
+
         
         //stop playing the walking sound
         walkPlayer.stop()
@@ -475,8 +514,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func stopAnimation2() {
                 
-        idleNode.isHidden = false
-        walkingNode.isHidden = true
+        //idleNode.isHidden = false
+        //walkingNode.isHidden = true
+        chapSelection.idleNode.isHidden = false
+        chapSelection.walkingNode.isHidden = true
         walkPlayer.setVolume(0, fadeDuration: 0.75)
         
         //stop playing the walking sound
@@ -485,7 +526,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func playShatterAnimation () {
-        letterANode.isPaused = false
+        //letterANode.isPaused = false
+        chapSelection.letterANode.isPaused = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             self.animateLetterHide()
@@ -493,8 +535,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func animateLetterHide(){
-        letterANode.runAction(SCNAction.fadeOpacity(to: 0, duration: 4))
-        
+        //letterANode.runAction(SCNAction.fadeOpacity(to: 0, duration: 4))
+        chapSelection.letterANode.runAction(SCNAction.fadeOpacity(to: 0, duration: 4))
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
             self.playAnimation2()
         })
@@ -527,6 +570,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.narrationPlayer.play()
     }
 }
+
 
 
 
