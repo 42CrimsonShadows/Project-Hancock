@@ -11,6 +11,7 @@
 		3446B59522B8201600C785BE /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3446B59422B8201600C785BE /* Formatters.swift */; };
 		34DC042522B2DA36001C70DB /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC042322B2DA35001C70DB /* CanvasView.swift */; };
 		34DC042622B2DA36001C70DB /* ReticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC042422B2DA36001C70DB /* ReticleView.swift */; };
+		A004383822CBEEE700E32F21 /* ChapterSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004383722CBEEE700E32F21 /* ChapterSelection.swift */; };
 		A00678EC22AEEB5B00846A2D /* line.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00678EB22AEEB5B00846A2D /* line.swift */; };
 		A00E7B5A22CA8D25009BA733 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7B5922CA8D25009BA733 /* UIViewExtension.swift */; };
 		A02BCC3B22A86EA70059E3D8 /* activityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BCC3A22A86EA70059E3D8 /* activityViewController.swift */; };
@@ -42,6 +43,7 @@
 		34DC042322B2DA35001C70DB /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		34DC042422B2DA36001C70DB /* ReticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReticleView.swift; sourceTree = "<group>"; };
 		7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.release.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.release.xcconfig"; sourceTree = "<group>"; };
+		A004383722CBEEE700E32F21 /* ChapterSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterSelection.swift; sourceTree = "<group>"; };
 		A00678EB22AEEB5B00846A2D /* line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = line.swift; sourceTree = "<group>"; };
 		A00E7B5922CA8D25009BA733 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A02BCC3A22A86EA70059E3D8 /* activityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
 				A0A028C1227CA9F500A7C787 /* Main.storyboard */,
 				A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */,
+				A004383722CBEEE700E32F21 /* ChapterSelection.swift */,
 			);
 			path = Hancock;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */,
 				3446B59522B8201600C785BE /* Formatters.swift in Sources */,
 				A00E7B5A22CA8D25009BA733 /* UIViewExtension.swift in Sources */,
+				A004383822CBEEE700E32F21 /* ChapterSelection.swift in Sources */,
 				C99A9BE122A058A700554D9A /* HomeViewController.swift in Sources */,
 				C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */,
 				A00678EC22AEEB5B00846A2D /* line.swift in Sources */,
