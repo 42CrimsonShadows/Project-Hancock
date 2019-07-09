@@ -9,6 +9,8 @@ import UIKit
 
 class ChapterViewController: UIViewController {
     
+    let chapterSelector = ChapterSelection()
+    
     //ref to the UIImageVIEW on the storyboard
     @IBOutlet weak var GifView: UIImageView!
     @IBOutlet weak var loadingGifView: UIImageView!    
@@ -16,6 +18,29 @@ class ChapterViewController: UIViewController {
     @IBOutlet weak var chapter2Label: UIButton!
     @IBOutlet weak var chapter3Label: UIButton!
     @IBOutlet weak var chapter4Label: UIButton!
+    @IBOutlet weak var chapter5Label: UIButton!
+    
+    @IBAction func cpt1Clicked(_ sender: Any) {
+        chapterSelector.chapterLoader(picked: 1)
+        tappedMe()
+    }
+    @IBAction func cpt2Clicked(_ sender: Any) {
+        chapterSelector.chapterLoader(picked: 2)
+        tappedMe()
+    }
+    @IBAction func cpt3Clicked(_ sender: Any) {
+        chapterSelector.chapterLoader(picked: 3)
+        tappedMe()
+    }
+    @IBAction func cpt4Clicked(_ sender: Any) {
+        chapterSelector.chapterLoader(picked: 4)
+        tappedMe()
+    }
+    @IBAction func cpt5Clicked(_ sender: Any) {
+        chapterSelector.chapterLoader(picked: 5)
+        tappedMe()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +54,7 @@ class ChapterViewController: UIViewController {
         chapter2Label.isHidden = true
         chapter3Label.isHidden = true
         chapter4Label.isHidden = true
-        
-        //set up to perform segue programmatically
-        let tap =  UITapGestureRecognizer(target: self, action: #selector(tappedMe))
-        chapter1Label.isUserInteractionEnabled = true
-        chapter1Label.addGestureRecognizer(tap)
+        chapter5Label.isHidden = true
         
         pauseAfterPlay()
     }
@@ -47,23 +68,29 @@ class ChapterViewController: UIViewController {
             //bing bing bing bing synchronous appearance
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 self.chapter2Label.isHidden = false
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                     self.chapter3Label.isHidden = false
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                         self.chapter4Label.isHidden = false
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                            self.chapter5Label.isHidden = false
+                        })
                     })
                 })
             })
         })
     }
     
-    @objc func tappedMe(){
-        
+    func tappedMe(){
         loadingGifView.isHidden = false
         
         //self.GifView.stopAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-            self.performSegue(withIdentifier: "toARScenePage", sender: self)
+            let homeARView = self.storyboard?.instantiateViewController(withIdentifier: "HomeARViewController") as! ViewController
+            self.present(homeARView, animated: true)
         })
     }
 }

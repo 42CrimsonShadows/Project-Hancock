@@ -96,7 +96,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeARViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BV1-FR-VrT" customClass="ViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -152,19 +152,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCK-7W-Jpw">
-                                <rect key="frame" x="490" y="1268" width="44" height="48"/>
-                                <color key="backgroundColor" red="0.93844169379999998" green="0.93565088510000005" blue="0.95562607050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" title="GO">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="goButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="jf6-8n-Jkp"/>
-                                    <action selector="startButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="2wT-CO-6LW"/>
-                                    <segue destination="yGt-pD-ezq" kind="show" identifier="Letter Page" id="TqZ-00-exA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAe-dA-dqL">
                                 <rect key="frame" x="264" y="1268" width="105" height="48"/>
                                 <color key="backgroundColor" red="0.93844169379999998" green="0.93565088510000005" blue="0.95562607050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -182,11 +169,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="Rdc-Q4-PCO" firstAttribute="trailing" secondItem="BrB-h1-WRS" secondAttribute="trailing" id="EgC-rB-QXX"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstItem="Rdc-Q4-PCO" firstAttribute="top" secondItem="BrB-h1-WRS" secondAttribute="top" id="Mke-Se-p1Y"/>
-                            <constraint firstItem="nCK-7W-Jpw" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="SdS-c9-i7C"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="Rdc-Q4-PCO" firstAttribute="leading" secondItem="BrB-h1-WRS" secondAttribute="leading" id="XGI-BW-co3"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="nCK-7W-Jpw" secondAttribute="bottom" constant="50" id="ZL2-l3-2vU"/>
                             <constraint firstItem="YAe-dA-dqL" firstAttribute="leading" secondItem="eXw-dN-ay7" secondAttribute="trailing" constant="125" id="bBa-JT-5Ia"/>
                             <constraint firstItem="Lnd-S8-8gH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eXw-dN-ay7" secondAttribute="trailing" constant="8" symbolic="YES" id="crL-Pt-wRs"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="eXw-dN-ay7" secondAttribute="bottom" constant="50" id="dvY-49-dw4"/>
@@ -212,7 +197,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--Activity View Controller-->
         <scene sceneID="UCZ-aa-5Qc">
             <objects>
-                <viewController id="yGt-pD-ezq" customClass="activityViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityBoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yGt-pD-ezq" customClass="activityViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bbg-FV-2dh" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -232,43 +217,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Las-os-uIu" userLabel="Canvas View" customClass="CanvasView" customModule="Hancock" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="1178"/>
+                                <rect key="frame" x="0.0" y="20" width="1024" height="1346"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTj-Rp-NSZ">
-                                <rect key="frame" x="20" y="1286" width="86" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backButton:" destination="yGt-pD-ezq" eventType="touchUpInside" id="ZY9-El-K71"/>
-                                    <action selector="backButton:" destination="y0a-H2-t61" eventType="touchUpInside" id="pjk-6G-cx3"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOu-th-KrH">
-                                <rect key="frame" x="900" y="1286" width="91" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="clearView:" destination="yGt-pD-ezq" eventType="touchUpInside" id="OmQ-cX-Q5v"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55X-dg-y8h">
-                                <rect key="frame" x="278" y="1292" width="95" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Precise"/>
-                                <connections>
-                                    <action selector="toggleUsePreciseLocations:" destination="yGt-pD-ezq" eventType="touchUpInside" id="zT4-Ic-xUR"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-K8-aiy">
-                                <rect key="frame" x="157" y="1293" width="87" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Debug"/>
-                                <connections>
-                                    <action selector="toggleDebugDrawing:" destination="yGt-pD-ezq" eventType="touchUpInside" id="yhV-vz-x37"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AntFace" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-iA-ZV1">
                                 <rect key="frame" x="724" y="20" width="300" height="275"/>
                                 <constraints>
@@ -276,149 +228,27 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <constraint firstAttribute="width" constant="300" id="Qkf-Kn-YUc"/>
                                 </constraints>
                             </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueY-pM-8oa" userLabel="View" customClass="SeparatorView" customModule="Hancock" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1198" width="1024" height="88"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FkU-n6-AT5">
-                                        <rect key="frame" x="60" y="10" width="113" height="51.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBp-MW-l6g">
-                                                <rect key="frame" x="20" y="0.0" width="73" height="23"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000.0, 1000.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pa-b7-CmQ" userLabel="Location Label">
-                                                <rect key="frame" x="0.0" y="31" width="113" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DkX-Rx-JPK">
-                                        <rect key="frame" x="446" y="7" width="133" height="54"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Azimuth Angle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-oc-4V4">
-                                                <rect key="frame" x="0.0" y="0.0" width="133" height="25.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYK-kW-jna" userLabel="Azimuth Angle Label">
-                                                <rect key="frame" x="44" y="33.5" width="45" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-Hf-wZ7">
-                                        <rect key="frame" x="661" y="7" width="133" height="52.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Azimuth Vector" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heV-ZX-ICU">
-                                                <rect key="frame" x="0.0" y="0.0" width="133" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-0.000, -0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBZ-GN-eRo" userLabel="Azimuth Unit Vector Label">
-                                                <rect key="frame" x="0.0" y="32" width="133" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="70f-St-3PW">
-                                        <rect key="frame" x="856" y="7" width="122.5" height="52.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altitude Angle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-JS-4dP">
-                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqo-in-g9e" userLabel="Altitude Angle Label">
-                                                <rect key="frame" x="39" y="32" width="45" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LbD-Kn-2f0">
-                                        <rect key="frame" x="282" y="7" width="53.5" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Force" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPP-uC-SyN">
-                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msz-5r-FH5" userLabel="Force Label">
-                                                <rect key="frame" x="0.0" y="34.5" width="53.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="aO0-GI-co4" secondAttribute="bottom" id="19P-QO-ffx"/>
-                            <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="UQ5-K8-aiy" secondAttribute="bottom" constant="25" id="2AE-9O-btg"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="Jib-iA-ZV1" secondAttribute="trailing" id="2b7-wu-vwE"/>
-                            <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="kOu-th-KrH" secondAttribute="trailing" constant="33" id="2n2-uo-9s3"/>
                             <constraint firstItem="Jib-iA-ZV1" firstAttribute="top" secondItem="cXE-hm-SxM" secondAttribute="top" id="4cd-Dt-8DO"/>
-                            <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="aTj-Rp-NSZ" secondAttribute="bottom" constant="20" id="75A-YN-8df"/>
                             <constraint firstItem="S0V-F7-tnM" firstAttribute="leading" secondItem="cXE-hm-SxM" secondAttribute="leading" id="8VY-Ra-C6d"/>
-                            <constraint firstItem="ueY-pM-8oa" firstAttribute="top" secondItem="cXE-hm-SxM" secondAttribute="bottom" constant="-168" id="8tE-PG-Diq"/>
-                            <constraint firstItem="aTj-Rp-NSZ" firstAttribute="leading" secondItem="cXE-hm-SxM" secondAttribute="leading" constant="20" id="9j7-7Y-lEP"/>
-                            <constraint firstItem="55X-dg-y8h" firstAttribute="leading" secondItem="UQ5-K8-aiy" secondAttribute="trailing" constant="34" id="Hzs-Yk-Ddx"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="aO0-GI-co4" secondAttribute="trailing" id="Nnr-qz-1ba"/>
-                            <constraint firstItem="aTj-Rp-NSZ" firstAttribute="top" secondItem="ueY-pM-8oa" secondAttribute="bottom" id="ROe-Rq-X3U"/>
-                            <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="55X-dg-y8h" secondAttribute="bottom" constant="26" id="S2p-BE-aAg"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="ueY-pM-8oa" secondAttribute="bottom" constant="80" id="Sen-SL-q8n"/>
-                            <constraint firstItem="UQ5-K8-aiy" firstAttribute="leading" secondItem="aTj-Rp-NSZ" secondAttribute="trailing" constant="51" id="TNT-2k-yY8"/>
-                            <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="kOu-th-KrH" secondAttribute="bottom" constant="20" id="UKr-ea-6HP"/>
-                            <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="ueY-pM-8oa" secondAttribute="trailing" id="dbW-r8-AZ4"/>
-                            <constraint firstItem="cXE-hm-SxM" firstAttribute="leading" secondItem="ueY-pM-8oa" secondAttribute="leading" id="kes-4j-9T5"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="S0V-F7-tnM" secondAttribute="bottom" id="yGs-f8-Fge"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cXE-hm-SxM"/>
                     </view>
                     <connections>
-                        <outlet property="altitudeAngleLabel" destination="fqo-in-g9e" id="RHl-eB-T0j"/>
                         <outlet property="antChillImage" destination="aO0-GI-co4" id="KEd-xl-UpM"/>
                         <outlet property="antFace" destination="Jib-iA-ZV1" id="WRo-oV-a6L"/>
-                        <outlet property="azimuthAngleLabel" destination="SYK-kW-jna" id="Rap-ls-foH"/>
-                        <outlet property="azimuthUnitVectorLabel" destination="KBZ-GN-eRo" id="i7z-5a-eOR"/>
                         <outlet property="canvasView" destination="Las-os-uIu" id="N7y-Jx-Ufa"/>
-                        <outlet property="debugButton" destination="UQ5-K8-aiy" id="7Dt-tO-jcd"/>
-                        <outlet property="forceLabel" destination="msz-5r-FH5" id="2bi-Hu-8YG"/>
                         <outlet property="grassImage" destination="S0V-F7-tnM" id="x1V-hO-IGV"/>
-                        <outlet property="locationLabel" destination="9Pa-b7-CmQ" id="JFg-wJ-dop"/>
-                        <outlet property="separatorView" destination="ueY-pM-8oa" id="L6W-9R-67S"/>
                         <outlet property="view" destination="Las-os-uIu" id="3lL-49-iqg"/>
-                        <outletCollection property="gagueLabelCollection" destination="KBZ-GN-eRo" collectionClass="NSMutableArray" id="d8w-ZM-d3G"/>
-                        <outletCollection property="gagueLabelCollection" destination="fqo-in-g9e" collectionClass="NSMutableArray" id="Zan-X0-t6a"/>
-                        <outletCollection property="gagueLabelCollection" destination="SYK-kW-jna" collectionClass="NSMutableArray" id="LAa-PU-a4F"/>
-                        <outletCollection property="gagueLabelCollection" destination="msz-5r-FH5" collectionClass="NSMutableArray" id="XAa-1d-DsF"/>
-                        <outletCollection property="gagueLabelCollection" destination="9Pa-b7-CmQ" collectionClass="NSMutableArray" id="oc2-fM-Oae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoG-Ho-9Jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="y0a-H2-t61" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2121.6796875" y="826.64714494875545"/>
         </scene>
@@ -957,47 +787,69 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-aS-BXI">
-                                <rect key="frame" x="195" y="255" width="187" height="60"/>
+                                <rect key="frame" x="195" y="245" width="148" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="YPJ-6b-zzx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="CHAPTER 1: A,  B,  C,  D,  E,  F">
+                                <state key="normal" title="CHAPTER 1: I, T, L, F, E, H">
                                     <color key="titleColor" red="1" green="0.78308216094379002" blue="0.0066296056843642148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" identifier="toARScenePage" id="axn-ec-MLx"/>
+                                    <action selector="cpt1Clicked:" destination="mrd-gg-QXZ" eventType="touchUpInside" id="3mY-Fo-S1e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3rH-Cf-awJ">
-                                <rect key="frame" x="195" y="345" width="218" height="60"/>
+                                <rect key="frame" x="195" y="325" width="162" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ZtR-jp-b2T"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="CHAPTER 2: G,  H,  I,  J,  K,  L,  M">
+                                <state key="normal" title="CHAPTER 2: P, R, B, C, D, U">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="cpt2Clicked:" destination="mrd-gg-QXZ" eventType="touchUpInside" id="smN-Da-3CN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qN4-ZQ-XvQ">
-                                <rect key="frame" x="195" y="525" width="226" height="60"/>
+                                <rect key="frame" x="195" y="485" width="152" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="VBl-Ba-vrO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="CHAPTER 4: T,  U,  V,  W,  X,  Y,  Z">
+                                <state key="normal" title="CHAPTER 4: K, V, W, M, A">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="cpt4Clicked:" destination="mrd-gg-QXZ" eventType="touchUpInside" id="gMt-WY-nXd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4l0-Xf-oEY">
-                                <rect key="frame" x="195" y="435" width="190" height="60"/>
+                                <rect key="frame" x="195" y="405" width="151" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="kaE-Yu-aSe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="CHAPTER 3: N,  O,  P,  Q,  R,  S">
+                                <state key="normal" title="CHAPTER 3: G, O, Q, S, J">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="cpt3Clicked:" destination="mrd-gg-QXZ" eventType="touchUpInside" id="xay-2M-dmb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="E9a-Ga-mkv" userLabel="Chapter5 Label">
+                                <rect key="frame" x="195" y="565" width="151" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="CvP-6r-85f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="CHAPTER 5: N, Z, Y, X">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cpt5Clicked:" destination="mrd-gg-QXZ" eventType="touchUpInside" id="lbd-BA-kbe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1009,15 +861,17 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="0XM-Hd-44g" firstAttribute="top" secondItem="cCW-l2-aTY" secondAttribute="top" constant="20" id="FO4-JQ-uYJ"/>
                             <constraint firstItem="cCW-l2-aTY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qN4-ZQ-XvQ" secondAttribute="trailing" symbolic="YES" id="LDY-iT-fBP"/>
                             <constraint firstItem="qN4-ZQ-XvQ" firstAttribute="leading" secondItem="0XM-Hd-44g" secondAttribute="leading" constant="75" id="PQv-Z2-UJw"/>
-                            <constraint firstItem="ccf-aS-BXI" firstAttribute="top" secondItem="0XM-Hd-44g" secondAttribute="top" constant="215" id="XfV-6G-Y6U"/>
-                            <constraint firstItem="qN4-ZQ-XvQ" firstAttribute="top" secondItem="4l0-Xf-oEY" secondAttribute="bottom" constant="30" id="bBs-Lj-EDA"/>
-                            <constraint firstItem="3rH-Cf-awJ" firstAttribute="top" secondItem="ccf-aS-BXI" secondAttribute="bottom" constant="30" id="feu-Mz-ML6"/>
+                            <constraint firstItem="ccf-aS-BXI" firstAttribute="top" secondItem="0XM-Hd-44g" secondAttribute="top" constant="205" id="XfV-6G-Y6U"/>
+                            <constraint firstItem="qN4-ZQ-XvQ" firstAttribute="top" secondItem="4l0-Xf-oEY" secondAttribute="bottom" constant="20" id="bBs-Lj-EDA"/>
+                            <constraint firstItem="E9a-Ga-mkv" firstAttribute="leading" secondItem="0XM-Hd-44g" secondAttribute="leading" constant="75" id="ech-nR-OYo"/>
+                            <constraint firstItem="3rH-Cf-awJ" firstAttribute="top" secondItem="ccf-aS-BXI" secondAttribute="bottom" constant="20" id="feu-Mz-ML6"/>
                             <constraint firstItem="0XM-Hd-44g" firstAttribute="centerX" secondItem="PzG-ES-sM6" secondAttribute="centerX" id="ivC-xf-ORZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0XM-Hd-44g" secondAttribute="trailing" constant="100" id="mUN-cW-gaM"/>
+                            <constraint firstItem="E9a-Ga-mkv" firstAttribute="top" secondItem="qN4-ZQ-XvQ" secondAttribute="bottom" constant="20" id="meM-xN-bOW"/>
                             <constraint firstItem="ccf-aS-BXI" firstAttribute="leading" secondItem="0XM-Hd-44g" secondAttribute="leading" constant="75" id="nv4-xk-jLV"/>
                             <constraint firstItem="cCW-l2-aTY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4l0-Xf-oEY" secondAttribute="trailing" symbolic="YES" id="rFN-TW-fcz"/>
                             <constraint firstItem="TCb-uW-2lo" firstAttribute="top" secondItem="0XM-Hd-44g" secondAttribute="bottom" constant="75" id="sNa-cS-7TP"/>
-                            <constraint firstItem="4l0-Xf-oEY" firstAttribute="top" secondItem="3rH-Cf-awJ" secondAttribute="bottom" constant="30" id="sj2-xb-QPn"/>
+                            <constraint firstItem="4l0-Xf-oEY" firstAttribute="top" secondItem="3rH-Cf-awJ" secondAttribute="bottom" constant="20" id="sj2-xb-QPn"/>
                             <constraint firstItem="cCW-l2-aTY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ccf-aS-BXI" secondAttribute="trailing" symbolic="YES" id="to5-dW-UmO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cCW-l2-aTY"/>
@@ -1028,12 +882,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="chapter2Label" destination="3rH-Cf-awJ" id="OiQ-9h-VUN"/>
                         <outlet property="chapter3Label" destination="4l0-Xf-oEY" id="noI-df-8WT"/>
                         <outlet property="chapter4Label" destination="qN4-ZQ-XvQ" id="lAP-Hl-8jR"/>
+                        <outlet property="chapter5Label" destination="E9a-Ga-mkv" id="d42-Al-Nat"/>
                         <outlet property="loadingGifView" destination="TCb-uW-2lo" id="mWZ-IJ-XSY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnE-RB-2k4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468.9453125" y="131.33235724743776"/>
+            <point key="canvasLocation" x="1468" y="132"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="WUO-Ec-vU0">

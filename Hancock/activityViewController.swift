@@ -20,8 +20,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     // MARK: - VARIABLES
     
-    //let canvas = CanvasView()
-    
     private var useDebugDrawing = false
     
     private let reticleView: ReticleView = {
@@ -37,18 +35,18 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var antFace: UIImageView!
     
-    @IBOutlet weak var debugButton: UIButton!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var forceLabel: UILabel!
-    @IBOutlet weak var azimuthAngleLabel: UILabel!
-    @IBOutlet weak var azimuthUnitVectorLabel: UILabel!
-    @IBOutlet weak var altitudeAngleLabel: UILabel!
-    @IBOutlet weak var separatorView: UIView!
+    //@IBOutlet weak var debugButton: UIButton!
+    //@IBOutlet weak var locationLabel: UILabel!
+    //@IBOutlet weak var forceLabel: UILabel!
+    //@IBOutlet weak var azimuthAngleLabel: UILabel!
+    //@IBOutlet weak var azimuthUnitVectorLabel: UILabel!
+    //@IBOutlet weak var altitudeAngleLabel: UILabel!
+    //@IBOutlet weak var separatorView: UIView!
     
     @IBOutlet weak var grassImage: UIImageView!
     @IBOutlet weak var antChillImage: UIImageView!    
     
-    @IBOutlet private var gagueLabelCollection: [UILabel]!
+    //@IBOutlet private var gagueLabelCollection: [UILabel]!
     
     let AUnderlayView: UIImageView = {
         let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A-Underlay_Grey.png")
@@ -150,11 +148,11 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.addSubview(reticleView)
         
         //to toggle on on start, uncomment this line
-        toggleDebugDrawing(debugButton)
+        //toggleDebugDrawing(debugButton)
         
         clearGagues()
         
-        if #available(iOS 12.1, *) {
+        if #available(iOS 12.0, *) {
             let pencilInteraction = UIPencilInteraction()
             pencilInteraction.delegate = self
             view.addInteraction(pencilInteraction)
@@ -361,7 +359,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 if useDebugDrawing, touch.type == .pencil {
                     reticleView.isHidden = false
                     updateReticleView(with: touch)
-                    //separatorView.isHidden = false
+                    //separatorView.isHidden = true
                 }
             }
         }
@@ -410,7 +408,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             
             if useDebugDrawing, touch.type == .pencil {
                 reticleView.isHidden = true
-                separatorView.isHidden = true
+                //separatorView.isHidden = true
             }
         }
         
@@ -480,29 +478,29 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     private func updateGagues(with touch: UITouch) {
-        forceLabel.text = touch.force.valueFormattedForDisplay ?? ""
+        //forceLabel.text = touch.force.valueFormattedForDisplay ?? ""
         
-        let azimuthUnitVector = touch.azimuthUnitVector(in: canvasView)
-        azimuthUnitVectorLabel.text = azimuthUnitVector.valueFormattedForDisplay ?? ""
+        //let azimuthUnitVector = touch.azimuthUnitVector(in: canvasView)
+        //azimuthUnitVectorLabel.text = azimuthUnitVector.valueFormattedForDisplay ?? ""
         
-        let azimuthAngle = touch.azimuthAngle(in: canvasView)
-        azimuthAngleLabel.text = azimuthAngle.valueFormattedForDisplay ?? ""
+        //let azimuthAngle = touch.azimuthAngle(in: canvasView)
+        //azimuthAngleLabel.text = azimuthAngle.valueFormattedForDisplay ?? ""
         
-        altitudeAngleLabel.text = touch.altitudeAngle.valueFormattedForDisplay ?? ""
+        //altitudeAngleLabel.text = touch.altitudeAngle.valueFormattedForDisplay ?? ""
         
     }
     
     private func clearGagues() {
-        gagueLabelCollection.forEach { (label) in
-            label.text = ""
-        }
+//        gagueLabelCollection.forEach { (label) in
+//            label.text = ""
+//        }
     }
     
-    @available(iOS 12.1, *)
+    @available(iOS 12.0, *)
     func pencilInteractionDidTap(_ interaction: UIPencilInteraction) {
         guard UIPencilInteraction.preferredTapAction == .switchPrevious else { return }
         
-        toggleDebugDrawing(debugButton)
+        //toggleDebugDrawing(debugButton)
     }
     
     
