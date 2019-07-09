@@ -8,6 +8,9 @@
 import UIKit
 import AVFoundation
 
+public var startingPoint = CGPoint()
+public var targetPoint = CGPoint()
+
 class CanvasView: UIView {
     // MARK: Properties
     
@@ -22,8 +25,9 @@ class CanvasView: UIView {
     var dEndPoint = CGPoint()
     var eStartPoint = CGPoint()
     var eEndPoint = CGPoint()
-    var startingPoint = CGPoint()
-    var targetPoint = CGPoint()
+//    var startingPoint = startingPoint
+//    var targetPoint = targetPoint
+
     var lineColor = UIColor.blue.cgColor
     var checkPointColor = UIColor.darkGray.cgColor
     var dotPointColor = UIColor.black.cgColor
@@ -124,6 +128,11 @@ class CanvasView: UIView {
         let context = UIGraphicsGetCurrentContext()!
         
         context.setLineCap(.round)
+        startingPoint = CGPoint(x: bounds.maxX * activityPoints[0].x, y: bounds.maxY * activityPoints[0].y)
+        targetPoint =  CGPoint(x: bounds.maxX * activityPoints[1].x, y: bounds.maxY * activityPoints[1].y)
+      print(startingPoint)
+      print(targetPoint)
+        
         
         if !AtoB {
             

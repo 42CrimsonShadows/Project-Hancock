@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - Game State
-
+public var selectedActivity = ""
 enum LetterState: Int16 {
     case AtoB
     case AtoC
@@ -21,6 +21,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     // MARK: - VARIABLES
     
     private var useDebugDrawing = false
+    public var activitySelection = ActivitySelection()
     
     private let reticleView: ReticleView = {
         let view = ReticleView(frame: CGRect.null)
@@ -162,6 +163,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         setupAUnderlay()
         setupGreenlines()
         setupDotsImages()
+        loadActivity()
         
         
         //load animations
@@ -321,32 +323,32 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         //canvasView.drawTouches(touches, withEvent: event)
         guard let firstPoint = touches.first?.location(in: canvasView) else { return }
         print("Drawing in touchesBegan activityViewController")
-        print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: canvasView.startingPoint))
-        print(canvasView.startingPoint)
-        print(canvasView.targetPoint)
+        print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
+        print(startingPoint)
+        print(targetPoint)
         
         if !canvasView.AtoB {
-            canvasView.startingPoint = canvasView.aStartPoint
-            canvasView.targetPoint = canvasView.bStartPoint
+            startingPoint = canvasView.aStartPoint
+            targetPoint = canvasView.bStartPoint
             
         }
         if canvasView.AtoB {
-            canvasView.startingPoint = canvasView.aStartPoint
-            canvasView.targetPoint = canvasView.cStartPoint
+            startingPoint = canvasView.aStartPoint
+            targetPoint = canvasView.cStartPoint
         }
         if canvasView.AtoC {
-            canvasView.startingPoint = canvasView.dStartPoint
-            canvasView.targetPoint = canvasView.eStartPoint
+            startingPoint = canvasView.dStartPoint
+            targetPoint = canvasView.eStartPoint
         }
         print("touches began")
         
-        print("Startpoint= ", canvasView.startingPoint)
-        print("Targetpoint= ", canvasView.targetPoint)
+        print("Startpoint= ", startingPoint)
+        print("Targetpoint= ", targetPoint)
         print("AtoB=", canvasView.AtoB)
         print("AtoC=", canvasView.AtoC)
         print("DtoE=", canvasView.DtoE)
         
-        if canvasView.CGPointDistance(from: firstPoint, to: canvasView.startingPoint) < 50 {
+        if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 50 {
             // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
             canvasView.goodTouch = true
             print("Touch was within 50 units")
@@ -502,6 +504,15 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //toggleDebugDrawing(debugButton)
     }
+    private func loadActivity(){
+        switch selectedActivity {
+        case "A":
+            activitySelection.loadActivityA()
+        case "B":
+            activitySelection.loadActivityB()
+        default: return
+            
+            }
+        }
     
-    
-}
+    }
