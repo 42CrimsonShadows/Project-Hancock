@@ -133,10 +133,11 @@
 				A0A028BF227CA9F500A7C787 /* ViewController.swift */,
 				A02BCC3A22A86EA70059E3D8 /* activityViewController.swift */,
 				A08A2D4422BED3A40076B814 /* ChapterViewController.swift */,
+				A004383722CBEEE700E32F21 /* ChapterSelection.swift */,
 				C99A9BE022A058A700554D9A /* HomeViewController.swift */,
 				C99A9BE222A06C0700554D9A /* InitViewController.swift */,
-				A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */,
 				A07974B222861DB000606889 /* StudentTableViewController.swift */,
+				A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */,
 				34DC042422B2DA36001C70DB /* ReticleView.swift */,
 				34DC042322B2DA35001C70DB /* CanvasView.swift */,
 				A00678EB22AEEB5B00846A2D /* line.swift */,
@@ -148,7 +149,6 @@
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
 				A0A028C1227CA9F500A7C787 /* Main.storyboard */,
 				A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */,
-				A004383722CBEEE700E32F21 /* ChapterSelection.swift */,
 			);
 			path = Hancock;
 			sourceTree = "<group>";
@@ -454,14 +454,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 796CAT93SM;
+				DEVELOPMENT_TEAM = AUZXFUDQS4;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.bosiestate.abcgo1;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bosiestate.abcgo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -477,14 +477,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 796CAT93SM;
+				DEVELOPMENT_TEAM = AUZXFUDQS4;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.bosiestate.abcgo1;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bosiestate.abcgo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
