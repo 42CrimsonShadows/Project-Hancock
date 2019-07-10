@@ -128,10 +128,10 @@ class CanvasView: UIView {
         let context = UIGraphicsGetCurrentContext()!
         
         context.setLineCap(.round)
-        startingPoint = CGPoint(x: bounds.maxX * activityPoints[0].x, y: bounds.maxY * activityPoints[0].y)
-        targetPoint =  CGPoint(x: bounds.maxX * activityPoints[1].x, y: bounds.maxY * activityPoints[1].y)
-      print(startingPoint)
-      print(targetPoint)
+        startingPoint = CGPoint(x: bounds.maxX * activityPoints[0][0], y: bounds.maxY * activityPoints[0][1])
+        targetPoint =  CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
+      //print(startingPoint)
+      //print(targetPoint)
         
         
         if !AtoB {
@@ -337,7 +337,7 @@ class CanvasView: UIView {
             setNeedsDisplay()
         }
         else {
-            
+            print(targetPoint)
             switch letterState {
             case .AtoB:
                 A1GreenLine?.isHidden = false
@@ -478,15 +478,15 @@ class CanvasView: UIView {
         
         switch letterState {
         case .AtoB:
-            startingPoint = aStartPoint;
-            targetPoint = cStartPoint;
+            //startingPoint = aStartPoint;
+            //targetPoint = cStartPoint;
             print("letterstate put target point at", targetPoint)
             letterState = .AtoC
             AtoB = true
             
         case .AtoC:
-            startingPoint = dStartPoint;
-            targetPoint = eStartPoint;
+            //startingPoint = dStartPoint;
+            //targetPoint = eStartPoint;
             letterState = .DtoE
             AtoC = true
             

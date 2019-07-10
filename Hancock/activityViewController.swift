@@ -6,10 +6,25 @@
 //  Copyright © 2019 Chris Ross. All rights reserved.
 //
 
+//MARK: -- Known Issues
+    /*
+ 
+        1. User can touch the targetpoint and move on to next steps.
+    */
+
+//Mark: -- Current task
+    /*
+ Major task: Making the activities Modular
+ minor tasks:
+ 
+        1. Moving from step to step properly.
+        2. load underlays from the activity selection class
+        3. setupCanvas(), setupAUnderlay(), setupGreenlines(), setupDotsImages() need to be modular
+    */
 import UIKit
 
 // MARK: - Game State
-public var selectedActivity = ""
+public var selectedActivity = "A"
 enum LetterState: Int16 {
     case AtoB
     case AtoC
@@ -327,26 +342,26 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         print(startingPoint)
         print(targetPoint)
         
-        if !canvasView.AtoB {
-            startingPoint = canvasView.aStartPoint
-            targetPoint = canvasView.bStartPoint
-            
-        }
-        if canvasView.AtoB {
-            startingPoint = canvasView.aStartPoint
-            targetPoint = canvasView.cStartPoint
-        }
-        if canvasView.AtoC {
-            startingPoint = canvasView.dStartPoint
-            targetPoint = canvasView.eStartPoint
-        }
+//        if !canvasView.AtoB {
+//            //startingPoint = canvasView.aStartPoint
+//            //targetPoint = canvasView.bStartPoint
+//
+//        }
+//        if canvasView.AtoB {
+//            //startingPoint = canvasView.aStartPoint
+//            //targetPoint = canvasView.cStartPoint
+//        }
+//        if canvasView.AtoC {
+//            //startingPoint = canvasView.dStartPoint
+//            //targetPoint = canvasView.eStartPoint
+//        }
         print("touches began")
         
         print("Startpoint= ", startingPoint)
         print("Targetpoint= ", targetPoint)
-        print("AtoB=", canvasView.AtoB)
-        print("AtoC=", canvasView.AtoC)
-        print("DtoE=", canvasView.DtoE)
+//        print("AtoB=", canvasView.AtoB)
+//        print("AtoC=", canvasView.AtoC)
+//        print("DtoE=", canvasView.DtoE)
         
         if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 50 {
             // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))

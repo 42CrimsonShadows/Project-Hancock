@@ -41,8 +41,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var startButton: UIButton!
+  
     
     //MARK: ACTIONS
+    @IBAction func goToActivity(_ sender: Any) {
+        let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
+        self.present(activityBoardView, animated: true)
+    }
     @IBAction func setStudentInfo(_ sender: UIButton) {
     }
     @IBAction func startButtonPressed(_ sender: Any) {
