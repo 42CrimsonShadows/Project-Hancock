@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 
 class HomeViewController: UIViewController {
     
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func logoutHandler(_ sender: Any) {
-        try! Auth.auth().signOut()
+//        try! Auth.auth().signOut()
         print("Successfully logged out")
         self.dismiss(animated: false, completion: nil)
     }

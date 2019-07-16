@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 class InitViewController: UIViewController {
 
@@ -18,9 +18,9 @@ class InitViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
        
-        if Auth.auth().currentUser != nil{
+        //if Auth.auth().currentUser != nil{
             self.performSegue(withIdentifier: "toHomeScreen", sender: self)
-        }
+        //}
     }
 
 }
