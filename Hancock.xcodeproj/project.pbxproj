@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,7 +34,6 @@
 		C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55F229F305900D15A2B /* RegisterViewController.swift */; };
 		C99A9BE122A058A700554D9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A9BE022A058A700554D9A /* HomeViewController.swift */; };
 		C99A9BE322A06C0700554D9A /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A9BE222A06C0700554D9A /* InitViewController.swift */; };
-		FA3C3ABFCA7C1927A9D2010B /* Pods_Hancock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3E28B5AE1CAA606C394F4B /* Pods_Hancock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3C3ABFCA7C1927A9D2010B /* Pods_Hancock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
