@@ -447,7 +447,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         //azimuthAngleLabel.text = azimuthAngle.valueFormattedForDisplay ?? ""
         
         //altitudeAngleLabel.text = touch.altitudeAngle.valueFormattedForDisplay ?? ""
-        
     }
     
     private func clearGagues() {

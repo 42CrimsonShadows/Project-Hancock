@@ -29,7 +29,6 @@ public class ActivitySelection {
         
     }
     
-    
     public func loadActivityB() {
         print("Called loadActivityB")
     }

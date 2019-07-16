@@ -19,12 +19,12 @@ enum GameState: Int16 {
 }
 
 enum GameProgress: Int16 {
-    case toLetterA
-    case toLetterB
-    case toLetterC
-    case toLetterD
-    case toLetterE
-    case toLetterF
+    case toLetter1
+    case toLetter2
+    case toLetter3
+    case toLetter4
+    case toLetter5
+    case toLetter6
 }
 
 //By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var trackingStatus: String = ""
     var statusMessage: String = ""
     var gameState: GameState = .detectSurface
-    var gameProgress: GameProgress = .toLetterA
+    var gameProgress: GameProgress = .toLetter1
     var focusPoint: CGPoint!
     var focusNode: SCNNode!
     var chapterNodeArray: [SCNNode]!
@@ -364,7 +364,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //stop all animations
             self.stopAnimation()
-            self.stopAnimation2()
+            //self.stopAnimation2()
             self.shatterLetterOne = false
             
             //reset positions/rotations of all moved nodes
@@ -414,7 +414,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func anthonyWalk() {
         if(idle) {
-            playAnimation1()
+            //playAnimation1()
+            playAnimation()
             isMoving = true
         }
         else {
@@ -425,7 +426,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return
     }
     
-    func playAnimation1() {
+    //func playAnimation1() {
+    func playAnimation() {
         //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
         mainCharacterMoving.isHidden = false
         mainCharacterIdle.isHidden = true
@@ -434,35 +436,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
         walkPlayer.setVolume(0.5, fadeDuration: 0)
         walkPlayer.play()
         
-        //animate the mainFloor node to move and stop when the translation is complete
-        mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
+        switch gameProgress {
+        case .toLetter1:
+            //animate the mainFloor node to move and stop when the translation is complete
+            mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
+            //animate the main character to rotate a bit on the y axis
+            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
+        case .toLetter2:
+            //mainFloor.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopAnimation2)
+            mainFloor.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopAnimation)
+            //animate the main character to rotate a bit on the y axis
+            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
+        default:
+            break
+        }
         
-        //animate the main character to rotate a bit on the y axis
-        mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
-        
-        //set the idle animation position to be at the new main character location and rotation
-        mainCharacterIdle.position = mainCharacterMoving.position
-        mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
-    }
-    
-    func playAnimation2() {
-        //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
-        mainCharacterMoving.isHidden = false
-        mainCharacterIdle.isHidden = true
-        
-        //start playing the walking sound
-        walkPlayer.setVolume(0.5, fadeDuration: 0)
-        walkPlayer.play()
-        
-        //animate the mainFloor node to move and stop when the translation is complete
-        mainFloor.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopAnimation2)
-        
-        //animate the main character to rotate a bit on the y axis
-        mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
         
         //set the idle animation position to be at the new main character location and rotation
         mainCharacterIdle.position = mainCharacterMoving.position
-        mainCharacterIdle.eulerAngles = SCNVector3(0, -0.3, 0)
+        //mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
+        mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
     }
     
     func stopAnimation() {
@@ -476,38 +469,56 @@ class ViewController: UIViewController, UITextFieldDelegate {
         walkPlayer.stop()
         walkPlayer.setVolume(1, fadeDuration: 0)
         
-        if gameProgress == .toLetterA {
+        switch gameProgress {
+        case .toLetter1:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.playAudioNarrationFile(file: "Line3", type: "mp3")
-                
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                    
                     //get ready to shatter a when ViewDidAppear() is called
+                    print("Prepare to shatter letter 1")
                     self.shatterLetterOne = true
-                    
+                    print("Loading activity A")
                     self.loadActivityLetter(activityString: "A")
-                    
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
                     })
                 })
             })
+            gameProgress = .toLetter2
+        case .toLetter2:
+            //wait 2 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                //wait 4 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                    //get ready to shatter a when ViewDidAppear() is called
+                    //self.shatterLetterTwo = true
+                    print("Prepare to shatter letter 2")
+                    print("Loading activity B")
+                    self.loadActivityLetter(activityString: "B")
+                    //wait 6 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                    })
+                })
+            })
+            gameProgress = .toLetter3
+        case .toLetter3:
+            //do stuff
+            print("reached .toLetter3")
+        case .toLetter4:
+            //do stuff
+            print("reached .toLetter4")
+        case .toLetter5:
+            //do stuff
+            print("reached .toLetter5")
+        case .toLetter6:
+            //do stuff
+            print("reached .toLetter6")
         }
-        
-    }
-    
-    func stopAnimation2() {
-        mainCharacterIdle.isHidden = false
-        mainCharacterMoving.isHidden = true
-        
-        walkPlayer.setVolume(0, fadeDuration: 0.75)
-        
-        //stop playing the walking sound
-        walkPlayer.stop()
-        walkPlayer.setVolume(1, fadeDuration: 0)
     }
     
     func playShatterAnimation () {
@@ -522,7 +533,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         letterOne?.runAction(SCNAction.fadeOpacity(to: 0, duration: 4))
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-            self.playAnimation2()
+            //self.playAnimation2()
+            self.playAnimation()
         })
     }
     
@@ -559,6 +571,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func loadActivityLetter(activityString: String) {
         
+        print("loadActivityLetter is loading ", activityString)
         selectedActivity = activityString
         
         //switch to the Letter A ViewController
