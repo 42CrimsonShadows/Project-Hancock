@@ -24,7 +24,8 @@
 import UIKit
 
 // MARK: - Game State
-public var selectedActivity = "A"
+public var selectedActivity = ""
+
 enum LetterState: Int16 {
     case AtoB
     case AtoC
@@ -461,6 +462,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //toggleDebugDrawing(debugButton)
     }
+    
     private func loadActivity(){
         switch selectedActivity {
         case "A":

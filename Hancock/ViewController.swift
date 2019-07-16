@@ -481,15 +481,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.playAudioNarrationFile(file: "Line3", type: "mp3")
                 
-                //wait 6 seconds
+                //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     
                     //get ready to shatter a when ViewDidAppear() is called
                     self.shatterLetterOne = true
                     
-                    //switch to the Letter A ViewController
-                    let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
-                    self.present(activityBoardView, animated: true)
+                    self.loadActivityLetter(activityString: "A")
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -498,6 +496,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
             })
         }
+        
     }
     
     func stopAnimation2() {
@@ -556,6 +555,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("AudioPlayer not available!")
         }
         self.narrationPlayer.play()
+    }
+    
+    func loadActivityLetter(activityString: String) {
+        
+        selectedActivity = activityString
+        
+        //switch to the Letter A ViewController
+        let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
+        self.present(activityBoardView, animated: true)
     }
 }
 
