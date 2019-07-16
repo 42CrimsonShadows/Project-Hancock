@@ -65,37 +65,38 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     //@IBOutlet private var gagueLabelCollection: [UILabel]!
     
-    let AUnderlayView: UIImageView = {
-        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A-Underlay_Grey.png")
-        let AUnderlayView = UIImageView(image: AUnderlay)
-        //this enables autolayout for our AUnderlayView
-        AUnderlayView.translatesAutoresizingMaskIntoConstraints = false
-        return AUnderlayView
-    }()
-    let A1UnderlayView: UIImageView = {
-        //Add the letter A1 image to the canvas
-        let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1_GreyCracks.png")
-        let A1UnderlayView = UIImageView(image: A1Underlay)
-        //this enables autolayout for our AUnderlayView
-        A1UnderlayView.translatesAutoresizingMaskIntoConstraints = false
-        return A1UnderlayView
-    }()
-    let A2UnderlayView: UIImageView = {
-        //Add the letter A2 image to the canvas
-        let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2_GreyCracks.png")
-        let A2UnderlayView = UIImageView(image: A2Underlay)
-        //this enables autolayout for our A2UnderlayView
-        A2UnderlayView.translatesAutoresizingMaskIntoConstraints = false
-        return A2UnderlayView
-    }()
-    let A3UnderlayView: UIImageView = {
-        //Add the letter A3 image to the canvas
-        let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3_GreyCracks.png")
-        let A3UnderlayView = UIImageView(image: A3Underlay)
-        //this enables autolayout for our A3UnderlayView
-        A3UnderlayView.translatesAutoresizingMaskIntoConstraints = false
-        return A3UnderlayView
-    }()
+//    let AUnderlayView: UIImageView = {
+//        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A-Underlay_Grey.png")
+//        let AUnderlayView = UIImageView(image: AUnderlay)
+//        //this enables autolayout for our AUnderlayView
+//        AUnderlayView.translatesAutoresizingMaskIntoConstraints = false
+//        return AUnderlayView
+//    }()
+//    let A1UnderlayView: UIImageView = {
+//        //Add the letter A1 image to the canvas
+//        let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1_GreyCracks.png")
+//        let A1UnderlayView = UIImageView(image: A1Underlay)
+//        //this enables autolayout for our AUnderlayView
+//        A1UnderlayView.translatesAutoresizingMaskIntoConstraints = false
+//        return A1UnderlayView
+//    }()
+//    let A2UnderlayView: UIImageView = {
+//        //Add the letter A2 image to the canvas
+//        let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2_GreyCracks.png")
+//        let A2UnderlayView = UIImageView(image: A2Underlay)
+//        //this enables autolayout for our A2UnderlayView
+//        A2UnderlayView.translatesAutoresizingMaskIntoConstraints = false
+//        return A2UnderlayView
+//    }()
+//    let A3UnderlayView: UIImageView = {
+//        //Add the letter A3 image to the canvas
+//        let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3_GreyCracks.png")
+//        let A3UnderlayView = UIImageView(image: A3Underlay)
+//        //this enables autolayout for our A3UnderlayView
+//        A3UnderlayView.translatesAutoresizingMaskIntoConstraints = false
+//        return A3UnderlayView
+//    }()
+    
     let BlueDotView: UIImageView = {
         //Add the Blue Dot image to the canvas
         let BlueDot = UIImage(named: "art.scnassets/DotImages/BlueDot.png")
@@ -176,9 +177,10 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         }
         
         setupCanvas()
-        setupAUnderlay()
-        setupGreenlines()
+        
+        //setupGreenlines()
         loadActivity()
+        setupUnderlay()
         
         
         //load animations
@@ -224,45 +226,46 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.heightAnchor.constraint(equalToConstant: 900).isActive = true
     }
     
-    private func setupAUnderlay() {
+    private func setupUnderlay() {
         //Add the letter A underlay image to the UIView under the canvas
-        view.insertSubview(AUnderlayView, belowSubview: canvasView)
-        AUnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-        AUnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
-        AUnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
-        AUnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
+        view.insertSubview(letterUnderlay, belowSubview: canvasView)
+        letterUnderlay.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+        letterUnderlay.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
+        letterUnderlay.widthAnchor.constraint(equalToConstant: 600).isActive = true
+        letterUnderlay.heightAnchor.constraint(equalToConstant: 900).isActive = true
     }
-    public func setupGreenlines() {
-        //Add the letter A1 green line to the UIView under the canvas
-        view.insertSubview(A1UnderlayView, belowSubview: canvasView)
-        A1UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-        A1UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
-        A1UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
-        A1UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
-        A1UnderlayView.isHidden = true
-        
-        canvasView.A1GreenLine = A1UnderlayView
-        
-        //Add the letter A2 green line to the UIView under the canvas
-        view.insertSubview(A2UnderlayView, belowSubview: canvasView)
-        A2UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-        A2UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
-        A2UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
-        A2UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
-        A2UnderlayView.isHidden = true
-        
-        canvasView.A2GreenLine = A2UnderlayView
-        
-        //Add the letter A3 green line to the UIView under the canvas
-        view.insertSubview(A3UnderlayView, belowSubview: canvasView)
-        A3UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-        A3UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
-        A3UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
-        A3UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
-        A3UnderlayView.isHidden = true
-        
-        canvasView.A3GreenLine = A3UnderlayView
-    }
+    
+//    public func setupGreenlines() {
+//        //Add the letter A1 green line to the UIView under the canvas
+//        view.insertSubview(A1UnderlayView, belowSubview: canvasView)
+//        A1UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+//        A1UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
+//        A1UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
+//        A1UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
+//        A1UnderlayView.isHidden = true
+//        
+//        canvasView.A1GreenLine = A1UnderlayView
+//        
+//        //Add the letter A2 green line to the UIView under the canvas
+//        view.insertSubview(A2UnderlayView, belowSubview: canvasView)
+//        A2UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+//        A2UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
+//        A2UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
+//        A2UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
+//        A2UnderlayView.isHidden = true
+//        
+//        canvasView.A2GreenLine = A2UnderlayView
+//        
+//        //Add the letter A3 green line to the UIView under the canvas
+//        view.insertSubview(A3UnderlayView, belowSubview: canvasView)
+//        A3UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+//        A3UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
+//        A3UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
+//        A3UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
+//        A3UnderlayView.isHidden = true
+//        
+//        canvasView.A3GreenLine = A3UnderlayView
+//    }
     
 
     public func goBack() {

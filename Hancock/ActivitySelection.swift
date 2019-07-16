@@ -11,8 +11,14 @@ import UIKit
 
 public var currentStep = [[CGPoint]]()
 public var activityPoints = [[CGFloat(0),CGFloat(0)]]
+public var letterUnderlay = UIImageView()
 
 public class ActivitySelection {
+    
+    
+   
+    
+
     
     public func loadActivityA() {
         //MARK: -- Questions
@@ -24,6 +30,14 @@ public class ActivitySelection {
         activityPoints = [[CGFloat(0.5),CGFloat(0.15)],[CGFloat(0.1), CGFloat(0.85)],[CGFloat(0.9),CGFloat(0.85)],[CGFloat(0.2),CGFloat(0.65)],[CGFloat(0.8),CGFloat(0.65)]]
         
         print("The activity has points at: ", activityPoints)
+        //Set the underlay variables
+        
+            let UnderlayA = UIImage(named: "art.scnassets/LetterImages/A.png")
+            letterUnderlay = UIImageView(image: UnderlayA)
+            //this enables autolayout for our letter1UnderlayView
+            letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
+       
+       
         //add the sounds to dictionary with a key ["name":"audiofile"]
         
         
@@ -31,5 +45,9 @@ public class ActivitySelection {
     
     public func loadActivityB() {
         print("Called loadActivityB")
+        let UnderlayB = UIImage(named: "art.scnassets/LetterImages/B.png")
+        letterUnderlay = UIImageView(image: UnderlayB)
+        //this enables autolayout for our letter1UnderlayView
+        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
     }
 }

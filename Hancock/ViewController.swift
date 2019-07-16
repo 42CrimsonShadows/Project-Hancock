@@ -41,7 +41,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var startButton: UIButton!
-  
     
     //MARK: ACTIONS
     @IBAction func goToActivity(_ sender: Any) {
@@ -67,6 +66,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
+    
     
     // MARK: - VARIABLES
     var trackingStatus: String = ""
