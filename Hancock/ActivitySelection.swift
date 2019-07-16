@@ -20,7 +20,8 @@ public class ActivitySelection {
             
         print("Called loadActivityA")
         //add the points that will be used as startingpoint and target point to an array
-        activityPoints = [[CGFloat(0.5),CGFloat(0.15)],[CGFloat(0.1), CGFloat(0.85)]]
+        //A,B,C,D,E
+        activityPoints = [[CGFloat(0.5),CGFloat(0.15)],[CGFloat(0.1), CGFloat(0.85)],[CGFloat(0.9),CGFloat(0.85)],[CGFloat(0.2),CGFloat(0.65)],[CGFloat(0.8),CGFloat(0.65)]]
         
         print("The activity has points at: ", activityPoints)
         //add the sounds to dictionary with a key ["name":"audiofile"]
