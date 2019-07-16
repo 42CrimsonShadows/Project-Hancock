@@ -6,7 +6,7 @@ target 'Hancock' do
   use_frameworks!
 
   # Pods for Hancock
-  pod 'Firebase/Auth'
+  
 
 
 end
