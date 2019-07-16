@@ -31,7 +31,6 @@
 		A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C4227CA9F600A7C787 /* Assets.xcassets */; };
 		A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */; };
 		A0E86BE222C08F150009A214 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0E86BE122C08F150009A214 /* Loading.gif */; };
-		A0ECFB8522A5B9BC000DF8F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0ECFB8422A5B9BC000DF8F7 /* GoogleService-Info.plist */; };
 		C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55D229F302500D15A2B /* SignInViewController.swift */; };
 		C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55F229F305900D15A2B /* RegisterViewController.swift */; };
 		C99A9BE122A058A700554D9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A9BE022A058A700554D9A /* HomeViewController.swift */; };
@@ -66,7 +65,6 @@
 		A0A028C7227CA9F600A7C787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0A028C9227CA9F600A7C787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E86BE122C08F150009A214 /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
-		A0ECFB8422A5B9BC000DF8F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.debug.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.debug.xcconfig"; sourceTree = "<group>"; };
 		C939B55D229F302500D15A2B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Authentication/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
 		C939B55F229F305900D15A2B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				A08A2D4022BEC4990076B814 /* Swift_Gif.swift */,
 				A00E7B5922CA8D25009BA733 /* UIViewExtension.swift */,
 				A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */,
-				A0ECFB8422A5B9BC000DF8F7 /* GoogleService-Info.plist */,
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
 				A0A028C1227CA9F500A7C787 /* Main.storyboard */,
 				A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */,
@@ -235,7 +232,6 @@
 				A0E86BE222C08F150009A214 /* Loading.gif in Resources */,
 				A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */,
 				A08A2D5522C02AA40076B814 /* Anthony-Chillaxing.gif in Resources */,
-				A0ECFB8522A5B9BC000DF8F7 /* GoogleService-Info.plist in Resources */,
 				A08A2D3F22BEA2C60076B814 /* LaunchScreen.storyboard in Resources */,
 				A08A2D5422C02AA40076B814 /* Grass-Blowing.gif in Resources */,
 				A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */,

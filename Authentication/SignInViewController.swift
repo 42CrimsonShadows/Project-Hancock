@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import FirebaseAuth
+//import firebase
+
 
 class SignInViewController: UIViewController {
 
@@ -23,36 +24,36 @@ class SignInViewController: UIViewController {
         guard let email = IDField.text else { return }
         guard let pass = PassField.text else { return }
         
-        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
-            if error == nil && Auth.auth().currentUser != nil {
-                
-                self.dismiss(animated: false, completion: nil)
-                print("Welcome", Auth.auth().currentUser?.email)
-                
-            } else {
-                print("There was an issue logging in")
-            
-            }
-        }
-    }
+//        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
+//            if error == nil && Auth.auth().currentUser != nil {
+//
+//                self.dismiss(animated: false, completion: nil)
+//                print("Welcome", Auth.auth().currentUser?.email)
+//
+//            } else {
+//                print("There was an issue logging in")
+//
+//            }
+//        }
+//    }
     
-    @IBAction func RegisterButton(_ sender: Any) {
+    func RegisterButton(_ sender: Any) {
         print("Loading Registration Forms...")
     }
     
     
-    override func viewDidLoad() {
+   func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let user = Auth.auth().currentUser{
-            print("Welcome ", Auth.auth().currentUser?.displayName)
-            }
+//        if let user = Auth.auth().currentUser{
+//            print("Welcome ", Auth.auth().currentUser?.displayName)
+//            }
         
     }
     
@@ -67,4 +68,5 @@ class SignInViewController: UIViewController {
     }
     */
 
+    }
 }

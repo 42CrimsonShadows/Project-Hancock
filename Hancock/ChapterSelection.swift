@@ -106,6 +106,7 @@ class ChapterSelection {
         chapter1NodeArray.append(storyNode)
         
         return chapter1NodeArray
+    
         
         //build out all chapter 1 sounds
         

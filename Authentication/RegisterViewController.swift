@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 class RegisterViewController: UIViewController {
 
@@ -37,27 +37,27 @@ class RegisterViewController: UIViewController {
         guard let email = PEmailField.text else { return }
         guard let pass = PassField.text else { return }
         
-        Auth.auth().createUser(withEmail: email, password: pass) { user, error in
-            if error == nil && user != nil {
-                print("The User was Created")
-                
-                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                changeRequest?.displayName = username
-                changeRequest?.commitChanges { error in
-                    if error == nil {
-                        print("displayName has been changed")
-                        self.dismiss(animated: false, completion: nil)
-                    }
-                }
-            }else {
-                print("Error Creating the user: \(error!.localizedDescription)")
-            }
-            
-        }
-        
-    }
+//        Auth.auth().createUser(withEmail: email, password: pass) { user, error in
+//            if error == nil && user != nil {
+//                print("The User was Created")
+//
+//                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//                changeRequest?.displayName = username
+//                changeRequest?.commitChanges { error in
+//                    if error == nil {
+//                        print("displayName has been changed")
+//                        self.dismiss(animated: false, completion: nil)
+//                    }
+//                }
+//            }else {
+//                print("Error Creating the user: \(error!.localizedDescription)")
+//            }
+//
+//        }
+//
+//    }
     
-    @IBAction func SMSUpdatesBool(_ sender: Any) {
+        func SMSUpdatesBool(_ sender: Any) {
         
         if SMSUpdates {
             print("User would no longer like SMSUpdates")
@@ -72,7 +72,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    @IBAction func TeacherStudentBool(_ sender: Any) {
+    func TeacherStudentBool(_ sender: Any) {
         
         if isTeacher {
             print("The user is a Student")
@@ -87,9 +87,10 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
+    func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+}
 }
