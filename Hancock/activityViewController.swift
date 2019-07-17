@@ -65,38 +65,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     //@IBOutlet private var gagueLabelCollection: [UILabel]!
     
-//    let AUnderlayView: UIImageView = {
-//        let AUnderlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A-Underlay_Grey.png")
-//        let AUnderlayView = UIImageView(image: AUnderlay)
-//        //this enables autolayout for our AUnderlayView
-//        AUnderlayView.translatesAutoresizingMaskIntoConstraints = false
-//        return AUnderlayView
-//    }()
-//    let A1UnderlayView: UIImageView = {
-//        //Add the letter A1 image to the canvas
-//        let A1Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.1_GreyCracks.png")
-//        let A1UnderlayView = UIImageView(image: A1Underlay)
-//        //this enables autolayout for our AUnderlayView
-//        A1UnderlayView.translatesAutoresizingMaskIntoConstraints = false
-//        return A1UnderlayView
-//    }()
-//    let A2UnderlayView: UIImageView = {
-//        //Add the letter A2 image to the canvas
-//        let A2Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.2_GreyCracks.png")
-//        let A2UnderlayView = UIImageView(image: A2Underlay)
-//        //this enables autolayout for our A2UnderlayView
-//        A2UnderlayView.translatesAutoresizingMaskIntoConstraints = false
-//        return A2UnderlayView
-//    }()
-//    let A3UnderlayView: UIImageView = {
-//        //Add the letter A3 image to the canvas
-//        let A3Underlay = UIImage(named: "art.scnassets/LetterAImages/ABCGo-A.3_GreyCracks.png")
-//        let A3UnderlayView = UIImageView(image: A3Underlay)
-//        //this enables autolayout for our A3UnderlayView
-//        A3UnderlayView.translatesAutoresizingMaskIntoConstraints = false
-//        return A3UnderlayView
-//    }()
-    
     let BlueDotView: UIImageView = {
         //Add the Blue Dot image to the canvas
         let BlueDot = UIImage(named: "art.scnassets/DotImages/BlueDot.png")
@@ -471,6 +439,54 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             activitySelection.loadActivityA()
         case "B":
             activitySelection.loadActivityB()
+        case "C":
+            activitySelection.loadActivityC()
+        case "D":
+            activitySelection.loadActivityD()
+        case "E":
+            activitySelection.loadActivityE()
+        case "F":
+            activitySelection.loadActivityF()
+        case "G":
+            activitySelection.loadActivityG()
+        case "H":
+            activitySelection.loadActivityH()
+        case "I":
+            activitySelection.loadActivityI()
+        case "J":
+            activitySelection.loadActivityJ()
+        case "K":
+            activitySelection.loadActivityK()
+        case "L":
+            activitySelection.loadActivityL()
+        case "M":
+            activitySelection.loadActivityM()
+        case "N":
+            activitySelection.loadActivityN()
+        case "O":
+            activitySelection.loadActivityO()
+        case "P":
+            activitySelection.loadActivityP()
+        case "Q":
+            activitySelection.loadActivityQ()
+        case "R":
+            activitySelection.loadActivityR()
+        case "S":
+            activitySelection.loadActivityS()
+        case "T":
+            activitySelection.loadActivityT()
+        case "U":
+            activitySelection.loadActivityU()
+        case "V":
+            activitySelection.loadActivityV()
+        case "W":
+            activitySelection.loadActivityW()
+        case "X":
+            activitySelection.loadActivityX()
+        case "Y":
+            activitySelection.loadActivityY()
+        case "Z":
+            activitySelection.loadActivityZ()
         default: return
             
             }

@@ -25,6 +25,7 @@ enum GameProgress: Int16 {
     case toLetter4
     case toLetter5
     case toLetter6
+    case chapterFinished
 }
 
 //By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
@@ -141,6 +142,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if shatterLetterOne == false {
             //pause the Letter Shatter animation
             letterOne?.isPaused = true
+            letterTwo?.isPaused = true
+            letterThree?.isPaused = true
+            letterFour?.isPaused = true
+            letterFive?.isPaused = true
+            letterSix?.isPaused = true
             
             print("Shatter Animation Paused")
             //you can also pause individual animations
@@ -153,9 +159,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         print("*** ViewWillAppear()")
         
-        if shatterLetterOne == true {
-            playShatterAnimation()
-        }
+        //attempt to shatter a letter when the viuew loads
+        //(will only happen is a letter shatter boolean is true and ready)
+        playShatterAnimation()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -400,6 +406,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //generic story main character idle animation
         mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Idle", recursively: true)
+        mainCharacterIdle.isHidden = true
 
         //generic story main character moving animation
         mainCharacterMoving = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Walk", recursively: true)
@@ -436,26 +443,65 @@ class ViewController: UIViewController, UITextFieldDelegate {
         walkPlayer.setVolume(0.5, fadeDuration: 0)
         walkPlayer.play()
         
+        //TODO: Load unique floor movement locations for particular chapter
         switch gameProgress {
+            //A
         case .toLetter1:
+            
+            //get Book/Chapter
+            //load points for the SCNrunAction to use [chptPoint1x, chptPoint1y, chptPoint1z, chptPoint1MoveDur]
+            //mainFloor.runAction(SCNAction.moveBy(x: chptPoint1x, y: chptPoint1y, z: chptPoint1z, duration: chptPoint1MoveDur), completionHandler: stopAnimation)
+            
             //animate the mainFloor node to move and stop when the translation is complete
             mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
             //animate the main character to rotate a bit on the y axis
             mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
+            mainCharacterIdle.position = mainCharacterMoving.position
+            mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
+            
+            //B
         case .toLetter2:
-            //mainFloor.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopAnimation2)
             mainFloor.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopAnimation)
-            //animate the main character to rotate a bit on the y axis
             mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
-        default:
-            break
+            //set the idle animation position to be at the new main character location and rotation
+            mainCharacterIdle.position = mainCharacterMoving.position
+            mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+
+            //C
+        case .toLetter3:
+            mainFloor.runAction(SCNAction.moveBy(x: -0.15, y: 0, z: -1.45, duration: 15), completionHandler: stopAnimation)
+            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
+            //set the idle animation position to be at the new main character location and rotation
+            mainCharacterIdle.position = mainCharacterMoving.position
+            mainCharacterIdle.eulerAngles = SCNVector3(0, -0.5, 0)
+
+            //D
+        case .toLetter4:
+            mainFloor.runAction(SCNAction.moveBy(x: 1.4, y: 0, z: -0.2, duration: 15), completionHandler: stopAnimation)
+            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -2.5, z: 0, duration: 15))
+            //set the idle animation position to be at the new main character location and rotation
+            mainCharacterIdle.position = mainCharacterMoving.position
+            mainCharacterIdle.eulerAngles = SCNVector3(0, -3, 0)
+           
+            //E
+        case .toLetter5:
+            mainFloor.runAction(SCNAction.moveBy(x: 0.35, y: 0, z: 1.65, duration: 15), completionHandler: stopAnimation)
+            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 15))
+            //set the idle animation position to be at the new main character location and rotation
+            mainCharacterIdle.position = mainCharacterMoving.position
+            //mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+            
+            //F
+        case .toLetter6:
+            mainFloor.runAction(SCNAction.moveBy(x: -0.35, y: 0, z: 1.5, duration: 15), completionHandler: stopAnimation)
+            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
+            //set the idle animation position to be at the new main character location and rotation
+            mainCharacterIdle.position = mainCharacterMoving.position
+            mainCharacterIdle.eulerAngles = SCNVector3(0, -0.5, 0)
+            
+        case .chapterFinished:
+            print("Reached the end of the chapter")
         }
-        
-        
-        //set the idle animation position to be at the new main character location and rotation
-        mainCharacterIdle.position = mainCharacterMoving.position
-        //mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
-        mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
     }
     
     func stopAnimation() {
@@ -471,6 +517,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         switch gameProgress {
         case .toLetter1:
+            
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.playAudioNarrationFile(file: "Line3", type: "mp3")
@@ -479,6 +526,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //get ready to shatter a when ViewDidAppear() is called
                     print("Prepare to shatter letter 1")
                     self.shatterLetterOne = true
+                    
+                    //TODO: Make the letter passed in change based on the Book/Chapter Selected
+                    
                     print("Loading activity A")
                     self.loadActivityLetter(activityString: "A")
                     //wait 6 seconds
@@ -488,6 +538,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
             })
             gameProgress = .toLetter2
+            
         case .toLetter2:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -495,8 +546,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
-                    //self.shatterLetterTwo = true
                     print("Prepare to shatter letter 2")
+                    self.shatterLetterTwo = true
+
                     print("Loading activity B")
                     self.loadActivityLetter(activityString: "B")
                     //wait 6 seconds
@@ -506,47 +558,142 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
             })
             gameProgress = .toLetter3
+            
         case .toLetter3:
-            //do stuff
-            print("reached .toLetter3")
+            //wait 2 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                //wait 4 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                    //get ready to shatter a when ViewDidAppear() is called
+                    print("Prepare to shatter letter 3")
+                    self.shatterLetterThree = true
+
+                    print("Loading activity C")
+                
+                    self.loadActivityLetter(activityString: "C")
+                    //wait 6 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                    })
+                })
+            })
+            gameProgress = .toLetter4
+            
         case .toLetter4:
-            //do stuff
-            print("reached .toLetter4")
+            ///wait 2 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                //wait 4 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                    //get ready to shatter a when ViewDidAppear() is called
+                    print("Prepare to shatter letter 4")
+                    self.shatterLetterFour = true
+
+                    print("Loading activity D")
+                    self.loadActivityLetter(activityString: "D")
+                    //wait 6 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                    })
+                })
+            })
+            gameProgress = .toLetter5
+
         case .toLetter5:
-            //do stuff
-            print("reached .toLetter5")
+            //wait 2 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                //wait 4 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                    //get ready to shatter a when ViewDidAppear() is called
+                    print("Prepare to shatter letter 5")
+                    self.shatterLetterFive = true
+
+                    print("Loading activity E")
+                    self.loadActivityLetter(activityString: "E")
+                    //wait 6 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                    })
+                })
+            })
+            gameProgress = .toLetter6
+
         case .toLetter6:
-            //do stuff
-            print("reached .toLetter6")
+            //wait 2 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                //wait 4 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                    //get ready to shatter a when ViewDidAppear() is called
+                    print("Prepare to shatter letter 6")
+                    self.shatterLetterSix = true
+
+                    print("Loading activity F")
+                    self.loadActivityLetter(activityString: "F")
+                    //wait 6 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                    })
+                })
+            })
+            gameProgress = .chapterFinished
+
+        case .chapterFinished:
+            //finish chapter stuff
+            print("Finish Chapter after animation stopped")
         }
     }
     
     func playShatterAnimation () {
-        letterOne?.isPaused = false
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.animateLetterHide()
-        })
+        
+        switch true {
+        case shatterLetterOne:
+            letterOne!.isPaused = false
+            animateLetterHide(fadeThis: letterOne!)
+        case shatterLetterTwo:
+            letterTwo!.isPaused = false
+            animateLetterHide(fadeThis: letterTwo!)
+        case shatterLetterThree:
+            letterThree!.isPaused = false
+            animateLetterHide(fadeThis: letterThree!)
+        case shatterLetterFour:
+            letterFour!.isPaused = false
+            animateLetterHide(fadeThis: letterFour!)
+        case shatterLetterFive:
+            letterFive!.isPaused = false
+            animateLetterHide(fadeThis: letterFive!)
+        case shatterLetterSix:
+            letterSix!.isPaused = false
+            animateLetterHide(fadeThis: letterSix!)
+        default:
+            break
+        }
     }
 
-    func animateLetterHide(){
-        letterOne?.runAction(SCNAction.fadeOpacity(to: 0, duration: 4))
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-            //self.playAnimation2()
-            self.playAnimation()
+    func animateLetterHide(fadeThis: SCNNode){
+        //wait 3 seconds and then fade the letter out to 0 opacity
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            fadeThis.runAction(SCNAction.fadeOpacity(to: 0, duration: 4))
+            
+            //have the main character walk to the next letter
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                self.playAnimation()
+            })
         })
     }
     
     func storyTime(){
-        
-        //Wait 1 second
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+        //Wait 2 second
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
         self.playAudioNarrationFile(file: "Line1", type: "mp3")
         })
             
         //wait 7 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+            
             self.anthonyWalk()
             
             //wait 3 seconds
