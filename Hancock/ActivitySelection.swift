@@ -18,11 +18,14 @@ public class ActivitySelection {
     public func loadActivityA() {
         //MARK: -- Questions
             // How to we make a system to change steps modularly?
-            
         print("Called loadActivityA")
-        //add the points that will be used as startingpoint and target point to an array
-        //A,B,C,D,E
-        activityPoints = [[CGFloat(0.5),CGFloat(0.15)],[CGFloat(0.1), CGFloat(0.85)],[CGFloat(0.9),CGFloat(0.85)],[CGFloat(0.2),CGFloat(0.65)],[CGFloat(0.8),CGFloat(0.65)]]
+        //add the A CGpoints that will be used as startingpoint and target point to an array
+        activityPoints = [[CGFloat(0.5),CGFloat(0.15)], //first point x, y
+                          [CGFloat(0.1),CGFloat(0.85)], //second point x, y
+                          [CGFloat(0.5),CGFloat(0.15)], //third point x, y... (actually first point again)
+                          [CGFloat(0.9),CGFloat(0.85)], //fourth point
+                          [CGFloat(0.2),CGFloat(0.65)], //fifth point
+                          [CGFloat(0.8),CGFloat(0.65)]] //sixth point
         
         print("The activity has points at: ", activityPoints)
         

@@ -20,9 +20,13 @@ import UIKit
 public var selectedActivity = ""
 
 enum LetterState: Int16 {
-    case AtoB
-    case AtoC
-    case DtoE
+    //case AtoB
+    //case AtoC
+    //case DtoE
+    case P1_P2 //first line
+    case P3_P4 //second
+    case P5_P6 //third
+    case P7_P8 //fourth
 }
 
 class activityViewController: UIViewController, UIPencilInteractionDelegate {
@@ -160,6 +164,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         super.viewWillAppear(animated)
         print("*** ViewWillAppear()")
         
+        canvasView.Line1 = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             //play the pulsate animation for the first dot
@@ -246,8 +251,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         guard let firstPoint = touches.first?.location(in: canvasView) else { return }
         print("Drawing in touchesBegan activityViewController")
         print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
-        print(startingPoint)
-        print(targetPoint)
+        print("My Touch Location =", firstPoint)
         
 //        if !canvasView.AtoB {
 //            //startingPoint = canvasView.aStartPoint
@@ -262,10 +266,11 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
 //            //startingPoint = canvasView.dStartPoint
 //            //targetPoint = canvasView.eStartPoint
 //        }
+        
         print("touches began")
         
-        print("Startpoint= ", startingPoint)
-        print("Targetpoint= ", targetPoint)
+        //print("Startpoint= ", startingPoint)
+        //print("Targetpoint= ", targetPoint)
 //        print("AtoB=", canvasView.AtoB)
 //        print("AtoC=", canvasView.AtoC)
 //        print("DtoE=", canvasView.DtoE)
@@ -336,7 +341,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             }
         }
         
-        if canvasView.DtoE == true {
+        //if canvasView.DtoE == true {
+        if canvasView.Line4 == true {
             DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                 self.dismiss(animated: false, completion: nil)
             })

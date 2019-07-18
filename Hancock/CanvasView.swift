@@ -14,38 +14,31 @@ public var targetPoint = CGPoint()
 class CanvasView: UIView {
     // MARK: Properties
     
-    var lastTouch = CGPoint.zero
-    var aStartPoint = CGPoint()
-    var aEndPoint = CGPoint()
-    var bStartPoint = CGPoint()
-    var bEndPoint = CGPoint()
-    var cStartPoint = CGPoint()
-    var cEndPoint = CGPoint()
-    var dStartPoint = CGPoint()
-    var dEndPoint = CGPoint()
-    var eStartPoint = CGPoint()
-    var eEndPoint = CGPoint()
-//    var startingPoint = startingPoint
-//    var targetPoint = targetPoint
+    //to determine what line we are one when drawing the letter
+    var Line1: Bool = false
+    var Line2: Bool = false
+    var Line3: Bool = false
+    var Line4: Bool = false
 
     var lineColor = UIColor.blue.cgColor
     var checkPointColor = UIColor.darkGray.cgColor
     var dotPointColor = UIColor.black.cgColor
     var defaultColor = UIColor.black.cgColor
     
-    var letterState: LetterState = .AtoB
+    //var letterState: LetterState = .AtoB
+    var letterState: LetterState = .P1_P2
     
     var currentComplete = false
-    var AtoB = false
-    var AtoC = false
-    var DtoE = false
+    //var AtoB = false
+    //var AtoC = false
+    //var DtoE = false
     var goodTouch: Bool = false
     var goodLine: Bool = false
     
-    //    var A1GreenLine: UIImageView?
-    var A1GreenLine: UIImageView?
-    var A2GreenLine: UIImageView?
-    var A3GreenLine: UIImageView?
+    //var A1GreenLine: UIImageView?
+    //var A1GreenLine: UIImageView?
+    //var A2GreenLine: UIImageView?
+    //var A3GreenLine: UIImageView?
     
     var greenDot: UIImageView?
     var redDot: UIImageView?
@@ -126,62 +119,97 @@ class CanvasView: UIView {
     
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()!
-        
+        setNeedsDisplay()
         context.setLineCap(.round)
-        startingPoint = CGPoint(x: bounds.maxX * activityPoints[0][0], y: bounds.maxY * activityPoints[0][1])
-        targetPoint =  CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
-      //print(startingPoint)
-      //print(targetPoint)
         
         
-        if !AtoB {
+        switch true {
+        case Line1:
+            //start point and end for the current letter's first line
+            startingPoint = CGPoint(x: bounds.maxX * activityPoints[0][0], y: bounds.maxY * activityPoints[0][1])
+            targetPoint =  CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
             
-            //make first dot
-            aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-            aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-            //context.move(to: aStartPoint)
-            //context.addLine(to: aEndPoint)
-            greenDot?.isHidden = false
+        case Line2:
+            //start point and end for the current letter's second line
+            startingPoint = CGPoint(x: bounds.maxX * activityPoints[2][0], y: bounds.maxY * activityPoints[2][1])
+            targetPoint =  CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
             
-            //make second dot
-            bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-            bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-            //context.move(to: bStartPoint)
-            //context.addLine(to: bEndPoint)
-            redDot?.isHidden = false
+        case Line3:
+            //start point and end for the current letter's third line
+            startingPoint = CGPoint(x: bounds.maxX * activityPoints[4][0], y: bounds.maxY * activityPoints[4][1])
+            targetPoint =  CGPoint(x: bounds.maxX * activityPoints[5][0], y: bounds.maxY * activityPoints[5][1])
+            
+        case Line4:
+            //start point and end for the current letter's fourth line (if there is a fourth line...)
+            let arraySize = activityPoints.count
+            print("The size of the array of activity points =", arraySize)
+            
+            if arraySize > 6 {
+                startingPoint = CGPoint(x: bounds.maxX * activityPoints[6][0], y: bounds.maxY * activityPoints[6][1])
+                targetPoint =  CGPoint(x: bounds.maxX * activityPoints[7][0], y: bounds.maxY * activityPoints[7][1])
+            }
+            else {
+                return
+            }
+            
+        default:
+            break
         }
-        else if AtoB && !AtoC {
-            //make first dot
-            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-            //context.move(to: aStartPoint)
-            //context.addLine(to: aEndPoint)
-            greenDot?.isHidden = true
-            blueDot?.isHidden = false
-            
-            //make second dot
-            self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
-            self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
-            //context.move(to: cStartPoint)
-            //context.addLine(to: cEndPoint)
-            orangeDot?.isHidden = false
-            redDot?.isHidden = true
-        }
-        else {
-            self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
-            self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
-            //context.move(to: dStartPoint)
-            //context.addLine(to: dEndPoint)
-            purpleDot?.isHidden = false
-            blueDot?.isHidden = true
-            
-            self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
-            self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
-            //context.move(to: eStartPoint)
-            //context.addLine(to: eEndPoint)
-            yellowDot?.isHidden = false
-            orangeDot?.isHidden = true
-        }
+        
+//        print("Starting point =", startingPoint)
+//        print("Target point =", targetPoint)
+//        print("The current letterState is now ", letterState)
+//        print("Line1 =", Line1, " - Line2 =", Line2, " - Line3 =", Line3, " - Line4 =", Line4)
+        
+        
+//        if !AtoB {
+//
+//            //make first dot
+//            aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+//            aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+//            //context.move(to: aStartPoint)
+//            //context.addLine(to: aEndPoint)
+//            greenDot?.isHidden = false
+//
+//            //make second dot
+//            bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+//            bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+//            //context.move(to: bStartPoint)
+//            //context.addLine(to: bEndPoint)
+//            redDot?.isHidden = false
+//        }
+//        else if AtoB && !AtoC {
+//            //make first dot
+//            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+//            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+//            //context.move(to: aStartPoint)
+//            //context.addLine(to: aEndPoint)
+//            greenDot?.isHidden = true
+//            blueDot?.isHidden = false
+//
+//            //make second dot
+//            self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
+//            self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
+//            //context.move(to: cStartPoint)
+//            //context.addLine(to: cEndPoint)
+//            orangeDot?.isHidden = false
+//            redDot?.isHidden = true
+//        }
+//        else {
+//            self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
+//            self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
+//            //context.move(to: dStartPoint)
+//            //context.addLine(to: dEndPoint)
+//            purpleDot?.isHidden = false
+//            blueDot?.isHidden = true
+//
+//            self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
+//            self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
+//            //context.move(to: eStartPoint)
+//            //context.addLine(to: eEndPoint)
+//            yellowDot?.isHidden = false
+//            orangeDot?.isHidden = true
+//        }
         
         if needsFullRedraw {
             setFrozenImageNeedsUpdate()
@@ -330,17 +358,21 @@ class CanvasView: UIView {
             // This touch is ending, remove the line corresponding to it from `activeLines`.
             activeLines.removeObject(forKey: touch)
         }
+        
         if CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
             
             lines.removeAll()
             needsFullRedraw = true
             setNeedsDisplay()
         }
+            
         else {
-            print(targetPoint)
+            //print("Target point =", targetPoint)
             switch letterState {
-            case .AtoB:
-                A1GreenLine?.isHidden = false
+            //case .AtoB:
+            case .P1_P2:
+                //A1GreenLine?.isHidden = false
+                
                 playAudioFile(file: "RockBreak1", type: "wav")
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -361,10 +393,18 @@ class CanvasView: UIView {
                         })
                     })
                 })
-                letterState = .AtoC
-                AtoB = true
-            case .AtoC:
-                A2GreenLine?.isHidden = false
+                //letterState = .AtoC
+                letterState = .P3_P4
+                //AtoB = true
+                Line1 = false
+                Line2 = true
+                Line3 = false
+                Line4 = false
+                
+            //case .AtoC:
+            case .P3_P4:
+                //A2GreenLine?.isHidden = false
+                
                 playAudioFile(file: "RockBreak2", type: "aiff")
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -380,12 +420,19 @@ class CanvasView: UIView {
                         })
                     })
                 })
-                letterState = .DtoE
-                AtoC = true
-            case .DtoE:
-                A3GreenLine?.isHidden = false
-                playAudioFile(file: "RockExplode", type: "wav")
+                //letterState = .DtoE
+                letterState = .P5_P6
+                //AtoC = true
+                Line1 = false
+                Line2 = false
+                Line3 = true
+                Line4 = false
                 
+            //case .DtoE:
+            case .P5_P6:
+                //A3GreenLine?.isHidden = false
+                
+                playAudioFile(file: "RockExplode", type: "wav")
                 
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -397,7 +444,22 @@ class CanvasView: UIView {
                     //wait 2 second
                     
                 })
-                DtoE = true
+                letterState = .P7_P8
+                //DtoE = true
+                Line1 = false
+                Line2 = false
+                Line3 = false
+                Line4 = true
+                
+            case .P7_P8:
+                //A4GreenLine?.isHidden = false
+                
+                //possible fourth line stuff
+                print("reached .P7_P8")
+                Line1 = false
+                Line2 = false
+                Line3 = false
+                Line4 = false
             }
         }
     }
@@ -477,25 +539,47 @@ class CanvasView: UIView {
     func nextStep(){
         
         switch letterState {
-        case .AtoB:
+        //case .AtoB:
+        case .P1_P2:
             //startingPoint = aStartPoint;
             //targetPoint = cStartPoint;
             print("letterstate put target point at", targetPoint)
-            letterState = .AtoC
-            AtoB = true
-            
-        case .AtoC:
+            //letterState = .AtoC
+            letterState = .P3_P4
+            //AtoB = true
+            Line1 = true
+            Line2 = false
+            Line3 = false
+            Line4 = false
+        //case .AtoC:
+        case .P3_P4:
             //startingPoint = dStartPoint;
             //targetPoint = eStartPoint;
-            letterState = .DtoE
-            AtoC = true
-            
-        case .DtoE:
+            //letterState = .DtoE
+            letterState = .P5_P6
+            //AtoC = true
+            Line1 = false
+            Line2 = true
+            Line3 = false
+            Line4 = false
+        //case .DtoE:
+        case .P5_P6:
             //startingPoint = aStartPoint;
             //targetPoint = bStartPoint;
             //letterState = .D1toE
-            DtoE = true
-            
+            letterState = .P7_P8
+            //DtoE = true
+            Line1 = false
+            Line2 = false
+            Line3 = true
+            Line4 = false
+        case .P7_P8:
+            //do stuff for a fourth line
+            print("Reached nextStep() function")
+            Line1 = false
+            Line2 = false
+            Line3 = false
+            Line4 = true
         }
         print("letterState is now:", letterState)
     }
