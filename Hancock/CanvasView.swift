@@ -373,6 +373,7 @@ class CanvasView: UIView {
             case .P1_P2:
                 //A1GreenLine?.isHidden = false
                 
+                
                 playAudioFile(file: "RockBreak1", type: "wav")
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -536,53 +537,56 @@ class CanvasView: UIView {
     
     //MARK: - LETTERSTATE SWITCH
     
-    func nextStep(){
-        
-        switch letterState {
-        //case .AtoB:
-        case .P1_P2:
-            //startingPoint = aStartPoint;
-            //targetPoint = cStartPoint;
-            print("letterstate put target point at", targetPoint)
-            //letterState = .AtoC
-            letterState = .P3_P4
-            //AtoB = true
-            Line1 = true
-            Line2 = false
-            Line3 = false
-            Line4 = false
-        //case .AtoC:
-        case .P3_P4:
-            //startingPoint = dStartPoint;
-            //targetPoint = eStartPoint;
-            //letterState = .DtoE
-            letterState = .P5_P6
-            //AtoC = true
-            Line1 = false
-            Line2 = true
-            Line3 = false
-            Line4 = false
-        //case .DtoE:
-        case .P5_P6:
-            //startingPoint = aStartPoint;
-            //targetPoint = bStartPoint;
-            //letterState = .D1toE
-            letterState = .P7_P8
-            //DtoE = true
-            Line1 = false
-            Line2 = false
-            Line3 = true
-            Line4 = false
-        case .P7_P8:
-            //do stuff for a fourth line
-            print("Reached nextStep() function")
-            Line1 = false
-            Line2 = false
-            Line3 = false
-            Line4 = true
-        }
-        print("letterState is now:", letterState)
-    }
+//    func nextStep(){
+//
+//        switch letterState {
+//        //case .AtoB:
+//        case .P1_P2:
+//            //startingPoint = aStartPoint;
+//            //targetPoint = cStartPoint;
+//            print("letterstate put target point at", targetPoint)
+//            //letterState = .AtoC
+//            letterState = .P3_P4
+//            //AtoB = true
+//            Line1 = true
+//            Line2 = false
+//            Line3 = false
+//            Line4 = false
+//        //case .AtoC:
+//        case .P3_P4:
+//            //startingPoint = dStartPoint;
+//            //targetPoint = eStartPoint;
+//            print("letterstate put target point at", targetPoint)
+//            //letterState = .DtoE
+//            letterState = .P5_P6
+//            //AtoC = true
+//            Line1 = false
+//            Line2 = true
+//            Line3 = false
+//            Line4 = false
+//        //case .DtoE:
+//        case .P5_P6:
+//            //startingPoint = aStartPoint;
+//            //targetPoint = bStartPoint;
+//            print("letterstate put target point at", targetPoint)
+//            //letterState = .D1toE
+//            letterState = .P7_P8
+//            //DtoE = true
+//            Line1 = false
+//            Line2 = false
+//            Line3 = true
+//            Line4 = false
+//        case .P7_P8:
+//            //do stuff for a fourth line
+//            print("letterstate put target point at", targetPoint)
+//            print("Reached nextStep() function")
+//            Line1 = false
+//            Line2 = false
+//            Line3 = false
+//            Line4 = true
+//        }
+//        print("letterState is now:", letterState)
+//    }
     
     func playAudioFile(file: String, type: String) {
         let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")

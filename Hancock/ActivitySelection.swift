@@ -1,10 +1,3 @@
-//
-//  ActivitySelection.swift
-//  Hancock
-//
-//  Created by Casey Kawamura  on 7/9/19.
-//  Copyright © 2019 Chris Ross. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -27,7 +20,7 @@ public class ActivitySelection {
                           [CGFloat(0.2),CGFloat(0.65)], //fifth point
                           [CGFloat(0.8),CGFloat(0.65)]] //sixth point
         
-        print("The activity has points at: ", activityPoints)
+        //print("The activity has points at: ", activityPoints)
         
         //Set the underlay variables
         let UnderlayA = UIImage(named: "art.scnassets/LetterImages/A.png")
