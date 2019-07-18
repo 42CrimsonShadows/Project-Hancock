@@ -11,7 +11,7 @@ import UIKit
 import ARKit
 
 //GLOBAL VARIABLE THAT CAN BE ACCESSED BY NAME
-var chapterSelected: [SCNNode]?
+var chapterSelectedNodeArray: [SCNNode]?
 
 class ChapterSelection {
     
@@ -30,26 +30,41 @@ class ChapterSelection {
         switch picked {
         case 1:
             print("Loading Chapter ", picked)
-            chapterSelected = loadChapter1Files()
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 2:
             print("Loading Chapter ", picked)
-            chapterSelected = loadChapter1Files()
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 3:
             print("Loading Chapter ", picked)
-            chapterSelected = loadChapter1Files()
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 4:
             print("Loading Chapter ", picked)
-            chapterSelected = loadChapter1Files()
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 5:
             print("Loading Chapter ", picked)
-            chapterSelected = loadChapter1Files()
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
+        case 6:
+            print("Loading Chapter ", picked)
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
+        case 7:
+            print("Loading Chapter ", picked)
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
+        case 8:
+            print("Loading Chapter ", picked)
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
+        case 9:
+            print("Loading Chapter ", picked)
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
+        case 10:
+            print("Loading Chapter ", picked)
+            chapterSelectedNodeArray = loadChapter1NodeFiles()
         default:
-            return
+            break
         }
     }
     
     //chapter 1 stuff here
-    func loadChapter1Files () -> [SCNNode]{
+    func loadChapter1NodeFiles () -> [SCNNode]{
         
         var chapter1NodeArray: [SCNNode] = []
         
@@ -114,7 +129,7 @@ class ChapterSelection {
     }
     
     //chapter 2 stuff here
-    func loadChapter2Files () -> [SCNNode]{
+    func loadChapter2NodeFiles () -> [SCNNode]{
         //var array of chapter 2 assest
         var chapter2NodeArray: [SCNNode] = []
         
@@ -130,7 +145,7 @@ class ChapterSelection {
     }
     
     //chapter 3 stuff here
-    func loadChapter3Files () -> [SCNNode]{
+    func loadChapter3NodeFiles () -> [SCNNode]{
         //var array of chapter 3 assest
         var chapter3NodeArray: [SCNNode] = []
         
@@ -146,7 +161,7 @@ class ChapterSelection {
     }
     
     //chapter 4 stuff here
-    func loadChapter4Files () -> [SCNNode]{
+    func loadChapter4NodeFiles () -> [SCNNode]{
         //var array of chapter 4 assest
         var chapter4NodeArray: [SCNNode] = []
         
@@ -161,7 +176,7 @@ class ChapterSelection {
     }
     
     //chapter 5 stuff here
-    func loadChapter5Files () -> [SCNNode]{
+    func loadChapter5NodeFiles () -> [SCNNode]{
         //var array of chapter 5 assest
         var chapter5NodeArray: [SCNNode] = []
         
@@ -176,7 +191,7 @@ class ChapterSelection {
     }
     
     //chapter 6 stuff here
-    func loadChapter6Files () -> [SCNNode]{
+    func loadChapter6NodeFiles () -> [SCNNode]{
         //var array of chapter 6 assest
         var chapter6NodeArray: [SCNNode] = []
         
@@ -191,7 +206,7 @@ class ChapterSelection {
     }
     
     //chapter 7 stuff here
-    func loadChapter7Files () -> [SCNNode]{
+    func loadChapter7NodeFiles () -> [SCNNode]{
         //var array of chapter 7 assest
         var chapter7NodeArray: [SCNNode] = []
         
@@ -206,7 +221,7 @@ class ChapterSelection {
     }
     
     //chapter 8 stuff here
-    func loadChapter8Files () -> [SCNNode]{
+    func loadChapter8NodeFiles () -> [SCNNode]{
         //var array of chapter 8 assest
         var chapter8NodeArray: [SCNNode] = []
         
@@ -221,7 +236,7 @@ class ChapterSelection {
     }
     
     //chapter 9 stuff here
-    func loadChapter9Files () -> [SCNNode]{
+    func loadChapter9NodeFiles () -> [SCNNode]{
         //var array of chapter 9 assest
         var chapter9NodeArray: [SCNNode] = []
         
@@ -236,7 +251,7 @@ class ChapterSelection {
     }
     
     //chapter 10 stuff here
-    func loadChapter10Files () -> [SCNNode]{
+    func loadChapter10NodeFiles () -> [SCNNode]{
         //var array of chapter 10 assest
         var chapter10NodeArray: [SCNNode] = []
         

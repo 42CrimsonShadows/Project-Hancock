@@ -1,10 +1,3 @@
-//
-//  activityViewController.swift
-//  Hancock
-//
-//  Created by Chris Ross on 6/5/19.
-//  Copyright © 2019 Chris Ross. All rights reserved.
-//
 
 //MARK: -- Known Issues
     /*

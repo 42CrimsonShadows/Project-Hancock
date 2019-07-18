@@ -65,7 +65,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         else{
             storymask.isHidden = true
         }
-
+        
     }
     
     
@@ -115,8 +115,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        chapterNodeArray = chapterSelected
+        
+        chapterNodeArray = chapterSelectedNodeArray
         
         self.initSceneView()
         self.initScene()
@@ -285,10 +285,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         floorGeometry.materials = [floorMaterial]
         let floorNode = SCNNode(geometry: floorGeometry)
         floorNode.position = SCNVector3Zero
-        floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
-        floorNode.physicsBody?.restitution = 0.5
-        floorNode.physicsBody?.friction = 4.0
-        floorNode.physicsBody?.rollingFriction = 0.0
+//        floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+//        floorNode.physicsBody?.restitution = 0.5
+//        floorNode.physicsBody?.friction = 4.0
+//        floorNode.physicsBody?.rollingFriction = 0.0
         return floorNode
     }
     
@@ -396,7 +396,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func referenceMainNodes() {
-    
+        
         //generic variable story level container (hide initially)
         rootStoryNode = sceneView.scene.rootNode.childNode(withName: "LVLContainer", recursively: false)
         rootStoryNode.isHidden = true
@@ -407,11 +407,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //generic story main character idle animation
         mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Idle", recursively: true)
         mainCharacterIdle.isHidden = true
-
+        
         //generic story main character moving animation
         mainCharacterMoving = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Walk", recursively: true)
         mainCharacterMoving.isHidden = true
-
+        
         //generic variable for level floor
         mainFloor = sceneView.scene.rootNode.childNode(withName: "LVLFloor", recursively: true)
         
@@ -445,61 +445,202 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //TODO: Load unique floor movement locations for particular chapter
         switch gameProgress {
-            //A
+            
+        //A
         case .toLetter1:
+            //change points based on Chapter
+            switch true {
+            case chapterOne:
+                //animate the mainFloor node to move and stop when the translation is complete
+                mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
+                //animate the main character to rotate a bit on the y axis
+                mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
+                mainCharacterIdle.position = mainCharacterMoving.position
+                mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
+            case chapterTwo:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter two")
+            case chapterThree:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter three")
+            case chapterFour:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter four")
+            case chapterFive:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter five")
+            default:
+                break
+            }
             
-            //get Book/Chapter
-            //load points for the SCNrunAction to use [chptPoint1x, chptPoint1y, chptPoint1z, chptPoint1MoveDur]
-            //mainFloor.runAction(SCNAction.moveBy(x: chptPoint1x, y: chptPoint1y, z: chptPoint1z, duration: chptPoint1MoveDur), completionHandler: stopAnimation)
-            
-            //animate the mainFloor node to move and stop when the translation is complete
-            mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopAnimation)
-            //animate the main character to rotate a bit on the y axis
-            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
-            mainCharacterIdle.position = mainCharacterMoving.position
-            mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
-            
-            //B
+        //B
         case .toLetter2:
-            mainFloor.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopAnimation)
-            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
-            //set the idle animation position to be at the new main character location and rotation
-            mainCharacterIdle.position = mainCharacterMoving.position
-            mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
-
-            //C
+            //change points based on Chapter
+            switch true {
+            case chapterOne:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                mainFloor.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopAnimation)
+                mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
+                //set the idle animation position to be at the new main character location and rotation
+                mainCharacterIdle.position = mainCharacterMoving.position
+                mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+            case chapterTwo:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter two")
+            case chapterThree:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter three")
+            case chapterFour:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter four")
+            case chapterFive:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter five")
+            default:
+                break
+            }
+            
+        //C
         case .toLetter3:
-            mainFloor.runAction(SCNAction.moveBy(x: -0.15, y: 0, z: -1.45, duration: 15), completionHandler: stopAnimation)
-            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
-            //set the idle animation position to be at the new main character location and rotation
-            mainCharacterIdle.position = mainCharacterMoving.position
-            mainCharacterIdle.eulerAngles = SCNVector3(0, -0.5, 0)
-
-            //D
+            //change points based on Chapter
+            switch true {
+            case chapterOne:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                mainFloor.runAction(SCNAction.moveBy(x: -0.15, y: 0, z: -1.45, duration: 15), completionHandler: stopAnimation)
+                mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
+                //set the idle animation position to be at the new main character location and rotation
+                mainCharacterIdle.position = mainCharacterMoving.position
+                mainCharacterIdle.eulerAngles = SCNVector3(0, -0.5, 0)
+            case chapterTwo:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter two")
+            case chapterThree:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter three")
+            case chapterFour:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter four")
+            case chapterFive:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter five")
+            default:
+                break
+            }
+            
+        //D
         case .toLetter4:
-            mainFloor.runAction(SCNAction.moveBy(x: 1.4, y: 0, z: -0.2, duration: 15), completionHandler: stopAnimation)
-            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -2.5, z: 0, duration: 15))
-            //set the idle animation position to be at the new main character location and rotation
-            mainCharacterIdle.position = mainCharacterMoving.position
-            mainCharacterIdle.eulerAngles = SCNVector3(0, -3, 0)
-           
-            //E
+            //change points based on Chapter
+            switch true {
+            case chapterOne:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                mainFloor.runAction(SCNAction.moveBy(x: 1.4, y: 0, z: -0.2, duration: 15), completionHandler: stopAnimation)
+                mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -2.5, z: 0, duration: 15))
+                //set the idle animation position to be at the new main character location and rotation
+                mainCharacterIdle.position = mainCharacterMoving.position
+                mainCharacterIdle.eulerAngles = SCNVector3(0, -3, 0)
+            case chapterTwo:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter two")
+            case chapterThree:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter three")
+            case chapterFour:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter four")
+            case chapterFive:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter five")
+            default:
+                break
+            }
+            
+        //E
         case .toLetter5:
-            mainFloor.runAction(SCNAction.moveBy(x: 0.35, y: 0, z: 1.65, duration: 15), completionHandler: stopAnimation)
-            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 15))
-            //set the idle animation position to be at the new main character location and rotation
-            mainCharacterIdle.position = mainCharacterMoving.position
-            //mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+            //change points based on Chapter
+            switch true {
+            case chapterOne:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                mainFloor.runAction(SCNAction.moveBy(x: 0.35, y: 0, z: 1.65, duration: 15), completionHandler: stopAnimation)
+                mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 15))
+                //set the idle animation position to be at the new main character location and rotation
+                mainCharacterIdle.position = mainCharacterMoving.position
+                //mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+            case chapterTwo:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter two")
+            case chapterThree:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter three")
+            case chapterFour:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter four")
+            case chapterFive:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter five")
+            default:
+                break
+            }
             
-            //F
+        //F
         case .toLetter6:
-            mainFloor.runAction(SCNAction.moveBy(x: -0.35, y: 0, z: 1.5, duration: 15), completionHandler: stopAnimation)
-            mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
-            //set the idle animation position to be at the new main character location and rotation
-            mainCharacterIdle.position = mainCharacterMoving.position
-            mainCharacterIdle.eulerAngles = SCNVector3(0, -0.5, 0)
+            //change points based on Chapter
+            switch true {
+            case chapterOne:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                mainFloor.runAction(SCNAction.moveBy(x: -0.35, y: 0, z: 1.5, duration: 15), completionHandler: stopAnimation)
+                mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
+                //set the idle animation position to be at the new main character location and rotation
+                mainCharacterIdle.position = mainCharacterMoving.position
+                mainCharacterIdle.eulerAngles = SCNVector3(0, -3.5, 0)
+            case chapterTwo:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter two")
+            case chapterThree:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter three")
+            case chapterFour:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter four")
+            case chapterFive:
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate a bit on the y axis
+                print("move floor for chapter five")
+            default:
+                break
+            }
             
+        //Finish
         case .chapterFinished:
+            
+            //TODO: Do stuff that wraps up the chapter
             print("Reached the end of the chapter")
         }
     }
@@ -548,7 +689,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //get ready to shatter a when ViewDidAppear() is called
                     print("Prepare to shatter letter 2")
                     self.shatterLetterTwo = true
-
+                    
                     print("Loading activity B")
                     self.loadActivityLetter(activityString: "B")
                     //wait 6 seconds
@@ -568,9 +709,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //get ready to shatter a when ViewDidAppear() is called
                     print("Prepare to shatter letter 3")
                     self.shatterLetterThree = true
-
+                    
                     print("Loading activity C")
-                
+                    
                     self.loadActivityLetter(activityString: "C")
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -589,7 +730,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //get ready to shatter a when ViewDidAppear() is called
                     print("Prepare to shatter letter 4")
                     self.shatterLetterFour = true
-
+                    
                     print("Loading activity D")
                     self.loadActivityLetter(activityString: "D")
                     //wait 6 seconds
@@ -599,7 +740,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
             })
             gameProgress = .toLetter5
-
+            
         case .toLetter5:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -609,7 +750,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //get ready to shatter a when ViewDidAppear() is called
                     print("Prepare to shatter letter 5")
                     self.shatterLetterFive = true
-
+                    
                     print("Loading activity E")
                     self.loadActivityLetter(activityString: "E")
                     //wait 6 seconds
@@ -619,7 +760,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
             })
             gameProgress = .toLetter6
-
+            
         case .toLetter6:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -629,7 +770,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //get ready to shatter a when ViewDidAppear() is called
                     print("Prepare to shatter letter 6")
                     self.shatterLetterSix = true
-
+                    
                     print("Loading activity F")
                     self.loadActivityLetter(activityString: "F")
                     //wait 6 seconds
@@ -639,7 +780,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
             })
             gameProgress = .chapterFinished
-
+            
         case .chapterFinished:
             //finish chapter stuff
             print("Finish Chapter after animation stopped")
@@ -672,7 +813,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             break
         }
     }
-
+    
     func animateLetterHide(fadeThis: SCNNode){
         //wait 3 seconds and then fade the letter out to 0 opacity
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
@@ -688,9 +829,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func storyTime(){
         //Wait 2 second
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-        self.playAudioNarrationFile(file: "Line1", type: "mp3")
+            self.playAudioNarrationFile(file: "Line1", type: "mp3")
         })
-            
+        
         //wait 7 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
             
