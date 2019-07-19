@@ -9,9 +9,9 @@ public var letterUnderlay = UIImageView()
 public class ActivitySelection {
    
     public func loadActivityA() {
-        //MARK: -- Questions
-            // How to we make a system to change steps modularly?
+
         print("Called loadActivityA")
+        
         //add the A CGpoints that will be used as startingpoint and target point to an array
         activityPoints = [[CGFloat(0.5),CGFloat(0.15)], //first point x, y
                           [CGFloat(0.1),CGFloat(0.85)], //second point x, y
@@ -20,15 +20,13 @@ public class ActivitySelection {
                           [CGFloat(0.2),CGFloat(0.65)], //fifth point
                           [CGFloat(0.8),CGFloat(0.65)]] //sixth point
         
-        //print("The activity has points at: ", activityPoints)
-        
         //Set the underlay variables
         let UnderlayA = UIImage(named: "art.scnassets/LetterImages/A.png")
         letterUnderlay = UIImageView(image: UnderlayA)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
         
-        //add the sounds to dictionary with a key ["name":"audiofile"]
+        //TODO: add the sounds to dictionary with a key ["name":"audiofile"]
     }
     public func loadActivityB() {
         print("Called loadActivityB")
