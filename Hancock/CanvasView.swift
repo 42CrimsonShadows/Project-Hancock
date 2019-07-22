@@ -29,9 +29,6 @@ class CanvasView: UIView {
     var letterState: LetterState = .P1_P2
     
     var currentComplete = false
-    //var AtoB = false
-    //var AtoC = false
-    //var DtoE = false
     var goodTouch: Bool = false
     var goodLine: Bool = false
     
@@ -126,27 +123,45 @@ class CanvasView: UIView {
         switch true {
         case Line1:
             //start point and end for the current letter's first line
+            //activityPoints[0][0] is the first item in the group that is the first group in the array
             startingPoint = CGPoint(x: bounds.maxX * activityPoints[0][0], y: bounds.maxY * activityPoints[0][1])
-            targetPoint =  CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
+            greenDot?.isHidden = false
+            //middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
+            //middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[2][0], y: bounds.maxY * activityPoints[2][1])
+            targetPoint = CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
+            //targetPoint = CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
+            redDot?.isHidden = false
             
         case Line2:
             //start point and end for the current letter's second line
             startingPoint = CGPoint(x: bounds.maxX * activityPoints[2][0], y: bounds.maxY * activityPoints[2][1])
-            targetPoint =  CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
+            greenDot?.isHidden = true
+            blueDot?.isHidden = false
+            targetPoint = CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
+            redDot?.isHidden = true
+            orangeDot?.isHidden = false
             
         case Line3:
             //start point and end for the current letter's third line
             startingPoint = CGPoint(x: bounds.maxX * activityPoints[4][0], y: bounds.maxY * activityPoints[4][1])
-            targetPoint =  CGPoint(x: bounds.maxX * activityPoints[5][0], y: bounds.maxY * activityPoints[5][1])
+            blueDot?.isHidden = true
+            purpleDot?.isHidden = false
+            targetPoint = CGPoint(x: bounds.maxX * activityPoints[5][0], y: bounds.maxY * activityPoints[5][1])
+            orangeDot?.isHidden = true
+            yellowDot?.isHidden = false
             
         case Line4:
             //start point and end for the current letter's fourth line (if there is a fourth line...)
             let arraySize = activityPoints.count
             print("The size of the array of activity points =", arraySize)
             
-            if arraySize > 6 {
+            if arraySize > 12 {
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[6][0], y: bounds.maxY * activityPoints[6][1])
-                targetPoint =  CGPoint(x: bounds.maxX * activityPoints[7][0], y: bounds.maxY * activityPoints[7][1])
+                purpleDot?.isHidden = true
+                //TODO: set next 4th dot color for start point to "not hidden"
+                targetPoint = CGPoint(x: bounds.maxX * activityPoints[7][0], y: bounds.maxY * activityPoints[7][1])
+                //TODO: set next 4th dot color for end point to "not hidden"
+                yellowDot?.isHidden = true
             }
             else {
                 return
@@ -385,11 +400,11 @@ class CanvasView: UIView {
                         
                         //wait 3 seconds
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                            self.blueDot?.pulsate()
+                            self.blueDot?.pulsate(duration: 0.6)
                             
                             //wait 2 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.orangeDot?.pulsate()
+                                self.orangeDot?.pulsate(duration: 0.6)
                             })
                         })
                     })
@@ -413,11 +428,11 @@ class CanvasView: UIView {
                     
                     //wait 2 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.purpleDot?.pulsate()
+                        self.purpleDot?.pulsate(duration: 0.6)
                         
                         //wait 2 seconds
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            self.yellowDot?.pulsate()
+                            self.yellowDot?.pulsate(duration: 0.6)
                         })
                     })
                 })
@@ -535,58 +550,7 @@ class CanvasView: UIView {
         return sqrt(CGPointDistanceSquared(from: from, to: to))
     }
     
-    //MARK: - LETTERSTATE SWITCH
-    
-//    func nextStep(){
-//
-//        switch letterState {
-//        //case .AtoB:
-//        case .P1_P2:
-//            //startingPoint = aStartPoint;
-//            //targetPoint = cStartPoint;
-//            print("letterstate put target point at", targetPoint)
-//            //letterState = .AtoC
-//            letterState = .P3_P4
-//            //AtoB = true
-//            Line1 = true
-//            Line2 = false
-//            Line3 = false
-//            Line4 = false
-//        //case .AtoC:
-//        case .P3_P4:
-//            //startingPoint = dStartPoint;
-//            //targetPoint = eStartPoint;
-//            print("letterstate put target point at", targetPoint)
-//            //letterState = .DtoE
-//            letterState = .P5_P6
-//            //AtoC = true
-//            Line1 = false
-//            Line2 = true
-//            Line3 = false
-//            Line4 = false
-//        //case .DtoE:
-//        case .P5_P6:
-//            //startingPoint = aStartPoint;
-//            //targetPoint = bStartPoint;
-//            print("letterstate put target point at", targetPoint)
-//            //letterState = .D1toE
-//            letterState = .P7_P8
-//            //DtoE = true
-//            Line1 = false
-//            Line2 = false
-//            Line3 = true
-//            Line4 = false
-//        case .P7_P8:
-//            //do stuff for a fourth line
-//            print("letterstate put target point at", targetPoint)
-//            print("Reached nextStep() function")
-//            Line1 = false
-//            Line2 = false
-//            Line3 = false
-//            Line4 = true
-//        }
-//        print("letterState is now:", letterState)
-//    }
+    //MARK: AUDIO STUFF
     
     func playAudioFile(file: String, type: String) {
         let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")

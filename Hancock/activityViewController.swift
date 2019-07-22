@@ -143,9 +143,10 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         setupCanvas()
         
-        //setupGreenlines()
+        //setupGreenlines() ----- For setting up letter craked images to be shown/hidden
         loadActivity()
         setupUnderlay()
+        setupDotsImages()
         
         
         //load animations
@@ -164,15 +165,19 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         super.viewWillAppear(animated)
         print("*** ViewWillAppear()")
         
+        //set the first line active
         canvasView.Line1 = true
+        canvasView.Line2 = false
+        canvasView.Line3 = false
+        canvasView.Line4 = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             //play the pulsate animation for the first dot
-            self.canvasView.greenDot?.pulsate()
+            self.canvasView.greenDot?.pulsate(duration: 0.6)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                 //play the pulsate animation for the second dot
-                self.canvasView.redDot?.pulsate()
+                self.canvasView.redDot?.pulsate(duration: 0.6)
             })
         })
     }
@@ -233,6 +238,91 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
 //        canvasView.A3GreenLine = A3UnderlayView
 //    }
     
+    public func setupDotsImages() {
+        
+        let Dot1x: CGFloat = canvasView.bounds.maxX * activityPoints[0][0]
+        let Dot1y: CGFloat = canvasView.bounds.maxY * activityPoints[0][1]
+        let Dot2x: CGFloat = canvasView.bounds.maxX * activityPoints[1][0]
+        let Dot2y: CGFloat = canvasView.bounds.maxY * activityPoints[1][1]
+        let Dot3x: CGFloat = canvasView.bounds.maxX * activityPoints[2][0]
+        let Dot3y: CGFloat = canvasView.bounds.maxY * activityPoints[2][1]
+        let Dot4x: CGFloat = canvasView.bounds.maxX * activityPoints[3][0]
+        let Dot4y: CGFloat = canvasView.bounds.maxY * activityPoints[3][1]
+        let Dot5x: CGFloat = canvasView.bounds.maxX * activityPoints[4][0]
+        let Dot5y: CGFloat = canvasView.bounds.maxY * activityPoints[4][1]
+        let Dot6x: CGFloat = canvasView.bounds.maxX * activityPoints[5][0]
+        let Dot6y: CGFloat = canvasView.bounds.maxY * activityPoints[5][1]
+        //let Dot7x: CGFloat = canvasView.bounds.maxX * activityPoints[6][0]
+        //let Dot7y: CGFloat = canvasView.bounds.maxY * activityPoints[6][1]
+        //let Dot8x: CGFloat = canvasView.bounds.maxX * activityPoints[7][0]
+        //let Dot8y: CGFloat = canvasView.bounds.maxY * activityPoints[7][1]
+        
+        view.insertSubview(GreenDotView, belowSubview: canvasView)
+        //GreenDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+        //GreenDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: -300).isActive = true
+        GreenDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: (Dot1x - (canvasView.bounds.maxX/2))).isActive = true
+        GreenDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: (Dot1y - (canvasView.bounds.maxY/2))).isActive = true
+        
+        print("The value of Dot1x =", Dot1x, "and the value of Dot1y =", Dot1y)
+        print("GreenDotVeiw.centerXAnchor is now constrained to", (Dot1x + (-1 * canvasView.bounds.maxX/2)))
+        print("GreenDotVeiw.centerYAnchor is now constrained to", (Dot1y + (-1 * canvasView.bounds.maxY/2)))
+        print("GreenDotViewX = ", GreenDotView.center.x, "and GeenDotViewY = ", GreenDotView.center.y)
+        print("the canvasView's MaxX =", canvasView.bounds.maxX)
+        print("the canvasView's MaxY =", canvasView.bounds.maxY)
+
+        
+        GreenDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        GreenDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        GreenDotView.isHidden = true
+        
+        canvasView.greenDot = GreenDotView
+        
+        view.insertSubview(RedDotView, belowSubview: canvasView)
+        RedDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: -225).isActive = true
+        RedDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 300).isActive = true
+        RedDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        RedDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        RedDotView.isHidden = true
+        
+        canvasView.redDot = RedDotView
+        
+        //Add the Dot Images to the UIView under the canvas
+        view.insertSubview(BlueDotView, belowSubview: canvasView)
+        BlueDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+        BlueDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: -300).isActive = true
+        BlueDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        BlueDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        BlueDotView.isHidden = true
+        
+        canvasView.blueDot = BlueDotView
+        
+        view.insertSubview(OrangeDotView, belowSubview: canvasView)
+        OrangeDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: 225).isActive = true
+        OrangeDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 300).isActive = true
+        OrangeDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        OrangeDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        OrangeDotView.isHidden = true
+        
+        canvasView.orangeDot = OrangeDotView
+        
+        view.insertSubview(PurpleDotView, belowSubview: canvasView)
+        PurpleDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: -175).isActive = true
+        PurpleDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 125).isActive = true
+        PurpleDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        PurpleDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        PurpleDotView.isHidden = true
+        
+        canvasView.purpleDot = PurpleDotView
+        
+        view.insertSubview(YellowDotView, belowSubview: canvasView)
+        YellowDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: 175).isActive = true
+        YellowDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 125).isActive = true
+        YellowDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        YellowDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        YellowDotView.isHidden = true
+        
+        canvasView.yellowDot = YellowDotView
+    }
 
     public func goBack() {
         
@@ -249,9 +339,10 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //canvasView.drawTouches(touches, withEvent: event)
         guard let firstPoint = touches.first?.location(in: canvasView) else { return }
-        print("Drawing in touchesBegan activityViewController")
+        //print("Drawing in touchesBegan activityViewController")
         print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
-        print("My Touch Location =", firstPoint)
+        print("My Touch Location = CGpointX", firstPoint.x / canvasView.bounds.maxX, "and CGpointY", firstPoint.y / canvasView.bounds.maxY)
+        //print("My Touch Location =", firstPoint)
         
 //        if !canvasView.AtoB {
 //            //startingPoint = canvasView.aStartPoint
@@ -267,7 +358,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
 //            //targetPoint = canvasView.eStartPoint
 //        }
         
-        print("touches began")
+        //print("touches began")
         
         //print("Startpoint= ", startingPoint)
         //print("Targetpoint= ", targetPoint)

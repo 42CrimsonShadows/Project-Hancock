@@ -11,13 +11,14 @@ import UIKit
 
 extension UIView {
     
-    func pulsate() {
+    func pulsate(duration: Double) {
      
         //transform the scale with a CASpringAnimation
         let pulse = CASpringAnimation(keyPath: "transform.scale")
         
         //duration of the animation
-        pulse.duration = 0.6
+        //pulse.duration = 0.6
+        pulse.duration = duration
         
         //starts at 95% of its size
         pulse.fromValue  = 1
