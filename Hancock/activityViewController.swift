@@ -19,10 +19,34 @@ import UIKit
 // MARK: - Game State
 public var selectedActivity = ""
 
+public var allDoneWithLetter = false
+
+//Dot #1
+public var letterOffset1X: CGFloat = 0.0
+public var letterOffset1Y: CGFloat = 0.0
+//Dot #2
+public var letterOffset2X: CGFloat = 0.0
+public var letterOffset2Y: CGFloat = 0.0
+//Dot #3
+public var letterOffset3X: CGFloat = 0.0
+public var letterOffset3Y: CGFloat = 0.0
+//Dot #4
+public var letterOffset4X: CGFloat = 0.0
+public var letterOffset4Y: CGFloat = 0.0
+//Dot #5
+public var letterOffset5X: CGFloat = 0.0
+public var letterOffset5Y: CGFloat = 0.0
+//Dot #6
+public var letterOffset6X: CGFloat = 0.0
+public var letterOffset6Y: CGFloat = 0.0
+//Dot #7
+public var letterOffset7X: CGFloat = 0.0
+public var letterOffset7Y: CGFloat = 0.0
+//Dot #8
+public var letterOffset8X: CGFloat = 0.0
+public var letterOffset8Y: CGFloat = 0.0
+
 enum LetterState: Int16 {
-    //case AtoB
-    //case AtoC
-    //case DtoE
     case P1_P2 //first line
     case P3_P4 //second
     case P5_P6 //third
@@ -240,138 +264,96 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     public func setupDotsImages() {
         
-        let Dot1x: CGFloat = canvasView.bounds.maxX * activityPoints[0][0]
-        let Dot1y: CGFloat = canvasView.bounds.maxY * activityPoints[0][1]
-        let Dot2x: CGFloat = canvasView.bounds.maxX * activityPoints[1][0]
-        let Dot2y: CGFloat = canvasView.bounds.maxY * activityPoints[1][1]
-        let Dot3x: CGFloat = canvasView.bounds.maxX * activityPoints[2][0]
-        let Dot3y: CGFloat = canvasView.bounds.maxY * activityPoints[2][1]
-        let Dot4x: CGFloat = canvasView.bounds.maxX * activityPoints[3][0]
-        let Dot4y: CGFloat = canvasView.bounds.maxY * activityPoints[3][1]
-        let Dot5x: CGFloat = canvasView.bounds.maxX * activityPoints[4][0]
-        let Dot5y: CGFloat = canvasView.bounds.maxY * activityPoints[4][1]
-        let Dot6x: CGFloat = canvasView.bounds.maxX * activityPoints[5][0]
-        let Dot6y: CGFloat = canvasView.bounds.maxY * activityPoints[5][1]
-        //let Dot7x: CGFloat = canvasView.bounds.maxX * activityPoints[6][0]
-        //let Dot7y: CGFloat = canvasView.bounds.maxY * activityPoints[6][1]
-        //let Dot8x: CGFloat = canvasView.bounds.maxX * activityPoints[7][0]
-        //let Dot8y: CGFloat = canvasView.bounds.maxY * activityPoints[7][1]
-        
         view.insertSubview(GreenDotView, belowSubview: canvasView)
-        //GreenDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-        //GreenDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: -300).isActive = true
-        GreenDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: (Dot1x - (canvasView.bounds.maxX/2))).isActive = true
-        GreenDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: (Dot1y - (canvasView.bounds.maxY/2))).isActive = true
-        
-        print("The value of Dot1x =", Dot1x, "and the value of Dot1y =", Dot1y)
-        print("GreenDotVeiw.centerXAnchor is now constrained to", (Dot1x + (-1 * canvasView.bounds.maxX/2)))
-        print("GreenDotVeiw.centerYAnchor is now constrained to", (Dot1y + (-1 * canvasView.bounds.maxY/2)))
-        print("GreenDotViewX = ", GreenDotView.center.x, "and GeenDotViewY = ", GreenDotView.center.y)
-        print("the canvasView's MaxX =", canvasView.bounds.maxX)
-        print("the canvasView's MaxY =", canvasView.bounds.maxY)
-
-        
+        GreenDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset1X).isActive = true
+        GreenDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset1Y).isActive = true
         GreenDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         GreenDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         GreenDotView.isHidden = true
-        
         canvasView.greenDot = GreenDotView
         
+        //Set up RED dot
         view.insertSubview(RedDotView, belowSubview: canvasView)
-        RedDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: -225).isActive = true
-        RedDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 300).isActive = true
+        RedDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset2X).isActive = true
+        RedDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset2Y).isActive = true
         RedDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         RedDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         RedDotView.isHidden = true
-        
         canvasView.redDot = RedDotView
         
-        //Add the Dot Images to the UIView under the canvas
+        //Set up BLUE dot
         view.insertSubview(BlueDotView, belowSubview: canvasView)
-        BlueDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-        BlueDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: -300).isActive = true
+        BlueDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant:  letterOffset3X).isActive = true
+        BlueDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset3Y).isActive = true
         BlueDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         BlueDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         BlueDotView.isHidden = true
-        
         canvasView.blueDot = BlueDotView
         
+        ////Set up Orange dot
         view.insertSubview(OrangeDotView, belowSubview: canvasView)
-        OrangeDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: 225).isActive = true
-        OrangeDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 300).isActive = true
+        OrangeDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset4X).isActive = true
+        OrangeDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset4Y).isActive = true
         OrangeDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         OrangeDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         OrangeDotView.isHidden = true
-        
         canvasView.orangeDot = OrangeDotView
         
+        //Set up PURPLE dot
         view.insertSubview(PurpleDotView, belowSubview: canvasView)
-        PurpleDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: -175).isActive = true
-        PurpleDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 125).isActive = true
+        PurpleDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset5X).isActive = true
+        PurpleDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset5Y).isActive = true
         PurpleDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         PurpleDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         PurpleDotView.isHidden = true
-        
         canvasView.purpleDot = PurpleDotView
         
+        //Set up Yellow dot
         view.insertSubview(YellowDotView, belowSubview: canvasView)
-        YellowDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: 175).isActive = true
-        YellowDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: 125).isActive = true
+        YellowDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset6X).isActive = true
+        YellowDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset6Y).isActive = true
         YellowDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         YellowDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         YellowDotView.isHidden = true
-        
         canvasView.yellowDot = YellowDotView
+        
+        //TODO: Set up Pink dot
+        
+        //TODO: set up white dot
     }
 
-    public func goBack() {
+    func goBack() {
         
         //dismissItem.dismiss(animated: false, completion: nil)
         print("Go Back Was Called")
-        print(self)
         //self.performSegue(withIdentifier: "Back To Scene", sender: self)
         //navigationController?.popToRootViewController(animated: true)
-        //            navigationController?.popViewController(animated: true)
-        //            dismiss(animated: true, completion: nil)
-        self.dismiss(animated: false, completion: nil)
+        //navigationController?.popViewController(animated: true)
+        //dismiss(animated: true, completion: nil)
+        
+        //self.dismiss(animated: false, completion: nil)
+        
+       
+            dismiss(animated: false, completion: nil)
+            
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+//                self.dismiss(animated: false, completion: nil)
+//            })
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //canvasView.drawTouches(touches, withEvent: event)
         guard let firstPoint = touches.first?.location(in: canvasView) else { return }
-        //print("Drawing in touchesBegan activityViewController")
+
         print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
         print("My Touch Location = CGpointX", firstPoint.x / canvasView.bounds.maxX, "and CGpointY", firstPoint.y / canvasView.bounds.maxY)
-        //print("My Touch Location =", firstPoint)
-        
-//        if !canvasView.AtoB {
-//            //startingPoint = canvasView.aStartPoint
-//            //targetPoint = canvasView.bStartPoint
-//
-//        }
-//        if canvasView.AtoB {
-//            //startingPoint = canvasView.aStartPoint
-//            //targetPoint = canvasView.cStartPoint
-//        }
-//        if canvasView.AtoC {
-//            //startingPoint = canvasView.dStartPoint
-//            //targetPoint = canvasView.eStartPoint
-//        }
-        
-        //print("touches began")
-        
-        //print("Startpoint= ", startingPoint)
-        //print("Targetpoint= ", targetPoint)
-//        print("AtoB=", canvasView.AtoB)
-//        print("AtoC=", canvasView.AtoC)
-//        print("DtoE=", canvasView.DtoE)
+        print("Probable Dot X Location =", firstPoint.x - (canvasView.bounds.maxX/2))
+        print("Probable Dot Y Location =", firstPoint.y - (canvasView.bounds.maxY/2))
         
         if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 50 {
             // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
             canvasView.goodTouch = true
             print("Touch was within 50 units")
-            
-            
             
             canvasView.drawTouches(touches, withEvent: event)
             touches.forEach { (touch) in updateGagues(with: touch)
@@ -421,7 +403,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.endTouches(touches, cancel: false)
         canvasView.goodTouch = false
         
-        guard let lastPoint = touches.first?.location(in: canvasView) else { return }
+        //guard let lastPoint = touches.first?.location(in: canvasView) else { return }
         
         touches.forEach { (touch) in
             clearGagues()
@@ -432,12 +414,15 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             }
         }
         
+        print("allDoneWithLetter is currently ***", allDoneWithLetter, "***")
+        
         //if canvasView.DtoE == true {
-        if canvasView.Line4 == true {
+        if canvasView.Line4 == true{
             DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                 self.dismiss(animated: false, completion: nil)
             })
         }
+        
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

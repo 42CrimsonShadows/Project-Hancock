@@ -13,20 +13,49 @@ public class ActivitySelection {
         print("Called loadActivityA")
         
         //add the A CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
+        
+                        //Line #1
         activityPoints = [[CGFloat(0.5),CGFloat(0.15)], //first point x, y
-                        //[CGFloat(0.35),CGFloat(0.35)], first MidPoint1 x, y
-                        //[CGFloat(0.25),CGFloat(0.6)], first MidPoint2 x, y
-                          [CGFloat(0.1),CGFloat(0.85)], //second point x, y
+                        [CGFloat(0.35),CGFloat(0.35)], //first MidPoint1 x, y
+                        [CGFloat(0.25),CGFloat(0.6)], //first MidPoint2 x, y
+                        [CGFloat(0.1),CGFloat(0.85)], //second point x, y
             
-                          [CGFloat(0.5),CGFloat(0.15)], //third point x, y... (actually first point again)
-                        //[CGFloat(0.65),CGFloat(0.35)], third MidPoint1 x, y
-                        //[CGFloat(0.75),CGFloat(0.6)], third MidPoint2 x, y
-                          [CGFloat(0.9),CGFloat(0.85)], //fourth point
+                        //Line #2
+                        [CGFloat(0.5),CGFloat(0.15)], //third point x, y... (actually first point again)
+                        [CGFloat(0.65),CGFloat(0.35)], //third MidPoint1 x, y
+                        [CGFloat(0.75),CGFloat(0.6)], //third MidPoint2 x, y
+                        [CGFloat(0.9),CGFloat(0.85)], //fourth point
             
-                          [CGFloat(0.25),CGFloat(0.5)], //fifth point
-                        //[CGFloat(0.42),CGFloat(0.5)], fifth MidPoint1 x, y
-                        //[CGFloat(0.58),CGFloat(0.5)], fifth MidPoint2 x, y
-                          [CGFloat(0.75),CGFloat(0.5)]] //sixth point
+                        //Line #3
+                        [CGFloat(0.25),CGFloat(0.6)], //fifth point
+                        [CGFloat(0.42),CGFloat(0.5)], //fifth MidPoint1 x, y
+                        [CGFloat(0.58),CGFloat(0.5)], //fifth MidPoint2 x, y
+                        [CGFloat(0.75),CGFloat(0.6)]] //sixth point
+        
+        //Dot #1
+        letterOffset1X = 0
+        letterOffset1Y = -300
+        //Dot #2
+        letterOffset2X = -225
+        letterOffset2Y = 300
+        //Dot #3
+        letterOffset3X = 0
+        letterOffset3Y = -300
+        //Dot #4
+        letterOffset4X = 255
+        letterOffset4Y = 300
+        //Dot #5
+        letterOffset5X = -150
+        letterOffset5Y = 75
+        //Dot #6
+        letterOffset6X = 150
+        letterOffset6Y = 75
+        //Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         //Set the underlay variables
         let UnderlayA = UIImage(named: "art.scnassets/LetterImages/A.png")
@@ -40,20 +69,49 @@ public class ActivitySelection {
         print("Called loadActivityB")
         
         //add the B CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
+        
+                        //Line #1
         activityPoints = [[CGFloat(0.25),CGFloat(0.1)], //first point x, y
-                        //[CGFloat(0.25),CGFloat(0.35)], first MidPoint1 x, y
-                        //[CGFloat(0.25),CGFloat(0.6)], first MidPoint2 x, y
+                        [CGFloat(0.25),CGFloat(0.35)], //first MidPoint1 x, y
+                        [CGFloat(0.25),CGFloat(0.6)], //first MidPoint2 x, y
                         [CGFloat(0.25),CGFloat(0.85)], //second point x, y
             
+                        //Line #2
                         [CGFloat(0.25),CGFloat(0.1)], //third point x, y... (actually first point again)
-                        //[CGFloat(0.6),CGFloat(0.15)], third MidPoint1 x, y
-                        //[CGFloat(0.6),CGFloat(0.45)], third MidPoint2 x, y
+                        [CGFloat(0.6),CGFloat(0.15)], //third MidPoint1 x, y
+                        [CGFloat(0.6),CGFloat(0.45)], //third MidPoint2 x, y
                         [CGFloat(0.25),CGFloat(0.5)], //fourth point
             
+                        //Line #3
                         [CGFloat(0.25),CGFloat(0.5)], //fifth point
-                        //[CGFloat(0.7),CGFloat(0.55)], fifth MidPoint1 x, y
-                        //[CGFloat(0.6),CGFloat(0.84)], fifth MidPoint2 x, y
+                        [CGFloat(0.7),CGFloat(0.55)], //fifth MidPoint1 x, y
+                        [CGFloat(0.6),CGFloat(0.84)], //fifth MidPoint2 x, y
                         [CGFloat(0.25),CGFloat(0.85)]] //sixth point
+        
+        //Dot #1
+        letterOffset1X = -150
+        letterOffset1Y = -350
+        //Dot #2
+        letterOffset2X = -150
+        letterOffset2Y = 325
+        //Dot #3
+        letterOffset3X = -150
+        letterOffset3Y = -350
+        //Dot #4
+        letterOffset4X = -150
+        letterOffset4Y = 0
+        //Dot #5
+        letterOffset5X = -150
+        letterOffset5Y = 0
+        //Dot #6
+        letterOffset6X = -150
+        letterOffset6Y = 325
+        //Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayB = UIImage(named: "art.scnassets/LetterImages/B.png")
         letterUnderlay = UIImageView(image: UnderlayB)
@@ -62,6 +120,40 @@ public class ActivitySelection {
     }
     public func loadActivityC() {
         print("Called loadActivityC")
+        
+        //add the C CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
+        
+        //Line #1
+        activityPoints = [[CGFloat(0.55),CGFloat(0.15)], //first point x, y
+                        [CGFloat(0.15),CGFloat(0.35)], //first MidPoint1 x, y
+                        [CGFloat(0.3),CGFloat(0.8)], //first MidPoint2 x, y
+                        [CGFloat(0.85),CGFloat(0.75)]] //second point x, y
+        
+        //Dot #1
+        letterOffset1X = 25
+        letterOffset1Y = -300
+        //Dot #2
+        letterOffset2X = 200
+        letterOffset2Y = 250
+        //Dot #3
+        letterOffset3X = 0
+        letterOffset3Y = 0
+        //Dot #4
+        letterOffset4X = 0
+        letterOffset4Y = 0
+        //Dot #5
+        letterOffset5X = 0
+        letterOffset5Y = 0
+        //Dot #6
+        letterOffset6X = 0
+        letterOffset6Y = 0
+        //Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
+        
         let UnderlayC = UIImage(named: "art.scnassets/LetterImages/C.png")
         letterUnderlay = UIImageView(image: UnderlayC)
         //this enables autolayout for our letter1UnderlayView

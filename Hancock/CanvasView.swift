@@ -119,6 +119,10 @@ class CanvasView: UIView {
         setNeedsDisplay()
         context.setLineCap(.round)
         
+        if allDoneWithLetter == true {
+            allDoneWithLetter = false
+        }
+        
         switch true {
         case Line1:
             //start point and end for the current letter's first line
@@ -127,45 +131,68 @@ class CanvasView: UIView {
             greenDot?.isHidden = false
             //middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
             //middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[2][0], y: bounds.maxY * activityPoints[2][1])
-            targetPoint = CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
+            targetPoint = CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
             //targetPoint = CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
             redDot?.isHidden = false
             
         case Line2:
-            //start point and end for the current letter's second line
-            startingPoint = CGPoint(x: bounds.maxX * activityPoints[2][0], y: bounds.maxY * activityPoints[2][1])
-            greenDot?.isHidden = true
-            blueDot?.isHidden = false
-            targetPoint = CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
-            redDot?.isHidden = true
-            orangeDot?.isHidden = false
+            //start point and end for the current letter's fourth line (if there is a fourth line...)
+            let arraySize = activityPoints.count
+            print("The size of the array of activity points =", arraySize)
+            
+            if arraySize > 4 {
+                //start point and end for the current letter's second line
+                startingPoint = CGPoint(x: bounds.maxX * activityPoints[4][0], y: bounds.maxY * activityPoints[4][1])
+                greenDot?.isHidden = true
+                blueDot?.isHidden = false
+                targetPoint = CGPoint(x: bounds.maxX * activityPoints[7][0], y: bounds.maxY * activityPoints[7][1])
+                redDot?.isHidden = true
+                orangeDot?.isHidden = false
+            }
+            else{
+                print("All done with Letter in Line2")
+                allDoneWithLetter = true
+                Line4 = true
+            }
             
         case Line3:
-            //start point and end for the current letter's third line
-            startingPoint = CGPoint(x: bounds.maxX * activityPoints[4][0], y: bounds.maxY * activityPoints[4][1])
-            blueDot?.isHidden = true
-            purpleDot?.isHidden = false
-            targetPoint = CGPoint(x: bounds.maxX * activityPoints[5][0], y: bounds.maxY * activityPoints[5][1])
-            orangeDot?.isHidden = true
-            yellowDot?.isHidden = false
+            //start point and end for the current letter's fourth line (if there is a fourth line...)
+            let arraySize = activityPoints.count
+            print("The size of the array of activity points =", arraySize)
             
+            if arraySize > 8 {
+                //start point and end for the current letter's third line
+                startingPoint = CGPoint(x: bounds.maxX * activityPoints[8][0], y: bounds.maxY * activityPoints[8][1])
+                blueDot?.isHidden = true
+                purpleDot?.isHidden = false
+                targetPoint = CGPoint(x: bounds.maxX * activityPoints[11][0], y: bounds.maxY * activityPoints[11][1])
+                orangeDot?.isHidden = true
+                yellowDot?.isHidden = false
+            }
+            else {
+                print("All done with Letter in Line3")
+                allDoneWithLetter = true
+                Line4 = true
+            }
+
         case Line4:
             //start point and end for the current letter's fourth line (if there is a fourth line...)
             let arraySize = activityPoints.count
             print("The size of the array of activity points =", arraySize)
             
             if arraySize > 12 {
-                startingPoint = CGPoint(x: bounds.maxX * activityPoints[6][0], y: bounds.maxY * activityPoints[6][1])
+                startingPoint = CGPoint(x: bounds.maxX * activityPoints[12][0], y: bounds.maxY * activityPoints[12][1])
                 purpleDot?.isHidden = true
                 //TODO: set next 4th dot color for start point to "not hidden"
-                targetPoint = CGPoint(x: bounds.maxX * activityPoints[7][0], y: bounds.maxY * activityPoints[7][1])
+                targetPoint = CGPoint(x: bounds.maxX * activityPoints[15][0], y: bounds.maxY * activityPoints[15][1])
                 //TODO: set next 4th dot color for end point to "not hidden"
                 yellowDot?.isHidden = true
             }
             else {
-                return
+                print("All done with Letter in Line4")
+                allDoneWithLetter = true
+                Line4 = true
             }
-            
         default:
             break
         }
@@ -372,21 +399,20 @@ class CanvasView: UIView {
             // This touch is ending, remove the line corresponding to it from `activeLines`.
             activeLines.removeObject(forKey: touch)
         }
-        
+               
         if CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
             
             lines.removeAll()
             needsFullRedraw = true
             setNeedsDisplay()
         }
-            
         else {
             //print("Target point =", targetPoint)
+            
             switch letterState {
             //case .AtoB:
             case .P1_P2:
                 //A1GreenLine?.isHidden = false
-                
                 
                 playAudioFile(file: "RockBreak1", type: "wav")
                 //wait 1 second
@@ -443,6 +469,7 @@ class CanvasView: UIView {
                 Line3 = true
                 Line4 = false
                 
+                
             //case .DtoE:
             case .P5_P6:
                 //A3GreenLine?.isHidden = false
@@ -475,6 +502,7 @@ class CanvasView: UIView {
                 Line2 = false
                 Line3 = false
                 Line4 = false
+                
             }
         }
     }
