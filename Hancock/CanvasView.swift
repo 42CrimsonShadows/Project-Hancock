@@ -119,7 +119,6 @@ class CanvasView: UIView {
         setNeedsDisplay()
         context.setLineCap(.round)
         
-        
         switch true {
         case Line1:
             //start point and end for the current letter's first line
