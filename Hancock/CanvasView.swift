@@ -19,7 +19,7 @@ class CanvasView: UIView {
     var Line2: Bool = false
     var Line3: Bool = false
     var Line4: Bool = false
-
+    
     var lineColor = UIColor.blue.cgColor
     var checkPointColor = UIColor.darkGray.cgColor
     var dotPointColor = UIColor.black.cgColor
@@ -28,21 +28,29 @@ class CanvasView: UIView {
     //var letterState: LetterState = .AtoB
     var letterState: LetterState = .P1_P2
     
-    var currentComplete = false
+    var letterComplete: Bool = false
+
     var goodTouch: Bool = false
     var goodLine: Bool = false
     
+    //cracked images for letters
     //var A1GreenLine: UIImageView?
     //var A1GreenLine: UIImageView?
     //var A2GreenLine: UIImageView?
     //var A3GreenLine: UIImageView?
     
+    //Line #1 dots
     var greenDot: UIImageView?
     var redDot: UIImageView?
+    //Line #2 dots
     var blueDot: UIImageView?
     var orangeDot: UIImageView?
+    //Line #3 dots
     var purpleDot: UIImageView?
     var yellowDot: UIImageView?
+    //Line #4 dots
+    var pinkDot: UIImageView?
+    var whiteDot: UIImageView?
     
     var audioPlayer = AVAudioPlayer()
     
@@ -119,10 +127,6 @@ class CanvasView: UIView {
         setNeedsDisplay()
         context.setLineCap(.round)
         
-        if allDoneWithLetter == true {
-            allDoneWithLetter = false
-        }
-        
         switch true {
         case Line1:
             //start point and end for the current letter's first line
@@ -134,12 +138,12 @@ class CanvasView: UIView {
             targetPoint = CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
             //targetPoint = CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
             redDot?.isHidden = false
-            
+
         case Line2:
             //start point and end for the current letter's fourth line (if there is a fourth line...)
             let arraySize = activityPoints.count
             print("The size of the array of activity points =", arraySize)
-            
+
             if arraySize > 4 {
                 //start point and end for the current letter's second line
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[4][0], y: bounds.maxY * activityPoints[4][1])
@@ -149,17 +153,12 @@ class CanvasView: UIView {
                 redDot?.isHidden = true
                 orangeDot?.isHidden = false
             }
-            else{
-                print("All done with Letter in Line2")
-                allDoneWithLetter = true
-                Line4 = true
-            }
-            
+
         case Line3:
             //start point and end for the current letter's fourth line (if there is a fourth line...)
             let arraySize = activityPoints.count
             print("The size of the array of activity points =", arraySize)
-            
+
             if arraySize > 8 {
                 //start point and end for the current letter's third line
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[8][0], y: bounds.maxY * activityPoints[8][1])
@@ -169,17 +168,12 @@ class CanvasView: UIView {
                 orangeDot?.isHidden = true
                 yellowDot?.isHidden = false
             }
-            else {
-                print("All done with Letter in Line3")
-                allDoneWithLetter = true
-                Line4 = true
-            }
 
         case Line4:
             //start point and end for the current letter's fourth line (if there is a fourth line...)
             let arraySize = activityPoints.count
             print("The size of the array of activity points =", arraySize)
-            
+
             if arraySize > 12 {
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[12][0], y: bounds.maxY * activityPoints[12][1])
                 purpleDot?.isHidden = true
@@ -188,69 +182,64 @@ class CanvasView: UIView {
                 //TODO: set next 4th dot color for end point to "not hidden"
                 yellowDot?.isHidden = true
             }
-            else {
-                print("All done with Letter in Line4")
-                allDoneWithLetter = true
-                Line4 = true
-            }
         default:
             break
         }
         
-//        print("Starting point =", startingPoint)
-//        print("Target point =", targetPoint)
-//        print("The current letterState is now ", letterState)
-//        print("Line1 =", Line1, " - Line2 =", Line2, " - Line3 =", Line3, " - Line4 =", Line4)
+        //        print("Starting point =", startingPoint)
+        //        print("Target point =", targetPoint)
+        //        print("The current letterState is now ", letterState)
+        //        print("Line1 =", Line1, " - Line2 =", Line2, " - Line3 =", Line3, " - Line4 =", Line4)
         
         
-//        if !AtoB {
-//
-//            //make first dot
-//            aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-//            aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-//            //context.move(to: aStartPoint)
-//            //context.addLine(to: aEndPoint)
-//            greenDot?.isHidden = false
-//
-//            //make second dot
-//            bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-//            bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-//            //context.move(to: bStartPoint)
-//            //context.addLine(to: bEndPoint)
-//            redDot?.isHidden = false
-//        }
-//        else if AtoB && !AtoC {
-//            //make first dot
-//            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-//            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-//            //context.move(to: aStartPoint)
-//            //context.addLine(to: aEndPoint)
-//            greenDot?.isHidden = true
-//            blueDot?.isHidden = false
-//
-//            //make second dot
-//            self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
-//            self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
-//            //context.move(to: cStartPoint)
-//            //context.addLine(to: cEndPoint)
-//            orangeDot?.isHidden = false
-//            redDot?.isHidden = true
-//        }
-//        else {
-//            self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
-//            self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
-//            //context.move(to: dStartPoint)
-//            //context.addLine(to: dEndPoint)
-//            purpleDot?.isHidden = false
-//            blueDot?.isHidden = true
-//
-//            self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
-//            self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
-//            //context.move(to: eStartPoint)
-//            //context.addLine(to: eEndPoint)
-//            yellowDot?.isHidden = false
-//            orangeDot?.isHidden = true
-//        }
+        //        if !AtoB {
+        //
+        //            //make first dot
+        //            aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+        //            aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+        //            //context.move(to: aStartPoint)
+        //            //context.addLine(to: aEndPoint)
+        //            greenDot?.isHidden = false
+        //
+        //            //make second dot
+        //            bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+        //            bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
+        //            //context.move(to: bStartPoint)
+        //            //context.addLine(to: bEndPoint)
+        //            redDot?.isHidden = false
+        //        }
+        //        else if AtoB && !AtoC {
+        //            //make first dot
+        //            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+        //            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
+        //            //context.move(to: aStartPoint)
+        //            //context.addLine(to: aEndPoint)
+        //            greenDot?.isHidden = true
+        //            blueDot?.isHidden = false
+        //
+        //            //make second dot
+        //            self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
+        //            self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
+        //            //context.move(to: cStartPoint)
+        //            //context.addLine(to: cEndPoint)
+        //            orangeDot?.isHidden = false
+        //            redDot?.isHidden = true
+        //        }
+        //        else {
+        //            self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
+        //            self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
+        //            //context.move(to: dStartPoint)
+        //            //context.addLine(to: dEndPoint)
+        //            purpleDot?.isHidden = false
+        //            blueDot?.isHidden = true
+        //
+        //            self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
+        //            self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
+        //            //context.move(to: eStartPoint)
+        //            //context.addLine(to: eEndPoint)
+        //            yellowDot?.isHidden = false
+        //            orangeDot?.isHidden = true
+        //        }
         
         if needsFullRedraw {
             setFrozenImageNeedsUpdate()
@@ -368,7 +357,7 @@ class CanvasView: UIView {
             
             let touchRect = line.addPointOfType(type, for: touch, in: self)
             accumulatedRect = accumulatedRect.union(touchRect)
-
+            
             commitLine(line)
         }
         
@@ -399,7 +388,7 @@ class CanvasView: UIView {
             // This touch is ending, remove the line corresponding to it from `activeLines`.
             activeLines.removeObject(forKey: touch)
         }
-               
+        
         if CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
             
             lines.removeAll()
@@ -441,6 +430,9 @@ class CanvasView: UIView {
                 Line2 = true
                 Line3 = false
                 Line4 = false
+                if activityPoints.count < 5 {
+                    letterComplete = true
+                }
                 
             //case .AtoC:
             case .P3_P4:
@@ -468,7 +460,9 @@ class CanvasView: UIView {
                 Line2 = false
                 Line3 = true
                 Line4 = false
-                
+                if activityPoints.count < 9 {
+                    letterComplete = true
+                }
                 
             //case .DtoE:
             case .P5_P6:
@@ -492,6 +486,9 @@ class CanvasView: UIView {
                 Line2 = false
                 Line3 = false
                 Line4 = true
+                if activityPoints.count < 13 {
+                    letterComplete = true
+                }
                 
             case .P7_P8:
                 //A4GreenLine?.isHidden = false
@@ -502,7 +499,7 @@ class CanvasView: UIView {
                 Line2 = false
                 Line3 = false
                 Line4 = false
-                
+                letterComplete = true
             }
         }
     }
@@ -548,12 +545,12 @@ class CanvasView: UIView {
     
     private func finishLine(_ line: Line) {
         // Have the line draw any remaining segments into the `frozenContext`. All should be fixed now.
-        if goodLine {
+        if goodLine == true {
             line.drawFixedPointsInContext(frozenContext, isDebuggingEnabled: isDebuggingEnabled, usePreciseLocation: usePreciseLocations, commitAll: true)
             setFrozenImageNeedsUpdate()
             
             // Cease tracking this line now that it is finished.
-            lines.remove(at: lines.index(of: line)!)
+            lines.remove(at: lines.firstIndex(of: line)!)
             
             // Store into finished lines to allow for a full redraw on option changes.
             finishedLines.append(line)
@@ -561,9 +558,9 @@ class CanvasView: UIView {
         } else {
             print("not a good line")
             
-//            for line in lines {
-//                line.cancel()
-//            }
+            //            for line in lines {
+            //                line.cancel()
+            //            }
         }
     }
     

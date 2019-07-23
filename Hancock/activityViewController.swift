@@ -19,8 +19,6 @@ import UIKit
 // MARK: - Game State
 public var selectedActivity = ""
 
-public var allDoneWithLetter = false
-
 //Dot #1
 public var letterOffset1X: CGFloat = 0.0
 public var letterOffset1Y: CGFloat = 0.0
@@ -133,6 +131,22 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         //this enables autolayout for our YellowDotView
         YellowDotView.translatesAutoresizingMaskIntoConstraints = false
         return YellowDotView
+    }()
+    let PinkDotView: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let PinkDot = UIImage(named: "art.scnassets/DotImages/PinkDot.png")
+        let PinkDotView = UIImageView(image: PinkDot)
+        //this enables autolayout for our YellowDotView
+        PinkDotView.translatesAutoresizingMaskIntoConstraints = false
+        return PinkDotView
+    }()
+    let WhiteDotView: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let WhiteDot = UIImage(named: "art.scnassets/DotImages/WhiteDot.png")
+        let WhiteDotView = UIImageView(image: WhiteDot)
+        //this enables autolayout for our YellowDotView
+        WhiteDotView.translatesAutoresizingMaskIntoConstraints = false
+        return WhiteDotView
     }()
     
     
@@ -318,8 +332,22 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.yellowDot = YellowDotView
         
         //TODO: Set up Pink dot
+        //view.insertSubview(PinkDotView, belowSubview: canvasView)
+        //PinkDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset7X).isActive = true
+        //PinkDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset7Y).isActive = true
+        //PinkDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        //PinkDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        //PinkDotView.isHidden = true
+        //canvasView.pinkDot = PinkDotView
         
         //TODO: set up white dot
+        //view.insertSubview(WhiteDotView, belowSubview: canvasView)
+        //WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset7X).isActive = true
+        //WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset7Y).isActive = true
+        //WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        //WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        //WhiteDotView.isHidden = true
+        //canvasView.whiteDot = WhiteDotView
     }
 
     func goBack() {
@@ -331,14 +359,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         //navigationController?.popViewController(animated: true)
         //dismiss(animated: true, completion: nil)
         
-        //self.dismiss(animated: false, completion: nil)
-        
-       
-            dismiss(animated: false, completion: nil)
-            
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
-//                self.dismiss(animated: false, completion: nil)
-//            })
+        self.dismiss(animated: false, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -414,15 +435,19 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             }
         }
         
-        print("allDoneWithLetter is currently ***", allDoneWithLetter, "***")
+        print("notDoneWithLetter is currently ***", canvasView.letterComplete, "***")
         
-        //if canvasView.DtoE == true {
-        if canvasView.Line4 == true{
+//        if canvasView.Line4 == true{
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+//                self.dismiss(animated: false, completion: nil)
+//            })
+//        }
+        
+        if canvasView.letterComplete == true {
             DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                 self.dismiss(animated: false, completion: nil)
             })
         }
-        
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
