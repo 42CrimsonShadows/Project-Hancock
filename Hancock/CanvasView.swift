@@ -10,6 +10,8 @@ import AVFoundation
 
 public var startingPoint = CGPoint()
 public var targetPoint = CGPoint()
+public var middlePoint1 = CGPoint()
+public var middlePoint2 = CGPoint()
 
 class CanvasView: UIView {
     // MARK: Properties
@@ -51,6 +53,9 @@ class CanvasView: UIView {
     //Line #4 dots
     var pinkDot: UIImageView?
     var whiteDot: UIImageView?
+    //middle dots 1and 2
+    var blackDot1: UIImageView?
+    var blackDot2: UIImageView?
     
     var audioPlayer = AVAudioPlayer()
     
@@ -127,14 +132,23 @@ class CanvasView: UIView {
         setNeedsDisplay()
         context.setLineCap(.round)
         
+        //let actViewController = activityViewController()
+        
         switch true {
         case Line1:
+            
             //start point and end for the current letter's first line
             //activityPoints[0][0] is the first item in the group that is the first group in the array
             startingPoint = CGPoint(x: bounds.maxX * activityPoints[0][0], y: bounds.maxY * activityPoints[0][1])
             greenDot?.isHidden = false
-            //middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
-            //middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[2][0], y: bounds.maxY * activityPoints[2][1])
+            middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[1][0], y: bounds.maxY * activityPoints[1][1])
+            middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[2][0], y: bounds.maxY * activityPoints[2][1])
+            print("MiddlePoint1 =", middlePoint1)
+            print("MiddlePoint2 =", middlePoint2)
+            
+            blackDot1?.isHidden = false
+            blackDot2?.isHidden = false
+            
             targetPoint = CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
             //targetPoint = CGPoint(x: bounds.maxX * activityPoints[3][0], y: bounds.maxY * activityPoints[3][1])
             redDot?.isHidden = false
@@ -143,12 +157,18 @@ class CanvasView: UIView {
             //start point and end for the current letter's fourth line (if there is a fourth line...)
             let arraySize = activityPoints.count
             print("The size of the array of activity points =", arraySize)
+            //blackDot1?.isHidden = true
+            //blackDot2?.isHidden = true
 
             if arraySize > 4 {
                 //start point and end for the current letter's second line
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[4][0], y: bounds.maxY * activityPoints[4][1])
                 greenDot?.isHidden = true
                 blueDot?.isHidden = false
+                middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[5][0], y: bounds.maxY * activityPoints[5][1])
+                blackDot1?.isHidden = false
+                middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[6][0], y: bounds.maxY * activityPoints[6][1])
+                blackDot2?.isHidden = false
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[7][0], y: bounds.maxY * activityPoints[7][1])
                 redDot?.isHidden = true
                 orangeDot?.isHidden = false
@@ -164,6 +184,10 @@ class CanvasView: UIView {
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[8][0], y: bounds.maxY * activityPoints[8][1])
                 blueDot?.isHidden = true
                 purpleDot?.isHidden = false
+                middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[9][0], y: bounds.maxY * activityPoints[11][1])
+                blackDot1?.isHidden = false
+                middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[10][0], y: bounds.maxY * activityPoints[10][1])
+                blackDot2?.isHidden = false
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[11][0], y: bounds.maxY * activityPoints[11][1])
                 orangeDot?.isHidden = true
                 yellowDot?.isHidden = false
@@ -177,10 +201,16 @@ class CanvasView: UIView {
             if arraySize > 12 {
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[12][0], y: bounds.maxY * activityPoints[12][1])
                 purpleDot?.isHidden = true
+                pinkDot?.isHidden = false
+                middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[13][0], y: bounds.maxY * activityPoints[13][1])
+                blackDot2?.isHidden = false
+                middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[14][0], y: bounds.maxY * activityPoints[14][1])
+                blackDot2?.isHidden = false
                 //TODO: set next 4th dot color for start point to "not hidden"
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[15][0], y: bounds.maxY * activityPoints[15][1])
                 //TODO: set next 4th dot color for end point to "not hidden"
                 yellowDot?.isHidden = true
+                whiteDot?.isHidden = false
             }
         default:
             break

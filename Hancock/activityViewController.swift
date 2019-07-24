@@ -148,7 +148,22 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         WhiteDotView.translatesAutoresizingMaskIntoConstraints = false
         return WhiteDotView
     }()
-    
+    let BlackDotView1: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let BlackDot1 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDotView1 = UIImageView(image: BlackDot1)
+        //this enables autolayout for our YellowDotView
+        BlackDotView1.translatesAutoresizingMaskIntoConstraints = false
+        return BlackDotView1
+    }()
+    let BlackDotView2: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let BlackDot2 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDotView2 = UIImageView(image: BlackDot2)
+        //this enables autolayout for our YellowDotView
+        BlackDotView2.translatesAutoresizingMaskIntoConstraints = false
+        return BlackDotView2
+    }()
     
     //MARK: - ACTIONS
     
@@ -185,7 +200,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         loadActivity()
         setupUnderlay()
         setupDotsImages()
-        
+        setupMiddleDots()
         
         //load animations
         antChillImage.loadGif(name: "Anthony-Chillaxing")
@@ -331,23 +346,56 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         YellowDotView.isHidden = true
         canvasView.yellowDot = YellowDotView
         
-        //TODO: Set up Pink dot
-        //view.insertSubview(PinkDotView, belowSubview: canvasView)
-        //PinkDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset7X).isActive = true
-        //PinkDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset7Y).isActive = true
-        //PinkDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        //PinkDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        //PinkDotView.isHidden = true
-        //canvasView.pinkDot = PinkDotView
+        //Set up Pink dot
+        view.insertSubview(PinkDotView, belowSubview: canvasView)
+        PinkDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset7X).isActive = true
+        PinkDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset7Y).isActive = true
+        PinkDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        PinkDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        PinkDotView.isHidden = true
+        canvasView.pinkDot = PinkDotView
         
-        //TODO: set up white dot
-        //view.insertSubview(WhiteDotView, belowSubview: canvasView)
-        //WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset7X).isActive = true
-        //WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset7Y).isActive = true
-        //WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        //WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        //WhiteDotView.isHidden = true
-        //canvasView.whiteDot = WhiteDotView
+        //set up white dot
+        view.insertSubview(WhiteDotView, belowSubview: canvasView)
+        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset8X).isActive = true
+        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset8Y).isActive = true
+        WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        WhiteDotView.isHidden = true
+        canvasView.whiteDot = WhiteDotView
+        
+
+    }
+    
+    public func setupMiddleDots(){
+        //set up black dot 1
+        view.insertSubview(BlackDotView1, belowSubview: canvasView)
+        
+        let temp1 = CGPoint(x: canvasView.bounds.maxX * activityPoints[1][0], y: canvasView.bounds.maxY * activityPoints[1][1])
+        let temp2 = CGPoint(x: canvasView.bounds.maxX * activityPoints[2][0], y: canvasView.bounds.maxY * activityPoints[2][1])
+        
+        BlackDotView1.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: temp1.x).isActive = true
+        let valueX = temp1.x
+        print("Constrained BlackDot1X =", valueX)
+        BlackDotView1.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: temp1.y).isActive = true
+        let valueY = temp1.y
+        print("Constrained BlackDot1Y =", valueY)
+        
+        BlackDotView1.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView1.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView1.isHidden = true
+        canvasView.blackDot1 = BlackDotView1
+        
+        //set up black dot 2
+        view.insertSubview(BlackDotView2, belowSubview: canvasView)
+        
+        BlackDotView2.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: temp2.x).isActive = true
+        BlackDotView2.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: temp2.y).isActive = true
+        
+        BlackDotView2.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView2.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView2.isHidden = true
+        canvasView.blackDot2 = BlackDotView2
     }
 
     func goBack() {
