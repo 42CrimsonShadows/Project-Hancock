@@ -164,6 +164,54 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         BlackDotView2.translatesAutoresizingMaskIntoConstraints = false
         return BlackDotView2
     }()
+    let BlackDotView3: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let BlackDot3 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDotView3 = UIImageView(image: BlackDot3)
+        //this enables autolayout for our YellowDotView
+        BlackDotView3.translatesAutoresizingMaskIntoConstraints = false
+        return BlackDotView3
+    }()
+    let BlackDotView4: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let BlackDot4 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDotView4 = UIImageView(image: BlackDot4)
+        //this enables autolayout for our YellowDotView
+        BlackDotView4.translatesAutoresizingMaskIntoConstraints = false
+        return BlackDotView4
+    }()
+    let BlackDotView5: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let BlackDot5 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDotView5 = UIImageView(image: BlackDot5)
+        //this enables autolayout for our YellowDotView
+        BlackDotView5.translatesAutoresizingMaskIntoConstraints = false
+        return BlackDotView5
+    }()
+    let BlackDotView6: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let BlackDot6 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDotView6 = UIImageView(image: BlackDot6)
+        //this enables autolayout for our YellowDotView
+        BlackDotView6.translatesAutoresizingMaskIntoConstraints = false
+        return BlackDotView6
+    }()
+    let BlackDotView7: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let BlackDot7 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDotView7 = UIImageView(image: BlackDot7)
+        //this enables autolayout for our YellowDotView
+        BlackDotView7.translatesAutoresizingMaskIntoConstraints = false
+        return BlackDotView7
+    }()
+    let BlackDotView8: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let BlackDot8 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDotView8 = UIImageView(image: BlackDot8)
+        //this enables autolayout for our YellowDotView
+        BlackDotView8.translatesAutoresizingMaskIntoConstraints = false
+        return BlackDotView8
+    }()
     
     //MARK: - ACTIONS
     
@@ -291,6 +339,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
 //        canvasView.A3GreenLine = A3UnderlayView
 //    }
     
+
+
+    
     public func setupDotsImages() {
         
         view.insertSubview(GreenDotView, belowSubview: canvasView)
@@ -363,24 +414,41 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         WhiteDotView.isHidden = true
         canvasView.whiteDot = WhiteDotView
-        
-
     }
     
     public func setupMiddleDots(){
+        print("******Setting up Middle Dots*******")
+        
+        let arraySize = activityPoints.count
+        
+        var coin1 = CGPoint(x: 600 * activityPoints[1][0], y: 900 * activityPoints[1][1])
+        var coin2 = CGPoint(x: 600 * activityPoints[2][0], y: 900 * activityPoints[2][1])
+        var coin3: CGPoint?
+        var coin4: CGPoint?
+        var coin5: CGPoint?
+        var coin6: CGPoint?
+        var coin7: CGPoint?
+        var coin8: CGPoint?
+        
+        if arraySize > 4 {
+            coin3 = CGPoint(x: 600 * activityPoints[5][0], y: 900 * activityPoints[5][1])
+            coin4 = CGPoint(x: 600 * activityPoints[6][0], y: 900 * activityPoints[6][1])
+            
+            if arraySize > 8 {
+                coin5 = CGPoint(x: 600 * activityPoints[9][0], y: 900 * activityPoints[9][1])
+                coin6 = CGPoint(x: 600 * (activityPoints[10][0]), y: 900 * activityPoints[10][1])
+                
+                if arraySize > 12 {
+                    coin7 = CGPoint(x: 600 * activityPoints[13][0], y: 900 * activityPoints[13][1])
+                    coin8 = CGPoint(x: 600 * activityPoints[14][0], y: 900 * activityPoints[14][1])
+                }
+            }
+        }
+
         //set up black dot 1
         view.insertSubview(BlackDotView1, belowSubview: canvasView)
-        
-        let temp1 = CGPoint(x: canvasView.bounds.maxX * activityPoints[1][0], y: canvasView.bounds.maxY * activityPoints[1][1])
-        let temp2 = CGPoint(x: canvasView.bounds.maxX * activityPoints[2][0], y: canvasView.bounds.maxY * activityPoints[2][1])
-        
-        BlackDotView1.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: temp1.x).isActive = true
-        let valueX = temp1.x
-        print("Constrained BlackDot1X =", valueX)
-        BlackDotView1.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: temp1.y).isActive = true
-        let valueY = temp1.y
-        print("Constrained BlackDot1Y =", valueY)
-        
+        BlackDotView1.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin1.x).isActive = true
+        BlackDotView1.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin1.y).isActive = true
         BlackDotView1.widthAnchor.constraint(equalToConstant: 25).isActive = true
         BlackDotView1.heightAnchor.constraint(equalToConstant: 25).isActive = true
         BlackDotView1.isHidden = true
@@ -388,14 +456,66 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //set up black dot 2
         view.insertSubview(BlackDotView2, belowSubview: canvasView)
-        
-        BlackDotView2.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: temp2.x).isActive = true
-        BlackDotView2.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: temp2.y).isActive = true
-        
+        BlackDotView2.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin2.x).isActive = true
+        BlackDotView2.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin2.y).isActive = true
         BlackDotView2.widthAnchor.constraint(equalToConstant: 25).isActive = true
         BlackDotView2.heightAnchor.constraint(equalToConstant: 25).isActive = true
         BlackDotView2.isHidden = true
         canvasView.blackDot2 = BlackDotView2
+        
+        //set up black dot 3
+        view.insertSubview(BlackDotView3, belowSubview: canvasView)
+        BlackDotView3.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin3?.x ?? 0).isActive = true
+        BlackDotView3.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin3?.y ?? 0).isActive = true
+        BlackDotView3.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView3.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView3.isHidden = true
+        canvasView.blackDot3 = BlackDotView3
+        
+        //set up black dot 4
+        view.insertSubview(BlackDotView4, belowSubview: canvasView)
+        BlackDotView4.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin4?.x ?? 0).isActive = true
+        BlackDotView4.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin4?.y ?? 0).isActive = true
+        BlackDotView4.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView4.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView4.isHidden = true
+        canvasView.blackDot4 = BlackDotView4
+        
+        //set up black dot 5
+        view.insertSubview(BlackDotView5, belowSubview: canvasView)
+        BlackDotView5.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin5?.x ?? 0).isActive = true
+        BlackDotView5.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin5?.y ?? 0).isActive = true
+        BlackDotView5.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView5.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView5.isHidden = true
+        canvasView.blackDot5 = BlackDotView5
+        
+        //set up black dot 6
+        view.insertSubview(BlackDotView6, belowSubview: canvasView)
+        BlackDotView6.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin6?.x ?? 0).isActive = true
+        BlackDotView6.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin6?.y ?? 0).isActive = true
+        BlackDotView6.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView6.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView6.isHidden = true
+        canvasView.blackDot6 = BlackDotView6
+        
+        //set up black dot 7
+        view.insertSubview(BlackDotView7, belowSubview: canvasView)
+        BlackDotView7.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin7?.x ?? 0).isActive = true
+        BlackDotView7.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin7?.y ?? 0).isActive = true
+        BlackDotView7.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView7.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView7.isHidden = true
+        canvasView.blackDot7 = BlackDotView7
+        
+        //set up black dot 8
+        view.insertSubview(BlackDotView8, belowSubview: canvasView)
+        BlackDotView8.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin8?.x ?? 0).isActive = true
+        BlackDotView8.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin8?.y ?? 0).isActive = true
+        BlackDotView8.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView8.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        BlackDotView8.isHidden = true
+        canvasView.blackDot8 = BlackDotView8
     }
 
     func goBack() {
@@ -485,11 +605,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         print("notDoneWithLetter is currently ***", canvasView.letterComplete, "***")
         
-//        if canvasView.Line4 == true{
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
-//                self.dismiss(animated: false, completion: nil)
-//            })
-//        }
+        setupMiddleDots()
         
         if canvasView.letterComplete == true {
             DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {

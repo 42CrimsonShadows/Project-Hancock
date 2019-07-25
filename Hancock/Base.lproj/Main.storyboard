@@ -204,7 +204,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <scene sceneID="UCZ-aa-5Qc">
             <objects>
                 <viewController storyboardIdentifier="ActivityBoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yGt-pD-ezq" customClass="activityViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bbg-FV-2dh" userLabel="View" customClass="CanvasView" customModule="Hancock" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="bbg-FV-2dh" userLabel="View" customClass="CanvasView" customModule="Hancock">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -251,7 +251,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="antFace" destination="Jib-iA-ZV1" id="WRo-oV-a6L"/>
                         <outlet property="canvasView" destination="Las-os-uIu" id="N7y-Jx-Ufa"/>
                         <outlet property="grassImage" destination="S0V-F7-tnM" id="x1V-hO-IGV"/>
-                        <outlet property="view" destination="Las-os-uIu" id="3lL-49-iqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoG-Ho-9Jb" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,8 +16,8 @@ public class ActivitySelection {
         
                         //Line #1
         activityPoints = [[CGFloat(0.5),CGFloat(0.15)], //first point x, y
-                        [CGFloat(0.35),CGFloat(0.35)], //first MidPoint1 x, y
-                        [CGFloat(0.25),CGFloat(0.6)], //first MidPoint2 x, y
+                        [CGFloat(0.37),CGFloat(0.35)], //first MidPoint1 x, y
+                        [CGFloat(0.24),CGFloat(0.6)], //first MidPoint2 x, y
                         [CGFloat(0.1),CGFloat(0.85)], //second point x, y
             
                         //Line #2
