@@ -418,9 +418,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     public func setupMiddleDots(){
         print("******Setting up Middle Dots*******")
-        
-        let arraySize = activityPoints.count
-        
+
         var coin1 = CGPoint(x: 600 * activityPoints[1][0], y: 900 * activityPoints[1][1])
         var coin2 = CGPoint(x: 600 * activityPoints[2][0], y: 900 * activityPoints[2][1])
         var coin3: CGPoint?
@@ -430,14 +428,19 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         var coin7: CGPoint?
         var coin8: CGPoint?
         
+        let arraySize = activityPoints.count
+        
+        //if there is more than one line...
         if arraySize > 4 {
             coin3 = CGPoint(x: 600 * activityPoints[5][0], y: 900 * activityPoints[5][1])
             coin4 = CGPoint(x: 600 * activityPoints[6][0], y: 900 * activityPoints[6][1])
             
+            //if there is more than two lines
             if arraySize > 8 {
                 coin5 = CGPoint(x: 600 * activityPoints[9][0], y: 900 * activityPoints[9][1])
                 coin6 = CGPoint(x: 600 * (activityPoints[10][0]), y: 900 * activityPoints[10][1])
                 
+                //if there is more than three lines
                 if arraySize > 12 {
                     coin7 = CGPoint(x: 600 * activityPoints[13][0], y: 900 * activityPoints[13][1])
                     coin8 = CGPoint(x: 600 * activityPoints[14][0], y: 900 * activityPoints[14][1])
@@ -594,8 +597,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //guard let lastPoint = touches.first?.location(in: canvasView) else { return }
         
-        touches.forEach { (touch) in
-            clearGagues()
+        touches.forEach { (touch) in clearGagues()
             
             if useDebugDrawing, touch.type == .pencil {
                 reticleView.isHidden = true
@@ -752,8 +754,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         case "Z":
             activitySelection.loadActivityZ()
         default: return
-            
-            }
         }
-    
     }
+}

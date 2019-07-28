@@ -33,30 +33,39 @@ class ChapterSelection {
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 2:
             print("Loading Chapter ", picked)
+            //TODO: load chapter 2 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 3:
             print("Loading Chapter ", picked)
+            //TODO: load chapter 3 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 4:
             print("Loading Chapter ", picked)
+            //TODO: load chapter 4 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 5:
             print("Loading Chapter ", picked)
+            //TODO: load chapter 5 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 6:
             print("Loading Chapter ", picked)
+            //TODO: load chapter 6 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 7:
             print("Loading Chapter ", picked)
+            //TODO: load chapter 7 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 8:
             print("Loading Chapter ", picked)
+            //TODO: load chapter 8 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 9:
             print("Loading Chapter ", picked)
+            //TODO: load chapter 9 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         case 10:
             print("Loading Chapter ", picked)
+            //TODO: load chapter 10 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
         default:
             break
@@ -133,7 +142,7 @@ class ChapterSelection {
         //var array of chapter 2 assest
         var chapter2NodeArray: [SCNNode] = []
         
-        //build out all chapter 2 assests
+        //TODO: build out all chapter 2 assests
         //load all chapter 2 assets into the assets var array
         
         
@@ -149,7 +158,7 @@ class ChapterSelection {
         //var array of chapter 3 assest
         var chapter3NodeArray: [SCNNode] = []
         
-        //build out all chapter 3 assests
+        //TODO:build out all chapter 3 assests
         //load all chapter 3 assets into the assets var array
         
         
@@ -165,7 +174,7 @@ class ChapterSelection {
         //var array of chapter 4 assest
         var chapter4NodeArray: [SCNNode] = []
         
-        //build out all chapter 4 assests
+        //TODO: build out all chapter 4 assests
         //load all chapter 4 assets into the assets var array
         
         //build out all chapter 4 sounds
@@ -180,7 +189,7 @@ class ChapterSelection {
         //var array of chapter 5 assest
         var chapter5NodeArray: [SCNNode] = []
         
-        //build out all chapter 5 assests
+        //TODO: build out all chapter 5 assests
         //load all chapter 5 assets into the assets var array
         
         //build out all chapter 5 sounds
@@ -195,7 +204,7 @@ class ChapterSelection {
         //var array of chapter 6 assest
         var chapter6NodeArray: [SCNNode] = []
         
-        //build out all chapter 6 assests
+        //TODO: build out all chapter 6 assests
         //load all chapter 6 assets into the assets var array
         
         //build out all chapter 6 sounds
@@ -210,7 +219,7 @@ class ChapterSelection {
         //var array of chapter 7 assest
         var chapter7NodeArray: [SCNNode] = []
         
-        //build out all chapter 7 assests
+        //TODO: build out all chapter 7 assests
         //load all chapter 7 assets into the assets var array
         
         //build out all chapter 7 sounds
@@ -225,7 +234,7 @@ class ChapterSelection {
         //var array of chapter 8 assest
         var chapter8NodeArray: [SCNNode] = []
         
-        //build out all chapter 8 assests
+        //TODO: build out all chapter 8 assests
         //load all chapter 8 assets into the assets var array
         
         //build out all chapter 8 sounds
@@ -240,7 +249,7 @@ class ChapterSelection {
         //var array of chapter 9 assest
         var chapter9NodeArray: [SCNNode] = []
         
-        //build out all chapter 9 assests
+        //TODO: build out all chapter 9 assests
         //load all chapter 9 assets into the assets var array
         
         //build out all chapter 9 sounds
@@ -255,7 +264,7 @@ class ChapterSelection {
         //var array of chapter 10 assest
         var chapter10NodeArray: [SCNNode] = []
         
-        //build out all chapter 10 assests
+        //TODO: build out all chapter 10 assests
         //load all chapter 10 assets into the assets var array
         
         //build out all chapter 10 sounds
