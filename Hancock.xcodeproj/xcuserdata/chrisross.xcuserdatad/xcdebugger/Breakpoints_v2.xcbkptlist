@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hancock/CanvasView.swift"
-            timestampString = "586038575.875899"
+            timestampString = "586066937.724039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "427"
@@ -26,13 +26,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hancock/activityViewController.swift"
-            timestampString = "586038575.87595"
+            timestampString = "586066937.724336"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "419"
-            endingLineNumber = "419"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "519"
+            endingLineNumber = "519"
+            landmarkName = "setupMiddleDots()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hancock/activityViewController.swift"
+            timestampString = "586066937.724619"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "550"
+            endingLineNumber = "550"
+            landmarkName = "setupMiddleDots()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

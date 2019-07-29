@@ -45,8 +45,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: ACTIONS
     @IBAction func goToActivity(_ sender: Any) {
-        let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
-        self.present(activityBoardView, animated: true)
+        //let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
+        //self.present(activityBoardView, animated: true)
+        
+        stopAnimation()
     }
     @IBAction func setStudentInfo(_ sender: UIButton) {
     }
@@ -112,12 +114,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         chapterNodeArray = chapterSelectedNodeArray
-        
         self.initSceneView()
         self.initScene()
         self.initARSession()
@@ -218,6 +217,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let config = ARWorldTrackingConfiguration()
         //config.isLightEstimationEnabled = true
         config.planeDetection = .horizontal
+
         config.worldAlignment = .gravity
         config.providesAudioData = false
         sceneView.session.run(config)
@@ -236,7 +236,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         config.planeDetection = []
         sceneView.session.run(config)
     }
-    
     
     // MARK: Helper Functions
     
@@ -642,6 +641,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //TODO: Do stuff that wraps up the chapter
             print("Reached the end of the chapter")
+            
         }
     }
     
@@ -671,7 +671,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //TODO: Make the letter passed in change based on the Book/Chapter Selected
                     
                     print("Loading activity A")
-                    self.loadActivityLetter(activityString: "A")
+                    //self.loadActivityLetter(activityString: "A")
+                    self.loadActivityLetter(activityString: "G")
+                    
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -691,7 +693,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterTwo = true
                     
                     print("Loading activity B")
-                    self.loadActivityLetter(activityString: "B")
+                    //self.loadActivityLetter(activityString: "B")
+                    self.loadActivityLetter(activityString: "H")
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -712,7 +715,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     print("Loading activity C")
                     
-                    self.loadActivityLetter(activityString: "C")
+                    //self.loadActivityLetter(activityString: "C")
+                    self.loadActivityLetter(activityString: "I")
+                    
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -732,7 +737,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterFour = true
                     
                     print("Loading activity D")
-                    self.loadActivityLetter(activityString: "D")
+                    //self.loadActivityLetter(activityString: "D")
+                    self.loadActivityLetter(activityString: "J")
+                    
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -752,7 +759,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterFive = true
                     
                     print("Loading activity E")
-                    self.loadActivityLetter(activityString: "E")
+                    //self.loadActivityLetter(activityString: "E")
+                    self.loadActivityLetter(activityString: "K")
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -772,7 +780,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterSix = true
                     
                     print("Loading activity F")
-                    self.loadActivityLetter(activityString: "F")
+                    //self.loadActivityLetter(activityString: "F")
+                    self.loadActivityLetter(activityString: "L")
+                    
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -784,12 +794,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .chapterFinished:
             //finish chapter stuff
             print("Finish Chapter after animation stopped")
+            
+            //TODO: trigger finishing event
         }
     }
     
     func playShatterAnimation () {
-        
-        
         switch true {
         case shatterLetterOne:
             letterOne!.isPaused = false
@@ -867,9 +877,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.present(activityBoardView, animated: true)
     }
 }
-
-
-
 
 extension ViewController : ARSCNViewDelegate {
     

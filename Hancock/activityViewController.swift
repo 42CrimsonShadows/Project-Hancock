@@ -344,9 +344,109 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     public func setupDotsImages() {
         
+//        view.insertSubview(GreenDotView, belowSubview: canvasView)
+//        GreenDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset1X).isActive = true
+//        GreenDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset1Y).isActive = true
+//        GreenDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        GreenDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        GreenDotView.isHidden = true
+//        canvasView.greenDot = GreenDotView
+//
+//        //Set up RED dot
+//        view.insertSubview(RedDotView, belowSubview: canvasView)
+//        RedDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset2X).isActive = true
+//        RedDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset2Y).isActive = true
+//        RedDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        RedDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        RedDotView.isHidden = true
+//        canvasView.redDot = RedDotView
+//
+//        //Set up BLUE dot
+//        view.insertSubview(BlueDotView, belowSubview: canvasView)
+//        BlueDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant:  letterOffset3X).isActive = true
+//        BlueDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset3Y).isActive = true
+//        BlueDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        BlueDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        BlueDotView.isHidden = true
+//        canvasView.blueDot = BlueDotView
+//
+//        ////Set up Orange dot
+//        view.insertSubview(OrangeDotView, belowSubview: canvasView)
+//        OrangeDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset4X).isActive = true
+//        OrangeDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset4Y).isActive = true
+//        OrangeDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        OrangeDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        OrangeDotView.isHidden = true
+//        canvasView.orangeDot = OrangeDotView
+//
+//        //Set up PURPLE dot
+//        view.insertSubview(PurpleDotView, belowSubview: canvasView)
+//        PurpleDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset5X).isActive = true
+//        PurpleDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset5Y).isActive = true
+//        PurpleDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        PurpleDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        PurpleDotView.isHidden = true
+//        canvasView.purpleDot = PurpleDotView
+//
+//        //Set up Yellow dot
+//        view.insertSubview(YellowDotView, belowSubview: canvasView)
+//        YellowDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset6X).isActive = true
+//        YellowDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset6Y).isActive = true
+//        YellowDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        YellowDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        YellowDotView.isHidden = true
+//        canvasView.yellowDot = YellowDotView
+//
+//        //Set up Pink dot
+//        view.insertSubview(PinkDotView, belowSubview: canvasView)
+//        PinkDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset7X).isActive = true
+//        PinkDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset7Y).isActive = true
+//        PinkDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        PinkDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        PinkDotView.isHidden = true
+//        canvasView.pinkDot = PinkDotView
+//
+//        //set up white dot
+//        view.insertSubview(WhiteDotView, belowSubview: canvasView)
+//        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset8X).isActive = true
+//        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset8Y).isActive = true
+//        WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        WhiteDotView.isHidden = true
+//        canvasView.whiteDot = WhiteDotView
+        
+        var greenDot1 = CGPoint(x: 600 * activityPoints[0][0], y: 900 * activityPoints[0][1])
+        var redDot2 = CGPoint(x: 600 * activityPoints[3][0], y: 900 * activityPoints[3][1])
+        var blueDot4: CGPoint?
+        var orangeDot5: CGPoint?
+        var purpleDot6: CGPoint?
+        var yellowDot7: CGPoint?
+        var PinkDot8: CGPoint?
+        var WhiteDot8: CGPoint?
+        
+        let dotArraySize = activityPoints.count
+        
+        //if there is more than one line...
+        if dotArraySize > 4 {
+            blueDot4 = CGPoint(x: 600 * activityPoints[4][0], y: 900 * activityPoints[4][1])
+            orangeDot5 = CGPoint(x: 600 * activityPoints[7][0], y: 900 * activityPoints[7][1])
+            
+            //if there is more than two lines
+            if dotArraySize > 8 {
+                purpleDot6 = CGPoint(x: 600 * activityPoints[8][0], y: 900 * activityPoints[8][1])
+                yellowDot7 = CGPoint(x: 600 * activityPoints[11][0], y: 900 * activityPoints[11][1])
+                
+                //if there is more than three lines
+                if dotArraySize > 12 {
+                    PinkDot8 = CGPoint(x: 600 * activityPoints[12][0], y: 900 * activityPoints[12][1])
+                    WhiteDot8 = CGPoint(x: 600 * activityPoints[15][0], y: 900 * activityPoints[15][1])
+                }
+            }
+        }
+        
         view.insertSubview(GreenDotView, belowSubview: canvasView)
-        GreenDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset1X).isActive = true
-        GreenDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset1Y).isActive = true
+        GreenDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: greenDot1.x).isActive = true
+        GreenDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: greenDot1.y).isActive = true
         GreenDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         GreenDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         GreenDotView.isHidden = true
@@ -354,8 +454,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //Set up RED dot
         view.insertSubview(RedDotView, belowSubview: canvasView)
-        RedDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset2X).isActive = true
-        RedDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset2Y).isActive = true
+        RedDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: redDot2.x).isActive = true
+        RedDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: redDot2.y).isActive = true
         RedDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         RedDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         RedDotView.isHidden = true
@@ -363,8 +463,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //Set up BLUE dot
         view.insertSubview(BlueDotView, belowSubview: canvasView)
-        BlueDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant:  letterOffset3X).isActive = true
-        BlueDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset3Y).isActive = true
+        BlueDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant:  blueDot4?.x ?? 0).isActive = true
+        BlueDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: blueDot4?.y ?? 0).isActive = true
         BlueDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         BlueDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         BlueDotView.isHidden = true
@@ -372,8 +472,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         ////Set up Orange dot
         view.insertSubview(OrangeDotView, belowSubview: canvasView)
-        OrangeDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset4X).isActive = true
-        OrangeDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset4Y).isActive = true
+        OrangeDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: orangeDot5?.x ?? 0).isActive = true
+        OrangeDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: orangeDot5?.y ?? 0).isActive = true
         OrangeDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         OrangeDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         OrangeDotView.isHidden = true
@@ -381,8 +481,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //Set up PURPLE dot
         view.insertSubview(PurpleDotView, belowSubview: canvasView)
-        PurpleDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset5X).isActive = true
-        PurpleDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset5Y).isActive = true
+        PurpleDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: purpleDot6?.x ?? 0).isActive = true
+        PurpleDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: purpleDot6?.y ?? 0).isActive = true
         PurpleDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         PurpleDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         PurpleDotView.isHidden = true
@@ -390,8 +490,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //Set up Yellow dot
         view.insertSubview(YellowDotView, belowSubview: canvasView)
-        YellowDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset6X).isActive = true
-        YellowDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset6Y).isActive = true
+        YellowDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: yellowDot7?.x ?? 0).isActive = true
+        YellowDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: yellowDot7?.y ?? 0).isActive = true
         YellowDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         YellowDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         YellowDotView.isHidden = true
@@ -399,8 +499,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //Set up Pink dot
         view.insertSubview(PinkDotView, belowSubview: canvasView)
-        PinkDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset7X).isActive = true
-        PinkDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset7Y).isActive = true
+        PinkDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: PinkDot8?.x ?? 0).isActive = true
+        PinkDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: PinkDot8?.y ?? 0).isActive = true
         PinkDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         PinkDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         PinkDotView.isHidden = true
@@ -408,8 +508,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //set up white dot
         view.insertSubview(WhiteDotView, belowSubview: canvasView)
-        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset8X).isActive = true
-        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset8Y).isActive = true
+        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: WhiteDot8?.x ?? 0).isActive = true
+        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: WhiteDot8?.y ?? 0).isActive = true
         WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         WhiteDotView.isHidden = true
@@ -428,20 +528,20 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         var coin7: CGPoint?
         var coin8: CGPoint?
         
-        let arraySize = activityPoints.count
+        let coinArraySize = activityPoints.count
         
         //if there is more than one line...
-        if arraySize > 4 {
+        if coinArraySize > 4 {
             coin3 = CGPoint(x: 600 * activityPoints[5][0], y: 900 * activityPoints[5][1])
             coin4 = CGPoint(x: 600 * activityPoints[6][0], y: 900 * activityPoints[6][1])
             
             //if there is more than two lines
-            if arraySize > 8 {
+            if coinArraySize > 8 {
                 coin5 = CGPoint(x: 600 * activityPoints[9][0], y: 900 * activityPoints[9][1])
                 coin6 = CGPoint(x: 600 * (activityPoints[10][0]), y: 900 * activityPoints[10][1])
                 
                 //if there is more than three lines
-                if arraySize > 12 {
+                if coinArraySize > 12 {
                     coin7 = CGPoint(x: 600 * activityPoints[13][0], y: 900 * activityPoints[13][1])
                     coin8 = CGPoint(x: 600 * activityPoints[14][0], y: 900 * activityPoints[14][1])
                 }

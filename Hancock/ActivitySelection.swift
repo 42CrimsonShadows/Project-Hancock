@@ -9,11 +9,8 @@ public var letterUnderlay = UIImageView()
 public class ActivitySelection {
    
     public func loadActivityA() {
-
         print("Called loadActivityA")
-        
         //add the A CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
-        
                         //Line #1
         activityPoints = [[CGFloat(0.5),CGFloat(0.15)], //first point x, y
                         [CGFloat(0.37),CGFloat(0.35)], //first MidPoint1 x, y
@@ -32,30 +29,30 @@ public class ActivitySelection {
                         [CGFloat(0.58),CGFloat(0.585)], //fifth MidPoint2 x, y
                         [CGFloat(0.75),CGFloat(0.585)]] //sixth point
         
-        //Green Dot #1
-        letterOffset1X = 0
-        letterOffset1Y = -300
-        //Red Dot #2
-        letterOffset2X = -225
-        letterOffset2Y = 300
-        //Blue Dot #3
-        letterOffset3X = 10
-        letterOffset3Y = -300
-        //Orange Dot #4
-        letterOffset4X = 235
-        letterOffset4Y = 300
-        //Purple Dot #5
-        letterOffset5X = -150
-        letterOffset5Y = 75
-        //Yellow Dot #6
-        letterOffset6X = 165
-        letterOffset6Y = 75
-        //Pink Dot #7
-        letterOffset7X = 0
-        letterOffset7Y = 0
-        //White Dot #8
-        letterOffset8X = 0
-        letterOffset8Y = 0
+//        //Green Dot #1
+//        letterOffset1X = 0
+//        letterOffset1Y = -300
+//        //Red Dot #2
+//        letterOffset2X = -225
+//        letterOffset2Y = 300
+//        //Blue Dot #3
+//        letterOffset3X = 10
+//        letterOffset3Y = -300
+//        //Orange Dot #4
+//        letterOffset4X = 235
+//        letterOffset4Y = 300
+//        //Purple Dot #5
+//        letterOffset5X = -150
+//        letterOffset5Y = 75
+//        //Yellow Dot #6
+//        letterOffset6X = 165
+//        letterOffset6Y = 75
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
         
         //Set the underlay variables
         let UnderlayA = UIImage(named: "art.scnassets/LetterImages/A.png")
@@ -88,30 +85,30 @@ public class ActivitySelection {
                         [CGFloat(0.6),CGFloat(0.84)], //fifth MidPoint2 x, y
                         [CGFloat(0.22),CGFloat(0.85)]] //sixth point
         
-        //Green Dot #1
-        letterOffset1X = -155
-        letterOffset1Y = -350
-        //Red Dot #2
-        letterOffset2X = -155
-        letterOffset2Y = 325
-        //Blue Dot #3
-        letterOffset3X = -150
-        letterOffset3Y = -350
-        //Orange Dot #4
-        letterOffset4X = -150
-        letterOffset4Y = 0
-        //Purple Dot #5
-        letterOffset5X = -150
-        letterOffset5Y = 0
-        //Yellow Dot #6
-        letterOffset6X = -150
-        letterOffset6Y = 325
-        //Pink Dot #7
-        letterOffset7X = 0
-        letterOffset7Y = 0
-        //White Dot #8
-        letterOffset8X = 0
-        letterOffset8Y = 0
+//        //Green Dot #1
+//        letterOffset1X = -155
+//        letterOffset1Y = -350
+//        //Red Dot #2
+//        letterOffset2X = -155
+//        letterOffset2Y = 325
+//        //Blue Dot #3
+//        letterOffset3X = -150
+//        letterOffset3Y = -350
+//        //Orange Dot #4
+//        letterOffset4X = -150
+//        letterOffset4Y = 0
+//        //Purple Dot #5
+//        letterOffset5X = -150
+//        letterOffset5Y = 0
+//        //Yellow Dot #6
+//        letterOffset6X = -150
+//        letterOffset6Y = 325
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
         
         let UnderlayB = UIImage(named: "art.scnassets/LetterImages/B.png")
         letterUnderlay = UIImageView(image: UnderlayB)
@@ -120,39 +117,37 @@ public class ActivitySelection {
     }
     public func loadActivityC() {
         print("Called loadActivityC")
-        
         //add the C CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
-        
         //Line #1
         activityPoints = [[CGFloat(0.55),CGFloat(0.15)], //first point x, y
                         [CGFloat(0.15),CGFloat(0.35)], //first MidPoint1 x, y
                         [CGFloat(0.3),CGFloat(0.8)], //first MidPoint2 x, y
                         [CGFloat(0.85),CGFloat(0.75)]] //second point x, y
         
-        //Dot #1
-        letterOffset1X = 25
-        letterOffset1Y = -300
-        //Dot #2
-        letterOffset2X = 200
-        letterOffset2Y = 250
-        //Dot #3
-        letterOffset3X = 0
-        letterOffset3Y = 0
-        //Dot #4
-        letterOffset4X = 0
-        letterOffset4Y = 0
-        //Dot #5
-        letterOffset5X = 0
-        letterOffset5Y = 0
-        //Dot #6
-        letterOffset6X = 0
-        letterOffset6Y = 0
-        //Dot #7
-        letterOffset7X = 0
-        letterOffset7Y = 0
-        //Dot #8
-        letterOffset8X = 0
-        letterOffset8Y = 0
+//        //Dot #1
+//        letterOffset1X = 25
+//        letterOffset1Y = -300
+//        //Dot #2
+//        letterOffset2X = 200
+//        letterOffset2Y = 250
+//        //Dot #3
+//        letterOffset3X = 0
+//        letterOffset3Y = 0
+//        //Dot #4
+//        letterOffset4X = 0
+//        letterOffset4Y = 0
+//        //Dot #5
+//        letterOffset5X = 0
+//        letterOffset5Y = 0
+//        //Dot #6
+//        letterOffset6X = 0
+//        letterOffset6Y = 0
+//        //Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
         
         let UnderlayC = UIImage(named: "art.scnassets/LetterImages/C.png")
         letterUnderlay = UIImageView(image: UnderlayC)
@@ -161,7 +156,6 @@ public class ActivitySelection {
     }
     public func loadActivityD() {
         print("Called loadActivityD")
-        
                         //Line #1
         activityPoints = [[CGFloat(0.2),CGFloat(0.1)], //first point x, y
                         [CGFloat(0.2),CGFloat(0.3)], //first MidPoint1 x, y
@@ -174,30 +168,30 @@ public class ActivitySelection {
                         [CGFloat(0.74),CGFloat(0.75)], //fifth MidPoint2 x, y
                         [CGFloat(0.2),CGFloat(0.85)]] //sixth point
         
-        //Green Dot #1
-        letterOffset1X = -175
-        letterOffset1Y = -350
-        //Red Dot #2
-        letterOffset2X = -175
-        letterOffset2Y = 325
-        //Blue Dot #3
-        letterOffset3X = -175
-        letterOffset3Y = -350
-        //Orange Dot #4
-        letterOffset4X = -175
-        letterOffset4Y = 325
-        //Purple Dot #5
-        letterOffset5X = 0
-        letterOffset5Y = 0
-        //Yellow Dot #6
-        letterOffset6X = 0
-        letterOffset6Y = 0
-        //Pink Dot #7
-        letterOffset7X = 0
-        letterOffset7Y = 0
-        //White Dot #8
-        letterOffset8X = 0
-        letterOffset8Y = 0
+//        //Green Dot #1
+//        letterOffset1X = -175
+//        letterOffset1Y = -350
+//        //Red Dot #2
+//        letterOffset2X = -175
+//        letterOffset2Y = 325
+//        //Blue Dot #3
+//        letterOffset3X = -175
+//        letterOffset3Y = -350
+//        //Orange Dot #4
+//        letterOffset4X = -175
+//        letterOffset4Y = 325
+//        //Purple Dot #5
+//        letterOffset5X = 0
+//        letterOffset5Y = 0
+//        //Yellow Dot #6
+//        letterOffset6X = 0
+//        letterOffset6Y = 0
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
         
         let UnderlayD = UIImage(named: "art.scnassets/LetterImages/D.png")
         letterUnderlay = UIImageView(image: UnderlayD)
@@ -206,7 +200,6 @@ public class ActivitySelection {
     }
     public func loadActivityE() {
         print("Called loadActivityE")
-        
                         //Line #1
         activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
                         [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
@@ -230,6 +223,399 @@ public class ActivitySelection {
                         [CGFloat(0.42),CGFloat(0.86)], //fifth MidPoint1 x, y
                         [CGFloat(0.52),CGFloat(0.86)], //fifth MidPoint2 x, y
                         [CGFloat(0.65),CGFloat(0.86)]] //sixth point
+        
+//        //Green Dot #1
+//        letterOffset1X = -140
+//        letterOffset1Y = -350
+//        //Red Dot #2
+//        letterOffset2X = -140
+//        letterOffset2Y = 325
+//        //Blue Dot #3
+//        letterOffset3X = -140
+//        letterOffset3Y = -350
+//        //OrangeDot #4
+//        letterOffset4X = 75
+//        letterOffset4Y = -350
+//        //Purple Dot #5
+//        letterOffset5X = -140
+//        letterOffset5Y = 0
+//        //Yellow Dot #6
+//        letterOffset6X = 50
+//        letterOffset6Y = 0
+//        //Pink Dot #7
+//        letterOffset7X = -140
+//        letterOffset7Y = 325
+//        //White Dot #8
+//        letterOffset8X = 100
+//        letterOffset8Y = 325
+        
+        let UnderlayE = UIImage(named: "art.scnassets/LetterImages/E.png")
+        letterUnderlay = UIImageView(image: UnderlayE)
+        //this enables autolayout for our letter1UnderlayView
+        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
+    }
+    public func loadActivityF() {
+        print("Called loadActivityF")
+                        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+                        [CGFloat(0.27),CGFloat(0.3)], //first MidPoint1 x, y
+                        [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+                        [CGFloat(0.27),CGFloat(0.85)], //second point x, y
+            
+                        //Line #2
+                        [CGFloat(0.27),CGFloat(0.11)], //fifth point
+                        [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+                        [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+                        [CGFloat(0.65),CGFloat(0.11)], //sixth point
+        
+                        //Line #3
+                        [CGFloat(0.27),CGFloat(0.5)], //fifth point
+                        [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
+                        [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
+                        [CGFloat(0.6),CGFloat(0.5)]] //sixth point
+        
+//        //Green Dot #1
+//        letterOffset1X = -140
+//        letterOffset1Y = -350
+//        //Red Dot #2
+//        letterOffset2X = -140
+//        letterOffset2Y = 325
+//        //Blue Dot #3
+//        letterOffset3X = -140
+//        letterOffset3Y = -350
+//        //Orange Dot #4
+//        letterOffset4X = 75
+//        letterOffset4Y = -350
+//        //Purple Dot #5
+//        letterOffset5X = -140
+//        letterOffset5Y = 0
+//        //Yellow Dot #6
+//        letterOffset6X = 50
+//        letterOffset6Y = 0
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
+        
+        let UnderlayF = UIImage(named: "art.scnassets/LetterImages/F.png")
+        letterUnderlay = UIImageView(image: UnderlayF)
+        //this enables autolayout for our letter1UnderlayView
+        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
+    }
+    public func loadActivityG() {
+        print("Called loadActivityG")
+                        //Line #1
+        activityPoints = [[CGFloat(0.7),CGFloat(0.15)], //first point x, y
+                        [CGFloat(0.17),CGFloat(0.42)], //first MidPoint1 x, y
+                        [CGFloat(0.47),CGFloat(0.86)], //first MidPoint2 x, y
+                        [CGFloat(0.82),CGFloat(0.5)], //second point x, y
+            
+                        //Line #2
+                        [CGFloat(0.48),CGFloat(0.49)], //fifth point
+                        [CGFloat(0.71),CGFloat(0.49)], //fifth MidPoint1 x, y
+                        [CGFloat(0.58),CGFloat(0.49)], //fifth MidPoint2 x, y
+                        [CGFloat(0.82),CGFloat(0.49)]] //sixth point
+//
+//        //Green Dot #1
+//        letterOffset1X = 125
+//        letterOffset1Y = -308
+//        //Red Dot #2
+//        letterOffset2X = 193
+//        letterOffset2Y = -8
+//        //Blue Dot #3
+//        letterOffset3X = -11
+//        letterOffset3Y = -8
+//        //OrangeDot #4
+//        letterOffset4X = 193
+//        letterOffset4Y = -8
+//        //Purple Dot #5
+//        letterOffset5X = 0
+//        letterOffset5Y = 0
+//        //Yellow Dot #6
+//        letterOffset6X = 0
+//        letterOffset6Y = 0
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
+        
+        let UnderlayG = UIImage(named: "art.scnassets/LetterImages/G.png")
+        letterUnderlay = UIImageView(image: UnderlayG)
+        //this enables autolayout for our letter1UnderlayView
+        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
+    }
+    public func loadActivityH() {
+        print("Called loadActivityH")
+                        //Line #1
+        activityPoints = [[CGFloat(0.22),CGFloat(0.15)], //first point x, y
+                        [CGFloat(0.22),CGFloat(0.35)], //first MidPoint1 x, y
+                        [CGFloat(0.22),CGFloat(0.6)], //first MidPoint2 x, y
+                        [CGFloat(0.22),CGFloat(0.9)], //second point x, y
+            
+                        //Line #2
+                        [CGFloat(0.22),CGFloat(0.5)], //fifth point
+                        [CGFloat(0.41),CGFloat(0.5)], //fifth MidPoint1 x, y
+                        [CGFloat(0.51),CGFloat(0.5)], //fifth MidPoint2 x, y
+                        [CGFloat(0.76),CGFloat(0.5)], //sixth point
+            
+                        //Line #3
+                        [CGFloat(0.27),CGFloat(0.5)], //fifth point
+                        [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
+                        [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
+                        [CGFloat(0.55),CGFloat(0.5)]] //sixth point
+        
+//        //Green Dot #1
+//        letterOffset1X = -167
+//        letterOffset1Y = -350
+//        //Red Dot #2
+//        letterOffset2X = -167
+//        letterOffset2Y = 325
+//        //Blue Dot #3
+//        letterOffset3X = -167
+//        letterOffset3Y = -14
+//        //OrangeDot #4
+//        letterOffset4X = 163
+//        //Purple Dot #5
+//        letterOffset5X = -350
+//        letterOffset5Y = -350
+//        //Yellow Dot #6
+//        letterOffset6X = -350
+//        letterOffset6Y = 325
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
+        
+        let UnderlayH = UIImage(named: "art.scnassets/LetterImages/H.png")
+        letterUnderlay = UIImageView(image: UnderlayH)
+        //this enables autolayout for our letter1UnderlayView
+        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
+    }
+    public func loadActivityI() {
+        print("Called loadActivityI")
+                        //Line #1
+        activityPoints = [[CGFloat(0.48),CGFloat(0.15)], //first point x, y
+                        [CGFloat(0.48),CGFloat(0.35)], //first MidPoint1 x, y
+                        [CGFloat(0.48),CGFloat(0.6)], //first MidPoint2 x, y
+                        [CGFloat(0.48),CGFloat(0.9)], //second point x, y
+            
+                        //Line #2
+                        [CGFloat(0.27),CGFloat(0.12)], //fifth point
+                        [CGFloat(0.45),CGFloat(0.12)], //fifth MidPoint1 x, y
+                        [CGFloat(0.55),CGFloat(0.12)], //fifth MidPoint2 x, y
+                        [CGFloat(0.73),CGFloat(0.12)], //sixth point
+            
+                        //Line #3
+                        [CGFloat(0.27),CGFloat(0.86)], //fifth point
+                        [CGFloat(0.45),CGFloat(0.86)], //fifth MidPoint1 x, y
+                        [CGFloat(0.55),CGFloat(0.86)], //fifth MidPoint2 x, y
+                        [CGFloat(0.73),CGFloat(0.86)]] //sixth point
+        
+//        //Green Dot #1
+//        letterOffset1X = -13
+//        letterOffset1Y = -350
+//        //Red Dot #2
+//        letterOffset2X = -13
+//        letterOffset2Y = 325
+//        //-----------
+//        //Blue Dot #3
+//        letterOffset3X = -140
+//        letterOffset3Y = -350
+//        //OrangeDot #4
+//        letterOffset4X = 80
+//        letterOffset4Y = -350
+//        //--------------
+//        //Purple Dot #5
+//        letterOffset5X = -140
+//        letterOffset5Y = 325
+//        //Yellow Dot #6
+//        letterOffset6X = 80
+//        letterOffset6Y = 325
+//        //-------------
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
+        
+        let UnderlayI = UIImage(named: "art.scnassets/LetterImages/I.png")
+        letterUnderlay = UIImageView(image: UnderlayI)
+        //this enables autolayout for our letter1UnderlayView
+        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
+    }
+    public func loadActivityJ() {
+        print("Called loadActivityJ")
+                        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+                        [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+                        [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+                        [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+                        //Line #2
+                        [CGFloat(0.27),CGFloat(0.11)], //fifth point
+                        [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+                        [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+                        [CGFloat(0.65),CGFloat(0.11)]] //sixth point
+        
+//        //Green Dot #1
+//        letterOffset1X = -140
+//        letterOffset1Y = -350
+//        //Red Dot #2
+//        letterOffset2X = -140
+//        letterOffset2Y = 325
+//        //Blue Dot #3
+//        letterOffset3X = -140
+//        letterOffset3Y = -350
+//        //OrangeDot #4
+//        letterOffset4X = 75
+//        letterOffset4Y = -350
+//        //Purple Dot #5
+//        letterOffset5X = 0
+//        letterOffset5Y = 0
+//        //Yellow Dot #6
+//        letterOffset6X = 0
+//        letterOffset6Y = 0
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
+        
+        let UnderlayJ = UIImage(named: "art.scnassets/LetterImages/J.png")
+        letterUnderlay = UIImageView(image: UnderlayJ)
+        //this enables autolayout for our letter1UnderlayView
+        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
+    }
+    public func loadActivityK() {
+        print("Called loadActivityK")
+        
+                        //Line #1
+        activityPoints = [[CGFloat(0.22),CGFloat(0.13)], //first point x, y
+                        [CGFloat(0.43),CGFloat(0.86)], //first MidPoint1 x, y
+                        [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+                        [CGFloat(0.75),CGFloat(0.12)], //second point x, y
+            
+                        //Line #2
+                        [CGFloat(0.27),CGFloat(0.11)], //fifth point
+                        [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+                        [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+                        [CGFloat(0.65),CGFloat(0.11)], //sixth point
+            
+                        //Line #3
+                        [CGFloat(0.27),CGFloat(0.5)], //fifth point
+                        [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
+                        [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
+                        [CGFloat(0.55),CGFloat(0.5)]] //sixth point
+        
+//        //Green Dot #1
+//        letterOffset1X = -160
+//        letterOffset1Y = 18
+//        //Red Dot #2
+//        letterOffset2X = 158
+//        letterOffset2Y = -340
+//        //Blue Dot #3
+//        letterOffset3X = -140
+//        letterOffset3Y = -350
+//        //OrangeDot #4
+//        letterOffset4X = 75
+//        letterOffset4Y = -350
+//        //Purple Dot #5
+//        letterOffset5X = -140
+//        letterOffset5Y = 0
+//        //Yellow Dot #6
+//        letterOffset6X = 50
+//        letterOffset6Y = 0
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
+        
+        let UnderlayK = UIImage(named: "art.scnassets/LetterImages/K.png")
+        letterUnderlay = UIImageView(image: UnderlayK)
+        //this enables autolayout for our letter1UnderlayView
+        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
+    }
+    public func loadActivityL() {
+        print("Called loadActivityL")
+        
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)]] //sixth point
+        
+//        //Green Dot #1
+//        letterOffset1X = -140
+//        letterOffset1Y = -350
+//        //Red Dot #2
+//        letterOffset2X = -140
+//        letterOffset2Y = 325
+//        //Blue Dot #3
+//        letterOffset3X = -140
+//        letterOffset3Y = -350
+//        //OrangeDot #4
+//        letterOffset4X = 75
+//        letterOffset4Y = -350
+//        //Purple Dot #5
+//        letterOffset5X = 0
+//        letterOffset5Y = 0
+//        //Yellow Dot #6
+//        letterOffset6X = 0
+//        letterOffset6Y = 0
+//        //Pink Dot #7
+//        letterOffset7X = 0
+//        letterOffset7Y = 0
+//        //White Dot #8
+//        letterOffset8X = 0
+//        letterOffset8Y = 0
+        
+        let UnderlayL = UIImage(named: "art.scnassets/LetterImages/L.png")
+        letterUnderlay = UIImageView(image: UnderlayL)
+        //this enables autolayout for our letter1UnderlayView
+        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
+    }
+    public func loadActivityM() {
+        print("Called loadActivityM")
+        
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)], //sixth point
+            
+            //Line #3
+            [CGFloat(0.27),CGFloat(0.5)], //fifth point
+            [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
+            [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
+            [CGFloat(0.55),CGFloat(0.5)], //sixth point
+            
+            //Line #4
+            [CGFloat(0.27),CGFloat(0.86)], //fifth point
+            [CGFloat(0.42),CGFloat(0.86)], //fifth MidPoint1 x, y
+            [CGFloat(0.52),CGFloat(0.86)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.86)]] //sixth point
         
         //Green Dot #1
         letterOffset1X = -140
@@ -256,31 +642,31 @@ public class ActivitySelection {
         letterOffset8X = 100
         letterOffset8Y = 325
         
-        let UnderlayE = UIImage(named: "art.scnassets/LetterImages/E.png")
-        letterUnderlay = UIImageView(image: UnderlayE)
+        let UnderlayM = UIImage(named: "art.scnassets/LetterImages/M.png")
+        letterUnderlay = UIImageView(image: UnderlayM)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
     }
-    public func loadActivityF() {
-        print("Called loadActivityF")
+    public func loadActivityN() {
+        print("Called loadActivityN")
         
-                        //Line #1
+        //Line #1
         activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
-                        [CGFloat(0.27),CGFloat(0.3)], //first MidPoint1 x, y
-                        [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
-                        [CGFloat(0.27),CGFloat(0.85)], //second point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
             
-                        //Line #2
-                        [CGFloat(0.27),CGFloat(0.11)], //fifth point
-                        [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
-                        [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
-                        [CGFloat(0.65),CGFloat(0.11)], //sixth point
-        
-                        //Line #3
-                        [CGFloat(0.27),CGFloat(0.5)], //fifth point
-                        [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
-                        [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
-                        [CGFloat(0.6),CGFloat(0.5)]] //sixth point
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)], //sixth point
+            
+            //Line #3
+            [CGFloat(0.27),CGFloat(0.5)], //fifth point
+            [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
+            [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
+            [CGFloat(0.55),CGFloat(0.5)]] //sixth point
         
         //Green Dot #1
         letterOffset1X = -140
@@ -291,7 +677,7 @@ public class ActivitySelection {
         //Blue Dot #3
         letterOffset3X = -140
         letterOffset3Y = -350
-        //Orange Dot #4
+        //OrangeDot #4
         letterOffset4X = 75
         letterOffset4Y = -350
         //Purple Dot #5
@@ -307,86 +693,6 @@ public class ActivitySelection {
         letterOffset8X = 0
         letterOffset8Y = 0
         
-        let UnderlayF = UIImage(named: "art.scnassets/LetterImages/F.png")
-        letterUnderlay = UIImageView(image: UnderlayF)
-        //this enables autolayout for our letter1UnderlayView
-        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
-    }
-    public func loadActivityG() {
-        print("Called loadActivityG")
-        
-        
-        
-        let UnderlayG = UIImage(named: "art.scnassets/LetterImages/G.png")
-        letterUnderlay = UIImageView(image: UnderlayG)
-        //this enables autolayout for our letter1UnderlayView
-        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
-    }
-    public func loadActivityH() {
-        print("Called loadActivityH")
-        
-        
-        
-        let UnderlayH = UIImage(named: "art.scnassets/LetterImages/H.png")
-        letterUnderlay = UIImageView(image: UnderlayH)
-        //this enables autolayout for our letter1UnderlayView
-        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
-    }
-    public func loadActivityI() {
-        print("Called loadActivityI")
-        
-        
-        
-        let UnderlayI = UIImage(named: "art.scnassets/LetterImages/I.png")
-        letterUnderlay = UIImageView(image: UnderlayI)
-        //this enables autolayout for our letter1UnderlayView
-        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
-    }
-    public func loadActivityJ() {
-        print("Called loadActivityJ")
-        
-        
-        
-        let UnderlayJ = UIImage(named: "art.scnassets/LetterImages/J.png")
-        letterUnderlay = UIImageView(image: UnderlayJ)
-        //this enables autolayout for our letter1UnderlayView
-        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
-    }
-    public func loadActivityK() {
-        print("Called loadActivityK")
-        
-        
-        
-        let UnderlayK = UIImage(named: "art.scnassets/LetterImages/K.png")
-        letterUnderlay = UIImageView(image: UnderlayK)
-        //this enables autolayout for our letter1UnderlayView
-        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
-    }
-    public func loadActivityL() {
-        print("Called loadActivityL")
-        
-        
-        
-        let UnderlayL = UIImage(named: "art.scnassets/LetterImages/L.png")
-        letterUnderlay = UIImageView(image: UnderlayL)
-        //this enables autolayout for our letter1UnderlayView
-        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
-    }
-    public func loadActivityM() {
-        print("Called loadActivityM")
-        
-        
-        
-        let UnderlayM = UIImage(named: "art.scnassets/LetterImages/M.png")
-        letterUnderlay = UIImageView(image: UnderlayM)
-        //this enables autolayout for our letter1UnderlayView
-        letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
-    }
-    public func loadActivityN() {
-        print("Called loadActivityN")
-        
-        
-        
         let UnderlayN = UIImage(named: "art.scnassets/LetterImages/N.png")
         letterUnderlay = UIImageView(image: UnderlayN)
         //this enables autolayout for our letter1UnderlayView
@@ -395,7 +701,36 @@ public class ActivitySelection {
     public func loadActivityO() {
         print("Called loadActivityO")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)]] //second point x, y
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = 0
+        letterOffset3Y = 0
+        //OrangeDot #4
+        letterOffset4X = 0
+        letterOffset4Y = 0
+        //Purple Dot #5
+        letterOffset5X = 0
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 0
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayO = UIImage(named: "art.scnassets/LetterImages/O.png")
         letterUnderlay = UIImageView(image: UnderlayO)
@@ -405,7 +740,42 @@ public class ActivitySelection {
     public func loadActivityP() {
         print("Called loadActivityP")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)]] //sixth point
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = 0
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 0
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayP = UIImage(named: "art.scnassets/LetterImages/P.png")
         letterUnderlay = UIImageView(image: UnderlayP)
@@ -415,7 +785,42 @@ public class ActivitySelection {
     public func loadActivityQ() {
         print("Called loadActivityQ")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)]] //sixth point
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = 0
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 0
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayQ = UIImage(named: "art.scnassets/LetterImages/Q.png")
         letterUnderlay = UIImageView(image: UnderlayQ)
@@ -425,7 +830,48 @@ public class ActivitySelection {
     public func loadActivityR() {
         print("Called loadActivityR")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)], //sixth point
+            
+            //Line #3
+            [CGFloat(0.27),CGFloat(0.5)], //fifth point
+            [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
+            [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
+            [CGFloat(0.55),CGFloat(0.5)]] //sixth point
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = -140
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 50
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayR = UIImage(named: "art.scnassets/LetterImages/R.png")
         letterUnderlay = UIImageView(image: UnderlayR)
@@ -435,7 +881,36 @@ public class ActivitySelection {
     public func loadActivityS() {
         print("Called loadActivityS")
         
-        
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)]] //second point x, y
+
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = 0
+        letterOffset3Y = 0
+        //OrangeDot #4
+        letterOffset4X = 0
+        letterOffset4Y = 0
+        //Purple Dot #5
+        letterOffset5X = 0
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 0
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayS = UIImage(named: "art.scnassets/LetterImages/S.png")
         letterUnderlay = UIImageView(image: UnderlayS)
@@ -445,7 +920,42 @@ public class ActivitySelection {
     public func loadActivityT() {
         print("Called loadActivityT")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)]] //sixth point
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = 0
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 0
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayT = UIImage(named: "art.scnassets/LetterImages/T.png")
         letterUnderlay = UIImageView(image: UnderlayT)
@@ -455,7 +965,42 @@ public class ActivitySelection {
     public func loadActivityU() {
         print("Called loadActivityU")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)]] //sixth point
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = 0
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 0
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayU = UIImage(named: "art.scnassets/LetterImages/U.png")
         letterUnderlay = UIImageView(image: UnderlayU)
@@ -465,7 +1010,42 @@ public class ActivitySelection {
     public func loadActivityV() {
         print("Called loadActivityV")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)]] //sixth point
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = 0
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 0
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayV = UIImage(named: "art.scnassets/LetterImages/V.png")
         letterUnderlay = UIImageView(image: UnderlayV)
@@ -475,7 +1055,54 @@ public class ActivitySelection {
     public func loadActivityW() {
         print("Called loadActivityW")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)], //sixth point
+            
+            //Line #3
+            [CGFloat(0.27),CGFloat(0.5)], //fifth point
+            [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
+            [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
+            [CGFloat(0.55),CGFloat(0.5)], //sixth point
+            
+            //Line #4
+            [CGFloat(0.27),CGFloat(0.86)], //fifth point
+            [CGFloat(0.42),CGFloat(0.86)], //fifth MidPoint1 x, y
+            [CGFloat(0.52),CGFloat(0.86)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.86)]] //sixth point
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = -140
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 50
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = -140
+        letterOffset7Y = 325
+        //White Dot #8
+        letterOffset8X = 100
+        letterOffset8Y = 325
         
         let UnderlayW = UIImage(named: "art.scnassets/LetterImages/W.png")
         letterUnderlay = UIImageView(image: UnderlayW)
@@ -485,9 +1112,43 @@ public class ActivitySelection {
     public func loadActivityX() {
         print("Called loadActivityX")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)]] //sixth point
         
-        
-        
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = 0
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 0
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
+ 
         let UnderlayX = UIImage(named: "art.scnassets/LetterImages/X.png")
         letterUnderlay = UIImageView(image: UnderlayX)
         //this enables autolayout for our letter1UnderlayView
@@ -496,7 +1157,48 @@ public class ActivitySelection {
     public func loadActivityY() {
         print("Called loadActivityY")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)], //sixth point
+            
+            //Line #3
+            [CGFloat(0.27),CGFloat(0.5)], //fifth point
+            [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
+            [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
+            [CGFloat(0.55),CGFloat(0.5)]] //sixth point
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = -140
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 50
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayY = UIImage(named: "art.scnassets/LetterImages/Y.png")
         letterUnderlay = UIImageView(image: UnderlayY)
@@ -506,7 +1208,48 @@ public class ActivitySelection {
     public func loadActivityZ() {
         print("Called loadActivityZ")
         
+        //Line #1
+        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+            [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+            
+            //Line #2
+            [CGFloat(0.27),CGFloat(0.11)], //fifth point
+            [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
+            [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
+            [CGFloat(0.65),CGFloat(0.11)], //sixth point
+            
+            //Line #3
+            [CGFloat(0.27),CGFloat(0.5)], //fifth point
+            [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
+            [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
+            [CGFloat(0.55),CGFloat(0.5)]] //sixth point
         
+        //Green Dot #1
+        letterOffset1X = -140
+        letterOffset1Y = -350
+        //Red Dot #2
+        letterOffset2X = -140
+        letterOffset2Y = 325
+        //Blue Dot #3
+        letterOffset3X = -140
+        letterOffset3Y = -350
+        //OrangeDot #4
+        letterOffset4X = 75
+        letterOffset4Y = -350
+        //Purple Dot #5
+        letterOffset5X = -140
+        letterOffset5Y = 0
+        //Yellow Dot #6
+        letterOffset6X = 50
+        letterOffset6Y = 0
+        //Pink Dot #7
+        letterOffset7X = 0
+        letterOffset7Y = 0
+        //White Dot #8
+        letterOffset8X = 0
+        letterOffset8Y = 0
         
         let UnderlayZ = UIImage(named: "art.scnassets/LetterImages/Z.png")
         letterUnderlay = UIImageView(image: UnderlayZ)
