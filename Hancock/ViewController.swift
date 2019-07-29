@@ -672,7 +672,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     print("Loading activity A")
                     //self.loadActivityLetter(activityString: "A")
-                    self.loadActivityLetter(activityString: "G")
+                    self.loadActivityLetter(activityString: "S")
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -694,7 +694,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     print("Loading activity B")
                     //self.loadActivityLetter(activityString: "B")
-                    self.loadActivityLetter(activityString: "H")
+                    self.loadActivityLetter(activityString: "Y")
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -716,7 +716,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("Loading activity C")
                     
                     //self.loadActivityLetter(activityString: "C")
-                    self.loadActivityLetter(activityString: "I")
+                    self.loadActivityLetter(activityString: "Z")
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -738,7 +738,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     print("Loading activity D")
                     //self.loadActivityLetter(activityString: "D")
-                    self.loadActivityLetter(activityString: "J")
+                    self.loadActivityLetter(activityString: "V")
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -760,7 +760,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     print("Loading activity E")
                     //self.loadActivityLetter(activityString: "E")
-                    self.loadActivityLetter(activityString: "K")
+                    self.loadActivityLetter(activityString: "W")
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -781,7 +781,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     print("Loading activity F")
                     //self.loadActivityLetter(activityString: "F")
-                    self.loadActivityLetter(activityString: "L")
+                    self.loadActivityLetter(activityString: "X")
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {

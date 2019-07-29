@@ -201,15 +201,14 @@ class CanvasView: UIView {
             //count the points in the array to determine how many lines there will be (4 dots = 1 line...)
             let arraySize = activityPoints.count
             print("The size of the array of activity points =", arraySize)
-            blackDot3?.isHidden = true
-            blackDot4?.isHidden = true
+            blackDot5?.isHidden = true
+            blackDot6?.isHidden = true
 
             if arraySize > 12 {
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[12][0], y: bounds.maxY * activityPoints[12][1])
                 middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[13][0], y: bounds.maxY * activityPoints[13][1])
                 middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[14][0], y: bounds.maxY * activityPoints[14][1])
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[15][0], y: bounds.maxY * activityPoints[15][1])
-                
                 purpleDot?.isHidden = true
                 pinkDot?.isHidden = false
                 blackDot7?.isHidden = false

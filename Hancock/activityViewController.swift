@@ -343,78 +343,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
 
     
     public func setupDotsImages() {
-        
-//        view.insertSubview(GreenDotView, belowSubview: canvasView)
-//        GreenDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset1X).isActive = true
-//        GreenDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset1Y).isActive = true
-//        GreenDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        GreenDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        GreenDotView.isHidden = true
-//        canvasView.greenDot = GreenDotView
-//
-//        //Set up RED dot
-//        view.insertSubview(RedDotView, belowSubview: canvasView)
-//        RedDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset2X).isActive = true
-//        RedDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset2Y).isActive = true
-//        RedDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        RedDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        RedDotView.isHidden = true
-//        canvasView.redDot = RedDotView
-//
-//        //Set up BLUE dot
-//        view.insertSubview(BlueDotView, belowSubview: canvasView)
-//        BlueDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant:  letterOffset3X).isActive = true
-//        BlueDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset3Y).isActive = true
-//        BlueDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        BlueDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        BlueDotView.isHidden = true
-//        canvasView.blueDot = BlueDotView
-//
-//        ////Set up Orange dot
-//        view.insertSubview(OrangeDotView, belowSubview: canvasView)
-//        OrangeDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset4X).isActive = true
-//        OrangeDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset4Y).isActive = true
-//        OrangeDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        OrangeDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        OrangeDotView.isHidden = true
-//        canvasView.orangeDot = OrangeDotView
-//
-//        //Set up PURPLE dot
-//        view.insertSubview(PurpleDotView, belowSubview: canvasView)
-//        PurpleDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset5X).isActive = true
-//        PurpleDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset5Y).isActive = true
-//        PurpleDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        PurpleDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        PurpleDotView.isHidden = true
-//        canvasView.purpleDot = PurpleDotView
-//
-//        //Set up Yellow dot
-//        view.insertSubview(YellowDotView, belowSubview: canvasView)
-//        YellowDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset6X).isActive = true
-//        YellowDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset6Y).isActive = true
-//        YellowDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        YellowDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        YellowDotView.isHidden = true
-//        canvasView.yellowDot = YellowDotView
-//
-//        //Set up Pink dot
-//        view.insertSubview(PinkDotView, belowSubview: canvasView)
-//        PinkDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset7X).isActive = true
-//        PinkDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset7Y).isActive = true
-//        PinkDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        PinkDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        PinkDotView.isHidden = true
-//        canvasView.pinkDot = PinkDotView
-//
-//        //set up white dot
-//        view.insertSubview(WhiteDotView, belowSubview: canvasView)
-//        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor, constant: letterOffset8X).isActive = true
-//        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor, constant: letterOffset8Y).isActive = true
-//        WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        WhiteDotView.isHidden = true
-//        canvasView.whiteDot = WhiteDotView
-        
         var greenDot1 = CGPoint(x: 600 * activityPoints[0][0], y: 900 * activityPoints[0][1])
         var redDot2 = CGPoint(x: 600 * activityPoints[3][0], y: 900 * activityPoints[3][1])
         var blueDot4: CGPoint?
@@ -639,8 +567,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
 
         print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
         print("My Touch Location = CGpointX", firstPoint.x / canvasView.bounds.maxX, "and CGpointY", firstPoint.y / canvasView.bounds.maxY)
-        print("Probable Dot X Location =", firstPoint.x - (canvasView.bounds.maxX/2))
-        print("Probable Dot Y Location =", firstPoint.y - (canvasView.bounds.maxY/2))
         
         if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 50 {
             // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
@@ -672,47 +598,53 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 self.antFace.isHidden = true
             }
             
-            touches.forEach { (touch) in
-                updateGagues(with: touch)
+            //get distance to middle points
+            canvasView.
+            
+            //check to see if we get coins
+            if canvasView.Line1 == true {
                 
-                if useDebugDrawing, touch.type == .pencil {
-                    updateReticleView(with: touch)
-                    
-                    guard let predictedTouch = event?.predictedTouches(for: touch)?.last else { return }
-                    
-                    updateReticleView(with: predictedTouch, isPredicted: true)
-                }
+            }
+            if canvasView.Line2 == true {
+                
+            }
+            if canvasView.Line3 == true {
+                
+            }
+            if canvasView.Line4 == true {
+                
             }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        //turn off feedback
-        self.antFace.isHidden = true
-        
-        canvasView.drawTouches(touches, withEvent: event)
-        canvasView.endTouches(touches, cancel: false)
-        canvasView.goodTouch = false
-        
-        //guard let lastPoint = touches.first?.location(in: canvasView) else { return }
-        
-        touches.forEach { (touch) in clearGagues()
+        //only able to end the line if the start was good (no touching last CGpoint to continue)
+        if canvasView.goodTouch == true {
+            //turn off feedback
+            self.antFace.isHidden = true
             
-            if useDebugDrawing, touch.type == .pencil {
-                reticleView.isHidden = true
-                //separatorView.isHidden = true
+            canvasView.drawTouches(touches, withEvent: event)
+            canvasView.endTouches(touches, cancel: false)
+            canvasView.goodTouch = false
+            
+            //guard let lastPoint = touches.first?.location(in: canvasView) else { return }
+            
+            touches.forEach { (touch) in clearGagues()
+                if useDebugDrawing, touch.type == .pencil {
+                    reticleView.isHidden = true
+                    //separatorView.isHidden = true
+                }
             }
-        }
-        
-        print("notDoneWithLetter is currently ***", canvasView.letterComplete, "***")
-        
-        setupMiddleDots()
-        
-        if canvasView.letterComplete == true {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
-                self.dismiss(animated: false, completion: nil)
-            })
+            
+            print("notDoneWithLetter is currently ***", canvasView.letterComplete, "***")
+            
+            //setupMiddleDots()
+            
+            if canvasView.letterComplete == true {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                    self.dismiss(animated: false, completion: nil)
+                })
+            }
         }
     }
     
