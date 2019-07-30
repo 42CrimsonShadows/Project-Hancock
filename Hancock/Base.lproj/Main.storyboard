@@ -204,7 +204,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <scene sceneID="UCZ-aa-5Qc">
             <objects>
                 <viewController storyboardIdentifier="ActivityBoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yGt-pD-ezq" customClass="activityViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bbg-FV-2dh" userLabel="View" customClass="CanvasView" customModule="Hancock">
+                    <view key="view" contentMode="scaleToFill" id="bbg-FV-2dh" userLabel="View" customClass="CanvasView" customModule="Hancock" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -227,8 +227,29 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ghC-kx-OUn">
+                                <rect key="frame" x="674" y="20" width="350" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coin" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-vY-abv">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="InP-0i-1qZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TL-C2-6tZ">
+                                        <rect key="frame" x="136" y="0.0" width="214" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="Smc-od-oF7"/>
+                                    <constraint firstAttribute="height" constant="100" id="m8N-FI-nQH"/>
+                                </constraints>
+                            </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AntFace" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-iA-ZV1">
-                                <rect key="frame" x="724" y="20" width="300" height="275"/>
+                                <rect key="frame" x="0.0" y="20" width="300" height="275"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="275" id="Cij-aJ-XcH"/>
                                     <constraint firstAttribute="width" constant="300" id="Qkf-Kn-YUc"/>
@@ -238,15 +259,18 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="aO0-GI-co4" secondAttribute="bottom" id="19P-QO-ffx"/>
-                            <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="Jib-iA-ZV1" secondAttribute="trailing" id="2b7-wu-vwE"/>
-                            <constraint firstItem="Jib-iA-ZV1" firstAttribute="top" secondItem="cXE-hm-SxM" secondAttribute="top" id="4cd-Dt-8DO"/>
+                            <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="ghC-kx-OUn" secondAttribute="trailing" id="5Ch-Ca-OFq"/>
                             <constraint firstItem="S0V-F7-tnM" firstAttribute="leading" secondItem="cXE-hm-SxM" secondAttribute="leading" id="8VY-Ra-C6d"/>
+                            <constraint firstItem="Jib-iA-ZV1" firstAttribute="top" secondItem="cXE-hm-SxM" secondAttribute="top" id="F1n-Zx-z7t"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="aO0-GI-co4" secondAttribute="trailing" id="Nnr-qz-1ba"/>
+                            <constraint firstItem="ghC-kx-OUn" firstAttribute="top" secondItem="cXE-hm-SxM" secondAttribute="top" id="peL-Pj-rY9"/>
+                            <constraint firstItem="Jib-iA-ZV1" firstAttribute="leading" secondItem="cXE-hm-SxM" secondAttribute="leading" id="xfK-9N-eGi"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="S0V-F7-tnM" secondAttribute="bottom" id="yGs-f8-Fge"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cXE-hm-SxM"/>
                     </view>
                     <connections>
+                        <outlet property="CoinCountLabel" destination="1TL-C2-6tZ" id="GQK-fn-CZI"/>
                         <outlet property="antChillImage" destination="aO0-GI-co4" id="KEd-xl-UpM"/>
                         <outlet property="antFace" destination="Jib-iA-ZV1" id="WRo-oV-a6L"/>
                         <outlet property="canvasView" destination="Las-os-uIu" id="N7y-Jx-Ufa"/>
@@ -1163,6 +1187,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="BookAnimation.gif" width="960" height="540"/>
         <image name="BookLower" width="480" height="270"/>
         <image name="BookUpper" width="480" height="270"/>
+        <image name="Coin" width="176.5" height="177"/>
         <image name="FlyerImage1" width="406" height="332"/>
         <image name="FlyerImage2" width="317.5" height="247.5"/>
         <image name="profilePic.png" width="225" height="225"/>

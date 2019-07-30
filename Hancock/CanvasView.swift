@@ -34,6 +34,8 @@ class CanvasView: UIView {
 
     var goodTouch: Bool = false
     var goodLine: Bool = false
+    var coin1Collected: Bool = false
+    var coin2Collected: Bool = false
     
     //cracked images for letters
     //var A1GreenLine: UIImageView?
@@ -152,8 +154,14 @@ class CanvasView: UIView {
             //show the dots for the first letter
             greenDot?.isHidden = false
             redDot?.isHidden = false
-            blackDot1?.isHidden = false
-            blackDot2?.isHidden = false
+            
+            if coin1Collected == false {
+                blackDot1?.isHidden = false
+            }
+            if coin2Collected == false {
+                blackDot2?.isHidden = false
+            }
+
 
         case Line2:
             //count the points in the array to determine how many lines there will be (4 dots = 1 line...)
@@ -162,24 +170,28 @@ class CanvasView: UIView {
             blackDot2?.isHidden = true
 
             if arraySize > 4 {
-
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[4][0], y: bounds.maxY * activityPoints[4][1])
                 middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[5][0], y: bounds.maxY * activityPoints[5][1])
                 middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[6][0], y: bounds.maxY * activityPoints[6][1])
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[7][0], y: bounds.maxY * activityPoints[7][1])
+                
                 //start point and end for the current letter's second line
                 greenDot?.isHidden = true
                 blueDot?.isHidden = false
-                blackDot3?.isHidden = false
-                blackDot4?.isHidden = false
                 redDot?.isHidden = true
                 orangeDot?.isHidden = false
+                
+                if coin1Collected == false {
+                    blackDot3?.isHidden = false
+                }
+                if coin2Collected == false {
+                    blackDot4?.isHidden = false
+                }
             }
 
         case Line3:
             //count the points in the array to determine how many lines there will be (4 dots = 1 line...)
             let arraySize = activityPoints.count
-            print("The size of the array of activity points =", arraySize)
             blackDot3?.isHidden = true
             blackDot4?.isHidden = true
             
@@ -189,18 +201,23 @@ class CanvasView: UIView {
                 middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[9][0], y: bounds.maxY * activityPoints[11][1])
                 middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[10][0], y: bounds.maxY * activityPoints[10][1])
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[11][0], y: bounds.maxY * activityPoints[11][1])
+                
                 blueDot?.isHidden = true
                 purpleDot?.isHidden = false
-                blackDot5?.isHidden = false
-                blackDot6?.isHidden = false
                 orangeDot?.isHidden = true
                 yellowDot?.isHidden = false
+                
+                if coin1Collected == false {
+                    blackDot5?.isHidden = false
+                }
+                if coin2Collected == false {
+                    blackDot6?.isHidden = false
+                }
             }
 
         case Line4:
             //count the points in the array to determine how many lines there will be (4 dots = 1 line...)
             let arraySize = activityPoints.count
-            print("The size of the array of activity points =", arraySize)
             blackDot5?.isHidden = true
             blackDot6?.isHidden = true
 
@@ -209,12 +226,18 @@ class CanvasView: UIView {
                 middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[13][0], y: bounds.maxY * activityPoints[13][1])
                 middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[14][0], y: bounds.maxY * activityPoints[14][1])
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[15][0], y: bounds.maxY * activityPoints[15][1])
+                
                 purpleDot?.isHidden = true
                 pinkDot?.isHidden = false
-                blackDot7?.isHidden = false
-                blackDot8?.isHidden = false
                 yellowDot?.isHidden = true
                 whiteDot?.isHidden = false
+                
+                if coin1Collected == false {
+                    blackDot7?.isHidden = false
+                }
+                if coin2Collected == false {
+                    blackDot8?.isHidden = false
+                }
             }
         default:
             break
@@ -392,6 +415,7 @@ class CanvasView: UIView {
         return updateRect.union(accumulatedRect)
     }
     
+    
     func endTouches(_ touches: Set<UITouch>, cancel: Bool) {
         var updateRect = CGRect.null
         goodTouch = false
@@ -418,16 +442,12 @@ class CanvasView: UIView {
         }
         
         if CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
-            
             lines.removeAll()
             needsFullRedraw = true
             setNeedsDisplay()
         }
         else {
-            //print("Target point =", targetPoint)
-            
             switch letterState {
-            //case .AtoB:
             case .P1_P2:
                 //A1GreenLine?.isHidden = false
                 
@@ -451,9 +471,7 @@ class CanvasView: UIView {
                         })
                     })
                 })
-                //letterState = .AtoC
                 letterState = .P3_P4
-                //AtoB = true
                 Line1 = false
                 Line2 = true
                 Line3 = false
@@ -462,7 +480,6 @@ class CanvasView: UIView {
                     letterComplete = true
                 }
                 
-            //case .AtoC:
             case .P3_P4:
                 //A2GreenLine?.isHidden = false
                 
@@ -481,9 +498,7 @@ class CanvasView: UIView {
                         })
                     })
                 })
-                //letterState = .DtoE
                 letterState = .P5_P6
-                //AtoC = true
                 Line1 = false
                 Line2 = false
                 Line3 = true
@@ -492,7 +507,6 @@ class CanvasView: UIView {
                     letterComplete = true
                 }
                 
-            //case .DtoE:
             case .P5_P6:
                 //A3GreenLine?.isHidden = false
                 
@@ -501,15 +515,10 @@ class CanvasView: UIView {
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.playAudioFile(file: "Line8", type: "mp3")
-                    
                     self.purpleDot?.isHidden = true
                     self.yellowDot?.isHidden = true
-                    
-                    //wait 2 second
-                    
                 })
                 letterState = .P7_P8
-                //DtoE = true
                 Line1 = false
                 Line2 = false
                 Line3 = false

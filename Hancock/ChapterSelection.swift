@@ -133,6 +133,7 @@ class ChapterSelection {
     
         
         //build out all chapter 1 sounds
+        //assign chapter ambient sound file to global variable at the top
         
         //build out all chapter 1 narrations
     }

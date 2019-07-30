@@ -1,48 +1,25 @@
 
 //MARK: -- Known Issues
-    /*
+/*
  
-        1. User can touch the targetpoint and move on to next steps.
-    */
+ 1. User can touch the targetpoint and move on to next steps.
+ */
 
 //Mark: -- Current task
-    /*
+/*
  Major task: Making the activities Modular
  minor tasks:
  
-        1. Moving from step to step properly.
-        2. load underlays from the activity selection class
-        3. setupCanvas(), setupAUnderlay(), setupGreenlines(), setupDotsImages() need to be modular
-    */
+ 1. Moving from step to step properly.
+ 2. load underlays from the activity selection class
+ 3. setupCanvas(), setupAUnderlay(), setupGreenlines(), setupDotsImages() need to be modular
+ */
 import UIKit
 
 // MARK: - Game State
 public var selectedActivity = ""
 
-//Dot #1
-public var letterOffset1X: CGFloat = 0.0
-public var letterOffset1Y: CGFloat = 0.0
-//Dot #2
-public var letterOffset2X: CGFloat = 0.0
-public var letterOffset2Y: CGFloat = 0.0
-//Dot #3
-public var letterOffset3X: CGFloat = 0.0
-public var letterOffset3Y: CGFloat = 0.0
-//Dot #4
-public var letterOffset4X: CGFloat = 0.0
-public var letterOffset4Y: CGFloat = 0.0
-//Dot #5
-public var letterOffset5X: CGFloat = 0.0
-public var letterOffset5Y: CGFloat = 0.0
-//Dot #6
-public var letterOffset6X: CGFloat = 0.0
-public var letterOffset6Y: CGFloat = 0.0
-//Dot #7
-public var letterOffset7X: CGFloat = 0.0
-public var letterOffset7Y: CGFloat = 0.0
-//Dot #8
-public var letterOffset8X: CGFloat = 0.0
-public var letterOffset8Y: CGFloat = 0.0
+public var totalCoins = 0
 
 enum LetterState: Int16 {
     case P1_P2 //first line
@@ -67,10 +44,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     
     //New properties
-    
-    @IBOutlet weak var canvasView: CanvasView!
-    @IBOutlet weak var antFace: UIImageView!
-    
     //@IBOutlet weak var debugButton: UIButton!
     //@IBOutlet weak var locationLabel: UILabel!
     //@IBOutlet weak var forceLabel: UILabel!
@@ -79,10 +52,12 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     //@IBOutlet weak var altitudeAngleLabel: UILabel!
     //@IBOutlet weak var separatorView: UIView!
     
-    @IBOutlet weak var grassImage: UIImageView!
-    @IBOutlet weak var antChillImage: UIImageView!    
-    
     //@IBOutlet private var gagueLabelCollection: [UILabel]!
+    @IBOutlet weak var canvasView: CanvasView!
+    @IBOutlet weak var antFace: UIImageView!
+    @IBOutlet weak var grassImage: UIImageView!
+    @IBOutlet weak var antChillImage: UIImageView!
+    @IBOutlet weak var CoinCountLabel: UILabel!
     
     let BlueDotView: UIImageView = {
         //Add the Blue Dot image to the canvas
@@ -150,7 +125,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let BlackDotView1: UIImageView = {
         //Add the Yellow Dot image to the canvas
-        let BlackDot1 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDot1 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
         let BlackDotView1 = UIImageView(image: BlackDot1)
         //this enables autolayout for our YellowDotView
         BlackDotView1.translatesAutoresizingMaskIntoConstraints = false
@@ -158,7 +133,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let BlackDotView2: UIImageView = {
         //Add the Yellow Dot image to the canvas
-        let BlackDot2 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDot2 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
         let BlackDotView2 = UIImageView(image: BlackDot2)
         //this enables autolayout for our YellowDotView
         BlackDotView2.translatesAutoresizingMaskIntoConstraints = false
@@ -166,7 +141,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let BlackDotView3: UIImageView = {
         //Add the Yellow Dot image to the canvas
-        let BlackDot3 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDot3 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
         let BlackDotView3 = UIImageView(image: BlackDot3)
         //this enables autolayout for our YellowDotView
         BlackDotView3.translatesAutoresizingMaskIntoConstraints = false
@@ -174,7 +149,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let BlackDotView4: UIImageView = {
         //Add the Yellow Dot image to the canvas
-        let BlackDot4 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDot4 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
         let BlackDotView4 = UIImageView(image: BlackDot4)
         //this enables autolayout for our YellowDotView
         BlackDotView4.translatesAutoresizingMaskIntoConstraints = false
@@ -182,7 +157,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let BlackDotView5: UIImageView = {
         //Add the Yellow Dot image to the canvas
-        let BlackDot5 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDot5 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
         let BlackDotView5 = UIImageView(image: BlackDot5)
         //this enables autolayout for our YellowDotView
         BlackDotView5.translatesAutoresizingMaskIntoConstraints = false
@@ -190,7 +165,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let BlackDotView6: UIImageView = {
         //Add the Yellow Dot image to the canvas
-        let BlackDot6 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDot6 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
         let BlackDotView6 = UIImageView(image: BlackDot6)
         //this enables autolayout for our YellowDotView
         BlackDotView6.translatesAutoresizingMaskIntoConstraints = false
@@ -198,7 +173,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let BlackDotView7: UIImageView = {
         //Add the Yellow Dot image to the canvas
-        let BlackDot7 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDot7 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
         let BlackDotView7 = UIImageView(image: BlackDot7)
         //this enables autolayout for our YellowDotView
         BlackDotView7.translatesAutoresizingMaskIntoConstraints = false
@@ -206,7 +181,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     let BlackDotView8: UIImageView = {
         //Add the Yellow Dot image to the canvas
-        let BlackDot8 = UIImage(named: "art.scnassets/DotImages/BlackDot.png")
+        let BlackDot8 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
         let BlackDotView8 = UIImageView(image: BlackDot8)
         //this enables autolayout for our YellowDotView
         BlackDotView8.translatesAutoresizingMaskIntoConstraints = false
@@ -241,9 +216,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             pencilInteraction.delegate = self
             view.addInteraction(pencilInteraction)
         }
-        
+        setupCoinLabel()
         setupCanvas()
-        
         //setupGreenlines() ----- For setting up letter craked images to be shown/hidden
         loadActivity()
         setupUnderlay()
@@ -289,10 +263,11 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         //Add the drawing canvas to the UIView
         //view.addSubview(canvas)
         canvasView.backgroundColor = UIColor(white: 0.5, alpha: 0)
-        //canvasView.activityVC = self
         //this enables autolayout for our canvas
         canvasView.translatesAutoresizingMaskIntoConstraints = false
         canvasView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        print(view.center)
+        print(canvasView.center)
         canvasView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         canvasView.widthAnchor.constraint(equalToConstant: 600).isActive = true
         canvasView.heightAnchor.constraint(equalToConstant: 900).isActive = true
@@ -307,40 +282,40 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         letterUnderlay.heightAnchor.constraint(equalToConstant: 900).isActive = true
     }
     
-//    public func setupGreenlines() {
-//        //Add the letter A1 green line to the UIView under the canvas
-//        view.insertSubview(A1UnderlayView, belowSubview: canvasView)
-//        A1UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-//        A1UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
-//        A1UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
-//        A1UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
-//        A1UnderlayView.isHidden = true
-//        
-//        canvasView.A1GreenLine = A1UnderlayView
-//        
-//        //Add the letter A2 green line to the UIView under the canvas
-//        view.insertSubview(A2UnderlayView, belowSubview: canvasView)
-//        A2UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-//        A2UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
-//        A2UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
-//        A2UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
-//        A2UnderlayView.isHidden = true
-//        
-//        canvasView.A2GreenLine = A2UnderlayView
-//        
-//        //Add the letter A3 green line to the UIView under the canvas
-//        view.insertSubview(A3UnderlayView, belowSubview: canvasView)
-//        A3UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-//        A3UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
-//        A3UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
-//        A3UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
-//        A3UnderlayView.isHidden = true
-//        
-//        canvasView.A3GreenLine = A3UnderlayView
-//    }
+    //    public func setupGreenlines() {
+    //        //Add the letter A1 green line to the UIView under the canvas
+    //        view.insertSubview(A1UnderlayView, belowSubview: canvasView)
+    //        A1UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+    //        A1UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
+    //        A1UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
+    //        A1UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
+    //        A1UnderlayView.isHidden = true
+    //
+    //        canvasView.A1GreenLine = A1UnderlayView
+    //
+    //        //Add the letter A2 green line to the UIView under the canvas
+    //        view.insertSubview(A2UnderlayView, belowSubview: canvasView)
+    //        A2UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+    //        A2UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
+    //        A2UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
+    //        A2UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
+    //        A2UnderlayView.isHidden = true
+    //
+    //        canvasView.A2GreenLine = A2UnderlayView
+    //
+    //        //Add the letter A3 green line to the UIView under the canvas
+    //        view.insertSubview(A3UnderlayView, belowSubview: canvasView)
+    //        A3UnderlayView.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
+    //        A3UnderlayView.centerYAnchor.constraint(equalTo: canvasView.centerYAnchor).isActive = true
+    //        A3UnderlayView.widthAnchor.constraint(equalToConstant: 600).isActive = true
+    //        A3UnderlayView.heightAnchor.constraint(equalToConstant: 900).isActive = true
+    //        A3UnderlayView.isHidden = true
+    //
+    //        canvasView.A3GreenLine = A3UnderlayView
+    //    }
     
-
-
+    
+    
     
     public func setupDotsImages() {
         var greenDot1 = CGPoint(x: 600 * activityPoints[0][0], y: 900 * activityPoints[0][1])
@@ -446,7 +421,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     public func setupMiddleDots(){
         print("******Setting up Middle Dots*******")
-
+        
         var coin1 = CGPoint(x: 600 * activityPoints[1][0], y: 900 * activityPoints[1][1])
         var coin2 = CGPoint(x: 600 * activityPoints[2][0], y: 900 * activityPoints[2][1])
         var coin3: CGPoint?
@@ -475,7 +450,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 }
             }
         }
-
+        
         //set up black dot 1
         view.insertSubview(BlackDotView1, belowSubview: canvasView)
         BlackDotView1.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin1.x).isActive = true
@@ -548,7 +523,11 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         BlackDotView8.isHidden = true
         canvasView.blackDot8 = BlackDotView8
     }
-
+    
+    func setupCoinLabel() {
+        CoinCountLabel.text = "X \(totalCoins)"
+    }
+    
     func goBack() {
         
         //dismissItem.dismiss(animated: false, completion: nil)
@@ -564,7 +543,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //canvasView.drawTouches(touches, withEvent: event)
         guard let firstPoint = touches.first?.location(in: canvasView) else { return }
-
+        
         print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
         print("My Touch Location = CGpointX", firstPoint.x / canvasView.bounds.maxX, "and CGpointY", firstPoint.y / canvasView.bounds.maxY)
         
@@ -598,21 +577,97 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 self.antFace.isHidden = true
             }
             
-            //get distance to middle points
-            canvasView.
-            
-            //check to see if we get coins
-            if canvasView.Line1 == true {
+            //each time we move the touch...
+            touches.forEach { (touch) in
                 
-            }
-            if canvasView.Line2 == true {
-                
-            }
-            if canvasView.Line3 == true {
-                
-            }
-            if canvasView.Line4 == true {
-                
+                //check to see if we interact with coins
+                if canvasView.Line1 == true {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                        if canvasView.coin1Collected == false {
+                            canvasView.coin1Collected = true
+                            canvasView.blackDot1?.isHidden = true
+                            totalCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            //TODO: add one to the Coin tally
+                        }
+                    }
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                        if canvasView.coin2Collected == false {
+                            canvasView.coin2Collected = true
+                            canvasView.blackDot2?.isHidden = true
+                            totalCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                        }
+                    }
+                }
+                //**************
+                if canvasView.Line2 == true {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                        if canvasView.coin1Collected == false {
+                            canvasView.coin1Collected = true
+                            canvasView.blackDot3?.isHidden = true
+                            totalCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                        }
+                    }
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                        if canvasView.coin2Collected == false {
+                            canvasView.coin2Collected = true
+                            canvasView.blackDot4?.isHidden = true
+                            totalCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                        }
+                    }
+                }
+                //*************
+                if canvasView.Line3 == true {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                        if canvasView.coin1Collected == false {
+                            canvasView.coin1Collected = true
+                            canvasView.blackDot5?.isHidden = true
+                            totalCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                        }
+                    }
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                        if canvasView.coin2Collected == false {
+                            canvasView.coin2Collected = true
+                            canvasView.blackDot6?.isHidden = true
+                            totalCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                        }
+                    }
+                }
+                //************
+                if canvasView.Line4 == true {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                        if canvasView.coin1Collected == false {
+                            canvasView.coin1Collected = true
+                            canvasView.blackDot7?.isHidden = true
+                            totalCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            //call ding sound
+                        }
+                    }
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                        if canvasView.coin2Collected == false {
+                            canvasView.coin2Collected = true
+                            canvasView.blackDot8?.isHidden = true
+
+                            totalCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                        }
+                    }
+                    
+                }
             }
         }
     }
@@ -636,15 +691,27 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 }
             }
             
-            print("notDoneWithLetter is currently ***", canvasView.letterComplete, "***")
-            
-            //setupMiddleDots()
-            
             if canvasView.letterComplete == true {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                     self.dismiss(animated: false, completion: nil)
                 })
             }
+            
+            guard let lastPoint = touches.first?.location(in: canvasView) else { return }
+            if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
+                if canvasView.coin1Collected == true {
+                    totalCoins -= 1
+                    setupCoinLabel()
+                    
+                    if canvasView.coin2Collected == true {
+                        totalCoins -= 1
+                        setupCoinLabel()
+                    }
+                }
+            }
+            //reset collected booleans
+            canvasView.coin1Collected = false
+            canvasView.coin2Collected = false
         }
     }
     
@@ -719,9 +786,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     private func clearGagues() {
-//        gagueLabelCollection.forEach { (label) in
-//            label.text = ""
-//        }
+        //        gagueLabelCollection.forEach { (label) in
+        //            label.text = ""
+        //        }
     }
     
     @available(iOS 12.0, *)

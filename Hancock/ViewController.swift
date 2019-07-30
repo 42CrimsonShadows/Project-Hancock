@@ -416,6 +416,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //generic variable for the first letter
         letterOne = sceneView.scene.rootNode.childNode(withName: "LetterOne", recursively: true)
+        
+        //load ambient sound for chapter (global variable)
     }
     
     func anthonyWalk() {
@@ -671,8 +673,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //TODO: Make the letter passed in change based on the Book/Chapter Selected
                     
                     print("Loading activity A")
-                    //self.loadActivityLetter(activityString: "A")
-                    self.loadActivityLetter(activityString: "S")
+                    self.loadActivityLetter(activityString: "A")
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -693,8 +694,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterTwo = true
                     
                     print("Loading activity B")
-                    //self.loadActivityLetter(activityString: "B")
-                    self.loadActivityLetter(activityString: "Y")
+                    self.loadActivityLetter(activityString: "B")
+                    
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -715,8 +716,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     print("Loading activity C")
                     
-                    //self.loadActivityLetter(activityString: "C")
-                    self.loadActivityLetter(activityString: "Z")
+                    self.loadActivityLetter(activityString: "C")
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -737,8 +737,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterFour = true
                     
                     print("Loading activity D")
-                    //self.loadActivityLetter(activityString: "D")
-                    self.loadActivityLetter(activityString: "V")
+                    self.loadActivityLetter(activityString: "D")
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -759,8 +758,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterFive = true
                     
                     print("Loading activity E")
-                    //self.loadActivityLetter(activityString: "E")
-                    self.loadActivityLetter(activityString: "W")
+                    self.loadActivityLetter(activityString: "E")
+
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.playAudioNarrationFile(file: "Line4", type: "mp3")
@@ -780,8 +779,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterSix = true
                     
                     print("Loading activity F")
-                    //self.loadActivityLetter(activityString: "F")
-                    self.loadActivityLetter(activityString: "X")
+                    self.loadActivityLetter(activityString: "F")
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
