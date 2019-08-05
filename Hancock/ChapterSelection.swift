@@ -5,6 +5,7 @@ import ARKit
 //GLOBAL VARIABLE THAT CAN BE ACCESSED BY NAME
 var chapterSelectedNodeArray: [SCNNode]?
 var chapterSelectedLetterArray: [String]?
+var chapterSelectedSoundDict: [String: AVAudioPlayer]?
 
 class ChapterSelection {
     
@@ -25,6 +26,7 @@ class ChapterSelection {
             print("Loading Chapter ", picked)
             chapterSelectedNodeArray = loadChapter1NodeFiles()
             chapterSelectedLetterArray = ["I", "T", "L", "F", "E", "H"]
+            chapterSelectedSoundDict = loadChapter1SoundFiles()
         case 2:
             print("Loading Chapter ", picked)
             //TODO: load chapter 2 files
@@ -139,6 +141,23 @@ class ChapterSelection {
         //assign chapter ambient sound file to global variable at the top
         
         //build out all chapter 1 narrations
+    }
+    
+    func loadChapter1SoundFiles() -> [String: AVAudioPlayer] {
+    
+//        //var chapter1SoundArray: [String] = []
+//        let chpt1SoundsDict: [String: AVAudioPlayer]
+//
+//        //let characterPlayer = Bundle.main.path(forResource: "<#T##String?#>", ofType: "<#T##String?#>")
+//        let FXPlayerPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav", inDirectory: "art.scnassets/Sounds")
+//
+//        let BGPlayerPath = Bundle.main.path(forResource: "<#T##String?#>", ofType: "<#T##String?#>", inDirectory: "art.scnassets/Sounds")
+//        let NarrationPlayerPath = Bundle.main.path(forResource: "<#T##String?#>", ofType: "<#T##String?#>", inDirectory: "art.scnassets/Sounds")
+//        try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: NarrationPlayerPath!))
+//
+//        chpt1SoundsDict = ["WalkSound" : narrationPlayer]
+//
+//        return chpt1SoundsDict
     }
     
     //chapter 2 stuff here

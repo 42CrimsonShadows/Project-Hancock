@@ -110,7 +110,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //variables for sound files and audio players
     var walkPlayer = AVAudioPlayer()
     var birdsPlayer = AVAudioPlayer()
+    
     var narrationPlayer = AVAudioPlayer()
+    var FXPlayer = AVAudioPlayer()
+    var BGPlayer = AVAudioPlayer()
+    var CharacterPlayer = AVAudioPlayer()
     
     
     
@@ -957,16 +961,56 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //pass it an audiofile and it will play it!
     public func playAudioNarrationFile(file: String, type: String) {
-        let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        let audio1Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
-            try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio1Path!))
             
         } catch {
             print("AudioPlayer not available!")
         }
         self.narrationPlayer.play()
     }
+    
+    //pass it an audiofile and it will play it!
+    public func playAudioFXFile(file: String, type: String) {
+        let audio2Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        do
+        {
+            try FXPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio2Path!))
+            
+        } catch {
+            print("FXPlayer not available!")
+        }
+        self.FXPlayer.play()
+    }
+    
+    //pass it an audiofile and it will play it!
+    public func playAudioBGFile(file: String, type: String) {
+        let audio3Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        do
+        {
+            try BGPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio3Path!))
+            
+        } catch {
+            print("BGPlayer not available!")
+        }
+        self.BGPlayer.play()
+    }
+    
+    //pass it an audiofile and it will play it!
+    public func playAudioCharacterFile(file: String, type: String) {
+        let audio4Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        do
+        {
+            try CharacterPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio4Path!))
+            
+        } catch {
+            print("CharacterPlayer not available!")
+        }
+        self.CharacterPlayer.play()
+    }
+    
     
     func loadActivityLetter(activityString: String) {
         
