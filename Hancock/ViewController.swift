@@ -190,7 +190,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sceneView.preferredFramesPerSecond = 60
         sceneView.antialiasingMode = .multisampling2X
         sceneView.debugOptions = [
-            ARSCNDebugOptions.showFeaturePoints,
+            //ARSCNDebugOptions.showFeaturePoints,
             //ARSCNDebugOptions.showWorldOrigin,
             //SCNDebugOptions.showPhysicsShapes,
             //SCNDebugOptions.showBoundingBoxes
@@ -413,6 +413,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //generic variable for level floor
         mainFloor = sceneView.scene.rootNode.childNode(withName: "LVLFloor", recursively: true)
+        print("-------------------mainFloor is now \(mainFloor!)")
         
         //generic variable for the first letter
         letterOne = sceneView.scene.rootNode.childNode(withName: "LetterOne", recursively: true)
@@ -447,7 +448,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //TODO: Load unique floor movement locations for particular chapter
         switch gameProgress {
             
-        //A
         case .toLetter1:
             //change points based on Chapter
             switch true {
@@ -458,27 +458,54 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
                 mainCharacterIdle.position = mainCharacterMoving.position
                 mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
+                
+                //move position for letter:
+                //I
+                
+                print("move floor for chapter one")
             case chapterTwo:
                 //animate the mainFloor node to move and stop when the translation is complete
+                mainFloor.runAction(SCNAction.moveBy(x: 0, y: 0, z: -0.2, duration: 2), completionHandler: stopAnimation)
                 //animate the main character to rotate a bit on the y axis
+                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1))
+                mainCharacterIdle.position = mainCharacterMoving.position
+                mainCharacterIdle.eulerAngles = mainCharacterMoving.eulerAngles
+                
+                //move position for letter:
+                //P
+
+                
                 print("move floor for chapter two")
             case chapterThree:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //move position for letter:
+                //G
+
+                
                 print("move floor for chapter three")
             case chapterFour:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //move position for letter:
+                //K
+
+            
                 print("move floor for chapter four")
             case chapterFive:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //move position for letter:
+                //N
+
                 print("move floor for chapter five")
             default:
                 break
             }
             
-        //B
         case .toLetter2:
             //change points based on Chapter
             switch true {
@@ -490,27 +517,41 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //set the idle animation position to be at the new main character location and rotation
                 mainCharacterIdle.position = mainCharacterMoving.position
                 mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+                
+                //T
+                
             case chapterTwo:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //R
+                
                 print("move floor for chapter two")
             case chapterThree:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //O
+                
                 print("move floor for chapter three")
             case chapterFour:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //V
+                
                 print("move floor for chapter four")
             case chapterFive:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //Z
+                
                 print("move floor for chapter five")
             default:
                 break
             }
             
-        //C
         case .toLetter3:
             //change points based on Chapter
             switch true {
@@ -522,27 +563,41 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //set the idle animation position to be at the new main character location and rotation
                 mainCharacterIdle.position = mainCharacterMoving.position
                 mainCharacterIdle.eulerAngles = SCNVector3(0, -0.5, 0)
+                
+                //L
+                
             case chapterTwo:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //B
+                
                 print("move floor for chapter two")
             case chapterThree:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //Q
+                
                 print("move floor for chapter three")
             case chapterFour:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //W
+                
                 print("move floor for chapter four")
             case chapterFive:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //Y
+                
                 print("move floor for chapter five")
             default:
                 break
             }
             
-        //D
         case .toLetter4:
             //change points based on Chapter
             switch true {
@@ -554,27 +609,41 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //set the idle animation position to be at the new main character location and rotation
                 mainCharacterIdle.position = mainCharacterMoving.position
                 mainCharacterIdle.eulerAngles = SCNVector3(0, -3, 0)
+
+                //F
+                
             case chapterTwo:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //C
+                
                 print("move floor for chapter two")
             case chapterThree:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //S
+                
                 print("move floor for chapter three")
             case chapterFour:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //M
+                
                 print("move floor for chapter four")
             case chapterFive:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //X
+                
                 print("move floor for chapter five")
             default:
                 break
             }
             
-        //E
         case .toLetter5:
             //change points based on Chapter
             switch true {
@@ -586,27 +655,41 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //set the idle animation position to be at the new main character location and rotation
                 mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+                
+                //E
+                
             case chapterTwo:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //D
+                
                 print("move floor for chapter two")
             case chapterThree:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //J
+                
                 print("move floor for chapter three")
             case chapterFour:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //A
+                
                 print("move floor for chapter four")
             case chapterFive:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //-----
+                
                 print("move floor for chapter five")
             default:
                 break
             }
             
-        //F
         case .toLetter6:
             //change points based on Chapter
             switch true {
@@ -618,21 +701,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //set the idle animation position to be at the new main character location and rotation
                 mainCharacterIdle.position = mainCharacterMoving.position
                 mainCharacterIdle.eulerAngles = SCNVector3(0, -3.5, 0)
+                
+                //H
+                
             case chapterTwo:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //U
+                
                 print("move floor for chapter two")
             case chapterThree:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //----
+                
                 print("move floor for chapter three")
             case chapterFour:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //----
+                
                 print("move floor for chapter four")
             case chapterFive:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                
+                //---
+                
                 print("move floor for chapter five")
             default:
                 break
@@ -672,8 +770,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     //TODO: Make the letter passed in change based on the Book/Chapter Selected
                     
-                    print("Loading activity A")
-                    self.loadActivityLetter(activityString: "A")
+                    print("Loading activity \(chapterSelectedLetterArray![0])")
+                    //self.loadActivityLetter(activityString: ("A")
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -693,8 +792,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("Prepare to shatter letter 2")
                     self.shatterLetterTwo = true
                     
-                    print("Loading activity B")
-                    self.loadActivityLetter(activityString: "B")
+                    print("Loading activity \(chapterSelectedLetterArray![1])")
+                    //self.loadActivityLetter(activityString: "B")
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -714,9 +814,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("Prepare to shatter letter 3")
                     self.shatterLetterThree = true
                     
-                    print("Loading activity C")
-                    
-                    self.loadActivityLetter(activityString: "C")
+                    print("Loading activity \(chapterSelectedLetterArray![2])")
+                    //self.loadActivityLetter(activityString: "C")
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -736,8 +836,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("Prepare to shatter letter 4")
                     self.shatterLetterFour = true
                     
-                    print("Loading activity D")
-                    self.loadActivityLetter(activityString: "D")
+                    print("Loading activity \(chapterSelectedLetterArray![3])")
+                    //self.loadActivityLetter(activityString: "D")
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -757,8 +858,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("Prepare to shatter letter 5")
                     self.shatterLetterFive = true
                     
-                    print("Loading activity E")
-                    self.loadActivityLetter(activityString: "E")
+                    print("Loading activity \(chapterSelectedLetterArray![4])")
+                    //self.loadActivityLetter(activityString: "E")
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
 
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -778,8 +880,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("Prepare to shatter letter 6")
                     self.shatterLetterSix = true
                     
-                    print("Loading activity F")
-                    self.loadActivityLetter(activityString: "F")
+                    print("Loading activity \(chapterSelectedLetterArray![5])")
+                    //self.loadActivityLetter(activityString: "F")
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {

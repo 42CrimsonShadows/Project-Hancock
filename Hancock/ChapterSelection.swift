@@ -1,17 +1,10 @@
-//
-//  ChapterSelection.swift
-//  Hancock
-//
-//  Created by Chris Ross on 7/2/19.
-//  Copyright © 2019 Chris Ross. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import ARKit
 
 //GLOBAL VARIABLE THAT CAN BE ACCESSED BY NAME
 var chapterSelectedNodeArray: [SCNNode]?
+var chapterSelectedLetterArray: [String]?
 
 class ChapterSelection {
     
@@ -31,42 +24,52 @@ class ChapterSelection {
         case 1:
             print("Loading Chapter ", picked)
             chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedLetterArray = ["I", "T", "L", "F", "E", "H"]
         case 2:
             print("Loading Chapter ", picked)
             //TODO: load chapter 2 files
-            chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedNodeArray = loadChapter2NodeFiles()
+            chapterSelectedLetterArray = ["P", "R", "B", "C", "D", "U"]
         case 3:
             print("Loading Chapter ", picked)
             //TODO: load chapter 3 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedLetterArray = ["G", "O", "Q", "S", "J"]
         case 4:
             print("Loading Chapter ", picked)
             //TODO: load chapter 4 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedLetterArray = ["K", "V", "W", "M", "A"]
         case 5:
             print("Loading Chapter ", picked)
             //TODO: load chapter 5 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedLetterArray = ["N", "Z", "Y", "X"]
         case 6:
             print("Loading Chapter ", picked)
             //TODO: load chapter 6 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedLetterArray = ["c", "a", "d", "g", "o"]
         case 7:
             print("Loading Chapter ", picked)
             //TODO: load chapter 7 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedLetterArray = ["u", "s", "v", "w", "i", "t"]
         case 8:
             print("Loading Chapter ", picked)
             //TODO: load chapter 8 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedLetterArray = ["l", "y", "k", "e"]
         case 9:
             print("Loading Chapter ", picked)
             //TODO: load chapter 9 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedLetterArray = ["p", "r", "n", "h", "B"]
         case 10:
             print("Loading Chapter ", picked)
             //TODO: load chapter 10 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedLetterArray = ["f", "q", "x", "z"]
         default:
             break
         }
@@ -143,15 +146,63 @@ class ChapterSelection {
         //var array of chapter 2 assest
         var chapter2NodeArray: [SCNNode] = []
         
-        //TODO: build out all chapter 2 assests
-        //load all chapter 2 assets into the assets var array
+        // Load StoryScene Node
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Environment/Chapter1Scene.scn")!
+        storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+        storyNode.scale = SCNVector3(1, 1, 1)
+        storyNode.position = SCNVector3(0, 0, 0)
+        //storyNode.isHidden = true
         
+        //Load Idle Animation Node
+        let idleAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Idle.scn")!
+        for child in idleAnthonyScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
+        idleNode.position = SCNVector3(0, 0, 0)
+        //idleNode.isHidden = true
+        
+        //Load walking Animation Node
+        let walkingAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Walk.scn")!
+        for child in walkingAnthonyScene.rootNode.childNodes {
+            walkingNode.addChildNode(child)
+        }
+        storyNode.addChildNode(walkingNode)
+        walkingNode.position = SCNVector3(0, 0, 0)
+        walkingNode.scale = SCNVector3(0.02, 0.02, 0.02)
+        //walkingNode.isHidden = true
+        
+        //Load Scene Mask so we only see immidate area
+        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
+        for child in maskingScene.rootNode.childNodes {
+            maskingNode.addChildNode(child)
+        }
+        maskingNode.renderingOrder = -2
+        storyNode.addChildNode(maskingNode)
+        maskingNode.position = SCNVector3(0, 0, 0)
+        //maskingNode.scale = SCNVector3(1, 1, 1)
+        
+        //Load the shattering A scn into the BugScene
+        let shatterAScene = SCNScene(named: "art.scnassets/LetterA@Shatter.scn")!
+        for child in shatterAScene.rootNode.childNodes {
+            letterANode.addChildNode(child)
+        }
+        letterANode.position = SCNVector3(-13.879, -1, 12)
+        //letterANode.eulerAngles = SCNVector3(0, 0, 0)
+        letterANode.scale = SCNVector3(1.75, 1.75, 1.75)
+        //letterANode.renderingOrder = -5
+        
+        storyNode.childNode(withName: "LVLFloor", recursively: true)!.addChildNode(letterANode)
+        
+        //chapter1NodeArray.append(focusNode)
+        chapter2NodeArray.append(storyNode)
+        
+        return chapter2NodeArray
         
         //build out all chapter 2 sounds
         
         //build out all chapter 2 narrations
-        
-        return chapter2NodeArray
     }
     
     //chapter 3 stuff here
