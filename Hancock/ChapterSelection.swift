@@ -5,7 +5,7 @@ import ARKit
 //GLOBAL VARIABLE THAT CAN BE ACCESSED BY NAME
 var chapterSelectedNodeArray: [SCNNode]?
 var chapterSelectedLetterArray: [String]?
-var chapterSelectedSoundDict: [String: AVAudioPlayer]?
+var chapterSelectedSoundDict: [String: String]?
 
 class ChapterSelection {
     
@@ -16,6 +16,11 @@ class ChapterSelection {
     let walkingNode = SCNNode()
     let animationNode = SCNNode()
     let letterANode = SCNNode()
+    
+    var narrationPlayer = AVAudioPlayer()
+    var FXPlayer = AVAudioPlayer()
+    var BGPlayer = AVAudioPlayer()
+    var CharacterPlayer = AVAudioPlayer()
     
     func chapterLoader(picked: Int) {
         print("The picked chapter = ", picked)
@@ -32,46 +37,55 @@ class ChapterSelection {
             //TODO: load chapter 2 files
             chapterSelectedNodeArray = loadChapter2NodeFiles()
             chapterSelectedLetterArray = ["P", "R", "B", "C", "D", "U"]
+            chapterSelectedSoundDict = loadChapter2SoundFiles()
         case 3:
             print("Loading Chapter ", picked)
             //TODO: load chapter 3 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
             chapterSelectedLetterArray = ["G", "O", "Q", "S", "J"]
+            chapterSelectedSoundDict = loadChapter3SoundFiles()
         case 4:
             print("Loading Chapter ", picked)
             //TODO: load chapter 4 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
             chapterSelectedLetterArray = ["K", "V", "W", "M", "A"]
+            chapterSelectedSoundDict = loadChapter4SoundFiles()
         case 5:
             print("Loading Chapter ", picked)
             //TODO: load chapter 5 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
             chapterSelectedLetterArray = ["N", "Z", "Y", "X"]
+            chapterSelectedSoundDict = loadChapter5SoundFiles()
         case 6:
             print("Loading Chapter ", picked)
             //TODO: load chapter 6 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
             chapterSelectedLetterArray = ["c", "a", "d", "g", "o"]
+            chapterSelectedSoundDict = loadChapter6SoundFiles()
         case 7:
             print("Loading Chapter ", picked)
             //TODO: load chapter 7 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
             chapterSelectedLetterArray = ["u", "s", "v", "w", "i", "t"]
+            chapterSelectedSoundDict = loadChapter7SoundFiles()
         case 8:
             print("Loading Chapter ", picked)
             //TODO: load chapter 8 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
             chapterSelectedLetterArray = ["l", "y", "k", "e"]
+            chapterSelectedSoundDict = loadChapter8SoundFiles()
         case 9:
             print("Loading Chapter ", picked)
             //TODO: load chapter 9 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
             chapterSelectedLetterArray = ["p", "r", "n", "h", "B"]
+            chapterSelectedSoundDict = loadChapter9SoundFiles()
         case 10:
             print("Loading Chapter ", picked)
             //TODO: load chapter 10 files
             chapterSelectedNodeArray = loadChapter1NodeFiles()
             chapterSelectedLetterArray = ["f", "q", "x", "z"]
+            chapterSelectedSoundDict = loadChapter10SoundFiles()
         default:
             break
         }
@@ -143,21 +157,23 @@ class ChapterSelection {
         //build out all chapter 1 narrations
     }
     
-    func loadChapter1SoundFiles() -> [String: AVAudioPlayer] {
-    
-//        //var chapter1SoundArray: [String] = []
-//        let chpt1SoundsDict: [String: AVAudioPlayer]
-//
-//        //let characterPlayer = Bundle.main.path(forResource: "<#T##String?#>", ofType: "<#T##String?#>")
-//        let FXPlayerPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav", inDirectory: "art.scnassets/Sounds")
-//
-//        let BGPlayerPath = Bundle.main.path(forResource: "<#T##String?#>", ofType: "<#T##String?#>", inDirectory: "art.scnassets/Sounds")
-//        let NarrationPlayerPath = Bundle.main.path(forResource: "<#T##String?#>", ofType: "<#T##String?#>", inDirectory: "art.scnassets/Sounds")
-//        try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: NarrationPlayerPath!))
-//
-//        chpt1SoundsDict = ["WalkSound" : narrationPlayer]
-//
-//        return chpt1SoundsDict
+    func loadChapter1SoundFiles() -> [String: String] {
+        let chapter1SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break3" : "RockBreak3",
+                                  "Shatter1" : "RockShatter",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter1SoundArray
     }
     
     //chapter 2 stuff here
@@ -218,10 +234,23 @@ class ChapterSelection {
         chapter2NodeArray.append(storyNode)
         
         return chapter2NodeArray
-        
-        //build out all chapter 2 sounds
-        
-        //build out all chapter 2 narrations
+    }
+    func loadChapter2SoundFiles() -> [String: String] {
+        let chapter2SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break1" : "RockBreak3",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter2SoundArray
     }
     
     //chapter 3 stuff here
@@ -229,15 +258,24 @@ class ChapterSelection {
         //var array of chapter 3 assest
         var chapter3NodeArray: [SCNNode] = []
         
-        //TODO:build out all chapter 3 assests
-        //load all chapter 3 assets into the assets var array
-        
-        
-        //build out all chapter 3 sounds
-        
-        //build out all chapter 3 narrations
-        
          return chapter3NodeArray
+    }
+    func loadChapter3SoundFiles() -> [String: String] {
+        let chapter3SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break1" : "RockBreak3",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter3SoundArray
     }
     
     //chapter 4 stuff here
@@ -245,14 +283,24 @@ class ChapterSelection {
         //var array of chapter 4 assest
         var chapter4NodeArray: [SCNNode] = []
         
-        //TODO: build out all chapter 4 assests
-        //load all chapter 4 assets into the assets var array
-        
-        //build out all chapter 4 sounds
-        
-        //build out all chapter 4 narrations
-        
         return chapter4NodeArray
+    }
+    func loadChapter4SoundFiles() -> [String: String] {
+        let chapter4SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break1" : "RockBreak3",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter4SoundArray
     }
     
     //chapter 5 stuff here
@@ -260,14 +308,24 @@ class ChapterSelection {
         //var array of chapter 5 assest
         var chapter5NodeArray: [SCNNode] = []
         
-        //TODO: build out all chapter 5 assests
-        //load all chapter 5 assets into the assets var array
-        
-        //build out all chapter 5 sounds
-        
-        //build out all chapter 5 narrations
-        
         return chapter5NodeArray
+    }
+    func loadChapter5SoundFiles() -> [String: String] {
+        let chapter5SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break1" : "RockBreak3",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter5SoundArray
     }
     
     //chapter 6 stuff here
@@ -275,14 +333,24 @@ class ChapterSelection {
         //var array of chapter 6 assest
         var chapter6NodeArray: [SCNNode] = []
         
-        //TODO: build out all chapter 6 assests
-        //load all chapter 6 assets into the assets var array
-        
-        //build out all chapter 6 sounds
-        
-        //build out all chapter 6 narrations
-        
         return chapter6NodeArray
+    }
+    func loadChapter6SoundFiles() -> [String: String] {
+        let chapter6SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break1" : "RockBreak3",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter6SoundArray
     }
     
     //chapter 7 stuff here
@@ -290,14 +358,24 @@ class ChapterSelection {
         //var array of chapter 7 assest
         var chapter7NodeArray: [SCNNode] = []
         
-        //TODO: build out all chapter 7 assests
-        //load all chapter 7 assets into the assets var array
-        
-        //build out all chapter 7 sounds
-        
-        //build out all chapter 7 narrations
-        
         return chapter7NodeArray
+    }
+    func loadChapter7SoundFiles() -> [String: String] {
+        let chapter7SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break1" : "RockBreak3",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter7SoundArray
     }
     
     //chapter 8 stuff here
@@ -305,14 +383,24 @@ class ChapterSelection {
         //var array of chapter 8 assest
         var chapter8NodeArray: [SCNNode] = []
         
-        //TODO: build out all chapter 8 assests
-        //load all chapter 8 assets into the assets var array
-        
-        //build out all chapter 8 sounds
-        
-        //build out all chapter 8 narrations
-        
         return chapter8NodeArray
+    }
+    func loadChapter8SoundFiles() -> [String: String] {
+        let chapter8SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break1" : "RockBreak3",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter8SoundArray
     }
     
     //chapter 9 stuff here
@@ -320,14 +408,24 @@ class ChapterSelection {
         //var array of chapter 9 assest
         var chapter9NodeArray: [SCNNode] = []
         
-        //TODO: build out all chapter 9 assests
-        //load all chapter 9 assets into the assets var array
-        
-        //build out all chapter 9 sounds
-        
-        //build out all chapter 9 narrations
-        
         return chapter9NodeArray
+    }
+    func loadChapter9SoundFiles() -> [String: String] {
+        let chapter9SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break1" : "RockBreak3",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter9SoundArray
     }
     
     //chapter 10 stuff here
@@ -335,13 +433,23 @@ class ChapterSelection {
         //var array of chapter 10 assest
         var chapter10NodeArray: [SCNNode] = []
         
-        //TODO: build out all chapter 10 assests
-        //load all chapter 10 assets into the assets var array
-        
-        //build out all chapter 10 sounds
-        
-        //build out all chapter 10 narrations
-        
         return chapter10NodeArray
+    }
+    func loadChapter10SoundFiles() -> [String: String] {
+        let chapter10SoundArray = ["Narration1" : "Line1",
+                                  "Narration2" : "Line2",
+                                  "Narration3" : "Line3",
+                                  "Narration4" : "Line4",
+                                  "Narration5" : "Line5",
+                                  "Narration6" : "Line6",
+                                  "Narration7" : "Line7",
+                                  "Narration8" : "Line8",
+                                  "Background1" : "Birds1",
+                                  "Background2" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
+                                  "Coin1" : "xylophone2",
+                                  "Break1" : "RockBreak3",
+                                  "LetterComplete" : "yeahOutside"]
+        return chapter10SoundArray
     }
 }

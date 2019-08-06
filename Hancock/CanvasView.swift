@@ -65,7 +65,9 @@ class CanvasView: UIView {
     var blackDot7: UIImageView?
     var blackDot8: UIImageView?
     
-    var audioPlayer = AVAudioPlayer()
+    //var audioPlayer = AVAudioPlayer()
+    var narrationPlayer = AVAudioPlayer()
+    var FXPlayer = AVAudioPlayer()
     
     var usePreciseLocations = false {
         didSet {
@@ -451,15 +453,17 @@ class CanvasView: UIView {
             case .P1_P2:
                 //A1GreenLine?.isHidden = false
                 
-                playAudioFile(file: "RockBreak1", type: "wav")
+                //playAudioFile(file: "RockBreak1", type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.playAudioFile(file: "Line5", type: "mp3")
-                    
+                    //self.playAudioFile(file: "Line5", type: "mp3")
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
                     //wait 1 second
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.playAudioFile(file: "Line6", type: "mp3")
-                        
+                        //self.playAudioFile(file: "Line6", type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
                         //wait 3 seconds
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                             self.blueDot?.pulsate(duration: 0.6)
@@ -483,11 +487,13 @@ class CanvasView: UIView {
             case .P3_P4:
                 //A2GreenLine?.isHidden = false
                 
-                playAudioFile(file: "RockBreak2", type: "aiff")
+                //playAudioFile(file: "RockBreak2", type: "aiff")
+                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.playAudioFile(file: "Line7", type: "mp3")
-                    
+                    //self.playAudioFile(file: "Line7", type: "mp3")
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
                     //wait 2 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         self.purpleDot?.pulsate(duration: 0.6)
@@ -510,11 +516,13 @@ class CanvasView: UIView {
             case .P5_P6:
                 //A3GreenLine?.isHidden = false
                 
-                playAudioFile(file: "RockExplode", type: "wav")
+                //playAudioFile(file: "RockExplode", type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
                 
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.playAudioFile(file: "Line8", type: "mp3")
+                    //self.playAudioFile(file: "Line8", type: "mp3")
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
                     self.purpleDot?.isHidden = true
                     self.yellowDot?.isHidden = true
                 })
@@ -613,17 +621,41 @@ class CanvasView: UIView {
     
     //MARK: AUDIO STUFF
     
-    func playAudioFile(file: String, type: String) {
-        let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
-        
+//    func playAudioFile(file: String, type: String) {
+//        let audioPath = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+//        do
+//        {
+//            try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+//
+//        } catch {
+//            print("AudioPlayer not available!")
+//        }
+//        audioPlayer.play()
+//    }
+    
+    //pass it an audiofile and it will play it!
+    func playAudioNarrationFile(file: String, type: String) {
+        let audio1Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
-            try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio1Path!))
             
         } catch {
             print("AudioPlayer not available!")
         }
-        
-        audioPlayer.play()
+        self.narrationPlayer.play()
+    }
+    
+    //pass it an audiofile and it will play it!
+    func playAudioFXFile(file: String, type: String) {
+        let audio2Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        do
+        {
+            try FXPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio2Path!))
+            
+        } catch {
+            print("FXPlayer not available!")
+        }
+        self.FXPlayer.play()
     }
 }

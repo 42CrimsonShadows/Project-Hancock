@@ -127,20 +127,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.loadModels(chapterNode: chapterNodeArray!)
         self.referenceMainNodes()
         
-        //setup audio player
-        let walkAudioPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav", inDirectory: "art.scnassets/Sounds")
-        let birdsAudioPath = Bundle.main.path(forResource: "Birds2", ofType: "wav", inDirectory: "art.scnassets/Sounds")
-        do
-        {
-            try walkPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: walkAudioPath!))
-            walkPlayer.enableRate = true
-            walkPlayer.rate = 0.5
-            
-            try birdsPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: birdsAudioPath!))
-            
-        } catch {
-            print("WalkPlayer not available!")
-        }
+//        //setup audio player by loading an file address into the variable
+//        let backgroundAudioPath = Bundle.main.path(forResource: (chapterSelectedSoundDict!["Background2"]), ofType: "wav", inDirectory: "art.scnassets/Sounds")
+//        do
+//        {
+//            //assign the file address to the AVAudioPlayer
+//            try BGPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: backgroundAudioPath!))
+//
+//        } catch {
+//            print("WalkPlayer not available!")
+//        }
         
         if shatterLetterOne == false {
             //pause the Letter Shatter animation
@@ -347,9 +343,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             self.startButton.isHidden = true
             self.gameState = .playGame
-            self.birdsPlayer.play()
-            //set birdsplayer to play infinitly (-1)
-            self.birdsPlayer.numberOfLoops = -1
+            //self.birdsPlayer.play()
+            //player background music/ambient
+            self.playAudioBGFile(file: chapterSelectedSoundDict!["Background2"]!, type: "wav")
         }
         storyTime()
     }
@@ -446,8 +442,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         mainCharacterIdle.isHidden = true
         
         //start playing the walking sound
-        walkPlayer.setVolume(0.5, fadeDuration: 0)
-        walkPlayer.play()
+//        let walkAudioPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav", inDirectory: "art.scnassets/Sounds")
+//        do
+//        {
+//            try walkPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: walkAudioPath!))
+//            walkPlayer.enableRate = true
+//            walkPlayer.rate = 0.5
+//        } catch {
+//            print("WalkPlayer not available!")
+//        }
+//
+//        walkPlayer.setVolume(0.5, fadeDuration: 0)
+//        walkPlayer.play()
+        self.playAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
         
         //TODO: Load unique floor movement locations for particular chapter
         switch gameProgress {
@@ -754,18 +761,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         mainCharacterMoving.isHidden = true
         
         //fade out the walking sound
-        walkPlayer.setVolume(0, fadeDuration: 1)
+        FXPlayer.setVolume(0, fadeDuration: 1)
         
         //stop playing the walking sound
-        walkPlayer.stop()
-        walkPlayer.setVolume(1, fadeDuration: 0)
+        FXPlayer.stop()
+        FXPlayer.setVolume(1, fadeDuration: 0)
         
         switch gameProgress {
         case .toLetter1:
             
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -775,12 +782,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //TODO: Make the letter passed in change based on the Book/Chapter Selected
                     
                     print("Loading activity \(chapterSelectedLetterArray![0])")
-                    //self.loadActivityLetter(activityString: ("A")
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
                     })
                 })
             })
@@ -789,7 +795,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter2:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -797,12 +803,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterTwo = true
                     
                     print("Loading activity \(chapterSelectedLetterArray![1])")
-                    //self.loadActivityLetter(activityString: "B")
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
                     })
                 })
             })
@@ -811,7 +816,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter3:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -819,12 +824,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterThree = true
                     
                     print("Loading activity \(chapterSelectedLetterArray![2])")
-                    //self.loadActivityLetter(activityString: "C")
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
                     })
                 })
             })
@@ -833,7 +837,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter4:
             ///wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -841,12 +845,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterFour = true
                     
                     print("Loading activity \(chapterSelectedLetterArray![3])")
-                    //self.loadActivityLetter(activityString: "D")
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
                     })
                 })
             })
@@ -855,7 +858,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter5:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -863,12 +866,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterFive = true
                     
                     print("Loading activity \(chapterSelectedLetterArray![4])")
-                    //self.loadActivityLetter(activityString: "E")
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
 
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
                     })
                 })
             })
@@ -877,7 +879,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter6:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: "Line3", type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -885,12 +887,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.shatterLetterSix = true
                     
                     print("Loading activity \(chapterSelectedLetterArray![5])")
-                    //self.loadActivityLetter(activityString: "F")
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: "Line4", type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
                     })
                 })
             })
@@ -909,6 +910,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterOne:
             letterOne!.isPaused = false
             animateLetterHide(fadeThis: letterOne!)
+            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         case shatterLetterTwo:
             letterTwo!.isPaused = false
             animateLetterHide(fadeThis: letterTwo!)
@@ -944,7 +946,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func storyTime(){
         //Wait 2 second
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.playAudioNarrationFile(file: "Line1", type: "mp3")
+            self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
         })
         
         //wait 7 seconds
@@ -954,13 +956,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //wait 3 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                self.playAudioNarrationFile(file: "Line2", type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
             })
         })
     }
     
     //pass it an audiofile and it will play it!
-    public func playAudioNarrationFile(file: String, type: String) {
+    func playAudioNarrationFile(file: String, type: String) {
         let audio1Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
@@ -973,7 +975,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //pass it an audiofile and it will play it!
-    public func playAudioFXFile(file: String, type: String) {
+    func playAudioFXFile(file: String, type: String, rate: Float) {
         let audio2Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
@@ -982,11 +984,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print("FXPlayer not available!")
         }
+        FXPlayer.enableRate = true
+        FXPlayer.rate = rate
+        FXPlayer.setVolume(0.5, fadeDuration: 0)
         self.FXPlayer.play()
     }
     
     //pass it an audiofile and it will play it!
-    public func playAudioBGFile(file: String, type: String) {
+    func playAudioBGFile(file: String, type: String) {
         let audio3Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
@@ -995,11 +1000,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print("BGPlayer not available!")
         }
+        //set BGPlayer to play infinitly (-1)
+        self.BGPlayer.numberOfLoops = -1
         self.BGPlayer.play()
     }
     
     //pass it an audiofile and it will play it!
-    public func playAudioCharacterFile(file: String, type: String) {
+    func playAudioCharacterFile(file: String, type: String) {
         let audio4Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
