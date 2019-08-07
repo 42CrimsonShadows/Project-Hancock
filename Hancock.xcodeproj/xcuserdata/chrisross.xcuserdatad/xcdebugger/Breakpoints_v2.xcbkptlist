@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "978"
             endingLineNumber = "978"
-            landmarkName = "playAudioFXFile(file:type:rate:)"
+            landmarkName = "playAudioNarrationFile(file:type:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "965"
             endingLineNumber = "965"
-            landmarkName = "playAudioNarrationFile(file:type:)"
+            landmarkName = "storyTime()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1009"
             endingLineNumber = "1009"
-            landmarkName = "playAudioCharacterFile(file:type:)"
+            landmarkName = "playAudioBGFile(file:type:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -111,7 +111,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "994"
             endingLineNumber = "994"
-            landmarkName = "playAudioBGFile(file:type:)"
+            landmarkName = "playAudioFXFile(file:type:rate:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
