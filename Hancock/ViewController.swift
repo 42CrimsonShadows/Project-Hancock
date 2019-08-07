@@ -363,9 +363,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.gameState = .detectSurface
             
             //stop all sound
-            self.birdsPlayer.stop()
-            self.walkPlayer.stop()
+            //self.birdsPlayer.stop()
+            //self.walkPlayer.stop()
+            self.CharacterPlayer.stop()
             self.narrationPlayer.stop()
+            self.BGPlayer.stop()
+            self.FXPlayer.stop()
+
             
             //stop all animations
             self.stopAnimation()

@@ -248,7 +248,8 @@ class ChapterSelection {
                                   "Background2" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "Coin1" : "xylophone2",
-                                  "Break1" : "RockBreak3",
+                                  "Break3" : "RockBreak3",
+                                  "Shatter1" : "RockShatter",
                                   "LetterComplete" : "yeahOutside"]
         return chapter2SoundArray
     }
