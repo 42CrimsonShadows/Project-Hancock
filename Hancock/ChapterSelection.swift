@@ -6,6 +6,7 @@ import ARKit
 var chapterSelectedNodeArray: [SCNNode]?
 var chapterSelectedLetterArray: [String]?
 var chapterSelectedSoundDict: [String: String]?
+var chapterSelectedAnimationDict = [String: CAAnimation]() //will this dictionary be reset between chapters I wonder?
 
 class ChapterSelection {
     
@@ -103,25 +104,13 @@ class ChapterSelection {
         storyNode.position = SCNVector3(0, 0, 0)
         //storyNode.isHidden = true
         
-        //Load Idle Animation Node
-        let idleAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Idle.scn")!
+        let idleAnthonyScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed.dae")!
         for child in idleAnthonyScene.rootNode.childNodes {
             idleNode.addChildNode(child)
         }
         storyNode.addChildNode(idleNode)
         idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
         idleNode.position = SCNVector3(0, 0, 0)
-        //idleNode.isHidden = true
-        
-        //Load walking Animation Node
-        let walkingAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Walk.scn")!
-        for child in walkingAnthonyScene.rootNode.childNodes {
-            walkingNode.addChildNode(child)
-        }
-        storyNode.addChildNode(walkingNode)
-        walkingNode.position = SCNVector3(0, 0, 0)
-        walkingNode.scale = SCNVector3(0.02, 0.02, 0.02)
-        //walkingNode.isHidden = true
         
         //Load Scene Mask so we only see immidate area
         let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
@@ -145,16 +134,14 @@ class ChapterSelection {
         
         storyNode.childNode(withName: "LVLFloor", recursively: true)!.addChildNode(letterANode)
         
+        //load all the DAE animations for this Chapter
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed", animationIdentifier: "Anthony@IdleFixed-1")
+        prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@WalkFixed", animationIdentifier: "Anthony@WalkFixed-1")
+        
         //chapter1NodeArray.append(focusNode)
         chapter1NodeArray.append(storyNode)
         
         return chapter1NodeArray
-    
-        
-        //build out all chapter 1 sounds
-        //assign chapter ambient sound file to global variable at the top
-        
-        //build out all chapter 1 narrations
     }
     
     func loadChapter1SoundFiles() -> [String: String] {
@@ -189,7 +176,7 @@ class ChapterSelection {
         //storyNode.isHidden = true
         
         //Load Idle Animation Node
-        let idleAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Idle.scn")!
+        let idleAnthonyScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed.dae")!
         for child in idleAnthonyScene.rootNode.childNodes {
             idleNode.addChildNode(child)
         }
@@ -197,16 +184,6 @@ class ChapterSelection {
         idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
         idleNode.position = SCNVector3(0, 0, 0)
         //idleNode.isHidden = true
-        
-        //Load walking Animation Node
-        let walkingAnthonyScene = SCNScene(named: "art.scnassets/Anthony@Walk.scn")!
-        for child in walkingAnthonyScene.rootNode.childNodes {
-            walkingNode.addChildNode(child)
-        }
-        storyNode.addChildNode(walkingNode)
-        walkingNode.position = SCNVector3(0, 0, 0)
-        walkingNode.scale = SCNVector3(0.02, 0.02, 0.02)
-        //walkingNode.isHidden = true
         
         //Load Scene Mask so we only see immidate area
         let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
@@ -229,6 +206,10 @@ class ChapterSelection {
         //letterANode.renderingOrder = -5
         
         storyNode.childNode(withName: "LVLFloor", recursively: true)!.addChildNode(letterANode)
+        
+        //load all the DAE animations for this Chapter
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed", animationIdentifier: "Anthony@IdleFixed-1")
+        prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@WalkFixed", animationIdentifier: "Anthony@WalkFixed-1")
         
         //chapter1NodeArray.append(focusNode)
         chapter2NodeArray.append(storyNode)
@@ -452,5 +433,27 @@ class ChapterSelection {
                                   "Break1" : "RockBreak3",
                                   "LetterComplete" : "yeahOutside"]
         return chapter10SoundArray
+    }
+    
+    //prep the animations by loading them into an public Animations Dictionary
+    func prepareAnimation(withKey: String, sceneName: String, animationIdentifier: String) {
+        let sceneURL = Bundle.main.url(forResource: sceneName, withExtension: "dae")
+        let sceneSource = SCNSceneSource(url: sceneURL!, options: nil)
+        
+        if let animationObject = sceneSource?.entryWithIdentifier(animationIdentifier, withClass: CAAnimation.self) {
+            //the animation will play continuously
+            //animationObject.repeatCount = -1
+            //create smooth transition between animations
+            animationObject.fadeInDuration = CGFloat(1)
+            animationObject.fadeOutDuration = CGFloat(0.5)
+            
+            if animationIdentifier == "Anthony@WalkFixed-1" {
+                animationObject.duration = 2.083
+            }
+            
+            //Store the animationfor later use
+            chapterSelectedAnimationDict[withKey] = animationObject
+        }
+        //playAnimation(key: "idle")
     }
 }
