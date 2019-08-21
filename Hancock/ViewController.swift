@@ -417,15 +417,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter", recursively: true)
         mainCharacterIdle.isHidden = true
         
-        charcterOneIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterOne", recursively: true)
+        charcterOneIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter1", recursively: true)
         charcterOneIdle.isHidden = true
-        charcterTwoIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterTwo", recursively: true)
+        charcterTwoIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter2", recursively: true)
         charcterTwoIdle.isHidden = true
-        charcterThreeIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterThree", recursively: true)
+        charcterThreeIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter3", recursively: true)
         charcterThreeIdle.isHidden = true
-        charcterFourIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterFour", recursively: true)
+        charcterFourIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter4", recursively: true)
         charcterFourIdle.isHidden = true
-        charcterFiveIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterFive", recursively: true)
+        charcterFiveIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter5", recursively: true)
         charcterFiveIdle.isHidden = true
         
         //generic story main character moving animation

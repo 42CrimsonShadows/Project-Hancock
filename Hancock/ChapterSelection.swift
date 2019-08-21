@@ -15,6 +15,11 @@ class ChapterSelection {
     let maskingNode = SCNNode()
     let idleNode = SCNNode()
     let walkingNode = SCNNode()
+    let SideCharacter1idleNode = SCNNode()
+    let SideCharacter2idleNode = SCNNode()
+    let SideCharacter3idleNode = SCNNode()
+    let SideCharacter4idleNode = SCNNode()
+    let SideCharacter5idleNode = SCNNode()
     let animationNode = SCNNode()
     let letter1Node = SCNNode()
     let letter2Node = SCNNode()
@@ -205,60 +210,36 @@ class ChapterSelection {
         for child in shatterIScene.rootNode.childNodes {
             letter1Node.addChildNode(child)
         }
-        //letter1Node.position = SCNVector3(0, 0, 0)
-        //letter1Node.eulerAngles = SCNVector3(0, 0, 0)
-        //letter1Node.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letter1Node.renderingOrder = -5
         
         //Load the shattering T scn into the BugScene
         let shatterTScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/T@Shatter.scn")!
         for child in shatterTScene.rootNode.childNodes {
             letter2Node.addChildNode(child)
         }
-        //letter2Node.position = SCNVector3(0, 0, 0)
-        //letter2Node.eulerAngles = SCNVector3(0, 0, 0)
-        //letter2Node.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letter2Node.renderingOrder = -5
         
         //Load the shattering L scn into the BugScene
         let shatterLScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/L@Shatter.scn")!
         for child in shatterLScene.rootNode.childNodes {
             letter3Node.addChildNode(child)
         }
-        //letter3Node.position = SCNVector3(0, 0, 0)
-        //letter3Node.eulerAngles = SCNVector3(0, 0, 0)
-        //letter3Node.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letter3Node.renderingOrder = -5
         
         //Load the shattering F scn into the BugScene
         let shatterFScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/F@Shatter.scn")!
         for child in shatterFScene.rootNode.childNodes {
             letter4Node.addChildNode(child)
         }
-        //letter4Node.position = SCNVector3(0, 0, 0)
-        //letter4Node.eulerAngles = SCNVector3(0, 0, 0)
-        //letter4Node.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letter4Node.renderingOrder = -5
         
         //Load the shattering E scn into the BugScene
         let shatterEScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/E@Shatter.scn")!
         for child in shatterEScene.rootNode.childNodes {
             letter5Node.addChildNode(child)
         }
-        //letter5Node.position = SCNVector3(0, 0, 0)
-        //letter5Node.eulerAngles = SCNVector3(0, 0, 0)
-        //letter5Node.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letter5Node.renderingOrder = -5
         
         //Load the shattering H scn into the BugScene
         let shatterHScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/H@Shatter.scn")!
         for child in shatterHScene.rootNode.childNodes {
             letter6Node.addChildNode(child)
         }
-        //letter6Node.position = SCNVector3(0, 0, 0)
-        //letter6Node.eulerAngles = SCNVector3(0, 0, 0)
-        //letter6Node.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letter6Node.renderingOrder = -5
         
         let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
         lvlFloor.addChildNode(letter1Node)
@@ -268,11 +249,84 @@ class ChapterSelection {
         lvlFloor.addChildNode(letter5Node)
         lvlFloor.addChildNode(letter6Node)
         
+        //Load Idle Animation Node
+        let idleTerryScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@WavingFixed.dae")!
+        for child in idleTerryScene.rootNode.childNodes {
+            SideCharacter1idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter1idleNode)
+        SideCharacter1idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
+        SideCharacter1idleNode.position = SCNVector3(0, 0, 0)
+        
+        //Load Idle Animation Node
+        let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")!
+        for child in idleLinScene.rootNode.childNodes {
+            SideCharacter2idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter2idleNode)
+        SideCharacter2idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
+        SideCharacter2idleNode.position = SCNVector3(0, 0, 0)
+        
+        //Load Idle Animation Node
+        let idleFrancineScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@DanceSpinHopFixed.dae")!
+        for child in idleFrancineScene.rootNode.childNodes {
+            SideCharacter3idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter3idleNode)
+        SideCharacter3idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
+        SideCharacter3idleNode.position = SCNVector3(0, 0, 0)
+        
+        //Load Idle Animation Node
+//        let idleEricScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@IdleFixed.dae")!
+//        for child in idleEricScene.rootNode.childNodes {
+//            SideCharacter4idleNode.addChildNode(child)
+//        }
+//        lvlFloor.addChildNode(SideCharacter4idleNode)
+//        SideCharacter4idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
+//        SideCharacter4idleNode.position = SCNVector3(0, 0, 0)
+        
+        //Load Idle Animation Node
+        let idleHannahScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SupriseFixed.dae")!
+        for child in idleHannahScene.rootNode.childNodes {
+            SideCharacter5idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter5idleNode)
+        SideCharacter5idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
+        SideCharacter5idleNode.position = SCNVector3(0, 0, 0)
+        
         //load all the DAE animations for this Chapter
-        //prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed", animationIdentifier: "Anthony@IdleFixed-1")
-        //prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@WalkFixed", animationIdentifier: "Anthony@WalkFixed-1")
+        //load animations for mainCharacter
         prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@IdleFixed", animationIdentifier: "Indy@IdleFixed-1")
         prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@WalkFixed", animationIdentifier: "Indy@WalkFixed-1")
+        //load animation for side character 1
+        //prepareAnimation(withKey: "SideCharacter1Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@IdleFixed", animationIdentifier: "Terry@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter1Walking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@WalkingFixed", animationIdentifier: "Terry@WalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter1Waving", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@WavingFixed", animationIdentifier: "Terry@WavingFixed-1")
+        //prepareAnimation(withKey: "SideCharacter1Dancing", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@DancingFixed", animationIdentifier: "Terry@DancingFixed-1")
+        
+        //load animation for side character 2
+        //prepareAnimation(withKey: "SideCharacter2Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed", animationIdentifier: "Lin@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter2Walking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@WalkingFixed", animationIdentifier: "Lin@WalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter2Dancing", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@TwistDanceFixed", animationIdentifier: "Lin@TwistDanceFixed-1")
+        
+        //load animation for side character 3
+        prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@IdleFixed", animationIdentifier: "Francine@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Walk", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@HappyWalkFixed", animationIdentifier: "Francine@HappyWalkFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Jump", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@JumpFixed", animationIdentifier: "Francine@JumpFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Dance1", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@DanceSpinHopFixed", animationIdentifier: "Francine@DanceSpinHopFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Dance2", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@HipHopDanceFixed", animationIdentifier: "Francine@HipHopDanceFixed-1")
+        
+        //load animation for side character 4
+        //prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@IdleFixed", animationIdentifier: "Eric@IdleFixed-1")
+        //prepareAnimation(withKey: "SideCharacter4Walk", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@WalkFixed", animationIdentifier: "Eric@WalkFixed-1")
+        //prepareAnimation(withKey: "SideCharacter4Dance", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@DanceFixed", animationIdentifier: "Eric@DanceFixed-1")
+        //prepareAnimation(withKey: "SideCharacter4Climb", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@ClimbFixed", animationIdentifier: "Eric@ClimbFixed-1")
+        
+        //load animation for side character 5
+        //prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed", animationIdentifier: "Hannah@IdleFixed-1")
+        //prepareAnimation(withKey: "SideCharacter5Walk", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@WalkFixed", animationIdentifier: "Hannah@WalkFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Surprise", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SurpriseFixed", animationIdentifier: "Hannah@SurpriseFixed-1")
+        //prepareAnimation(withKey: "SideCharacter5Dance", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@DanceFixed", animationIdentifier: "Hannah@DanceFixed-1")
         
         //chapter1NodeArray.append(focusNode)
         chapter2NodeArray.append(storyNode)
