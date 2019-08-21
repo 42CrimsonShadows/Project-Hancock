@@ -16,7 +16,12 @@ class ChapterSelection {
     let idleNode = SCNNode()
     let walkingNode = SCNNode()
     let animationNode = SCNNode()
-    let letterANode = SCNNode()
+    let letter1Node = SCNNode()
+    let letter2Node = SCNNode()
+    let letter3Node = SCNNode()
+    let letter4Node = SCNNode()
+    let letter5Node = SCNNode()
+    let letter6Node = SCNNode()
     
     var narrationPlayer = AVAudioPlayer()
     var FXPlayer = AVAudioPlayer()
@@ -104,8 +109,8 @@ class ChapterSelection {
         storyNode.position = SCNVector3(0, 0, 0)
         //storyNode.isHidden = true
         
-        let idleAnthonyScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed.dae")!
-        for child in idleAnthonyScene.rootNode.childNodes {
+        let idleMainCharacterScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed.dae")!
+        for child in idleMainCharacterScene.rootNode.childNodes {
             idleNode.addChildNode(child)
         }
         storyNode.addChildNode(idleNode)
@@ -125,14 +130,14 @@ class ChapterSelection {
         //Load the shattering A scn into the BugScene
         let shatterAScene = SCNScene(named: "art.scnassets/LetterA@Shatter.scn")!
         for child in shatterAScene.rootNode.childNodes {
-            letterANode.addChildNode(child)
+            letter1Node.addChildNode(child)
         }
-        letterANode.position = SCNVector3(-13.879, -1, 12)
-        //letterANode.eulerAngles = SCNVector3(0, 0, 0)
-        letterANode.scale = SCNVector3(1.75, 1.75, 1.75)
+        letter1Node.position = SCNVector3(-13.879, -1, 12)
+        //letter1Node.eulerAngles = SCNVector3(0, 0, 0)
+        letter1Node.scale = SCNVector3(1.75, 1.75, 1.75)
         //letterANode.renderingOrder = -5
         
-        storyNode.childNode(withName: "LVLFloor", recursively: true)!.addChildNode(letterANode)
+        storyNode.childNode(withName: "LVLFloor", recursively: true)!.addChildNode(letter1Node)
         
         //load all the DAE animations for this Chapter
         prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed", animationIdentifier: "Anthony@IdleFixed-1")
@@ -176,13 +181,13 @@ class ChapterSelection {
         //storyNode.isHidden = true
         
         //Load Idle Animation Node
-        let idleAnthonyScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed.dae")!
-        for child in idleAnthonyScene.rootNode.childNodes {
+        let idleIndyScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@IdleFixed.dae")!
+        for child in idleIndyScene.rootNode.childNodes {
             idleNode.addChildNode(child)
         }
         storyNode.addChildNode(idleNode)
-        idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
-        idleNode.position = SCNVector3(0, 0, 0)
+        idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
+        //idleNode.position = SCNVector3(0, 0, 0)
         //idleNode.isHidden = true
         
         //Load Scene Mask so we only see immidate area
@@ -195,21 +200,79 @@ class ChapterSelection {
         maskingNode.position = SCNVector3(0, 0, 0)
         //maskingNode.scale = SCNVector3(1, 1, 1)
         
-        //Load the shattering A scn into the BugScene
-        let shatterAScene = SCNScene(named: "art.scnassets/LetterA@Shatter.scn")!
-        for child in shatterAScene.rootNode.childNodes {
-            letterANode.addChildNode(child)
+        //Load the shattering I scn into the BugScene
+        let shatterIScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/I@Shatter.scn")!
+        for child in shatterIScene.rootNode.childNodes {
+            letter1Node.addChildNode(child)
         }
-        letterANode.position = SCNVector3(-13.879, -1, 12)
-        //letterANode.eulerAngles = SCNVector3(0, 0, 0)
-        letterANode.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letterANode.renderingOrder = -5
+        //letter1Node.position = SCNVector3(0, 0, 0)
+        //letter1Node.eulerAngles = SCNVector3(0, 0, 0)
+        //letter1Node.scale = SCNVector3(1.75, 1.75, 1.75)
+        //letter1Node.renderingOrder = -5
         
-        storyNode.childNode(withName: "LVLFloor", recursively: true)!.addChildNode(letterANode)
+        //Load the shattering T scn into the BugScene
+        let shatterTScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/T@Shatter.scn")!
+        for child in shatterTScene.rootNode.childNodes {
+            letter2Node.addChildNode(child)
+        }
+        //letter2Node.position = SCNVector3(0, 0, 0)
+        //letter2Node.eulerAngles = SCNVector3(0, 0, 0)
+        //letter2Node.scale = SCNVector3(1.75, 1.75, 1.75)
+        //letter2Node.renderingOrder = -5
+        
+        //Load the shattering L scn into the BugScene
+        let shatterLScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/L@Shatter.scn")!
+        for child in shatterLScene.rootNode.childNodes {
+            letter3Node.addChildNode(child)
+        }
+        //letter3Node.position = SCNVector3(0, 0, 0)
+        //letter3Node.eulerAngles = SCNVector3(0, 0, 0)
+        //letter3Node.scale = SCNVector3(1.75, 1.75, 1.75)
+        //letter3Node.renderingOrder = -5
+        
+        //Load the shattering F scn into the BugScene
+        let shatterFScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/F@Shatter.scn")!
+        for child in shatterFScene.rootNode.childNodes {
+            letter4Node.addChildNode(child)
+        }
+        //letter4Node.position = SCNVector3(0, 0, 0)
+        //letter4Node.eulerAngles = SCNVector3(0, 0, 0)
+        //letter4Node.scale = SCNVector3(1.75, 1.75, 1.75)
+        //letter4Node.renderingOrder = -5
+        
+        //Load the shattering E scn into the BugScene
+        let shatterEScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/E@Shatter.scn")!
+        for child in shatterEScene.rootNode.childNodes {
+            letter5Node.addChildNode(child)
+        }
+        //letter5Node.position = SCNVector3(0, 0, 0)
+        //letter5Node.eulerAngles = SCNVector3(0, 0, 0)
+        //letter5Node.scale = SCNVector3(1.75, 1.75, 1.75)
+        //letter5Node.renderingOrder = -5
+        
+        //Load the shattering H scn into the BugScene
+        let shatterHScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Letters/H@Shatter.scn")!
+        for child in shatterHScene.rootNode.childNodes {
+            letter6Node.addChildNode(child)
+        }
+        //letter6Node.position = SCNVector3(0, 0, 0)
+        //letter6Node.eulerAngles = SCNVector3(0, 0, 0)
+        //letter6Node.scale = SCNVector3(1.75, 1.75, 1.75)
+        //letter6Node.renderingOrder = -5
+        
+        let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+        lvlFloor.addChildNode(letter1Node)
+        lvlFloor.addChildNode(letter2Node)
+        lvlFloor.addChildNode(letter3Node)
+        lvlFloor.addChildNode(letter4Node)
+        lvlFloor.addChildNode(letter5Node)
+        lvlFloor.addChildNode(letter6Node)
         
         //load all the DAE animations for this Chapter
-        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed", animationIdentifier: "Anthony@IdleFixed-1")
-        prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@WalkFixed", animationIdentifier: "Anthony@WalkFixed-1")
+        //prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed", animationIdentifier: "Anthony@IdleFixed-1")
+        //prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@WalkFixed", animationIdentifier: "Anthony@WalkFixed-1")
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@IdleFixed", animationIdentifier: "Indy@IdleFixed-1")
+        prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@WalkFixed", animationIdentifier: "Indy@WalkFixed-1")
         
         //chapter1NodeArray.append(focusNode)
         chapter2NodeArray.append(storyNode)
@@ -448,6 +511,9 @@ class ChapterSelection {
             animationObject.fadeOutDuration = CGFloat(0.5)
             
             if animationIdentifier == "Anthony@WalkFixed-1" {
+                animationObject.duration = 2.083
+            }
+            if animationIdentifier == "Indy@WalkingFixed-1" {
                 animationObject.duration = 2.083
             }
             

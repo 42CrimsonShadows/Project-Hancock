@@ -82,6 +82,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //main movement nodes for every story
     var rootStoryNode: SCNNode!
     var mainCharacterIdle: SCNNode!
+    var charcterOneIdle: SCNNode!
+    var charcterTwoIdle: SCNNode!
+    var charcterThreeIdle: SCNNode!
+    var charcterFourIdle: SCNNode!
+    var charcterFiveIdle: SCNNode!
     var mainCharacterMoving: SCNNode!
     var mainFloor: SCNNode!
     var storymask: SCNNode!
@@ -412,6 +417,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter", recursively: true)
         mainCharacterIdle.isHidden = true
         
+        charcterOneIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterOne", recursively: true)
+        charcterOneIdle.isHidden = true
+        charcterTwoIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterTwo", recursively: true)
+        charcterTwoIdle.isHidden = true
+        charcterThreeIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterThree", recursively: true)
+        charcterThreeIdle.isHidden = true
+        charcterFourIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterFour", recursively: true)
+        charcterFourIdle.isHidden = true
+        charcterFiveIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacterFive", recursively: true)
+        charcterFiveIdle.isHidden = true
+        
         //generic story main character moving animation
         //mainCharacterMoving = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Walk", recursively: true)
         //mainCharacterMoving.isHidden = true
@@ -422,6 +438,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //generic variable for the first letter
         letterOne = sceneView.scene.rootNode.childNode(withName: "LetterOne", recursively: true)
+        letterTwo = sceneView.scene.rootNode.childNode(withName: "LetterTwo", recursively: true)
+        letterThree = sceneView.scene.rootNode.childNode(withName: "LetterThree", recursively: true)
+        letterFour = sceneView.scene.rootNode.childNode(withName: "LetterFour", recursively: true)
+        letterFive = sceneView.scene.rootNode.childNode(withName: "LetterFive", recursively: true)
+        letterSix = sceneView.scene.rootNode.childNode(withName: "LetterSix", recursively: true)
         
         //load ambient sound for chapter (global variable)
     }
@@ -946,18 +967,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterTwo:
             letterTwo!.isPaused = false
             animateLetterHide(fadeThis: letterTwo!)
+            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         case shatterLetterThree:
             letterThree!.isPaused = false
             animateLetterHide(fadeThis: letterThree!)
+            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         case shatterLetterFour:
             letterFour!.isPaused = false
             animateLetterHide(fadeThis: letterFour!)
+            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         case shatterLetterFive:
             letterFive!.isPaused = false
             animateLetterHide(fadeThis: letterFive!)
+            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         case shatterLetterSix:
             letterSix!.isPaused = false
             animateLetterHide(fadeThis: letterSix!)
+            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         default:
             break
         }
