@@ -266,8 +266,9 @@ class ChapterSelection {
             SideCharacter2idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter2idleNode)
-        SideCharacter2idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
-        SideCharacter2idleNode.position = SCNVector3(0, 0, 0)
+        SideCharacter2idleNode.scale = SCNVector3(0.002, 0.002, 0.002)
+        SideCharacter2idleNode.eulerAngles = SCNVector3(0, -61, 0)
+        SideCharacter2idleNode.position = SCNVector3(-7.26, 1.75, -16.45)
         
         //Load Idle Animation Node
         //let idleFrancineScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@IdleFixed.dae")!
@@ -276,8 +277,9 @@ class ChapterSelection {
             SideCharacter3idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter3idleNode)
-        SideCharacter3idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
-        SideCharacter3idleNode.position = SCNVector3(0, 0, 0)
+        SideCharacter3idleNode.scale = SCNVector3(0.002, 0.002, 0.002)
+        SideCharacter3idleNode.eulerAngles = SCNVector3(0, -175, 0)
+        SideCharacter3idleNode.position = SCNVector3(4.4, 3.8, 11.9)
         
         //Load Idle Animation Node
 //        let idleEricScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@IdleFixed.dae")!
@@ -295,8 +297,8 @@ class ChapterSelection {
             SideCharacter5idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter5idleNode)
-        SideCharacter5idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
-        SideCharacter5idleNode.position = SCNVector3(0, 0, 0)
+        SideCharacter5idleNode.scale = SCNVector3(0.003, 0.003, 0.003)
+        SideCharacter5idleNode.position = SCNVector3(19.35, 1.15, -15.25)
         
         //load all the DAE animations for this Chapter
         //load animations for mainCharacter
