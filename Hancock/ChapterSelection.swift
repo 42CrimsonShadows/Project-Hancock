@@ -257,7 +257,7 @@ class ChapterSelection {
         }
         lvlFloor.addChildNode(SideCharacter1idleNode)
         SideCharacter1idleNode.scale = SCNVector3(0.004, 0.004, 0.004)
-        SideCharacter1idleNode.position = SCNVector3(-19.4, 5.15, -0.6)
+        SideCharacter1idleNode.position = SCNVector3(-19.4, 5.16, -0.6)
         
         //Load Idle Animation Node
         //let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")!
