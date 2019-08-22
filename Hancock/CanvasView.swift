@@ -493,6 +493,9 @@ class CanvasView: UIView {
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //self.playAudioFile(file: "Line7", type: "mp3")
+                    if self.narrationPlayer.isPlaying {
+                        self.narrationPlayer.stop()
+                    }
                     self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
                     //wait 2 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -521,7 +524,6 @@ class CanvasView: UIView {
                 
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    //self.playAudioFile(file: "Line8", type: "mp3")
                     self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
                     self.purpleDot?.isHidden = true
                     self.yellowDot?.isHidden = true
@@ -639,10 +641,15 @@ class CanvasView: UIView {
         do
         {
             try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio1Path!))
+            //stop sound if there is any
+            if self.narrationPlayer.isPlaying {
+                self.narrationPlayer.stop()
+            }
             
         } catch {
             print("AudioPlayer not available!")
         }
+        
         self.narrationPlayer.play()
     }
     

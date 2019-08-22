@@ -418,15 +418,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         mainCharacterIdle.isHidden = true
         
         charcterOneIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter1", recursively: true)
-        charcterOneIdle.isHidden = true
+        charcterOneIdle?.isHidden = false
         charcterTwoIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter2", recursively: true)
-        charcterTwoIdle.isHidden = true
+        charcterTwoIdle?.isHidden = false
         charcterThreeIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter3", recursively: true)
-        charcterThreeIdle.isHidden = true
+        charcterThreeIdle?.isHidden = false
         charcterFourIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter4", recursively: true)
-        charcterFourIdle.isHidden = true
+        charcterFourIdle?.isHidden = false
         charcterFiveIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter5", recursively: true)
-        charcterFiveIdle.isHidden = true
+        charcterFiveIdle?.isHidden = false
         
         //generic story main character moving animation
         //mainCharacterMoving = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Walk", recursively: true)
@@ -1030,6 +1030,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print("AudioPlayer not available!")
         }
+        
         self.narrationPlayer.play()
     }
     

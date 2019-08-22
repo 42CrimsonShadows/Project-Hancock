@@ -250,16 +250,18 @@ class ChapterSelection {
         lvlFloor.addChildNode(letter6Node)
         
         //Load Idle Animation Node
+        //let idleTerryScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@IdleFixed.dae")!
         let idleTerryScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@WavingFixed.dae")!
         for child in idleTerryScene.rootNode.childNodes {
             SideCharacter1idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter1idleNode)
-        SideCharacter1idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
-        SideCharacter1idleNode.position = SCNVector3(0, 0, 0)
+        SideCharacter1idleNode.scale = SCNVector3(0.004, 0.004, 0.004)
+        SideCharacter1idleNode.position = SCNVector3(-19.4, 5.15, -0.6)
         
         //Load Idle Animation Node
-        let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")!
+        //let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")!
+        let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@TwistDanceFixed.dae")! //temp idle
         for child in idleLinScene.rootNode.childNodes {
             SideCharacter2idleNode.addChildNode(child)
         }
@@ -268,6 +270,7 @@ class ChapterSelection {
         SideCharacter2idleNode.position = SCNVector3(0, 0, 0)
         
         //Load Idle Animation Node
+        //let idleFrancineScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@IdleFixed.dae")!
         let idleFrancineScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@DanceSpinHopFixed.dae")!
         for child in idleFrancineScene.rootNode.childNodes {
             SideCharacter3idleNode.addChildNode(child)
@@ -286,7 +289,8 @@ class ChapterSelection {
 //        SideCharacter4idleNode.position = SCNVector3(0, 0, 0)
         
         //Load Idle Animation Node
-        let idleHannahScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SupriseFixed.dae")!
+        //let idleHannahScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed.dae")!
+        let idleHannahScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SurpriseFixed.dae")!
         for child in idleHannahScene.rootNode.childNodes {
             SideCharacter5idleNode.addChildNode(child)
         }
