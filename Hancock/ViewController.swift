@@ -497,7 +497,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        walkPlayer.play()
         
         self.playAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
-        
+
         //TODO: Load unique floor movement locations for particular chapter
         switch gameProgress {
             
@@ -505,31 +505,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //change points based on Chapter
             switch true {
             case chapterOne:
-                //animate the mainFloor node to move and stop when the translation is complete
-                mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopWalkAnimation)
-                //animate the main character to rotate a bit on the y axis
-                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
-                //mainCharacterIdle.position = mainCharacterMoving.position
-                //mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
-                
                 //move position for letter:
                 //I
+                //animate the mainFloor node to move and stop when the translation is complete
+                
+                //mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopWalkAnimation) //old chapter 1
+                mainFloor.runAction(SCNAction.moveBy(x:0, y: 0, z: -0.2, duration: 2), completionHandler: stopWalkAnimation)
+                
+                //animate the main character to rotate a bit on the y axis
+                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
+                //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15)) //old chapter 1
+                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new chapter 1
+                //mainCharacterIdle.position = mainCharacterMoving.position
+                //mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
                 
                 print("move floor for chapter one")
             case chapterTwo:
                 //animate the mainFloor node to move and stop when the translation is complete
-                mainFloor.runAction(SCNAction.moveBy(x: 0, y: 0, z: -0.2, duration: 2), completionHandler: stopWalkAnimation)
+                mainFloor.runAction(SCNAction.moveBy(x: 0, y: 0, z: -0.2, duration: 2), completionHandler: stopWalkAnimation) //old ch 1
+                //mainFloor.runAction(SCNAction.move(to: SCNVector3(x: -18.8, y: 1.25, z: 3.2), duration: 7), completionHandler: stopWalkAnimation) //new ch 1
                 //animate the main character to rotate a bit on the y axis
-                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1))
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1))
+                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //old ch 1
+                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new ch 1
                 //mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = mainCharacterMoving.eulerAngles
                 
                 //move position for letter:
                 //P
 
-                
                 print("move floor for chapter two")
             case chapterThree:
                 //animate the mainFloor node to move and stop when the translation is complete
@@ -567,10 +570,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                mainFloor.runAction(SCNAction.moveBy(x: 0.25, y: 0, z: -1.4, duration: 15), completionHandler: stopWalkAnimation)
+                mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -1.3, duration: 10), completionHandler: stopWalkAnimation) //old ch 1
                 //startAnimation(key: "walking")
                 //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
+                //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15)) //old ch 1
+                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1))
                 //set the idle animation position to be at the new main character location and rotation
                 //mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
@@ -615,9 +619,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                mainFloor.runAction(SCNAction.moveBy(x: -0.15, y: 0, z: -1.45, duration: 15), completionHandler: stopWalkAnimation)
+                //mainFloor.runAction(SCNAction.moveBy(x: -0.15, y: 0, z: -1.45, duration: 15), completionHandler: stopWalkAnimation) //old chapter 1
+                mainFloor.runAction(SCNAction.moveBy(x: 0.1, y: 0, z: -0.75, duration: 10))
+                mainFloor.runAction(SCNAction.moveBy(x: -0.5, y: 0, z: 0, duration: 5))
                 //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
+                //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15)) //old chapter 1
+                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 90, z: 0, duration: 2)) //new chapter 1
                 //set the idle animation position to be at the new main character location and rotation
                 //mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = SCNVector3(0, -0.5, 0)
@@ -662,9 +669,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                mainFloor.runAction(SCNAction.moveBy(x: 1.4, y: 0, z: -0.2, duration: 15), completionHandler: stopWalkAnimation)
+                //mainFloor.runAction(SCNAction.moveBy(x: 1.4, y: 0, z: -0.2, duration: 15), completionHandler: stopWalkAnimation) //old chapter 1
+                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: -1, y: 1.25, z: 8.75), duration: 7), completionHandler: stopWalkAnimation)
                 //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -2.5, z: 0, duration: 15))
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -2.5, z: 0, duration: 15))
+                //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -2.5, z: 0, duration: 15)) //old chapter 1
+                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new chapter 1
                 //set the idle animation position to be at the new main character location and rotation
                 //mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = SCNVector3(0, -3, 0)
@@ -709,9 +718,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                mainFloor.runAction(SCNAction.moveBy(x: 0.35, y: 0, z: 1.65, duration: 15), completionHandler: stopWalkAnimation)
+                //mainFloor.runAction(SCNAction.moveBy(x: 0.35, y: 0, z: 1.65, duration: 15), completionHandler: stopWalkAnimation) //old chapter 1
+                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: 8, y: 1.25, z: -2.7), duration: 7), completionHandler: stopWalkAnimation) //new
                 //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 15))
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 15))
+                //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 15)) //old chapter 1
+                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new  ch 1
                 //set the idle animation position to be at the new main character location and rotation
                 //mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
@@ -756,9 +767,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                mainFloor.runAction(SCNAction.moveBy(x: -0.35, y: 0, z: 1.5, duration: 15), completionHandler: stopWalkAnimation)
+                //mainFloor.runAction(SCNAction.moveBy(x: -0.35, y: 0, z: 1.5, duration: 15), completionHandler: stopWalkAnimation) //old ch 1
+                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: -17.5, y: 1.25, z: -15.2), duration: 7), completionHandler: stopWalkAnimation) //new ch 1
                 //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
+                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new ch 1
                 //set the idle animation position to be at the new main character location and rotation
                 //mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = SCNVector3(0, -3.5, 0)
@@ -802,6 +814,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //TODO: Do stuff that wraps up the chapter
             print("Reached the end of the chapter")
+            
+            switch true {
+            case chapterOne:
+                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: 18.5, y: 1.9, z: 8.9), duration: 7)) //new ch 1
+                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new ch 1
+            case chapterTwo:
+                print("end sequence for chapter two")
+            case chapterThree:
+                print("end sequence for chapter three")
+            case chapterFour:
+                print("end sequence for chapter four")
+            case chapterFive:
+                print("end sequence for chapter five")
+            default:
+                break
+            }
             
         }
     }
@@ -966,6 +994,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         case shatterLetterTwo:
             letterTwo!.isPaused = false
+            print("LetterTwo is now set to false - Shatter that letter Two!!")
             animateLetterHide(fadeThis: letterTwo!)
             playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         case shatterLetterThree:

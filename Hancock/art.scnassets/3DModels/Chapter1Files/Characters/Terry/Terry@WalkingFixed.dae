@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2019-08-22T02:09:49Z</created>
-  <modified>2019-08-22T02:09:49Z</modified>
+  <created>2019-08-26T01:28:44Z</created>
+  <modified>2019-08-26T01:28:44Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -1131,7 +1131,7 @@
     <technique sid="common">
      <phong>
       <ambient>
-       <color>0 0 0 1</color>
+       <color>1 1 1 1</color>
       </ambient>
       <diffuse>
        <texture texture="ID285_image283" texcoord="CHANNEL2"/>
@@ -1444,7 +1444,7 @@
             <matrix>1 0 0 0 0 1 0 0.617579 0 0 1 0 0 0 0 1 </matrix>
            </node>
            <node id="Chips" name="Chips">
-            <matrix>-0.001541415 0.6974998 0.1007055 0.005476832 0.7022889 0.009899476 -0.05781474 -0.2672347 -0.05863591 0.1002296 -0.6951009 -0.137779 0 0 0 1 </matrix>
+            <matrix>0.4317372 0.5477858 0.100702 0.01792562 0.5567229 -0.4281612 -0.05781298 -0.2743813 0.01624426 0.1149751 -0.6950759 -0.2237036 0 0 0 1 </matrix>
             <instance_geometry url="#ChipsMesh">
              <bind_material>
               <technique_common>

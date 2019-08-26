@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2019-08-22T03:33:24Z</created>
-  <modified>2019-08-22T03:33:24Z</modified>
+  <created>2019-08-26T01:35:04Z</created>
+  <modified>2019-08-26T01:35:04Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -618,7 +618,9 @@
  <library_visual_scenes>
   <visual_scene id="scene132">
    <node id="MainCharacter" name="MainCharacter">
+    <matrix>1 0 0 -147.5339 0 1 0 0 0 0 1 0 0 0 0 1 </matrix>
     <node id="Indy" name="Indy">
+     <matrix>1 0 0 0.3486023 0 1 0 0 0 0 1 0 0 0 0 1 </matrix>
      <instance_controller url="#skin130">
       <skeleton>#Armature</skeleton>
       <bind_material>
