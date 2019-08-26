@@ -620,11 +620,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                // x= (-)west/(+)east, z= (-)north/(+)south
                 let move1 = SCNAction.moveBy(x: 0.05, y: 0, z: -1.5, duration: 8)
                 let move2 = SCNAction.moveBy(x: 0.5, y: 0, z: -0.02, duration: 6)
                 let chapter1Letter3MoveSeq = SCNAction.sequence([move1, move2])
                 mainFloor.runAction((chapter1Letter3MoveSeq), completionHandler: stopWalkAnimation)
                 
+                // (-) = clockwise, (+) = couter-clockwise
                 let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 7)
                 let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
                 let chapter1Letter3RotSeq = SCNAction.sequence([rotate1, rotate2])
@@ -670,14 +672,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                let move1 = SCNAction.moveBy(x: 0.05, y: 0, z: -1.5, duration: 8)
-                let move2 = SCNAction.moveBy(x: 0.5, y: 0, z: -0.02, duration: 6)
-                let chapter1Letter3MoveSeq = SCNAction.sequence([move1, move2])
+                // x= (-)west/(+)east, z= (-)north/(+)south
+                let move1 = SCNAction.moveBy(x: 0.4, y: 0, z: 0.2, duration: 3)
+                let move2 = SCNAction.moveBy(x: 0.0, y: 0, z: 2.25, duration: 6)
+                let move3 = SCNAction.moveBy(x: 0.5, y: 0, z: 0, duration: 3)
+                let chapter1Letter3MoveSeq = SCNAction.sequence([move1, move2, move3])
                 mainFloor.runAction((chapter1Letter3MoveSeq), completionHandler: stopWalkAnimation)
-                
-                let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 7)
-                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
-                let chapter1Letter3RotSeq = SCNAction.sequence([rotate1, rotate2])
+                // (+) = clockwise, (-) = couter-clockwise
+                let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 2)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: 0.5, z: 0, duration: 1)
+                let rotate3 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 6)
+                let rotate4 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                let chapter1Letter3RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3, rotate4])
                 mainCharacterIdle.runAction(chapter1Letter3RotSeq)
                 
 
