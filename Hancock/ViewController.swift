@@ -574,7 +574,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //startAnimation(key: "walking")
                 //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15))
                 //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -0.3, z: 0, duration: 15)) //old ch 1
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1))
+                
+                //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1))
                 //set the idle animation position to be at the new main character location and rotation
                 //mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
@@ -619,14 +620,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                //mainFloor.runAction(SCNAction.moveBy(x: -0.15, y: 0, z: -1.45, duration: 15), completionHandler: stopWalkAnimation) //old chapter 1
-                mainFloor.runAction(SCNAction.moveBy(x: 0.1, y: 0, z: -0.75, duration: 10))
-                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
-                //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15)) //old chapter 1
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 90, z: 0, duration: 2)) //new chapter 1
-                //set the idle animation position to be at the new main character location and rotation
-                //mainCharacterIdle.position = mainCharacterMoving.position
-                //mainCharacterIdle.eulerAngles = SCNVector3(0, -0.5, 0)
+                let move1 = SCNAction.moveBy(x: 0.05, y: 0, z: -1.5, duration: 8)
+                let move2 = SCNAction.moveBy(x: 0.5, y: 0, z: -0.02, duration: 6)
+                let chapter1Letter3MoveSeq = SCNAction.sequence([move1, move2])
+                mainFloor.runAction((chapter1Letter3MoveSeq), completionHandler: stopWalkAnimation)
+                
+                let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 7)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                let chapter1Letter3RotSeq = SCNAction.sequence([rotate1, rotate2])
+                mainCharacterIdle.runAction(chapter1Letter3RotSeq)
                 
                 //L
                 
@@ -668,14 +670,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                //mainFloor.runAction(SCNAction.moveBy(x: 1.4, y: 0, z: -0.2, duration: 15), completionHandler: stopWalkAnimation) //old chapter 1
-                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: -1, y: 1.25, z: 8.75), duration: 7), completionHandler: stopWalkAnimation)
-                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -2.5, z: 0, duration: 15))
-                //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -2.5, z: 0, duration: 15)) //old chapter 1
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new chapter 1
-                //set the idle animation position to be at the new main character location and rotation
-                //mainCharacterIdle.position = mainCharacterMoving.position
-                //mainCharacterIdle.eulerAngles = SCNVector3(0, -3, 0)
+                let move1 = SCNAction.moveBy(x: 0.05, y: 0, z: -1.5, duration: 8)
+                let move2 = SCNAction.moveBy(x: 0.5, y: 0, z: -0.02, duration: 6)
+                let chapter1Letter3MoveSeq = SCNAction.sequence([move1, move2])
+                mainFloor.runAction((chapter1Letter3MoveSeq), completionHandler: stopWalkAnimation)
+                
+                let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 7)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                let chapter1Letter3RotSeq = SCNAction.sequence([rotate1, rotate2])
+                mainCharacterIdle.runAction(chapter1Letter3RotSeq)
+                
 
                 //F
                 
