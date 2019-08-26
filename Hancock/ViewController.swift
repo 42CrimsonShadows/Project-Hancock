@@ -621,7 +621,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //animate the main character to rotate a bit on the y axis
                 //mainFloor.runAction(SCNAction.moveBy(x: -0.15, y: 0, z: -1.45, duration: 15), completionHandler: stopWalkAnimation) //old chapter 1
                 mainFloor.runAction(SCNAction.moveBy(x: 0.1, y: 0, z: -0.75, duration: 10))
-                mainFloor.runAction(SCNAction.moveBy(x: -0.5, y: 0, z: 0, duration: 5))
                 //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
                 //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15)) //old chapter 1
                 mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 90, z: 0, duration: 2)) //new chapter 1

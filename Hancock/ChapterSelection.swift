@@ -180,13 +180,13 @@ class ChapterSelection {
         
         //Load Idle Animation Node
         //let idleTerryScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@IdleFixed.dae")!
-        let idleTerryScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@DancingFixed.dae")!
+        let idleTerryScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@DanceFixed.dae")!
         for child in idleTerryScene.rootNode.childNodes {
             SideCharacter1idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter1idleNode)
-        SideCharacter1idleNode.scale = SCNVector3(0.004, 0.004, 0.004)
-        SideCharacter1idleNode.position = SCNVector3(-19.4, 5.18, -0.6)
+        SideCharacter1idleNode.scale = SCNVector3(0.003, 0.003, 0.003)
+        SideCharacter1idleNode.position = SCNVector3(-19.4, 5.2, -0.6)
         
         //Load Idle Animation Node
         //let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")!
@@ -240,7 +240,7 @@ class ChapterSelection {
         //prepareAnimation(withKey: "SideCharacter1Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@IdleFixed", animationIdentifier: "Terry@IdleFixed-1")
         prepareAnimation(withKey: "SideCharacter1Walking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@WalkingFixed", animationIdentifier: "Terry@WalkingFixed-1")
         prepareAnimation(withKey: "SideCharacter1Waving", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@WavingFixed", animationIdentifier: "Terry@WavingFixed-1")
-        prepareAnimation(withKey: "SideCharacter1Dancing", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@DancingFixed", animationIdentifier: "Terry@DancingFixed-1")
+        prepareAnimation(withKey: "SideCharacter1Dancing", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@DanceFixed", animationIdentifier: "Terry@DanceFixed-1")
         
         //load animation for side character 2
         prepareAnimation(withKey: "SideCharacter2Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed", animationIdentifier: "Lin@IdleFixed-1")
