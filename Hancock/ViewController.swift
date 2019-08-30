@@ -163,7 +163,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("*** ViewWillAppear()")
         
         //attempt to shatter a letter when the viuew loads
-        //(will only happen is a letter shatter boolean is true and ready)
+        //(will only happen if a letter shatter boolean is true and ready)
         playShatterAnimation()
     }
     
@@ -465,13 +465,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func startTransitionAnimation(key: String) {
         //add the animation to start playing it right away
         //sceneView.scene.rootNode.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        print("Adding animation")
         mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
     }
     
     func stopTransitionAnimation(key: String) {
         //stop the animation with a smooth transition
         //sceneView.scene.rootNode.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
-        print("Removing animation)")
+        print("Removing animation")
         mainCharacterIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
     }
     
@@ -497,10 +498,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        walkPlayer.play()
         
         self.playAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
-
-        //TODO: Load unique floor movement locations for particular chapter
+        
         switch gameProgress {
-            
         case .toLetter1:
             //change points based on Chapter
             switch true {
@@ -622,7 +621,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //animate the main character to rotate a bit on the y axis
                 // x= (-)west/(+)east, z= (-)north/(+)south
                 let move1 = SCNAction.moveBy(x: 0.05, y: 0, z: -1.5, duration: 8)
-                let move2 = SCNAction.moveBy(x: 0.5, y: 0, z: -0.02, duration: 6)
+                let move2 = SCNAction.moveBy(x: 0.5, y: 0, z: -0.02, duration: 5)
                 let chapter1Letter3MoveSeq = SCNAction.sequence([move1, move2])
                 mainFloor.runAction((chapter1Letter3MoveSeq), completionHandler: stopWalkAnimation)
                 
@@ -673,19 +672,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 // x= (-)west/(+)east, z= (-)north/(+)south
-                let move1 = SCNAction.moveBy(x: 0.4, y: 0, z: 0.2, duration: 3)
-                let move2 = SCNAction.moveBy(x: 0.0, y: 0, z: 2.25, duration: 6)
-                let move3 = SCNAction.moveBy(x: 0.5, y: 0, z: 0, duration: 3)
-                let chapter1Letter3MoveSeq = SCNAction.sequence([move1, move2, move3])
-                mainFloor.runAction((chapter1Letter3MoveSeq), completionHandler: stopWalkAnimation)
-                // (+) = clockwise, (-) = couter-clockwise
-                let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 2)
-                let rotate2 = SCNAction.rotateBy(x: 0, y: 0.5, z: 0, duration: 1)
-                let rotate3 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 6)
-                let rotate4 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
-                let chapter1Letter3RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3, rotate4])
-                mainCharacterIdle.runAction(chapter1Letter3RotSeq)
-                
+                let move1 = SCNAction.moveBy(x: 0.3, y: 0, z: 0.1, duration: 2)
+                let move2 = SCNAction.moveBy(x: 0.0, y: 0, z: 1.8, duration: 7)
+                let move3 = SCNAction.moveBy(x: 0.6, y: 0, z: 0.2, duration: 3)
+                let chapter1Letter4MoveSeq = SCNAction.sequence([move1, move2, move3])
+                mainFloor.runAction((chapter1Letter4MoveSeq), completionHandler: stopWalkAnimation)
+                // (-) = clockwise, (+) = couter-clockwise
+                let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 1)
+                let rotate3 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 7)
+                let rotate4 = SCNAction.rotateBy(x: 0, y: 1.75, z: 0, duration: 1)
+                let chapter1Letter4RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3, rotate4])
+                mainCharacterIdle.runAction(chapter1Letter4RotSeq)
 
                 //F
                 
@@ -727,14 +725,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                //mainFloor.runAction(SCNAction.moveBy(x: 0.35, y: 0, z: 1.65, duration: 15), completionHandler: stopWalkAnimation) //old chapter 1
-                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: 8, y: 1.25, z: -2.7), duration: 7), completionHandler: stopWalkAnimation) //new
-                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 15))
-                //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 15)) //old chapter 1
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new  ch 1
-                //set the idle animation position to be at the new main character location and rotation
-                //mainCharacterIdle.position = mainCharacterMoving.position
-                //mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+                // x= (-)west/(+)east, z= (-)north/(+)south
+                let move1 = SCNAction.moveBy(x: 0, y: 0, z: 0, duration: 1)
+                let move2 = SCNAction.moveBy(x: 0.5, y: 0, z: -0.2, duration: 2)
+                let move3 = SCNAction.moveBy(x: 0.15, y: 0, z: -0.8, duration: 6)
+                let chapter1Letter5MoveSeq = SCNAction.sequence([move1, move2, move3])
+                mainFloor.runAction((chapter1Letter5MoveSeq), completionHandler: stopWalkAnimation)
+                // (-) = clockwise, (+) = couter-clockwise
+                let rotate1 = SCNAction.rotateBy(x: 0, y: 0.6, z: 0, duration: 1)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)
+                let rotate3 = SCNAction.rotateBy(x: 0, y: 0.75, z: 0, duration: 1)
+                let chapter1Letter5RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3])
+                mainCharacterIdle.runAction(chapter1Letter5RotSeq)
                 
                 //E
                 
@@ -776,13 +778,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
-                //mainFloor.runAction(SCNAction.moveBy(x: -0.35, y: 0, z: 1.5, duration: 15), completionHandler: stopWalkAnimation) //old ch 1
-                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: -17.5, y: 1.25, z: -15.2), duration: 7), completionHandler: stopWalkAnimation) //new ch 1
-                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: -0.5, z: 0, duration: 15))
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new ch 1
-                //set the idle animation position to be at the new main character location and rotation
-                //mainCharacterIdle.position = mainCharacterMoving.position
-                //mainCharacterIdle.eulerAngles = SCNVector3(0, -3.5, 0)
+                // x= (-)west/(+)east, z= (-)north/(+)south
+                let move1 = SCNAction.moveBy(x: 0.1, y: 0, z: -0.95, duration: 6)
+                let move2 = SCNAction.moveBy(x: 0.6, y: 0, z: -0.1, duration: 3)
+                //TO-Do: invite Hannah to go to the tree for the surprise party (sound file)
+                //pause to go through idny's dialog to hannah
+                let pauseMove = SCNAction.moveBy(x: 0, y: 0, z: 0, duration: 10)
+                let move3 = SCNAction.moveBy(x: 0.3, y: 0, z: 0.1, duration: 2)
+                let move4 = SCNAction.moveBy(x: 0, y: -0.1, z: 1.9, duration: 6)
+                let chapter1Letter6MoveSeq = SCNAction.sequence([move1, move2, pauseMove, move3, move4])
+                mainFloor.runAction((chapter1Letter6MoveSeq), completionHandler: stopWalkAnimation)
+                // (-) = clockwise, (+) = couter-clockwise
+                let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 5)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                let pauseRotation1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 13)
+                let rotate3 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)
+                let rotate4 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                let chapter1Letter6RotSeq = SCNAction.sequence([rotate1, rotate2, pauseRotation1, rotate3, rotate4])
+                mainCharacterIdle.runAction(chapter1Letter6RotSeq)
                 
                 //H
                 
@@ -858,7 +871,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         switch gameProgress {
         case .toLetter1:
-            
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
@@ -994,33 +1006,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func playShatterAnimation () {
+    func playShatterAnimation() {
         switch true {
-        case shatterLetterOne:
-            letterOne!.isPaused = false
-            //playAnimation(key: "ShatterA")
-            animateLetterHide(fadeThis: letterOne!)
-            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
-        case shatterLetterTwo:
-            letterTwo!.isPaused = false
-            print("LetterTwo is now set to false - Shatter that letter Two!!")
-            animateLetterHide(fadeThis: letterTwo!)
-            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
-        case shatterLetterThree:
-            letterThree!.isPaused = false
-            animateLetterHide(fadeThis: letterThree!)
-            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
-        case shatterLetterFour:
-            letterFour!.isPaused = false
-            animateLetterHide(fadeThis: letterFour!)
+        case shatterLetterSix:
+            letterSix!.isPaused = false
+            animateLetterHide(fadeThis: letterSix!)
             playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         case shatterLetterFive:
             letterFive!.isPaused = false
             animateLetterHide(fadeThis: letterFive!)
             playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
-        case shatterLetterSix:
-            letterSix!.isPaused = false
-            animateLetterHide(fadeThis: letterSix!)
+        case shatterLetterFour:
+            letterFour!.isPaused = false
+            animateLetterHide(fadeThis: letterFour!)
+            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+        case shatterLetterThree:
+            letterThree!.isPaused = false
+            animateLetterHide(fadeThis: letterThree!)
+            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+        case shatterLetterTwo:
+            letterTwo!.isPaused = false
+            animateLetterHide(fadeThis: letterTwo!)
+            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+        case shatterLetterOne:
+            letterOne!.isPaused = false
+            animateLetterHide(fadeThis: letterOne!)
             playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         default:
             break

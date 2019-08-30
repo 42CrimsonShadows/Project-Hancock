@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2019-08-26T16:36:59Z</created>
-  <modified>2019-08-26T16:36:59Z</modified>
+  <created>2019-08-28T19:42:43Z</created>
+  <modified>2019-08-28T19:42:43Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -479,12 +479,12 @@
   </image>
  </library_images>
  <library_materials>
-  <material id="Material" name="Material">
-   <instance_effect url="#effect_Material"/>
+  <material id="Mat_Indy" name="Mat_Indy">
+   <instance_effect url="#effect_Mat_Indy"/>
   </material>
  </library_materials>
  <library_effects>
-  <effect id="effect_Material">
+  <effect id="effect_Mat_Indy">
    <profile_COMMON>
     <newparam sid="ID122_image121_surface">
      <surface type="2D">
@@ -509,7 +509,10 @@
       <diffuse>
        <texture texture="ID122_image121" texcoord="CHANNEL2"/>
       </diffuse>
-      <transparent opaque="RGB_ZERO">
+      <reflective>
+       <color>0.247759 0.247759 0.247759 1</color>
+      </reflective>
+      <transparent opaque="A_ONE">
        <color>0 0 0 1</color>
       </transparent>
       <transparency>
@@ -623,7 +626,7 @@
       <skeleton>#Armature</skeleton>
       <bind_material>
        <technique_common>
-        <instance_material symbol="geometryElement129" target="#Material">
+        <instance_material symbol="geometryElement129" target="#Mat_Indy">
          <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
         </instance_material>
        </technique_common>

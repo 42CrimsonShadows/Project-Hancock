@@ -42,13 +42,90 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hancock/ViewController.swift"
-            timestampString = "588545998.506373"
+            timestampString = "588791260.650932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "479"
-            endingLineNumber = "479"
+            startingLineNumber = "775"
+            endingLineNumber = "775"
             landmarkName = "playWalkAnimation()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.61816"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "13912">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.619447"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "15576">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.620666"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "15832">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.621977"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "16088">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.6233521"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "16344">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,29 +135,90 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hancock/ViewController.swift"
-            timestampString = "588545998.506765"
+            timestampString = "588791260.651268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "504"
-            endingLineNumber = "504"
+            startingLineNumber = "776"
+            endingLineNumber = "776"
             landmarkName = "playWalkAnimation()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hancock/ViewController.swift"
-            timestampString = "588545998.507024"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "523"
-            endingLineNumber = "523"
-            landmarkName = "playWalkAnimation()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.730706"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "13912">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.732165"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "15576">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.733493"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "15832">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.734915"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "16088">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hancock.ViewController.playWalkAnimation() -&gt; ()"
+                  moduleName = "Hancock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift"
+                  timestampString = "588717200.7362601"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "777"
+                  endingLineNumber = "777"
+                  offsetFromSymbolStart = "16344">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

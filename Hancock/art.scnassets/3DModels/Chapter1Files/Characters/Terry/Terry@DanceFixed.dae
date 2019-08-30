@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2019-08-26T16:34:46Z</created>
-  <modified>2019-08-26T16:34:46Z</modified>
+  <created>2019-08-28T19:48:35Z</created>
+  <modified>2019-08-28T19:48:35Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -778,23 +778,24 @@
      </sampler2D>
     </newparam>
     <technique sid="common">
-     <phong>
-      <ambient>
-       <color>0 0 0 1</color>
-      </ambient>
-      <diffuse>
-       <texture texture="ID194_image193" texcoord="CHANNEL2"/>
-      </diffuse>
+     <constant>
       <transparent opaque="RGB_ZERO">
        <color>0 0 0 1</color>
       </transparent>
       <transparency>
        <float>1</float>
       </transparency>
-      <index_of_refraction>
-       <float>1</float>
-      </index_of_refraction>
-     </phong>
+     </constant>
+     <extra>
+      <technique profile="SceneKit">
+       <constant_ambient>
+        <color>0 0 0 1</color>
+       </constant_ambient>
+       <constant_diffuse>
+        <texture texture="ID194_image193" texcoord="CHANNEL2"/>
+       </constant_diffuse>
+      </technique>
+     </extra>
     </technique>
    </profile_COMMON>
    <extra>

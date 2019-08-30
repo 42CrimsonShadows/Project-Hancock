@@ -186,7 +186,7 @@ class ChapterSelection {
         }
         lvlFloor.addChildNode(SideCharacter1idleNode)
         SideCharacter1idleNode.scale = SCNVector3(0.003, 0.003, 0.003)
-        SideCharacter1idleNode.position = SCNVector3(-19.4, 5.2, -0.6)
+        SideCharacter1idleNode.position = SCNVector3(-19.4, 5.45, -0.4)
         
         //Load Idle Animation Node
         //let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")!
@@ -198,7 +198,7 @@ class ChapterSelection {
         SideCharacter2idleNode.scale = SCNVector3(0.002, 0.002, 0.002)
         //SideCharacter2idleNode.eulerAngles = SCNVector3(0, -61, 0)
         SideCharacter2idleNode.eulerAngles = SCNVector3(0, -51, 0)
-        SideCharacter2idleNode.position = SCNVector3(-7.26, 1.75, -16.45)
+        SideCharacter2idleNode.position = SCNVector3(-7.26, 1.9, -16.45)
         
         //Load Idle Animation Node
         //let idleFrancineScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@IdleFixed.dae")!
@@ -275,14 +275,21 @@ class ChapterSelection {
     }
     
     func loadChapter1SoundFiles() -> [String: String] {
-        let chapter1SoundArray = ["Narration1" : "Line1",
-                                  "Narration2" : "Line2",
-                                  "Narration3" : "Line3",
-                                  "Narration4" : "Line4",
-                                  "Narration5" : "Line5",
-                                  "Narration6" : "Line6",
-                                  "Narration7" : "Line7",
-                                  "Narration8" : "Line8",
+        let chapter1SoundArray = ["Narration1" : "Chapter1/ch1-I-Line1",
+                                  "Narration2" : "Chapter1/ch1-I-Line2",
+                                  "Narration3" : "Chapter1/ch1-I-Line3",
+                                  "Narration4" : "Chapter1/ch1-I-Line4",
+                                  "Narration5" : "Chapter1/ch1-I-Line5",
+                                  "Narration6" : "Chapter1/ch1-T-Line1",
+                                  "Narration7" : "Chapter1/ch1-T_Line2",
+                                  "Narration8" : "Chapter1/ch1-T-Line3",
+                                  "Narration9" : "Chapter1/ch1-T-Line4",
+                                  "Narration10" : "Chapter1/ch1-T-Line5",
+                                  "Narration11" : "Chapter1/ch1-T-Line6",
+                                  "Narration12" : "Chapter1/ch1-L-Line1",
+                                  "Narration12" : "Chapter1/ch1-F-Line1",
+                                  "Narration12" : "Chapter1/ch1-E-Line1",
+                                  "Narration12" : "Chapter1/ch1-H-Line1",
                                   "Background1" : "Birds1",
                                   "Background2" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
