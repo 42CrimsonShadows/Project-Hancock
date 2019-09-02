@@ -245,55 +245,6 @@ class CanvasView: UIView {
             break
         }
         
-        //        if !AtoB {
-        //
-        //            //make first dot
-        //            aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-        //            aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-        //            //context.move(to: aStartPoint)
-        //            //context.addLine(to: aEndPoint)
-        //            greenDot?.isHidden = false
-        //
-        //            //make second dot
-        //            bStartPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-        //            bEndPoint = CGPoint(x: bounds.maxX * 0.1, y: bounds.maxY * 0.85)
-        //            //context.move(to: bStartPoint)
-        //            //context.addLine(to: bEndPoint)
-        //            redDot?.isHidden = false
-        //        }
-        //        else if AtoB && !AtoC {
-        //            //make first dot
-        //            self.aStartPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-        //            self.aEndPoint = CGPoint(x: bounds.maxX * 0.5, y: bounds.maxY * 0.15)
-        //            //context.move(to: aStartPoint)
-        //            //context.addLine(to: aEndPoint)
-        //            greenDot?.isHidden = true
-        //            blueDot?.isHidden = false
-        //
-        //            //make second dot
-        //            self.cStartPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
-        //            self.cEndPoint = CGPoint(x: bounds.maxX * 0.9, y: bounds.maxY * 0.85)
-        //            //context.move(to: cStartPoint)
-        //            //context.addLine(to: cEndPoint)
-        //            orangeDot?.isHidden = false
-        //            redDot?.isHidden = true
-        //        }
-        //        else {
-        //            self.dStartPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
-        //            self.dEndPoint = CGPoint(x: bounds.maxX * 0.2, y: bounds.maxY * 0.65)
-        //            //context.move(to: dStartPoint)
-        //            //context.addLine(to: dEndPoint)
-        //            purpleDot?.isHidden = false
-        //            blueDot?.isHidden = true
-        //
-        //            self.eStartPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
-        //            self.eEndPoint = CGPoint(x: bounds.maxX * 0.8, y: bounds.maxY * 0.65)
-        //            //context.move(to: eStartPoint)
-        //            //context.addLine(to: eEndPoint)
-        //            yellowDot?.isHidden = false
-        //            orangeDot?.isHidden = true
-        //        }
-        
         if needsFullRedraw {
             setFrozenImageNeedsUpdate()
             frozenContext.clear(bounds)
@@ -456,18 +407,33 @@ class CanvasView: UIView {
                 //playAudioFile(file: "RockBreak1", type: "wav")
                 playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
                 
+                switch true {
+                case chapterOne:
+                    print("do stuff")
+                    
+                case chapterTwo:
+                    print("do stuff")
+                case chapterThree:
+                    print("do stuff")
+                case chapterFour:
+                    print("do stuff")
+                case chapterFive:
+                    print("do stuff")
+                default:
+                    break
+                }
+                
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                     //self.playAudioFile(file: "Line5", type: "mp3")
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
                     //wait 1 second
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         //self.playAudioFile(file: "Line6", type: "mp3")
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
                         //wait 3 seconds
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                             self.blueDot?.pulsate(duration: 0.6)
-                            
                             //wait 2 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                 self.orangeDot?.pulsate(duration: 0.6)
@@ -491,21 +457,24 @@ class CanvasView: UIView {
                 playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
                 
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    //self.playAudioFile(file: "Line7", type: "mp3")
-                    if self.narrationPlayer.isPlaying {
-                        self.narrationPlayer.stop()
-                    }
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
-                    //wait 2 seconds
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.purpleDot?.pulsate(duration: 0.6)
-                        
-                        //wait 2 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            self.yellowDot?.pulsate(duration: 0.6)
-                        })
-                    })
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                    //self.playAudioFile(file: "Line5", type: "mp3")
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
+                    
+//                    //wait 1 second
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//                        //self.playAudioFile(file: "Line7", type: "mp3")
+//                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
+//                        //wait 2 seconds
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//                            self.purpleDot?.pulsate(duration: 0.6)
+//
+//                            //wait 2 seconds
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//                                self.yellowDot?.pulsate(duration: 0.6)
+//                            })
+//                        })
+//                    })
                 })
                 letterState = .P5_P6
                 Line1 = false
@@ -515,6 +484,22 @@ class CanvasView: UIView {
                 if activityPoints.count < 9 {
                     letterComplete = true
                 }
+                else {
+                    //wait 1 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        //self.playAudioFile(file: "Line7", type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
+                        //wait 2 seconds
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            self.purpleDot?.pulsate(duration: 0.6)
+                            
+                            //wait 2 seconds
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                self.yellowDot?.pulsate(duration: 0.6)
+                            })
+                        })
+                    })
+                }
                 
             case .P5_P6:
                 //A3GreenLine?.isHidden = false
@@ -523,11 +508,18 @@ class CanvasView: UIView {
                 playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
                 
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                    //self.playAudioFile(file: "Line5", type: "mp3")
                     self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
-                    self.purpleDot?.isHidden = true
-                    self.yellowDot?.isHidden = true
+                
+                    //wait 1 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
+                        self.purpleDot?.isHidden = true
+                        self.yellowDot?.isHidden = true
+                    })
                 })
+                
                 letterState = .P7_P8
                 Line1 = false
                 Line2 = false
@@ -539,7 +531,6 @@ class CanvasView: UIView {
                 
             case .P7_P8:
                 //A4GreenLine?.isHidden = false
-                
                 //possible fourth line stuff
                 print("reached .P7_P8")
                 Line1 = false

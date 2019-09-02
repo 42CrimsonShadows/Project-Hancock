@@ -194,7 +194,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sceneView.preferredFramesPerSecond = 60
         sceneView.antialiasingMode = .multisampling2X
         sceneView.debugOptions = [
-            //ARSCNDebugOptions.showFeaturePoints,
+            ARSCNDebugOptions.showFeaturePoints,
             //ARSCNDebugOptions.showWorldOrigin,
             //SCNDebugOptions.showPhysicsShapes,
             //SCNDebugOptions.showBoundingBoxes
@@ -567,6 +567,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //change points based on Chapter
             switch true {
             case chapterOne:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //play narration for finishing letter 2
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                })
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -1.3, duration: 10), completionHandler: stopWalkAnimation) //old ch 1
@@ -617,6 +621,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //change points based on Chapter
             switch true {
             case chapterOne:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //play narration for finishing letter 2
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration17"]!, type: "mp3")
+                })
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 // x= (-)west/(+)east, z= (-)north/(+)south
@@ -871,23 +879,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         switch gameProgress {
         case .toLetter1:
-            //wait 2 seconds
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
-                //wait 4 seconds
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                    //get ready to shatter a when ViewDidAppear() is called
+            //wait 1 seconds (small pause)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                //play game intro part 2 (segway into first letter activity)
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                
+                //wait 5 seconds for game intro2 to finish
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                    //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
                     print("Prepare to shatter letter 1")
                     self.shatterLetterOne = true
                     
-                    //TODO: Make the letter passed in change based on the Book/Chapter Selected
-                    
+                    //trasition to the activity page for the first letter
                     print("Loading activity \(chapterSelectedLetterArray![0])")
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
                     
-                    //wait 6 seconds
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                    //wait 1 seconds for the activity page to load
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        //play narration for the first audio instructions for the activity
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                     })
                 })
             })
@@ -896,7 +906,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter2:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -908,7 +918,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
                     })
                 })
             })
@@ -917,7 +927,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter3:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -929,7 +939,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
                     })
                 })
             })
@@ -938,7 +948,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter4:
             ///wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration24"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -950,7 +960,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration25"]!, type: "mp3")
                     })
                 })
             })
@@ -959,7 +969,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter5:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -971,7 +981,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
                     })
                 })
             })
@@ -980,7 +990,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter6:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration44"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -992,7 +1002,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration45"]!, type: "mp3")
                     })
                 })
             })
@@ -1001,7 +1011,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .chapterFinished:
             //finish chapter stuff
             print("Finish Chapter after animation stopped")
-            
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish"]!, type: "mp3")
+//            })
             //TODO: trigger finishing event
         }
     }
@@ -1038,33 +1050,65 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func animateLetterHide(fadeThis: SCNNode){
+        //Play finishing narration for each letter
+        switch self.gameProgress {
+        case .toLetter1 :
+            print("Do nothing")
+        case .toLetter2:
+            print("Do nothing")
+        case .toLetter3:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                //play game intro 1
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter2Finish"]!, type: "mp3")
+            })
+        case .toLetter4:
+            //play narration for finishing letter 4
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter3Finish"]!, type: "mp3")
+                })
+        case .toLetter5:
+            //play narration for finishing letter 5
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter4Finish"]!, type: "mp3")
+                    })
+        case .toLetter6:
+            //play narration for finishing letter 6
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter5Finish"]!, type: "mp3")
+                    })
+        case .chapterFinished :
+            //play narration for finishing the chapter
+           DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter6Finish"]!, type: "mp3")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish"]!, type: "mp3")
+                    })
+            })
+        }
+
         //wait 3 seconds and then fade the letter out to 0 opacity
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             fadeThis.runAction(SCNAction.fadeOpacity(to: 0, duration: 4))
             
             //have the main character walk to the next letter
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                 self.playWalkAnimation()
             })
         })
     }
     
     func storyTime(){
-        //Wait 2 second
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+        //Wait 3 second for game to load completely
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            //play game intro 1
             self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
         })
         
-        //wait 7 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+        //wait 7 seconds for the game intro1 to finsh
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
             
-            //self.MainCharacterWalk()
+            //move the main character to the first letter
             self.playWalkAnimation()
-            
-            //wait 3 seconds
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
-            })
         })
     }
     
