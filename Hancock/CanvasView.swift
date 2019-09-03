@@ -399,38 +399,161 @@ class CanvasView: UIView {
             needsFullRedraw = true
             setNeedsDisplay()
         }
+            
         else {
+            
+            let myLetterArray = loadletterNarration(currentletter: selectedActivity)
+            
             switch letterState {
+            case .P7_P8:
+                //A4GreenLine?.isHidden = false
+                //playAudioFile(file: "RockExplode", type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                
+                //wait 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //self.playAudioFile(file: "Line5", type: "mp3")
+                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
+                    
+                    //print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[7])")
+                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[7]]!, type: "mp3")
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[6]]!, type: "mp3")
+                    
+                    if !self.letterComplete {
+                        //wait 1 second
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
+                            
+                            //print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[8])")
+                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[8]]!, type: "mp3")
+                            self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[7]]!, type: "mp3")
+                            
+                            self.pinkDot?.isHidden = true
+                            self.whiteDot?.isHidden = true
+                        })
+                    }
+                })
+                print("reached .P7_P8")
+                Line1 = false
+                Line2 = false
+                Line3 = false
+                Line4 = false
+                letterComplete = true
+                
+            case .P5_P6:
+                //A3GreenLine?.isHidden = false
+                //playAudioFile(file: "RockExplode", type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                
+                
+                    //wait 1 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        //self.playAudioFile(file: "Line5", type: "mp3")
+                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
+                        
+                        print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[4])")
+                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[5]]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[4]]!, type: "mp3")
+                        
+                        if !self.letterComplete {
+                            //wait 1 second
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
+                                
+                                print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[5])")
+                                //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[6]]!, type: "mp3")
+                                self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[5]]!, type: "mp3")
+                                
+                                //wait 2 seconds
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                    self.pinkDot?.pulsate(duration: 0.6)
+                                    
+                                    //wait 2 seconds
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                        self.whiteDot?.pulsate(duration: 0.6)
+                                    })
+                                })
+                            })
+                        }
+                    })
+
+                letterState = .P7_P8
+                Line1 = false
+                Line2 = false
+                Line3 = false
+                Line4 = true
+                if activityPoints.count < 13 {
+                    letterComplete = true
+                }
+            case .P3_P4:
+                //A2GreenLine?.isHidden = false
+                
+                //playAudioFile(file: "RockBreak2", type: "aiff")
+                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                
+                
+                //wait 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //self.playAudioFile(file: "Line5", type: "mp3")
+                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
+                    
+                    print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[2])")
+                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[3]]!, type: "mp3")
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[2]]!, type: "mp3")
+                    
+                    if !self.letterComplete {
+                        //wait 1 second
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            //self.playAudioFile(file: "Line7", type: "mp3")
+                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
+                            
+                            print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[3])")
+                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[4]]!, type: "mp3")
+                            self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[3]]!, type: "mp3")
+                            
+                            //wait 2 seconds
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                self.purpleDot?.pulsate(duration: 0.6)
+                                
+                                //wait 2 seconds
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                    self.yellowDot?.pulsate(duration: 0.6)
+                                })
+                            })
+                        })
+                    }
+                })
+                letterState = .P5_P6
+                Line1 = false
+                Line2 = false
+                Line3 = true
+                Line4 = false
+                if activityPoints.count < 9 {
+                    letterComplete = true
+                }
+                
             case .P1_P2:
                 //A1GreenLine?.isHidden = false
-                
                 //playAudioFile(file: "RockBreak1", type: "wav")
                 playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
                 
-                switch true {
-                case chapterOne:
-                    print("do stuff")
-                    
-                case chapterTwo:
-                    print("do stuff")
-                case chapterThree:
-                    print("do stuff")
-                case chapterFour:
-                    print("do stuff")
-                case chapterFive:
-                    print("do stuff")
-                default:
-                    break
-                }
-                
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //self.playAudioFile(file: "Line5", type: "mp3")
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                    
+                    print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[0])")
+                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[0]]!, type: "mp3")
+                    self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[0]]!, type: "mp3")
                     //wait 1 second
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         //self.playAudioFile(file: "Line6", type: "mp3")
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
+                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
+                        
+                        print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[1])")
+                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[1]]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[1]]!, type: "mp3")
+                        
                         //wait 3 seconds
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                             self.blueDot?.pulsate(duration: 0.6)
@@ -449,95 +572,6 @@ class CanvasView: UIView {
                 if activityPoints.count < 5 {
                     letterComplete = true
                 }
-                
-            case .P3_P4:
-                //A2GreenLine?.isHidden = false
-                
-                //playAudioFile(file: "RockBreak2", type: "aiff")
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
-                
-                //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                    //self.playAudioFile(file: "Line5", type: "mp3")
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
-                    
-//                    //wait 1 second
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-//                        //self.playAudioFile(file: "Line7", type: "mp3")
-//                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
-//                        //wait 2 seconds
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-//                            self.purpleDot?.pulsate(duration: 0.6)
-//
-//                            //wait 2 seconds
-//                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-//                                self.yellowDot?.pulsate(duration: 0.6)
-//                            })
-//                        })
-//                    })
-                })
-                letterState = .P5_P6
-                Line1 = false
-                Line2 = false
-                Line3 = true
-                Line4 = false
-                if activityPoints.count < 9 {
-                    letterComplete = true
-                }
-                else {
-                    //wait 1 second
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        //self.playAudioFile(file: "Line7", type: "mp3")
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
-                        //wait 2 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            self.purpleDot?.pulsate(duration: 0.6)
-                            
-                            //wait 2 seconds
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.yellowDot?.pulsate(duration: 0.6)
-                            })
-                        })
-                    })
-                }
-                
-            case .P5_P6:
-                //A3GreenLine?.isHidden = false
-                
-                //playAudioFile(file: "RockExplode", type: "wav")
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
-                
-                //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                    //self.playAudioFile(file: "Line5", type: "mp3")
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
-                
-                    //wait 1 second
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
-                        self.purpleDot?.isHidden = true
-                        self.yellowDot?.isHidden = true
-                    })
-                })
-                
-                letterState = .P7_P8
-                Line1 = false
-                Line2 = false
-                Line3 = false
-                Line4 = true
-                if activityPoints.count < 13 {
-                    letterComplete = true
-                }
-                
-            case .P7_P8:
-                //A4GreenLine?.isHidden = false
-                //possible fourth line stuff
-                print("reached .P7_P8")
-                Line1 = false
-                Line2 = false
-                Line3 = false
-                Line4 = false
-                letterComplete = true
             }
         }
     }
@@ -655,5 +689,100 @@ class CanvasView: UIView {
             print("FXPlayer not available!")
         }
         self.FXPlayer.play()
+    }
+    
+    func loadletterNarration(currentletter: String) -> [String]{
+        
+        var narrationArray: [String] = []
+        
+        switch currentletter {
+        case "A":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "B":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "C":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "D":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "E":
+            print("Load E narration")
+            narrationArray = ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
+            //return ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
+        case "F":
+            print("Load F narration")
+            narrationArray = ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
+            //return ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
+        case "G":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "H":
+            print("Load H narration")
+            narrationArray = ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
+            //return ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
+        case "I":
+            print("Load I narration")
+            narrationArray = ["Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
+            //return ["Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
+        case "J":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "K":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "L":
+            print("Load L narration")
+            narrationArray = ["Narration20", "Narration21", "Narration22"]
+            //return ["Narration20", "Narration21", "Narration22"]
+        case "M":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "N":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "O":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "P":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "Q":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "R":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "S":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "T":
+            print("Load T narration")
+            narrationArray = ["Narration13", "Narration14", "Narration15"]
+            //return ["Narration13", "Narration14", "Narration15"]
+        case "U":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "V":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "W":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "X":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "Y":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        case "Z":
+            print("do stuff")
+            return ["Narration", "Narration"]
+        default:
+            return ["Narration", "Narration"]
+        }
+        return narrationArray
     }
 }
