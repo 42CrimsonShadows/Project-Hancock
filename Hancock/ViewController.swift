@@ -416,7 +416,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Idle", recursively: true)
         mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter", recursively: true)
         mainCharacterIdle.isHidden = true
-        
         charcterOneIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter1", recursively: true)
         charcterOneIdle?.isHidden = false
         charcterTwoIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter2", recursively: true)
@@ -479,24 +478,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //func playAnimation1() {
     func playWalkAnimation() {
         //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
-        //mainCharacterMoving.isHidden = false
-        //mainCharacterIdle.isHidden = true
         startTransitionAnimation(key: "MainCharacterWalking")
-        
-        //start playing the walking sound
-//        let walkAudioPath = Bundle.main.path(forResource: "Gravel and Grass Walk", ofType: "wav", inDirectory: "art.scnassets/Sounds")
-//        do
-//        {
-//            try walkPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: walkAudioPath!))
-//            walkPlayer.enableRate = true
-//            walkPlayer.rate = 0.5
-//        } catch {
-//            print("WalkPlayer not available!")
-//        }
-//
-//        walkPlayer.setVolume(0.5, fadeDuration: 0)
-//        walkPlayer.play()
-        
+        //play walk sound
         self.playAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
         
         switch gameProgress {
@@ -847,7 +830,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             switch true {
             case chapterOne:
-                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: 18.5, y: 1.9, z: 8.9), duration: 7)) //new ch 1
+                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 0, z: 0), duration: 7)) //new ch 1
                 mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new ch 1
             case chapterTwo:
                 print("end sequence for chapter two")
@@ -1179,6 +1162,54 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //switch to the Letter A ViewController
         let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
         self.present(activityBoardView, animated: true)
+    }
+    func startAnimateSideCharacter(key: String, sideCharacter: String) {
+        switch sideCharacter {
+        case "Terry":
+            print("Do stuff")
+            charcterOneIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Lin":
+            print("Do stuff")
+            charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Francine":
+            print("Do stuff")
+            charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Eric":
+            print("Do stuff")
+            charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Hannah":
+            print("Do stuff")
+            charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Indy":
+            print("Do stuff")
+            mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        default:
+            break
+        }
+    }
+    func stopAnimateSideCharacter(key: String, sideCharacter: String) {
+        switch sideCharacter {
+        case "Terry":
+            print("Do stuff")
+            charcterOneIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Lin":
+            print("Do stuff")
+            charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Francine":
+            print("Do stuff")
+            charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Eric":
+            print("Do stuff")
+            charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Hannah":
+            print("Do stuff")
+            charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        case "Indy":
+            print("Do stuff")
+            mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        default:
+            break
+        }
     }
 }
 
