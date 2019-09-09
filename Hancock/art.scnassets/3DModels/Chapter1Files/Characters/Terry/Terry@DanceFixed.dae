@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2019-08-28T19:48:35Z</created>
-  <modified>2019-08-28T19:48:35Z</modified>
+  <created>2019-09-09T18:56:33Z</created>
+  <modified>2019-09-09T18:56:33Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -895,137 +895,139 @@
  </library_controllers>
  <library_visual_scenes>
   <visual_scene id="scene204">
-   <node id="Armature" name="Armature">
-    <matrix sid="SID_16">94.8768 31.1511 5.29198 -12.1429 -3.73111 -5.58591 99.7741 265.107 31.3764 -94.8599 -4.13745 -96.7407 0 0 0 1 </matrix>
-    <node id="choost" name="choost" sid="SID_33" type="JOINT">
-     <matrix sid="SID_17">0.997867 0.032053 -0.056867 0 -0.043795 -0.317272 -0.947323 -0 -0.048407 0.947793 -0.315192 0 0 0 0 1 </matrix>
-     <node id="hood" name="hood" sid="SID_34" type="JOINT">
-      <matrix sid="SID_3">0.98771 -0.096115 -0.123252 -0 0.055657 0.953166 -0.297283 2.17959 0.146053 0.286769 0.946801 -0 0 0 0 1 </matrix>
-      <node id="antennooFBXASC046l" name="antennooFBXASC046l" sid="SID_35" type="JOINT">
-       <matrix sid="SID_14">0.995647 0.053526 0.0763 0.324337 -0.024739 0.941056 -0.337346 0.870689 -0.089859 0.33399 0.938284 0.249609 0 0 0 1 </matrix>
-       <node id="antennooFBXASC046l_end" name="antennooFBXASC046l_end" sid="SID_36" type="JOINT">
-        <matrix sid="SID_25">1 -0 0 0 0 1 0 2.30816 -0 -0 1 -0 0 0 0 1 </matrix>
-        <node id="antennooFBXASC046l_end_end" name="antennooFBXASC046l_end_end">
-         <matrix>1 0 0 0 0 1 0 2.308159 0 0 1 0 0 0 0 1 </matrix>
+   <node id="SideCharacter1" name="SideCharacter1">
+    <node id="Terry" name="Terry">
+     <instance_controller url="#skin202">
+      <skeleton>#Armature</skeleton>
+      <bind_material>
+       <technique_common>
+        <instance_material symbol="geometryElement201" target="#lambert4SG">
+         <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
+        </instance_material>
+       </technique_common>
+      </bind_material>
+     </instance_controller>
+    </node>
+    <node id="Armature" name="Armature">
+     <matrix sid="SID_16">94.8768 31.1511 5.29198 -12.1429 -3.73111 -5.58591 99.7741 265.107 31.3764 -94.8599 -4.13745 -96.7407 0 0 0 1 </matrix>
+     <node id="choost" name="choost" sid="SID_33" type="JOINT">
+      <matrix sid="SID_17">0.997867 0.032053 -0.056867 0 -0.043795 -0.317272 -0.947323 -0 -0.048407 0.947793 -0.315192 0 0 0 0 1 </matrix>
+      <node id="hood" name="hood" sid="SID_34" type="JOINT">
+       <matrix sid="SID_3">0.98771 -0.096115 -0.123252 -0 0.055657 0.953166 -0.297283 2.17959 0.146053 0.286769 0.946801 -0 0 0 0 1 </matrix>
+       <node id="antennooFBXASC046l" name="antennooFBXASC046l" sid="SID_35" type="JOINT">
+        <matrix sid="SID_14">0.995647 0.053526 0.0763 0.324337 -0.024739 0.941056 -0.337346 0.870689 -0.089859 0.33399 0.938284 0.249609 0 0 0 1 </matrix>
+        <node id="antennooFBXASC046l_end" name="antennooFBXASC046l_end" sid="SID_36" type="JOINT">
+         <matrix sid="SID_25">1 -0 0 0 0 1 0 2.30816 -0 -0 1 -0 0 0 0 1 </matrix>
+         <node id="antennooFBXASC046l_end_end" name="antennooFBXASC046l_end_end">
+          <matrix>1 0 0 0 0 1 0 2.308159 0 0 1 0 0 0 0 1 </matrix>
+         </node>
+        </node>
+       </node>
+       <node id="antenooFBXASC046r" name="antenooFBXASC046r" sid="SID_37" type="JOINT">
+        <matrix sid="SID_21">0.991998 0.057246 0.112525 -0.268238 -0.029787 0.972252 -0.232031 0.888482 -0.122685 0.226823 0.966178 0.322895 0 0 0 1 </matrix>
+        <node id="antenooFBXASC046r_end" name="antenooFBXASC046r_end" sid="SID_38" type="JOINT">
+         <matrix sid="SID_5">1 -0 0 0 0 1 0 2.30816 -0 -0 1 -0 0 0 0 1 </matrix>
+         <node id="antenooFBXASC046r_end_end" name="antenooFBXASC046r_end_end">
+          <matrix>1 0 0 0 0 1 0 2.308159 0 0 1 0 0 0 0 1 </matrix>
+         </node>
         </node>
        </node>
       </node>
-      <node id="antenooFBXASC046r" name="antenooFBXASC046r" sid="SID_37" type="JOINT">
-       <matrix sid="SID_21">0.991998 0.057246 0.112525 -0.268238 -0.029787 0.972252 -0.232031 0.888482 -0.122685 0.226823 0.966178 0.322895 0 0 0 1 </matrix>
-       <node id="antenooFBXASC046r_end" name="antenooFBXASC046r_end" sid="SID_38" type="JOINT">
-        <matrix sid="SID_5">1 -0 0 0 0 1 0 2.30816 -0 -0 1 -0 0 0 0 1 </matrix>
-        <node id="antenooFBXASC046r_end_end" name="antenooFBXASC046r_end_end">
-         <matrix>1 0 0 0 0 1 0 2.308159 0 0 1 0 0 0 0 1 </matrix>
+      <node id="topShoolderFBXASC046l" name="topShoolderFBXASC046l" sid="SID_39" type="JOINT">
+       <matrix sid="SID_13">0.127377 0.963904 0.233802 0.276978 -0.233314 -0.199989 0.951614 1.61103 0.964022 -0.175763 0.199418 0.042697 0 0 0 1 </matrix>
+       <node id="topElbooFBXASC046l" name="topElbooFBXASC046l" sid="SID_40" type="JOINT">
+        <matrix sid="SID_23">-0.452888 0.817213 -0.356449 -0 -0.764888 -0.15072 0.626283 1.41692 0.458083 0.55628 0.693335 0 0 0 0 1 </matrix>
+        <node id="topHoondFBXASC046l" name="topHoondFBXASC046l" sid="SID_41" type="JOINT">
+         <matrix sid="SID_12">0.882188 -0.326032 -0.339775 -0 0.110782 0.844991 -0.52318 1.56397 0.45768 0.423903 0.78156 0 0 0 0 1 </matrix>
+         <node id="topHoondFBXASC046l_end" name="topHoondFBXASC046l_end" sid="SID_42" type="JOINT">
+          <matrix sid="SID_10">1 0 -1e-06 -0 -0 1 1e-06 0.607347 1e-06 -1e-06 1 -0 0 0 0 1 </matrix>
+          <node id="topHoondFBXASC046l_end_end" name="topHoondFBXASC046l_end_end">
+           <matrix>1 0 0 0 0 1 0 0.607347 0 0 1 0 0 0 0 1 </matrix>
+          </node>
+         </node>
         </node>
        </node>
       </node>
-     </node>
-     <node id="topShoolderFBXASC046l" name="topShoolderFBXASC046l" sid="SID_39" type="JOINT">
-      <matrix sid="SID_13">0.127377 0.963904 0.233802 0.276978 -0.233314 -0.199989 0.951614 1.61103 0.964022 -0.175763 0.199418 0.042697 0 0 0 1 </matrix>
-      <node id="topElbooFBXASC046l" name="topElbooFBXASC046l" sid="SID_40" type="JOINT">
-       <matrix sid="SID_23">-0.452888 0.817213 -0.356449 -0 -0.764888 -0.15072 0.626283 1.41692 0.458083 0.55628 0.693335 0 0 0 0 1 </matrix>
-       <node id="topHoondFBXASC046l" name="topHoondFBXASC046l" sid="SID_41" type="JOINT">
-        <matrix sid="SID_12">0.882188 -0.326032 -0.339775 -0 0.110782 0.844991 -0.52318 1.56397 0.45768 0.423903 0.78156 0 0 0 0 1 </matrix>
-        <node id="topHoondFBXASC046l_end" name="topHoondFBXASC046l_end" sid="SID_42" type="JOINT">
-         <matrix sid="SID_10">1 0 -1e-06 -0 -0 1 1e-06 0.607347 1e-06 -1e-06 1 -0 0 0 0 1 </matrix>
-         <node id="topHoondFBXASC046l_end_end" name="topHoondFBXASC046l_end_end">
-          <matrix>1 0 0 0 0 1 0 0.607347 0 0 1 0 0 0 0 1 </matrix>
+      <node id="bottomshoolderFBXASC046l" name="bottomshoolderFBXASC046l" sid="SID_43" type="JOINT">
+       <matrix sid="SID_8">0.127377 0.963905 0.233802 0.314714 -0.233314 -0.199989 0.951614 0.569022 0.964023 -0.175763 0.199419 0.176106 0 0 0 1 </matrix>
+       <node id="bottomElbooFBXASC046l" name="bottomElbooFBXASC046l" sid="SID_44" type="JOINT">
+        <matrix sid="SID_6">-0.566856 0.618893 -0.543734 -0 -0.765604 -0.15206 0.625083 1.41692 0.304179 0.770617 0.560023 0 0 0 0 1 </matrix>
+        <node id="bottomHoondFBXASC046l" name="bottomHoondFBXASC046l" sid="SID_45" type="JOINT">
+         <matrix sid="SID_18">0.975175 -0.194039 -0.106685 0 0.110944 0.8451 -0.522969 1.56397 0.191636 0.498151 0.845648 -0 0 0 0 1 </matrix>
+         <node id="bottomHoondFBXASC046l_end" name="bottomHoondFBXASC046l_end" sid="SID_46" type="JOINT">
+          <matrix sid="SID_15">1 0 0 0 0 1 -0 0.607347 -0 0 1 -0 0 0 0 1 </matrix>
+          <node id="bottomHoondFBXASC046l_end_end" name="bottomHoondFBXASC046l_end_end">
+           <matrix>1 0 0 0 0 1 0 0.607347 0 0 1 0 0 0 0 1 </matrix>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+      <node id="topShoolderFBXASC046r" name="topShoolderFBXASC046r" sid="SID_47" type="JOINT">
+       <matrix sid="SID_19">0.024084 -0.954939 -0.295822 -0.372401 0.009402 -0.295679 0.955241 1.59079 -0.999666 -0.025787 0.001857 0.068292 0 0 0 1 </matrix>
+       <node id="topElbooFBXASC046r" name="topElbooFBXASC046r" sid="SID_48" type="JOINT">
+        <matrix sid="SID_7">-0.087442 -0.899226 0.428655 -0 0.8594 0.149513 0.488956 1.41692 -0.503772 0.411141 0.759721 -0 0 0 0 1 </matrix>
+        <node id="topHoondFBXASC046r" name="topHoondFBXASC046r" sid="SID_49" type="JOINT">
+         <matrix sid="SID_9">0.852712 0.453268 0.259674 0 -0.158804 0.698498 -0.697769 1.56397 -0.497658 0.553759 0.667598 0 0 0 0 1 </matrix>
+         <node id="topHoondFBXASC046r_end" name="topHoondFBXASC046r_end" sid="SID_50" type="JOINT">
+          <matrix sid="SID_32">1 -1e-06 -2e-06 -0 1e-06 1 -2e-06 0.521102 2e-06 2e-06 1 0 0 0 0 1 </matrix>
+          <node id="topHoondFBXASC046r_end_end" name="topHoondFBXASC046r_end_end">
+           <matrix>1 0 0 0 0 1 0 0.521102 0 0 1 0 0 0 0 1 </matrix>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+      <node id="bottomshoolderFBXASC046r" name="bottomshoolderFBXASC046r" sid="SID_51" type="JOINT">
+       <matrix sid="SID_2">0.024084 -0.95494 -0.295819 -0.334664 0.009402 -0.295676 0.955242 0.548781 -0.999666 -0.025787 0.001857 0.201701 0 0 0 1 </matrix>
+       <node id="bottomElbooFBXASC046r" name="bottomElbooFBXASC046r" sid="SID_52" type="JOINT">
+        <matrix sid="SID_26">-0.230716 -0.73969 0.632163 0 0.860328 0.148421 0.487655 1.41692 -0.45454 0.656377 0.602132 0 0 0 0 1 </matrix>
+        <node id="bottomHoondFBXASC046r" name="bottomHoondFBXASC046r" sid="SID_53" type="JOINT">
+         <matrix sid="SID_20">0.957416 0.282746 0.058386 -0 -0.165678 0.703682 -0.690929 1.56397 -0.236442 0.651833 0.720561 0 0 0 0 1 </matrix>
+         <node id="bottomHoondFBXASC046r_end" name="bottomHoondFBXASC046r_end" sid="SID_54" type="JOINT">
+          <matrix sid="SID_29">1 -0 -1e-06 0 0 1 -1e-06 0.538385 1e-06 1e-06 1 -0 0 0 0 1 </matrix>
+          <node id="bottomHoondFBXASC046r_end_end" name="bottomHoondFBXASC046r_end_end">
+           <matrix>1 0 0 0 0 1 0 0.538384 0 0 1 0 0 0 0 1 </matrix>
+          </node>
          </node>
         </node>
        </node>
       </node>
      </node>
-     <node id="bottomshoolderFBXASC046l" name="bottomshoolderFBXASC046l" sid="SID_43" type="JOINT">
-      <matrix sid="SID_8">0.127377 0.963905 0.233802 0.314714 -0.233314 -0.199989 0.951614 0.569022 0.964023 -0.175763 0.199419 0.176106 0 0 0 1 </matrix>
-      <node id="bottomElbooFBXASC046l" name="bottomElbooFBXASC046l" sid="SID_44" type="JOINT">
-       <matrix sid="SID_6">-0.566856 0.618893 -0.543734 -0 -0.765604 -0.15206 0.625083 1.41692 0.304179 0.770617 0.560023 0 0 0 0 1 </matrix>
-       <node id="bottomHoondFBXASC046l" name="bottomHoondFBXASC046l" sid="SID_45" type="JOINT">
-        <matrix sid="SID_18">0.975175 -0.194039 -0.106685 0 0.110944 0.8451 -0.522969 1.56397 0.191636 0.498151 0.845648 -0 0 0 0 1 </matrix>
-        <node id="bottomHoondFBXASC046l_end" name="bottomHoondFBXASC046l_end" sid="SID_46" type="JOINT">
-         <matrix sid="SID_15">1 0 0 0 0 1 -0 0.607347 -0 0 1 -0 0 0 0 1 </matrix>
-         <node id="bottomHoondFBXASC046l_end_end" name="bottomHoondFBXASC046l_end_end">
-          <matrix>1 0 0 0 0 1 0 0.607347 0 0 1 0 0 0 0 1 </matrix>
+     <node id="bootay" name="bootay" sid="SID_55" type="JOINT">
+      <matrix sid="SID_30">0.955521 0.016035 -0.294486 -0 0.078421 0.94876 0.306113 -0 0.284305 -0.315591 0.905303 0 0 0 0 1 </matrix>
+      <node id="thooghFBXASC046l" name="thooghFBXASC046l" sid="SID_56" type="JOINT">
+       <matrix sid="SID_11">0.838691 0.353282 0.414475 0.442488 -0.30329 -0.329136 0.894251 0.075503 0.452342 -0.875706 -0.168896 -0.64696 0 0 0 1 </matrix>
+       <node id="coofFBXASC046l" name="coofFBXASC046l" sid="SID_57" type="JOINT">
+        <matrix sid="SID_27">0.786653 -0.426736 0.446176 0 0.375191 -0.243503 -0.894392 1.76274 0.490315 0.870978 -0.031445 0 0 0 0 1 </matrix>
+        <node id="footFBXASC046l" name="footFBXASC046l" sid="SID_58" type="JOINT">
+         <matrix sid="SID_31">0.942799 0.177533 -0.282156 -0 0.307101 -0.791813 0.52794 1.85245 -0.129688 -0.584392 -0.801041 -0 0 0 0 1 </matrix>
+         <node id="footFBXASC046l_end" name="footFBXASC046l_end" sid="SID_59" type="JOINT">
+          <matrix sid="SID_4">1 0 -1e-06 -0 -0 1 -0 1.40272 1e-06 0 1 -0 0 0 0 1 </matrix>
+          <node id="footFBXASC046l_end_end" name="footFBXASC046l_end_end">
+           <matrix>1 0 0 0 0 1 0 1.402721 0 0 1 0 0 0 0 1 </matrix>
+          </node>
          </node>
         </node>
        </node>
       </node>
-     </node>
-     <node id="topShoolderFBXASC046r" name="topShoolderFBXASC046r" sid="SID_47" type="JOINT">
-      <matrix sid="SID_19">0.024084 -0.954939 -0.295822 -0.372401 0.009402 -0.295679 0.955241 1.59079 -0.999666 -0.025787 0.001857 0.068292 0 0 0 1 </matrix>
-      <node id="topElbooFBXASC046r" name="topElbooFBXASC046r" sid="SID_48" type="JOINT">
-       <matrix sid="SID_7">-0.087442 -0.899226 0.428655 -0 0.8594 0.149513 0.488956 1.41692 -0.503772 0.411141 0.759721 -0 0 0 0 1 </matrix>
-       <node id="topHoondFBXASC046r" name="topHoondFBXASC046r" sid="SID_49" type="JOINT">
-        <matrix sid="SID_9">0.852712 0.453268 0.259674 0 -0.158804 0.698498 -0.697769 1.56397 -0.497658 0.553759 0.667598 0 0 0 0 1 </matrix>
-        <node id="topHoondFBXASC046r_end" name="topHoondFBXASC046r_end" sid="SID_50" type="JOINT">
-         <matrix sid="SID_32">1 -1e-06 -2e-06 -0 1e-06 1 -2e-06 0.521102 2e-06 2e-06 1 0 0 0 0 1 </matrix>
-         <node id="topHoondFBXASC046r_end_end" name="topHoondFBXASC046r_end_end">
-          <matrix>1 0 0 0 0 1 0 0.521102 0 0 1 0 0 0 0 1 </matrix>
-         </node>
-        </node>
-       </node>
-      </node>
-     </node>
-     <node id="bottomshoolderFBXASC046r" name="bottomshoolderFBXASC046r" sid="SID_51" type="JOINT">
-      <matrix sid="SID_2">0.024084 -0.95494 -0.295819 -0.334664 0.009402 -0.295676 0.955242 0.548781 -0.999666 -0.025787 0.001857 0.201701 0 0 0 1 </matrix>
-      <node id="bottomElbooFBXASC046r" name="bottomElbooFBXASC046r" sid="SID_52" type="JOINT">
-       <matrix sid="SID_26">-0.230716 -0.73969 0.632163 0 0.860328 0.148421 0.487655 1.41692 -0.45454 0.656377 0.602132 0 0 0 0 1 </matrix>
-       <node id="bottomHoondFBXASC046r" name="bottomHoondFBXASC046r" sid="SID_53" type="JOINT">
-        <matrix sid="SID_20">0.957416 0.282746 0.058386 -0 -0.165678 0.703682 -0.690929 1.56397 -0.236442 0.651833 0.720561 0 0 0 0 1 </matrix>
-        <node id="bottomHoondFBXASC046r_end" name="bottomHoondFBXASC046r_end" sid="SID_54" type="JOINT">
-         <matrix sid="SID_29">1 -0 -1e-06 0 0 1 -1e-06 0.538385 1e-06 1e-06 1 -0 0 0 0 1 </matrix>
-         <node id="bottomHoondFBXASC046r_end_end" name="bottomHoondFBXASC046r_end_end">
-          <matrix>1 0 0 0 0 1 0 0.538384 0 0 1 0 0 0 0 1 </matrix>
+      <node id="thooghFBXASC046r" name="thooghFBXASC046r" sid="SID_60" type="JOINT">
+       <matrix sid="SID_22">0.604346 -0.428478 -0.671694 -0.73192 0.261498 -0.689691 0.675237 0.055795 -0.752585 -0.583723 -0.304766 -0.285014 0 0 0 1 </matrix>
+       <node id="coofFBXASC046r" name="coofFBXASC046r" sid="SID_61" type="JOINT">
+        <matrix sid="SID_24">0.779822 0.327964 -0.533215 -0 -0.443417 -0.311865 -0.840311 1.76274 -0.441883 0.891729 -0.097774 -0 0 0 0 1 </matrix>
+        <node id="footFBXASC046r" name="footFBXASC046r" sid="SID_62" type="JOINT">
+         <matrix sid="SID_28">0.98351 0.142354 0.111551 -0 0.004895 -0.637527 0.770412 1.85245 0.180788 -0.757162 -0.627711 0 0 0 0 1 </matrix>
+         <node id="footFBXASC046r_end" name="footFBXASC046r_end" sid="SID_63" type="JOINT">
+          <matrix sid="SID_1">1 -0 1.5e-05 0 0 1 -0 1.40272 -1.5e-05 0 1 0 0 0 0 1 </matrix>
+          <node id="footFBXASC046r_end_end" name="footFBXASC046r_end_end">
+           <matrix>1 0 0 0 0 1 0 1.402721 0 0 1 0 0 0 0 1 </matrix>
+          </node>
          </node>
         </node>
        </node>
       </node>
      </node>
     </node>
-    <node id="bootay" name="bootay" sid="SID_55" type="JOINT">
-     <matrix sid="SID_30">0.955521 0.016035 -0.294486 -0 0.078421 0.94876 0.306113 -0 0.284305 -0.315591 0.905303 0 0 0 0 1 </matrix>
-     <node id="thooghFBXASC046l" name="thooghFBXASC046l" sid="SID_56" type="JOINT">
-      <matrix sid="SID_11">0.838691 0.353282 0.414475 0.442488 -0.30329 -0.329136 0.894251 0.075503 0.452342 -0.875706 -0.168896 -0.64696 0 0 0 1 </matrix>
-      <node id="coofFBXASC046l" name="coofFBXASC046l" sid="SID_57" type="JOINT">
-       <matrix sid="SID_27">0.786653 -0.426736 0.446176 0 0.375191 -0.243503 -0.894392 1.76274 0.490315 0.870978 -0.031445 0 0 0 0 1 </matrix>
-       <node id="footFBXASC046l" name="footFBXASC046l" sid="SID_58" type="JOINT">
-        <matrix sid="SID_31">0.942799 0.177533 -0.282156 -0 0.307101 -0.791813 0.52794 1.85245 -0.129688 -0.584392 -0.801041 -0 0 0 0 1 </matrix>
-        <node id="footFBXASC046l_end" name="footFBXASC046l_end" sid="SID_59" type="JOINT">
-         <matrix sid="SID_4">1 0 -1e-06 -0 -0 1 -0 1.40272 1e-06 0 1 -0 0 0 0 1 </matrix>
-         <node id="footFBXASC046l_end_end" name="footFBXASC046l_end_end">
-          <matrix>1 0 0 0 0 1 0 1.402721 0 0 1 0 0 0 0 1 </matrix>
-         </node>
-        </node>
-       </node>
-      </node>
-     </node>
-     <node id="thooghFBXASC046r" name="thooghFBXASC046r" sid="SID_60" type="JOINT">
-      <matrix sid="SID_22">0.604346 -0.428478 -0.671694 -0.73192 0.261498 -0.689691 0.675237 0.055795 -0.752585 -0.583723 -0.304766 -0.285014 0 0 0 1 </matrix>
-      <node id="coofFBXASC046r" name="coofFBXASC046r" sid="SID_61" type="JOINT">
-       <matrix sid="SID_24">0.779822 0.327964 -0.533215 -0 -0.443417 -0.311865 -0.840311 1.76274 -0.441883 0.891729 -0.097774 -0 0 0 0 1 </matrix>
-       <node id="footFBXASC046r" name="footFBXASC046r" sid="SID_62" type="JOINT">
-        <matrix sid="SID_28">0.98351 0.142354 0.111551 -0 0.004895 -0.637527 0.770412 1.85245 0.180788 -0.757162 -0.627711 0 0 0 0 1 </matrix>
-        <node id="footFBXASC046r_end" name="footFBXASC046r_end" sid="SID_63" type="JOINT">
-         <matrix sid="SID_1">1 -0 1.5e-05 0 0 1 -0 1.40272 -1.5e-05 0 1 0 0 0 0 1 </matrix>
-         <node id="footFBXASC046r_end_end" name="footFBXASC046r_end_end">
-          <matrix>1 0 0 0 0 1 0 1.402721 0 0 1 0 0 0 0 1 </matrix>
-         </node>
-        </node>
-       </node>
-      </node>
-     </node>
-    </node>
-   </node>
-   <node id="Terry" name="Terry">
-    <instance_controller url="#skin202">
-     <skeleton>#Armature</skeleton>
-     <bind_material>
-      <technique_common>
-       <instance_material symbol="geometryElement201" target="#lambert4SG">
-        <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
-       </instance_material>
-      </technique_common>
-     </bind_material>
-    </instance_controller>
    </node>
   </visual_scene>
  </library_visual_scenes>

@@ -180,7 +180,7 @@ class ChapterSelection {
         
         //Load Idle Animation Node
         //let idleTerryScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@IdleFixed.dae")!
-        let idleTerryScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@DanceFixed.dae")!
+        let idleTerryScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@WavingFixed.dae")!
         for child in idleTerryScene.rootNode.childNodes {
             SideCharacter1idleNode.addChildNode(child)
         }
@@ -237,6 +237,7 @@ class ChapterSelection {
         //load animations for mainCharacter
         prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@IdleFixed", animationIdentifier: "Indy@IdleFixed-1")
         prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@WalkFixed", animationIdentifier: "Indy@WalkFixed-1")
+        
         //load animation for side character 1
         //prepareAnimation(withKey: "SideCharacter1Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@IdleFixed", animationIdentifier: "Terry@IdleFixed-1")
         prepareAnimation(withKey: "SideCharacter1Walking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@WalkingFixed", animationIdentifier: "Terry@WalkingFixed-1")

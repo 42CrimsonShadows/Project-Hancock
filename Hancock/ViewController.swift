@@ -1023,6 +1023,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
             letterTwo!.isPaused = false
             animateLetterHide(fadeThis: letterTwo!)
             playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+            
+            // x= (-)west/(+)east, z= (-)north/(+)south
+//            let move1 = SCNAction.moveBy(x: 0.0, y: 1, z: 0.1, duration: 1)
+//            let move2 = SCNAction.moveBy(x: 0.0, y: -5.45, z: 0.01, duration: 3)
+//            let terryMoveSeq = SCNAction.sequence([move1, move2])
+//            charcterOneIdle.runAction(terryMoveSeq)
+            charcterOneIdle.runAction(SCNAction.moveBy(x:0, y: -5.45, z: 0.2, duration: 2))
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                self.charcterOneIdle.runAction(SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5))
+                //play side character animation
+                self.startAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
+            })
+            
+            
         case shatterLetterOne:
             letterOne!.isPaused = false
             animateLetterHide(fadeThis: letterOne!)
@@ -1163,25 +1178,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
         self.present(activityBoardView, animated: true)
     }
+    
     func startAnimateSideCharacter(key: String, sideCharacter: String) {
+        print("Adding animation \(key) for \(sideCharacter)!")
+        
         switch sideCharacter {
         case "Terry":
-            print("Do stuff")
+            print("Do Terry stuff")
             charcterOneIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Lin":
-            print("Do stuff")
+            print("Do Lin stuff")
             charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Francine":
-            print("Do stuff")
+            print("Do Francine stuff")
             charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Eric":
-            print("Do stuff")
+            print("Do Eric stuff")
             charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Hannah":
-            print("Do stuff")
+            print("Do Hannah stuff")
             charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Indy":
-            print("Do stuff")
+            print("Do Indy stuff")
             mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         default:
             break

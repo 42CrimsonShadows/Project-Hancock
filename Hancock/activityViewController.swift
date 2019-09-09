@@ -590,6 +590,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             setupCoinLabel()
                             print("***DINGDING***")
                             //TODO: add one to the Coin tally
+                            
                         }
                     }
                     if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
