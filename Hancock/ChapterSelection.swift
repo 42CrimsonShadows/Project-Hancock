@@ -190,7 +190,7 @@ class ChapterSelection {
         
         //Load Idle Animation Node
         //let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")!
-        let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")! //temp idle
+        let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@TwistDanceFixed.dae")! //temp idle
         for child in idleLinScene.rootNode.childNodes {
             SideCharacter2idleNode.addChildNode(child)
         }

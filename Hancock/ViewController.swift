@@ -1019,25 +1019,64 @@ class ViewController: UIViewController, UITextFieldDelegate {
             letterThree!.isPaused = false
             animateLetterHide(fadeThis: letterThree!)
             playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+            
+            // x= (-)west/(+)east, z= (-)north/(+)south
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                //drop side Lin down from letter L
+                self.charcterTwoIdle.runAction(SCNAction.moveBy(x:0, y: -1, z: 0, duration: 0.5))
+                
+                //wait 5 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                    //play Lin through a sequence of movements so he turns and then walks to the Letter H
+                    let rotate1 = SCNAction.rotateBy(x: 0.0, y: 0.75, z: 0.0, duration: 0.5)
+                    let endSpot = SCNVector3(x: 21, y: 2, z: 9.5)
+                    let move1 = SCNAction.move(to: endSpot, duration: 15)
+                    let rotate2 = SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5)
+                    let linMoveSeq = SCNAction.sequence([rotate1, move1, rotate2])
+                    self.charcterTwoIdle.runAction(linMoveSeq)
+                    
+                    //play side character animation
+                    self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Lin")
+                    
+                    //wait 5 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
+                        self.stopAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Lin")
+                        self.startAnimateSideCharacter(key: "SideCharacter2Dancing", sideCharacter: "Lin")
+                    })
+                })
+            })
+            
         case shatterLetterTwo:
             letterTwo!.isPaused = false
             animateLetterHide(fadeThis: letterTwo!)
             playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             
             // x= (-)west/(+)east, z= (-)north/(+)south
-//            let move1 = SCNAction.moveBy(x: 0.0, y: 1, z: 0.1, duration: 1)
-//            let move2 = SCNAction.moveBy(x: 0.0, y: -5.45, z: 0.01, duration: 3)
-//            let terryMoveSeq = SCNAction.sequence([move1, move2])
-//            charcterOneIdle.runAction(terryMoveSeq)
-            charcterOneIdle.runAction(SCNAction.moveBy(x:0, y: -5.45, z: 0.2, duration: 2))
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                self.charcterOneIdle.runAction(SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5))
-                //play side character animation
-                self.startAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                //drop side terry down from the top of the letter T
+                self.charcterOneIdle.parent?.runAction(SCNAction.moveBy(x:0, y: -4.1, z: 0.2, duration: 1))
+
+                //wait 5 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                    //play Terry through a sequence of movements so he turns and then walks to the Letter H
+                    let rotate1 = SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5)
+                    let endSpot = SCNVector3(x: 18, y: 2.5, z: 10)
+                    let move1 = SCNAction.move(to: endSpot, duration: 15)
+                    let rotate2 = SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5)
+                    let terryMoveSeq = SCNAction.sequence([rotate1, move1, rotate2])
+                    self.charcterOneIdle.parent?.runAction(terryMoveSeq)
+                    
+                    //play side character animation
+                    self.startAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
+                    
+                    //wait 5 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
+                        self.stopAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
+                        self.startAnimateSideCharacter(key: "SideCharacter1Waving", sideCharacter: "Terry")
+                    })
+                })
             })
-            
-            
+      
         case shatterLetterOne:
             letterOne!.isPaused = false
             animateLetterHide(fadeThis: letterOne!)
@@ -1208,23 +1247,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func stopAnimateSideCharacter(key: String, sideCharacter: String) {
         switch sideCharacter {
         case "Terry":
-            print("Do stuff")
-            charcterOneIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            print("Remove stuff")
+            charcterOneIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
+            //charcterOneIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Lin":
-            print("Do stuff")
-            charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            print("Remove stuff")
+            //charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            charcterTwoIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
         case "Francine":
-            print("Do stuff")
-            charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            print("Remove stuff")
+            //charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            charcterThreeIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
         case "Eric":
-            print("Do stuff")
-            charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            print("Remove stuff")
+            //charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            charcterFourIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
         case "Hannah":
-            print("Do stuff")
-            charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            print("Remove stuff")
+            //charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            charcterFiveIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
         case "Indy":
-            print("Do stuff")
-            mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            print("Remove stuff")
+            //mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            mainCharacterIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
         default:
             break
         }
