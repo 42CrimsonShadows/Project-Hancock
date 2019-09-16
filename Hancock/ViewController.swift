@@ -1015,6 +1015,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
             letterFour!.isPaused = false
             animateLetterHide(fadeThis: letterFour!)
             playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+            
+            // x= (-)west/(+)east, z= (-)north/(+)south
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0, execute: {
+                //drop side Lin down from letter L
+                //self.charcterThreeIdle.parent?.runAction(SCNAction.moveBy(x:0, y: -1.5, z: -3, duration: 1))
+                self.startAnimateSideCharacter(key: "SideCharacter3Jump", sideCharacter: "Francine")
+                
+                //play for 1.5 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.stopAnimateSideCharacter(key: "SideCharacter3Jump", sideCharacter: "Francine")
+                    self.startAnimateSideCharacter(key: "SideCharacter3Dance2", sideCharacter: "Francine")
+                    
+                    //play for 3 seconds
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        self.stopAnimateSideCharacter(key: "SideCharacter3Dance2", sideCharacter: "Francine")
+                        
+                        //wait 5 seconds
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                            //play Lin through a sequence of movements so he turns and then walks to the Letter H
+                            let rotate1 = SCNAction.rotateBy(x: 0.0, y: -1.75, z: 0.0, duration: 0.5)
+                            let endSpot = SCNVector3(x: 18.5, y: 2.25, z: 12.25)
+                            let move1 = SCNAction.move(to: endSpot, duration: 10)
+                            let rotate2 = SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5)
+                            let linMoveSeq = SCNAction.sequence([rotate1, move1, rotate2])
+                            self.charcterThreeIdle.parent?.runAction(linMoveSeq)
+                            
+                            //play side character animation
+                            self.startAnimateSideCharacter(key: "SideCharacter3Walk", sideCharacter: "Francine")
+                            
+                            //wait 5 seconds
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                                self.stopAnimateSideCharacter(key: "SideCharacter3Walk", sideCharacter: "Francine")
+                                self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Francine")
+                            })
+                        })
+                    })
+                })
+            })
         case shatterLetterThree:
             letterThree!.isPaused = false
             animateLetterHide(fadeThis: letterThree!)
@@ -1023,25 +1061,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
             // x= (-)west/(+)east, z= (-)north/(+)south
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
                 //drop side Lin down from letter L
-                self.charcterTwoIdle.runAction(SCNAction.moveBy(x:0, y: -1, z: 0, duration: 0.5))
+                self.charcterTwoIdle.parent?.runAction(SCNAction.moveBy(x:0, y: -0.8, z: 0, duration: 0.5))
                 
                 //wait 5 seconds
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     //play Lin through a sequence of movements so he turns and then walks to the Letter H
-                    let rotate1 = SCNAction.rotateBy(x: 0.0, y: 0.75, z: 0.0, duration: 0.5)
+                    let rotate1 = SCNAction.rotateBy(x: 0.0, y: 1.5, z: 0.0, duration: 0.5)
                     let endSpot = SCNVector3(x: 21, y: 2, z: 9.5)
                     let move1 = SCNAction.move(to: endSpot, duration: 15)
                     let rotate2 = SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5)
                     let linMoveSeq = SCNAction.sequence([rotate1, move1, rotate2])
-                    self.charcterTwoIdle.runAction(linMoveSeq)
+                    self.charcterTwoIdle.parent?.runAction(linMoveSeq)
                     
                     //play side character animation
-                    self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Lin")
+                    //self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Lin")
+                    //TO-DO: Fix Bone structure for Lin so that transitions of animations work correctly
                     
                     //wait 5 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
-                        self.stopAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Lin")
-                        self.startAnimateSideCharacter(key: "SideCharacter2Dancing", sideCharacter: "Lin")
+                        
+                        //TO-DO: Fix Bone structure for Lin so that transitions of animations work correctly
+                        //self.stopAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Lin")
+                        //self.startAnimateSideCharacter(key: "SideCharacter2Dancing", sideCharacter: "Lin")
                     })
                 })
             })
