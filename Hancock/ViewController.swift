@@ -119,8 +119,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var FXPlayer = AVAudioPlayer()
     var BGPlayer = AVAudioPlayer()
     var CharacterPlayer = AVAudioPlayer()
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -348,9 +347,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             self.startButton.isHidden = true
             self.gameState = .playGame
-            //self.birdsPlayer.play()
             //player background music/ambient
-            self.playAudioBGFile(file: chapterSelectedSoundDict!["Background2"]!, type: "wav")
+            self.toggleAudioBGFile(file: chapterSelectedSoundDict!["Background2"]!, type: "wav")
         }
         storyTime()
     }
@@ -359,34 +357,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard self.gameState == .playGame else { return }
         DispatchQueue.main.async {
             //hide the main nodes
-            self.rootStoryNode.isHidden = true
-            self.mainCharacterIdle.isHidden = true
+            //self.rootStoryNode.isHidden = true
+            //self.mainCharacterIdle.isHidden = true
             //self.mainCharacterMoving.isHidden = true
             
             //change game state and show start button
-            self.startButton.isHidden = false
-            self.gameState = .detectSurface
+            ////self.startButton.isHidden = false
+            //self.gameState = .detectSurface
             
             //stop all sound
+            self.toggleAudioBGFile(file: chapterSelectedSoundDict!["stop"]!, type: "wav")
+            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["stop"]!, type: "wav", rate: 1.5)
+            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["stop"]!, type: "wav")
+            self.toggleAudioCharacterFile(file: "stop", type: "wav")
             //self.birdsPlayer.stop()
-            //self.walkPlayer.stop()
-            self.CharacterPlayer.stop()
-            self.narrationPlayer.stop()
-            self.BGPlayer.stop()
-            self.FXPlayer.stop()
-
+//            self.walkPlayer.stop()
+//            self.narrationPlayer.stop()
+//            self.BGPlayer.stop()
+//            self.FXPlayer.stop()
+//            self.CharacterPlayer.stop()
             
             //stop all animations
-            self.stopWalkAnimation()
+            //self.stopWalkAnimation()
             //self.stopAnimation2()
-            self.shatterLetterOne = false
+            //self.shatterLetterOne = false
             
             //reset positions/rotations of all moved nodes
-            self.mainFloor.position = SCNVector3(-0.749, 0, 2.292)
-            self.mainCharacterMoving.position = SCNVector3(0, 0, 0)
-            self.mainCharacterMoving.eulerAngles = SCNVector3(0, 0, 0)
-            self.mainCharacterIdle.position = SCNVector3(0, 0, 0)
-            self.mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+            //self.mainFloor.position = SCNVector3(-0.749, 0, 2.292)
+            //self.mainCharacterMoving.position = SCNVector3(0, 0, 0)
+            //self.mainCharacterMoving.eulerAngles = SCNVector3(0, 0, 0)
+            //self.mainCharacterIdle.position = SCNVector3(0, 0, 0)
+            //self.mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
+            
+            let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "chapterARViewController") as! ViewController
+            self.present(chapterARView, animated: true)
         }
     }
     
@@ -480,7 +484,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
         startTransitionAnimation(key: "MainCharacterWalking")
         //play walk sound
-        self.playAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
         
         switch gameProgress {
         case .toLetter1:
@@ -552,7 +556,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //play narration for finishing letter 2
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
                 })
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
@@ -606,7 +610,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //play narration for finishing letter 2
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration17"]!, type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration17"]!, type: "mp3")
                 })
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
@@ -865,7 +869,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //wait 1 seconds (small pause)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 //play game intro part 2 (segway into first letter activity)
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
                 
                 //wait 5 seconds for game intro2 to finish
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
@@ -880,7 +884,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //wait 1 seconds for the activity page to load
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         //play narration for the first audio instructions for the activity
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                     })
                 })
             })
@@ -889,7 +893,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter2:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -901,7 +905,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
                     })
                 })
             })
@@ -910,7 +914,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter3:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -922,7 +926,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
                     })
                 })
             })
@@ -931,7 +935,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter4:
             ///wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration24"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration24"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -943,7 +947,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration25"]!, type: "mp3")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration25"]!, type: "mp3")
                     })
                 })
             })
@@ -952,7 +956,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter5:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -964,7 +968,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
                     })
                 })
             })
@@ -973,7 +977,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter6:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration44"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration44"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
@@ -985,7 +989,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration45"]!, type: "mp3")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration45"]!, type: "mp3")
                     })
                 })
             })
@@ -1006,7 +1010,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterSix:
             letterSix!.isPaused = false
             animateLetterHide(fadeThis: letterSix!)
-            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+            toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             
         case shatterLetterFive:
             //letterFive!.isPaused = false
@@ -1041,33 +1045,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterFour:
             letterFour!.isPaused = false
             animateLetterHide(fadeThis: letterFour!)
-            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+            toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             
             //drop side Francine down from letter F
-            self.charcterThreeIdle.parent?.runAction(SCNAction.moveBy(x:0, y: -2.5, z: -2.1, duration: 2.5))
+            //self.charcterThreeIdle.parent?.runAction(SCNAction.moveBy(x:0, y: 0, z: -2.1, duration: 1.5))
+            //let intermediateSpot = SCNVector3(x: 4.4, y: 1.1, z: 8.8)
+            //let moveOut = SCNAction.move(to: intermediateSpot, duration: 0.5)
+            let rotateTo0 = SCNAction.rotateTo(x: 0, y: 3.5, z: 0, duration: 0.1)
+            let moveOut = SCNAction.moveBy(x:0, y: 0, z: -2.5, duration: 0.5)
+            let moveDown = SCNAction.moveBy(x:0, y: -2.1, z: -0.5, duration: 0.5)
+            let francineMoveSeq0 = SCNAction.sequence([rotateTo0, moveOut, moveDown])
+            self.charcterThreeIdle.parent?.runAction(francineMoveSeq0)
             self.startAnimateSideCharacter(key: "SideCharacter3Jump", sideCharacter: "Francine")
             
-            //play for 1.5 seconds
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.6, execute: {
+            //play for 2.5 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
                 self.stopAnimateSideCharacter(key: "SideCharacter3Jump", sideCharacter: "Francine")
                 self.startAnimateSideCharacter(key: "SideCharacter3Walk", sideCharacter: "Francine")
                 
                 //Francine walks to Indy after the jump - Left turn and walk for 0.5 seconds
                 let rotate1 = SCNAction.rotateBy(x: 0.0, y: 1.5, z: 0.0, duration: 0.5)
-                let endSpot1 = SCNVector3(x: 1, y: 1.5, z: 9.5)
-                let move1 = SCNAction.move(to: endSpot1, duration: 1)
+                let endSpot1 = SCNVector3(x: 2, y: 1.5, z: 9.5)
+                let move1 = SCNAction.move(to: endSpot1, duration: 1.5)
                 let francineMoveSeq1 = SCNAction.sequence([rotate1, move1])
                 self.charcterThreeIdle.parent?.runAction(francineMoveSeq1)
                 
                 //play for 3 seconds
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.1, execute: {
                     self.stopAnimateSideCharacter(key: "SideCharacter3Walk", sideCharacter: "Francine")
                     self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Francine")
                     
                     //wait 5 seconds
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                         //play Lin through a sequence of movements so he turns and then walks to the Letter H
-                        let rotate2 = SCNAction.rotateBy(x: 0.0, y: -3.25, z: 0.0, duration: 0.5)
+                        let rotate2 = SCNAction.rotateBy(x: 0.0, y: -3, z: 0.0, duration: 0.5)
                         let endSpot2 = SCNVector3(x: 18.5, y: 2.25, z: 12.25)
                         let move2 = SCNAction.move(to: endSpot2, duration: 10)
                         let rotate3 = SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5)
@@ -1089,7 +1100,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterThree:
             letterThree!.isPaused = false
             animateLetterHide(fadeThis: letterThree!)
-            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+            toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             
             // x= (-)west/(+)east, z= (-)north/(+)south
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
@@ -1123,7 +1134,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterTwo:
             letterTwo!.isPaused = false
             animateLetterHide(fadeThis: letterTwo!)
-            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+            toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             
             // x= (-)west/(+)east, z= (-)north/(+)south
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
@@ -1154,7 +1165,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterOne:
             letterOne!.isPaused = false
             animateLetterHide(fadeThis: letterOne!)
-            playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+            toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
         default:
             break
         }
@@ -1170,29 +1181,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter3:
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 //play game intro 1
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter2Finish"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter2Finish"]!, type: "mp3")
             })
         case .toLetter4:
             //play narration for finishing letter 4
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter3Finish"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter3Finish"]!, type: "mp3")
                 })
         case .toLetter5:
             //play narration for finishing letter 5
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter4Finish"]!, type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter4Finish"]!, type: "mp3")
                     })
         case .toLetter6:
             //play narration for finishing letter 6
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter5Finish"]!, type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter5Finish"]!, type: "mp3")
                     })
         case .chapterFinished :
             //play narration for finishing the chapter
            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["letter6Finish"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter6Finish"]!, type: "mp3")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish"]!, type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish"]!, type: "mp3")
                     })
             })
         }
@@ -1212,7 +1223,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //Wait 3 second for game to load completely
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             //play game intro 1
-            self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
         })
         
         //wait 7 seconds for the game intro1 to finsh
@@ -1224,7 +1235,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //pass it an audiofile and it will play it!
-    func playAudioNarrationFile(file: String, type: String) {
+    func toggleAudioNarrationFile(file: String, type: String) {
         let audio1Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
@@ -1234,11 +1245,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("AudioPlayer not available!")
         }
         
+        if self.narrationPlayer.isPlaying{
+            self.narrationPlayer.stop()
+        }
+        
         self.narrationPlayer.play()
     }
     
     //pass it an audiofile and it will play it!
-    func playAudioFXFile(file: String, type: String, rate: Float) {
+    func toggleAudioFXFile(file: String, type: String, rate: Float) {
         let audio2Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
@@ -1247,14 +1262,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print("FXPlayer not available!")
         }
+        if self.FXPlayer.isPlaying{
+            self.FXPlayer.stop()
+        }
+        
         FXPlayer.enableRate = true
         FXPlayer.rate = rate
         FXPlayer.setVolume(0.5, fadeDuration: 0)
         self.FXPlayer.play()
     }
     
-    //pass it an audiofile and it will play it!
-    func playAudioBGFile(file: String, type: String) {
+    //pass it an audiofile and it will play/stop it!
+    func toggleAudioBGFile(file: String, type: String) {
         let audio3Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
@@ -1263,13 +1282,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print("BGPlayer not available!")
         }
+        if self.BGPlayer.isPlaying{
+            self.BGPlayer.stop()
+        }
+        
         //set BGPlayer to play infinitly (-1)
         self.BGPlayer.numberOfLoops = -1
         self.BGPlayer.play()
     }
     
     //pass it an audiofile and it will play it!
-    func playAudioCharacterFile(file: String, type: String) {
+    func toggleAudioCharacterFile(file: String, type: String) {
         let audio4Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
@@ -1278,6 +1301,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print("CharacterPlayer not available!")
         }
+        
+        if self.CharacterPlayer.isPlaying{
+            self.CharacterPlayer.stop()
+        }
+        
         self.CharacterPlayer.play()
     }
     

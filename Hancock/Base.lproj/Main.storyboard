@@ -228,7 +228,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ghC-kx-OUn">
-                                <rect key="frame" x="674" y="20" width="350" height="100"/>
+                                <rect key="frame" x="774" y="20" width="250" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coin" translatesAutoresizingMaskIntoConstraints="NO" id="Jfi-vY-abv">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="100"/>
@@ -237,14 +237,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TL-C2-6tZ">
-                                        <rect key="frame" x="136" y="0.0" width="214" height="100"/>
+                                        <rect key="frame" x="136" y="0.0" width="114" height="100"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="Smc-od-oF7"/>
+                                    <constraint firstAttribute="width" constant="250" id="Smc-od-oF7"/>
                                     <constraint firstAttribute="height" constant="100" id="m8N-FI-nQH"/>
                                 </constraints>
                             </stackView>
@@ -705,7 +705,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--Home-->
         <scene sceneID="Rds-js-1Tg">
             <objects>
-                <viewController title="Home" id="EbW-Xz-ygt" customClass="HomeViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bookARViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EbW-Xz-ygt" customClass="HomeViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tJ9-Cq-86R" userLabel="HomeView">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -794,7 +794,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--Chapter View Controller-->
         <scene sceneID="Woy-oh-Zm5">
             <objects>
-                <viewController id="mrd-gg-QXZ" customClass="ChapterViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chapterARViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mrd-gg-QXZ" customClass="ChapterViewController" customModule="Hancock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PzG-ES-sM6">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

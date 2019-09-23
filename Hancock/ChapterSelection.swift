@@ -252,7 +252,7 @@ class ChapterSelection {
         //load animation for side character 3
         prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@IdleFixed", animationIdentifier: "Francine@IdleFixed-1")
         prepareAnimation(withKey: "SideCharacter3Walk", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@HappyWalkFixed", animationIdentifier: "Francine@HappyWalkFixed-1")
-        prepareAnimation(withKey: "SideCharacter3Jump", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@JumpFixed", animationIdentifier: "Francine@JumpFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Jump", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@Jump2Fixed", animationIdentifier: "Francine@Jump2Fixed-1")
         prepareAnimation(withKey: "SideCharacter3Dance1", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@DanceSpinHopFixed", animationIdentifier: "Francine@DanceSpinHopFixed-1")
         prepareAnimation(withKey: "SideCharacter3Dance2", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Francine/Francine@HipHopDanceFixed", animationIdentifier: "Francine@HipHopDanceFixed-1")
         
