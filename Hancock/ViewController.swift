@@ -193,7 +193,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sceneView.preferredFramesPerSecond = 60
         sceneView.antialiasingMode = .multisampling2X
         sceneView.debugOptions = [
-            ARSCNDebugOptions.showFeaturePoints,
+            //ARSCNDebugOptions.showFeaturePoints,
             //ARSCNDebugOptions.showWorldOrigin,
             //SCNDebugOptions.showPhysicsShapes,
             //SCNDebugOptions.showBoundingBoxes
@@ -1053,7 +1053,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //let moveOut = SCNAction.move(to: intermediateSpot, duration: 0.5)
             let rotateTo0 = SCNAction.rotateTo(x: 0, y: 3.5, z: 0, duration: 0.1)
             let moveOut = SCNAction.moveBy(x:0, y: 0, z: -2.5, duration: 0.5)
-            let moveDown = SCNAction.moveBy(x:0, y: -2.1, z: -0.5, duration: 0.5)
+            let moveDown = SCNAction.moveBy(x:0, y: -2.2, z: -0.5, duration: 0.5)
             let francineMoveSeq0 = SCNAction.sequence([rotateTo0, moveOut, moveDown])
             self.charcterThreeIdle.parent?.runAction(francineMoveSeq0)
             self.startAnimateSideCharacter(key: "SideCharacter3Jump", sideCharacter: "Francine")
@@ -1065,7 +1065,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 //Francine walks to Indy after the jump - Left turn and walk for 0.5 seconds
                 let rotate1 = SCNAction.rotateBy(x: 0.0, y: 1.5, z: 0.0, duration: 0.5)
-                let endSpot1 = SCNVector3(x: 2, y: 1.5, z: 9.5)
+                let endSpot1 = SCNVector3(x: 2, y: 1.5, z: 9.0)
                 let move1 = SCNAction.move(to: endSpot1, duration: 1.5)
                 let francineMoveSeq1 = SCNAction.sequence([rotate1, move1])
                 self.charcterThreeIdle.parent?.runAction(francineMoveSeq1)
@@ -1078,11 +1078,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //wait 5 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                         //play Lin through a sequence of movements so he turns and then walks to the Letter H
-                        let rotate2 = SCNAction.rotateBy(x: 0.0, y: -3, z: 0.0, duration: 0.5)
-                        let endSpot2 = SCNVector3(x: 18.5, y: 2.25, z: 12.25)
-                        let move2 = SCNAction.move(to: endSpot2, duration: 10)
+                        let rotate2 = SCNAction.rotateBy(x: 0.0, y: -2.9, z: 0.0, duration: 0.5)
+                        let endSpot2p2 = SCNVector3(x: 18.5, y: 2.25, z: 12.25)
+                        let move2 = SCNAction.moveBy(x:10, y: 0, z: 0, duration: 5)
+                        let move3 = SCNAction.move(to: endSpot2p2, duration: 5)
                         let rotate3 = SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5)
-                        let francineMoveSeq2 = SCNAction.sequence([rotate2, move2, rotate3])
+                        let francineMoveSeq2 = SCNAction.sequence([rotate2, move2, move3, rotate3])
                         self.charcterThreeIdle.parent?.runAction(francineMoveSeq2)
                         //play side character animation
                         self.stopAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Francine")

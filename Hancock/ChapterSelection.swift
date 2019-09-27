@@ -121,7 +121,7 @@ class ChapterSelection {
         }
         storyNode.addChildNode(idleNode)
         idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
-        //idleNode.position = SCNVector3(0, 0, 0)
+        idleNode.position = SCNVector3(0.05, 0, 0)
         //idleNode.isHidden = true
         
         //Load Scene Mask so we only see immidate area
