@@ -101,10 +101,10 @@ public class ActivitySelection {
     public func loadActivityE() {
         print("Called loadActivityE")
                         //Line #1
-        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+        activityPoints = [[CGFloat(0.27),CGFloat(0.11)], //first point x, y
                         [CGFloat(0.27),CGFloat(0.35)], //first MidPoint1 x, y
                         [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
-                        [CGFloat(0.27),CGFloat(0.9)], //second point x, y
+                        [CGFloat(0.27),CGFloat(0.86)], //second point x, y
             
                         //Line #2
                         [CGFloat(0.27),CGFloat(0.11)], //fifth point
@@ -116,7 +116,7 @@ public class ActivitySelection {
                         [CGFloat(0.27),CGFloat(0.5)], //fifth point
                         [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
                         [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
-                        [CGFloat(0.55),CGFloat(0.5)], //sixth point
+                        [CGFloat(0.57),CGFloat(0.5)], //sixth point
         
                         //Line #4
                         [CGFloat(0.27),CGFloat(0.86)], //fifth point
@@ -132,7 +132,7 @@ public class ActivitySelection {
     public func loadActivityF() {
         print("Called loadActivityF")
                         //Line #1
-        activityPoints = [[CGFloat(0.27),CGFloat(0.15)], //first point x, y
+        activityPoints = [[CGFloat(0.27),CGFloat(0.11)], //first point x, y
                         [CGFloat(0.27),CGFloat(0.3)], //first MidPoint1 x, y
                         [CGFloat(0.27),CGFloat(0.6)], //first MidPoint2 x, y
                         [CGFloat(0.27),CGFloat(0.85)], //second point x, y
