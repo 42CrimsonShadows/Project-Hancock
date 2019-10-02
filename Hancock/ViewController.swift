@@ -342,7 +342,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             self.updatePositions()
             self.rootStoryNode.isHidden = false
-            self.mainCharacterIdle.isHidden = false
+            self.mainCharacterIdle?.isHidden = false
             self.startTransitionAnimation(key: "MainCharacterIdle")
             
             self.startButton.isHidden = true
@@ -419,7 +419,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //generic story main character idle animation
         //mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Idle", recursively: true)
         mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter", recursively: true)
-        mainCharacterIdle.isHidden = true
+        mainCharacterIdle?.isHidden = true
         charcterOneIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter1", recursively: true)
         charcterOneIdle?.isHidden = false
         charcterTwoIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter2", recursively: true)
@@ -469,14 +469,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //add the animation to start playing it right away
         //sceneView.scene.rootNode.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         print("Adding animation")
-        mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+        mainCharacterIdle?.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
     }
     
     func stopTransitionAnimation(key: String) {
         //stop the animation with a smooth transition
         //sceneView.scene.rootNode.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
         print("Removing animation")
-        mainCharacterIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
+        mainCharacterIdle?.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
     }
     
     //func playAnimation1() {
@@ -501,7 +501,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //animate the main character to rotate a bit on the y axis
                 //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15))
                 //mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0.3, z: 0, duration: 15)) //old chapter 1
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new chapter 1
+                mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new chapter 1
                 //mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = SCNVector3(0, 0.3, 0)
                 
@@ -512,7 +512,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //mainFloor.runAction(SCNAction.move(to: SCNVector3(x: -18.8, y: 1.25, z: 3.2), duration: 7), completionHandler: stopWalkAnimation) //new ch 1
                 //animate the main character to rotate a bit on the y axis
                 //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //old ch 1
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new ch 1
+                mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new ch 1
                 //mainCharacterIdle.position = mainCharacterMoving.position
                 //mainCharacterIdle.eulerAngles = mainCharacterMoving.eulerAngles
                 
@@ -624,7 +624,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 7)
                 let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
                 let chapter1Letter3RotSeq = SCNAction.sequence([rotate1, rotate2])
-                mainCharacterIdle.runAction(chapter1Letter3RotSeq)
+                mainCharacterIdle?.runAction(chapter1Letter3RotSeq)
                 
                 //L
                 
@@ -678,7 +678,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 let rotate3 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 7)
                 let rotate4 = SCNAction.rotateBy(x: 0, y: 1.75, z: 0, duration: 1)
                 let chapter1Letter4RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3, rotate4])
-                mainCharacterIdle.runAction(chapter1Letter4RotSeq)
+                mainCharacterIdle?.runAction(chapter1Letter4RotSeq)
 
                 //F
                 
@@ -731,7 +731,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 let rotate2 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)
                 let rotate3 = SCNAction.rotateBy(x: 0, y: 0.75, z: 0, duration: 1)
                 let chapter1Letter5RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3])
-                mainCharacterIdle.runAction(chapter1Letter5RotSeq)
+                mainCharacterIdle?.runAction(chapter1Letter5RotSeq)
                 
                 //E
                 
@@ -790,7 +790,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 let rotate3 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)
                 let rotate4 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
                 let chapter1Letter6RotSeq = SCNAction.sequence([rotate1, rotate2, pauseRotation1, rotate3, rotate4])
-                mainCharacterIdle.runAction(chapter1Letter6RotSeq)
+                mainCharacterIdle?.runAction(chapter1Letter6RotSeq)
                 
                 //H
                 
@@ -835,7 +835,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             switch true {
             case chapterOne:
                 mainFloor.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 0, z: 0), duration: 7)) //new ch 1
-                mainCharacterIdle.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new ch 1
+                mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new ch 1
             case chapterTwo:
                 print("end sequence for chapter two")
             case chapterThree:
@@ -1342,7 +1342,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Indy":
             print("Do Indy stuff")
-            mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            mainCharacterIdle?.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         default:
             break
         }
@@ -1372,7 +1372,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case "Indy":
             print("Remove stuff")
             //mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-            mainCharacterIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
+            mainCharacterIdle?.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
         default:
             break
         }

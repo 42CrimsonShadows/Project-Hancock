@@ -52,49 +52,49 @@ class ChapterSelection {
         case 3:
             print("Loading Chapter ", picked)
             //TODO: load chapter 3 files
-            chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedNodeArray = loadChapter3NodeFiles()
             chapterSelectedLetterArray = ["G", "O", "Q", "S", "J"]
             chapterSelectedSoundDict = loadChapter3SoundFiles()
         case 4:
             print("Loading Chapter ", picked)
             //TODO: load chapter 4 files
-            chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedNodeArray = loadChapter4NodeFiles()
             chapterSelectedLetterArray = ["K", "V", "W", "M", "A"]
             chapterSelectedSoundDict = loadChapter4SoundFiles()
         case 5:
             print("Loading Chapter ", picked)
             //TODO: load chapter 5 files
-            chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedNodeArray = loadChapter5NodeFiles()
             chapterSelectedLetterArray = ["N", "Z", "Y", "X"]
             chapterSelectedSoundDict = loadChapter5SoundFiles()
         case 6:
             print("Loading Chapter ", picked)
             //TODO: load chapter 6 files
-            chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedNodeArray = loadChapter6NodeFiles()
             chapterSelectedLetterArray = ["c", "a", "d", "g", "o"]
             chapterSelectedSoundDict = loadChapter6SoundFiles()
         case 7:
             print("Loading Chapter ", picked)
             //TODO: load chapter 7 files
-            chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedNodeArray = loadChapter7NodeFiles()
             chapterSelectedLetterArray = ["u", "s", "v", "w", "i", "t"]
             chapterSelectedSoundDict = loadChapter7SoundFiles()
         case 8:
             print("Loading Chapter ", picked)
             //TODO: load chapter 8 files
-            chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedNodeArray = loadChapter8NodeFiles()
             chapterSelectedLetterArray = ["l", "y", "k", "e"]
             chapterSelectedSoundDict = loadChapter8SoundFiles()
         case 9:
             print("Loading Chapter ", picked)
             //TODO: load chapter 9 files
-            chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedNodeArray = loadChapter9NodeFiles()
             chapterSelectedLetterArray = ["p", "r", "n", "h", "B"]
             chapterSelectedSoundDict = loadChapter9SoundFiles()
         case 10:
             print("Loading Chapter ", picked)
             //TODO: load chapter 10 files
-            chapterSelectedNodeArray = loadChapter1NodeFiles()
+            chapterSelectedNodeArray = loadChapter10NodeFiles()
             chapterSelectedLetterArray = ["f", "q", "x", "z"]
             chapterSelectedSoundDict = loadChapter10SoundFiles()
         default:
@@ -105,7 +105,7 @@ class ChapterSelection {
     //chapter 1 stuff here
     func loadChapter1NodeFiles () -> [SCNNode]{
         //var array of chapter 1 assest
-        var chapter2NodeArray: [SCNNode] = []
+        var chapter1NodeArray: [SCNNode] = []
         
         // Load StoryScene Node
         let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Environment/Chapter1Scene.scn")!
@@ -270,9 +270,9 @@ class ChapterSelection {
         prepareAnimation(withKey: "SideCharacter5Dance", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@DanceFixed", animationIdentifier: "Hannah@DanceFixed-1")
         
         //chapter1NodeArray.append(focusNode)
-        chapter2NodeArray.append(storyNode)
+        chapter1NodeArray.append(storyNode)
         
-        return chapter2NodeArray
+        return chapter1NodeArray
     }
     
     func loadChapter1SoundFiles() -> [String: String] {
@@ -353,6 +353,25 @@ class ChapterSelection {
         //var array of chapter 3 assest
         var chapter2NodeArray: [SCNNode] = []
         
+        // Load StoryScene Node
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter2Files/Environment/Chapter2Scene.scn")!
+        storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+        storyNode.scale = SCNVector3(1, 1, 1)
+        storyNode.position = SCNVector3(0, 0, 0)
+        //storyNode.isHidden = true
+        
+        //Load Scene Mask so we only see immidate area
+        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
+        for child in maskingScene.rootNode.childNodes {
+            maskingNode.addChildNode(child)
+        }
+        maskingNode.renderingOrder = -2
+        storyNode.addChildNode(maskingNode)
+        maskingNode.position = SCNVector3(0, 0, 0)
+        //maskingNode.scale = SCNVector3(1, 1, 1)
+        
+        chapter2NodeArray.append(storyNode)
+        
         return chapter2NodeArray
     }
     func loadChapter2SoundFiles() -> [String: String] {
@@ -378,6 +397,25 @@ class ChapterSelection {
     func loadChapter3NodeFiles () -> [SCNNode]{
         //var array of chapter 3 assest
         var chapter3NodeArray: [SCNNode] = []
+        
+        // Load StoryScene Node
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Environment/Chapter3Scene.scn")!
+        storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+        storyNode.scale = SCNVector3(1, 1, 1)
+        storyNode.position = SCNVector3(0, 0, 0)
+        //storyNode.isHidden = true
+        
+        //Load Scene Mask so we only see immidate area
+        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
+        for child in maskingScene.rootNode.childNodes {
+            maskingNode.addChildNode(child)
+        }
+        maskingNode.renderingOrder = -2
+        storyNode.addChildNode(maskingNode)
+        maskingNode.position = SCNVector3(0, 0, 0)
+        //maskingNode.scale = SCNVector3(1, 1, 1)
+        
+        chapter3NodeArray.append(storyNode)
         
          return chapter3NodeArray
     }
