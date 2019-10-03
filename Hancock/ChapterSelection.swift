@@ -360,16 +360,6 @@ class ChapterSelection {
         storyNode.position = SCNVector3(0, 0, 0)
         //storyNode.isHidden = true
         
-        //Load Scene Mask so we only see immidate area
-        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
-        for child in maskingScene.rootNode.childNodes {
-            maskingNode.addChildNode(child)
-        }
-        maskingNode.renderingOrder = -2
-        storyNode.addChildNode(maskingNode)
-        maskingNode.position = SCNVector3(0, 0, 0)
-        //maskingNode.scale = SCNVector3(1, 1, 1)
-        
         chapter2NodeArray.append(storyNode)
         
         return chapter2NodeArray
@@ -405,16 +395,6 @@ class ChapterSelection {
         storyNode.position = SCNVector3(0, 0, 0)
         //storyNode.isHidden = true
         
-        //Load Scene Mask so we only see immidate area
-        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
-        for child in maskingScene.rootNode.childNodes {
-            maskingNode.addChildNode(child)
-        }
-        maskingNode.renderingOrder = -2
-        storyNode.addChildNode(maskingNode)
-        maskingNode.position = SCNVector3(0, 0, 0)
-        //maskingNode.scale = SCNVector3(1, 1, 1)
-        
         chapter3NodeArray.append(storyNode)
         
          return chapter3NodeArray
@@ -428,8 +408,8 @@ class ChapterSelection {
                                   "Narration6" : "Line6",
                                   "Narration7" : "Line7",
                                   "Narration8" : "Line8",
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
+                                  "Background1" : "underwater",
+                                  "Background2" : "underwater",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "Coin1" : "xylophone2",
                                   "Break1" : "RockBreak3",
