@@ -344,6 +344,7 @@ class ChapterSelection {
                                   "Coin1" : "xylophone2",
                                   "Break3" : "RockBreak3",
                                   "Shatter1" : "RockShatter",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter1SoundArray
     }

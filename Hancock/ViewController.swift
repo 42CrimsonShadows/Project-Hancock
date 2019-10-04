@@ -390,10 +390,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.gameState = .detectSurface
             
             //stop all sound
-            self.toggleAudioBGFile(file: chapterSelectedSoundDict!["stop"]!, type: "wav")
-            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["stop"]!, type: "wav", rate: 1.5)
-            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["stop"]!, type: "wav")
-            self.toggleAudioCharacterFile(file: "stop", type: "wav")
+            self.toggleAudioBGFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav")
+            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav", rate: 1.5)
+            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav")
+            self.toggleAudioCharacterFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav")
+            chapterSelectedSoundDict = nil
             //self.birdsPlayer.stop()
             //self.walkPlayer.stop()
             //self.narrationPlayer.stop()
@@ -402,7 +403,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //self.CharacterPlayer.stop()
             
             //stop all animations
-            self.stopWalkAnimation()
+            //self.stopWalkAnimation()
             //self.stopAnimation2()
             //self.shatterLetterOne = false
             
@@ -414,6 +415,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //self.mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
             
             self.removeModels(chapterNode: self.chapterNodeArray!)
+
             
             let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "bookARViewController") as! HomeViewController
             self.present(chapterARView, animated: true)
@@ -923,19 +925,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter2:
             //wait 2 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                [weak self] in self?.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
                 //wait 4 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //get ready to shatter a when ViewDidAppear() is called
                     print("Prepare to shatter letter 2")
-                    self.shatterLetterTwo = true
+                    self?.shatterLetterTwo = true
                     
                     print("Loading activity \(chapterSelectedLetterArray![1])")
-                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
+                    self?.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
                     
                     //wait 6 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
+                        self?.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
                     })
                 })
             })
@@ -1309,7 +1311,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //pass it an audiofile and it will play/stop it!
-    func toggleAudioBGFile(file: String?, type: String?) {
+    func toggleAudioBGFile(file: String, type: String) {
         var audio3Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
