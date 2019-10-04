@@ -31,8 +31,6 @@ enum GameProgress: Int16 {
 //By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    let chapSelection = ChapterSelection()
-    
     //MARK: - OUTLETS
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var stuNameTextFeild: UITextField!
@@ -42,6 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var startButton: UIButton!
+    @IBOutlet var showAllBtn: UIButton!
     
     //MARK: ACTIONS
     @IBAction func goToActivity(_ sender: Any) {
@@ -52,8 +51,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func setStudentInfo(_ sender: UIButton) {
     }
+    
     @IBAction func startButtonPressed(_ sender: Any) {
         self.startGame()
+        
+        //while game is playing we need a go back button to return to the beginning
+        resetButton.isHidden = false
+        
+        switch true {
+        case chapterOne:
+            showAllBtn.isHidden = false
+        case chapterTwo:
+            //don't need to hide everything in this scene
+            showAllBtn.isHidden = true
+        case chapterThree:
+            //don't need to hide everything in this scene
+            showAllBtn.isHidden = true
+        case chapterFour:
+            showAllBtn.isHidden = true
+        case chapterFive:
+            showAllBtn.isHidden = true
+        default:
+            break
+        }
     }
     @IBAction func resetButtonPressed(_ sender: Any) {
         self.resetGame()
@@ -63,9 +83,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //toggle the showall button
         if storymask.isHidden == true {
             storymask.isHidden = false
+            //while showing all the environment set btn to show brighter
+            showAllBtn.alpha = 1
         }
         else{
             storymask.isHidden = true
+            //while not showing all the environment set btn to hardly show
+            showAllBtn.alpha = 0.3
         }
         
     }
@@ -362,8 +386,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //self.mainCharacterMoving.isHidden = true
             
             //change game state and show start button
-            ////self.startButton.isHidden = false
-            //self.gameState = .detectSurface
+            self.startButton.isHidden = false
+            self.gameState = .detectSurface
             
             //stop all sound
             self.toggleAudioBGFile(file: chapterSelectedSoundDict!["stop"]!, type: "wav")
@@ -371,14 +395,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["stop"]!, type: "wav")
             self.toggleAudioCharacterFile(file: "stop", type: "wav")
             //self.birdsPlayer.stop()
-//            self.walkPlayer.stop()
-//            self.narrationPlayer.stop()
-//            self.BGPlayer.stop()
-//            self.FXPlayer.stop()
-//            self.CharacterPlayer.stop()
+            //self.walkPlayer.stop()
+            //self.narrationPlayer.stop()
+            //self.BGPlayer.stop()
+            //self.FXPlayer.stop()
+            //self.CharacterPlayer.stop()
             
             //stop all animations
-            //self.stopWalkAnimation()
+            self.stopWalkAnimation()
             //self.stopAnimation2()
             //self.shatterLetterOne = false
             
@@ -389,7 +413,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //self.mainCharacterIdle.position = SCNVector3(0, 0, 0)
             //self.mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
             
-            let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "chapterARViewController") as! ViewController
+            self.removeModels(chapterNode: self.chapterNodeArray!)
+            
+            let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "bookARViewController") as! HomeViewController
             self.present(chapterARView, animated: true)
         }
     }
@@ -405,6 +431,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         focusNode = focusScene.rootNode.childNode(withName: "focus", recursively: false)
         focusNode.isHidden = true
         sceneView.scene.rootNode.addChildNode(focusNode)
+    }
+    func removeModels(chapterNode: [SCNNode]) {
+        
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in node.removeFromParentNode()}
     }
     
     func referenceMainNodes() {
@@ -1222,13 +1252,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func storyTime(){
         //Wait 3 second for game to load completely
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
             //play game intro 1
             self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
         })
         
         //wait 7 seconds for the game intro1 to finsh
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
             
             //move the main character to the first letter
             self.playWalkAnimation()
@@ -1237,20 +1267,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //pass it an audiofile and it will play it!
     func toggleAudioNarrationFile(file: String, type: String) {
+        //get the url
         let audio1Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+        //make sure we have the path, otherwise abort
+        guard audio1Path != nil else { return }
+        
         do
         {
+            if narrationPlayer == AVPlayer(url: URL(fileURLWithPath: audio1Path!)){
+                print("Stoping narrationPlayer")
+                narrationPlayer.stop()
+            }
+            
             try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio1Path!))
+            narrationPlayer.play()
             
         } catch {
             print("AudioPlayer not available!")
         }
-        
-        if self.narrationPlayer.isPlaying{
-            self.narrationPlayer.stop()
-        }
-        
-        self.narrationPlayer.play()
     }
     
     //pass it an audiofile and it will play it!
@@ -1258,38 +1292,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let audio2Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
+            if FXPlayer == AVPlayer(url: URL(fileURLWithPath: audio2Path!)){
+                print("Stoping FXPlayer")
+                FXPlayer.stop()
+            }
+            
             try FXPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio2Path!))
+            FXPlayer.enableRate = true
+            FXPlayer.rate = rate
+            FXPlayer.setVolume(0.5, fadeDuration: 0)
+            self.FXPlayer.play()
             
         } catch {
             print("FXPlayer not available!")
         }
-        if self.FXPlayer.isPlaying{
-            self.FXPlayer.stop()
-        }
-        
-        FXPlayer.enableRate = true
-        FXPlayer.rate = rate
-        FXPlayer.setVolume(0.5, fadeDuration: 0)
-        self.FXPlayer.play()
     }
     
     //pass it an audiofile and it will play/stop it!
-    func toggleAudioBGFile(file: String, type: String) {
-        let audio3Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
+    func toggleAudioBGFile(file: String?, type: String?) {
+        var audio3Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
+            if BGPlayer == AVPlayer(url: URL(fileURLWithPath: audio3Path!)){
+                print("Stoping BGPlayer")
+                BGPlayer.stop()
+            }
+            
             try BGPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio3Path!))
+            //set BGPlayer to play infinitly (-1)
+            BGPlayer.numberOfLoops = -1
+            BGPlayer.play()
             
         } catch {
             print("BGPlayer not available!")
         }
-        if self.BGPlayer.isPlaying{
-            self.BGPlayer.stop()
-        }
-        
-        //set BGPlayer to play infinitly (-1)
-        self.BGPlayer.numberOfLoops = -1
-        self.BGPlayer.play()
     }
     
     //pass it an audiofile and it will play it!
@@ -1297,17 +1333,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let audio4Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
         do
         {
+            if CharacterPlayer == AVPlayer(url: URL(fileURLWithPath: audio4Path!)){
+                print("Stoping characterPlayer")
+                CharacterPlayer.stop()
+            }
+            
             try CharacterPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio4Path!))
+            self.CharacterPlayer.play()
             
         } catch {
             print("CharacterPlayer not available!")
         }
-        
-        if self.CharacterPlayer.isPlaying{
-            self.CharacterPlayer.stop()
-        }
-        
-        self.CharacterPlayer.play()
     }
     
     
