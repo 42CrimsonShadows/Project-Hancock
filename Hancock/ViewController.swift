@@ -379,6 +379,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func resetGame(){
         guard self.gameState == .playGame else { return }
+        
+//        DispatchQueue.global().async {
+//            //fade out the walking sound
+//            self.FXPlayer.setVolume(0, fadeDuration: 1)
+//            //stop playing the walking sound
+//            self.FXPlayer.stop()
+//            self.FXPlayer.setVolume(1, fadeDuration: 0)
+//
+//            //self.walkPlayer.stop()
+//            self.narrationPlayer.stop()
+//            self.BGPlayer.stop()
+//            self.CharacterPlayer.stop()
+//        }
+        
         DispatchQueue.main.async {
             //hide the main nodes
             //self.rootStoryNode.isHidden = true
@@ -394,13 +408,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav", rate: 1.5)
             self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav")
             self.toggleAudioCharacterFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav")
-            chapterSelectedSoundDict = nil
-            //self.birdsPlayer.stop()
-            //self.walkPlayer.stop()
-            //self.narrationPlayer.stop()
-            //self.BGPlayer.stop()
-            //self.FXPlayer.stop()
-            //self.CharacterPlayer.stop()
             
             //stop all animations
             //self.stopWalkAnimation()
@@ -415,7 +422,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //self.mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
             
             self.removeModels(chapterNode: self.chapterNodeArray!)
-
             
             let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "bookARViewController") as! HomeViewController
             self.present(chapterARView, animated: true)

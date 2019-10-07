@@ -380,6 +380,7 @@ class ChapterSelection {
                                   "Coin1" : "xylophone2",
                                   "Break3" : "RockBreak3",
                                   "Shatter1" : "RockShatter",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter2SoundArray
     }
@@ -414,6 +415,7 @@ class ChapterSelection {
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "Coin1" : "xylophone2",
                                   "Break1" : "RockBreak3",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter3SoundArray
     }
@@ -439,6 +441,7 @@ class ChapterSelection {
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "Coin1" : "xylophone2",
                                   "Break1" : "RockBreak3",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter4SoundArray
     }
@@ -464,6 +467,7 @@ class ChapterSelection {
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "Coin1" : "xylophone2",
                                   "Break1" : "RockBreak3",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter5SoundArray
     }
@@ -489,6 +493,7 @@ class ChapterSelection {
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "Coin1" : "xylophone2",
                                   "Break1" : "RockBreak3",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter6SoundArray
     }
@@ -514,6 +519,7 @@ class ChapterSelection {
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "Coin1" : "xylophone2",
                                   "Break1" : "RockBreak3",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter7SoundArray
     }
@@ -539,6 +545,7 @@ class ChapterSelection {
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "Coin1" : "xylophone2",
                                   "Break1" : "RockBreak3",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter8SoundArray
     }
@@ -564,6 +571,7 @@ class ChapterSelection {
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "Coin1" : "xylophone2",
                                   "Break1" : "RockBreak3",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter9SoundArray
     }
