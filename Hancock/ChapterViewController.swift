@@ -1,11 +1,11 @@
-//
-//  ChapterViewController.swift
-//  Hancock
-//
-//  Created by Chris Ross on 6/22/19.
-//  Copyright © 2019 Chris Ross. All rights reserved.
-//
+
 import UIKit
+
+var chapterOne: Bool = false
+var chapterTwo: Bool = false
+var chapterThree: Bool = false
+var chapterFour: Bool = false
+var chapterFive: Bool = false
 
 class ChapterViewController: UIViewController {
     
@@ -21,22 +21,47 @@ class ChapterViewController: UIViewController {
     @IBOutlet weak var chapter5Label: UIButton!
     
     @IBAction func cpt1Clicked(_ sender: Any) {
+        chapterOne = true
+        chapterTwo = false
+        chapterThree = false
+        chapterFour = false
+        chapterFive = false
         chapterSelector.chapterLoader(picked: 1)
         tappedMe()
     }
     @IBAction func cpt2Clicked(_ sender: Any) {
+        chapterOne = false
+        chapterTwo = true
+        chapterThree = false
+        chapterFour = false
+        chapterFive = false
         chapterSelector.chapterLoader(picked: 2)
         tappedMe()
     }
     @IBAction func cpt3Clicked(_ sender: Any) {
+        chapterOne = false
+        chapterTwo = false
+        chapterThree = true
+        chapterFour = false
+        chapterFive = false
         chapterSelector.chapterLoader(picked: 3)
         tappedMe()
     }
     @IBAction func cpt4Clicked(_ sender: Any) {
+        chapterOne = false
+        chapterTwo = false
+        chapterThree = false
+        chapterFour = true
+        chapterFive = false
         chapterSelector.chapterLoader(picked: 4)
         tappedMe()
     }
     @IBAction func cpt5Clicked(_ sender: Any) {
+        chapterOne = false
+        chapterTwo = false
+        chapterThree = false
+        chapterFour = false
+        chapterFive = true
         chapterSelector.chapterLoader(picked: 5)
         tappedMe()
     }

@@ -1,0 +1,22 @@
+version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+options: "562df2b076a52028266dbb6e58d0d2f4"
+build_time: [1563305228, 479452000]
+inputs:
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/ReticleView.swift": [1563302783, 338978484]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/ViewController.swift": [1563304084, 841339732]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/CanvasView.swift": [1563302783, 336632083]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/AppDelegate.swift": [1563302783, 222211470]
+  "/Users/chrisross/Desktop/Project-Hancock/Authentication/RegisterViewController.swift": [1563302783, 214340625]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/ActivitySelection.swift": [1563302783, 221179913]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/Formatters.swift": [1563302783, 337134194]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/UIViewExtension.swift": [1563302783, 339580111]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/ChapterSelection.swift": [1563302783, 336774969]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/HomeViewController.swift": [1563302783, 337615721]
+  "/Users/chrisross/Desktop/Project-Hancock/Authentication/SignInViewController.swift": [1563302783, 214467883]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/line.swift": [1563302783, 992542020]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/InitViewController.swift": [1563302783, 337954347]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/StudentTableViewController.swift": [1563302783, 339141124]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/ChapterViewController.swift": [1563302783, 336930423]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/activityViewController.swift": [1563303892, 165979667]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/StudentsTableViewCell.swift": [1563302783, 339273387]
+  "/Users/chrisross/Desktop/Project-Hancock/Hancock/Swift_Gif.swift": [1563302783, 339414219]
