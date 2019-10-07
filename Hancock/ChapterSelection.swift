@@ -208,6 +208,7 @@ class ChapterSelection {
         }
         lvlFloor.addChildNode(SideCharacter3idleNode)
         SideCharacter3idleNode.scale = SCNVector3(0.002, 0.002, 0.002)
+        //SideCharacter3idleNode.eulerAngles = SCNVector3(0, -135, 0)
         SideCharacter3idleNode.eulerAngles = SCNVector3(0, -135, 0)
         SideCharacter3idleNode.position = SCNVector3(4.4, 3.8, 11.9)
         
@@ -219,8 +220,9 @@ class ChapterSelection {
         lvlFloor.addChildNode(SideCharacter4idleNode)
         SideCharacter4idleNode.scale = SCNVector3(1, 1, 1)
         //SideCharacter4idleNode.position = SCNVector3(4.4, 1.97, -6.62)
-        SideCharacter4idleNode.position = SCNVector3(6.88, 1.97, -6.9)
-        SideCharacter4idleNode.eulerAngles = SCNVector3(0, 90, 0)
+        //SideCharacter4idleNode.position = SCNVector3(6.88, 1.97, -6.9)
+        SideCharacter4idleNode.position = SCNVector3(6.8, 2.2, -6.8)
+        SideCharacter4idleNode.eulerAngles = SCNVector3(0, 1.50, 0)
         
         //Load Idle Animation Node
         //let idleHannahScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed.dae")!
@@ -269,7 +271,7 @@ class ChapterSelection {
         prepareAnimation(withKey: "SideCharacter5Surprise", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SurpriseFixed", animationIdentifier: "Hannah@SurpriseFixed-1")
         prepareAnimation(withKey: "SideCharacter5Dance", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@DanceFixed", animationIdentifier: "Hannah@DanceFixed-1")
         
-        //chapter1NodeArray.append(focusNode)
+        //chapter1NodeArray.append(focusNode)                                                                                                                                                                                                                                                                                                                                                       
         chapter1NodeArray.append(storyNode)
         
         return chapter1NodeArray
