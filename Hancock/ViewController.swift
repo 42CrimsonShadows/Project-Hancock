@@ -1056,11 +1056,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             
             //drop side Eric down from letter E
-            self.charcterThreeIdle.parent?.runAction(SCNAction.moveBy(x:0, y: 0, z: 1, duration: 12.3))
+            //self.charcterThreeIdle.parent?.runAction(SCNAction.moveBy(x:0, y: 0, z: 1, duration: 12.3))
             self.startAnimateSideCharacter(key: "SideCharacter4Climb", sideCharacter: "Eric")
             
                 //play for 3 seconds
-                DispatchQueue.main.asyncAfter(deadline: .now() + 12.3, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12.5, execute: {
+                    //set new position for Eric's transform where the next animation will begin
+                    self.charcterFourIdle.parent?.position = SCNVector3(6.25, 1.2, -4.7)
+                    
                     //play Lin through a sequence of movements so he turns and then walks to the Letter H
                     //let rotate1 = SCNAction.rotateBy(x: 0.0, y: 0.0, z: 0.0, duration: 0.5)
                     let endSpot = SCNVector3(x: 19.5, y: 2.5, z: 7.5)

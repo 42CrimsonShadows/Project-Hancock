@@ -219,10 +219,8 @@ class ChapterSelection {
         }
         lvlFloor.addChildNode(SideCharacter4idleNode)
         SideCharacter4idleNode.scale = SCNVector3(1, 1, 1)
-        //SideCharacter4idleNode.position = SCNVector3(4.4, 1.97, -6.62)
-        //SideCharacter4idleNode.position = SCNVector3(6.88, 1.97, -6.9)
-        SideCharacter4idleNode.position = SCNVector3(6.8, 2.2, -6.8)
-        SideCharacter4idleNode.eulerAngles = SCNVector3(0, 1.50, 0)
+        SideCharacter4idleNode.position = SCNVector3(6.85, 2, -6.55)
+        SideCharacter4idleNode.eulerAngles = SCNVector3(0, 1.45, 0)
         
         //Load Idle Animation Node
         //let idleHannahScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed.dae")!
