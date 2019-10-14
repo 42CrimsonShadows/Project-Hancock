@@ -901,8 +901,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             switch true {
             case chapterOne:
-                mainFloor.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 0, z: 0), duration: 7)) //new ch 1
-                mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new ch 1
+                //mainFloor.runAction(SCNAction.move(to: SCNVector3(x: 0, y: 0, z: 0), duration: 7)) //new ch 1
+                //mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new ch 1
+                print("end sequence for chapter one")
             case chapterTwo:
                 print("end sequence for chapter two")
             case chapterThree:
