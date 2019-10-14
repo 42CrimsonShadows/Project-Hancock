@@ -812,23 +812,61 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 // x= (-)west/(+)east, z= (-)north/(+)south
-                let move1 = SCNAction.moveBy(x: 0.1, y: 0, z: -0.95, duration: 6)
-                let move2 = SCNAction.moveBy(x: 0.6, y: 0, z: -0.1, duration: 3)
-                //TO-Do: invite Hannah to go to the tree for the surprise party (sound file)
-                //pause to go through idny's dialog to hannah
+                let rotate1 = SCNAction.rotateBy(x: 0, y: -0.1, z: 0, duration: 0.5)
+                let move1 = SCNAction.move(by: SCNVector3(x: 11.24,y: 1.4,z: -9.5), duration: 3)
+                let move2 = SCNAction.move(by: SCNVector3(x: 14.5,y: 1.2,z: -15.5), duration: 3)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.65, z: 0, duration: 0.5)
+                
+                let chapter1Letter6MoveSeq1 = SCNAction.sequence([rotate1, move1, move2, rotate2])
+                mainFloor.runAction((chapter1Letter6MoveSeq1), completionHandler: stopWalkAnimation)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                    //TODO: Hannah stop dancing and Idle till narration done
+                    [weak self] in self?.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration42"]!, type: "mp3")
+                    self?.charcterFiveIdle.runAction(SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 0.5))
+                    self?.stopAnimateSideCharacter(key: "SideCharacter5Dancing", sideCharacter: "Hannah")
+                    self?.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: {
+                        //hannah sequence
+                        self?.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+                        self?.startAnimateSideCharacter(key: "SideCharacter5Walk", sideCharacter: "Hannah")
+                        
+                        let hannahRotate1 = SCNAction.rotateBy(x: 0, y: 1.75, z: 0, duration: 1)
+                        let hannahMove1 = SCNAction.move(to: SCNVector3(x: 21.5,y: 1.1,z: -11.2), duration: 2)
+                        let hannahMove2 = SCNAction.move(to: SCNVector3(x: 19.75,y: 1.7,z: -0.65), duration: 4)
+                        let hannahMove3 = SCNAction.move(to: SCNVector3(x: 21.4,y: 1.4,z: 5.7), duration: 4)
+                        
+                        let hannahLetter6MoveSeq = SCNAction.sequence([hannahRotate1, hannahMove1, hannahMove2, hannahMove3])
+                        self?.charcterFiveIdle.runAction(hannahLetter6MoveSeq)
+                        
+                        //indy sequence
+                        //move 1
+                        //move 2
+                        //move 3
+                        
+                        let chapter1Letter6MoveSeq2 = SCNAction.sequence([])
+                        self?.mainFloor.runAction((chapter1Letter6MoveSeq2), completionHandler: self?.stopWalkAnimation)
+                    })
+                })
+                
+                //pause to go through indy's dialog to hannah
                 let pauseMove = SCNAction.moveBy(x: 0, y: 0, z: 0, duration: 10)
                 let move3 = SCNAction.moveBy(x: 0.3, y: 0, z: 0.1, duration: 2)
                 let move4 = SCNAction.moveBy(x: 0, y: -0.1, z: 1.9, duration: 6)
+                
                 let chapter1Letter6MoveSeq = SCNAction.sequence([move1, move2, pauseMove, move3, move4])
                 mainFloor.runAction((chapter1Letter6MoveSeq), completionHandler: stopWalkAnimation)
+                
                 // (-) = clockwise, (+) = couter-clockwise
-                let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 5)
-                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
-                let pauseRotation1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 13)
-                let rotate3 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)
-                let rotate4 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
-                let chapter1Letter6RotSeq = SCNAction.sequence([rotate1, rotate2, pauseRotation1, rotate3, rotate4])
-                mainCharacterIdle?.runAction(chapter1Letter6RotSeq)
+                //let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 5)
+                //let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                //let pauseRotation1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 13)
+                //let rotate3 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)
+                //let rotate4 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                
+                //let chapter1Letter6RotSeq = SCNAction.sequence([rotate1, rotate2, pauseRotation1, rotate3, rotate4])
+                //mainCharacterIdle?.runAction(chapter1Letter6RotSeq)
                 
                 //H
                 
@@ -1039,6 +1077,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
 //                self.playAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish"]!, type: "mp3")
 //            })
+            
             //TODO: trigger finishing event
         }
     }
@@ -1050,11 +1089,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             animateLetterHide(fadeThis: letterSix!)
             toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             
-        case shatterLetterFive:
-            //letterFive!.isPaused = false
-            //animateLetterHide(fadeThis: letterFive!)
-            //playAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+            //TODO: shatterLetterSix - Completion animation (dancing/celebration)
             
+        case shatterLetterFive:
             //drop side Eric down from letter E
             //self.charcterThreeIdle.parent?.runAction(SCNAction.moveBy(x:0, y: 0, z: 1, duration: 12.3))
             self.startAnimateSideCharacter(key: "SideCharacter4Climb", sideCharacter: "Eric")
@@ -1080,6 +1117,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
                         self.stopAnimateSideCharacter(key: "SideCharacter4Walk", sideCharacter: "Eric")
                         self.startAnimateSideCharacter(key: "SideCharacter4Dance1", sideCharacter: "Eric")
+                        
+                        self.letterFive!.isPaused = false
+                        self.animateLetterHide(fadeThis: self.letterFive!)
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
                     })
                 })
             
