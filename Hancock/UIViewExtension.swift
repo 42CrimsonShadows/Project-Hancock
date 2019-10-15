@@ -1,10 +1,3 @@
-//
-//  UIViewExtension.swift
-//  Hancock
-//
-//  Created by Chris Ross on 7/1/19.
-//  Copyright © 2019 Chris Ross. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -24,7 +17,7 @@ extension UIView {
         pulse.fromValue  = 1
         
         //ends at %100 of it's size
-        pulse.toValue = 1.25
+        pulse.toValue = 2
         
         //reverse the animation when finished
         pulse.autoreverses = true

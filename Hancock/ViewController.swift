@@ -812,10 +812,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 // x= (-)west/(+)east, z= (-)north/(+)south
-                let rotate1 = SCNAction.rotateBy(x: 0, y: -0.1, z: 0, duration: 0.5)
-                let move1 = SCNAction.move(by: SCNVector3(x: 11.24,y: 1.4,z: -9.5), duration: 3)
-                let move2 = SCNAction.move(by: SCNVector3(x: 14.5,y: 1.2,z: -15.5), duration: 3)
-                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.65, z: 0, duration: 0.5)
+                let rotate1 = SCNAction.rotateBy(x: 0, y: 0.1, z: 0, duration: 0.5)
+                let move1 = SCNAction.move(by: SCNVector3(x: -0.15,y: 0.04,z: -0.6), duration: 3)
+                let move2 = SCNAction.move(by: SCNVector3(x: -0.21,y: -0.04,z: -0.5), duration: 3)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: 1.65, z: 0, duration: 0.5)
                 //Indy walking to Hannah
                 let chapter1Letter6MoveSeq1 = SCNAction.sequence([rotate1, move1, move2, rotate2])
                 mainFloor.runAction((chapter1Letter6MoveSeq1), completionHandler: stopWalkAnimation)
