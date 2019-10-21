@@ -869,7 +869,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         
                         let move3 = SCNAction.move(by: SCNVector3(x: 0.2,y: -0.1,z: 0.4), duration: 2)
                         let move4 = SCNAction.move(by: SCNVector3(x: 0.1,y: 0,z: 0.5), duration: 4)
-                        let move5 = SCNAction.move(by: SCNVector3(x: 0,y: 0,z: 0.4), duration: 4)
+                        let move5 = SCNAction.move(by: SCNVector3(x: -0.1,y: 0,z: 0.6), duration: 4)
                         
                         //Indy walking to H
                         let chapter1Letter6MoveSeq2 = SCNAction.sequence([move3, move4, move5])
@@ -881,7 +881,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
                             self?.stopAnimateSideCharacter(key: "SideCharacter5Walk", sideCharacter: "Hannah")
-                            self?.startAnimateSideCharacter(key: "SideCharacter5Surprise", sideCharacter: "Hannah")
+                            self?.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                                self?.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+                                self?.startAnimateSideCharacter(key: "SideCharacter5Surprise", sideCharacter: "Hannah")
+                            })
+                            
                         })
                     })
                 })
@@ -1109,6 +1115,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             
             //TODO: shatterLetterSix - Completion animation (dancing/celebration)
+            //eric stop waveing
+            //eric start dancing
+            //francine stop idle
+            //francing start dancing
+            
+            //maincharacter stop idle
+            //maincharacter start dancing
+            
+            //hanna stop surprise
+            //hanna start dancing
             
         case shatterLetterFive:
             //drop side Eric down from letter E
@@ -1317,7 +1333,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //have the main character walk to the next letter
             DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                self.playWalkAnimation()
+                if self.gameProgress != .chapterFinished {
+                    self.playWalkAnimation()
+                }
+                else{
+                    self.resetGame()
+                }
             })
         })
     }
