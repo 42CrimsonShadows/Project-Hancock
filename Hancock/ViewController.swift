@@ -1110,21 +1110,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func playShatterAnimation() {
         switch true {
         case shatterLetterSix:
+            //francine stop idle /dancing
+            self.stopAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Francine")
+            self.startAnimateSideCharacter(key: "SideCharacter3Dance2", sideCharacter: "Francine")
+            
+            //maincharacter start dancing
+            self.startTransitionAnimation(key: "MainCharacterDance")
+            
+            //hanna stop surprise/start dancing
+            self.stopAnimateSideCharacter(key: "SideCharacter5Surprise", sideCharacter: "Hannah")
+            self.startAnimateSideCharacter(key: "SideCharacter5Dance", sideCharacter: "Hannah")
+            
+            //terry stop waving and start dancing
+            self.stopAnimateSideCharacter(key: "SideCharacter1Waving", sideCharacter: "Terry")
+            self.startAnimateSideCharacter(key: "SideCharacter1Dancing", sideCharacter: "Terry")
+            
             letterSix!.isPaused = false
             animateLetterHide(fadeThis: letterSix!)
             toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
-            
-            //TODO: shatterLetterSix - Completion animation (dancing/celebration)
-            //eric stop waveing
-            //eric start dancing
-            //francine stop idle
-            //francing start dancing
-            
-            //maincharacter stop idle
-            //maincharacter start dancing
-            
-            //hanna stop surprise
-            //hanna start dancing
             
         case shatterLetterFive:
             //drop side Eric down from letter E

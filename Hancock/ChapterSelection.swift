@@ -237,6 +237,7 @@ class ChapterSelection {
         //load animations for mainCharacter
         prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@IdleFixed", animationIdentifier: "Indy@IdleFixed-1")
         prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@WalkFixed", animationIdentifier: "Indy@WalkFixed-1")
+        prepareAnimation(withKey: "MainCharacterDance", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Indy/Indy@DanceFixed", animationIdentifier: "Indy@DanceFixed-1")
         
         //load animation for side character 1
         //prepareAnimation(withKey: "SideCharacter1Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Terry/Terry@IdleFixed", animationIdentifier: "Terry@IdleFixed-1")
