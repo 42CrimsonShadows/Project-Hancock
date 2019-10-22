@@ -814,7 +814,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 // x= (-)west/(+)east, z= (-)north/(+)south
                 let rotate1 = SCNAction.rotateBy(x: 0, y: -0.1, z: 0, duration: 0.5)
                 let rotatePause = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 3.5)
-                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.65, z: 0, duration: 0.5)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.25, z: 0, duration: 0.5)
                 
                 let move1 = SCNAction.move(by: SCNVector3(x: 0.3,y: -0.1,z: -0.5), duration: 2)
                 let move2 = SCNAction.move(by: SCNVector3(x: 0.2,y: 0.1,z: -0.5), duration: 2)
@@ -825,7 +825,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 mainFloor.runAction(chapter1Letter6MoveSeq1_0)
                 
                 //Indy rotating to Hannah
-                let chapter1Letter6MoveSeq1_1 = SCNAction.sequence([ rotate1, rotatePause, rotate2 ])
+                let chapter1Letter6MoveSeq1_1 = SCNAction.sequence([rotate1, rotatePause, rotate2])
                 self.mainCharacterIdle.parent?.runAction((chapter1Letter6MoveSeq1_1))
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6.5, execute: {
@@ -843,7 +843,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self?.stopAnimateSideCharacter(key: "SideCharacter5Dancing", sideCharacter: "Hannah")
                     self?.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
 
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
                         //Hannah and Indy walk together to the Tree
                         
                         //hannah sequence
@@ -857,27 +857,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         let hannahRotate1 = SCNAction.rotateBy(x: 0, y: 0.75, z: 0, duration: 1)
                         let hannahMove1 = SCNAction.move(to: SCNVector3(x: 21.5,y: 1.1,z: -11.2), duration: 2)
                         let hannahMove2 = SCNAction.move(to: SCNVector3(x: 19.75,y: 1.7,z: -0.65), duration: 4)
-                        let hannahMove3 = SCNAction.move(to: SCNVector3(x: 21.4,y: 1.4,z: 5.7), duration: 4)
+                        let hannahMove3 = SCNAction.move(to: SCNVector3(x: 21.4,y: 1.4,z: 4.7), duration: 4)
                         
                         let hannahLetter6MoveSeq = SCNAction.sequence([hannahRotate1, hannahMove1, hannahMove2, hannahMove3])
                         self?.charcterFiveIdle.parent?.runAction(hannahLetter6MoveSeq)
                         
                         //Indy sequence
-                        let rotate3 = SCNAction.rotateBy(x: 0, y: -0.1, z: 0, duration: 0.5)
+                        let rotate3 = SCNAction.rotateBy(x: 0, y: -0.75, z: 0, duration: 0.5)
                         let rotatePause1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1.5)
-                        let rotate4 = SCNAction.rotateBy(x: 0, y: -1.65, z: 0, duration: 0.5)
+                        let rotate4 = SCNAction.rotateBy(x: 0, y: -0.70, z: 0, duration: 0.5)
                         
                         let move3 = SCNAction.move(by: SCNVector3(x: 0.2,y: -0.1,z: 0.4), duration: 2)
                         let move4 = SCNAction.move(by: SCNVector3(x: 0.1,y: 0,z: 0.5), duration: 4)
                         let move5 = SCNAction.move(by: SCNVector3(x: -0.1,y: 0,z: 0.6), duration: 4)
                         
-                        //Indy walking to H
-                        let chapter1Letter6MoveSeq2 = SCNAction.sequence([move3, move4, move5])
-                        self?.mainFloor.runAction((chapter1Letter6MoveSeq2), completionHandler: self?.stopWalkAnimation)
-                        
                         //Indy rotating to H
                         let chapter1Letter6MoveSeq2_0 = SCNAction.sequence([rotate3, rotatePause1, rotate4])
                         self?.mainCharacterIdle.parent?.runAction((chapter1Letter6MoveSeq2_0))
+                        //Indy walking to H
+                        let chapter1Letter6MoveSeq2 = SCNAction.sequence([move3, move4, move5])
+                        self?.mainFloor.runAction((chapter1Letter6MoveSeq2), completionHandler: self?.stopWalkAnimation)
+
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
                             self?.stopAnimateSideCharacter(key: "SideCharacter5Walk", sideCharacter: "Hannah")
@@ -1340,7 +1340,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.playWalkAnimation()
                 }
                 else{
-                    self.resetGame()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
+                        self.resetGame()
+                        })
                 }
             })
         })
