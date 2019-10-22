@@ -863,9 +863,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         self?.charcterFiveIdle.parent?.runAction(hannahLetter6MoveSeq)
                         
                         //Indy sequence
-                        let rotate3 = SCNAction.rotateBy(x: 0, y: -0.75, z: 0, duration: 0.5)
+                        let rotate3 = SCNAction.rotateBy(x: 0, y: -1.50, z: 0, duration: 0.5)
                         let rotatePause1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1.5)
-                        let rotate4 = SCNAction.rotateBy(x: 0, y: -0.70, z: 0, duration: 0.5)
+                        let rotate4 = SCNAction.rotateBy(x: 0, y: -0.40, z: 0, duration: 0.5)
                         
                         let move3 = SCNAction.move(by: SCNVector3(x: 0.2,y: -0.1,z: 0.4), duration: 2)
                         let move4 = SCNAction.move(by: SCNVector3(x: 0.1,y: 0,z: 0.5), duration: 4)
