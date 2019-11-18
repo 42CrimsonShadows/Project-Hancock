@@ -352,9 +352,10 @@ class ChapterSelection {
     
     //chapter 2 stuff here
     func loadChapter2NodeFiles () -> [SCNNode]{
-        //var array of chapter 3 assest
-        var chapter2NodeArray: [SCNNode] = []
         
+        //var array of chapter 2 assest
+        var chapter2NodeArray: [SCNNode] = []
+
         // Load StoryScene Node
         let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter2Files/Environment/Chapter2Scene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
@@ -362,27 +363,80 @@ class ChapterSelection {
         storyNode.position = SCNVector3(0, 0, 0)
         //storyNode.isHidden = true
         
+        //Load Idle Animation Node
+        let idlePiperScene = SCNScene(named: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@IdleFixed.dae")!
+        for child in idlePiperScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(0.01, 0.01, 0.01)
+        idleNode.position = SCNVector3(0.092, 0.078, -0.021)
+        //idleNode.isHidden = true
+        
+        let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+
+        //load all the DAE animations for this Chapter
+        //load animations for mainCharacter
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@IdleFixed", animationIdentifier: "Piper@IdleFixed-1")
+        prepareAnimation(withKey: "MainCharacterSkating", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@PushOff-Fixed", animationIdentifier: "Piper@PushOff-Fixed-1")
+        prepareAnimation(withKey: "MainCharacterStopping", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@Stopping-Fixed", animationIdentifier: "Piper@Stopping-Fixed-1")
+        prepareAnimation(withKey: "MainCharacterCheering", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@CheerFixed", animationIdentifier: "Piper@CheerFixed-1")
+        
+        prepareAnimation(withKey: "MainCharacterP", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@LetterPTrickFixed", animationIdentifier: "Piper@LetterPTrickFixed-1")
+        prepareAnimation(withKey: "MainCharacterR", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@LetterRTrickFixed", animationIdentifier: "Piper@LetterRTrickFixed-1")
+        prepareAnimation(withKey: "MainCharacterB", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@LetterBTrickFixed", animationIdentifier: "Piper@LetterBTrickFixed-1")
+        prepareAnimation(withKey: "MainCharacterC", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@LetterCTrickFixed", animationIdentifier: "Piper@LetterCTrickFixed-1")
+        prepareAnimation(withKey: "MainCharacterD", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@LetterDTrickFixed", animationIdentifier: "Piper@LetterDTrickFixed-1")
+        prepareAnimation(withKey: "MainCharacterU", sceneName: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@LetterUTrickFixed", animationIdentifier: "Piper@LetterUTrickFixed-1")
+
         chapter2NodeArray.append(storyNode)
         
         return chapter2NodeArray
     }
     func loadChapter2SoundFiles() -> [String: String] {
-        let chapter2SoundArray = ["Narration1" : "Line1",
-                                  "Narration2" : "Line2",
-                                  "Narration3" : "Line3",
-                                  "Narration4" : "Line4",
-                                  "Narration5" : "Line5",
-                                  "Narration6" : "Line6",
-                                  "Narration7" : "Line7",
-                                  "Narration8" : "Line8",
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
-                                  "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
-                                  "Break3" : "RockBreak3",
-                                  "Shatter1" : "RockShatter",
-                                  "Stop" : "stop",
-                                  "LetterComplete" : "yeahOutside"]
+        let chapter2SoundArray = [ //sounds for Letter P
+                                    "Narration1" : "ch2-P-Intro1",
+                                    "Narration2" : "ch2-P-Intro2",
+                                    "Narration3" : "ch2-P-Intro3",
+                                    "Narration4" : "ch2-P-Line0",
+                                    "Narration5" : "ch2-P-Line1",
+                                    "Narration6" : "ch2-P-Line2",
+                                    //sounds for Letter R
+                                    "Narration7" : "ch2-R-Line0",
+                                    "Narration8" : "ch2-R-Line1",
+                                    "Narration9" : "ch2-R-Line2",
+                                    //sounds for Letter B
+                                    "Narration10" : "ch2-B-Line0",
+                                    "Narration11" : "ch2-B-Line1",
+                                    "Narration12" : "ch2-B-Line2",
+                                    "Narration13" : "ch2-B-Line3",
+                                    //sounds for Letter C
+                                    "Narration14" : "ch2-C-Line0",
+                                    "Narration15" : "ch2-C-Line1",
+                                    //sounds for Letter D
+                                    "Narration16" : "ch2-D-Line0",
+                                    "Narration17" : "ch2-D-Line1",
+                                    "Narration18" : "ch2-D-Line2",
+                                    //sounds for Letter U
+                                    "Narration19" : "ch2-U-Line0",
+                                    "Narration20" : "ch2-U-Line1",
+                                    "Narration21" : "ch2-U-Line2",
+                                    //letter finish sounds
+                                    "Incredible" : "ch2-Incredible",
+                                    "ThankYou" : "ch2-ThankYou",
+                                    "WowAmazing" : "ch2-WowAmazing",
+                                    "YouDidIt" : "ch2-YouDidIt",
+                                    "YouDidGreat" : "ch2-YouDidGreat",
+                                    //extra chapter FX sounds
+                                    "Background1" : "Birds1",
+                                    "Background2" : "Birds2",
+                                    "WalkSound" : "Gravel and Grass Walk",
+                                    "Coin1" : "xylophone2",
+                                    "Break3" : "RockBreak3",
+                                    //"Shatter1" : "RockShatter",
+                                    "Stop" : "stop",
+                                    //"LetterComplete" : "yeahOutside"
+                                    ]
         return chapter2SoundArray
     }
     

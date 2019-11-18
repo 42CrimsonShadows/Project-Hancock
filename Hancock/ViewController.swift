@@ -469,10 +469,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         charcterFiveIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter5", recursively: true)
         charcterFiveIdle?.isHidden = false
         
-        //generic story main character moving animation
-        //mainCharacterMoving = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Walk", recursively: true)
-        //mainCharacterMoving.isHidden = true
-        
         //generic variable for level floor
         mainFloor = sceneView.scene.rootNode.childNode(withName: "LVLFloor", recursively: true)
         print("-------------------mainFloor is now \(mainFloor!)")
@@ -488,21 +484,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //load ambient sound for chapter (global variable)
     }
     
-//    func MainCharacterWalk() {
-//        if(idle) {
-//            playAnimation()
-//            startTransitionAnimation(key: "MainCharacterWalking")
-//            isMoving = true
-//        }
-//        else {
-//            stopAnimation()
-//            stopTransitionAnimation(key: "MainCharacterWalking")
-//            isMoving = false
-//        }
-//        idle = !idle
-//        return
-//    }
-    
     func startTransitionAnimation(key: String) {
         //add the animation to start playing it right away
         //sceneView.scene.rootNode.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
@@ -517,13 +498,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         mainCharacterIdle?.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
     }
     
-    //func playAnimation1() {
     func playWalkAnimation() {
-        //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
-        startTransitionAnimation(key: "MainCharacterWalking")
-        //play walk sound
-        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
-        
+        //Based on Letter
         switch gameProgress {
         case .toLetter1:
             //change points based on Chapter
@@ -531,8 +507,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 //move position for letter:
                 //I
-                //animate the mainFloor node to move and stop when the translation is complete
                 
+                //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
+                startTransitionAnimation(key: "MainCharacterWalking")
+                
+                //play walk sound
+                toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                
+                //animate the mainFloor node to move and stop when the translation is complete
                 //mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -0.8, duration: 15), completionHandler: stopWalkAnimation) //old chapter 1
                 mainFloor.runAction(SCNAction.moveBy(x:0, y: 0, z: -0.2, duration: 2), completionHandler: stopWalkAnimation)
                 
@@ -545,19 +527,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 print("move floor for chapter one")
             case chapterTwo:
-                //animate the mainFloor node to move and stop when the translation is complete
-                mainFloor.runAction(SCNAction.moveBy(x: 0, y: 0, z: -0.2, duration: 2), completionHandler: stopWalkAnimation) //old ch 1
-                //mainFloor.runAction(SCNAction.move(to: SCNVector3(x: -18.8, y: 1.25, z: 3.2), duration: 7), completionHandler: stopWalkAnimation) //new ch 1
-                //animate the main character to rotate a bit on the y axis
-                //mainCharacterMoving.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //old ch 1
-                mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new ch 1
-                //mainCharacterIdle.position = mainCharacterMoving.position
-                //mainCharacterIdle.eulerAngles = mainCharacterMoving.eulerAngles
+                //TODO: ADD CHAPTER 2, Letter 1(P) MOVE
                 
                 //move position for letter:
                 //P
+                startTransitionAnimation(key: "MainCharacterSkating")
+                
+                // x= (-)west/(+)east, z= (-)north/(+)south
+                let move1 = SCNAction.moveBy(x: 0, y: 0, z: 0, duration: 1)
+                let move2 = SCNAction.moveBy(x: -0.5, y: 0, z: 0, duration: 2)
+                let move3 = SCNAction.moveBy(x: 0, y: 0, z: 0, duration: 0.5)
+                let move4 = SCNAction.moveBy(x: 0, y: 0, z: -0.02, duration: 2)
+                let chapter2Letter1MoveSeq = SCNAction.sequence([move1, move2, move3, move4])
+                mainCharacterIdle?.runAction(chapter2Letter1MoveSeq)
+                
+                // (-) = clockwise, (+) = couter-clockwise
+                let rotate1 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 2)
+                let rotate3 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 0.5)
+                let chapter2Letter1RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3])
+                mainCharacterIdle?.runAction(chapter2Letter1RotSeq)
+                
+                //pause skate animation after 2.9 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9 , execute: {
+                    self.mainCharacterIdle.isPaused = true
+                    //start stop animation
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.9 , execute: {
+                        self.stopTransitionAnimation(key: "MainCharacterSkating")
+                        self.startTransitionAnimation(key: "MainCharacterStopping")
+                        //go back to idle
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5 , execute: {
+                            self.stopTransitionAnimation(key: "MainCharacterStopping")
+                        })
+                    })
+                })
 
-                print("move floor for chapter two")
+                print("move character for chapter two")
             case chapterThree:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
@@ -929,7 +936,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //Finish
         case .chapterFinished:
             
-            //TODO: Do stuff that wraps up the chapter
             print("Reached the end of the chapter")
             
             switch true {
@@ -938,12 +944,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)) //new ch 1
                 print("end sequence for chapter one")
             case chapterTwo:
+                //TODO: ADD CHAPTER 2 END SEQUENCE
                 print("end sequence for chapter two")
             case chapterThree:
+                //TODO: ADD CHAPTER 3 END SEQUENCE
                 print("end sequence for chapter three")
             case chapterFour:
+                //TODO: ADD CHAPTER 4 END SEQUENCE
                 print("end sequence for chapter four")
             case chapterFive:
+                //TODO: ADD CHAPTER 5 END SEQUENCE
                 print("end sequence for chapter five")
             default:
                 break
@@ -1351,15 +1361,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func storyTime(){
         //Wait 3 second for game to load completely
         DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
-            //play game intro 1
-            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-        })
-        
-        //wait 7 seconds for the game intro1 to finsh
-        DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
             
-            //move the main character to the first letter
-            self.playWalkAnimation()
+            //add extra narration based on chapter
+            switch true {
+            case chapterOne:
+                //play game intro 1
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+            case chapterTwo:
+                //TODO: ADD Outfit selection screen
+                //play game intro 1
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                
+                //TODO: when coming back from outfit selection screen play this sound file
+                DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                })
+                print("move floor for chapter two")
+            case chapterThree:
+                //play game intro 1
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                print("move floor for chapter three")
+            case chapterFour:
+                //play game intro 1
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                print("move floor for chapter four")
+            case chapterFive:
+                //play game intro 1
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                print("move floor for chapter five")
+            default:
+                break
+            }
+        
+            //wait 7 seconds for the game intro1 to finish
+            DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
+                
+                //move the main character to the first letter
+                self.playWalkAnimation()
+            })
         })
     }
     
