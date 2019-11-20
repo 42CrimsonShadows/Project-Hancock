@@ -6,7 +6,7 @@ import ARKit
 var chapterSelectedNodeArray: [SCNNode]?
 var chapterSelectedLetterArray: [String]?
 var chapterSelectedSoundDict: [String: String]?
-var chapterSelectedAnimationDict = [String: CAAnimation]() //will this dictionary be reset between chapters I wonder?
+var chapterSelectedAnimationDict = [String: CAAnimation]() //will this dictionary be reset between chapters?
 
 class ChapterSelection {
     
@@ -280,57 +280,57 @@ class ChapterSelection {
         let chapter1SoundArray = [ //sounds for Letter I
                                   "Narration1" : "ch1-I-Intro1",
                                   "Narration2" : "ch1-I-Intro2",
-                                  "Narration3" : "ch1-I-Line1",
-                                  "Narration4" : "ch1-I-Line2_01",
+                                  "Narration3" : "ch1-I-Line1",     //1 narration3
+                                  "Narration4" : "ch1-I-Line2_01",  //2 narration4
                                   "Narration5" : "ch1-I-Line2_02",
-                                  "Narration6" : "ch1-I-Line3_01",
+                                  "Narration6" : "ch1-I-Line3_01",  //3 narration6
                                   "Narration7" : "ch1-I-Line3_02",
-                                  "Narration8" : "ch1-I-Line4_01",
+                                  "Narration8" : "ch1-I-Line4_01",  //4 narration8
                                   "Narration9" : "ch1-I-Line4_02",
                                   //sounds for Letter T
                                   "Narration10" : "ch1-T-Intro1",
                                   "Narration11" : "ch1-T-Intro2",
-                                  "Narration12" : "ch1-T-Line1",
-                                  "Narration13" : "ch1-T-Line2_01",
+                                  "Narration12" : "ch1-T-Line1",    //1 narration12
+                                  "Narration13" : "ch1-T-Line2_01", //2 narration13
                                   "Narration14" : "ch1-T-Line2_02",
-                                  "Narration15" : "ch1-T-Line3_01",
+                                  "Narration15" : "ch1-T-Line3_01", //3 narration14
                                   //sounds for Letter L
                                   "Narration17" : "ch1-L-Intro1",
                                   "Narration18" : "ch1-L-Intro2",
-                                  "Narration19" : "ch1-L-Line1",
-                                  "Narration20" : "ch1-L-Line2_01",
+                                  "Narration19" : "ch1-L-Line1",    //1 narration19
+                                  "Narration20" : "ch1-L-Line2_01", //2 narration20
                                   "Narration21" : "ch1-L-Line2_02",
-                                  "Narration22" : "ch1-L-Line3_01",
+                                  "Narration22" : "ch1-L-Line3_01", //3 narration21
                                   //sounds for Letter F
                                   "Narration23" : "ch1-F-Intro1",
                                   "Narration24" : "ch1-F-Intro2",
-                                  "Narration25" : "ch1-F-Line1",
-                                  "Narration26" : "ch1-F-Line2_01",
+                                  "Narration25" : "ch1-F-Line1",    //1 narration25
+                                  "Narration26" : "ch1-F-Line2_01", //2 narration26
                                   "Narration27" : "ch1-F-Line2_02",
-                                  "Narration28" : "ch1-F-Line3_01",
+                                  "Narration28" : "ch1-F-Line3_01", //3 narration28
                                   "Narration29" : "ch1-F-Line3_02",
-                                  "Narration30" : "ch1-F-Line4_01",
+                                  "Narration30" : "ch1-F-Line4_01", //4 narration30
                                   //sounds for Letter E
                                   "Narration31" : "ch1-E-Intro1",
                                   "Narration32" : "ch1-E-Intro2",
-                                  "Narration33" : "ch1-E-Line1",
-                                  "Narration34" : "ch1-E-Line2_01",
+                                  "Narration33" : "ch1-E-Line1",    //1 narration33
+                                  "Narration34" : "ch1-E-Line2_01", //2 narration34
                                   "Narration35" : "ch1-E-Line2_02",
-                                  "Narration36" : "ch1-E-Line3_01",
+                                  "Narration36" : "ch1-E-Line3_01", //3 narration36
                                   "Narration37" : "ch1-E-Line3_02",
-                                  "Narration38" : "ch1-E-Line4_01",
+                                  "Narration38" : "ch1-E-Line4_01", //4 narration38
                                   "Narration39" : "ch1-E-Line4_02",
-                                  "Narration40" : "ch1-E-Line5_01",
+                                  "Narration40" : "ch1-E-Line5_01", //5 narration40
                                   //sounds for Letter H
                                   "Narration42" : "ch1-H-Intro1",
                                   "Narration43" : "ch1-H-Intro2",
                                   "Narration44" : "ch1-H-Intro3",
-                                  "Narration45" : "ch1-H-Line1",
-                                  "Narration46" : "ch1-H-Line2_01",
+                                  "Narration45" : "ch1-H-Line1",    //1 narration45
+                                  "Narration46" : "ch1-H-Line2_01", //2 narration46
                                   "Narration47" : "ch1-H-Line2_02",
-                                  "Narration48" : "ch1-H-Line3_01",
+                                  "Narration48" : "ch1-H-Line3_01", //3 narration48
                                   "Narration49" : "ch1-H-Line3_02",
-                                  "Narration50" : "ch1-H-Line4_01",
+                                  "Narration50" : "ch1-H-Line4_01", //4 narration50
                                   //letter finish sounds
                                   "letter2Finish" : "ch1-T-Line4",
                                   "letter3Finish" : "ch1-L-Line3_02",
@@ -369,7 +369,7 @@ class ChapterSelection {
             idleNode.addChildNode(child)
         }
         storyNode.addChildNode(idleNode)
-        idleNode.scale = SCNVector3(0.01, 0.01, 0.01)
+        idleNode.scale = SCNVector3(0.008, 0.008, 0.008)
         idleNode.position = SCNVector3(0.092, 0.078, -0.021)
         //idleNode.isHidden = true
         
@@ -397,46 +397,45 @@ class ChapterSelection {
         let chapter2SoundArray = [ //sounds for Letter P
                                     "Narration1" : "ch2-P-Intro1",
                                     "Narration2" : "ch2-P-Intro2",
-                                    "Narration3" : "ch2-P-Intro3",
-                                    "Narration4" : "ch2-P-Line0",
-                                    "Narration5" : "ch2-P-Line1",
+                                    "Narration2_1" : "ch2-P-Intro3",
+                                    "Narration3" : "ch2-P-Line0",
+                                    "Narration4" : "ch2-P-Line1",
                                     "Narration6" : "ch2-P-Line2",
                                     //sounds for Letter R
-                                    "Narration7" : "ch2-R-Line0",
-                                    "Narration8" : "ch2-R-Line1",
-                                    "Narration9" : "ch2-R-Line2",
+                                    "Narration11" : "ch2-R-Line0",
+                                    "Narration12" : "ch2-R-Line1",
+                                    "Narration13" : "ch2-R-Line2",
                                     //sounds for Letter B
-                                    "Narration10" : "ch2-B-Line0",
-                                    "Narration11" : "ch2-B-Line1",
-                                    "Narration12" : "ch2-B-Line2",
-                                    "Narration13" : "ch2-B-Line3",
+                                    "Narration18" : "ch2-B-Line0",
+                                    "Narration19" : "ch2-B-Line1",
+                                    "Narration20" : "ch2-B-Line2",
+                                    "Narration22" : "ch2-B-Line3",
                                     //sounds for Letter C
-                                    "Narration14" : "ch2-C-Line0",
-                                    "Narration15" : "ch2-C-Line1",
+                                    "Narration24" : "ch2-C-Line0",
+                                    "Narration25" : "ch2-C-Line1",
                                     //sounds for Letter D
-                                    "Narration16" : "ch2-D-Line0",
-                                    "Narration17" : "ch2-D-Line1",
-                                    "Narration18" : "ch2-D-Line2",
+                                    "Narration32" : "ch2-D-Line0",
+                                    "Narration33" : "ch2-D-Line1",
+                                    "Narration34" : "ch2-D-Line2",
                                     //sounds for Letter U
-                                    "Narration19" : "ch2-U-Line0",
-                                    "Narration20" : "ch2-U-Line1",
-                                    "Narration21" : "ch2-U-Line2",
+                                    "Narration44" : "ch2-U-Line0",
+                                    "Narration45" : "ch2-U-Line1",
+                                    //"Narration21" : "ch2-U-Line2",
                                     //letter finish sounds
-                                    "Incredible" : "ch2-Incredible",
                                     "ThankYou" : "ch2-ThankYou",
-                                    "WowAmazing" : "ch2-WowAmazing",
-                                    "YouDidIt" : "ch2-YouDidIt",
-                                    "YouDidGreat" : "ch2-YouDidGreat",
+                                    "letter2Finish" : "ch2-WowAmazing",
+                                    "letter3Finish" : "ch2-YouDidGreat",
+                                    "letter4Finish" : "ch2-YouDidIt",
+                                    "letter5Finish" : "ch2-Incredible",
+                                    "chapterFinish" : "ch2-U-Line2",
                                     //extra chapter FX sounds
                                     "Background1" : "Birds1",
                                     "Background2" : "Birds2",
                                     "WalkSound" : "Gravel and Grass Walk",
                                     "Coin1" : "xylophone2",
                                     "Break3" : "RockBreak3",
-                                    //"Shatter1" : "RockShatter",
                                     "Stop" : "stop",
-                                    //"LetterComplete" : "yeahOutside"
-                                    ]
+                                    "LetterComplete" : "yeahOutside"]
         return chapter2SoundArray
     }
     

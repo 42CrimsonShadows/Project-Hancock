@@ -534,24 +534,16 @@ class CanvasView: UIView {
                 
             case .P1_P2:
                 //A1GreenLine?.isHidden = false
-                //playAudioFile(file: "RockBreak1", type: "wav")
                 playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
                 
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    //self.playAudioFile(file: "Line5", type: "mp3")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
-                    
                     print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[0])")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[0]]!, type: "mp3")
+
                     self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[0]]!, type: "mp3")
                     //wait 1 second
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        //self.playAudioFile(file: "Line6", type: "mp3")
-                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
-                        
                         print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[1])")
-                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[1]]!, type: "mp3")
                         self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[1]]!, type: "mp3")
                         
                         //wait 3 seconds
@@ -747,8 +739,9 @@ class CanvasView: UIView {
             print("do stuff")
             return ["Narration", "Narration"]
         case "P":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load P narration")
+            narrationArray = ["letter4Finish", "Narration6", "ThankYou"]
+            //return ["Narration", "Narration"]
         case "Q":
             print("do stuff")
             return ["Narration", "Narration"]
