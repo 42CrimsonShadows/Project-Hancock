@@ -692,14 +692,14 @@ class CanvasView: UIView {
             print("do stuff")
             return ["Narration", "Narration"]
         case "B":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load B narration")
+            narrationArray = ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
         case "C":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load C narration")
+            narrationArray = ["letter4Finish", "letter5Finish"]
         case "D":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load D narration")
+            narrationArray = ["ThankYou", "Narration34", "letter3Finish"]
         case "E":
             print("Load E narration")
             narrationArray = ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
@@ -741,13 +741,12 @@ class CanvasView: UIView {
         case "P":
             print("Load P narration")
             narrationArray = ["letter4Finish", "Narration6", "ThankYou"]
-            //return ["Narration", "Narration"]
         case "Q":
             print("do stuff")
             return ["Narration", "Narration"]
         case "R":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load R narration")
+            narrationArray = ["letter2Finish", "Narration13", "letter5Finish", "Narration14", "letter3Finish"]
         case "S":
             print("do stuff")
             return ["Narration", "Narration"]
@@ -756,8 +755,8 @@ class CanvasView: UIView {
             narrationArray = ["Narration13", "Narration14", "Narration15"]
             //return ["Narration13", "Narration14", "Narration15"]
         case "U":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load U narration")
+            narrationArray = ["letter3Finish", "letter5Finish"]
         case "V":
             print("do stuff")
             return ["Narration", "Narration"]

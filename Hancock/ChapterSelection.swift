@@ -405,6 +405,7 @@ class ChapterSelection {
                                     "Narration11" : "ch2-R-Line0",
                                     "Narration12" : "ch2-R-Line1",
                                     "Narration13" : "ch2-R-Line2",
+                                    "Narration14" : "ch2-B-Line3",
                                     //sounds for Letter B
                                     "Narration18" : "ch2-B-Line0",
                                     "Narration19" : "ch2-B-Line1",
