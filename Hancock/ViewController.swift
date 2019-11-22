@@ -1471,9 +1471,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             //after the final animation, play the fishing narration
                             self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish"]!, type: "mp3")
                             
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
-                                        self.resetGame()
-                                })
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
+                                    self.resetGame()
+                            })
                         })
                     })
                 })
