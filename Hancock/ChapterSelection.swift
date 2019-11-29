@@ -452,26 +452,178 @@ class ChapterSelection {
         storyNode.position = SCNVector3(0, 0, 0)
         //storyNode.isHidden = true
         
+        //Load Idle Animation Node
+        let idleGaryScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Characters/Gary/Gary@IdleFixed.dae")!
+        for child in idleGaryScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
+        idleNode.position = SCNVector3(0.05, 0, 0)
+        //idleNode.isHidden = true
+        
+        let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+        
+        
+        //Load Idle Animation Node
+        let idleOllieScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Characters/Ollie/Ollie@Idle1Fixed.dae")!
+        for child in idleOllieScene.rootNode.childNodes {
+            SideCharacter1idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter1idleNode)
+        SideCharacter1idleNode.scale = SCNVector3(0.003, 0.003, 0.003)
+        SideCharacter1idleNode.position = SCNVector3(-19.4, 5.45, -0.4)
+        
+        //Load Idle Animation Node
+        let idleQuinnScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Characters/Quinn/Quinn@FigureEightFixed.dae")!
+        for child in idleQuinnScene.rootNode.childNodes {
+            SideCharacter2idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter2idleNode)
+        SideCharacter2idleNode.scale = SCNVector3(0.002, 0.002, 0.002)
+        //SideCharacter2idleNode.eulerAngles = SCNVector3(0, -61, 0)
+        SideCharacter2idleNode.eulerAngles = SCNVector3(0, -51, 0)
+        SideCharacter2idleNode.position = SCNVector3(-7.26, 1.9, -16.45)
+        
+        //Load Idle Animation Node
+        let idleSimonScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Characters/Simon/Simon@IdleFixed.dae")!
+        for child in idleSimonScene.rootNode.childNodes {
+            SideCharacter3idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter3idleNode)
+        SideCharacter3idleNode.scale = SCNVector3(0.002, 0.002, 0.002)
+        //SideCharacter3idleNode.eulerAngles = SCNVector3(0, -135, 0)
+        SideCharacter3idleNode.eulerAngles = SCNVector3(0, -135, 0)
+        SideCharacter3idleNode.position = SCNVector3(4.4, 3.8, 11.9)
+        
+        //Load Idle Animation Node
+        let idleJillianScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@SleepingFixed.dae")!
+        for child in idleJillianScene.rootNode.childNodes {
+            SideCharacter4idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter4idleNode)
+        SideCharacter4idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter4idleNode.position = SCNVector3(6.85, 2, -6.55)
+        SideCharacter4idleNode.eulerAngles = SCNVector3(0, 1.45, 0)
+        
+        //Load Idle Animation Node
+        let idleInnerTubeScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Characters/InnerTube/InnerTube@FloatingFixed.dae")!
+        for child in idleInnerTubeScene.rootNode.childNodes {
+            SideCharacter5idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter5idleNode)
+        SideCharacter5idleNode.scale = SCNVector3(0.003, 0.003, 0.003)
+        SideCharacter5idleNode.eulerAngles = SCNVector3(0, 45, 0)
+        SideCharacter5idleNode.position = SCNVector3(19.35, 1.15, -15.25)
+        
+        //load all the DAE animations for this Chapter
+        //load animations for mainCharacter
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Gary/Gary@IdleFixed", animationIdentifier: "Gary@IdleFixed-1")
+        prepareAnimation(withKey: "MainCharacterSwimming", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Gary/Gary@SwimmingFixed", animationIdentifier: "Gary@SwimmingFixed-1")
+        prepareAnimation(withKey: "MainCharacterShocked", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Gary/Gary@ShockedFixed", animationIdentifier: "Gary@ShockedFixed-1")
+        
+        //load animation for side character 1
+        prepareAnimation(withKey: "SideCharacter1Idle1", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Ollie/Ollie@Idle1Fixed", animationIdentifier: "Ollie@Idle1Fixed-1")
+        prepareAnimation(withKey: "SideCharacter1Idle2", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Ollie/Ollie@Idle2Fixed", animationIdentifier: "Ollie@Idle2Fixed-1")
+        prepareAnimation(withKey: "SideCharacter1Idle3", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Ollie/Ollie@Idle3Fixed", animationIdentifier: "Ollie@Idle3Fixed-1")
+        prepareAnimation(withKey: "SideCharacter1Idle4", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Ollie/Ollie@Idle4Fixed", animationIdentifier: "Ollie@Idle4Fixed-1")
+        prepareAnimation(withKey: "SideCharacter1Idle5", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Ollie/Ollie@Idle5Fixed", animationIdentifier: "Ollie@Idle5Fixed-1")
+        prepareAnimation(withKey: "SideCharacter1Twirl", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Ollie/Ollie@TwirlFixed", animationIdentifier: "Ollie@TwirlFixed-1")
+        
+        
+        //load animation for side character 2
+        prepareAnimation(withKey: "SideCharacter2Idle", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Quinn/Quinn@IdleFixed", animationIdentifier: "Quinn@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter2Swimming", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Quinn/Quinn@FigureEightFixed", animationIdentifier: "Quinn@FigureEightFixed-1")
+
+        
+        //load animation for side character 3
+        prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Simon/Simon@IdleFixed", animationIdentifier: "Simon@IdleFixed-1")
+
+        
+        //load animation for side character 4
+        prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@IdleFixed", animationIdentifier: "Jillian@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Sleeping", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@SleepingFixed", animationIdentifier: "Jillian@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Swimming", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@SwimmingFixed", animationIdentifier: "Jillian@IdleFixed-1")
+
+        
+        //load animation for side character 5
+        prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/InnerTube/InnerTube@FloatingFixed", animationIdentifier: "InnerTube@FloatingFixed-1")
+        
         chapter3NodeArray.append(storyNode)
         
          return chapter3NodeArray
     }
     func loadChapter3SoundFiles() -> [String: String] {
-        let chapter3SoundArray = ["Narration1" : "Line1",
-                                  "Narration2" : "Line2",
-                                  "Narration3" : "Line3",
-                                  "Narration4" : "Line4",
-                                  "Narration5" : "Line5",
-                                  "Narration6" : "Line6",
-                                  "Narration7" : "Line7",
-                                  "Narration8" : "Line8",
-                                  "Background1" : "underwater",
-                                  "Background2" : "underwater",
-                                  "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
-                                  "Break1" : "RockBreak3",
-                                  "Stop" : "stop",
-                                  "LetterComplete" : "yeahOutside"]
+        let chapter3SoundArray = [ //sounds for Letter I
+                                    "Narration1" : "ch1-I-Intro1",
+                                    "Narration2" : "ch1-I-Intro2",
+                                    "Narration3" : "ch1-I-Line1",     //1 narration3
+                                    "Narration4" : "ch1-I-Line2_01",  //2 narration4
+                                    "Narration5" : "ch1-I-Line2_02",
+                                    "Narration6" : "ch1-I-Line3_01",  //3 narration6
+                                    "Narration7" : "ch1-I-Line3_02",
+                                    "Narration8" : "ch1-I-Line4_01",  //4 narration8
+                                    "Narration9" : "ch1-I-Line4_02",
+                                    //sounds for Letter T
+                                    "Narration10" : "ch1-T-Intro1",
+                                    "Narration11" : "ch1-T-Intro2",
+                                    "Narration12" : "ch1-T-Line1",    //1 narration12
+                                    "Narration13" : "ch1-T-Line2_01", //2 narration13
+                                    "Narration14" : "ch1-T-Line2_02",
+                                    "Narration15" : "ch1-T-Line3_01", //3 narration14
+                                    //sounds for Letter L
+                                    "Narration17" : "ch1-L-Intro1",
+                                    "Narration18" : "ch1-L-Intro2",
+                                    "Narration19" : "ch1-L-Line1",    //1 narration19
+                                    "Narration20" : "ch1-L-Line2_01", //2 narration20
+                                    "Narration21" : "ch1-L-Line2_02",
+                                    "Narration22" : "ch1-L-Line3_01", //3 narration21
+                                    //sounds for Letter F
+                                    "Narration23" : "ch1-F-Intro1",
+                                    "Narration24" : "ch1-F-Intro2",
+                                    "Narration25" : "ch1-F-Line1",    //1 narration25
+                                    "Narration26" : "ch1-F-Line2_01", //2 narration26
+                                    "Narration27" : "ch1-F-Line2_02",
+                                    "Narration28" : "ch1-F-Line3_01", //3 narration28
+                                    "Narration29" : "ch1-F-Line3_02",
+                                    "Narration30" : "ch1-F-Line4_01", //4 narration30
+                                    //sounds for Letter E
+                                    "Narration31" : "ch1-E-Intro1",
+                                    "Narration32" : "ch1-E-Intro2",
+                                    "Narration33" : "ch1-E-Line1",    //1 narration33
+                                    "Narration34" : "ch1-E-Line2_01", //2 narration34
+                                    "Narration35" : "ch1-E-Line2_02",
+                                    "Narration36" : "ch1-E-Line3_01", //3 narration36
+                                    "Narration37" : "ch1-E-Line3_02",
+                                    "Narration38" : "ch1-E-Line4_01", //4 narration38
+                                    "Narration39" : "ch1-E-Line4_02",
+                                    "Narration40" : "ch1-E-Line5_01", //5 narration40
+                                    //sounds for Letter H
+                                    "Narration42" : "ch1-H-Intro1",
+                                    "Narration43" : "ch1-H-Intro2",
+                                    "Narration44" : "ch1-H-Intro3",
+                                    "Narration45" : "ch1-H-Line1",    //1 narration45
+                                    "Narration46" : "ch1-H-Line2_01", //2 narration46
+                                    "Narration47" : "ch1-H-Line2_02",
+                                    "Narration48" : "ch1-H-Line3_01", //3 narration48
+                                    "Narration49" : "ch1-H-Line3_02",
+                                    "Narration50" : "ch1-H-Line4_01", //4 narration50
+                                    //letter finish sounds
+                                    "letter2Finish" : "ch1-T-Line4",
+                                    "letter3Finish" : "ch1-L-Line3_02",
+                                    "letter4Finish" : "ch1-F-Line4_02",
+                                    "letter5Finish" : "ch1-E-Line5_02",
+                                    "letter6Finish" : "ch1-H-Line4_01",
+                                    "chapterFinish" : "ch1-H-Line4_02",
+                                    //extra chapter FX sounds
+                                    "Background1" : "Birds1",
+                                    "Background2" : "Birds2",
+                                    "WalkSound" : "Gravel and Grass Walk",
+                                    "Coin1" : "xylophone2",
+                                    "Break3" : "RockBreak3",
+                                    "Shatter1" : "RockShatter",
+                                    "Stop" : "stop",
+                                    "LetterComplete" : "yeahOutside"]
         return chapter3SoundArray
     }
     
