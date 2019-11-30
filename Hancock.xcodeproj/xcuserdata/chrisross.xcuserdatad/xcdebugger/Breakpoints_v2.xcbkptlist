@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hancock/ViewController.swift"
-            timestampString = "596013486.018065"
+            timestampString = "596841618.69754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "364"
             endingLineNumber = "364"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "startGame()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hancock/ViewController.swift"
-            timestampString = "596013486.0187401"
+            timestampString = "596841618.697898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1418"
-            endingLineNumber = "1418"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "1460"
+            endingLineNumber = "1460"
+            landmarkName = "stopWalkAnimation()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hancock/ViewController.swift"
-            timestampString = "596013486.019118"
+            timestampString = "596841618.6981339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "862"
-            endingLineNumber = "862"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "878"
+            endingLineNumber = "878"
+            landmarkName = "playWalkAnimation()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

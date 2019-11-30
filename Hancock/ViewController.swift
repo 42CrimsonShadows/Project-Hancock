@@ -549,12 +549,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
                 print("move character for chapter two")
             case chapterThree:
-                //animate the mainFloor node to move and stop when the translation is complete
-                //animate the main character to rotate a bit on the y axis
+                //move position for letter:
+                //G (chapter3 - letter1)
                 
-                //move position for letter:
-                //G
-
+                startTransitionAnimation(key: "MainCharacterSwimming")
+                
+                // x= (-)west/(+)east, z= (-)north/(+)south
+                //let rotate1 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 1)
+                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0.113)), y: CGFloat(GLKMathDegreesToRadians(-8.133)), z: CGFloat(GLKMathDegreesToRadians(6.971)), duration: 5)
+                let chapter1Letter1RotationSeq = SCNAction.sequence([rotate1])
+                mainCharacterIdle?.parent?.runAction(chapter1Letter1RotationSeq)
+                
+                // x= (-)west/(+)east, z= (-)north/(+)south
+                let move1 = SCNAction.move(to: SCNVector3(-0.225, 1.375, 0.005), duration: 5)  //P1 to P2
+                //let rotate2 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 0.5)
+                let chapter1Letter1MoveSeq = SCNAction.sequence([move1])
+                mainCharacterIdle?.parent?.runAction((chapter1Letter1MoveSeq), completionHandler: stopWalkAnimation)
+                
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4.9, execute: {
+                    self.stopTransitionAnimation(key: "MainChracterSwimming")
+                    self.startTransitionAnimation(key: "MainCharacterIdle")
+                })
                 
                 print("move floor for chapter three")
             case chapterFour:
@@ -1036,7 +1052,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterFour:
                 stopTransitionAnimation(key: "MainCharacterWalking")
             case chapterThree:
-                stopTransitionAnimation(key: "MainCharacterWalking")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //play game intro part 2 (segway into first letter activity)
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                    
+                    //wait 5 seconds for game intro2 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 22, execute: {
+                        //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+                        print("Prepare to shatter letter 1")
+                        self.shatterLetterOne = true
+                        //play narration for the first audio instructions for the activity
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2_1"]!, type: "mp3")
+                        
+                        //wait 1 seconds for the activity page to load
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                            //trasition to the activity page for the first letter
+                            print("Loading activity \(chapterSelectedLetterArray![0])")
+                            self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                            
+                            //wait 1 seconds for the activity page to load
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                                //play narration for the first audio instructions for the activity
+                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                            })
+                        })
+                    })
+                })
             case chapterTwo:
                 print("skip stopping the skate animation")
                 //wait 1 seconds (small pause)
@@ -1914,7 +1955,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterThree:
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-                print("move floor for chapter three")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                        //move the main character to the first letter
+                        self.playWalkAnimation()
+                })
+                print("Starting chapter three")
             case chapterFour:
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
