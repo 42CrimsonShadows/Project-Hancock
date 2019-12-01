@@ -494,7 +494,8 @@ class ChapterSelection {
         lvlFloor.addChildNode(SideCharacter3idleNode)
         SideCharacter3idleNode.scale = SCNVector3(0.1, 0.1, 0.1)
         SideCharacter3idleNode.position = SCNVector3(0.41, 0.23, 0.6)
-        SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-45), GLKMathDegreesToRadians(0))
+//      SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-45), GLKMathDegreesToRadians(0))
+        SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
         let idleJillianScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@SleepingFixed.dae")!
@@ -504,7 +505,7 @@ class ChapterSelection {
         lvlFloor.addChildNode(SideCharacter4idleNode)
         SideCharacter4idleNode.scale = SCNVector3(0.1, 0.1, 0.1)
         SideCharacter4idleNode.position = SCNVector3(-0.369, 0.198, -0.445)
-        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-45), GLKMathDegreesToRadians(0))
+        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
         let idleInnerTubeScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Characters/InnerTube/InnerTube@FloatingFixed.dae")!
@@ -542,8 +543,8 @@ class ChapterSelection {
         
         //load animation for side character 4
         prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@IdleFixed", animationIdentifier: "Jillian@IdleFixed-1")
-        prepareAnimation(withKey: "SideCharacter4Sleeping", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@SleepingFixed", animationIdentifier: "Jillian@IdleFixed-1")
-        prepareAnimation(withKey: "SideCharacter4Swimming", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@SwimmingFixed", animationIdentifier: "Jillian@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Sleeping", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@SleepingFixed", animationIdentifier: "Jillian@SleepingFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Swimming", sceneName: "art.scnassets/3DModels/Chapter3Files/Characters/Jillian/Jillian@SwimmingFixed", animationIdentifier: "Jillian@SwimmingFixed-1")
 
         
         //load animation for side character 5
@@ -840,9 +841,6 @@ class ChapterSelection {
             animationObject.fadeInDuration = CGFloat(1)
             animationObject.fadeOutDuration = CGFloat(0.5)
             
-            if animationIdentifier == "Anthony@WalkFixed-1" {
-                animationObject.duration = 2.083
-            }
             if animationIdentifier == "Indy@WalkingFixed-1" {
                 animationObject.duration = 2.083
             }

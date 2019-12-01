@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var startButton: UIButton!
     @IBOutlet var showAllBtn: UIButton!
     
-    //MARK: ACTIONS
+    //MARK: - ACTIONS
     @IBAction func goToActivity(_ sender: Any) {
         //let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
         //self.present(activityBoardView, animated: true)
@@ -144,7 +144,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var BGPlayer = AVAudioPlayer()
     var CharacterPlayer = AVAudioPlayer()
 
-    
+    // MARK: - Start Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         chapterNodeArray = chapterSelectedNodeArray
@@ -208,7 +208,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return .landscapeRight
     }
     
-    // MARK: Init Functions
+    // MARK: - Init Functions
     
     func initSceneView() {
         sceneView.delegate = self
@@ -264,7 +264,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sceneView.session.run(config)
     }
     
-    // MARK: Helper Functions
+    // MARK: - Helper Functions
     
     func createARPlaneNode(planeAnchor: ARPlaneAnchor, color: UIColor) -> SCNNode {
         
@@ -318,7 +318,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return floorNode
     }
     
-    // MARK: Update Functions
+    // MARK: - Update Functions
     
     func updateStatus() {
         switch gameState {
@@ -359,7 +359,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.rootStoryNode.position = self.focusNode.position
     }
     
-    // MARK: Game Management
+    // MARK: - Game Management
     
     func startGame() {
         guard self.gameState == .hitStartToPlay else { return }
@@ -508,6 +508,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //Based on Letter
         switch gameProgress {
         //----------------------------------------------------
+        //MARK: Letter 1
         case .toLetter1:
             //change points based on Chapter
             switch true {
@@ -528,8 +529,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterTwo:
                 //move position for letter:
                 //P (chapter2 - letter1)
-                
-                //startTransitionAnimation(key: "MainCharacterSkating")
+
                 startTransitionAnimationOnce(key: "MainCharacterSkating")
                 
                 // x= (-)west/(+)east, z= (-)north/(+)south
@@ -595,6 +595,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         //----------------------------------------------------
+        //MARK: Letter 2
         case .toLetter2:
             //change points based on Chapter
             switch true {
@@ -640,12 +641,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 startTransitionAnimation(key: "MainCharacterSwimming")
                 
-                // x= (-)west/(+)east, z= (-)north/(+)south
                 let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(1.768)), y: CGFloat(GLKMathDegreesToRadians(-4.909)), z: CGFloat(GLKMathDegreesToRadians(-19.836)), duration: 3)
                 let chapter3Letter2RotationSeq = SCNAction.sequence([rotate1])
                 mainCharacterIdle?.parent?.runAction(chapter3Letter2RotationSeq)
                 
-                // x= (-)west/(+)east, z= (-)north/(+)south
                 let move1 = SCNAction.move(to: SCNVector3(-0.381, 0.096, 0.218), duration: 8)  //P1 to P2
                 //let rotate2 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 0.5)
                 let chapter3Letter2MoveSeq = SCNAction.sequence([move1])
@@ -670,6 +669,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         //----------------------------------------------------
+        //MARK: Letter 3
         case .toLetter3:
             //change points based on Chapter
             switch true {
@@ -720,14 +720,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 startTransitionAnimation(key: "MainCharacterSwimming")
                 
-                // x= (-)west/(+)east, z= (-)north/(+)south
-                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(1.768)), y: CGFloat(GLKMathDegreesToRadians(-4.909)), z: CGFloat(GLKMathDegreesToRadians(-19.836)), duration: 3)
+                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(30)), y: CGFloat(GLKMathDegreesToRadians(-53.596)), z: CGFloat(GLKMathDegreesToRadians(-36)), duration: 3)
                 let chapter3Letter3RotationSeq = SCNAction.sequence([rotate1])
                 mainCharacterIdle?.parent?.runAction(chapter3Letter3RotationSeq)
-                
-                // x= (-)west/(+)east, z= (-)north/(+)south
-                let move1 = SCNAction.move(to: SCNVector3(-0.381, 0.096, 0.218), duration: 8)  //P1 to P2
-                //let rotate2 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 0.5)
+                let move1 = SCNAction.move(to: SCNVector3(0.335, 0.281, 0.479), duration: 8)  //P1 to P2
                 let chapter3Letter3MoveSeq = SCNAction.sequence([move1])
                 mainCharacterIdle?.parent?.runAction((chapter3Letter3MoveSeq), completionHandler: stopWalkAnimation)
                 
@@ -750,6 +746,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         //----------------------------------------------------
+        //MARK: Letter 4
         case .toLetter4:
             //change points based on Chapter
             switch true {
@@ -807,14 +804,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 startTransitionAnimation(key: "MainCharacterSwimming")
                 
-                // x= (-)west/(+)east, z= (-)north/(+)south
                 let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-163.287)), y: CGFloat(GLKMathDegreesToRadians(27.438)), z: CGFloat(GLKMathDegreesToRadians(-146.911)), duration: 3)
                 let chapter3Letter4RotationSeq = SCNAction.sequence([rotate1])
                 mainCharacterIdle?.parent?.runAction(chapter3Letter4RotationSeq)
-                
-                // x= (-)west/(+)east, z= (-)north/(+)south
-                let move1 = SCNAction.move(to: SCNVector3(0.246, 0.254, -0.371), duration: 8)  //P1 to P2
-                //let rotate2 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 0.5)
+                let move1 = SCNAction.move(to: SCNVector3(-0.246, 0.254, -0.371), duration: 8)  //P1 to P2
                 let chapter3Letter4MoveSeq = SCNAction.sequence([move1])
                 mainCharacterIdle?.parent?.runAction((chapter3Letter4MoveSeq), completionHandler: stopWalkAnimation)
                 
@@ -837,6 +830,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         //----------------------------------------------------
+        //MARK: Letter 5
         case .toLetter5:
             //change points based on Chapter
             switch true {
@@ -887,12 +881,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 startTransitionAnimation(key: "MainCharacterSwimming")
                 
                 // x= (-)west/(+)east, z= (-)north/(+)south
-                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 2)
+                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 8)
                 let chapter3Letter5RotationSeq = SCNAction.sequence([rotate1])
                 mainCharacterIdle?.parent?.runAction(chapter3Letter5RotationSeq)
                 
                 // x= (-)west/(+)east, z= (-)north/(+)south
-                let move1 = SCNAction.move(to: SCNVector3(-0.264, 01.353, 0.165), duration:3)  //P1 to P2
+                let move1 = SCNAction.move(to: SCNVector3(-0.264, 01.353, 0.165), duration:8)  //P1 to P2
                 //let rotate2 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 0.5)
                 let chapter3Letter5MoveSeq = SCNAction.sequence([move1])
                 mainCharacterIdle?.parent?.runAction((chapter3Letter5MoveSeq), completionHandler: stopWalkAnimation)
@@ -916,6 +910,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         //----------------------------------------------------
+        //MARK: Letter 6
         case .toLetter6:
             //change points based on Chapter
             switch true {
@@ -1053,6 +1048,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         //Finish
         //----------------------------------------------------
+        //MARK: Chapter Finish
         case .chapterFinished:
             
             print("Reached the end of the chapter")
@@ -1061,18 +1057,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterOne:
                 print("end sequence for chapter one")
             case chapterTwo:
-                //TODO: ADD CHAPTER 2 END SEQUENCE
-                //letter5Finish
-                
                 print("end sequence for chapter two")
             case chapterThree:
-                //TODO: ADD CHAPTER 3 END SEQUENCE
                 print("end sequence for chapter three")
             case chapterFour:
-                //TODO: ADD CHAPTER 4 END SEQUENCE
                 print("end sequence for chapter four")
             case chapterFive:
-                //TODO: ADD CHAPTER 5 END SEQUENCE
                 print("end sequence for chapter five")
             default:
                 break
@@ -1083,6 +1073,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func stopWalkAnimation() {
         switch gameProgress {
         //----------------------------------------------------
+        //MARK: Letter 1
         case .toLetter1:
             switch true {
             case chapterFive:
@@ -1180,6 +1171,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
             gameProgress = .toLetter2
         //----------------------------------------------------
+        //MARK: Letter 2
         case .toLetter2:
             switch true {
             case chapterFive:
@@ -1190,7 +1182,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.stopTransitionAnimation(key: "MainChracterSwimming")
                     self.startTransitionAnimation(key: "MainCharacterIdle")
-                    //play game intro part 2 (segway into first letter activity)
+                    
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
                     
                     //wait 5 seconds for game intro2 to finish
@@ -1199,28 +1191,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Prepare to shatter letter 1")
                         self.shatterLetterTwo = true
                         
-                        //move to Ollie
                         self.stopTransitionAnimation(key: "MainChracterIdle")
                         self.startTransitionAnimation(key: "MainCharacterSwimming")
                         self.stopAnimateSideCharacter(key: "SideCharacter2Swimming", sideCharacter: "Quinn")
                         self.startAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Quinn")
                         
-                        // x= (-)west/(+)east, z= (-)north/(+)south
+                        //move to Ollie
                         let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0.113)), y: CGFloat(GLKMathDegreesToRadians(-8.133)), z: CGFloat(GLKMathDegreesToRadians(6.971)), duration: 8)
                         let chapter3Letter1RotationSeq = SCNAction.sequence([rotate1])
                         self.mainCharacterIdle?.parent?.runAction(chapter3Letter1RotationSeq)
-                        
-                        // x= (-)west/(+)east, z= (-)north/(+)south
                         let move1 = SCNAction.move(to: SCNVector3(-0.225, 1.375, 0.005), duration: 8)  //P1 to P2
                         let chapter3Letter2MoveSeq = SCNAction.sequence([move1])
-                        self.mainCharacterIdle?.parent?.runAction((chapter3Letter2MoveSeq), completionHandler: self.stopWalkAnimation)
+                        self.mainCharacterIdle?.parent?.runAction(chapter3Letter2MoveSeq)
                         
                         //move Quinn
                         let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(180)), y: CGFloat(GLKMathDegreesToRadians(79.606)), z: CGFloat(GLKMathDegreesToRadians(-163.572)), duration: 1)
                         let chapter3Letter2RotationSeq2 = SCNAction.sequence([rotate2])
                         self.charcterTwoIdle?.parent?.runAction(chapter3Letter2RotationSeq2)
-                        
-                        // x= (-)west/(+)east, z= (-)north/(+)south
                         let move2 = SCNAction.move(to: SCNVector3(-0.221, 1.349, 0.11), duration: 8)  //P1 to P2
                         let chapter3Letter2MoveSeq2 = SCNAction.sequence([move2])
                         self.charcterTwoIdle?.parent?.runAction(chapter3Letter2MoveSeq2)
@@ -1302,6 +1289,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             gameProgress = .toLetter3
         //----------------------------------------------------
+        //MARK: Letter 3
         case .toLetter3:
             switch true {
             case chapterFive:
@@ -1313,63 +1301,53 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.stopTransitionAnimation(key: "MainChracterSwimming")
                     self.startTransitionAnimation(key: "MainCharacterIdle")
                     //play game intro part 2 (segway into first letter activity)
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
                     
                     //wait 5 seconds for game intro2 to finish
                     DispatchQueue.main.asyncAfter(deadline: .now() + 16, execute: {
-                        //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
-                        print("Prepare to shatter letter 1")
-                        self.shatterLetterTwo = true
+
+                        print("Set up trigger for after activityView")
+                        self.shatterLetterThree = true
                         
-                        //move to Ollie
                         self.stopTransitionAnimation(key: "MainChracterIdle")
                         self.startTransitionAnimation(key: "MainCharacterSwimming")
-                        self.stopAnimateSideCharacter(key: "SideCharacter2Swimming", sideCharacter: "Quinn")
-                        self.startAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Quinn")
                         
-                        // x= (-)west/(+)east, z= (-)north/(+)south
+                        //move to Ollie
                         let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0.113)), y: CGFloat(GLKMathDegreesToRadians(-8.133)), z: CGFloat(GLKMathDegreesToRadians(6.971)), duration: 8)
-                        let chapter3Letter1RotationSeq = SCNAction.sequence([rotate1])
-                        self.mainCharacterIdle?.parent?.runAction(chapter3Letter1RotationSeq)
-                        
-                        // x= (-)west/(+)east, z= (-)north/(+)south
+                        let chapter3Letter3RotationSeq = SCNAction.sequence([rotate1])
+                        self.mainCharacterIdle?.parent?.runAction(chapter3Letter3RotationSeq)
                         let move1 = SCNAction.move(to: SCNVector3(-0.225, 1.375, 0.005), duration: 8)  //P1 to P2
-                        let chapter3Letter2MoveSeq = SCNAction.sequence([move1])
-                        self.mainCharacterIdle?.parent?.runAction((chapter3Letter2MoveSeq), completionHandler: self.stopWalkAnimation)
+                        let chapter3Letter3MoveSeq = SCNAction.sequence([move1])
+                        self.mainCharacterIdle?.parent?.runAction(chapter3Letter3MoveSeq)
                         
-                        //move Quinn
-                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(180)), y: CGFloat(GLKMathDegreesToRadians(79.606)), z: CGFloat(GLKMathDegreesToRadians(-163.572)), duration: 1)
-                        let chapter3Letter2RotationSeq2 = SCNAction.sequence([rotate2])
-                        self.charcterTwoIdle?.parent?.runAction(chapter3Letter2RotationSeq2)
-                        
-                        // x= (-)west/(+)east, z= (-)north/(+)south
+                        //move Simon to Ollie
+                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(79.606)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 3)
+                        let chapter3Letter3RotationSeq2 = SCNAction.sequence([rotate2])
+                        self.charcterThreeIdle?.parent?.runAction(chapter3Letter3RotationSeq2)
                         let move2 = SCNAction.move(to: SCNVector3(-0.221, 1.349, 0.11), duration: 8)  //P1 to P2
-                        let chapter3Letter2MoveSeq2 = SCNAction.sequence([move2])
-                        self.charcterTwoIdle?.parent?.runAction(chapter3Letter2MoveSeq2)
+                        let chapter3Letter3MoveSeq2 = SCNAction.sequence([move2])
+                        self.charcterThreeIdle?.parent?.runAction(chapter3Letter3MoveSeq2)
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 7.9, execute: {
                             self.stopTransitionAnimation(key: "MainChracterSwimming")
                             self.startTransitionAnimation(key: "MainCharacterIdle")
                             
                             //play narration for the first audio instructions for the activity
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration20"]!, type: "mp3")
                             
                             //wait 1 seconds for the activity page to load
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                                 //trasition to the activity page for the first letter
-                                print("Loading activity \(chapterSelectedLetterArray![1])")
-                                self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
+                                print("Loading activity \(chapterSelectedLetterArray![2])")
+                                self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
                                 
                                 //play narration for the first audio instructions for the activity
-                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration13"]!, type: "mp3")
+                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
                             })
                         })
                     })
                 })
-                
-                
-                
-                
+             
                 
             case chapterTwo:
                 print("skip stopping the skate animation")
@@ -1428,6 +1406,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             gameProgress = .toLetter4
         //----------------------------------------------------
+        //MARK: Letter 4
         case .toLetter4:
             switch true {
             case chapterFive:
@@ -1435,7 +1414,105 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterFour:
                 stopTransitionAnimation(key: "MainCharacterWalking")
             case chapterThree:
-                stopTransitionAnimation(key: "MainCharacterWalking")
+                //Jillian the Jellyfish
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.stopTransitionAnimation(key: "MainChracterSwimming")
+                    self.startTransitionAnimation(key: "MainCharacterIdle")
+
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration24"]!, type: "mp3")
+                    
+                    //wait 5 seconds for game intro2 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 16, execute: {
+                        
+                        print("Set up trigger for after activityView")
+                        self.shatterLetterFour = true
+                        
+//                        let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-163.287)), y:        CGFloat(GLKMathDegreesToRadians(27.438)), z: CGFloat(GLKMathDegreesToRadians(-146.911)), duration: 3)
+//                        let chapter3Letter4RotationSeq = SCNAction.sequence([rotate1])
+//                        mainCharacterIdle?.parent?.runAction(chapter3Letter4RotationSeq)
+//                        let move1 = SCNAction.move(to: SCNVector3(-0.246, 0.254, -0.371), duration: 8)  //P1 to P2
+//                        let chapter3Letter4MoveSeq = SCNAction.sequence([move1])
+//                        mainCharacterIdle?.parent?.runAction((chapter3Letter4MoveSeq), completionHandler: stopWalkAnimation)
+                        
+                        //Gary touches Jillian
+                        let ratationGary1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-173.658)), y: CGFloat(GLKMathDegreesToRadians(54.663)), z: CGFloat(GLKMathDegreesToRadians(-165.956)), duration: 1)
+                        let moveGary1 = SCNAction.move(to: SCNVector3(-0.299,0.21,-0.435), duration: 1)
+                        let moveToJillian = SCNAction.sequence([ratationGary1, moveGary1])
+                        self.mainCharacterIdle?.parent?.runAction(moveToJillian)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            //Gary is shocked
+                            //self.mainCharacterIdle.animationPlayer(forKey: "MainCharacterShocked")?.speed = 3.0
+                            self.stopTransitionAnimation(key: "MainCharacterSwimming")
+                            self.startTransitionAnimation(key: "MainCharacterShocked")
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                //Gary and Jillian move back away from each other
+                                self.stopTransitionAnimation(key: "MainCharacterShocked")
+                                self.startTransitionAnimation(key: "MainCharacterSwimming")
+                                self.stopAnimateSideCharacter(key: "SideCharacter4Sleeping", sideCharacter: "Jillian")
+                                self.startAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Jillian")
+                                //Gary move
+                                let rotationGary2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-163.287)), y: CGFloat(GLKMathDegreesToRadians(27.438)), z: CGFloat(GLKMathDegreesToRadians(-146.911)), duration: 1)
+                                let moveGary2 = SCNAction.move(to: SCNVector3(-0.246, 0.254, -0.371), duration: 1)
+                                let moveAwayfromJillian = SCNAction.sequence([moveGary2, rotationGary2])
+                                self.mainCharacterIdle?.parent?.runAction(moveAwayfromJillian)
+                                //Jillian move
+                                let moveJillian = SCNAction.move(to: SCNVector3(-0.396,0.198,-0.466), duration: 1)
+                                let rotationJillian = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-90)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1)
+                                let moveAwayfromGary = SCNAction.sequence([moveJillian, rotationJillian])
+                                self.charcterFourIdle?.parent?.runAction(moveAwayfromGary)
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration25"]!, type: "mp3")
+                                    
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 25, execute: {
+                                        //move to Gary to Top
+                                        self.stopTransitionAnimation(key: "MainCharacterIdle")
+                                        self.startTransitionAnimation(key: "MainCharacterSwimming")
+                                        let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0.113)), y: CGFloat(GLKMathDegreesToRadians(-8.133)), z: CGFloat(GLKMathDegreesToRadians(6.971)), duration: 8)
+                                        let chapter3Letter4RotationSeq = SCNAction.sequence([rotate1])
+                                        self.mainCharacterIdle?.parent?.runAction(chapter3Letter4RotationSeq)
+                                        let move1 = SCNAction.move(to: SCNVector3(-0.225, 1.375, 0.005), duration: 8)  //P1 to P2
+                                        let chapter3Letter4MoveSeq = SCNAction.sequence([move1])
+                                        self.mainCharacterIdle?.parent?.runAction(chapter3Letter4MoveSeq)
+                                        
+                                        //move Jillian to Top
+                                        self.stopAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Jillian")
+                                        self.startAnimateSideCharacter(key: "SideCharacter4Swimming", sideCharacter: "Jillian")
+                                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(79.606)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 3)
+                                        let chapter3Letter4RotationSeq2 = SCNAction.sequence([rotate2])
+                                        self.charcterFourIdle?.parent?.runAction(chapter3Letter4RotationSeq2)
+                                        let move2 = SCNAction.move(to: SCNVector3(-0.221, 1.349, 0.11), duration: 8)
+                                        let chapter3Letter4MoveSeq2 = SCNAction.sequence([move2])
+                                        self.charcterFourIdle?.parent?.runAction(chapter3Letter4MoveSeq2)
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 7.9, execute: {
+                                            self.stopTransitionAnimation(key: "MainChracterSwimming")
+                                            self.startTransitionAnimation(key: "MainCharacterIdle")
+                                            self.stopAnimateSideCharacter(key: "SideCharacter4Swimming", sideCharacter: "Jillian")
+                                            self.startAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Jillian")
+                                            
+                                            //play narration for the first audio instructions for the activity
+                                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration26"]!, type: "mp3")
+                                            
+                                            //wait 1 seconds for the activity page to load
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                                                //trasition to the activity page for the first letter
+                                                print("Loading activity \(chapterSelectedLetterArray![3])")
+                                                self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
+                                                
+                                                //play narration for the first audio instructions for the activity
+                                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration27"]!, type: "mp3")
+                                            })
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+                
             case chapterTwo:
                 print("skip stopping the skate animation")
                 //wait 1 seconds (small pause)
@@ -1493,6 +1570,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             gameProgress = .toLetter5
         //----------------------------------------------------
+        //MARK: Letter 5
         case .toLetter5:
             switch true {
             case chapterFive:
@@ -1500,7 +1578,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterFour:
                 stopTransitionAnimation(key: "MainCharacterWalking")
             case chapterThree:
-                stopTransitionAnimation(key: "MainCharacterWalking")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //convince Ollie to swimm
+                    print("Prepare to shatter letter 1")
+                    self.shatterLetterFive = true
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3")
+                    
+                    //wait 1 seconds for the activity page to load
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        //trasition to the activity page for the first letter
+                        print("Loading activity \(chapterSelectedLetterArray![4])")
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
+                        
+                        //play narration for the first audio instructions for the activity
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
+                    })
+                })
             case chapterTwo:
                 print("skip stopping the skate animation")
                 //wait 1 seconds (small pause)
@@ -1557,6 +1651,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             gameProgress = .toLetter6
         //----------------------------------------------------
+        //MARK: Letter 6
         case .toLetter6:
             switch true {
             case chapterFive:
@@ -1637,6 +1732,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func playShatterAnimation() {
         switch true {
         //----------------------------------------------------
+        //MARK: Letter 6
         case shatterLetterSix:
             switch true{
             case chapterFive:
@@ -1695,6 +1791,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         //----------------------------------------------------
+        //MARK: Letter 5
         case shatterLetterFive:
             switch true{
             case chapterFive:
@@ -1712,6 +1809,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish1"]!, type: "mp3")
                     self.stopAnimateSideCharacter(key: "SideCharacter1Idle4", sideCharacter: "Ollie")
                     self.startAnimateSideCharacter(key: "SideCharacter1Idle5", sideCharacter: "Ollie")
+                    self.charcterFiveIdle.parent?.runAction(SCNAction.rotateBy(x: CGFloat(GLKMathDegreesToRadians(-5)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5))
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 22, execute: {
                         self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish2"]!, type: "mp3")
@@ -1772,6 +1870,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         //----------------------------------------------------
+        //MARK: Letter 4
         case shatterLetterFour:
             switch true{
             case chapterFive:
@@ -1788,8 +1887,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3")
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 41, execute: {
-                        self.playWalkAnimation()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
+                    //Jillian leaves
+                    let rotateJillian = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-45)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1)
+                    let chapter3Letter4RotationJillian = SCNAction.sequence([rotateJillian])
+                    self.charcterTwoIdle?.parent?.runAction(chapter3Letter4RotationJillian)
+                    let moveJillian = SCNAction.move(to: SCNVector3(-0.369, 0.198, -0.445), duration: 8)  //P1 to P2
+                    let chapter3Letter4MoveJillian = SCNAction.sequence([moveJillian])
+                    self.charcterTwoIdle?.parent?.runAction(chapter3Letter4MoveJillian)
+                    
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
+                            self.playWalkAnimation()
+                        })
                     })
                 })
             case chapterTwo:
@@ -1866,6 +1975,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         //----------------------------------------------------
+        //MARK: Letter 3
         case shatterLetterThree:
             switch true{
             case chapterFive:
@@ -1885,8 +1995,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.startAnimateSideCharacter(key: "SideCharacter1Idle4", sideCharacter: "Ollie")
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration23"]!, type: "mp3")
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 33, execute: {
-                        self.playWalkAnimation()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 27, execute: {
+                    //Simon leaves
+                    let rotateSimon = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-90)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 8)
+                    let chapter3Letter3RotationSimon = SCNAction.sequence([rotateSimon])
+                    self.charcterThreeIdle?.parent?.runAction(chapter3Letter3RotationSimon)
+                    let moveSimon = SCNAction.move(to: SCNVector3(0.41, 0.23, 0.6), duration: 8)  //P2 to P1
+                    let chapter3Letter3MoveSimon = SCNAction.sequence([moveSimon])
+                    self.charcterThreeIdle?.parent?.runAction(chapter3Letter3MoveSimon)
+                    
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                            self.playWalkAnimation()
+                        })
                     })
                 })
             case chapterTwo:
@@ -1942,6 +2062,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
        //----------------------------------------------------
+        //MARK: Letter 2
         case shatterLetterTwo:
             switch true{
             case chapterFive:
@@ -1960,9 +2081,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.stopAnimateSideCharacter(key: "SideCharacter1Idle2", sideCharacter: "Ollie")
                     self.startAnimateSideCharacter(key: "SideCharacter1Idle3", sideCharacter: "Ollie")
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
-
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 19, execute: {
-                        self.playWalkAnimation()
+                    self.stopAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Quinn")
+                    self.startAnimateSideCharacter(key: "SideCharacter2Swimming", sideCharacter: "Quinn")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                        self.stopAnimateSideCharacter(key: "SideCharacter2Swimming", sideCharacter: "Quinn")
+                        self.startAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Quinn")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                            //Quinn leaves
+                            let rotateQuinn = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1)
+                            let chapter3Letter2RotationQuinn = SCNAction.sequence([rotateQuinn])
+                            self.charcterTwoIdle?.parent?.runAction(chapter3Letter2RotationQuinn)
+                            let moveQuinn = SCNAction.move(to: SCNVector3(-0.226, 0.05, 0.237), duration: 8)  //P1 to P2
+                            let chapter3Letter2MoveQuinn = SCNAction.sequence([moveQuinn])
+                            self.charcterTwoIdle?.parent?.runAction(chapter3Letter2MoveQuinn)
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                                self.playWalkAnimation()
+                            })
+                        })
                     })
                 })
             case chapterTwo:
@@ -2015,6 +2153,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         //----------------------------------------------------
+        //MARK: Letter 1
         case shatterLetterOne:
             switch true{
             case chapterFive:

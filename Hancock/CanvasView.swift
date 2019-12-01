@@ -520,34 +520,37 @@ class CanvasView: UIView {
                 //A1GreenLine?.isHidden = false
                 playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
                 
+                if activityPoints.count < 5 {
+                    letterComplete = true
+                }
+                
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[0])")
 
                     self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[0]]!, type: "mp3")
-                    //wait 1 second
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[1])")
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[1]]!, type: "mp3")
-                        
-                        //wait 3 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                            self.blueDot?.pulsate(duration: 0.6)
-                            //wait 2 seconds
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.orangeDot?.pulsate(duration: 0.6)
+
+                    if self.letterComplete == false{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[1])")
+                            self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[1]]!, type: "mp3")
+                            
+                            //wait 3 seconds
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                                self.blueDot?.pulsate(duration: 0.6)
+                                //wait 2 seconds
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                    self.orangeDot?.pulsate(duration: 0.6)
+                                })
                             })
                         })
-                    })
+                    }
                 })
                 letterState = .P3_P4
                 Line1 = false
                 Line2 = true
                 Line3 = false
                 Line4 = false
-                if activityPoints.count < 5 {
-                    letterComplete = true
-                }
             }
         }
     }
@@ -730,7 +733,7 @@ class CanvasView: UIView {
         case "S":
             print("Load S narration")
             //return ["Narration21", "Narration22"]
-            return ["Narration22"]
+            return ["Narration22", "Stop"]
         case "T":
             print("Load T narration")
             narrationArray = ["Narration13", "Narration14", "Narration15"]
