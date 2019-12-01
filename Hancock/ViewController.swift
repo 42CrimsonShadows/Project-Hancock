@@ -880,12 +880,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 startTransitionAnimation(key: "MainCharacterSwimming")
                 
-                // x= (-)west/(+)east, z= (-)north/(+)south
                 let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 8)
                 let chapter3Letter5RotationSeq = SCNAction.sequence([rotate1])
                 mainCharacterIdle?.parent?.runAction(chapter3Letter5RotationSeq)
                 
-                // x= (-)west/(+)east, z= (-)north/(+)south
                 let move1 = SCNAction.move(to: SCNVector3(-0.264, 01.353, 0.165), duration:8)  //P1 to P2
                 //let rotate2 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 0.5)
                 let chapter3Letter5MoveSeq = SCNAction.sequence([move1])
@@ -1582,10 +1580,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //convince Ollie to swimm
                     print("Prepare to shatter letter 1")
                     self.shatterLetterFive = true
-                    //play narration for the first audio instructions for the activity
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3")
                     
-                    //wait 1 seconds for the activity page to load
+                    //wait 3 seconds for the activity page to load
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                         //trasition to the activity page for the first letter
                         print("Loading activity \(chapterSelectedLetterArray![4])")
@@ -1810,6 +1807,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.stopAnimateSideCharacter(key: "SideCharacter1Idle4", sideCharacter: "Ollie")
                     self.startAnimateSideCharacter(key: "SideCharacter1Idle5", sideCharacter: "Ollie")
                     self.charcterFiveIdle.parent?.runAction(SCNAction.rotateBy(x: CGFloat(GLKMathDegreesToRadians(-5)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5))
+                    let moveOllieFinish = SCNVector3(x: 0, y: 1.339, z: 0.168)
+                    self.charcterFourIdle.parent?.runAction(SCNAction.move(to: moveOllieFinish, duration: 2))
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 22, execute: {
                         self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish2"]!, type: "mp3")
@@ -1888,15 +1887,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
+                    self.stopAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Jillian")
+                    self.startAnimateSideCharacter(key: "SideCharacter4Swimming", sideCharacter: "Jillian")
                     //Jillian leaves
                     let rotateJillian = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-45)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1)
                     let chapter3Letter4RotationJillian = SCNAction.sequence([rotateJillian])
-                    self.charcterTwoIdle?.parent?.runAction(chapter3Letter4RotationJillian)
+                    self.charcterFourIdle?.parent?.runAction(chapter3Letter4RotationJillian)
+                        
                     let moveJillian = SCNAction.move(to: SCNVector3(-0.369, 0.198, -0.445), duration: 8)  //P1 to P2
                     let chapter3Letter4MoveJillian = SCNAction.sequence([moveJillian])
-                    self.charcterTwoIdle?.parent?.runAction(chapter3Letter4MoveJillian)
+                    self.charcterFourIdle?.parent?.runAction(chapter3Letter4MoveJillian)
                     
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
                             self.playWalkAnimation()
                         })
                     })
