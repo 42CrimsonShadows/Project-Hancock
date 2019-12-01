@@ -570,7 +570,7 @@ class ChapterSelection {
                                 "Narration13" : "ch1-I-Line1",     //1 narration3
                                 "Narration14" : "ch1-I-Line2_01",  //2 narration4 Great Job
                                 "Narration15" : "ch1-I-Line2_02",
-                                "Narration16" : "ch1-I-Line3_01", //3 narration5 Fantastic
+                                "Narration16" : "ch1-I-Line3_01",//3 narration5 Fantastic
                                 //sounds for Letter S
                                 "Narration18" : "ch3-S-Transition1",
                                 "Narration19" : "ch3-S-Transition2",
