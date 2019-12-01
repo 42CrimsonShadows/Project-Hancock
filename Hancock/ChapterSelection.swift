@@ -562,6 +562,7 @@ class ChapterSelection {
                                 "Narration3" : "ch1-I-Line1",     //1 narration3
                                 "Narration4" : "ch1-I-Line2_01",  //2 narration4 Great Job
                                 "Narration5" : "ch1-I-Line2_02",
+                                "Narration6" : "ch1-I-Line3_01", //Fantastic
                                 //sounds for Letter Q
                                 "Narration10" : "ch3-Q-Transition1",
                                 "Narration11" : "ch3-Q-Transition2",

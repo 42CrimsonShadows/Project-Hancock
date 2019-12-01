@@ -695,7 +695,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             if canvasView.letterComplete == true {
                 self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     
                     self.dismiss(animated: false, completion: nil)
                 })

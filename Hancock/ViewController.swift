@@ -572,7 +572,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.startTransitionAnimation(key: "MainCharacterIdle")
                 })
                 
-                print("move floor for chapter three")
+                print("move for chapter three, letter1")
             case chapterFour:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
@@ -635,12 +635,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 print("move floor for chapter two")
             case chapterThree:
-                //animate the mainFloor node to move and stop when the translation is complete
-                //animate the main character to rotate a bit on the y axis
+                //Q (chapter2 - letter2)
                 
-                //O
+                startTransitionAnimation(key: "MainCharacterSwimming")
                 
-                print("move floor for chapter three")
+                // x= (-)west/(+)east, z= (-)north/(+)south
+                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(1.768)), y: CGFloat(GLKMathDegreesToRadians(-4.909)), z: CGFloat(GLKMathDegreesToRadians(-19.836)), duration: 3)
+                let chapter1Letter1RotationSeq = SCNAction.sequence([rotate1])
+                mainCharacterIdle?.parent?.runAction(chapter1Letter1RotationSeq)
+                
+                // x= (-)west/(+)east, z= (-)north/(+)south
+                let move1 = SCNAction.move(to: SCNVector3(-0.381, 0.096, 0.218), duration: 8)  //P1 to P2
+                //let rotate2 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 0.5)
+                let chapter1Letter1MoveSeq = SCNAction.sequence([move1])
+                mainCharacterIdle?.parent?.runAction((chapter1Letter1MoveSeq), completionHandler: stopWalkAnimation)
+                
+                print("move  for chapter three")
             case chapterFour:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
@@ -1065,16 +1075,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2_1"]!, type: "mp3")
                         
                         //wait 1 seconds for the activity page to load
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                             //trasition to the activity page for the first letter
                             print("Loading activity \(chapterSelectedLetterArray![0])")
                             self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
                             
-                            //wait 1 seconds for the activity page to load
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                                //play narration for the first audio instructions for the activity
-                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
-                            })
+                            //play narration for the first audio instructions for the activity
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                         })
                     })
                 })
@@ -1152,7 +1159,66 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterFour:
                 stopTransitionAnimation(key: "MainCharacterWalking")
             case chapterThree:
-                stopTransitionAnimation(key: "MainCharacterWalking")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.stopTransitionAnimation(key: "MainChracterSwimming")
+                    self.startTransitionAnimation(key: "MainCharacterIdle")
+                    //play game intro part 2 (segway into first letter activity)
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                    
+                    //wait 5 seconds for game intro2 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 16, execute: {
+                        //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+                        print("Prepare to shatter letter 1")
+                        self.shatterLetterTwo = true
+                        
+                        //move to Ollie
+                        self.stopTransitionAnimation(key: "MainChracterIdle")
+                        self.startTransitionAnimation(key: "MainCharacterSwimming")
+                        self.stopAnimateSideCharacter(key: "SideCharacter2Swimming", sideCharacter: "Quinn")
+                        self.startAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Quinn")
+                        
+                        // x= (-)west/(+)east, z= (-)north/(+)south
+                        let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0.113)), y: CGFloat(GLKMathDegreesToRadians(-8.133)), z: CGFloat(GLKMathDegreesToRadians(6.971)), duration: 8)
+                        let chapter3Letter1RotationSeq = SCNAction.sequence([rotate1])
+                        self.mainCharacterIdle?.parent?.runAction(chapter3Letter1RotationSeq)
+                        
+                        // x= (-)west/(+)east, z= (-)north/(+)south
+                        let move1 = SCNAction.move(to: SCNVector3(-0.225, 1.375, 0.005), duration: 8)  //P1 to P2
+                        let chapter3Letter2MoveSeq = SCNAction.sequence([move1])
+                        self.mainCharacterIdle?.parent?.runAction((chapter3Letter2MoveSeq), completionHandler: self.stopWalkAnimation)
+                        
+                        //move Quinn
+                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(180)), y: CGFloat(GLKMathDegreesToRadians(79.606)), z: CGFloat(GLKMathDegreesToRadians(-163.572)), duration: 1)
+                        let chapter3Letter2RotationSeq2 = SCNAction.sequence([rotate2])
+                        self.charcterTwoIdle?.parent?.runAction(chapter3Letter2RotationSeq2)
+                        
+                        // x= (-)west/(+)east, z= (-)north/(+)south
+                        let move2 = SCNAction.move(to: SCNVector3(-0.221, 1.349, 0.11), duration: 8)  //P1 to P2
+                        let chapter3Letter2MoveSeq2 = SCNAction.sequence([move2])
+                        self.charcterTwoIdle?.parent?.runAction((chapter3Letter2MoveSeq2), completionHandler: self.stopWalkAnimation)
+                        
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 7.9, execute: {
+                            self.stopTransitionAnimation(key: "MainChracterSwimming")
+                            self.startTransitionAnimation(key: "MainCharacterIdle")
+                            
+                            //play narration for the first audio instructions for the activity
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
+                            
+                            //wait 1 seconds for the activity page to load
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                                //trasition to the activity page for the first letter
+                                print("Loading activity \(chapterSelectedLetterArray![1])")
+                                self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
+                                
+                                //play narration for the first audio instructions for the activity
+                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                            })
+                        })
+                    })
+                })
+                
+                
             case chapterTwo:
                 print("skip stopping the skate animation")
                 //wait 1 seconds (small pause)
@@ -1494,9 +1560,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 animateLetterHide(fadeThis: letterOne!)
                 toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             case chapterThree:
-                letterOne!.isPaused = false
-                animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                //letterOne!.isPaused = false
+                //animateLetterHide(fadeThis: letterOne!)
+                //toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                print("Nothing to shatter for this chapter")
+                print("Character goes to get another fish")
+
             case chapterTwo:
                 print("Nothing to shatter for this chapter")
                 print("Character cheers and does skateboard animation")
@@ -1833,9 +1902,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 animateLetterHide(fadeThis: letterOne!)
                 toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
             case chapterThree:
-                letterOne!.isPaused = false
-                animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                print("Nothing to shatter for this chapter")
+                print("Character cheers and does skateboard animation")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.stopAnimateSideCharacter(key: "SideCharacter1Idle1", sideCharacter: "Terry")
+                    self.startAnimateSideCharacter(key: "SideCharacter1Idle2", sideCharacter: "Terry")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                    //after the P trick play the walk to next letter animation
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 16, execute: {
+                        self.playWalkAnimation()
+                    })
+                })
             case chapterTwo:
                 print("Nothing to shatter for this chapter")
                 print("Character cheers and does skateboard animation")
@@ -2071,22 +2148,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("Adding animation \(key) for \(sideCharacter)!")
         
         switch sideCharacter {
-        case "Terry":
+        case "Terry", "Ollie":
             print("Do Terry stuff")
             charcterOneIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Lin":
+        case "Lin", "Quinn":
             print("Do Lin stuff")
             charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Francine":
+        case "Francine", "Simon":
             print("Do Francine stuff")
             charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Eric":
+        case "Eric", "Jillian":
             print("Do Eric stuff")
             charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Hannah":
+        case "Hannah", "InnerTube":
             print("Do Hannah stuff")
             charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Indy":
+        case "Indy", "Gary":
             print("Do Indy stuff")
             mainCharacterIdle?.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         default:

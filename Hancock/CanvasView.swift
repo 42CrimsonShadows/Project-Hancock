@@ -411,21 +411,12 @@ class CanvasView: UIView {
                 playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
                 
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    //self.playAudioFile(file: "Line5", type: "mp3")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
-                    
-                    //print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[7])")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[7]]!, type: "mp3")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[6]]!, type: "mp3")
                     
                     if !self.letterComplete {
                         //wait 1 second
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
-                            
-                            //print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[8])")
-                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[8]]!, type: "mp3")
                             self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[7]]!, type: "mp3")
                             
                             self.pinkDot?.isHidden = true
@@ -447,21 +438,14 @@ class CanvasView: UIView {
                 
                 
                     //wait 1 second
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        //self.playAudioFile(file: "Line5", type: "mp3")
-                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
-                        
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                         print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[4])")
-                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[5]]!, type: "mp3")
                         self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[4]]!, type: "mp3")
                         
                         if !self.letterComplete {
-                            //wait 1 second
+                            //wait 2 second
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
-                                
                                 print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[5])")
-                                //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[6]]!, type: "mp3")
                                 self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[5]]!, type: "mp3")
                                 
                                 //wait 2 seconds
@@ -493,7 +477,7 @@ class CanvasView: UIView {
                 
                 
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     //self.playAudioFile(file: "Line5", type: "mp3")
                     //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
                     
@@ -537,7 +521,7 @@ class CanvasView: UIView {
                 playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
                 
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[0])")
 
                     self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[0]]!, type: "mp3")
@@ -708,7 +692,7 @@ class CanvasView: UIView {
             narrationArray = ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
         case "G":
             print("Load G narration")
-            narrationArray = ["Narration3", "Narration4", "Narration5"]
+            narrationArray = ["Narration4", "Narration5", "Narration6"]
         case "H":
             print("Load H narration")
             narrationArray = ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
@@ -748,7 +732,6 @@ class CanvasView: UIView {
         case "T":
             print("Load T narration")
             narrationArray = ["Narration13", "Narration14", "Narration15"]
-            //return ["Narration13", "Narration14", "Narration15"]
         case "U":
             print("Load U narration")
             narrationArray = ["letter3Finish", "letter5Finish"]
