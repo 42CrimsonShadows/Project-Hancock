@@ -2306,6 +2306,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 print("move floor for chapter five")
+                //FIXME: broken stuff
             default:
                 break
             }

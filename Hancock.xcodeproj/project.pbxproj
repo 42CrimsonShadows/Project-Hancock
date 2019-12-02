@@ -15,6 +15,7 @@
 		A00678EC22AEEB5B00846A2D /* line.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00678EB22AEEB5B00846A2D /* line.swift */; };
 		A00E7B5A22CA8D25009BA733 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7B5922CA8D25009BA733 /* UIViewExtension.swift */; };
 		A02BCC3B22A86EA70059E3D8 /* activityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BCC3A22A86EA70059E3D8 /* activityViewController.swift */; };
+		A051592623957A070026485B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C7227CA9F600A7C787 /* LaunchScreen.storyboard */; };
 		A07974B12285FC4A00606889 /* StudentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */; };
 		A07974B322861DB000606889 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B222861DB000606889 /* StudentTableViewController.swift */; };
 		A08A2D3F22BEA2C60076B814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */; };
@@ -28,7 +29,6 @@
 		A0A028C0227CA9F500A7C787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A028BF227CA9F500A7C787 /* ViewController.swift */; };
 		A0A028C3227CA9F500A7C787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C1227CA9F500A7C787 /* Main.storyboard */; };
 		A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C4227CA9F600A7C787 /* Assets.xcassets */; };
-		A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */; };
 		A0E86BE222C08F150009A214 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0E86BE122C08F150009A214 /* Loading.gif */; };
 		C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55D229F302500D15A2B /* SignInViewController.swift */; };
 		C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55F229F305900D15A2B /* RegisterViewController.swift */; };
@@ -61,7 +61,7 @@
 		A0A028BF227CA9F500A7C787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A0A028C2227CA9F500A7C787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0A028C4227CA9F600A7C787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A0A028C7227CA9F600A7C787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A0A028C7227CA9F600A7C787 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = LaunchScreen.storyboard; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0A028C9227CA9F600A7C787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E86BE122C08F150009A214 /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
 		B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.debug.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				3446B59422B8201600C785BE /* Formatters.swift */,
 				A08A2D4022BEC4990076B814 /* Swift_Gif.swift */,
 				A00E7B5922CA8D25009BA733 /* UIViewExtension.swift */,
-				A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */,
+				A0A028C7227CA9F600A7C787 /* LaunchScreen.storyboard */,
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
 				A0A028C1227CA9F500A7C787 /* Main.storyboard */,
 				A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */,
@@ -207,7 +207,6 @@
 			knownRegions = (
 				en,
 				Base,
-				global,
 			);
 			mainGroup = A0A028AF227CA9F500A7C787;
 			productRefGroup = A0A028B9227CA9F500A7C787 /* Products */;
@@ -227,7 +226,7 @@
 				A0A028BE227CA9F500A7C787 /* art.scnassets in Resources */,
 				A08A2D4922BEDEA20076B814 /* BookAnimation.gif in Resources */,
 				A0E86BE222C08F150009A214 /* Loading.gif in Resources */,
-				A0A028C8227CA9F600A7C787 /* LaunchScreen.storyboard in Resources */,
+				A051592623957A070026485B /* LaunchScreen.storyboard in Resources */,
 				A08A2D5522C02AA40076B814 /* Anthony-Chillaxing.gif in Resources */,
 				A08A2D3F22BEA2C60076B814 /* LaunchScreen.storyboard in Resources */,
 				A08A2D5422C02AA40076B814 /* Grass-Blowing.gif in Resources */,
@@ -298,14 +297,6 @@
 				A0A028C2227CA9F500A7C787 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A0A028C6227CA9F600A7C787 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0A028C7227CA9F600A7C787 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
