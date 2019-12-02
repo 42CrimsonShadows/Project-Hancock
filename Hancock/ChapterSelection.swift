@@ -844,6 +844,9 @@ class ChapterSelection {
             if animationIdentifier == "Indy@WalkingFixed-1" {
                 animationObject.duration = 2.083
             }
+            if animationIdentifier == "Gary@ShockedFixed-1" {
+                animationObject.duration = 0.444
+            }
             
             //Store the animationfor later use
             chapterSelectedAnimationDict[withKey] = animationObject

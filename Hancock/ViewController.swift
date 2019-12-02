@@ -1198,15 +1198,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0.113)), y: CGFloat(GLKMathDegreesToRadians(-8.133)), z: CGFloat(GLKMathDegreesToRadians(6.971)), duration: 8)
                         let chapter3Letter1RotationSeq = SCNAction.sequence([rotate1])
                         self.mainCharacterIdle?.parent?.runAction(chapter3Letter1RotationSeq)
-                        let move1 = SCNAction.move(to: SCNVector3(-0.225, 1.375, 0.005), duration: 8)  //P1 to P2
+                        let move1 = SCNAction.move(to: SCNVector3(-0.225, 1.375, 0.005), duration: 8)  //P2 to P1
                         let chapter3Letter2MoveSeq = SCNAction.sequence([move1])
                         self.mainCharacterIdle?.parent?.runAction(chapter3Letter2MoveSeq)
                         
-                        //move Quinn
-                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(180)), y: CGFloat(GLKMathDegreesToRadians(79.606)), z: CGFloat(GLKMathDegreesToRadians(-163.572)), duration: 1)
+                        //move Quinn to Ollie
+                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(79.606)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1)
                         let chapter3Letter2RotationSeq2 = SCNAction.sequence([rotate2])
                         self.charcterTwoIdle?.parent?.runAction(chapter3Letter2RotationSeq2)
-                        let move2 = SCNAction.move(to: SCNVector3(-0.221, 1.349, 0.11), duration: 8)  //P1 to P2
+                        let move2 = SCNAction.move(to: SCNVector3(-0.221, 1.349, 0.11), duration: 8)  //P2 to P1
                         let chapter3Letter2MoveSeq2 = SCNAction.sequence([move2])
                         self.charcterTwoIdle?.parent?.runAction(chapter3Letter2MoveSeq2)
                         
@@ -1420,17 +1420,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration24"]!, type: "mp3")
                     
                     //wait 5 seconds for game intro2 to finish
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 16, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
                         
                         print("Set up trigger for after activityView")
                         self.shatterLetterFour = true
-                        
-//                        let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-163.287)), y:        CGFloat(GLKMathDegreesToRadians(27.438)), z: CGFloat(GLKMathDegreesToRadians(-146.911)), duration: 3)
-//                        let chapter3Letter4RotationSeq = SCNAction.sequence([rotate1])
-//                        mainCharacterIdle?.parent?.runAction(chapter3Letter4RotationSeq)
-//                        let move1 = SCNAction.move(to: SCNVector3(-0.246, 0.254, -0.371), duration: 8)  //P1 to P2
-//                        let chapter3Letter4MoveSeq = SCNAction.sequence([move1])
-//                        mainCharacterIdle?.parent?.runAction((chapter3Letter4MoveSeq), completionHandler: stopWalkAnimation)
                         
                         //Gary touches Jillian
                         let ratationGary1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-173.658)), y: CGFloat(GLKMathDegreesToRadians(54.663)), z: CGFloat(GLKMathDegreesToRadians(-165.956)), duration: 1)
@@ -1457,7 +1450,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                 self.mainCharacterIdle?.parent?.runAction(moveAwayfromJillian)
                                 //Jillian move
                                 let moveJillian = SCNAction.move(to: SCNVector3(-0.396,0.198,-0.466), duration: 1)
-                                let rotationJillian = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-90)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1)
+                                let rotationJillian = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-45)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1)
                                 let moveAwayfromGary = SCNAction.sequence([moveJillian, rotationJillian])
                                 self.charcterFourIdle?.parent?.runAction(moveAwayfromGary)
                                 
@@ -1478,7 +1471,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                         //move Jillian to Top
                                         self.stopAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Jillian")
                                         self.startAnimateSideCharacter(key: "SideCharacter4Swimming", sideCharacter: "Jillian")
-                                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(79.606)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 3)
+                                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 3)
                                         let chapter3Letter4RotationSeq2 = SCNAction.sequence([rotate2])
                                         self.charcterFourIdle?.parent?.runAction(chapter3Letter4RotationSeq2)
                                         let move2 = SCNAction.move(to: SCNVector3(-0.221, 1.349, 0.11), duration: 8)
@@ -1806,11 +1799,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish1"]!, type: "mp3")
                     self.stopAnimateSideCharacter(key: "SideCharacter1Idle4", sideCharacter: "Ollie")
                     self.startAnimateSideCharacter(key: "SideCharacter1Idle5", sideCharacter: "Ollie")
-                    self.charcterFiveIdle.parent?.runAction(SCNAction.rotateBy(x: CGFloat(GLKMathDegreesToRadians(-5)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5))
-                    let moveOllieFinish = SCNVector3(x: 0, y: 1.339, z: 0.168)
-                    self.charcterFourIdle.parent?.runAction(SCNAction.move(to: moveOllieFinish, duration: 2))
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 22, execute: {
+                    self.charcterOneIdle.parent?.runAction(SCNAction.rotateBy(x: CGFloat(GLKMathDegreesToRadians(-5)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5))
+                    let moveOllieFinish = SCNVector3(x: 0, y: 1.339, z: 0.168)
+                    self.charcterOneIdle.parent?.runAction(SCNAction.move(to: moveOllieFinish, duration: 2))
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
                         self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish2"]!, type: "mp3")
                         self.stopAnimateSideCharacter(key: "SideCharacter1Idle5", sideCharacter: "Ollie")
                         self.startAnimateSideCharacter(key: "SideCharacter1Twirl", sideCharacter: "Ollie")
