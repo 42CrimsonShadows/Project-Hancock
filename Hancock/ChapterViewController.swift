@@ -13,6 +13,7 @@ class ChapterViewController: UIViewController {
     
     //ref to the UIImageVIEW on the storyboard
     @IBOutlet weak var GifView: UIImageView!
+    @IBOutlet weak var conceptView: UIImageView!
     @IBOutlet weak var loadingGifView: UIImageView!    
     @IBOutlet weak var chapter1Label: UIButton!
     @IBOutlet weak var chapter2Label: UIButton!
@@ -74,6 +75,7 @@ class ChapterViewController: UIViewController {
         
         loadingGifView.loadGif(name: "Loading")
         loadingGifView.isHidden = true
+        conceptView.isHidden = true
         
         chapter1Label.isHidden = true
         chapter2Label.isHidden = true
@@ -110,6 +112,27 @@ class ChapterViewController: UIViewController {
     }
     
     func tappedMe(){
+        switch true {
+        case chapterOne:
+            //chapterOneConceptImage = true
+            print("chapter 1 loaded")
+        case chapterTwo:
+            //chapterOneConceptImage = true
+            print("chapter 2 loaded")
+        case chapterThree:
+            //chapterOneConceptImage = true
+            conceptView.isHidden = false
+            print("chapter 3 loaded")
+        case chapterFour:
+            //chapterOneConceptImage = true
+            print("chapter 4 loaded")
+        case chapterFive:
+            //chapterOneConceptImage = true
+            print("chapter 5 loaded")
+        default:
+            break
+        }
+        
         loadingGifView.isHidden = false
         
         //self.GifView.stopAnimating()
