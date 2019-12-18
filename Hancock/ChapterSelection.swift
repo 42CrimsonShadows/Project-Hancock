@@ -51,13 +51,11 @@ class ChapterSelection {
             chapterSelectedSoundDict = loadChapter2SoundFiles()
         case 3:
             print("Loading Chapter ", picked)
-            //TODO: load chapter 3 files
             chapterSelectedNodeArray = loadChapter3NodeFiles()
             chapterSelectedLetterArray = ["G", "Q", "S", "J", "O"]
             chapterSelectedSoundDict = loadChapter3SoundFiles()
         case 4:
             print("Loading Chapter ", picked)
-            //TODO: load chapter 4 files
             chapterSelectedNodeArray = loadChapter4NodeFiles()
             chapterSelectedLetterArray = ["K", "V", "W", "M", "A"]
             chapterSelectedSoundDict = loadChapter4SoundFiles()
@@ -287,6 +285,7 @@ class ChapterSelection {
                                   "Narration7" : "ch1-I-Line3_02",
                                   "Narration8" : "ch1-I-Line4_01",  //4 narration8
                                   "Narration9" : "ch1-I-Line4_02",
+                                  
                                   //sounds for Letter T
                                   "Narration10" : "ch1-T-Intro1",
                                   "Narration11" : "ch1-T-Intro2",
@@ -294,6 +293,7 @@ class ChapterSelection {
                                   "Narration13" : "ch1-T-Line2_01", //2 narration13
                                   "Narration14" : "ch1-T-Line2_02",
                                   "Narration15" : "ch1-T-Line3_01", //3 narration14
+            
                                   //sounds for Letter L
                                   "Narration17" : "ch1-L-Intro1",
                                   "Narration18" : "ch1-L-Intro2",
@@ -301,6 +301,7 @@ class ChapterSelection {
                                   "Narration20" : "ch1-L-Line2_01", //2 narration20
                                   "Narration21" : "ch1-L-Line2_02",
                                   "Narration22" : "ch1-L-Line3_01", //3 narration21
+            
                                   //sounds for Letter F
                                   "Narration23" : "ch1-F-Intro1",
                                   "Narration24" : "ch1-F-Intro2",
@@ -310,6 +311,7 @@ class ChapterSelection {
                                   "Narration28" : "ch1-F-Line3_01", //3 narration28
                                   "Narration29" : "ch1-F-Line3_02",
                                   "Narration30" : "ch1-F-Line4_01", //4 narration30
+            
                                   //sounds for Letter E
                                   "Narration31" : "ch1-E-Intro1",
                                   "Narration32" : "ch1-E-Intro2",
@@ -321,6 +323,7 @@ class ChapterSelection {
                                   "Narration38" : "ch1-E-Line4_01", //4 narration38
                                   "Narration39" : "ch1-E-Line4_02",
                                   "Narration40" : "ch1-E-Line5_01", //5 narration40
+            
                                   //sounds for Letter H
                                   "Narration42" : "ch1-H-Intro1",
                                   "Narration43" : "ch1-H-Intro2",
@@ -331,6 +334,7 @@ class ChapterSelection {
                                   "Narration48" : "ch1-H-Line3_01", //3 narration48
                                   "Narration49" : "ch1-H-Line3_02",
                                   "Narration50" : "ch1-H-Line4_01", //4 narration50
+            
                                   //letter finish sounds
                                   "letter2Finish" : "ch1-T-Line4",
                                   "letter3Finish" : "ch1-L-Line3_02",
@@ -338,6 +342,7 @@ class ChapterSelection {
                                   "letter5Finish" : "ch1-E-Line5_02",
                                   "letter6Finish" : "ch1-H-Line4_01",
                                   "chapterFinish" : "ch1-H-Line4_02",
+                                  
                                   //extra chapter FX sounds
                                   "Background1" : "Birds1",
                                   "Background2" : "Birds2",
@@ -402,27 +407,32 @@ class ChapterSelection {
                                     "Narration3" : "ch2-P-Line0",
                                     "Narration4" : "ch2-P-Line1",
                                     "Narration6" : "ch2-P-Line2",
+                                    
                                     //sounds for Letter R
                                     "Narration11" : "ch2-R-Line0",
                                     "Narration12" : "ch2-R-Line1",
                                     "Narration13" : "ch2-R-Line2",
                                     "Narration14" : "ch2-B-Line3",
+                                    
                                     //sounds for Letter B
                                     "Narration18" : "ch2-B-Line0",
                                     "Narration19" : "ch2-B-Line1",
                                     "Narration20" : "ch2-B-Line2",
                                     "Narration22" : "ch2-B-Line3",
+                                    
                                     //sounds for Letter C
                                     "Narration24" : "ch2-C-Line0",
                                     "Narration25" : "ch2-C-Line1",
+                                    
                                     //sounds for Letter D
                                     "Narration32" : "ch2-D-Line0",
                                     "Narration33" : "ch2-D-Line1",
                                     "Narration34" : "ch2-D-Line2",
+                                    
                                     //sounds for Letter U
                                     "Narration44" : "ch2-U-Line0",
                                     "Narration45" : "ch2-U-Line1",
-                                    //"Narration21" : "ch2-U-Line2",
+            
                                     //letter finish sounds
                                     "ThankYou" : "ch2-ThankYou",
                                     "letter2Finish" : "ch2-WowAmazing",
@@ -430,6 +440,7 @@ class ChapterSelection {
                                     "letter4Finish" : "ch2-YouDidIt",
                                     "letter5Finish" : "ch2-Incredible",
                                     "chapterFinish" : "ch2-U-Line2",
+                                    
                                     //extra chapter FX sounds
                                     "Background1" : "Birds1",
                                     "Background2" : "Birds2",
@@ -564,6 +575,7 @@ class ChapterSelection {
                                 "Narration4" : "ch1-I-Line2_01",  //2 narration4 Great Job
                                 "Narration5" : "ch1-I-Line2_02",
                                 "Narration6" : "ch1-I-Line3_01", //Fantastic
+            
                                 //sounds for Letter Q
                                 "Narration10" : "ch3-Q-Transition1",
                                 "Narration11" : "ch3-Q-Transition2",
@@ -572,12 +584,14 @@ class ChapterSelection {
                                 "Narration14" : "ch1-I-Line2_01",  //2 narration4 Great Job
                                 "Narration15" : "ch1-I-Line2_02",
                                 "Narration16" : "ch1-I-Line3_01",//3 narration5 Fantastic
+            
                                 //sounds for Letter S
                                 "Narration18" : "ch3-S-Transition1",
                                 "Narration19" : "ch3-S-Transition2",
                                 "Narration20" : "ch3-S-Intro1",
                                 "Narration21" : "ch1-I-Line1",     //1 narration3
                                 "Narration22" : "ch1-I-Line2_01",  //2 narration4 Great Job
+            
                                 //sounds for Letter J
                                 "Narration23" : "ch3-J-Transition1",
                                 "Narration24" : "ch3-J-Transition2",
@@ -587,14 +601,17 @@ class ChapterSelection {
                                 "Narration28" : "ch1-F-Line2_01", //2 narration26 Great Job
                                 "Narration29" : "ch1-F-Line2_02", //3 narration28
                                 "Narration30" : "ch1-F-Line3_01", //3 narration28 Fnatastic
+            
                                 //sounds for Letter O
                                 "Narration31" : "ch3-O-Transition1",
                                 "Narration32" : "ch3-O-Intro1",
                                 "Narration33" : "ch1-E-Line1",    //1 narration33
                                 "Narration34" : "ch1-E-Line2_01", //2 narration34 Great Job
+            
                                 //letter finish sounds
                                 "chapterFinish1" : "ch3-Finish1",
                                 "chapterFinish2" : "ch3-Finish2",
+                                
                                 //extra chapter FX sounds
                                 "Background2" : "underwater",
                                 "Coin1" : "xylophone2",
@@ -609,24 +626,182 @@ class ChapterSelection {
         //var array of chapter 4 assest
         var chapter4NodeArray: [SCNNode] = []
         
+        // Load StoryScene Node
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Environment/Chapter4Scene.scn")!
+        storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+        storyNode.scale = SCNVector3(1, 1, 1)
+        storyNode.position = SCNVector3(0, 0, 0)
+        
+        //Load Idle Animation Node
+        let idleKeelieScene = SCNScene(named: "art.scnassets/3DModels/Chapter3Files/Characters/Keelie/Keeelie@IdleFixed.dae")!
+        for child in idleKeelieScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(0.014, 0.014, 0.014)
+        idleNode.position = SCNVector3(-5.75, 0, -26)
+        idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        
+        let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+        
+        
+        //Load Idle Animation Node
+        let idleVelmaScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@KnotTail.dae")!
+        for child in idleVelmaScene.rootNode.childNodes {
+            SideCharacter1idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter1idleNode)
+        SideCharacter1idleNode.scale = SCNVector3(0.01, 0.01, 0.01)
+        SideCharacter1idleNode.position = SCNVector3(42, 2.6, -33)
+        //SideCharacter1idleNode.eulerAngles = SCNVector3(0, 180, 0)
+        SideCharacter1idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(-45), 0)
+        
+        //Load Idle Animation Node
+        let idleWallaceScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HappyFixed.dae")!
+        for child in idleWallaceScene.rootNode.childNodes {
+            SideCharacter2idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter2idleNode)
+        SideCharacter2idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter2idleNode.position = SCNVector3(-57, 0, 3)
+        SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        let idleWinonaScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@IdleFixed.dae")!
+        for child in idleWinonaScene.rootNode.childNodes {
+            SideCharacter3idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter3idleNode)
+        SideCharacter3idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter3idleNode.position = SCNVector3(-58, 0, 0)
+        SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        let idleMannyScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@StomachAcheFixed.dae")!
+        for child in idleMannyScene.rootNode.childNodes {
+            SideCharacter4idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter4idleNode)
+        SideCharacter4idleNode.scale = SCNVector3(0.1, 0.1, 0.1)
+        SideCharacter4idleNode.position = SCNVector3(27, 0, 5)
+        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(90), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        let idleAshtonScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@HurtFootFixed.dae")!
+        for child in idleAshtonScene.rootNode.childNodes {
+            SideCharacter5idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter5idleNode)
+        SideCharacter5idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
+        SideCharacter5idleNode.position = SCNVector3(33, 8.7, 64)
+        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
+        
+        //load all the DAE animations for this Chapter
+        //load animations for mainCharacter
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@IdleFixed", animationIdentifier: "Keelie@IdleFixed-1")
+        prepareAnimation(withKey: "MainCharacterClaping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@ClapingFixed", animationIdentifier: "Keelie@ClapingFixed-1")
+        prepareAnimation(withKey: "MainCharacterJogging", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@JoggingFixed", animationIdentifier: "Keelie@JoggingFixed-1")
+        prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WalkingFixed", animationIdentifier: "Keelie@WalkingFixed-1")
+        prepareAnimation(withKey: "MainCharacterWaving", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WavingFixed", animationIdentifier: "Keelie@WavingFixed-1")
+        
+        //load animation for side character 1
+        prepareAnimation(withKey: "SideCharacter1Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@KnotTailFixed", animationIdentifier: "Velma@KnotTailFixed-1")
+        prepareAnimation(withKey: "SideCharacter1Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@HappyFixed", animationIdentifier: "Velma@HappyFixed-1")
+        
+        //load animation for side character 2
+        //TODO: ADD WALLACE HURT TAIL ANIMATION
+        //prepareAnimation(withKey: "SideCharacter2Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HurtTailFixed", animationIdentifier: "Wallace@HurtTailFixed-1")
+        prepareAnimation(withKey: "SideCharacter2Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HappyFixed", animationIdentifier: "Wallace@HappyFixed-1")
+        
+        
+        //load animation for side character 3
+        prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@IdleFixed", animationIdentifier: "Winona@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Clapping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ClappingFixed", animationIdentifier: "Winona@ClappingFixed-1")
+        
+        //load animation for side character 4
+        prepareAnimation(withKey: "SideCharacter4Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@StomachAcheFixed", animationIdentifier: "Manny@StomachAcheFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@EatingBananaFixed", animationIdentifier: "Manny@EatingBananaFixed-1")
+        
+        //load animation for side character 5
+        prepareAnimation(withKey: "SideCharacter5Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@HurtFootFixed", animationIdentifier: "Ashton@HurtFootFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@CastFixed", animationIdentifier: "Ashton@CastFixed-1")
+        
+        chapter4NodeArray.append(storyNode)
+        
         return chapter4NodeArray
     }
     func loadChapter4SoundFiles() -> [String: String] {
-        let chapter4SoundArray = ["Narration1" : "Line1",
-                                  "Narration2" : "Line2",
-                                  "Narration3" : "Line3",
-                                  "Narration4" : "Line4",
-                                  "Narration5" : "Line5",
-                                  "Narration6" : "Line6",
-                                  "Narration7" : "Line7",
-                                  "Narration8" : "Line8",
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
-                                  "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
-                                  "Break1" : "RockBreak3",
-                                  "Stop" : "stop",
-                                  "LetterComplete" : "yeahOutside"]
+        let chapter4SoundArray = [//sounds for Letter K
+                                    "Narration1" : "ch4-K-intro",
+                                    "Narration2" : "ch1-E-Line1",    //1 narration33 Green to Red
+                                    "Narration3" : "ch1-E-Line2_01", //2 narration34 Great Job
+                                    "Narration4" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration5" : "ch1-E-Line3_01", //3 narration36 Amazing
+                                    "Narration6" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration7" : "ch1-E-Line4_01", //4 narration38 Perfect
+                                    //TODO: ADD PINK TO WHITE DOT NARRATION
+                                    "Narration8" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration9" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+            
+                                    //sounds for Letter V
+                                    "Narration11" : "ch4-V-Transition1",
+                                    "Narration12" : "ch4-V-Intro",
+                                    "Narration13" : "ch1-E-Line1",    //1 narration33 Green to Red
+                                    "Narration14" : "ch1-E-Line2_01", //2 narration34 Great Job
+                                    "Narration15" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration16" : "ch1-E-Line3_01", //3 narration36 Amazing
+            
+                                    //sounds for Letter W
+                                    "Narration18" : "ch4-W-Transition1",
+                                    "Narration19" : "ch4-W-Transition2",
+                                    "Narration20" : "ch4-W-Intro",
+                                    "Narration21" : "ch1-E-Line1",    //1 narration33 Green to Red
+                                    "Narration22" : "ch1-E-Line2_01", //2 narration34 Great Job
+                                    "Narration23" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration24" : "ch1-E-Line3_01", //3 narration36 Amazing
+                                    "Narration25" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration26" : "ch1-E-Line4_01", //4 narration38 Perfect
+                                    //TODO: ADD PINK TO WHITE DOT NARRATION
+                                    "Narration27" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration28" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+            
+                                    //sounds for Letter M
+                                    "Narration29" : "ch4-M-Transition1",
+                                    "Narration30" : "ch4-M-Transition2",
+                                    "Narration31" : "ch4-M-Intro",
+                                    "Narration32" : "ch1-E-Line1",    //1 narration33 Green to Red
+                                    "Narration33" : "ch1-E-Line2_01", //2 narration34 Great Job
+                                    "Narration34" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration35" : "ch1-E-Line3_01", //3 narration36 Amazing
+                                    "Narration36" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration37" : "ch1-E-Line4_01", //4 narration38 Perfect
+                                    //TODO: ADD PINK TO WHITE DOT NARRATION
+                                    "Narration38" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration39" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+            
+                                    //sounds for Letter A
+                                    "Narration40" : "ch4-A-Transition1",
+                                    "Narration41" : "ch4-A-Transition2",
+                                    "Narration42" : "ch4-A-Intro",
+                                    "Narration43" : "ch1-E-Line1",    //1 narration33 Green to Red
+                                    "Narration44" : "ch1-E-Line2_01", //2 narration34 Great Job
+                                    "Narration45" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration46" : "ch1-E-Line3_01", //3 narration36 Amazing
+                                    "Narration47" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration48" : "ch1-E-Line4_01", //4 narration38 Perfect
+            
+                                    //Finishing Narration
+                                    "Finish1" : "ch4-Final1",
+                                    "Finish2" : "ch4-Final2",
+            
+                                    //extra chapter FX sounds
+                                    "Background1" : "Birds1",
+                                    "Background2" : "Birds2",
+                                    "WalkSound" : "Gravel and Grass Walk",
+                                    "Coin1" : "xylophone2",
+                                    "Break3" : "RockBreak3",
+                                    "Stop" : "stop",
+                                    "LetterComplete" : "yeahOutside"]
         return chapter4SoundArray
     }
     
