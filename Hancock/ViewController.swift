@@ -2301,7 +2301,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterFour:
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-                print("move floor for chapter four")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
+                    //move the main character to the first letter
+                    self.playWalkAnimation()
+                })
+                print("Starting chapter four")
             case chapterFive:
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
