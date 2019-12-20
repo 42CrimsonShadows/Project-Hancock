@@ -676,8 +676,8 @@ class CanvasView: UIView {
         
         switch currentletter {
         case "A":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load A narration")
+            return ["Narration44", "Narration45", "Narration46", "Narration47", "Narration48"]
         case "B":
             print("Load B narration")
             narrationArray = ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
@@ -706,14 +706,14 @@ class CanvasView: UIView {
             print("Load J narration")
             return ["Narration28", "Narration29", "Narration30"]
         case "K":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load K narration")
+            return ["Narration3", "Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
         case "L":
             print("Load L narration")
             narrationArray = ["Narration20", "Narration21", "Narration22"]
         case "M":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load M narration")
+            return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
         case "N":
             print("do stuff")
             return ["Narration", "Narration"]
@@ -741,11 +741,11 @@ class CanvasView: UIView {
             print("Load U narration")
             narrationArray = ["letter3Finish", "letter5Finish"]
         case "V":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load V narration")
+            return ["Narration14", "Narration15", "Narration16"]
         case "W":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load W narration")
+            return ["Narration22", "Narration23", "Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
         case "X":
             print("do stuff")
             return ["Narration", "Narration"]

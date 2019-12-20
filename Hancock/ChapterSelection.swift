@@ -629,7 +629,7 @@ class ChapterSelection {
         // Load StoryScene Node
         let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Environment/Chapter4Scene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
-        storyNode.scale = SCNVector3(0.01, 0.01, 0.01)
+        storyNode.scale = SCNVector3(0.03, 0.03, 0.03)
         storyNode.position = SCNVector3(0, 0, 0)
         
         //Load Idle Animation Node
@@ -646,7 +646,7 @@ class ChapterSelection {
         
         
         //Load Idle Animation Node
-        let idleVelmaScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@KnotTail.dae")!
+        let idleVelmaScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@KnotTailFixed.dae")!
         for child in idleVelmaScene.rootNode.childNodes {
             SideCharacter1idleNode.addChildNode(child)
         }
@@ -657,24 +657,24 @@ class ChapterSelection {
         SideCharacter1idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(-45), 0)
         
         //Load Idle Animation Node
-        let idleWallaceScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HappyFixed.dae")!
+        let idleWallaceScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HurtTailFixed.dae")!
         for child in idleWallaceScene.rootNode.childNodes {
             SideCharacter2idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter2idleNode)
         SideCharacter2idleNode.scale = SCNVector3(1, 1, 1)
-        SideCharacter2idleNode.position = SCNVector3(-57, 0, 3)
-        SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
+        SideCharacter2idleNode.position = SCNVector3(-57.789, 0, 1.912)
+        SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(142), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
-        let idleWinonaScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@IdleFixed.dae")!
+        let idleWinonaScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ComfortingFixed.dae")!
         for child in idleWinonaScene.rootNode.childNodes {
             SideCharacter3idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter3idleNode)
         SideCharacter3idleNode.scale = SCNVector3(1, 1, 1)
-        SideCharacter3idleNode.position = SCNVector3(-58, 0, 0)
-        SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
+        SideCharacter3idleNode.position = SCNVector3(-57.1, 0, 0)
+        SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(90), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
         let idleMannyScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@StomachAcheFixed.dae")!
@@ -684,7 +684,7 @@ class ChapterSelection {
         lvlFloor.addChildNode(SideCharacter4idleNode)
         SideCharacter4idleNode.scale = SCNVector3(0.1, 0.1, 0.1)
         SideCharacter4idleNode.position = SCNVector3(27, 0, 5)
-        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(90), GLKMathDegreesToRadians(0))
+        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
         let idleAshtonScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@HurtFootFixed.dae")!
@@ -695,6 +695,7 @@ class ChapterSelection {
         SideCharacter5idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
         SideCharacter5idleNode.position = SCNVector3(33, 8.7, 64)
         SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
+        SideCharacter5idleNode.geometry?.firstMaterial?.lightingModel = .physicallyBased
         
         //load all the DAE animations for this Chapter
         //load animations for mainCharacter
@@ -709,14 +710,14 @@ class ChapterSelection {
         prepareAnimation(withKey: "SideCharacter1Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@HappyFixed", animationIdentifier: "Velma@HappyFixed-1")
         
         //load animation for side character 2
-        //TODO: ADD WALLACE HURT TAIL ANIMATION
-        //prepareAnimation(withKey: "SideCharacter2Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HurtTailFixed", animationIdentifier: "Wallace@HurtTailFixed-1")
+        prepareAnimation(withKey: "SideCharacter2Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HurtTailFixed", animationIdentifier: "Wallace@HurtTailFixed-1")
         prepareAnimation(withKey: "SideCharacter2Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HappyFixed", animationIdentifier: "Wallace@HappyFixed-1")
         
         
         //load animation for side character 3
         prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@IdleFixed", animationIdentifier: "Winona@IdleFixed-1")
         prepareAnimation(withKey: "SideCharacter3Clapping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ClappingFixed", animationIdentifier: "Winona@ClappingFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Comforting", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ComfortingFixed", animationIdentifier: "Winona@ComfortingFixed-1")
         
         //load animation for side character 4
         prepareAnimation(withKey: "SideCharacter4Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@StomachAcheFixed", animationIdentifier: "Manny@StomachAcheFixed-1")
@@ -724,7 +725,7 @@ class ChapterSelection {
         
         //load animation for side character 5
         prepareAnimation(withKey: "SideCharacter5Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@HurtFootFixed", animationIdentifier: "Ashton@HurtFootFixed-1")
-        prepareAnimation(withKey: "SideCharacter5Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@CastFixed", animationIdentifier: "Ashton@CastFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@CastFixed", animationIdentifier: "Ashton@CastFixed-1")
         
         chapter4NodeArray.append(storyNode)
         
@@ -754,7 +755,7 @@ class ChapterSelection {
                                     //sounds for Letter W
                                     "Narration18" : "ch4-W-Transition1",
                                     "Narration19" : "ch4-W-Transition2",
-                                    "Narration20" : "ch4-W-Intro",
+                                    "Narration20" : "ch4-W-intro",
                                     "Narration21" : "ch1-E-Line1",    //1 narration33 Green to Red
                                     "Narration22" : "ch1-E-Line2_01", //2 narration34 Great Job
                                     "Narration23" : "ch1-E-Line2_02", //Blue to Orange
