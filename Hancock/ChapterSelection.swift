@@ -45,7 +45,6 @@ class ChapterSelection {
             chapterSelectedSoundDict = loadChapter1SoundFiles()
         case 2:
             print("Loading Chapter ", picked)
-            //TODO: load chapter 2 files
             chapterSelectedNodeArray = loadChapter2NodeFiles()
             chapterSelectedLetterArray = ["P", "R", "B", "C", "D", "U"]
             chapterSelectedSoundDict = loadChapter2SoundFiles()
@@ -61,7 +60,6 @@ class ChapterSelection {
             chapterSelectedSoundDict = loadChapter4SoundFiles()
         case 5:
             print("Loading Chapter ", picked)
-            //TODO: load chapter 5 files
             chapterSelectedNodeArray = loadChapter5NodeFiles()
             chapterSelectedLetterArray = ["N", "Z", "Y", "X"]
             chapterSelectedSoundDict = loadChapter5SoundFiles()
@@ -731,6 +729,7 @@ class ChapterSelection {
         
         return chapter4NodeArray
     }
+    
     func loadChapter4SoundFiles() -> [String: String] {
         let chapter4SoundArray = [//sounds for Letter K
                                     "Narration1" : "ch4-K-intro",
@@ -811,24 +810,114 @@ class ChapterSelection {
         //var array of chapter 5 assest
         var chapter5NodeArray: [SCNNode] = []
         
+        // Load StoryScene Node
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter5Files/Environments/Chapter5Scene.scn")!
+        storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+        storyNode.scale = SCNVector3(0.03, 0.03, 0.03)
+        storyNode.position = SCNVector3(0, 0, 0)
+        
+        //Load Idle Animation Node
+        let idleXylophoneScene = SCNScene(named: "art.scnassets/3DModels/Chapter5Files/Characters/Xylophone/Xylophones.scn")!
+        for child in idleXylophoneScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(0.003, 0.003, 0.003)
+        idleNode.position = SCNVector3(0.706, 0.291, 7.392)
+        idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(137), GLKMathDegreesToRadians(0))
+        
+        let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+        
+        
+        //Load Idle Animation Node
+        let idleNailsScene = SCNScene(named: "art.scnassets/3DModels/Chapter5Files/Characters/Nails/NailsGroup.scn")!
+        for child in idleNailsScene.rootNode.childNodes {
+            SideCharacter1idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter1idleNode)
+        SideCharacter1idleNode.scale = SCNVector3(0.03, 0.03, 0.03)
+        SideCharacter1idleNode.position = SCNVector3(-6.693, 2.229, -9.144)
+        SideCharacter1idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(-90), 0)
+        
+        //Load Idle Animation Node
+        let idleZebraScene = SCNScene(named: "art.scnassets/3DModels/Chapter5Files/Characters/Zebraclock/Zebraclock.scn")!
+        for child in idleZebraScene.rootNode.childNodes {
+            SideCharacter2idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter2idleNode)
+        SideCharacter2idleNode.scale = SCNVector3(0.3, 0.3, 0.3)
+        SideCharacter2idleNode.position = SCNVector3(11.717, 6.345, -0.683)
+        SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        let idleYarnScene = SCNScene(named: "art.scnassets/3DModels/Chapter5Files/Characters/Mallet/Yarn.scn")!
+        for child in idleYarnScene.rootNode.childNodes {
+            SideCharacter3idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter3idleNode)
+        SideCharacter3idleNode.scale = SCNVector3(0.3, 0.3, 0.3)
+        SideCharacter3idleNode.position = SCNVector3(7.439, 1.114, 8.976)
+        SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        
+        chapter5NodeArray.append(storyNode)
+        
         return chapter5NodeArray
     }
+    
     func loadChapter5SoundFiles() -> [String: String] {
-        let chapter5SoundArray = ["Narration1" : "Line1",
-                                  "Narration2" : "Line2",
-                                  "Narration3" : "Line3",
-                                  "Narration4" : "Line4",
-                                  "Narration5" : "Line5",
-                                  "Narration6" : "Line6",
-                                  "Narration7" : "Line7",
-                                  "Narration8" : "Line8",
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
-                                  "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
-                                  "Break1" : "RockBreak3",
-                                  "Stop" : "stop",
-                                  "LetterComplete" : "yeahOutside"]
+        let chapter5SoundArray = [  //sounds for Letter N
+                                    "Narration1" : "ch5-intro1",
+                                    "Narration2" : "ch5-intro2",
+                                    "Narration3" : "ch5-N-Transition1",
+                                    "Narration4" : "ch5-N-intro",
+                                    "Narration5" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration6" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration7" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration8" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration9" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration10" : "ch1-E-Line4_01", //4 Perfect
+            
+                                    //sounds for Letter Z
+                                    "Narration11" : "ch5-Z-Transition1",
+                                    "Narration12" : "ch5-Z-intro",
+                                    "Narration13" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration14" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration15" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration16" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration17" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration18" : "ch1-E-Line4_01", //4 Perfect
+            
+                                    //sounds for Letter Y
+                                    "Narration19" : "ch4-Y-Transition1",
+                                    "Narration20" : "ch4-Y-intro",
+                                    "Narration21" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration22" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration23" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration24" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration25" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration26" : "ch1-E-Line4_01", //4 Perfect
+            
+                                    //sounds for Letter X
+                                    "Narration29" : "ch5-X-Transition1",
+                                    "Narration30" : "ch5-X-Transition2",
+                                    "Narration31" : "ch5-X-Intro",
+                                    "Narration32" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration33" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration34" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration35" : "ch1-E-Line3_01", //3 Amazing
+            
+                                    //Finishing Narration
+                                    "Finish1" : "ch5-final1",
+                                    "Finish2" : "ch5-final2",
+                                    
+                                    //extra chapter FX sounds
+                                    "Background1" : "Birds1",
+                                    "Background2" : "Birds2",
+                                    "WalkSound" : "Gravel and Grass Walk",
+                                    "Coin1" : "xylophone2",
+                                    "Break3" : "RockBreak3",
+                                    "Stop" : "stop",
+                                    "LetterComplete" : "yeahOutside"]
         return chapter5SoundArray
     }
     
@@ -839,6 +928,7 @@ class ChapterSelection {
         
         return chapter6NodeArray
     }
+    
     func loadChapter6SoundFiles() -> [String: String] {
         let chapter6SoundArray = ["Narration1" : "Line1",
                                   "Narration2" : "Line2",
@@ -865,6 +955,7 @@ class ChapterSelection {
         
         return chapter7NodeArray
     }
+    
     func loadChapter7SoundFiles() -> [String: String] {
         let chapter7SoundArray = ["Narration1" : "Line1",
                                   "Narration2" : "Line2",
@@ -891,6 +982,7 @@ class ChapterSelection {
         
         return chapter8NodeArray
     }
+    
     func loadChapter8SoundFiles() -> [String: String] {
         let chapter8SoundArray = ["Narration1" : "Line1",
                                   "Narration2" : "Line2",
@@ -917,6 +1009,7 @@ class ChapterSelection {
         
         return chapter9NodeArray
     }
+    
     func loadChapter9SoundFiles() -> [String: String] {
         let chapter9SoundArray = ["Narration1" : "Line1",
                                   "Narration2" : "Line2",
@@ -987,6 +1080,7 @@ class ChapterSelection {
         
         return chapter1NodeArray
     }
+    
     func loadChapter10SoundFiles() -> [String: String] {
         let chapter10SoundArray = ["Narration1" : "Line1",
                                   "Narration2" : "Line2",

@@ -368,7 +368,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.updatePositions()
             self.rootStoryNode.isHidden = false
             self.mainCharacterIdle?.isHidden = false
-            self.startTransitionAnimation(key: "MainCharacterIdle")
             
             self.startButton.isHidden = true
             self.gameState = .playGame
@@ -587,7 +586,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterFive:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
+                //play game intro 1
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                let xylophone_1 = self.mainCharacterIdle.childNode(withName: "xylophone_1 reference", recursively: true)
+                xylophone_1!.isHidden = false
+                let xylophone_0 = self.mainCharacterIdle.childNode(withName: "xylophone_0 reference", recursively: true)
+                xylophone_0!.isHidden = true
                 
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                    //move the main character to the first letter
+                    self.stopWalkAnimation()
+                })
                 //move position for letter:
                 //N
 
@@ -1141,7 +1150,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter1:
             switch true {
             case chapterFive:
-                stopTransitionAnimation(key: "MainCharacterWalking")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //stopTransitionAnimation(key: "MainCharacterWalking")
+                    //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+                    print("Prepare to shatter letter 1")
+                    self.shatterLetterOne = true
+                    //load first letter for activityView page
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                })
+                
             case chapterFour:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //stopTransitionAnimation(key: "MainCharacterWalking")
@@ -2356,9 +2375,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterOne:
             switch true{
             case chapterFive:
-                letterOne!.isPaused = false
-                animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                print("Nothing to shatter for this chapter")
+                print("Xylophone get nail pegs")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    let xylophone_2 = self.mainCharacterIdle.childNode(withName: "xylophone_2 reference", recursively: true)
+                    xylophone_2!.isHidden = false
+                    let xylophone_1 = self.mainCharacterIdle.childNode(withName: "xylophone_1 reference", recursively: true)
+                    xylophone_1!.isHidden = true
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                        self.playWalkAnimation()
+                    })
+                })
             case chapterFour:
                 print("Nothing to shatter for this chapter")
                 print("Character gets coat on")
@@ -2476,6 +2504,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //add extra narration based on chapter
             switch true {
             case chapterOne:
+                self.startTransitionAnimation(key: "MainCharacterIdle")
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 
@@ -2485,6 +2514,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.playWalkAnimation()
                 })
             case chapterTwo:
+                self.startTransitionAnimation(key: "MainCharacterIdle")
                 //TODO: ADD Outfit selection screen
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
@@ -2502,6 +2532,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
                 print("move floor for chapter two")
             case chapterThree:
+                self.startTransitionAnimation(key: "MainCharacterIdle")
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 
@@ -2511,6 +2542,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
                 print("Starting chapter three")
             case chapterFour:
+                self.startTransitionAnimation(key: "MainCharacterIdle")
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 
@@ -2522,8 +2554,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterFive:
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-                print("move floor for chapter five")
-                //FIXME: broken stuff
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    //move the main character to the first letter
+                    self.playWalkAnimation()
+                })
+                
             default:
                 break
             }

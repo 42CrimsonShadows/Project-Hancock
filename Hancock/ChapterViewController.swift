@@ -25,7 +25,7 @@ class ChapterViewController: UIViewController {
 //    let concept2 = UIImage (imageLiteralResourceName: "concept2")
     let concept3 = UIImage (imageLiteralResourceName: "concept3")
     let concept4 = UIImage (imageLiteralResourceName: "concept4")
-//    let concept5 = UIImage (imageLiteralResourceName: "concept5")
+    let concept5 = UIImage (imageLiteralResourceName: "concept5")
 //    let concept6 = UIImage (imageLiteralResourceName: "concept6")
 //    let concept7 = UIImage (imageLiteralResourceName: "concept7")
 //    let concept8 = UIImage (imageLiteralResourceName: "concept8")
@@ -78,7 +78,7 @@ class ChapterViewController: UIViewController {
         chapterThree = false
         chapterFour = false
         chapterFive = true
-        //conceptView.image = concept5
+        conceptView.image = concept5
         chapterSelector.chapterLoader(picked: 5)
         tappedMe()
     }
