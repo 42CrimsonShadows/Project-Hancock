@@ -888,8 +888,8 @@ class ChapterSelection {
                                     "Narration18" : "ch1-E-Line4_01", //4 Perfect
             
                                     //sounds for Letter Y
-                                    "Narration19" : "ch4-Y-Transition1",
-                                    "Narration20" : "ch4-Y-intro",
+                                    "Narration19" : "ch5-Y-Transition1",
+                                    "Narration20" : "ch5-Y-intro",
                                     "Narration21" : "ch1-E-Line1",    //1 Green to Red
                                     "Narration22" : "ch1-E-Line2_01", //2 Great Job
                                     "Narration23" : "ch1-E-Line2_02", //Blue to Orange

@@ -588,14 +588,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //animate the main character to rotate a bit on the y axis
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
-                let xylophone_1 = self.mainCharacterIdle.childNode(withName: "xylophone_1 reference", recursively: true)
-                xylophone_1!.isHidden = false
-                let xylophone_0 = self.mainCharacterIdle.childNode(withName: "xylophone_0 reference", recursively: true)
-                xylophone_0!.isHidden = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                    //move the main character to the first letter
-                    self.stopWalkAnimation()
+                    
+                    //show busted Xylophone
+                    let xylophone_1 = self.mainCharacterIdle.childNode(withName: "xylophone_1 reference", recursively: true)
+                    xylophone_1!.isHidden = false
+                    
+                    //hide mallet head
+                    let malletHead = self.mainCharacterIdle.childNode(withName: "Head", recursively: true)
+                    malletHead!.isHidden = true
+                    
+                    //hide first xylophone
+                    let xylophone_0 = self.mainCharacterIdle.childNode(withName: "xylophone_0 reference", recursively: true)
+                    xylophone_0!.isHidden = true
+                    
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                    //TODO: ADD touches and raytracing to select Nails
+                    
+                    //look around for nails at teachers desk
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 18, execute: {
+                        //move the main character to the first letter
+                        self.stopWalkAnimation()
+                    })
                 })
                 //move position for letter:
                 //N
@@ -686,9 +701,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 print("move floor for chapter four")
             case chapterFive:
-                //animate the mainFloor node to move and stop when the translation is complete
-                //animate the main character to rotate a bit on the y axis
+                //(chapter5 -- letter2)
                 
+                    //TODO: ADD touches and raytracing to select Nails
+                    
+                    //look around for nails at teachers desk
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        //move the main character to the first letter
+                        self.stopWalkAnimation()
+                    })
+                    
                 //Z
                 
                 print("move floor for chapter five")
@@ -788,8 +810,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 print("move floor for chapter four")
             case chapterFive:
-                //animate the mainFloor node to move and stop when the translation is complete
-                //animate the main character to rotate a bit on the y axis
+                //(chapter5 -- letter3)
+                
+                //TODO: ADD touches and raytracing to select Yarn
+                
+                //look around for nails at teachers desk
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //move the main character to the first letter
+                    self.stopWalkAnimation()
+                })
                 
                 //Y
                 
@@ -882,9 +911,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print("move floor for chapter four")
                 
             case chapterFive:
-                //animate the mainFloor node to move and stop when the translation is complete
-                //animate the main character to rotate a bit on the y axis
+                //(chapter5 -- letter4)
                 
+                //TODO: ADD touches and raytracing to put the Xylophone together
+                
+                //look around for nails at teachers desk
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //move the main character to the first letter
+                    self.stopWalkAnimation()
+                })
                 //X
                 
                 print("move floor for chapter five")
@@ -1150,16 +1185,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter1:
             switch true {
             case chapterFive:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    //stopTransitionAnimation(key: "MainCharacterWalking")
-                    //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
-                    print("Prepare to shatter letter 1")
-                    self.shatterLetterOne = true
-                    //load first letter for activityView page
-                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
-                    //play narration for the first audio instructions for the activity
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
-                })
+                print("Prepare to shatter letter 1")
+                self.shatterLetterOne = true
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                        //load first letter for activityView page
+                        print("Loading activity \(chapterSelectedLetterArray![0])")
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                        //play narration for the first audio instructions for the activity
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
+                    })
                 
             case chapterFour:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -1267,7 +1303,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter2:
             switch true {
             case chapterFive:
-                stopTransitionAnimation(key: "MainCharacterWalking")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
+                
+                //look around for nails at teachers desk
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    print("Prepare to shatter letter 2")
+                    self.shatterLetterTwo = true
+                    
+                    print("Loading activity \(chapterSelectedLetterArray![1])")
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
+                    
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration13"]!, type: "mp3")
+                    })
+                
             case chapterFour:
                 //transition the animation from walking to idle
                 stopTransitionAnimation(key: "MainCharacterJogging")
@@ -1400,7 +1449,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter3:
             switch true {
             case chapterFive:
-                stopTransitionAnimation(key: "MainCharacterWalking")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration20"]!, type: "mp3")
+                
+                //look around for nails at teachers desk
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    print("Prepare to shatter letter 3")
+                    self.shatterLetterThree = true
+                    
+                    print("Loading activity \(chapterSelectedLetterArray![2])")
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
+                    
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
+                })
                 
             case chapterFour:
                 stopTransitionAnimation(key: "MainCharacterJogging")
@@ -1537,7 +1598,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter4:
             switch true {
             case chapterFive:
-                stopTransitionAnimation(key: "MainCharacterWalking")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3")
+                
+                //look around for nails at teachers desk
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    print("Prepare to shatter letter 4")
+                    self.shatterLetterFour = true
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        print("Loading activity \(chapterSelectedLetterArray![3])")
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
+                        
+                        //play narration for the first audio instructions for the activity
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3")
+                    })
+                })
                 
             case chapterFour:
                 stopTransitionAnimation(key: "MainCharacterJogging")
@@ -2058,9 +2134,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterFour:
             switch true{
             case chapterFive:
-                letterOne!.isPaused = false
-                animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                print("Nothing to shatter for this chapter")
+                print("Xylophone gets put back together again")
+                
+                //show empty Xylophone
+                let xylophone_4 = self.mainCharacterIdle.childNode(withName: "xylophone_4 reference", recursively: true)
+                xylophone_4!.isHidden = false
+                
+                //hide busted xylophone
+                let xylophone_3 = self.mainCharacterIdle.childNode(withName: "xylophone_3 reference", recursively: true)
+                xylophone_3!.isHidden = true
+                
+                //"xylophone back together"
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish1"]!, type: "mp3")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish2"]!, type: "mp3")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                        self.resetGame()
+                    })
+                })
             case chapterFour:
                 //letter M completed, starting letter A
                 print("Nothing to shatter for this chapter")
@@ -2175,9 +2267,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterThree:
             switch true{
             case chapterFive:
-                letterOne!.isPaused = false
-                animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                print("Nothing to shatter for this chapter")
+                print("Xylophone gets Yarn for mallet")
+                //show mallet head
+                let malletHead = self.mainCharacterIdle.childNode(withName: "Head", recursively: true)
+                malletHead!.isHidden = false
+                
+                //"we now have all the yarn we need"
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    self.playWalkAnimation()
+                })
             case chapterFour:
                 //letter W completed, starting letter M
                 print("Nothing to shatter for this chapter")
@@ -2275,9 +2376,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterTwo:
             switch true{
             case chapterFive:
-                letterOne!.isPaused = false
-                animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                print("Nothing to shatter for this chapter")
+                print("Xylophone gets zebra stripes")
+                
+                //show empty Xylophone
+                let xylophone_3 = self.mainCharacterIdle.childNode(withName: "xylophone_3 reference", recursively: true)
+                xylophone_3!.isHidden = false
+                
+                //hide busted xylophone
+                let xylophone_2 = self.mainCharacterIdle.childNode(withName: "xylophone_2 reference", recursively: true)
+                xylophone_2!.isHidden = true
+                
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    self.playWalkAnimation()
+                })
+                
             case chapterFour:
                 print("Nothing to shatter for this chapter")
                 print("Keelie fixes Velma")
@@ -2377,16 +2492,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case chapterFive:
                 print("Nothing to shatter for this chapter")
                 print("Xylophone get nail pegs")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                
+                    //show empty Xylophone
                     let xylophone_2 = self.mainCharacterIdle.childNode(withName: "xylophone_2 reference", recursively: true)
                     xylophone_2!.isHidden = false
+                    
+                    //hide busted xylophone
                     let xylophone_1 = self.mainCharacterIdle.childNode(withName: "xylophone_1 reference", recursively: true)
                     xylophone_1!.isHidden = true
+            
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
                         self.playWalkAnimation()
                     })
-                })
             case chapterFour:
                 print("Nothing to shatter for this chapter")
                 print("Character gets coat on")
