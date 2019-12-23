@@ -2031,9 +2031,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case shatterLetterFive:
             switch true{
             case chapterFive:
-                letterOne!.isPaused = false
-                animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                print("Nothing to shatter for this chapter")
+                print("Xylophone gets put back together again")
                 
             case chapterFour:
                 //letter A completed, finishing chapter narration
@@ -2149,6 +2148,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish1"]!, type: "mp3")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish2"]!, type: "mp3")
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                         self.resetGame()
                     })

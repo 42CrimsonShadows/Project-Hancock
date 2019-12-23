@@ -827,8 +827,7 @@ class ChapterSelection {
         idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(137), GLKMathDegreesToRadians(0))
         
         let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
-        
-        
+         
         //Load Idle Animation Node
         let idleNailsScene = SCNScene(named: "art.scnassets/3DModels/Chapter5Files/Characters/Nails/NailsGroup.scn")!
         for child in idleNailsScene.rootNode.childNodes {
@@ -925,6 +924,14 @@ class ChapterSelection {
     func loadChapter6NodeFiles () -> [SCNNode]{
         //var array of chapter 6 assest
         var chapter6NodeArray: [SCNNode] = []
+        
+        // Load StoryScene Node
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter5Files/Environments/Chapter5Scene.scn")!
+        storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+        storyNode.scale = SCNVector3(0.03, 0.03, 0.03)
+        storyNode.position = SCNVector3(0, 0, 0)
+        
+        chapter6NodeArray.append(storyNode)
         
         return chapter6NodeArray
     }
