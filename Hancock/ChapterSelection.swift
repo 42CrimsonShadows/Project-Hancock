@@ -697,10 +697,10 @@ class ChapterSelection {
         
         //load all the DAE animations for this Chapter
         //load animations for mainCharacter
-        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@IdleFixed", animationIdentifier: "Keelie@IdleFixed-1")
-        prepareAnimation(withKey: "MainCharacterClaping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@ClapingFixed", animationIdentifier: "Keelie@ClapingFixed-1")
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@TalkingFixed", animationIdentifier: "Keelie@TalkingFixed-1")
+        //prepareAnimation(withKey: "MainCharacterClaping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@ClapingFixed", animationIdentifier: "Keelie@ClapingFixed-1")
         prepareAnimation(withKey: "MainCharacterJogging", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@JoggingFixed", animationIdentifier: "Keelie@JoggingFixed-1")
-        prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WalkingFixed", animationIdentifier: "Keelie@WalkingFixed-1")
+        //prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WalkingFixed", animationIdentifier: "Keelie@WalkingFixed-1")
         prepareAnimation(withKey: "MainCharacterWaving", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WavingFixed", animationIdentifier: "Keelie@WavingFixed-1")
         
         //load animation for side character 1

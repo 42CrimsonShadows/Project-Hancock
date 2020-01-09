@@ -678,7 +678,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print("move for chapter three")
             case chapterFour:
                 //V (chapter4 - letter2)
-                stopTransitionAnimation(key: "MainCharacterIdle")
+                stopTransitionAnimation(key: "MainCharacterWaving")
                 startTransitionAnimation(key: "MainCharacterJogging")
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate
@@ -2661,7 +2661,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
                 print("Starting chapter three")
             case chapterFour:
-                self.startTransitionAnimation(key: "MainCharacterIdle")
+                self.startTransitionAnimation(key: "MainCharacterWaving")
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 
