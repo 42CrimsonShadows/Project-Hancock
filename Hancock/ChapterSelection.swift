@@ -345,7 +345,7 @@ class ChapterSelection {
                                   "Background1" : "Birds1",
                                   "Background2" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
+                                  "CoinDing" : "bell-ding",
                                   "Break3" : "RockBreak3",
                                   "Shatter1" : "RockShatter",
                                   "Stop" : "stop",
@@ -443,7 +443,7 @@ class ChapterSelection {
                                     "Background1" : "Birds1",
                                     "Background2" : "Birds2",
                                     "WalkSound" : "Gravel and Grass Walk",
-                                    "Coin1" : "xylophone2",
+                                    "CoinDing" : "bell-ding",
                                     "Break3" : "RockBreak3",
                                     "Stop" : "stop",
                                     "LetterComplete" : "yeahOutside"]
@@ -612,7 +612,7 @@ class ChapterSelection {
                                 
                                 //extra chapter FX sounds
                                 "Background2" : "underwater",
-                                "Coin1" : "xylophone2",
+                                "CoinDing" : "bell-ding",
                                 "Break3" : "RockBreak3",
                                 "Stop" : "stop",
                                 "LetterComplete" : "yeahOutside"]
@@ -631,7 +631,7 @@ class ChapterSelection {
         storyNode.position = SCNVector3(0, 0, 0)
         
         //Load Idle Animation Node
-        let idleKeelieScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@IdleFixed.dae")!
+        let idleKeelieScene = SCNScene(named: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WavingFixed.dae")!
         for child in idleKeelieScene.rootNode.childNodes {
             idleNode.addChildNode(child)
         }
@@ -701,7 +701,7 @@ class ChapterSelection {
         //prepareAnimation(withKey: "MainCharacterClaping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@ClapingFixed", animationIdentifier: "Keelie@ClapingFixed-1")
         prepareAnimation(withKey: "MainCharacterJogging", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@JoggingFixed", animationIdentifier: "Keelie@JoggingFixed-1")
         //prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WalkingFixed", animationIdentifier: "Keelie@WalkingFixed-1")
-        prepareAnimation(withKey: "MainCharacterWaving", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WavingFixed", animationIdentifier: "Keelie@WavingFixed-1")
+        prepareAnimation(withKey: "MainCharacterWaving", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WavingFixed", animationIdentifier: "Keeling@WavingFixed-1")
         
         //load animation for side character 1
         prepareAnimation(withKey: "SideCharacter1Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@KnotTailFixed", animationIdentifier: "Velma@KnotTailFixed-1")
@@ -798,7 +798,7 @@ class ChapterSelection {
                                     "Background1" : "Birds1",
                                     "Background2" : "Birds2",
                                     "WalkSound" : "Gravel and Grass Walk",
-                                    "Coin1" : "xylophone2",
+                                    "CoinDing" : "bell-ding",
                                     "Break3" : "RockBreak3",
                                     "Stop" : "stop",
                                     "LetterComplete" : "yeahOutside"]
@@ -913,7 +913,7 @@ class ChapterSelection {
                                     "Background1" : "Birds1",
                                     "Background2" : "Birds2",
                                     "WalkSound" : "Gravel and Grass Walk",
-                                    "Coin1" : "xylophone2",
+                                    "CoinDing" : "bell-ding",
                                     "Break3" : "RockBreak3",
                                     "Stop" : "stop",
                                     "LetterComplete" : "yeahOutside"]
@@ -948,7 +948,7 @@ class ChapterSelection {
                                   "Background1" : "Birds1",
                                   "Background2" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
+                                  "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",
                                   "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
@@ -975,7 +975,7 @@ class ChapterSelection {
                                   "Background1" : "Birds1",
                                   "Background2" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
+                                  "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",
                                   "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
@@ -1002,7 +1002,7 @@ class ChapterSelection {
                                   "Background1" : "Birds1",
                                   "Background2" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
+                                  "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",
                                   "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
@@ -1029,7 +1029,7 @@ class ChapterSelection {
                                   "Background1" : "Birds1",
                                   "Background2" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
+                                  "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",
                                   "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
@@ -1100,7 +1100,7 @@ class ChapterSelection {
                                   "Background1" : "Birds1",
                                   "Background2" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "Coin1" : "xylophone2",
+                                  "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",
                                   "LetterComplete" : "yeahOutside"]
         return chapter10SoundArray

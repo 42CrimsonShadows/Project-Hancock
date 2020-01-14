@@ -188,6 +188,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         return BlackDotView8
     }()
     
+    
     //MARK: - ACTIONS
     
     @IBAction func backButton(_ sender: Any) {
@@ -590,6 +591,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             setupCoinLabel()
                             print("***DINGDING***")
                             //TODO: add one to the Coin tally
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
                             
                         }
                     }
@@ -600,6 +602,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
                         }
                     }
                 }
@@ -612,6 +615,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
                         }
                     }
                     if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
@@ -621,6 +625,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
                         }
                     }
                 }
@@ -633,6 +638,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
                         }
                     }
                     if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
@@ -642,6 +648,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
                         }
                     }
                 }
@@ -654,7 +661,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
-                            //call ding sound
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
                         }
                     }
                     if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
@@ -664,7 +671,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
 
                             totalCoins += 1
                             setupCoinLabel()
-                            print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
                         }
                     }
                     
