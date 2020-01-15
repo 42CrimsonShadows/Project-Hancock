@@ -258,7 +258,7 @@ class ChapterSelection {
         prepareAnimation(withKey: "SideCharacter4Walk", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@WalkFixed", animationIdentifier: "Eric@WalkFixed-1")
         prepareAnimation(withKey: "SideCharacter4Dance1", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@Dance1Fixed", animationIdentifier: "Eric@Dance1Fixed-1")
         prepareAnimation(withKey: "SideCharacter4Dance2", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@WormDanceFixed", animationIdentifier: "Eric@WormDanceFixed-1")
-        prepareAnimation(withKey: "SideCharacter4Climb", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@ClimbDownFixed", animationIdentifier: "Eric@ClimbDownFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Climb", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Eric/Eric@ClimbDownAndWalkFixed", animationIdentifier: "Eric@ClimbDownAndWalkFixed-1")
         
         //load animation for side character 5
         prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed", animationIdentifier: "Hannah@IdleFixed-1")
@@ -280,7 +280,9 @@ class ChapterSelection {
                                   "Narration4" : "ch1-I-Line2_01",  //2 narration4
                                   "Narration5" : "ch1-I-Line2_02",
                                   "Narration6" : "ch1-I-Line3_01",  //3 narration6
-                                  "Narration7" : "ch1-I-Line3_02",
+                                  //"Narration7" : "ch1-I-Line3_02", purple to yellow X.x
+                                  //Narration5" : "ch1-E-Line3_02", //"Next" yellow to purple
+                                  "Narration7" : "ch1-F-Line3_02", //"Finally" yellow to purple
                                   "Narration8" : "ch1-I-Line4_01",  //4 narration8
                                   "Narration9" : "ch1-I-Line4_02",
                                   
@@ -331,7 +333,7 @@ class ChapterSelection {
                                   "Narration47" : "ch1-H-Line2_02",
                                   "Narration48" : "ch1-H-Line3_01", //3 narration48
                                   "Narration49" : "ch1-H-Line3_02",
-                                  "Narration50" : "ch1-H-Line4_01", //4 narration50
+                                  "Narration50" : "ch1-F-Line4_01", //4 narration50 awesome job
             
                                   //letter finish sounds
                                   "letter2Finish" : "ch1-T-Line4",
@@ -569,7 +571,9 @@ class ChapterSelection {
                                 "Narration2_1" : "ch3-G-intro1",
                                 "Narration3" : "ch1-I-Line1",     //1 narration3
                                 "Narration4" : "ch1-I-Line2_01",  //2 narration4 Great Job
-                                "Narration5" : "ch1-I-Line2_02",
+                                //"Narration5" : "ch1-I-Line2_02", //purple to yellow X.X
+                                //"Narration5" : "ch1-E-Line3_02", //"Next" yellow to purple
+                                "Narration5" : "ch1-F-Line3_02", //"Finally" yellow to purple
                                 "Narration6" : "ch1-I-Line3_01", //Fantastic
             
                                 //sounds for Letter Q

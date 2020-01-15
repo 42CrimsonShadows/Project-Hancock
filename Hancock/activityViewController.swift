@@ -337,13 +337,16 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             
             //if there is more than two lines
             if dotArraySize > 8 {
-                purpleDot6 = CGPoint(x: 600 * activityPoints[8][0], y: 900 * activityPoints[8][1])
-                yellowDot7 = CGPoint(x: 600 * activityPoints[11][0], y: 900 * activityPoints[11][1])
+                //purpleDot6 = CGPoint(x: 600 * activityPoints[8][0], y: 900 * activityPoints[8][1])
+                //yellowDot7 = CGPoint(x: 600 * activityPoints[11][0], y: 900 * activityPoints[11][1])
+                yellowDot7 = CGPoint(x: 600 * activityPoints[8][0], y: 900 * activityPoints[8][1])
+                purpleDot6 = CGPoint(x: 600 * activityPoints[11][0], y: 900 * activityPoints[11][1])
                 
                 //if there is more than three lines
                 if dotArraySize > 12 {
                     PinkDot8 = CGPoint(x: 600 * activityPoints[12][0], y: 900 * activityPoints[12][1])
                     WhiteDot9 = CGPoint(x: 600 * activityPoints[15][0], y: 900 * activityPoints[15][1])
+
                 }
             }
         }

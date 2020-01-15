@@ -2103,27 +2103,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //play for 3 seconds
                 DispatchQueue.main.asyncAfter(deadline: .now() + 12.5, execute: {
                     //set new position for Eric's transform where the next animation will begin
-                    self.charcterFourIdle.parent?.position = SCNVector3(6.25, 1.2, -4.7)
+                    //self.charcterFourIdle.parent?.position = SCNVector3(6.25, 1.2, -4.7)
                     
-                    //play Lin through a sequence of movements so he turns and then walks to the Letter H
-                    let endSpot = SCNVector3(x: 19.5, y: 2.5, z: 7.5)
-                    let move1 = SCNAction.move(to: endSpot, duration: 10)
-                    let rotate2 = SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5)
-                    let ericMoveSeq = SCNAction.sequence([move1, rotate2])
-                    self.charcterFourIdle.parent?.runAction(ericMoveSeq)
+                    //play Eric through a sequence of movements so he turns and then walks to the Letter H
+//                    let endSpot = SCNVector3(x: 19.5, y: 2.5, z: 7.5)
+//                    let move1 = SCNAction.move(to: endSpot, duration: 10)
+//                    let rotate2 = SCNAction.rotateBy(x: 0.0, y: 1.75, z: 0.0, duration: 0.5)
+//                    let ericMoveSeq = SCNAction.sequence([move1, rotate2])
+//                    self.charcterFourIdle.parent?.runAction(ericMoveSeq)
                 
                     //play side character animation
-                    self.stopAnimateSideCharacter(key: "SideCharacter4Climb", sideCharacter: "Eric")
-                    self.startAnimateSideCharacter(key: "SideCharacter4Walk", sideCharacter: "Eric")
+//                    self.stopAnimateSideCharacter(key: "SideCharacter4Climb", sideCharacter: "Eric")
+//                    self.startAnimateSideCharacter(key: "SideCharacter4Walk", sideCharacter: "Eric")
                     
                     self.letterFive!.isPaused = false
                     self.animateLetterHide(fadeThis: self.letterFive!)
                     self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
                     
                     //wait 5 seconds
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
-                        self.stopAnimateSideCharacter(key: "SideCharacter4Walk", sideCharacter: "Eric")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                        self.stopAnimateSideCharacter(key: "SideCharacter4Climb", sideCharacter: "Eric")
                         self.startAnimateSideCharacter(key: "SideCharacter4Dance1", sideCharacter: "Eric")
+                        self.charcterFourIdle.parent?.position = SCNVector3(x: 19.5, y: 2, z: 7.5)
+                        self.charcterFourIdle.parent?.eulerAngles = SCNVector3(x: 0, y: GLKMathDegreesToRadians(180), z: 0)
                     })
                 })
             default:

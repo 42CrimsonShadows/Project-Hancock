@@ -497,11 +497,13 @@ class CanvasView: UIView {
                             
                             //wait 2 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.purpleDot?.pulsate(duration: 0.6)
+                                //self.purpleDot?.pulsate(duration: 0.6)
+                                self.yellowDot?.pulsate(duration: 0.6)
                                 
                                 //wait 2 seconds
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                    self.yellowDot?.pulsate(duration: 0.6)
+                                    //self.yellowDot?.pulsate(duration: 0.6)
+                                    self.purpleDot?.pulsate(duration: 0.6)
                                 })
                             })
                         })
