@@ -372,7 +372,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.startButton.isHidden = true
             self.gameState = .playGame
             //player background music/ambient
-            self.toggleAudioBGFile(file: chapterSelectedSoundDict!["Background2"]!, type: "wav")
+            self.toggleAudioBGFile(file: chapterSelectedSoundDict!["BackgroundSound"]!, type: "mp3")
         }
         storyTime()
     }
@@ -1662,6 +1662,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             //self.mainCharacterIdle.animationPlayer(forKey: "MainCharacterShocked")?.speed = 3.0
                             self.stopTransitionAnimation(key: "MainCharacterSwimming")
                             self.startTransitionAnimation(key: "MainCharacterShocked")
+                            self.toggleAudioFXFile(file: "Electrocuted", type: "mp3", rate: 1)
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                 //Gary and Jillian move back away from each other
@@ -2618,7 +2619,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func storyTime(){
         //Wait 3 second for game to load completely
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
             
             //add extra narration based on chapter
             switch true {
@@ -2628,7 +2629,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 
                 //wait 7 seconds for the game intro1 to finish
-                DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                     //move the main character to the first letter
                     self.playWalkAnimation()
                 })

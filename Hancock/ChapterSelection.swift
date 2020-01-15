@@ -342,8 +342,7 @@ class ChapterSelection {
                                   "chapterFinish" : "ch1-H-Line4_02",
                                   
                                   //extra chapter FX sounds
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
+                                  "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing" : "bell-ding",
                                   "Break3" : "RockBreak3",
@@ -440,8 +439,7 @@ class ChapterSelection {
                                     "chapterFinish" : "ch2-U-Line2",
                                     
                                     //extra chapter FX sounds
-                                    "Background1" : "Birds1",
-                                    "Background2" : "Birds2",
+                                    "BackgroundSound" : "CitySounds",
                                     "WalkSound" : "Gravel and Grass Walk",
                                     "CoinDing" : "bell-ding",
                                     "Break3" : "RockBreak3",
@@ -611,7 +609,8 @@ class ChapterSelection {
                                 "chapterFinish2" : "ch3-Finish2",
                                 
                                 //extra chapter FX sounds
-                                "Background2" : "underwater",
+                                "BackgroundSound" : "Underwater",
+                                "Electrocuted" : "Electrocuted",
                                 "CoinDing" : "bell-ding",
                                 "Break3" : "RockBreak3",
                                 "Stop" : "stop",
@@ -795,8 +794,7 @@ class ChapterSelection {
                                     "Finish2" : "ch4-Final2",
             
                                     //extra chapter FX sounds
-                                    "Background1" : "Birds1",
-                                    "Background2" : "Birds2",
+                                    "BackgroundSound" : "Birds2",
                                     "WalkSound" : "Gravel and Grass Walk",
                                     "CoinDing" : "bell-ding",
                                     "Break3" : "RockBreak3",
@@ -910,8 +908,7 @@ class ChapterSelection {
                                     "Finish2" : "ch5-final2",
                                     
                                     //extra chapter FX sounds
-                                    "Background1" : "Birds1",
-                                    "Background2" : "Birds2",
+                                    "BackgroundSound" : "Birds2",
                                     "WalkSound" : "Gravel and Grass Walk",
                                     "CoinDing" : "bell-ding",
                                     "Break3" : "RockBreak3",
@@ -945,8 +942,7 @@ class ChapterSelection {
                                   "Narration6" : "Line6",
                                   "Narration7" : "Line7",
                                   "Narration8" : "Line8",
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
+                                  "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",
@@ -972,8 +968,7 @@ class ChapterSelection {
                                   "Narration6" : "Line6",
                                   "Narration7" : "Line7",
                                   "Narration8" : "Line8",
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
+                                  "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",
@@ -999,8 +994,7 @@ class ChapterSelection {
                                   "Narration6" : "Line6",
                                   "Narration7" : "Line7",
                                   "Narration8" : "Line8",
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
+                                  "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",
@@ -1026,8 +1020,7 @@ class ChapterSelection {
                                   "Narration6" : "Line6",
                                   "Narration7" : "Line7",
                                   "Narration8" : "Line8",
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
+                                  "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",
@@ -1039,53 +1032,9 @@ class ChapterSelection {
     //chapter 10 stuff here
     func loadChapter10NodeFiles () -> [SCNNode]{
         //var array of chapter 10 assest
-        var chapter1NodeArray: [SCNNode] = []
+        var chapter10NodeArray: [SCNNode] = []
         
-        // Load StoryScene Node
-        let storyScene = SCNScene(named: "art.scnassets/AnthonyScene.scn")!
-        storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
-        storyNode.scale = SCNVector3(1, 1, 1)
-        storyNode.position = SCNVector3(0, 0, 0)
-        //storyNode.isHidden = true
-        
-        let idleMainCharacterScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed.dae")!
-        for child in idleMainCharacterScene.rootNode.childNodes {
-            idleNode.addChildNode(child)
-        }
-        storyNode.addChildNode(idleNode)
-        idleNode.scale = SCNVector3(0.02, 0.02, 0.02)
-        idleNode.position = SCNVector3(0, 0, 0)
-        
-        //Load Scene Mask so we only see immidate area
-        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
-        for child in maskingScene.rootNode.childNodes {
-            maskingNode.addChildNode(child)
-        }
-        maskingNode.renderingOrder = -2
-        storyNode.addChildNode(maskingNode)
-        maskingNode.position = SCNVector3(0, 0, 0)
-        //maskingNode.scale = SCNVector3(1, 1, 1)
-        
-        //Load the shattering A scn into the BugScene
-        let shatterAScene = SCNScene(named: "art.scnassets/LetterA@Shatter.scn")!
-        for child in shatterAScene.rootNode.childNodes {
-            letter1Node.addChildNode(child)
-        }
-        letter1Node.position = SCNVector3(-13.879, -1, 12)
-        //letter1Node.eulerAngles = SCNVector3(0, 0, 0)
-        letter1Node.scale = SCNVector3(1.75, 1.75, 1.75)
-        //letterANode.renderingOrder = -5
-        
-        storyNode.childNode(withName: "LVLFloor", recursively: true)!.addChildNode(letter1Node)
-        
-        //load all the DAE animations for this Chapter
-        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@IdleFixed", animationIdentifier: "Anthony@IdleFixed-1")
-        prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Anthony@WalkFixed", animationIdentifier: "Anthony@WalkFixed-1")
-        
-        //chapter1NodeArray.append(focusNode)
-        chapter1NodeArray.append(storyNode)
-        
-        return chapter1NodeArray
+        return chapter10NodeArray
     }
     
     func loadChapter10SoundFiles() -> [String: String] {
@@ -1097,8 +1046,7 @@ class ChapterSelection {
                                   "Narration6" : "Line6",
                                   "Narration7" : "Line7",
                                   "Narration8" : "Line8",
-                                  "Background1" : "Birds1",
-                                  "Background2" : "Birds2",
+                                  "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing" : "bell-ding",
                                   "Break1" : "RockBreak3",

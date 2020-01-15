@@ -326,7 +326,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         var purpleDot6: CGPoint?
         var yellowDot7: CGPoint?
         var PinkDot8: CGPoint?
-        var WhiteDot8: CGPoint?
+        var WhiteDot9: CGPoint?
         
         let dotArraySize = activityPoints.count
         
@@ -343,11 +343,11 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 //if there is more than three lines
                 if dotArraySize > 12 {
                     PinkDot8 = CGPoint(x: 600 * activityPoints[12][0], y: 900 * activityPoints[12][1])
-                    WhiteDot8 = CGPoint(x: 600 * activityPoints[15][0], y: 900 * activityPoints[15][1])
+                    WhiteDot9 = CGPoint(x: 600 * activityPoints[15][0], y: 900 * activityPoints[15][1])
                 }
             }
         }
-        
+        //Set up GREEN dot
         view.insertSubview(GreenDotView, belowSubview: canvasView)
         GreenDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: greenDot1.x).isActive = true
         GreenDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: greenDot1.y).isActive = true
@@ -412,8 +412,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //set up white dot
         view.insertSubview(WhiteDotView, belowSubview: canvasView)
-        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: WhiteDot8?.x ?? 0).isActive = true
-        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: WhiteDot8?.y ?? 0).isActive = true
+        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: WhiteDot9?.x ?? 0).isActive = true
+        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: WhiteDot9?.y ?? 0).isActive = true
         WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         WhiteDotView.isHidden = true
