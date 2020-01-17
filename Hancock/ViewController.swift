@@ -154,6 +154,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.loadModels(chapterNode: chapterNodeArray!)
         self.referenceMainNodes()
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        //select number of taps needed to trigger
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        //add the gesture recognizer to the scene view
+        sceneView.addGestureRecognizer(tapGestureRecognizer)
+        
 //        //setup audio player by loading an file address into the variable
 //        let backgroundAudioPath = Bundle.main.path(forResource: (chapterSelectedSoundDict!["Background2"]), ofType: "wav", inDirectory: "art.scnassets/Sounds")
 //        do
@@ -244,7 +250,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let config = ARWorldTrackingConfiguration()
         //config.isLightEstimationEnabled = true
         config.planeDetection = .horizontal
-
         config.worldAlignment = .gravity
         config.providesAudioData = false
         sceneView.session.run(config)
@@ -316,6 +321,64 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //        floorNode.physicsBody?.friction = 4.0
 //        floorNode.physicsBody?.rollingFriction = 0.0
         return floorNode
+    }
+    
+    //**************************
+    //FUNCTION TO HANDLE TAP GESTURES
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        //get a CGpoint variable for our touch on the screen (x and y location)
+        let touchLocation = sender.location(in: sceneView)
+        
+        //hitTestResult is an array of possible hits
+        // option [:] means we are getting a hit test for everything (no options means all options selected)
+        guard let hitTestResult = sceneView.hitTest(touchLocation, options: [:] ).first?.node else { return }
+        
+        //switch case setup for possible hit test results and the output for each to the debug log
+        
+        switch hitTestResult.name {
+            case "LVLFloor":
+                //boxNode!.addChildNode(pcNode!)
+                //pcNode?.isHidden = false
+                //backButton?.isHidden = false
+                print("so stuff when you click on LVLFloor")
+            
+            case "MainCharacter":
+                //boxNode!.addChildNode(pcNode!)
+                //pcNode?.isHidden = false
+                //backButton?.isHidden = false
+                print("so stuff when you click on mainCharacterIdle")
+            
+            case charcterOneIdle.name:
+                //sphereNode!.addChildNode(exitNode!)
+                //exitNode?.isHidden = false
+                //backButton?.isHidden = false
+                print("so stuff when you click on charcterOneIdle")
+            
+            case charcterTwoIdle.name:
+                //CM.isHidden = false
+                //backButton?.isHidden = false
+                print("so stuff when you click on charcterTwoIdle")
+            
+            case charcterThreeIdle.name:
+                //HD.isHidden = false
+                //backButton?.isHidden = false
+                print("so stuff when you click on charcterThreeIdle")
+            
+            case charcterFourIdle.name:
+                //torusNode!.addChildNode(appleNode!)
+                //appleNode?.isHidden = false
+                //backButton?.isHidden = false
+                print("so stuff when you click on charcterFourIdle")
+            
+            case charcterFiveIdle.name:
+                //torusNode!.addChildNode(appleNode!)
+                //appleNode?.isHidden = false
+                //backButton?.isHidden = false
+                print("so stuff when you click on charcterFiveIdle")
+            
+            default:
+                break
+        }
     }
     
     // MARK: - Update Functions
@@ -2627,6 +2690,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             switch true {
             case chapterOne:
                 self.startTransitionAnimation(key: "MainCharacterIdle")
+                print(self.mainCharacterIdle.name!, "is now idle")
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 
