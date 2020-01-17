@@ -346,7 +346,10 @@ class ChapterSelection {
                                   //extra chapter FX sounds
                                   "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "CoinDing" : "bell-ding",
+                                  "CoinDing1" : "bell-ding_01",
+                                  "CoinDing2" : "bell-ding_02",
+                                  "CoinDing3" : "bell-ding_03",
+                                  "CoinDing4" : "bell-ding_04",
                                   "Break3" : "RockBreak3",
                                   "Shatter1" : "RockShatter",
                                   "Stop" : "stop",
@@ -443,7 +446,10 @@ class ChapterSelection {
                                     //extra chapter FX sounds
                                     "BackgroundSound" : "CitySounds",
                                     "WalkSound" : "Gravel and Grass Walk",
-                                    "CoinDing" : "bell-ding",
+                                    "CoinDing1" : "bell-ding_01",
+                                    "CoinDing2" : "bell-ding_02",
+                                    "CoinDing3" : "bell-ding_03",
+                                    "CoinDing4" : "bell-ding_04",
                                     "Break3" : "RockBreak3",
                                     "Stop" : "stop",
                                     "LetterComplete" : "yeahOutside"]
@@ -615,7 +621,10 @@ class ChapterSelection {
                                 //extra chapter FX sounds
                                 "BackgroundSound" : "Underwater",
                                 "Electrocuted" : "Electrocuted",
-                                "CoinDing" : "bell-ding",
+                                "CoinDing1" : "bell-ding_01",
+                                "CoinDing2" : "bell-ding_02",
+                                "CoinDing3" : "bell-ding_03",
+                                "CoinDing4" : "bell-ding_04",
                                 "Break3" : "RockBreak3",
                                 "Stop" : "stop",
                                 "LetterComplete" : "yeahOutside"]
@@ -800,7 +809,10 @@ class ChapterSelection {
                                     //extra chapter FX sounds
                                     "BackgroundSound" : "Birds2",
                                     "WalkSound" : "Gravel and Grass Walk",
-                                    "CoinDing" : "bell-ding",
+                                    "CoinDing1" : "bell-ding_01",
+                                    "CoinDing2" : "bell-ding_02",
+                                    "CoinDing3" : "bell-ding_03",
+                                    "CoinDing4" : "bell-ding_04",
                                     "Break3" : "RockBreak3",
                                     "Stop" : "stop",
                                     "LetterComplete" : "yeahOutside"]
@@ -914,7 +926,10 @@ class ChapterSelection {
                                     //extra chapter FX sounds
                                     "BackgroundSound" : "Birds2",
                                     "WalkSound" : "Gravel and Grass Walk",
-                                    "CoinDing" : "bell-ding",
+                                    "CoinDing1" : "bell-ding_01",
+                                    "CoinDing2" : "bell-ding_02",
+                                    "CoinDing3" : "bell-ding_03",
+                                    "CoinDing4" : "bell-ding_04",
                                     "Break3" : "RockBreak3",
                                     "Stop" : "stop",
                                     "LetterComplete" : "yeahOutside"]
@@ -948,7 +963,10 @@ class ChapterSelection {
                                   "Narration8" : "Line8",
                                   "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "CoinDing" : "bell-ding",
+                                  "CoinDing1" : "bell-ding_01",
+                                  "CoinDing2" : "bell-ding_02",
+                                  "CoinDing3" : "bell-ding_03",
+                                  "CoinDing4" : "bell-ding_04",
                                   "Break1" : "RockBreak3",
                                   "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
@@ -974,7 +992,10 @@ class ChapterSelection {
                                   "Narration8" : "Line8",
                                   "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "CoinDing" : "bell-ding",
+                                  "CoinDing1" : "bell-ding_01",
+                                  "CoinDing2" : "bell-ding_02",
+                                  "CoinDing3" : "bell-ding_03",
+                                  "CoinDing4" : "bell-ding_04",
                                   "Break1" : "RockBreak3",
                                   "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
@@ -1000,7 +1021,10 @@ class ChapterSelection {
                                   "Narration8" : "Line8",
                                   "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "CoinDing" : "bell-ding",
+                                  "CoinDing1" : "bell-ding_01",
+                                  "CoinDing2" : "bell-ding_02",
+                                  "CoinDing3" : "bell-ding_03",
+                                  "CoinDing4" : "bell-ding_04",
                                   "Break1" : "RockBreak3",
                                   "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
@@ -1026,7 +1050,10 @@ class ChapterSelection {
                                   "Narration8" : "Line8",
                                   "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "CoinDing" : "bell-ding",
+                                  "CoinDing1" : "bell-ding_01",
+                                  "CoinDing2" : "bell-ding_02",
+                                  "CoinDing3" : "bell-ding_03",
+                                  "CoinDing4" : "bell-ding_04",
                                   "Break1" : "RockBreak3",
                                   "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
@@ -1052,7 +1079,10 @@ class ChapterSelection {
                                   "Narration8" : "Line8",
                                   "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
-                                  "CoinDing" : "bell-ding",
+                                  "CoinDing1" : "bell-ding_01",
+                                  "CoinDing2" : "bell-ding_02",
+                                  "CoinDing3" : "bell-ding_03",
+                                  "CoinDing4" : "bell-ding_04",
                                   "Break1" : "RockBreak3",
                                   "LetterComplete" : "yeahOutside"]
         return chapter10SoundArray

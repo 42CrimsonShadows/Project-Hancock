@@ -555,6 +555,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
             canvasView.goodTouch = true
             print("Touch was within 50 units")
+            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing1"]!, type: "mp3")
             
             canvasView.drawTouches(touches, withEvent: event)
             touches.forEach { (touch) in updateGagues(with: touch)
@@ -594,7 +595,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             setupCoinLabel()
                             print("***DINGDING***")
                             //TODO: add one to the Coin tally
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                             
                         }
                     }
@@ -605,7 +606,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
                 }
@@ -618,7 +619,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
                     if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
@@ -628,7 +629,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
                 }
@@ -641,7 +642,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
                     if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
@@ -651,7 +652,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
                 }
@@ -664,7 +665,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
                     if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
@@ -674,7 +675,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
 
                             totalCoins += 1
                             setupCoinLabel()
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing"]!, type: "mp3")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
                     
@@ -703,11 +704,17 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             }
             
             if canvasView.letterComplete == true {
-                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
+                //play last ding
+                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                //play cheer
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
                     
+                //dismiss activity view
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     self.dismiss(animated: false, completion: nil)
+                    })
                 })
             }
             

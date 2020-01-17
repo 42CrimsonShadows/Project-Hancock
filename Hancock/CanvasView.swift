@@ -408,7 +408,7 @@ class CanvasView: UIView {
             case .P7_P8:
                 //A4GreenLine?.isHidden = false
                 //playAudioFile(file: "RockExplode", type: "wav")
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
                 //wait 1 second
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
@@ -433,8 +433,7 @@ class CanvasView: UIView {
                 
             case .P5_P6:
                 //A3GreenLine?.isHidden = false
-                //playAudioFile(file: "RockExplode", type: "wav")
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
                 
                     //wait 1 second
@@ -471,9 +470,7 @@ class CanvasView: UIView {
                 }
             case .P3_P4:
                 //A2GreenLine?.isHidden = false
-                
-                //playAudioFile(file: "RockBreak2", type: "aiff")
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
                 
                 //wait 1 second
@@ -520,8 +517,8 @@ class CanvasView: UIView {
                 
             case .P1_P2:
                 //A1GreenLine?.isHidden = false
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
-                
+                //playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 if activityPoints.count < 5 {
                     letterComplete = true
                 }
@@ -608,6 +605,7 @@ class CanvasView: UIView {
             // Store into finished lines to allow for a full redraw on option changes.
             finishedLines.append(line)
             print("good line")
+            
         } else {
             print("not a good line")
             
