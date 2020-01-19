@@ -154,7 +154,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.loadModels(chapterNode: chapterNodeArray!)
         self.referenceMainNodes()
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         //select number of taps needed to trigger
         tapGestureRecognizer.numberOfTapsRequired = 1
         //add the gesture recognizer to the scene view
@@ -325,60 +326,66 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //**************************
     //FUNCTION TO HANDLE TAP GESTURES
-    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+    @objc func handleTap( sender: UITapGestureRecognizer) {
         //get a CGpoint variable for our touch on the screen (x and y location)
-        let touchLocation = sender.location(in: sceneView)
+        let tappedView = sender.view as! SCNView
         
-        //hitTestResult is an array of possible hits
-        // option [:] means we are getting a hit test for everything (no options means all options selected)
-        guard let hitTestResult = sceneView.hitTest(touchLocation, options: [:] ).first?.node else { return }
+        let touchLocation = sender.location(in: tappedView)
         
+        let  hitTest = tappedView.hitTest(touchLocation, options: nil)
+        
+        if !hitTest.isEmpty {
+            let hitTestResult = hitTest.first!
+            let name = hitTestResult.node.name
+            let geometry = hitTestResult.node.geometry
+            print("Tapped \(String(describing: name)) with geometry: \(String(describing: geometry))")
+        }
         //switch case setup for possible hit test results and the output for each to the debug log
         
-        switch hitTestResult.name {
-            case "LVLFloor":
-                //boxNode!.addChildNode(pcNode!)
-                //pcNode?.isHidden = false
-                //backButton?.isHidden = false
-                print("so stuff when you click on LVLFloor")
-            
-            case "MainCharacter":
-                //boxNode!.addChildNode(pcNode!)
-                //pcNode?.isHidden = false
-                //backButton?.isHidden = false
-                print("so stuff when you click on mainCharacterIdle")
-            
-            case charcterOneIdle.name:
-                //sphereNode!.addChildNode(exitNode!)
-                //exitNode?.isHidden = false
-                //backButton?.isHidden = false
-                print("so stuff when you click on charcterOneIdle")
-            
-            case charcterTwoIdle.name:
-                //CM.isHidden = false
-                //backButton?.isHidden = false
-                print("so stuff when you click on charcterTwoIdle")
-            
-            case charcterThreeIdle.name:
-                //HD.isHidden = false
-                //backButton?.isHidden = false
-                print("so stuff when you click on charcterThreeIdle")
-            
-            case charcterFourIdle.name:
-                //torusNode!.addChildNode(appleNode!)
-                //appleNode?.isHidden = false
-                //backButton?.isHidden = false
-                print("so stuff when you click on charcterFourIdle")
-            
-            case charcterFiveIdle.name:
-                //torusNode!.addChildNode(appleNode!)
-                //appleNode?.isHidden = false
-                //backButton?.isHidden = false
-                print("so stuff when you click on charcterFiveIdle")
-            
-            default:
-                break
-        }
+//        switch hitTestResult.name {
+//            case "LVLFloor":
+//                //boxNode!.addChildNode(pcNode!)
+//                //pcNode?.isHidden = false
+//                //backButton?.isHidden = false
+//                print("so stuff when you click on LVLFloor")
+//
+//            case "MainCharacter":
+//                //boxNode!.addChildNode(pcNode!)
+//                //pcNode?.isHidden = false
+//                //backButton?.isHidden = false
+//                print("so stuff when you click on mainCharacterIdle")
+//
+//            case charcterOneIdle.name:
+//                //sphereNode!.addChildNode(exitNode!)
+//                //exitNode?.isHidden = false
+//                //backButton?.isHidden = false
+//                print("so stuff when you click on charcterOneIdle")
+//
+//            case charcterTwoIdle.name:
+//                //CM.isHidden = false
+//                //backButton?.isHidden = false
+//                print("so stuff when you click on charcterTwoIdle")
+//
+//            case charcterThreeIdle.name:
+//                //HD.isHidden = false
+//                //backButton?.isHidden = false
+//                print("so stuff when you click on charcterThreeIdle")
+//
+//            case charcterFourIdle.name:
+//                //torusNode!.addChildNode(appleNode!)
+//                //appleNode?.isHidden = false
+//                //backButton?.isHidden = false
+//                print("so stuff when you click on charcterFourIdle")
+//
+//            case charcterFiveIdle.name:
+//                //torusNode!.addChildNode(appleNode!)
+//                //appleNode?.isHidden = false
+//                //backButton?.isHidden = false
+//                print("so stuff when you click on charcterFiveIdle")
+//
+//            default:
+//                break
+//        }
     }
     
     // MARK: - Update Functions
