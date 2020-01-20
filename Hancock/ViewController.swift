@@ -115,6 +115,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var mainFloor: SCNNode!
     var storymask: SCNNode!
     
+    //last screen tap item
+    var lastTapped: SCNNode?
+    var outfitSelected: String?
+    
     //main letters (possibly six)
     var letterOne: SCNNode?
     var letterTwo: SCNNode?
@@ -339,53 +343,68 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let name = hitTestResult.node.name
             let geometry = hitTestResult.node.geometry
             print("Tapped \(String(describing: name)) with geometry: \(String(describing: geometry))")
+            
+            switch hitTestResult.node.parent?.name {
+                case "SideCharacter1":
+                    charcterOneIdle.isHidden = true
+                    charcterTwoIdle.isHidden = true
+                    charcterThreeIdle.isHidden = true
+                    charcterFourIdle.isHidden = true
+                    
+                    //TO-DO: change Piper's cloths
+                    
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                    //wait 4 seconds for the game intro1 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                        //move the main character to the first letter
+                        self.playWalkAnimation()
+                    })
+                case "SideCharacter2":
+                    charcterOneIdle.isHidden = true
+                    charcterTwoIdle.isHidden = true
+                    charcterThreeIdle.isHidden = true
+                    charcterFourIdle.isHidden = true
+                    
+                    //TO-DO: change Piper's cloths
+                    
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                    //wait 4 seconds for the game intro1 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                        //move the main character to the first letter
+                        self.playWalkAnimation()
+                    })
+                case "SideCharacter3":
+                    charcterOneIdle.isHidden = true
+                    charcterTwoIdle.isHidden = true
+                    charcterThreeIdle.isHidden = true
+                    charcterFourIdle.isHidden = true
+                    
+                    //TO-DO: change Piper's cloths
+                    
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                    //wait 4 seconds for the game intro1 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                        //move the main character to the first letter
+                        self.playWalkAnimation()
+                    })
+                case "SideCharacter4":
+                    charcterOneIdle.isHidden = true
+                    charcterTwoIdle.isHidden = true
+                    charcterThreeIdle.isHidden = true
+                    charcterFourIdle.isHidden = true
+                    
+                    //TO-DO: change Piper's cloths
+                    
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                    //wait 4 seconds for the game intro1 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                        //move the main character to the first letter
+                        self.playWalkAnimation()
+                    })
+                default:
+                    break
+            }
         }
-        //switch case setup for possible hit test results and the output for each to the debug log
-        
-//        switch hitTestResult.name {
-//            case "LVLFloor":
-//                //boxNode!.addChildNode(pcNode!)
-//                //pcNode?.isHidden = false
-//                //backButton?.isHidden = false
-//                print("so stuff when you click on LVLFloor")
-//
-//            case "MainCharacter":
-//                //boxNode!.addChildNode(pcNode!)
-//                //pcNode?.isHidden = false
-//                //backButton?.isHidden = false
-//                print("so stuff when you click on mainCharacterIdle")
-//
-//            case charcterOneIdle.name:
-//                //sphereNode!.addChildNode(exitNode!)
-//                //exitNode?.isHidden = false
-//                //backButton?.isHidden = false
-//                print("so stuff when you click on charcterOneIdle")
-//
-//            case charcterTwoIdle.name:
-//                //CM.isHidden = false
-//                //backButton?.isHidden = false
-//                print("so stuff when you click on charcterTwoIdle")
-//
-//            case charcterThreeIdle.name:
-//                //HD.isHidden = false
-//                //backButton?.isHidden = false
-//                print("so stuff when you click on charcterThreeIdle")
-//
-//            case charcterFourIdle.name:
-//                //torusNode!.addChildNode(appleNode!)
-//                //appleNode?.isHidden = false
-//                //backButton?.isHidden = false
-//                print("so stuff when you click on charcterFourIdle")
-//
-//            case charcterFiveIdle.name:
-//                //torusNode!.addChildNode(appleNode!)
-//                //appleNode?.isHidden = false
-//                //backButton?.isHidden = false
-//                print("so stuff when you click on charcterFiveIdle")
-//
-//            default:
-//                break
-//        }
     }
     
     // MARK: - Update Functions
@@ -2711,26 +2730,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
-                
-                //show the different outfits that you can pick
-                self.charcterOneIdle.isHidden = false
-                self.charcterTwoIdle.isHidden = false
-                self.charcterThreeIdle.isHidden = false
-                self.charcterFourIdle.isHidden = false
-                
-                    //TODO: after outfit selection
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
-
-                        //wait 7 seconds for the game intro1 to finish
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                            
-                            //move the main character to the first letter
-                            self.playWalkAnimation()
-                        })
-                    })
+                    //show the different outfits that you can pick
+                    for node in self.charcterOneIdle.childNodes {
+                        node.isHidden = false
+                    }
+                    for node in self.charcterTwoIdle.childNodes {
+                        node.isHidden = false
+                    }
+                    for node in self.charcterThreeIdle.childNodes {
+                        node.isHidden = false
+                    }
+                    for node in self.charcterFourIdle.childNodes {
+                        node.isHidden = false
+                    }
                 })
-                print("move floor for chapter two")
+                
             case chapterThree:
                 self.startTransitionAnimation(key: "MainCharacterIdle")
                 //play game intro 1
@@ -2765,6 +2779,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         })
     }
+    
+//    func waitforOutfitPicked(){
+//        //switch case setup for possible hit test results and the output for each to the debug log
+//        print("The last item tapped was: \(String(describing: lastTapped))")
+//
+//        switch self.lastTapped?.parent?.name {
+//        case "SideCharacter1":
+//            //boxNode!.addChildNode(pcNode!)
+//            //pcNode?.isHidden = false
+//            //backButton?.isHidden = false
+//            print("do stuff when you click on SideCharacter1")
+//            return
+//        case "SideCharacter2":
+//            //boxNode!.addChildNode(pcNode!)
+//            //pcNode?.isHidden = false
+//            //backButton?.isHidden = false
+//            print("do stuff when you click on SideCharacter2")
+//            return
+//        case "SideCharacter3":
+//            //sphereNode!.addChildNode(exitNode!)
+//            //exitNode?.isHidden = false
+//            //backButton?.isHidden = false
+//            print("do stuff when you click on SideCharacter3")
+//            return
+//        case "SideCharacter4":
+//            //CM.isHidden = false
+//            //backButton?.isHidden = false
+//            print("do stuff when you click on SideCharacter4")
+//            return
+//        default:
+//            return
+//        }
+//    }
     
     //pass it an audiofile and it will play it!
     func toggleAudioNarrationFile(file: String, type: String) {
