@@ -381,6 +381,42 @@ class ChapterSelection {
         //idleNode.isHidden = true
         
         let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+        
+        let outfit1Scene = SCNScene(named: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Outfit1-1.scn")!
+        for child in outfit1Scene.rootNode.childNodes {
+            SideCharacter1idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter1idleNode)
+        SideCharacter1idleNode.scale = SCNVector3(0.6, 0.6, 0.6)
+        SideCharacter1idleNode.position = SCNVector3(-4, 2.5, -4)
+        SideCharacter1idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(0), 0)
+        
+        let outfit2Scene = SCNScene(named: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Outfit2-1.scn")!
+        for child in outfit2Scene.rootNode.childNodes {
+            SideCharacter2idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter2idleNode)
+        SideCharacter2idleNode.scale = SCNVector3(0.6, 0.6, 0.6)
+        SideCharacter2idleNode.position = SCNVector3(-1.5, 2.5, -4)
+        SideCharacter2idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(0), 0)
+        
+        let outfit3Scene = SCNScene(named: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Outfit3-1.scn")!
+        for child in outfit3Scene.rootNode.childNodes {
+            SideCharacter3idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter3idleNode)
+        SideCharacter3idleNode.scale = SCNVector3(0.6, 0.6, 0.6)
+        SideCharacter3idleNode.position = SCNVector3(1.5, 2.5, -4)
+        SideCharacter3idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(0), 0)
+        
+        let outfit4Scene = SCNScene(named: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Outfit4-1.scn")!
+        for child in outfit4Scene.rootNode.childNodes {
+            SideCharacter4idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter4idleNode)
+        SideCharacter4idleNode.scale = SCNVector3(0.6, 0.6, 0.6)
+        SideCharacter4idleNode.position = SCNVector3(4, 2.5, -4)
+        SideCharacter4idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(0), 0)
 
         //load all the DAE animations for this Chapter
         //load animations for mainCharacter

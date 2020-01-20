@@ -536,7 +536,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         charcterFourIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter4", recursively: true)
         charcterFourIdle?.isHidden = false
         charcterFiveIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter5", recursively: true)
-
         charcterFiveIdle?.isHidden = false
         
         //generic variable for level floor
@@ -2708,19 +2707,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
             case chapterTwo:
                 self.startTransitionAnimation(key: "MainCharacterIdle")
-                //TODO: ADD Outfit selection screen
+
                 //play game intro 1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+               DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
                 
-                //TODO: when coming back from outfit selection screen play this sound file
-                DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
-                    
-                    //wait 7 seconds for the game intro1 to finish
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                        
-                        //move the main character to the first letter
-                        self.playWalkAnimation()
+                //show the different outfits that you can pick
+                self.charcterOneIdle.isHidden = false
+                self.charcterTwoIdle.isHidden = false
+                self.charcterThreeIdle.isHidden = false
+                self.charcterFourIdle.isHidden = false
+                
+                    //TODO: after outfit selection
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+
+                        //wait 7 seconds for the game intro1 to finish
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                            
+                            //move the main character to the first letter
+                            self.playWalkAnimation()
+                        })
                     })
                 })
                 print("move floor for chapter two")
