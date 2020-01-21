@@ -966,6 +966,11 @@ class ChapterSelection {
                                     "CoinDing2" : "bell-ding_02",
                                     "CoinDing3" : "bell-ding_03",
                                     "CoinDing4" : "bell-ding_04",
+                                    "Xylophone1" : "xylophone1",
+                                    "Xylophone2" : "xylophone2",
+                                    "Xylophone3" : "xylophone3",
+                                    "Xylophone4" : "xylophone4",
+                                    "Xylophone5" : "xylophone5",
                                     "Break3" : "RockBreak3",
                                     "Stop" : "stop",
                                     "LetterComplete" : "yeahOutside"]

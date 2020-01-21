@@ -344,65 +344,161 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let geometry = hitTestResult.node.geometry
             print("Tapped \(String(describing: name)) with geometry: \(String(describing: geometry))")
             
-            switch hitTestResult.node.parent?.name {
-                case "SideCharacter1":
-                    charcterOneIdle.isHidden = true
-                    charcterTwoIdle.isHidden = true
-                    charcterThreeIdle.isHidden = true
-                    charcterFourIdle.isHidden = true
+            switch true{
+            case chapterFive:
+                print("Chapter Five is true.")
+                let key1 = mainCharacterIdle.childNode(withName: "Xylophone_Key1", recursively: true)!
+                let key2 = mainCharacterIdle.childNode(withName: "Xylophone_Key2", recursively: true)!
+                let key3 = mainCharacterIdle.childNode(withName: "Xylophone_Key3", recursively: true)!
+                let key4 = mainCharacterIdle.childNode(withName: "Xylophone_Key4", recursively: true)!
+                let key5 = mainCharacterIdle.childNode(withName: "Xylophone_Key5", recursively: true)!
+                
+                switch hitTestResult.node.name {
+                    case "Xylophone_Key1":
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone1"]!, type: "mp3", rate: 1)
+                        print("Ding Ding 1")
                     
-                    //TO-DO: change Piper's cloths
+                    case "Xylophone_Key2":
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone2"]!, type: "mp3", rate: 1)
+                        print("Ding Ding 1")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
-                    //wait 4 seconds for the game intro1 to finish
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                        //move the main character to the first letter
-                        self.playWalkAnimation()
-                    })
-                case "SideCharacter2":
-                    charcterOneIdle.isHidden = true
-                    charcterTwoIdle.isHidden = true
-                    charcterThreeIdle.isHidden = true
-                    charcterFourIdle.isHidden = true
+                    case "Xylophone_Key3":
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone3"]!, type: "mp3", rate: 1)
+                        print("Ding Ding 1")
                     
-                    //TO-DO: change Piper's cloths
+                    case "Xylophone_Key4":
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone4"]!, type: "mp3", rate: 1)
+                        print("Ding Ding 1")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
-                    //wait 4 seconds for the game intro1 to finish
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                        //move the main character to the first letter
-                        self.playWalkAnimation()
-                    })
-                case "SideCharacter3":
-                    charcterOneIdle.isHidden = true
-                    charcterTwoIdle.isHidden = true
-                    charcterThreeIdle.isHidden = true
-                    charcterFourIdle.isHidden = true
+                    case "Xylophone_Key5":
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone5"]!, type: "mp3", rate: 1)
+                        print("Ding Ding 1")
                     
-                    //TO-DO: change Piper's cloths
-                    
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
-                    //wait 4 seconds for the game intro1 to finish
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                        //move the main character to the first letter
-                        self.playWalkAnimation()
-                    })
-                case "SideCharacter4":
-                    charcterOneIdle.isHidden = true
-                    charcterTwoIdle.isHidden = true
-                    charcterThreeIdle.isHidden = true
-                    charcterFourIdle.isHidden = true
-                    
-                    //TO-DO: change Piper's cloths
-                    
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
-                    //wait 4 seconds for the game intro1 to finish
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                        //move the main character to the first letter
-                        self.playWalkAnimation()
-                    })
-                default:
-                    break
+                    default:
+                        break
+                }
+            case chapterFour:
+                print("Chapter Four is true.")
+            case chapterThree:
+                print("Chapter Three is true.")
+            case chapterTwo:
+                print("Chapter Two is true.")
+                let shirt = mainCharacterIdle.childNode(withName: "PiperShirt", recursively: true)!
+                let shorts = mainCharacterIdle.childNode(withName: "PiperShorts", recursively: true)!
+                let helmet = mainCharacterIdle.childNode(withName: "PiperHelmet", recursively: true)!
+                let skateboard = mainCharacterIdle.childNode(withName: "PiperSkateboard", recursively: true)!
+                let elbowPadeR = mainCharacterIdle.childNode(withName: "PiperElbowPad_R", recursively: true)!
+                let elbowPadeL = mainCharacterIdle.childNode(withName: "PiperElbowPad_L", recursively: true)!
+                let kneePadeR = mainCharacterIdle.childNode(withName: "PiperKneePad_R", recursively: true)!
+                let kneePadeL = mainCharacterIdle.childNode(withName: "PiperKneePad_L", recursively: true)!
+                let helmetDeco1 = mainCharacterIdle.childNode(withName: "PiperHelmetStuff1", recursively: true)!
+                let helmetDeco2 = mainCharacterIdle.childNode(withName: "PiperHelmetStuff2", recursively: true)!
+                
+                switch hitTestResult.node.parent?.name {
+                    case "SideCharacter1":
+                        charcterOneIdle.isHidden = true
+                        charcterTwoIdle.isHidden = true
+                        charcterThreeIdle.isHidden = true
+                        charcterFourIdle.isHidden = true
+                        
+                        //TO-DO: change Piper's cloths
+                        shirt.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Shirt Texture.png"
+                        shorts.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Shorts Texture.png"
+                        helmet.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Helmet Texture.png"
+                        skateboard.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Skateboard Texture.png"
+                        elbowPadeL.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Elbowpads Texture.png"
+                        elbowPadeR.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Elbowpads Texture.png"
+                        kneePadeL.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Kneepads Texture.png"
+                        kneePadeR.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Kneepads Texture.png"
+                        helmetDeco1.isHidden = true
+                        helmetDeco2.isHidden = true
+                        
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        //wait 4 seconds for the game intro1 to finish
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                            //move the main character to the first letter
+                            self.playWalkAnimation()
+                        })
+                    case "SideCharacter2":
+                        charcterOneIdle.isHidden = true
+                        charcterTwoIdle.isHidden = true
+                        charcterThreeIdle.isHidden = true
+                        charcterFourIdle.isHidden = true
+                        
+                        //TO-DO: change Piper's cloths
+                        shirt.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Shirt Texture 2.png"
+                        shorts.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Shorts Texture 2.png"
+                        helmet.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Helmet Texture 2.png"
+                        skateboard.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Skateboard Texture 2.png"
+                        elbowPadeL.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Elbowpads Texture 2.png"
+                        elbowPadeR.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Elbowpads Texture 2.png"
+                        kneePadeL.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Kneepads Texture 2.png"
+                        kneePadeR.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Kneepads Texture 2.png"
+                        helmetDeco1.isHidden = false
+                        helmetDeco2.isHidden = true
+                        
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        //wait 4 seconds for the game intro1 to finish
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                            //move the main character to the first letter
+                            self.playWalkAnimation()
+                        })
+                    case "SideCharacter3":
+                        charcterOneIdle.isHidden = true
+                        charcterTwoIdle.isHidden = true
+                        charcterThreeIdle.isHidden = true
+                        charcterFourIdle.isHidden = true
+                        
+                        //TO-DO: change Piper's cloths
+                        shirt.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Shirt Texture 3.png"
+                        shorts.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Shorts Texture 3.png"
+                        helmet.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Helmet Texture 3.png"
+                        skateboard.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Skateboard Texture 3.png"
+                        elbowPadeL.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Elbowpads Texture 3.png"
+                        elbowPadeR.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Elbowpads Texture 3.png"
+                        kneePadeL.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Kneepads Texture 3.png"
+                        kneePadeR.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Kneepads Texture 3.png"
+                        helmetDeco1.isHidden = true
+                        helmetDeco2.isHidden = false
+                        
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        //wait 4 seconds for the game intro1 to finish
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                            //move the main character to the first letter
+                            self.playWalkAnimation()
+                        })
+                    case "SideCharacter4":
+                        charcterOneIdle.isHidden = true
+                        charcterTwoIdle.isHidden = true
+                        charcterThreeIdle.isHidden = true
+                        charcterFourIdle.isHidden = true
+                        
+                        //TO-DO: change Piper's cloths
+                        shirt.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Shirt Texture 4.png"
+                        shorts.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Shorts Texture 4.png"
+                        helmet.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Helmet Texture 4.png"
+                        skateboard.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Skateboard Texture 4.png"
+                        elbowPadeL.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Elbowpads Texture 4.png"
+                        elbowPadeR.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Elbowpads Texture 4.png"
+                        kneePadeL.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Kneepads Texture 4.png"
+                        kneePadeR.geometry?.firstMaterial?.diffuse.contents = "art.scnassets/3DModels/Chapter2Files/Textures/Piper Kneepads Texture 4.png"
+                        helmetDeco1.isHidden = true
+                        helmetDeco2.isHidden = true
+                        
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        //wait 4 seconds for the game intro1 to finish
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                            //move the main character to the first letter
+                            self.playWalkAnimation()
+                        })
+                    default:
+                        break
+                }
+                
+            case chapterOne:
+                print("Chapter Four is true.")
+            default:
+                break
             }
         }
     }
@@ -829,7 +925,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 // (-) = clockwise, (+) = couter-clockwise
                 let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 7)
-                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                //let rotate2 = SCNAction.rotateBy(x: 0, y: -1.75, z: 0, duration: 1)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)) , z: 0, duration: 1)
                 let chapter1Letter3RotSeq = SCNAction.sequence([rotate1, rotate2])
                 mainCharacterIdle?.runAction(chapter1Letter3RotSeq)
 
@@ -934,10 +1031,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 let chapter1Letter4MoveSeq = SCNAction.sequence([move1, move2, move3])
                 mainFloor.runAction((chapter1Letter4MoveSeq), completionHandler: stopWalkAnimation)
                 // (-) = clockwise, (+) = couter-clockwise
-                let rotate1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)
-                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.5, z: 0, duration: 1)
+                let rotate1 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(0)), z: 0, duration: 1)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 1)
                 let rotate3 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 7)
-                let rotate4 = SCNAction.rotateBy(x: 0, y: 1.75, z: 0, duration: 1)
+                let rotate4 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 1)
                 let chapter1Letter4RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3, rotate4])
                 mainCharacterIdle?.runAction(chapter1Letter4RotSeq)
                 
@@ -1000,9 +1097,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
             case chapterFive:
                 //(chapter5 -- letter4)
-                
-                //TODO: ADD touches and raytracing to put the Xylophone together
-                
+
                 //look around for nails at teachers desk
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //move the main character to the first letter
@@ -1034,9 +1129,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 let chapter1Letter5MoveSeq = SCNAction.sequence([move1, move2, move3])
                 mainFloor.runAction((chapter1Letter5MoveSeq), completionHandler: stopWalkAnimation)
                 // (-) = clockwise, (+) = couter-clockwise
-                let rotate1 = SCNAction.rotateBy(x: 0, y: 0.6, z: 0, duration: 1)
+                //let rotate1 = SCNAction.rotateBy(x: 0, y: 0.6, z: 0, duration: 1)
+                let rotate1 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(25)), z: 0, duration: 1)
                 let rotate2 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1)
-                let rotate3 = SCNAction.rotateBy(x: 0, y: 0.75, z: 0, duration: 1)
+                let rotate3 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(55)), z: 0, duration: 1)
                 let chapter1Letter5RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3])
                 mainCharacterIdle?.runAction(chapter1Letter5RotSeq)
                 
@@ -1119,12 +1215,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 // x= (-)west/(+)east, z= (-)north/(+)south
-                let rotate1 = SCNAction.rotateBy(x: 0, y: -0.1, z: 0, duration: 0.5)
+                let rotate1 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-5)), z: 0, duration: 0.5)
                 let rotatePause = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 3.5)
-                let rotate2 = SCNAction.rotateBy(x: 0, y: -1.25, z: 0, duration: 0.5)
+                let rotate2 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-75)), z: 0, duration: 0.5)
                 
-                let move1 = SCNAction.move(by: SCNVector3(x: 0.3,y: -0.1,z: -0.5), duration: 2)
-                let move2 = SCNAction.move(by: SCNVector3(x: 0.2,y: 0.1,z: -0.5), duration: 2)
+                //move up and down the hill before Hannah
+                let move1 = SCNAction.move(by: SCNVector3(x: 0.3,y: -0.04,z: -0.5), duration: 2)
+                let move2 = SCNAction.move(by: SCNVector3(x: 0.2,y: 0.04,z: -0.5), duration: 2)
                 let move3 = SCNAction.move(by: SCNVector3(x: 0.2,y: 0,z: 0), duration: 2)
                 
                 //Indy walking to Hannah
@@ -1138,7 +1235,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6.5, execute: {
                     //Hannah stop dancing and Idle till narration done
                     [weak self] in self?.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration42"]!, type: "mp3")
-                    self?.charcterFiveIdle.parent?.runAction(SCNAction.rotateBy(x: 0, y: -1.9, z: 0, duration: 0.5))
+                    self?.charcterFiveIdle.parent?.runAction(SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-135)), z: 0, duration: 0.5))
                     self?.stopTransitionAnimation(key: "MainCharacterWalking")
                     
                     //fade out the walking sound
@@ -1161,7 +1258,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         //start walking sound
                         self?.toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
                         
-                        let hannahRotate1 = SCNAction.rotateBy(x: 0, y: 0.75, z: 0, duration: 1)
+//                        let hannahRotate1 = SCNAction.rotateBy(x: 0, y: 0.75, z: 0, duration: 1)
+                        let hannahRotate1 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(45)), z: 0, duration: 1)
                         let hannahMove1 = SCNAction.move(to: SCNVector3(x: 21.5,y: 1.1,z: -11.2), duration: 2)
                         let hannahMove2 = SCNAction.move(to: SCNVector3(x: 19.75,y: 1.7,z: -0.65), duration: 4)
                         let hannahMove3 = SCNAction.move(to: SCNVector3(x: 21.4,y: 1.4,z: 4.7), duration: 4)
@@ -1170,13 +1268,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         self?.charcterFiveIdle.parent?.runAction(hannahLetter6MoveSeq)
                         
                         //Indy sequence
-                        let rotate3 = SCNAction.rotateBy(x: 0, y: -1.50, z: 0, duration: 0.5)
+                        //let rotate3 = SCNAction.rotateBy(x: 0, y: -1.50, z: 0, duration: 0.5)
+                        let rotate3 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-80)), z: 0, duration: 0.5)
                         let rotatePause1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1.5)
-                        let rotate4 = SCNAction.rotateBy(x: 0, y: -0.40, z: 0, duration: 0.5)
+                        //let rotate4 = SCNAction.rotateBy(x: 0, y: -0.40, z: 0, duration: 0.5)
+                        let rotate4 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-20)), z: 0, duration: 0.5)
                         
-                        let move3 = SCNAction.move(by: SCNVector3(x: 0.2,y: -0.1,z: 0.4), duration: 2)
-                        let move4 = SCNAction.move(by: SCNVector3(x: 0.1,y: 0,z: 0.5), duration: 4)
-                        let move5 = SCNAction.move(by: SCNVector3(x: -0.1,y: 0,z: 0.6), duration: 4)
+                        //move indy uphill by moving the floor down
+                        let move3 = SCNAction.move(by: SCNVector3(x: 0.2, y: -0.04, z: 0.4), duration: 2)
+                        let move4 = SCNAction.move(by: SCNVector3(x: 0.1, y: 0, z: 0.5), duration: 4)
+                        let move5 = SCNAction.move(by: SCNVector3(x: -0.1, y: -0.02, z: 0.6), duration: 4)
                         
                         //Indy rotating to H
                         let chapter1Letter6MoveSeq2_0 = SCNAction.sequence([rotate3, rotatePause1, rotate4])
@@ -2237,10 +2338,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 //"xylophone back together"
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish1"]!, type: "mp3")
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish2"]!, type: "mp3")
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                    self.mainCharacterIdle?.parent?.runAction(SCNAction.move(to: SCNVector3(0 ,11.5 ,0), duration: 4))
+                    self.mainCharacterIdle?.parent?.runAction(SCNAction.scale(to: 0.05, duration: 5))
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 90, execute: {
                         self.resetGame()
                     })
                 })
@@ -2306,7 +2411,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //drop side Francine down from letter F
                 let rotateTo0 = SCNAction.rotateTo(x: 0, y: 3.5, z: 0, duration: 0.1)
                 let moveOut = SCNAction.moveBy(x:0, y: 0, z: -2.5, duration: 0.5)
-                let moveDown = SCNAction.moveBy(x:0, y: -2.2, z: -0.5, duration: 0.5)
+                let moveDown = SCNAction.moveBy(x:0, y: -2.4, z: -0.5, duration: 0.5)
                 let francineMoveSeq0 = SCNAction.sequence([rotateTo0, moveOut, moveDown])
                 self.charcterThreeIdle.parent?.runAction(francineMoveSeq0)
                 self.startAnimateSideCharacter(key: "SideCharacter3Jump", sideCharacter: "Francine")
@@ -2317,8 +2422,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.startAnimateSideCharacter(key: "SideCharacter3Walk", sideCharacter: "Francine")
                     
                     //Francine walks to Indy after the jump - Left turn and walk for 0.5 seconds
-                    let rotate1 = SCNAction.rotateBy(x: 0.0, y: 1.5, z: 0.0, duration: 0.5)
-                    let endSpot1 = SCNVector3(x: 2, y: 1.5, z: 9.0)
+                    //let rotate1 = SCNAction.rotateBy(x: 0.0, y: 1.5, z: 0.0, duration: 0.5)
+                    let rotate1 = SCNAction.rotateBy(x: 0.0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0.0, duration: 0.5)
+                    let endSpot1 = SCNVector3(x: 2, y: 1.3, z: 9.0)
                     let move1 = SCNAction.move(to: endSpot1, duration: 1.5)
                     let francineMoveSeq1 = SCNAction.sequence([rotate1, move1])
                     self.charcterThreeIdle.parent?.runAction(francineMoveSeq1)
@@ -2330,8 +2436,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         
                         //wait 5 seconds
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                            //play Lin through a sequence of movements so he turns and then walks to the Letter H
-                            let rotate2 = SCNAction.rotateBy(x: 0.0, y: -2.9, z: 0.0, duration: 0.5)
+                            //play Francine through a sequence of movements so he turns and then walks to the Letter H
+                            //let rotate2 = SCNAction.rotateBy(x: 0.0, y: -2.9, z: 0.0, duration: 0.5)
+                            let rotate2 = SCNAction.rotateBy(x: 0.0, y: CGFloat(GLKMathDegreesToRadians(170)), z: 0.0, duration: 0.5)
                             let endSpot2p2 = SCNVector3(x: 18.5, y: 2.25, z: 12.25)
                             let move2 = SCNAction.moveBy(x:10, y: 0, z: 0, duration: 5)
                             let move3 = SCNAction.move(to: endSpot2p2, duration: 5)

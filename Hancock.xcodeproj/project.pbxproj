@@ -58,7 +58,7 @@
 		A0A028B8227CA9F500A7C787 /* Hancock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hancock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A028BB227CA9F500A7C787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A028BD227CA9F500A7C787 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		A0A028BF227CA9F500A7C787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A0A028BF227CA9F500A7C787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
 		A0A028C2227CA9F500A7C787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0A028C4227CA9F600A7C787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0A028C7227CA9F600A7C787 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = LaunchScreen.storyboard; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
