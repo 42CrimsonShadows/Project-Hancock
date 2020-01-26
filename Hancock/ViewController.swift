@@ -798,7 +798,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
                 //move position for letter:
                 //N
-
+            case chapterSix:
+                print("do chapter 6 stuff")
+            case chapterSeven:
+                //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
+                startTransitionAnimation(key: "MainCharacterWalking")
+                //play walk sound
+                toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                //animate the mainFloor node to move and stop when the translation is complete
+                //mainFloor.runAction(SCNAction.moveBy(x:0, y: 0, z: -0.2, duration: 2), completionHandler: stopWalkAnimation)
+                mainFloor.runAction(SCNAction.move(to: SCNVector3(173, 0, -75), duration: 2), completionHandler: stopWalkAnimation)
+                //animate the main character to rotate a bit on the y axis
+                mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new chapter 1
+                print("move floor for chapter one")
+            case chapterEight:
+                print("do chapter 8 stuff")
+            case chapterNine:
+                print("do chapter 9 stuff")
+            case chapterTen:
+                print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
                 break
@@ -1373,6 +1391,45 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //MARK: Letter 1
         case .toLetter1:
             switch true {
+            case chapterTen:
+                print("stopwalk chapter 10 stuff")
+            case chapterNine:
+                print("stopwalk chapter 9 stuff")
+            case chapterEight:
+                print("stopwalk chapter 8 stuff")
+            case chapterSeven:
+                //fade out the walking sound
+                FXPlayer.setVolume(0, fadeDuration: 1)
+                //stop playing the walking sound
+                FXPlayer.stop()
+                FXPlayer.setVolume(1, fadeDuration: 0)
+                
+                stopTransitionAnimation(key: "MainCharacterWalking")
+                
+                //wait 1 seconds (small pause)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    //play game intro2 (segway into first letter activity)
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                    
+                    //wait 6 seconds for game intro2 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                        //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+                        print("Prepare to shatter letter 1")
+                        self.shatterLetterOne = true
+                        
+                        //trasition to the activity page for the first letter
+                        print("Loading activity \(chapterSelectedLetterArray![0])")
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                        
+                        //wait 1 seconds for the activity page to load
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                            //play narration for the first audio instructions for the activity
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                        })
+                    })
+                })
+            case chapterSix:
+                print("stopwalk chapter 6 stuff")
             case chapterFive:
                 print("Prepare to shatter letter 1")
                 self.shatterLetterOne = true
@@ -2873,14 +2930,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
                 print("Starting chapter four")
             case chapterFive:
-                //play game intro 1
+                //play game intro1
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                     //move the main character to the first letter
                     self.playWalkAnimation()
                 })
-                
+            case chapterSix:
+                    print("Do chapter 6 stuff")
+            case chapterSeven:
+                self.startTransitionAnimation(key: "MainCharacterIdle")
+                print(self.mainCharacterIdle.name!, "is now idle")
+                //play game intro 1
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+            
+                //wait 7 seconds for the game intro1 to finish
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                //move the main character to the first letter
+                self.playWalkAnimation()
+                })
+            case chapterEight:
+                print("Do chapter 8 stuff")
+            case chapterNine:
+                print("Do chapter 9 stuff")
+            case chapterTen:
+                print("Do chapter 10 stuff")
             default:
                 break
             }

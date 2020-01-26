@@ -873,6 +873,58 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             activitySelection.loadActivityY()
         case "Z":
             activitySelection.loadActivityZ()
+        case "a":
+            activitySelection.loadActivitya()
+        case "b":
+            activitySelection.loadActivityb()
+        case "c":
+            activitySelection.loadActivityc()
+        case "d":
+            activitySelection.loadActivityd()
+        case "e":
+            activitySelection.loadActivitye()
+        case "f":
+            activitySelection.loadActivityf()
+        case "g":
+            activitySelection.loadActivityg()
+        case "h":
+            activitySelection.loadActivityh()
+        case "i":
+            activitySelection.loadActivityi()
+        case "j":
+            activitySelection.loadActivityj()
+        case "k":
+            activitySelection.loadActivityk()
+        case "l":
+            activitySelection.loadActivityl()
+        case "m":
+            activitySelection.loadActivitym()
+        case "n":
+            activitySelection.loadActivityn()
+        case "o":
+            activitySelection.loadActivityo()
+        case "p":
+            activitySelection.loadActivityp()
+        case "q":
+            activitySelection.loadActivityq()
+        case "r":
+            activitySelection.loadActivityr()
+        case "s":
+            activitySelection.loadActivitys()
+        case "t":
+            activitySelection.loadActivityt()
+        case "u":
+            activitySelection.loadActivityu()
+        case "v":
+            activitySelection.loadActivityv()
+        case "w":
+            activitySelection.loadActivityw()
+        case "x":
+            activitySelection.loadActivityx()
+        case "y":
+            activitySelection.loadActivityy()
+        case "z":
+            activitySelection.loadActivityz()
         default: return
         }
     }

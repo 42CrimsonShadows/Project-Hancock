@@ -65,31 +65,26 @@ class ChapterSelection {
             chapterSelectedSoundDict = loadChapter5SoundFiles()
         case 6:
             print("Loading Chapter ", picked)
-            //TODO: load chapter 6 files
             chapterSelectedNodeArray = loadChapter6NodeFiles()
             chapterSelectedLetterArray = ["c", "a", "d", "g", "o"]
             chapterSelectedSoundDict = loadChapter6SoundFiles()
         case 7:
             print("Loading Chapter ", picked)
-            //TODO: load chapter 7 files
             chapterSelectedNodeArray = loadChapter7NodeFiles()
             chapterSelectedLetterArray = ["u", "s", "v", "w", "i", "t"]
             chapterSelectedSoundDict = loadChapter7SoundFiles()
         case 8:
             print("Loading Chapter ", picked)
-            //TODO: load chapter 8 files
             chapterSelectedNodeArray = loadChapter8NodeFiles()
             chapterSelectedLetterArray = ["l", "y", "k", "e"]
             chapterSelectedSoundDict = loadChapter8SoundFiles()
         case 9:
             print("Loading Chapter ", picked)
-            //TODO: load chapter 9 files
             chapterSelectedNodeArray = loadChapter9NodeFiles()
             chapterSelectedLetterArray = ["p", "r", "n", "h", "B"]
             chapterSelectedSoundDict = loadChapter9SoundFiles()
         case 10:
             print("Loading Chapter ", picked)
-            //TODO: load chapter 10 files
             chapterSelectedNodeArray = loadChapter10NodeFiles()
             chapterSelectedLetterArray = ["f", "q", "x", "z"]
             chapterSelectedSoundDict = loadChapter10SoundFiles()
@@ -1164,33 +1159,35 @@ class ChapterSelection {
             
                                     //sounds for Letter W lowercase
                                     "Narration15" : "ch2L-W-Transition1",
-                                    "Narration16" : "ch2L-W-Intro1",
-                                    "Narration17" : "ch1-E-Line1",    //1 Green to Red
-                                    "Narration18" : "ch1-E-Line2_01", //2 Great Job
-                                    "Narration19" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration20" : "ch1-E-Line3_01", //3 Amazing
-                                    "Narration21" : "ch1-E-Line3_02", //Yellow to Purple
-                                    "Narration22" : "ch1-E-Line4_01", //4 Perfect
-                                    "Narration23" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
-                                    "Narration24" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+                                    "Narration16" : "ch2L-W-Transition2",
+                                    "Narration17" : "ch2L-W-Intro1",
+                                    "Narration18" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration19" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration20" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration21" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration22" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration23" : "ch1-E-Line4_01", //4 Perfect
+                                    //TODO: ADD PINK TO WHITE DOT NARRATION
+                                    "Narration24" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration25" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter I lowercase
-                                    "Narration25" : "ch2L-I-Transition1",
-                                    "Narration26" : "ch2L-I-Intro1",
-                                    "Narration27" : "ch1-E-Line1",    //1 Green to Red
-                                    "Narration28" : "ch1-E-Line2_01", //2 Great Job
-                                    "Narration29" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration30" : "ch1-E-Line3_01", //3 Amazing
-                                    "Narration31" : "ch1-E-Line3_02", //Yellow to Purple
-                                    "Narration32" : "ch1-E-Line4_01", //4 Perfect
+                                    "Narration26" : "ch2L-I-Transition1",
+                                    "Narration27" : "ch2L-I-Intro1",
+                                    "Narration28" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration29" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration30" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration31" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration32" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration33" : "ch1-E-Line4_01", //4 Perfect
             
                                     //sounds for Letter T lowercase
-                                    "Narration33" : "ch2L-T-Transition1",
-                                    "Narration34" : "ch2L-T-Intro1",
-                                    "Narration35" : "ch1-E-Line1",    //1 Green to Red
-                                    "Narration36" : "ch1-E-Line2_01", //2 Great Job
-                                    "Narration37" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration38" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration34" : "ch2L-T-Transition1",
+                                    "Narration35" : "ch2L-T-Intro1",
+                                    "Narration36" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration37" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration38" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration39" : "ch1-E-Line3_01", //3 Amazing
             
                                     //Finishing Narration
                                     "Finish1" : "ch2L-Final1",

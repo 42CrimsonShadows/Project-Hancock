@@ -672,7 +672,7 @@ class CanvasView: UIView {
     
     func loadletterNarration(currentletter: String) -> [String]{
         
-        var narrationArray: [String] = []
+        //var narrationArray: [String] = []
         
         switch currentletter {
         case "A":
@@ -680,28 +680,36 @@ class CanvasView: UIView {
             return ["Narration44", "Narration45", "Narration46", "Narration47", "Narration48"]
         case "B":
             print("Load B narration")
-            narrationArray = ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
+            //narrationArray = ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
+            return ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
         case "C":
             print("Load C narration")
-            narrationArray = ["letter4Finish", "letter5Finish"]
+            //narrationArray = ["letter4Finish", "letter5Finish"]
+            return ["letter4Finish", "letter5Finish"]
         case "D":
             print("Load D narration")
-            narrationArray = ["ThankYou", "Narration34", "letter3Finish"]
+            //narrationArray = ["ThankYou", "Narration34", "letter3Finish"]
+            return ["ThankYou", "Narration34", "letter3Finish"]
         case "E":
             print("Load E narration")
-            narrationArray = ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
+            //narrationArray = ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
+            return ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
         case "F":
             print("Load F narration")
-            narrationArray = ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
+            //narrationArray = ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
+            return ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
         case "G":
             print("Load G narration")
-            narrationArray = ["Narration4", "Narration5", "Narration6"]
+            //narrationArray = ["Narration4", "Narration5", "Narration6"]
+            return ["Narration4", "Narration5", "Narration6"]
         case "H":
             print("Load H narration")
-            narrationArray = ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
+            //narrationArray = ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
+            return ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
         case "I":
             print("Load I narration")
-            narrationArray = ["Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
+            //narrationArray = ["Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
+            return ["Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
         case "J":
             print("Load J narration")
             return ["Narration28", "Narration29", "Narration30"]
@@ -710,7 +718,8 @@ class CanvasView: UIView {
             return ["Narration3", "Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
         case "L":
             print("Load L narration")
-            narrationArray = ["Narration20", "Narration21", "Narration22"]
+            //narrationArray = ["Narration20", "Narration21", "Narration22"]
+            return ["Narration20", "Narration21", "Narration22"]
         case "M":
             print("Load M narration")
             return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
@@ -722,22 +731,26 @@ class CanvasView: UIView {
             return ["Narration34"]
         case "P":
             print("Load P narration")
-            narrationArray = ["letter4Finish", "Narration6", "ThankYou"]
+            //narrationArray = ["letter4Finish", "Narration6", "ThankYou"]
+            return ["letter4Finish", "Narration6", "ThankYou"]
         case "Q":
             print("Load Q narration")
             return ["Narration14", "Narration15", "Narration16"]
         case "R":
             print("Load R narration")
-            narrationArray = ["letter2Finish", "Narration13", "letter5Finish", "Narration14", "letter3Finish"]
+            //narrationArray = ["letter2Finish", "Narration13", "letter5Finish", "Narration14", "letter3Finish"]
+            return ["letter2Finish", "Narration13", "letter5Finish", "Narration14", "letter3Finish"]
         case "S":
             print("Load S narration")
             return ["Narration22", "Stop"]
         case "T":
             print("Load T narration")
-            narrationArray = ["Narration13", "Narration14", "Narration15"]
+            //narrationArray = ["Narration13", "Narration14", "Narration15"]
+            return ["Narration13", "Narration14", "Narration15"]
         case "U":
             print("Load U narration")
-            narrationArray = ["letter3Finish", "letter5Finish"]
+            //narrationArray = ["letter3Finish", "letter5Finish"]
+            return ["letter3Finish", "letter5Finish"]
         case "V":
             print("Load V narration")
             return ["Narration14", "Narration15", "Narration16"]
@@ -756,6 +769,6 @@ class CanvasView: UIView {
         default:
             return ["Narration", "Narration"]
         }
-        return narrationArray
+        //return narrationArray
     }
 }
