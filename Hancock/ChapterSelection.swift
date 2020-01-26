@@ -1019,27 +1019,193 @@ class ChapterSelection {
         //var array of chapter 7 assest
         var chapter7NodeArray: [SCNNode] = []
         
+        // Load StoryScene Node
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Environments/Chapter7Scene.scn")!
+        storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+        storyNode.scale = SCNVector3(0.03, 0.03, 0.03)
+        storyNode.position = SCNVector3(0, 0, 0)
+        
+        //Load Scene Mask so we only see immidate area
+//        let maskingScene = SCNScene(named: "art.scnassets/MaskScene.scn")!
+//        for child in maskingScene.rootNode.childNodes {
+//            maskingNode.addChildNode(child)
+//        }
+//        maskingNode.renderingOrder = -2
+//        storyNode.addChildNode(maskingNode)
+//        maskingNode.position = SCNVector3(0, 0, 0)
+        //maskingNode.scale = SCNVector3(1, 1, 1)
+        
+        //Load Idle Animation Node
+        let idleUrsaScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Ursa/Ursa@IdleFixed.dae")!
+        for child in idleUrsaScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(1.2, 1.2, 1.2)
+        //idleNode.position = SCNVector3(-186, 0, 93)
+        idleNode.position = SCNVector3(0, 0, 0)
+        idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(150), GLKMathDegreesToRadians(0))
+        
+        let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+        
+        
+        //Load Idle Animation Node
+        let idleStanleyScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Stanley/Stanley@EatingFixed.dae")!
+        for child in idleStanleyScene.rootNode.childNodes {
+            SideCharacter1idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter1idleNode)
+        SideCharacter1idleNode.scale = SCNVector3(2.4, 2.4, 2.4)
+        SideCharacter1idleNode.position = SCNVector3(-145, 0, 32)
+        //SideCharacter1idleNode.eulerAngles = SCNVector3(0, 180, 0)
+        SideCharacter1idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(0), 0)
+        
+        //Load Idle Animation Node
+        let idleVivianScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Vivian/Vivian@PickingFlowersFixed.dae")!
+        for child in idleVivianScene.rootNode.childNodes {
+            SideCharacter2idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter2idleNode)
+        SideCharacter2idleNode.scale = SCNVector3(5, 5, 5)
+        SideCharacter2idleNode.position = SCNVector3(-70, 0, 50)
+        SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(215), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        let idleWindsorScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Windsor/Windsor@IdleFixed.dae")!
+        for child in idleWindsorScene.rootNode.childNodes {
+            SideCharacter3idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter3idleNode)
+        SideCharacter3idleNode.scale = SCNVector3(3, 3, 3)
+        SideCharacter3idleNode.position = SCNVector3(32, 0, -50)
+        SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-55), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        //TO-DO: Replace temp model with Isaac Idle Model
+//        let idleIsaacScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@IdleFixed.dae")!
+        let idleIsaacScene = SCNScene(named: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@IdleFixed.dae")!
+        for child in idleIsaacScene.rootNode.childNodes {
+            SideCharacter4idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter4idleNode)
+        //SideCharacter4idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter4idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter4idleNode.position = SCNVector3(111, 0, -9)
+        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        //let idleTylerScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@IdleFixed.dae")!
+        let idleTylerScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SurpriseFixed.dae")!
+        for child in idleTylerScene.rootNode.childNodes {
+            SideCharacter5idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter5idleNode)
+        SideCharacter5idleNode.scale = SCNVector3(0.01, 0.01, 0.01)
+        SideCharacter5idleNode.position = SCNVector3(144, 0, -5)
+        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        //SideCharacter5idleNode.geometry?.firstMaterial?.lightingModel = .physicallyBased
+        
+        
+        //load all the DAE animations for this Chapter
+        //load animations for mainCharacter
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Ursa/Ursa@IdleFixed", animationIdentifier: "Ursa@IdleFixed-1")
+        prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Ursa/Ursa@WalkingFixed", animationIdentifier: "Ursa@WalkingFixed-1")
+        prepareAnimation(withKey: "MainCharacterShouting", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Ursa/Ursa@ShoutFixed", animationIdentifier: "Ursa@ShoutFixed-1")
+        
+        
+        //load animation for side character 1
+        prepareAnimation(withKey: "SideCharacter1Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Stanley/Stanley@EatingFixed", animationIdentifier: "Stanley@EatingFixed-1")
+        prepareAnimation(withKey: "SideCharacter1Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Stanley/Stanley@TalkingFixed", animationIdentifier: "Stanley@TalkingFixed-1")
+        
+        //load animation for side character 2
+        prepareAnimation(withKey: "SideCharacter2Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Vivian/Vivian@PickingFlowersFixed", animationIdentifier: "Vivian@PickingFlowersFixed-1")
+        prepareAnimation(withKey: "SideCharacter2Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Vivian/Vivian@TalkingFixed", animationIdentifier: "Vivian@TalkingFixed-1")
+        
+        
+        //load animation for side character 3
+        prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Windsor/Windsor@IdleFixed", animationIdentifier: "Windsor@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Windsor/Windsor@TalkingFixed", animationIdentifier: "Windsor@TalkingFixed-1")
+
+        
+        //load animation for side character 4
+        //prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@IdleFixed", animationIdentifier: "Isaac@IdleFixed-1")
+        //prepareAnimation(withKey: "SideCharacter4Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@TalkingFixed", animationIdentifier: "Isaac@TalkingFixed-1")
+        
+        
+        //load animation for side character 5
+        //prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@IdleFixed", animationIdentifier: "Tyler@IdleFixed-1")
+        //prepareAnimation(withKey: "SideCharacter5Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@TalkingFixed", animationIdentifier: "Tyler@TalkingFixed-1")
+        //prepareAnimation(withKey: "SideCharacter5Walking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@WalkingFixed", animationIdentifier: "Tyler@WalkingFixed-1")
+        
+        chapter7NodeArray.append(storyNode)
         return chapter7NodeArray
     }
     
     func loadChapter7SoundFiles() -> [String: String] {
-        let chapter7SoundArray = ["Narration1" : "Line1",
-                                  "Narration2" : "Line2",
-                                  "Narration3" : "Line3",
-                                  "Narration4" : "Line4",
-                                  "Narration5" : "Line5",
-                                  "Narration6" : "Line6",
-                                  "Narration7" : "Line7",
-                                  "Narration8" : "Line8",
-                                  "BackgroundSound" : "Birds2",
-                                  "WalkSound" : "Gravel and Grass Walk",
-                                  "CoinDing1" : "bell-ding_01",
-                                  "CoinDing2" : "bell-ding_02",
-                                  "CoinDing3" : "bell-ding_03",
-                                  "CoinDing4" : "bell-ding_04",
-                                  "Break1" : "RockBreak3",
-                                  "Stop" : "stop",
-                                  "LetterComplete" : "yeahOutside"]
+        let chapter7SoundArray = [//sounds for Letter U lowercase
+                                    "Narration1" : "ch2L-Intro1",
+                                    "Narration2" : "ch2L-Intro2",
+                                    "Narration3" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration4" : "ch1-E-Line4_01", //4 Perfect
+            
+                                    //sounds for Letter S lowercase
+                                    "Narration5" : "ch2L-S-Transition1",
+                                    "Narration6" : "ch2L-S-Intro1",
+                                    "Narration7" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration8" : "ch1-E-Line2_01", //2 Great Job
+            
+                                    //sounds for Letter V lowercase
+                                    "Narration9" : "ch2L-V-Transition1",
+                                    "Narration10" : "ch2L-V-Intro1",
+                                    "Narration11" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration12" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration13" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration14" : "ch1-E-Line3_01", //3 Amazing
+            
+                                    //sounds for Letter W lowercase
+                                    "Narration15" : "ch2L-W-Transition1",
+                                    "Narration16" : "ch2L-W-Intro1",
+                                    "Narration17" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration18" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration19" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration20" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration21" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration22" : "ch1-E-Line4_01", //4 Perfect
+                                    "Narration23" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration24" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+            
+                                    //sounds for Letter I lowercase
+                                    "Narration25" : "ch2L-I-Transition1",
+                                    "Narration26" : "ch2L-I-Intro1",
+                                    "Narration27" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration28" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration29" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration30" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration31" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration32" : "ch1-E-Line4_01", //4 Perfect
+            
+                                    //sounds for Letter T lowercase
+                                    "Narration33" : "ch2L-T-Transition1",
+                                    "Narration34" : "ch2L-T-Intro1",
+                                    "Narration35" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration36" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration37" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration38" : "ch1-E-Line3_01", //3 Amazing
+            
+                                    //Finishing Narration
+                                    "Finish1" : "ch2L-Final1",
+                                    "Finish2" : "ch2L-Final2",
+                                    
+                                    //extra chapter FX sounds
+                                    "BackgroundSound" : "JungleBackgroundMix",
+                                    "WalkSound" : "Gravel and Grass Walk",
+                                    "CoinDing1" : "bell-ding_01",
+                                    "CoinDing2" : "bell-ding_02",
+                                    "CoinDing3" : "bell-ding_03",
+                                    "CoinDing4" : "bell-ding_04",
+                                    "Break3" : "RockBreak3",
+                                    "Stop" : "stop",
+                                    "LetterComplete" : "yeahOutside"]
         return chapter7SoundArray
     }
     
