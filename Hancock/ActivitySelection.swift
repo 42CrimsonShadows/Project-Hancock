@@ -577,7 +577,7 @@ public class ActivitySelection {
             [CGFloat(0.75),CGFloat(0.585)]] //sixth point
         
         //Set the underlay variables
-        let Underlaya = UIImage(named: "art.scnassets/LetterImages/a.png")
+        let Underlaya = UIImage(named: "art.scnassets/LetterImages/a-.png")
         letterUnderlay = UIImageView(image: Underlaya)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -605,7 +605,7 @@ public class ActivitySelection {
             [CGFloat(0.6),CGFloat(0.84)], //fifth MidPoint2 x, y
             [CGFloat(0.22),CGFloat(0.85)]] //sixth point
         
-        let Underlayb = UIImage(named: "art.scnassets/LetterImages/b.png")
+        let Underlayb = UIImage(named: "art.scnassets/LetterImages/b-.png")
         letterUnderlay = UIImageView(image: Underlayb)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -619,7 +619,7 @@ public class ActivitySelection {
             [CGFloat(0.3),CGFloat(0.8)], //first MidPoint2 x, y
             [CGFloat(0.85),CGFloat(0.75)]] //second point x, y
         
-        let Underlayc = UIImage(named: "art.scnassets/LetterImages/c.png")
+        let Underlayc = UIImage(named: "art.scnassets/LetterImages/c-.png")
         letterUnderlay = UIImageView(image: Underlayc)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -638,7 +638,7 @@ public class ActivitySelection {
             [CGFloat(0.74),CGFloat(0.75)], //fifth MidPoint2 x, y
             [CGFloat(0.2),CGFloat(0.85)]] //sixth point
         
-        let Underlayd = UIImage(named: "art.scnassets/LetterImages/d.png")
+        let Underlayd = UIImage(named: "art.scnassets/LetterImages/d-.png")
         letterUnderlay = UIImageView(image: Underlayd)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -669,7 +669,7 @@ public class ActivitySelection {
             [CGFloat(0.52),CGFloat(0.86)], //fifth MidPoint2 x, y
             [CGFloat(0.65),CGFloat(0.86)]] //sixth point
         
-        let Underlaye = UIImage(named: "art.scnassets/LetterImages/e.png")
+        let Underlaye = UIImage(named: "art.scnassets/LetterImages/e-.png")
         letterUnderlay = UIImageView(image: Underlaye)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -694,7 +694,7 @@ public class ActivitySelection {
             [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
             [CGFloat(0.6),CGFloat(0.5)]] //sixth point
         
-        let Underlayf = UIImage(named: "art.scnassets/LetterImages/f.png")
+        let Underlayf = UIImage(named: "art.scnassets/LetterImages/f-.png")
         letterUnderlay = UIImageView(image: Underlayf)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -713,7 +713,7 @@ public class ActivitySelection {
             [CGFloat(0.58),CGFloat(0.49)], //fifth MidPoint2 x, y
             [CGFloat(0.82),CGFloat(0.49)]] //sixth point
         
-        let Underlayg = UIImage(named: "art.scnassets/LetterImages/g.png")
+        let Underlayg = UIImage(named: "art.scnassets/LetterImages/g-.png")
         letterUnderlay = UIImageView(image: Underlayg)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -739,7 +739,7 @@ public class ActivitySelection {
             [CGFloat(0.76),CGFloat(0.49)]] //fourth point
         
         
-        let Underlayh = UIImage(named: "art.scnassets/LetterImages/h.png")
+        let Underlayh = UIImage(named: "art.scnassets/LetterImages/h-.png")
         letterUnderlay = UIImageView(image: Underlayh)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -762,7 +762,7 @@ public class ActivitySelection {
             [CGFloat(0.57),CGFloat(0.86)], //fifth MidPoint2 x, y
             [CGFloat(0.73),CGFloat(0.86)]] //sixth point
         
-        let Underlayi = UIImage(named: "art.scnassets/LetterImages/i.png")
+        let Underlayi = UIImage(named: "art.scnassets/LetterImages/i-.png")
         letterUnderlay = UIImageView(image: Underlayi)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -780,7 +780,7 @@ public class ActivitySelection {
             [CGFloat(0.71),CGFloat(0.12)], //fifth MidPoint2 x, y
             [CGFloat(0.89),CGFloat(0.12)]] //sixth point
         
-        let Underlayj = UIImage(named: "art.scnassets/LetterImages/j.png")
+        let Underlayj = UIImage(named: "art.scnassets/LetterImages/j-.png")
         letterUnderlay = UIImageView(image: Underlayj)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -803,7 +803,7 @@ public class ActivitySelection {
             [CGFloat(0.62),CGFloat(0.73)], //fifth MidPoint2 x, y
             [CGFloat(0.8),CGFloat(0.86)]] //sixth point
         
-        let Underlayk = UIImage(named: "art.scnassets/LetterImages/k.png")
+        let Underlayk = UIImage(named: "art.scnassets/LetterImages/k-.png")
         letterUnderlay = UIImageView(image: Underlayk)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -823,7 +823,7 @@ public class ActivitySelection {
             [CGFloat(0.6),CGFloat(0.86)], //fifth MidPoint2 x, y
             [CGFloat(0.78),CGFloat(0.86)]] //sixth point
         
-        let Underlayl = UIImage(named: "art.scnassets/LetterImages/l.png")
+        let Underlayl = UIImage(named: "art.scnassets/LetterImages/l-.png")
         letterUnderlay = UIImageView(image: Underlayl)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -852,7 +852,7 @@ public class ActivitySelection {
             [CGFloat(0.87),CGFloat(0.6)], //fifth MidPoint2 x, y
             [CGFloat(0.87),CGFloat(0.86)]] //sixth point
         
-        let Underlaym = UIImage(named: "art.scnassets/LetterImages/m.png")
+        let Underlaym = UIImage(named: "art.scnassets/LetterImages/m-.png")
         letterUnderlay = UIImageView(image: Underlaym)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -875,7 +875,7 @@ public class ActivitySelection {
             [CGFloat(0.79),CGFloat(0.6)], //fifth MidPoint2 x, y
             [CGFloat(0.79),CGFloat(0.86)]] //sixth point
         
-        let Underlayn = UIImage(named: "art.scnassets/LetterImages/n.png")
+        let Underlayn = UIImage(named: "art.scnassets/LetterImages/n-.png")
         letterUnderlay = UIImageView(image: Underlayn)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -888,7 +888,7 @@ public class ActivitySelection {
             [CGFloat(0.83),CGFloat(0.7)], //first MidPoint2 x, y
             [CGFloat(0.52),CGFloat(0.11)]] //second point x, y
         
-        let Underlayo = UIImage(named: "art.scnassets/LetterImages/o.png")
+        let Underlayo = UIImage(named: "art.scnassets/LetterImages/o-.png")
         letterUnderlay = UIImageView(image: Underlayo)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -906,7 +906,7 @@ public class ActivitySelection {
             [CGFloat(0.64),CGFloat(0.47)], //fifth MidPoint2 x, y
             [CGFloat(0.28),CGFloat(0.5)]] //sixth point
         
-        let Underlayp = UIImage(named: "art.scnassets/LetterImages/p.png")
+        let Underlayp = UIImage(named: "art.scnassets/LetterImages/p-.png")
         letterUnderlay = UIImageView(image: Underlayp)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -924,7 +924,7 @@ public class ActivitySelection {
             [CGFloat(0.74),CGFloat(0.84)], //fifth MidPoint2 x, y
             [CGFloat(0.78),CGFloat(0.88)]] //sixth point
         
-        let Underlayq = UIImage(named: "art.scnassets/LetterImages/q.png")
+        let Underlayq = UIImage(named: "art.scnassets/LetterImages/q-.png")
         letterUnderlay = UIImageView(image: Underlayq)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -947,7 +947,7 @@ public class ActivitySelection {
             [CGFloat(0.62),CGFloat(0.73)], //fifth MidPoint2 x, y
             [CGFloat(0.78),CGFloat(0.86)]] //sixth point
         
-        let Underlayr = UIImage(named: "art.scnassets/LetterImages/r.png")
+        let Underlayr = UIImage(named: "art.scnassets/LetterImages/r-.png")
         letterUnderlay = UIImageView(image: Underlayr)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -960,7 +960,7 @@ public class ActivitySelection {
             [CGFloat(0.7),CGFloat(0.8)], //first MidPoint2 x, y
             [CGFloat(0.23),CGFloat(0.7)]] //second point x, y
         
-        let Underlays = UIImage(named: "art.scnassets/LetterImages/s.png")
+        let Underlays = UIImage(named: "art.scnassets/LetterImages/s-.png")
         letterUnderlay = UIImageView(image: Underlays)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -978,7 +978,7 @@ public class ActivitySelection {
             [CGFloat(0.6),CGFloat(0.12)], //fifth MidPoint2 x, y
             [CGFloat(0.79),CGFloat(0.12)]] //sixth point
         
-        let Underlayt = UIImage(named: "art.scnassets/LetterImages/t.png")
+        let Underlayt = UIImage(named: "art.scnassets/LetterImages/t-.png")
         letterUnderlay = UIImageView(image: Underlayt)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -991,7 +991,7 @@ public class ActivitySelection {
             [CGFloat(0.79),CGFloat(0.7)], //first MidPoint2 x, y
             [CGFloat(0.87),CGFloat(0.12)]] //second point x, y
         
-        let Underlayu = UIImage(named: "art.scnassets/LetterImages/u.png")
+        let Underlayu = UIImage(named: "art.scnassets/LetterImages/u-.png")
         letterUnderlay = UIImageView(image: Underlayu)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -1009,7 +1009,7 @@ public class ActivitySelection {
             [CGFloat(0.75),CGFloat(0.35)], //fifth MidPoint2 x, y
             [CGFloat(0.855),CGFloat(0.13)]] //sixth point
         
-        let Underlayv = UIImage(named: "art.scnassets/LetterImages/v.png")
+        let Underlayv = UIImage(named: "art.scnassets/LetterImages/v-.png")
         letterUnderlay = UIImageView(image: Underlayv)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -1037,7 +1037,7 @@ public class ActivitySelection {
             [CGFloat(0.84),CGFloat(0.35)], //fifth MidPoint2 x, y
             [CGFloat(0.89),CGFloat(0.12)]] //sixth point
         
-        let Underlayw = UIImage(named: "art.scnassets/LetterImages/w.png")
+        let Underlayw = UIImage(named: "art.scnassets/LetterImages/w-.png")
         letterUnderlay = UIImageView(image: Underlayw)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -1055,7 +1055,7 @@ public class ActivitySelection {
             [CGFloat(0.42),CGFloat(0.6)], //fifth MidPoint2 x, y
             [CGFloat(0.235),CGFloat(0.86)]] //sixth point
         
-        let Underlayx = UIImage(named: "art.scnassets/LetterImages/x.png")
+        let Underlayx = UIImage(named: "art.scnassets/LetterImages/x-.png")
         letterUnderlay = UIImageView(image: Underlayx)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -1073,7 +1073,7 @@ public class ActivitySelection {
             [CGFloat(0.43),CGFloat(0.6)], //fifth MidPoint2 x, y
             [CGFloat(0.24),CGFloat(0.86)]] //sixth point
         
-        let Underlayy = UIImage(named: "art.scnassets/LetterImages/y.png")
+        let Underlayy = UIImage(named: "art.scnassets/LetterImages/y-.png")
         letterUnderlay = UIImageView(image: Underlayy)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
@@ -1096,7 +1096,7 @@ public class ActivitySelection {
             [CGFloat(0.59),CGFloat(0.86)], //fifth MidPoint2 x, y
             [CGFloat(0.73),CGFloat(0.86)]] //sixth point
         
-        let Underlayz = UIImage(named: "art.scnassets/LetterImages/z.png")
+        let Underlayz = UIImage(named: "art.scnassets/LetterImages/z-.png")
         letterUnderlay = UIImageView(image: Underlayz)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false

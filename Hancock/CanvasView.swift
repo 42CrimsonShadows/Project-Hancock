@@ -766,6 +766,84 @@ class CanvasView: UIView {
         case "Z":
             print("Load Z narration")
             return ["Narration14", "Narration15", "Narration16", "Narration17", "Narration18"]
+        case "a":
+            print("Load a narration")
+            return ["Narration44", "Narration45", "Narration46", "Narration47", "Narration48"]
+        case "b":
+            print("Load b narration")
+            return ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
+        case "c":
+            print("Load c narration")
+            return ["letter4Finish", "letter5Finish"]
+        case "d":
+            print("Load d narration")
+            return ["ThankYou", "Narration34", "letter3Finish"]
+        case "e":
+            print("Load e narration")
+            return ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
+        case "f":
+            print("Load f narration")
+            return ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
+        case "g":
+            print("Load g narration")
+            return ["Narration4", "Narration5", "Narration6"]
+        case "h":
+            print("Load h narration")
+            return ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
+        case "i":
+            print("Load i narration")
+            return ["Narration30", "Narration31", "Narration32"]
+        case "j":
+            print("Load j narration")
+            return ["Narration28", "Narration29", "Narration30"]
+        case "k":
+            print("Load k narration")
+            return ["Narration3", "Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
+        case "l":
+            print("Load l narration")
+            return ["Narration20", "Narration21", "Narration22"]
+        case "m":
+            print("Load m narration")
+            return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
+        case "n":
+            print("Load n narration")
+            return ["Narration6", "Narration7", "Narration8", "Narration9", "Narration10"]
+        case "o":
+            print("Load o narration")
+            return ["Narration34"]
+        case "p":
+            print("Load p narration")
+            return ["letter4Finish", "Narration6", "ThankYou"]
+        case "q":
+            print("Load q narration")
+            return ["Narration14", "Narration15", "Narration16"]
+        case "r":
+            print("Load r narration")
+            return ["letter2Finish", "Narration13", "letter5Finish", "Narration14", "letter3Finish"]
+        case "s":
+            print("Load s narration")
+            return ["Narration10"]
+        case "t":
+            print("Load t narration")
+            return ["Narration38", "Narration39", "Narration40"]
+        case "u":
+            print("Load u narration")
+            return ["Narration4", "Narration5", "Narration6"]
+        case "v":
+            print("Load v narration")
+            return ["Narration14", "Narration15", "Narration16"]
+        case "w":
+            print("Load w narration")
+            return ["Narration20", "Narration21", "Narration22", "Narration23", "Narration24", "Narration25", "Narration26"]
+        case "x":
+            print("Load x narration")
+            return ["Narration33", "Narration34", "Narration35"]
+        case "y":
+            print("Load y narration")
+            return ["Narration22", "Narration23", "Narration24", "Narration25", "Narration26"]
+        case "z":
+            print("Load z narration")
+            return ["Narration14", "Narration15", "Narration16", "Narration17", "Narration18"]
         default:
             return ["Narration", "Narration"]
         }
