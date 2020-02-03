@@ -1160,27 +1160,26 @@ class ChapterSelection {
                                     "Narration16" : "ch1-E-Line3_01", //3 Amazing
             
                                     //sounds for Letter w lowercase
-                                    "Narration16" : "ch2L-W-Transition1",
-                                    "Narration17" : "ch2L-W-Transition2",
-                                    "Narration18" : "ch2L-W-Intro1",
-                                    "Narration19" : "ch1-E-Line1",    //1 Green to Red
-                                    "Narration20" : "ch1-E-Line2_01", //2 Great Job
-                                    "Narration21" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration22" : "ch1-E-Line3_01", //3 Amazing
-                                    "Narration23" : "ch1-E-Line3_02", //Yellow to Purple
-                                    "Narration24" : "ch1-E-Line4_01", //4 Perfect
+                                    "Narration17" : "ch2L-W-Transition1",
+                                    "Narration18" : "ch2L-W-Transition2",
+                                    "Narration19" : "ch2L-W-Intro1",
+                                    "Narration20" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration21" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration22" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration23" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration24" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration25" : "ch1-E-Line4_01", //4 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration25" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
-                                    "Narration26" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+                                    "Narration26" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration27" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter i lowercase
-                                    "Narration27" : "ch2L-I-Transition1",
-                                    "Narration28" : "ch2L-I-Intro1",
-                                    "Narration29" : "ch1-E-Line1",    //1 Green to Red
-                                    "Narration30" : "ch1-E-Line2_01", //2 Great Job
-                                    "Narration31" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration32" : "ch1-E-Line3_01", //3 Amazing
-
+                                    "Narration28" : "ch2L-I-Transition1",
+                                    "Narration29" : "ch2L-I-Intro1",
+                                    "Narration30" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration31" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration32" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration33" : "ch1-E-Line3_01", //3 Amazing
             
                                     //sounds for Letter t lowercase
                                     "Narration35" : "ch2L-T-Transition1",
