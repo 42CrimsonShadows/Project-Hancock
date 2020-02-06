@@ -1076,17 +1076,14 @@ class ChapterSelection {
         SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-55), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
-        //TO-DO: Replace temp model with Isaac Idle Model
-//        let idleIsaacScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@IdleFixed.dae")!
-        let idleIsaacScene = SCNScene(named: "art.scnassets/3DModels/Chapter2Files/Characters/Piper/Piper@IdleFixed.dae")!
+        let idleIsaacScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@EatingFixed.dae")!
         for child in idleIsaacScene.rootNode.childNodes {
             SideCharacter4idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter4idleNode)
-        //SideCharacter4idleNode.scale = SCNVector3(1, 1, 1)
-        SideCharacter4idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter4idleNode.scale = SCNVector3(0.04, 0.04, 0.04)
         SideCharacter4idleNode.position = SCNVector3(111, 0, -9)
-        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(20), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
         //let idleTylerScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@IdleFixed.dae")!
@@ -1123,8 +1120,8 @@ class ChapterSelection {
 
         
         //load animation for side character 4
-        //prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@IdleFixed", animationIdentifier: "Isaac@IdleFixed-1")
-        //prepareAnimation(withKey: "SideCharacter4Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@TalkingFixed", animationIdentifier: "Isaac@TalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@EatingFixed", animationIdentifier: "Isaac@EatingFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@TalkingFixed", animationIdentifier: "Isaac@TalkingFixed-1")
         
         
         //load animation for side character 5
@@ -1153,33 +1150,34 @@ class ChapterSelection {
             
                                     //sounds for Letter v lowercase
                                     "Narration11" : "ch2L-V-Transition1",
-                                    "Narration12" : "ch2L-V-Intro1",
-                                    "Narration13" : "ch1-E-Line1",    //1 Green to Red
-                                    "Narration14" : "ch1-E-Line2_01", //2 Great Job
-                                    "Narration15" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration16" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration12" : "ch2L-V-Transition2",
+                                    "Narration13" : "ch2L-V-Intro1",
+                                    "Narration14" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration15" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration16" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration17" : "ch1-E-Line3_01", //3 Amazing
             
                                     //sounds for Letter w lowercase
-                                    "Narration17" : "ch2L-W-Transition1",
-                                    "Narration18" : "ch2L-W-Transition2",
-                                    "Narration19" : "ch2L-W-Intro1",
-                                    "Narration20" : "ch1-E-Line1",    //1 Green to Red
-                                    "Narration21" : "ch1-E-Line2_01", //2 Great Job
-                                    "Narration22" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration23" : "ch1-E-Line3_01", //3 Amazing
-                                    "Narration24" : "ch1-E-Line3_02", //Yellow to Purple
-                                    "Narration25" : "ch1-E-Line4_01", //4 Perfect
+                                    "Narration18" : "ch2L-W-Transition1",
+                                    "Narration19" : "ch2L-W-Transition2",
+                                    "Narration20" : "ch2L-W-Intro1",
+                                    "Narration21" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration22" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration23" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration24" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration25" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration26" : "ch1-E-Line4_01", //4 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration26" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
-                                    "Narration27" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+                                    "Narration27" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration28" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter i lowercase
-                                    "Narration28" : "ch2L-I-Transition1",
-                                    "Narration29" : "ch2L-I-Intro1",
-                                    "Narration30" : "ch1-E-Line1",    //1 Green to Red
-                                    "Narration31" : "ch1-E-Line2_01", //2 Great Job
-                                    "Narration32" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration33" : "ch1-E-Line3_01", //3 Amazing
+                                    "Narration29" : "ch2L-I-Transition1",
+                                    "Narration30" : "ch2L-I-Intro1",
+                                    "Narration31" : "ch1-E-Line1",    //1 Green to Red
+                                    "Narration32" : "ch1-E-Line2_01", //2 Great Job
+                                    "Narration33" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration34" : "ch1-E-Line3_01", //3 Amazing
             
                                     //sounds for Letter t lowercase
                                     "Narration35" : "ch2L-T-Transition1",
