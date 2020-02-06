@@ -1087,14 +1087,14 @@ class ChapterSelection {
         
         //Load Idle Animation Node
         //let idleTylerScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@IdleFixed.dae")!
-        let idleTylerScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SurpriseFixed.dae")!
+        let idleTylerScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed.dae")!
         for child in idleTylerScene.rootNode.childNodes {
             SideCharacter5idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter5idleNode)
         SideCharacter5idleNode.scale = SCNVector3(0.01, 0.01, 0.01)
-        SideCharacter5idleNode.position = SCNVector3(144, 0, -5)
-        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        SideCharacter5idleNode.position = SCNVector3(155, 0, -18)
+        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-150), GLKMathDegreesToRadians(0))
         //SideCharacter5idleNode.geometry?.firstMaterial?.lightingModel = .physicallyBased
         
         
@@ -1128,6 +1128,9 @@ class ChapterSelection {
         //prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@IdleFixed", animationIdentifier: "Tyler@IdleFixed-1")
         //prepareAnimation(withKey: "SideCharacter5Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@TalkingFixed", animationIdentifier: "Tyler@TalkingFixed-1")
         //prepareAnimation(withKey: "SideCharacter5Walking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@WalkingFixed", animationIdentifier: "Tyler@WalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Ilde", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed", animationIdentifier: "Hannah@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Walking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@WalkingFixed", animationIdentifier: "Hannah@WalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Talking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SurpriseFixed", animationIdentifier: "Hannah@SurpriseFixed-1")
         
         chapter7NodeArray.append(storyNode)
         return chapter7NodeArray
