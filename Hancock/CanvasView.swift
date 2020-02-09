@@ -435,7 +435,6 @@ class CanvasView: UIView {
                 //A3GreenLine?.isHidden = false
                 playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
-                
                     //wait 1 second
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                         print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[4])")
@@ -792,7 +791,7 @@ class CanvasView: UIView {
             return ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
         case "i":
             print("Load i narration")
-            return ["Narration30", "Narration31", "Narration32"]
+            return ["Narration32", "Narration33", "Narration34"]
         case "j":
             print("Load j narration")
             return ["Narration28", "Narration29", "Narration30"]
@@ -831,10 +830,10 @@ class CanvasView: UIView {
             return ["Narration4", "Narration5", "Narration6"]
         case "v":
             print("Load v narration")
-            return ["Narration14", "Narration15", "Narration16"]
+            return ["Narration15", "Narration16", "Narration17"]
         case "w":
             print("Load w narration")
-            return ["Narration20", "Narration21", "Narration22", "Narration23", "Narration24", "Narration25", "Narration26"]
+            return ["Narration22", "Narration23", "Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
         case "x":
             print("Load x narration")
             return ["Narration33", "Narration34", "Narration35"]

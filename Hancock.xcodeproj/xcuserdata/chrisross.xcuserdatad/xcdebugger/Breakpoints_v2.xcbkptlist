@@ -12,7 +12,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hancock/ViewController.swift"
-            timestampString = "602658765.366662"
+            timestampString = "602913634.0106339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "593"
@@ -29,13 +29,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hancock/ViewController.swift"
-            timestampString = "602658765.368323"
+            timestampString = "602913634.010725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2143"
-            endingLineNumber = "2143"
-            landmarkName = "stopWalkAnimation()"
-            landmarkType = "7">
+            startingLineNumber = "691"
+            endingLineNumber = "691"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

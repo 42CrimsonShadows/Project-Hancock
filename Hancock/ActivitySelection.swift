@@ -9,6 +9,7 @@ public var letterUnderlay = UIImageView()
 
 public class ActivitySelection {
    
+    //MARK: - UPPERCASE LETTERS
     public func loadActivityA() {
         print("Called loadActivityA")
         //add the A CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
@@ -555,6 +556,7 @@ public class ActivitySelection {
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
     }
+//MARK: - LOWERCASE LETTERS
     public func loadActivitya() {
         print("Called loadActivitya")
         //add the A CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
@@ -568,13 +570,7 @@ public class ActivitySelection {
             [CGFloat(0.5),CGFloat(0.15)], //third point x, y... (actually first point again)
             [CGFloat(0.65),CGFloat(0.35)], //third MidPoint1 x, y
             [CGFloat(0.78),CGFloat(0.6)], //third MidPoint2 x, y
-            [CGFloat(0.9),CGFloat(0.85)], //fourth point
-            
-            //Line #3
-            [CGFloat(0.25),CGFloat(0.585)], //fifth point
-            [CGFloat(0.42),CGFloat(0.585)], //fifth MidPoint1 x, y
-            [CGFloat(0.58),CGFloat(0.585)], //fifth MidPoint2 x, y
-            [CGFloat(0.75),CGFloat(0.585)]] //sixth point
+            [CGFloat(0.9),CGFloat(0.85)]] //fourth point
         
         //Set the underlay variables
         let Underlaya = UIImage(named: "art.scnassets/LetterImages/a-.png")
@@ -597,13 +593,7 @@ public class ActivitySelection {
             [CGFloat(0.22),CGFloat(0.12)], //third point x, y... (actually first point again)
             [CGFloat(0.6),CGFloat(0.15)], //third MidPoint1 x, y
             [CGFloat(0.6),CGFloat(0.45)], //third MidPoint2 x, y
-            [CGFloat(0.22),CGFloat(0.5)], //fourth point
-            
-            //Line #3
-            [CGFloat(0.22),CGFloat(0.5)], //fifth point
-            [CGFloat(0.7),CGFloat(0.55)], //fifth MidPoint1 x, y
-            [CGFloat(0.6),CGFloat(0.84)], //fifth MidPoint2 x, y
-            [CGFloat(0.22),CGFloat(0.85)]] //sixth point
+            [CGFloat(0.22),CGFloat(0.5)]] //fourth point
         
         let Underlayb = UIImage(named: "art.scnassets/LetterImages/b-.png")
         letterUnderlay = UIImageView(image: Underlayb)
@@ -655,19 +645,7 @@ public class ActivitySelection {
             [CGFloat(0.27),CGFloat(0.11)], //fifth point
             [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
             [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
-            [CGFloat(0.65),CGFloat(0.11)], //sixth point
-            
-            //Line #3
-            [CGFloat(0.27),CGFloat(0.5)], //fifth point
-            [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
-            [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
-            [CGFloat(0.57),CGFloat(0.5)], //sixth point
-            
-            //Line #4
-            [CGFloat(0.27),CGFloat(0.86)], //fifth point
-            [CGFloat(0.42),CGFloat(0.86)], //fifth MidPoint1 x, y
-            [CGFloat(0.52),CGFloat(0.86)], //fifth MidPoint2 x, y
-            [CGFloat(0.65),CGFloat(0.86)]] //sixth point
+            [CGFloat(0.65),CGFloat(0.11)]] //sixth point
         
         let Underlaye = UIImage(named: "art.scnassets/LetterImages/e-.png")
         letterUnderlay = UIImageView(image: Underlaye)
@@ -686,13 +664,8 @@ public class ActivitySelection {
             [CGFloat(0.27),CGFloat(0.11)], //fifth point
             [CGFloat(0.41),CGFloat(0.11)], //fifth MidPoint1 x, y
             [CGFloat(0.51),CGFloat(0.11)], //fifth MidPoint2 x, y
-            [CGFloat(0.65),CGFloat(0.11)], //sixth point
-            
-            //Line #3
-            [CGFloat(0.27),CGFloat(0.5)], //fifth point
-            [CGFloat(0.38),CGFloat(0.5)], //fifth MidPoint1 x, y
-            [CGFloat(0.48),CGFloat(0.5)], //fifth MidPoint2 x, y
-            [CGFloat(0.6),CGFloat(0.5)]] //sixth point
+            [CGFloat(0.65),CGFloat(0.11)]] //sixth point
+        
         
         let Underlayf = UIImage(named: "art.scnassets/LetterImages/f-.png")
         letterUnderlay = UIImageView(image: Underlayf)
@@ -730,13 +703,7 @@ public class ActivitySelection {
             [CGFloat(0.76),CGFloat(0.11)], //second point
             [CGFloat(0.76),CGFloat(0.35)], //second MidPoint1 x, y
             [CGFloat(0.76),CGFloat(0.6)], //second MidPoint2 x, y
-            [CGFloat(0.76),CGFloat(0.86)], //third point
-            
-            //Line #3
-            [CGFloat(0.22),CGFloat(0.49)], //third point
-            [CGFloat(0.40),CGFloat(0.49)], //third MidPoint1 x, y
-            [CGFloat(0.58),CGFloat(0.49)], //third MidPoint2 x, y
-            [CGFloat(0.76),CGFloat(0.49)]] //fourth point
+            [CGFloat(0.76),CGFloat(0.86)]] //third point
         
         
         let Underlayh = UIImage(named: "art.scnassets/LetterImages/h-.png")
@@ -747,20 +714,16 @@ public class ActivitySelection {
     public func loadActivityi() {
         print("Called loadActivityi")
         //Line #1
-        activityPoints = [[CGFloat(0.48),CGFloat(0.12)], //first point x, y
-            [CGFloat(0.48),CGFloat(0.35)], //first MidPoint1 x, y
-            [CGFloat(0.48),CGFloat(0.6)], //first MidPoint2 x, y
-            [CGFloat(0.48),CGFloat(0.86)], //second point x, y
-            //Line #2
-            [CGFloat(0.27),CGFloat(0.12)], //fifth point
-            [CGFloat(0.42),CGFloat(0.12)], //fifth MidPoint1 x, y
-            [CGFloat(0.57),CGFloat(0.12)], //fifth MidPoint2 x, y
-            [CGFloat(0.73),CGFloat(0.12)], //sixth point
-            //Line #3
-            [CGFloat(0.27),CGFloat(0.86)], //fifth point
-            [CGFloat(0.42),CGFloat(0.86)], //fifth MidPoint1 x, y
-            [CGFloat(0.57),CGFloat(0.86)], //fifth MidPoint2 x, y
-            [CGFloat(0.73),CGFloat(0.86)]] //sixth point
+        activityPoints = [[CGFloat(0.48),CGFloat(0.51)], //first point x, y
+                        [CGFloat(0.48),CGFloat(0.62)], //first MidPoint1 x, y
+                        [CGFloat(0.48),CGFloat(0.74)], //first MidPoint2 x, y
+                        [CGFloat(0.48),CGFloat(0.9)], //second point x, y
+                        //Line #2
+                        [CGFloat(0.48),CGFloat(0.29)], //fifth point
+                        [CGFloat(0.48),CGFloat(0.29)], //fifth MidPoint1 x, y
+                        [CGFloat(0.48),CGFloat(0.29)], //fifth MidPoint2 x, y
+                        [CGFloat(0.48),CGFloat(0.29)]] //sixth point
+
         
         let Underlayi = UIImage(named: "art.scnassets/LetterImages/i-.png")
         letterUnderlay = UIImageView(image: Underlayi)
@@ -815,13 +778,7 @@ public class ActivitySelection {
         activityPoints = [[CGFloat(0.25),CGFloat(0.12)], //first point x, y
             [CGFloat(0.25),CGFloat(0.35)], //first MidPoint1 x, y
             [CGFloat(0.25),CGFloat(0.6)], //first MidPoint2 x, y
-            [CGFloat(0.25),CGFloat(0.86)], //second point x, y
-            
-            //Line #2
-            [CGFloat(0.25),CGFloat(0.86)], //fifth point
-            [CGFloat(0.43),CGFloat(0.86)], //fifth MidPoint1 x, y
-            [CGFloat(0.6),CGFloat(0.86)], //fifth MidPoint2 x, y
-            [CGFloat(0.78),CGFloat(0.86)]] //sixth point
+            [CGFloat(0.25),CGFloat(0.86)]] //second point x, y
         
         let Underlayl = UIImage(named: "art.scnassets/LetterImages/l-.png")
         letterUnderlay = UIImageView(image: Underlayl)
@@ -868,11 +825,6 @@ public class ActivitySelection {
             [CGFloat(0.2),CGFloat(0.12)], //fifth point
             [CGFloat(0.39),CGFloat(0.35)], //fifth MidPoint1 x, y
             [CGFloat(0.59),CGFloat(0.6)], //fifth MidPoint2 x, y
-            [CGFloat(0.79),CGFloat(0.86)], //sixth point
-            //Line #3
-            [CGFloat(0.79),CGFloat(0.12)], //fifth point
-            [CGFloat(0.79),CGFloat(0.35)], //fifth MidPoint1 x, y
-            [CGFloat(0.79),CGFloat(0.6)], //fifth MidPoint2 x, y
             [CGFloat(0.79),CGFloat(0.86)]] //sixth point
         
         let Underlayn = UIImage(named: "art.scnassets/LetterImages/n-.png")
@@ -940,12 +892,7 @@ public class ActivitySelection {
             [CGFloat(0.27),CGFloat(0.12)], //fifth point
             [CGFloat(0.65),CGFloat(0.17)], //fifth MidPoint1 x, y
             [CGFloat(0.64),CGFloat(0.47)], //fifth MidPoint2 x, y
-            [CGFloat(0.27),CGFloat(0.5)], //sixth point
-            //Line #3
-            [CGFloat(0.27),CGFloat(0.5)], //fifth point
-            [CGFloat(0.43),CGFloat(0.6)], //fifth MidPoint1 x, y
-            [CGFloat(0.62),CGFloat(0.73)], //fifth MidPoint2 x, y
-            [CGFloat(0.78),CGFloat(0.86)]] //sixth point
+            [CGFloat(0.27),CGFloat(0.5)]] //sixth point
         
         let Underlayr = UIImage(named: "art.scnassets/LetterImages/r-.png")
         letterUnderlay = UIImageView(image: Underlayr)
@@ -955,10 +902,10 @@ public class ActivitySelection {
     public func loadActivitys() {
         print("Called loadActivitys")
         //Line #1
-        activityPoints = [[CGFloat(0.73),CGFloat(0.15)], //first point x, y
-            [CGFloat(0.34),CGFloat(0.35)], //first MidPoint1 x, y
-            [CGFloat(0.7),CGFloat(0.8)], //first MidPoint2 x, y
-            [CGFloat(0.23),CGFloat(0.7)]] //second point x, y
+        activityPoints = [[CGFloat(0.62),CGFloat(0.52)], //first point x, y
+                        [CGFloat(0.34),CGFloat(0.59)], //first MidPoint1 x, y
+                        [CGFloat(0.68),CGFloat(0.79)], //first MidPoint2 x, y
+                        [CGFloat(0.36),CGFloat(0.8)]] //second point x, y
         
         let Underlays = UIImage(named: "art.scnassets/LetterImages/s-.png")
         letterUnderlay = UIImageView(image: Underlays)
@@ -986,10 +933,16 @@ public class ActivitySelection {
     public func loadActivityu() {
         print("Called loadActivityu")
         //Line #1
-        activityPoints = [[CGFloat(0.12),CGFloat(0.12)], //first point x, y
-            [CGFloat(0.21),CGFloat(0.7)], //first MidPoint1 x, y
-            [CGFloat(0.79),CGFloat(0.7)], //first MidPoint2 x, y
-            [CGFloat(0.87),CGFloat(0.12)]] //second point x, y
+        activityPoints = [[CGFloat(0.28),CGFloat(0.51)], //first point x, y
+                        [CGFloat(0.31),CGFloat(0.77)], //first MidPoint1 x, y
+                        [CGFloat(0.65),CGFloat(0.75)], //first MidPoint2 x, y
+                        [CGFloat(0.66),CGFloat(0.51)], //second point x, y
+            
+                        //Line #2
+                        [CGFloat(0.66),CGFloat(0.51)], //third point
+                        [CGFloat(0.67),CGFloat(0.62)], //fifth MidPoint1 x, y
+                        [CGFloat(0.70),CGFloat(0.75)], //fifth MidPoint2 x, y
+                        [CGFloat(0.77),CGFloat(0.88)]] //fourth point
         
         let Underlayu = UIImage(named: "art.scnassets/LetterImages/u-.png")
         letterUnderlay = UIImageView(image: Underlayu)
@@ -999,15 +952,15 @@ public class ActivitySelection {
     public func loadActivityv() {
         print("Called loadActivityv")
         //Line #1
-        activityPoints = [[CGFloat(0.14),CGFloat(0.13)], //first point x, y
-            [CGFloat(0.25),CGFloat(0.35)], //first MidPoint1 x, y
-            [CGFloat(0.38),CGFloat(0.6)], //first MidPoint2 x, y
-            [CGFloat(0.505),CGFloat(0.84)], //second point x, y
-            //Line #2
-            [CGFloat(0.505),CGFloat(0.84)], //fifth point
-            [CGFloat(0.63),CGFloat(0.6)], //fifth MidPoint1 x, y
-            [CGFloat(0.75),CGFloat(0.35)], //fifth MidPoint2 x, y
-            [CGFloat(0.855),CGFloat(0.13)]] //sixth point
+        activityPoints = [[CGFloat(0.32),CGFloat(0.52)], //first point x, y
+                        [CGFloat(0.37),CGFloat(0.62)], //first MidPoint1 x, y
+                        [CGFloat(0.445),CGFloat(0.76)], //first MidPoint2 x, y
+                        [CGFloat(0.5),CGFloat(0.87)], //second point x, y
+                        //Line #2
+                        [CGFloat(0.5),CGFloat(0.87)], //fifth point
+                        [CGFloat(0.575),CGFloat(0.76)], //fifth MidPoint1 x, y
+                        [CGFloat(0.63),CGFloat(0.62)], //fifth MidPoint2 x, y
+                        [CGFloat(0.68),CGFloat(0.52)]] //sixth point
         
         let Underlayv = UIImage(named: "art.scnassets/LetterImages/v-.png")
         letterUnderlay = UIImageView(image: Underlayv)
@@ -1017,25 +970,25 @@ public class ActivitySelection {
     public func loadActivityw() {
         print("Called loadActivityw")
         //Line #1
-        activityPoints = [[CGFloat(0.11),CGFloat(0.12)], //first point x, y
-            [CGFloat(0.16),CGFloat(0.35)], //first MidPoint1 x, y
-            [CGFloat(0.22),CGFloat(0.6)], //first MidPoint2 x, y
-            [CGFloat(0.275),CGFloat(0.86)], //second point x, y
-            //Line #2
-            [CGFloat(0.275),CGFloat(0.86)], //fifth point
-            [CGFloat(0.35),CGFloat(0.6)], //fifth MidPoint1 x, y
-            [CGFloat(0.44),CGFloat(0.35)], //fifth MidPoint2 x, y
-            [CGFloat(0.495),CGFloat(0.12)], //sixth point
-            //Line #3
-            [CGFloat(0.495),CGFloat(0.12)], //fifth point
-            [CGFloat(0.57),CGFloat(0.35)], //fifth MidPoint1 x, y
-            [CGFloat(0.65),CGFloat(0.6)], //fifth MidPoint2 x, y
-            [CGFloat(0.72),CGFloat(0.86)], //sixth point
-            //Line #4
-            [CGFloat(0.72),CGFloat(0.86)], //fifth point
-            [CGFloat(0.78),CGFloat(0.6)], //fifth MidPoint1 x, y
-            [CGFloat(0.84),CGFloat(0.35)], //fifth MidPoint2 x, y
-            [CGFloat(0.89),CGFloat(0.12)]] //sixth point
+        activityPoints = [[CGFloat(0.14),CGFloat(0.51)], //first point x, y
+                        [CGFloat(0.195),CGFloat(0.61)], //first MidPoint1 x, y
+                        [CGFloat(0.25),CGFloat(0.74)], //first MidPoint2 x, y
+                        [CGFloat(0.317),CGFloat(0.87)], //second point x, y
+                        //Line #2
+                        [CGFloat(0.317),CGFloat(0.86)], //fifth point
+                        [CGFloat(0.39),CGFloat(0.74)], //fifth MidPoint1 x, y
+                        [CGFloat(0.45),CGFloat(0.61)], //fifth MidPoint2 x, y
+                        [CGFloat(0.5),CGFloat(0.51)], //sixth point
+                        //Line #3
+                        [CGFloat(0.5),CGFloat(0.51)], //fifth point
+                        [CGFloat(0.56),CGFloat(0.61)], //fifth MidPoint1 x, y
+                        [CGFloat(0.63),CGFloat(0.75)], //fifth MidPoint2 x, y
+                        [CGFloat(0.69),CGFloat(0.87)], //sixth point
+                        //Line #4
+                        [CGFloat(0.69),CGFloat(0.87)], //fifth point
+                        [CGFloat(0.75),CGFloat(0.74)], //fifth MidPoint1 x, y
+                        [CGFloat(0.82),CGFloat(0.61)], //fifth MidPoint2 x, y
+                        [CGFloat(0.87),CGFloat(0.51)]] //sixth point
         
         let Underlayw = UIImage(named: "art.scnassets/LetterImages/w-.png")
         letterUnderlay = UIImageView(image: Underlayw)

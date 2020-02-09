@@ -1082,7 +1082,7 @@ class ChapterSelection {
         }
         lvlFloor.addChildNode(SideCharacter4idleNode)
         SideCharacter4idleNode.scale = SCNVector3(0.04, 0.04, 0.04)
-        SideCharacter4idleNode.position = SCNVector3(111, 0, -9)
+        SideCharacter4idleNode.position = SCNVector3(111, 0, 3)
         SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(20), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
@@ -1121,7 +1121,7 @@ class ChapterSelection {
         
         //load animation for side character 4
         prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@EatingFixed", animationIdentifier: "Isaac@EatingFixed-1")
-        prepareAnimation(withKey: "SideCharacter4Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@TalkingFixed", animationIdentifier: "Isaac@TalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@TalkingFixed", animationIdentifier: "keyframedAnimations1")
         
         
         //load animation for side character 5
@@ -1129,7 +1129,7 @@ class ChapterSelection {
         //prepareAnimation(withKey: "SideCharacter5Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@TalkingFixed", animationIdentifier: "Tyler@TalkingFixed-1")
         //prepareAnimation(withKey: "SideCharacter5Walking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@WalkingFixed", animationIdentifier: "Tyler@WalkingFixed-1")
         prepareAnimation(withKey: "SideCharacter5Ilde", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed", animationIdentifier: "Hannah@IdleFixed-1")
-        prepareAnimation(withKey: "SideCharacter5Walking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@WalkingFixed", animationIdentifier: "Hannah@WalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Walking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@WalkFixed", animationIdentifier: "Hannah@WalkFixed-1")
         prepareAnimation(withKey: "SideCharacter5Talking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SurpriseFixed", animationIdentifier: "Hannah@SurpriseFixed-1")
         
         chapter7NodeArray.append(storyNode)
