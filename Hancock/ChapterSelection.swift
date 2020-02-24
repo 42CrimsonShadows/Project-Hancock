@@ -1237,6 +1237,109 @@ class ChapterSelection {
         //var array of chapter 9 assest
         var chapter9NodeArray: [SCNNode] = []
         
+        // Load StoryScene Node
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Environment/Chapter9Scene.scn")!
+        storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+        storyNode.scale = SCNVector3(0.03, 0.03, 0.03)
+        storyNode.position = SCNVector3(0, 0, 0)
+        
+        //Load Idle Animation Node
+        let idlePatriciaScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Patricia/Patricia@IdleFixed.dae")!
+        for child in idlePatriciaScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(0.5, 0.5, 0.5)
+        idleNode.position = SCNVector3(-6, 0.3, 15)
+        idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-186), GLKMathDegreesToRadians(0))
+        
+        let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+        
+        
+        //Load Idle Animation Node
+        let idleNikkiScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Nikki/Nikki@IdleFixed.dae")!
+        for child in idleNikkiScene.rootNode.childNodes {
+            SideCharacter1idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter1idleNode)
+        SideCharacter1idleNode.scale = SCNVector3(0.4, 0.4, 0.4)
+        SideCharacter1idleNode.position = SCNVector3(7, 0.3, 16)
+        //SideCharacter1idleNode.eulerAngles = SCNVector3(0, 180, 0)
+        SideCharacter1idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(61), 0)
+        
+        //Load Idle Animation Node
+        let idleBrennonScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Brennon/Brennon@IdleFixed.dae")!
+        for child in idleBrennonScene.rootNode.childNodes {
+            SideCharacter2idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter2idleNode)
+        SideCharacter2idleNode.scale = SCNVector3(0.2, 0.2, 0.2)
+        SideCharacter2idleNode.position = SCNVector3(-7, 0.3, 12)
+        SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(48), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        let idleHeidiScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@IdleFixed.dae")!
+        for child in idleHeidiScene.rootNode.childNodes {
+            SideCharacter3idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter3idleNode)
+        SideCharacter3idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter3idleNode.position = SCNVector3(-2, 9, -14)
+        SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        let idleRyanScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Ryan/Ryan@IdleFixed.dae")!
+        for child in idleRyanScene.rootNode.childNodes {
+            SideCharacter4idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter4idleNode)
+        SideCharacter4idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter4idleNode.position = SCNVector3(5, 0.3, -7.5)
+        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        
+        //Load Idle Animation Node
+        let idleBalloonScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Balloon/Balloon@IdleFixed.dae")!
+        for child in idleBalloonScene.rootNode.childNodes {
+            SideCharacter5idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter4idleNode)
+        SideCharacter5idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter5idleNode.position = SCNVector3(5, 0.3, -7.5)
+        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        
+        
+//        //load all the DAE animations for this Chapter
+//        //load animations for mainCharacter
+//        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@TalkingFixed", animationIdentifier: "Keelie@TalkingFixed-1")
+//        //prepareAnimation(withKey: "MainCharacterClaping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@ClapingFixed", animationIdentifier: "Keelie@ClapingFixed-1")
+//        prepareAnimation(withKey: "MainCharacterJogging", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@JoggingFixed", animationIdentifier: "Keelie@JoggingFixed-1")
+//        //prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WalkingFixed", animationIdentifier: "Keelie@WalkingFixed-1")
+//        prepareAnimation(withKey: "MainCharacterWaving", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WavingFixed", animationIdentifier: "Keeling@WavingFixed-1")
+//
+//        //load animation for side character 1
+//        prepareAnimation(withKey: "SideCharacter1Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@KnotTailFixed", animationIdentifier: "Velma@KnotTailFixed-1")
+//        prepareAnimation(withKey: "SideCharacter1Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@HappyFixed", animationIdentifier: "Velma@HappyFixed-1")
+//
+//        //load animation for side character 2
+//        prepareAnimation(withKey: "SideCharacter2Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HurtTailFixed", animationIdentifier: "Wallace@HurtTailFixed-1")
+//        prepareAnimation(withKey: "SideCharacter2Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HappyFixed", animationIdentifier: "Wallace@HappyFixed-1")
+//
+//
+//        //load animation for side character 3
+//        prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@IdleFixed", animationIdentifier: "Winona@IdleFixed-1")
+//        prepareAnimation(withKey: "SideCharacter3Clapping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ClappingFixed", animationIdentifier: "Winona@ClappingFixed-1")
+//        prepareAnimation(withKey: "SideCharacter3Comforting", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ComfortingFixed", animationIdentifier: "Winona@ComfortingFixed-1")
+//
+//        //load animation for side character 4
+//        prepareAnimation(withKey: "SideCharacter4Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@StomachAcheFixed", animationIdentifier: "Manny@StomachAcheFixed-1")
+//        prepareAnimation(withKey: "SideCharacter4Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@EatingBananaFixed", animationIdentifier: "Manny@EatingBananaFixed-1")
+//
+//        //load animation for side character 5
+//        prepareAnimation(withKey: "SideCharacter5Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@HurtFootFixed", animationIdentifier: "Ashton@HurtFootFixed-1")
+//        prepareAnimation(withKey: "SideCharacter5Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@CastFixed", animationIdentifier: "Ashton@CastFixed-1")
+//
+        chapter9NodeArray.append(storyNode)
+        
         return chapter9NodeArray
     }
     
@@ -1270,14 +1373,57 @@ class ChapterSelection {
     }
     
     func loadChapter10SoundFiles() -> [String: String] {
-        let chapter10SoundArray = ["Narration1" : "Line1",
-                                  "Narration2" : "Line2",
-                                  "Narration3" : "Line3",
-                                  "Narration4" : "Line4",
-                                  "Narration5" : "Line5",
-                                  "Narration6" : "Line6",
-                                  "Narration7" : "Line7",
-                                  "Narration8" : "Line8",
+        let chapter10SoundArray = [
+            
+                        //Intro Narration
+                                  "Narration1" : "ch5L-Intro1", //Music is one of the best things about life
+                                  "Narration2" : "ch5L-Intro2", //Finn has always loved music
+                                  "Narration3" : "ch5L-Intro3", //Let's help Finn find the instrument he likes best
+                                  
+                        //Letter F Narration
+                                  "Narration4" : "ch5L-F-Intro", //Can you trace the letter F
+                                  "Narration5" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration6" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration7" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration8" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration9" : "ch1-E-Line3_02", //Yellow to Purple
+        
+                        //Letter Q Narration
+                                  "Narration10" : "ch5L-Q-TransitionToQ",// Flute is neat, but Finn wants to try more
+                                  "Narration11" : "ch5L-Q-Intro", //Trace the letter Q to try the Quill
+                                  "Narration12" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration13" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration14" : "ch1-E-Line2_02", //Blue to Orange
+            
+                        //Letter X Narration
+                                  "Narration15" : "ch5L-X-TransitionToX", //Finn not a fan of the Quill and wants to try another
+                                  "Narration16" : "ch5L-X-Intro", //Trace the Letter X to try the xylophone
+                                  "Narration17" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration18" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration19" : "ch1-E-Line2_02", //Blue to Orange
+                                  
+                       //Letter Z Narration
+                                  "Narration20" : "ch5L-Z-TransitionToZ", //Intro to Zambomba Drum
+                                  "Narration21" : "ch5L-Z-Intro", //Trace the Letter Z to Try the Zambomba
+                                  "Narration22" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration23" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration24" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration25" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration26" : "ch1-E-Line3_02", //Yellow to Purple
+                                  
+                      //Final Narration
+                                  "Narration27" : "Final1", //Zambomba isnt for Finn
+                                  "Narration28" : "Final2", //Finn knows what instrument he wants to pick
+                                  "Narration29" : "Final3", //Finn is going to get the flute
+                                  "Narration30" : "Final4", //Thank you - Good Job - final line of narration
+                                  
+                     //Letter Completion Feedback
+                                  "Narration31" : "ch5L-F-GreatJob", //Good Job
+                                  "Narration32" : "ch5L-Q-Perfect", //Perfect
+                                  "Narration33" : "ch5L-X-Wonderful", //Wonderful
+                                  "Narration34" : "ch5L-Z-YoureARockstar", //You're a Rockstar 
+                                  
+                    //Extra Template
                                   "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing1" : "bell-ding_01",
