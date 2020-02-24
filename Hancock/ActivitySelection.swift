@@ -920,10 +920,10 @@ public class ActivitySelection {
             [CGFloat(0.5),CGFloat(0.6)], //first MidPoint2 x, y
             [CGFloat(0.5),CGFloat(0.86)], //second point x, y
             //Line #2
-            [CGFloat(0.21),CGFloat(0.12)], //fifth point
-            [CGFloat(0.40),CGFloat(0.12)], //fifth MidPoint1 x, y
-            [CGFloat(0.6),CGFloat(0.12)], //fifth MidPoint2 x, y
-            [CGFloat(0.79),CGFloat(0.12)]] //sixth point
+            [CGFloat(0.28),CGFloat(0.49)], //fifth point
+            [CGFloat(0.41),CGFloat(0.49)], //fifth MidPoint1 x, y
+            [CGFloat(0.59),CGFloat(0.49)], //fifth MidPoint2 x, y
+            [CGFloat(0.72),CGFloat(0.49)]] //sixth point
         
         let Underlayt = UIImage(named: "art.scnassets/LetterImages/t-.png")
         letterUnderlay = UIImageView(image: Underlayt)

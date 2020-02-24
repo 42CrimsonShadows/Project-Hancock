@@ -535,7 +535,7 @@ extension ViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     //move the main character to the first letter
-                    self.toggleAudioNarrationFile(file: "Narration18", type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
                 })
                 print("move floor for chapter seven, letter 4")
                 print("Ursa walks to Windsor")
@@ -643,8 +643,6 @@ extension ViewController {
                     print("do chapter 6 stuff")
             case chapterSeven:
                 //FIXME: 7 letter 5
-                    
-                self.toggleAudioNarrationFile(file: "Narration29", type: "mp3")
                 
                 //show the main character as idle
                 self.stopTransitionAnimation(key: "MainCharacterIdle")
@@ -825,7 +823,7 @@ extension ViewController {
             case chapterSeven:
                 //FIXME: 7 letter 6
                 
-                toggleAudioNarrationFile(file: "Narration35", type: "mp3") //10 sec long
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "mp3") //10 sec long
                 
                 //show the main character as walking
                 stopTransitionAnimation(key: "MainCharacterIdle")

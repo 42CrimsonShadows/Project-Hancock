@@ -28,25 +28,29 @@ extension ViewController{
                 print("Nothing to shatter for this chapter")
             case chapterSeven:
                 //FIXME: chapter 7 letter 6
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish1"]!, type: "mp3")
+                
+                
+                self.stopAnimateSideCharacter(key: "SideCharacter5Talking", sideCharacter: "Tyler")
+                self.startAnimateSideCharacter(key: "SideCharacter5Walking", sideCharacter: "Tyler")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{
-                    self.toggleAudioNarrationFile(file: "Finish1", type: "mp3")
-                    
-                    self.stopAnimateSideCharacter(key: "SideCharacter5Talking", sideCharacter: "Tyler")
-                    self.startAnimateSideCharacter(key: "SideCharacter5Walking", sideCharacter: "Tyler")
-                    
-                    //move tyler to Ursa's parents∂
-                    let rotateTyler1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-195)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //turn toward stream path
-                    let moveTyler1 = SCNAction.move(to: SCNVector3(146, 1.75, 6.5), duration: 3)  //move onto the rocks
-                    let rotateTyler2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-145)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //turn toward other side of the stream
-                    let moveTyler2 = SCNAction.move(to: SCNVector3(174, 0, 50), duration: 6)  //move to the other side of the steam
-                    let rotateTyler4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(65)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1) //turn around to face Ursa as she meets her parents
-                    let TylerMoveSequence = SCNAction.sequence([rotateTyler1, moveTyler1, rotateTyler2, moveTyler2, rotateTyler4])
+                    //move tyler to Ursa's parents (14 second walk)
+                    let rotateTyler1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-24)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //turn toward stream path
+                    let moveTyler1 = SCNAction.move(to: SCNVector3(144, 0, -5), duration: 2)  //move toward the stream path
+                    let rotateTyler2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(11)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //turn toward the rocks ion the stream
+                    let moveTyler2 = SCNAction.move(to: SCNVector3(146, 1.75, 6.5), duration: 3)  //move onto the rocks
+                    let rotateTyler4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(30)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1) //turn toward Ursa's parents
+                    let moveTyler3 = SCNAction.move(to: SCNVector3(174, 0, 50), duration: 6)  //move to the Ursa's parents
+                    let rotateTyler5 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-150)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1) //turn around to face Ursa as she meets her parents
+                    let TylerMoveSequence = SCNAction.sequence([rotateTyler1, moveTyler1, rotateTyler2, moveTyler2, rotateTyler4, moveTyler3, rotateTyler5])
                     self.charcterFiveIdle?.parent?.runAction(TylerMoveSequence)
                     
-                    //stop tyler and start idle animation
-                    self.stopAnimateSideCharacter(key: "SideCharacter5Walking", sideCharacter: "Tyler")
-                    self.startAnimateSideCharacter(key: "SideCharacter5Standby", sideCharacter: "Tyler")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute:{
+                        //stop tyler and start idle animation
+                        self.stopAnimateSideCharacter(key: "SideCharacter5Walking", sideCharacter: "Tyler")
+                        self.startAnimateSideCharacter(key: "SideCharacter5Standby", sideCharacter: "Tyler")
+                    })
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute:{
                         
@@ -75,7 +79,8 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 16, execute: {
                             self.stopTransitionAnimation(key: "MainCharacterWalking")
                             self.startTransitionAnimation(key: "MainCharacterIdle")
-                            self.toggleAudioNarrationFile(file: "Finish2", type: "mp3")
+                            //Final narration
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish2"]!, type: "mp3")
                             
                             //wait while finaldialog plays
                             DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
@@ -286,10 +291,13 @@ extension ViewController{
                 self.stopAnimateSideCharacter(key: "SideCharacter3Talking", sideCharacter: "Windsor")
                 self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Windsor")
                 
+                //Ursa climbs the hill
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3")
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //animate the main character to rotate a bit on the y axis
                     self.mainCharacterIdle?.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(100)), z: 0, duration: 1))
-                    
+   
                     //wait 4 seconds and then play animation
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         self.playWalkAnimation()

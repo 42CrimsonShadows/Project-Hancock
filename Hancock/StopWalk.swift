@@ -832,6 +832,7 @@ extension ViewController{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //play game intro (segway into letter activity)
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3")
+                    
                     self.stopAnimateSideCharacter(key: "SideCharacter4Talking", sideCharacter: "Isaac")
                     self.startAnimateSideCharacter(key: "SideCharacter4Talking", sideCharacter: "Isaac")
                     
@@ -971,13 +972,13 @@ extension ViewController{
                 FXPlayer.setVolume(1, fadeDuration: 0)
                 
                 //play game intro (segway into letter activity)
-                self.toggleAudioNarrationFile(file: "Narration36", type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "mp3")
                 
                 stopTransitionAnimation(key: "MainCharacterWalking")
                 startTransitionAnimation(key: "MainCharacterIdle")
                     
                 //rotate Tyler to look at Ursa
-                self.charcterFiveIdle?.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-230)), z: 0, duration: 1))
+                self.charcterFiveIdle?.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-60)), z: 0, duration: 1))
                 
                 //start tylers talking animation
                 self.stopAnimateSideCharacter(key: "SideCharacter5Fishing", sideCharacter: "Tyler")

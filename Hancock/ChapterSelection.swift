@@ -1092,11 +1092,9 @@ class ChapterSelection {
             SideCharacter5idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter5idleNode)
-        SideCharacter5idleNode.scale = SCNVector3(0.01, 0.01, 0.01)
-        SideCharacter5idleNode.position = SCNVector3(155, 0, -18)
-        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-150), GLKMathDegreesToRadians(0))
-        //SideCharacter5idleNode.geometry?.firstMaterial?.lightingModel = .physicallyBased
-        
+        SideCharacter5idleNode.scale = SCNVector3(2.5, 2.5, 2.5)
+        SideCharacter5idleNode.position = SCNVector3(148, 0, -13.5)
+        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(66.5), GLKMathDegreesToRadians(0))
         
         //load all the DAE animations for this Chapter
         //load animations for mainCharacter
