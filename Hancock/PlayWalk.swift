@@ -643,15 +643,15 @@ extension ViewController {
                     print("do chapter 6 stuff")
             case chapterSeven:
                 //FIXME: 7 letter 5
+                    
+                self.toggleAudioNarrationFile(file: "Narration29", type: "mp3")
                 
                 //show the main character as idle
-                stopTransitionAnimation(key: "MainCharacterIdle")
-                startTransitionAnimation(key: "MainCharacterWalking")
+                self.stopTransitionAnimation(key: "MainCharacterIdle")
+                self.startTransitionAnimation(key: "MainCharacterWalking")
                 
                 //play walk sound
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
-                
-                self.toggleAudioNarrationFile(file: "Narration29", type: "mp3")
+                self.toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
                 
                 //play Ursa's roation sequence
                 let rotateUrsa1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(100)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 3.5) //to hill bottom
@@ -659,7 +659,7 @@ extension ViewController {
                 let rotateUrsa3 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(100)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 9.5) //level out to top
                 let rotateUrsa4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(37)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1) //turn to look at Isaac
                 let chapter7Letter5RotationSeq = SCNAction.sequence([rotateUrsa1, rotateUrsa2, rotateUrsa3, rotateUrsa4])
-                mainCharacterIdle?.parent?.runAction(chapter7Letter5RotationSeq)
+                self.mainCharacterIdle?.parent?.runAction(chapter7Letter5RotationSeq)
                 
                 //play the floor move sequence
                 let moveScene1 = SCNAction.move(to: SCNVector3(-49 ,0 ,40), duration: 4) //to hill bottom
@@ -667,7 +667,7 @@ extension ViewController {
                 let moveScene3 = SCNAction.move(to: SCNVector3(-95 ,-15.2 ,48), duration: 5) //to top of hill
                 let moveScene4 = SCNAction.move(to: SCNVector3(-95 ,-15.2 ,48), duration: 1) //stay at hilltop while rotating Ursa
                 let chapter7Letter5MoveSeq = SCNAction.sequence([moveScene1, moveScene2, moveScene3, moveScene4])
-                mainFloor.runAction((chapter7Letter5MoveSeq), completionHandler: stopWalkAnimation)
+                    self.mainFloor.runAction((chapter7Letter5MoveSeq), completionHandler: self.stopWalkAnimation)
                 
                 print("move floor for chapter seven, letter 5")
                 print("Ursa walks to top of the hill and sees Isaac")
@@ -825,35 +825,34 @@ extension ViewController {
             case chapterSeven:
                 //FIXME: 7 letter 6
                 
-                //show the main character as idle
+                toggleAudioNarrationFile(file: "Narration35", type: "mp3") //10 sec long
+                
+                //show the main character as walking
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
                 //play walk sound
                 toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
-                toggleAudioNarrationFile(file: "Narration29", type: "mp3") //11 sec long
                 
                 //play Ursa's roation sequence
                 let rotateUrsa1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(43)), y: CGFloat(GLKMathDegreesToRadians(37)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 3) //to hill mid point
                 let rotateUrsa2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-34.5)), y: CGFloat(GLKMathDegreesToRadians(37)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 2) //to hill bottom
-                let rotateUrsa3 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(45)), y: CGFloat(GLKMathDegreesToRadians(37)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 2) //to top of log
-                let rotateUrsa4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-45)), y: CGFloat(GLKMathDegreesToRadians(37)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 2) //down far side of log
-                let rotateUrsa5 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(60)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1) //down far side of log
-                let chapter7Letter6RotationSeq = SCNAction.sequence([rotateUrsa1, rotateUrsa2, rotateUrsa3, rotateUrsa4, rotateUrsa5])
+                let rotateUrsa3 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(45)), y: CGFloat(GLKMathDegreesToRadians(37)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //to top of log
+                let rotateUrsa33 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(45)), y: CGFloat(GLKMathDegreesToRadians(37)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1.5) //hold till top of log
+                let rotateUrsa4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-45)), y: CGFloat(GLKMathDegreesToRadians(37)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //down far side of log
+                let rotateUrsa44 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(-45)), y: CGFloat(GLKMathDegreesToRadians(37)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1.5) //hold down far side of log
+                let rotateUrsa5 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(60)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //level out to tyler
+                let chapter7Letter6RotationSeq = SCNAction.sequence([rotateUrsa1, rotateUrsa2, rotateUrsa3, rotateUrsa33, rotateUrsa4, rotateUrsa44, rotateUrsa5])
                 mainCharacterIdle?.parent?.runAction(chapter7Letter6RotationSeq)
                 
                 //play the floor move sequence
-                let moveScene1 = SCNAction.move(to: SCNVector3(-106 ,-11 ,29), duration: 3) //to hill mid point
+                let moveScene1 = SCNAction.move(to: SCNVector3(-109 ,-8.8 ,25.5), duration: 3) //to hill mid point
                 let moveScene2 = SCNAction.move(to: SCNVector3(-112 ,-1.75 ,17.5), duration: 2) //to hill bottom
                 let moveScene3 = SCNAction.move(to: SCNVector3(-118.5 ,-4 ,13), duration: 2) //to top of log
                 let moveScene4 = SCNAction.move(to: SCNVector3(-121.5 ,-1.5 ,11.5), duration: 2) //to over log
                 let moveScene5 = SCNAction.move(to: SCNVector3(-131.5 ,0 ,6), duration: 3) //to tyler at the stream
                 let chapter7Letter6MoveSeq = SCNAction.sequence([moveScene1, moveScene2, moveScene3, moveScene4, moveScene5])
                 mainFloor.runAction((chapter7Letter6MoveSeq), completionHandler: stopWalkAnimation)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                    self.toggleAudioNarrationFile(file: "Narration35", type: "mp3")
-                })
                 
                 print("move floor for chapter seven, letter 6")
                 print("Ursa walk over the log and goes to Tyler")

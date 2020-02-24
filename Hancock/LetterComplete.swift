@@ -36,15 +36,19 @@ extension ViewController{
                     self.startAnimateSideCharacter(key: "SideCharacter5Walking", sideCharacter: "Tyler")
                     
                     //move tyler to Ursa's parents∂
-                    let rotateTyler1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-195)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1) //turn toward stream path
+                    let rotateTyler1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-195)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //turn toward stream path
                     let moveTyler1 = SCNAction.move(to: SCNVector3(146, 1.75, 6.5), duration: 3)  //move onto the rocks
-                    let rotateTyler2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-145)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 3) //turn toward other side of the stream
+                    let rotateTyler2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-145)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //turn toward other side of the stream
                     let moveTyler2 = SCNAction.move(to: SCNVector3(174, 0, 50), duration: 6)  //move to the other side of the steam
                     let rotateTyler4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(65)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 1) //turn around to face Ursa as she meets her parents
                     let TylerMoveSequence = SCNAction.sequence([rotateTyler1, moveTyler1, rotateTyler2, moveTyler2, rotateTyler4])
                     self.charcterFiveIdle?.parent?.runAction(TylerMoveSequence)
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute:{
+                    //stop tyler and start idle animation
+                    self.stopAnimateSideCharacter(key: "SideCharacter5Walking", sideCharacter: "Tyler")
+                    self.startAnimateSideCharacter(key: "SideCharacter5Standby", sideCharacter: "Tyler")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute:{
                         
                         //show the main character as idle
                         self.stopTransitionAnimation(key: "MainCharacterIdle")
@@ -54,26 +58,27 @@ extension ViewController{
                         self.toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
                         
                         //rotate Ursa
-                        let rotateUrsa1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(20)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 5) //hold rotate while moving
-                        let rotateUrsa2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(20)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //look toward other side of the stream
-                        let rotateUrsa3 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(45)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //look toward other side of the stream
-                        let rotateUrsa4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(45)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //look toward other side of the stream
+                        let rotateUrsa1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(60)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 5) //hold rotate while moving
+                        let rotateUrsa2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(45)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //look toward the rock
+                        let rotateUrsa3 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(45)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 5) //hold rotate while moving to the rock
+                        let rotateUrsa4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(10)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //look toward Ursa's parents
                         let chapter7FinalRotateSeq = SCNAction.sequence([rotateUrsa1, rotateUrsa2, rotateUrsa3, rotateUrsa4])
                         self.mainCharacterIdle?.parent?.runAction(chapter7FinalRotateSeq)
                         
                         //play Ursa's move sequence
                         let moveScene1 = SCNAction.move(to: SCNVector3(-138 ,-1.1 ,-12.5), duration: 5) //to the stream rocks
-                        let moveScene2 = SCNAction.move(to: SCNVector3(-151 ,0 ,-28), duration: 5) //move across the stream
-                        let moveScene3 = SCNAction.move(to: SCNVector3(-152.5 ,0 ,50), duration: 5) //move to Ursa's parents
-                        let chapter7FinalMoveSeq = SCNAction.sequence([rotateUrsa1, moveScene1, rotateUrsa2, moveScene2, moveScene3])
+                        let moveScene2 = SCNAction.move(to: SCNVector3(-151 ,0 ,-28), duration: 5) //move to the stream rock
+                        let moveScene3 = SCNAction.move(to: SCNVector3(-152.5 ,0 ,-50), duration: 5) //move to Ursa's parents
+                        let chapter7FinalMoveSeq = SCNAction.sequence([moveScene1, moveScene2, moveScene3])
                         self.mainFloor.runAction(chapter7FinalMoveSeq)
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 16, execute: {
                             self.stopTransitionAnimation(key: "MainCharacterWalking")
                             self.startTransitionAnimation(key: "MainCharacterIdle")
                             self.toggleAudioNarrationFile(file: "Finish2", type: "mp3")
                             
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
+                            //wait while finaldialog plays
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
                                 self.resetGame()
                             })
                         })
@@ -156,7 +161,7 @@ extension ViewController{
                 self.startAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Isaac")
                 
                 //wait 4 seconds and then play animation
-                DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.playWalkAnimation()
                 })
                 

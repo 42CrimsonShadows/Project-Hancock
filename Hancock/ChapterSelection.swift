@@ -1087,7 +1087,7 @@ class ChapterSelection {
         
         //Load Idle Animation Node
         //let idleTylerScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@IdleFixed.dae")!
-        let idleTylerScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed.dae")!
+        let idleTylerScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@FishingFixed.dae")!
         for child in idleTylerScene.rootNode.childNodes {
             SideCharacter5idleNode.addChildNode(child)
         }
@@ -1125,12 +1125,10 @@ class ChapterSelection {
         
         
         //load animation for side character 5
-        //prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@IdleFixed", animationIdentifier: "Tyler@IdleFixed-1")
-        //prepareAnimation(withKey: "SideCharacter5Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@TalkingFixed", animationIdentifier: "Tyler@TalkingFixed-1")
-        //prepareAnimation(withKey: "SideCharacter5Walking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@WalkingFixed", animationIdentifier: "Tyler@WalkingFixed-1")
-        prepareAnimation(withKey: "SideCharacter5Ilde", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@IdleFixed", animationIdentifier: "Hannah@IdleFixed-1")
-        prepareAnimation(withKey: "SideCharacter5Walking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@WalkFixed", animationIdentifier: "Hannah@WalkFixed-1")
-        prepareAnimation(withKey: "SideCharacter5Talking", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SurpriseFixed", animationIdentifier: "Hannah@SurpriseFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@FishingFixed", animationIdentifier: "Tyler@FishingFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Standby", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@IdleFixed", animationIdentifier: "Tyler@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Talking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@TalkingFixed", animationIdentifier: "Tyler@TalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Walking", sceneName: "art.scnassets/3DModels/Chapter7Files/Characters/Tyler/Tyler@WalkingFixed", animationIdentifier: "Tyler@WalkingFixed-1")
         
         chapter7NodeArray.append(storyNode)
         return chapter7NodeArray
