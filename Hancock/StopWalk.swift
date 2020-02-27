@@ -588,14 +588,14 @@ extension ViewController{
                     //play game intro2 (segway into first letter activity)
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
                     
+                    //Windsor starts talking
+                    self.stopAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Windsor")
+                    self.startAnimateSideCharacter(key: "SideCharacter3Talking", sideCharacter: "Windsor")
+                    
                     //wait 9 seconds for game intro2 to finish
                     DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                         print("Prepare to shatter letter 4")
                         self.shatterLetterFour = true
-                        
-                        //Windsor starts talking
-                        self.stopAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Windsor")
-                        self.startAnimateSideCharacter(key: "SideCharacter3Talking", sideCharacter: "Windsor")
                         
                         self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration20"]!, type: "mp3")
                         
@@ -970,7 +970,7 @@ extension ViewController{
                 //stop playing the walking sound
                 FXPlayer.stop()
                 FXPlayer.setVolume(1, fadeDuration: 0)
-                
+
                 //play game intro (segway into letter activity)
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "mp3")
                 
