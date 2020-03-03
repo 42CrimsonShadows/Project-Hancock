@@ -1208,11 +1208,101 @@ class ChapterSelection {
         //var array of chapter 8 assest
         var chapter8NodeArray: [SCNNode] = []
         
+            // Load StoryScene Node
+            let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Environments/Chapter8Scene.scn")!
+            storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+            storyNode.scale = SCNVector3(0.03, 0.03, 0.03)
+            storyNode.position = SCNVector3(0, 0, 0)
+        
+            //Load Idle Animation Node
+            let idleLionelScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Lionel/Lionel@SittingIdleFixed.dae")!
+            for child in idleLionelScene.rootNode.childNodes {
+                idleNode.addChildNode(child)
+            }
+            storyNode.addChildNode(idleNode)
+            idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
+            idleNode.position = SCNVector3(0, 9.25, 0)
+            idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        
+            let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+        
+        
+            //Load Idle Animation Node
+            let idleYogiScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Yogi/Yogi@IdleFixed.dae")!
+            for child in idleYogiScene.rootNode.childNodes {
+                SideCharacter1idleNode.addChildNode(child)
+            }
+            lvlFloor.addChildNode(SideCharacter1idleNode)
+            SideCharacter1idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
+            SideCharacter1idleNode.position = SCNVector3(0, 9.25, 0)
+            SideCharacter1idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(0), 0)
+        
+            //Load Idle Animation Node
+            let idleKimScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@IdleFixed.dae")!
+            for child in idleKimScene.rootNode.childNodes {
+                SideCharacter2idleNode.addChildNode(child)
+            }
+            lvlFloor.addChildNode(SideCharacter2idleNode)
+            SideCharacter2idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
+            SideCharacter2idleNode.position = SCNVector3(0, 5, 0)
+            SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        
+            //Load Idle Animation Node
+            let idleErnieScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Ernie/Ernie@LayingFixed.dae")!
+            for child in idleErnieScene.rootNode.childNodes {
+                SideCharacter3idleNode.addChildNode(child)
+            }
+            lvlFloor.addChildNode(SideCharacter3idleNode)
+            SideCharacter3idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
+            SideCharacter3idleNode.position = SCNVector3(0, 0.75, 0)
+            SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        
+            //Load Idle Animation Node
+            let idleIsaacScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@EatingFixed.dae")!
+            for child in idleIsaacScene.rootNode.childNodes {
+                SideCharacter4idleNode.addChildNode(child)
+            }
+        
+            //load all the DAE animations for this Chapter
+            //load animations for mainCharacter
+            prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Lionel/Lionel@IdleFixede", animationIdentifier: "Lionel@IdleFixede-1")
+            prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Lionel/Lionel@WalkingFixed", animationIdentifier: "Lionel@WalkingFixed-1")
+            prepareAnimation(withKey: "MainCharacterCheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Lionel/Lionel@HappyFixed", animationIdentifier: "Lionel@HappyFixed-1")
+            prepareAnimation(withKey: "MainCharacterLaying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Lionel/Lionel@SittingIdleFixed", animationIdentifier: "Lionel@SittingIdleFixed-1")
+            prepareAnimation(withKey: "MainCharacterStandup", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Lionel/Lionel@StandingUpFixed", animationIdentifier: "Lionel@StandingUpFixed-1")
+            prepareAnimation(withKey: "MainCharacterStairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Lionel/Lionel@StairwalkFixed", animationIdentifier: "Lionel@StairwalkFixed-1")
+        
+        
+            //load animation for side character 1
+            prepareAnimation(withKey: "SideCharacter1Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Yogi/Yogi@IdleFixed", animationIdentifier: "Yogi@IdleFixed-1")
+            prepareAnimation(withKey: "SideCharacter1Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Yogi/Yogi@CheeringFixed", animationIdentifier: "Yogi@CheeringFixed-1")
+            prepareAnimation(withKey: "SideCharacter1Sitting", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Yogi/Yogi@SittingFixed", animationIdentifier: "Yogi@SittingFixed-1")
+            prepareAnimation(withKey: "SideCharacter1Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Yogi/Yogi@WalkingFixed", animationIdentifier: "Yogi@WalkingFixed-1")
+            prepareAnimation(withKey: "SideCharacter1Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Yogi/Yogi@StairwalkFixed", animationIdentifier: "Yogi@StairwalkFixed-1")
+        
+            //load animation for side character 2
+            prepareAnimation(withKey: "SideCharacter2Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@HappyFixed", animationIdentifier: "Kim@HappyFixed-1")
+            prepareAnimation(withKey: "SideCharacter2Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@IdleFixed", animationIdentifier: "Kim@IdleFixed-1")
+            prepareAnimation(withKey: "SideCharacter2Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@LayingFixed", animationIdentifier: "Kim@LayingFixed-1")
+            prepareAnimation(withKey: "SideCharacter2Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@StairwalkFixed", animationIdentifier: "Kim@StairwalkFixed-1")
+            prepareAnimation(withKey: "SideCharacter2Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@WalkingFixed", animationIdentifier: "Kim@WalkingFixed-1")
+        
+            //load animation for side character 3
+            prepareAnimation(withKey: "SideCharacter3Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@HappyFixed", animationIdentifier: "Ernie@HappyFixed-1")
+            prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@IdleFixed", animationIdentifier: "Ernie@IdleFixed-1")
+            prepareAnimation(withKey: "SideCharacter3Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed", animationIdentifier: "Ernie@LayingFixed-1")
+            prepareAnimation(withKey: "SideCharacter3Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StairwalkFixed", animationIdentifier: "Ernie@StairwalkFixed-1")
+            prepareAnimation(withKey: "SideCharacter3Standup", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StandupFixed", animationIdentifier: "Ernie@StandupFixed-1")
+            prepareAnimation(withKey: "SideCharacter3Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@WalkingFixed", animationIdentifier: "Ernie@WalkingFixed-1")
+        
+            chapter8NodeArray.append(storyNode)
         return chapter8NodeArray
     }
     
     func loadChapter8SoundFiles() -> [String: String] {
-        let chapter8SoundArray = ["Narration1" : "Line1",
+        let chapter8SoundArray = [
+                                  //Letter L
+                                  "Narration1" : "Line1",
                                   "Narration2" : "Line2",
                                   "Narration3" : "Line3",
                                   "Narration4" : "Line4",
@@ -1220,6 +1310,14 @@ class ChapterSelection {
                                   "Narration6" : "Line6",
                                   "Narration7" : "Line7",
                                   "Narration8" : "Line8",
+                                  
+                                  //Letter Y
+            
+                                  //Letter K
+            
+                                  //Letter E
+                                  
+                                  //extra chapter FX sounds
                                   "BackgroundSound" : "Birds2",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing1" : "bell-ding_01",

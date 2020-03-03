@@ -4,8 +4,8 @@
     <contributor>
       <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
     </contributor>
-    <created>2020-03-02T19:45:24Z</created>
-    <modified>2020-03-02T19:45:24Z</modified>
+    <created>2020-03-03T04:56:28Z</created>
+    <modified>2020-03-03T04:56:28Z</modified>
     <unit meter="1.000000"/>
     <up_axis>Y_UP</up_axis>
   </asset>
@@ -1341,173 +1341,175 @@
   </library_controllers>
   <library_visual_scenes>
     <visual_scene id="scene282">
-      <node id="Yogurt" name="Yogurt">
-        <matrix>1 0 0 0 0 1 0 1.873651 0 0 1 -5.938372 0 0 0 1 </matrix>
-        <node id="polySurface1" name="polySurface1">
-          <instance_controller url="#skin272">
-            <skeleton>#mixamorigFBXASC058Hips</skeleton>
-            <bind_material>
-              <technique_common>
-                <instance_material symbol="geometryElement243" target="#YogurtTexture">
-                  <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
-                </instance_material>
-              </technique_common>
-            </bind_material>
-          </instance_controller>
+      <node id="SideCharacter1" name="SideCharacter1">
+        <node id="Yogurt" name="Yogurt">
+          <matrix>0.9999999 0 0 0 0 0.9999999 0 1.873651 0 0 0.9999999 -5.938372 0 0 0 1 </matrix>
+          <node id="polySurface1" name="polySurface1">
+            <instance_controller url="#skin272">
+              <skeleton>#mixamorigFBXASC058Hips</skeleton>
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="geometryElement243" target="#YogurtTexture">
+                    <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_controller>
+          </node>
+          <node id="polySurface2" name="polySurface2">
+            <instance_controller url="#skin274">
+              <skeleton>#mixamorigFBXASC058Hips</skeleton>
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="geometryElement250" target="#YogurtTexture">
+                    <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_controller>
+          </node>
+          <node id="polySurface3" name="polySurface3">
+            <instance_controller url="#skin276">
+              <skeleton>#mixamorigFBXASC058Hips</skeleton>
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="geometryElement257" target="#YogurtTexture">
+                    <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_controller>
+          </node>
+          <node id="polySurface4" name="polySurface4">
+            <instance_controller url="#skin278">
+              <skeleton>#mixamorigFBXASC058Hips</skeleton>
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="geometryElement264" target="#YogurtTexture">
+                    <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_controller>
+          </node>
+          <node id="polySurface5" name="polySurface5">
+            <instance_controller url="#skin280">
+              <skeleton>#mixamorigFBXASC058Hips</skeleton>
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="geometryElement271" target="#YogurtTexture">
+                    <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_controller>
+          </node>
         </node>
-        <node id="polySurface2" name="polySurface2">
-          <instance_controller url="#skin274">
-            <skeleton>#mixamorigFBXASC058Hips</skeleton>
-            <bind_material>
-              <technique_common>
-                <instance_material symbol="geometryElement250" target="#YogurtTexture">
-                  <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
-                </instance_material>
-              </technique_common>
-            </bind_material>
-          </instance_controller>
-        </node>
-        <node id="polySurface3" name="polySurface3">
-          <instance_controller url="#skin276">
-            <skeleton>#mixamorigFBXASC058Hips</skeleton>
-            <bind_material>
-              <technique_common>
-                <instance_material symbol="geometryElement257" target="#YogurtTexture">
-                  <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
-                </instance_material>
-              </technique_common>
-            </bind_material>
-          </instance_controller>
-        </node>
-        <node id="polySurface4" name="polySurface4">
-          <instance_controller url="#skin278">
-            <skeleton>#mixamorigFBXASC058Hips</skeleton>
-            <bind_material>
-              <technique_common>
-                <instance_material symbol="geometryElement264" target="#YogurtTexture">
-                  <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
-                </instance_material>
-              </technique_common>
-            </bind_material>
-          </instance_controller>
-        </node>
-        <node id="polySurface5" name="polySurface5">
-          <instance_controller url="#skin280">
-            <skeleton>#mixamorigFBXASC058Hips</skeleton>
-            <bind_material>
-              <technique_common>
-                <instance_material symbol="geometryElement271" target="#YogurtTexture">
-                  <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
-                </instance_material>
-              </technique_common>
-            </bind_material>
-          </instance_controller>
-        </node>
-      </node>
-      <node id="mixamorigFBXASC058Hips" name="mixamorigFBXASC058Hips" sid="SID_47" type="JOINT">
-        <matrix sid="SID_1">-0.08618739 0.1125453 0.9899015 0.08406 -0.07807269 0.9897804 -0.119329 1.04304 -0.9932151 -0.08756894 -0.07651987 0.02658 0 0 0 1 </matrix>
-        <node id="mixamorigFBXASC058Spine" name="mixamorigFBXASC058Spine" sid="SID_66" type="JOINT">
-          <translate>-0.005929 0.073724 0</translate>
-          <rotate sid="SID_3">-0.91916 -0.0330208 0.39248 10.4386</rotate>
-          <node id="mixamorigFBXASC058Spine1" name="mixamorigFBXASC058Spine1" sid="SID_69" type="JOINT">
-            <translate>0 0.086289 0</translate>
-            <rotate sid="SID_5">0.267265 -0.791957 0.550844 1.02411</rotate>
-            <scale>1 1 1</scale>
-            <node id="mixamorigFBXASC058Spine2" name="mixamorigFBXASC058Spine2" sid="SID_65" type="JOINT">
-              <translate>0 0.098615 0</translate>
-              <rotate sid="SID_7">0.265193 -0.810154 0.524056 1.02945</rotate>
+        <node id="mixamorigFBXASC058Hips" name="mixamorigFBXASC058Hips" sid="SID_47" type="JOINT">
+          <matrix sid="SID_1">-0.08618739 0.1125453 0.9899015 0.08406 -0.07807269 0.9897804 -0.119329 1.04304 -0.9932151 -0.08756894 -0.07651987 0.02658 0 0 0 1 </matrix>
+          <node id="mixamorigFBXASC058Spine" name="mixamorigFBXASC058Spine" sid="SID_66" type="JOINT">
+            <translate>-0.005929 0.073724 0</translate>
+            <rotate sid="SID_3">-0.91916 -0.0330208 0.39248 10.4386</rotate>
+            <node id="mixamorigFBXASC058Spine1" name="mixamorigFBXASC058Spine1" sid="SID_69" type="JOINT">
+              <translate>0 0.086289 0</translate>
+              <rotate sid="SID_5">0.267265 -0.791957 0.550844 1.02411</rotate>
               <scale>1 1 1</scale>
-              <node id="mixamorigFBXASC058Neck" name="mixamorigFBXASC058Neck" sid="SID_68" type="JOINT">
-                <translate>0 0.110942 0</translate>
-                <rotate sid="SID_9">-0.849414 -0.373024 -0.373503 1.38872</rotate>
+              <node id="mixamorigFBXASC058Spine2" name="mixamorigFBXASC058Spine2" sid="SID_65" type="JOINT">
+                <translate>0 0.098615 0</translate>
+                <rotate sid="SID_7">0.265193 -0.810154 0.524056 1.02945</rotate>
                 <scale>1 1 1</scale>
-                <node id="mixamorigFBXASC058Head" name="mixamorigFBXASC058Head" sid="SID_67" type="JOINT">
-                  <translate>0.000117 0.01106 0</translate>
-                  <rotate sid="SID_11">-0.102414 -0.131072 -0.986069 16.0232</rotate>
-                  <node id="mixamorigFBXASC058HeadTop_End" name="mixamorigFBXASC058HeadTop_End">
-                    <matrix>1 0 0 0.017956 0 1 0 1.695494 0 0 1 0 0 0 0 1 </matrix>
-                  </node>
-                </node>
-              </node>
-              <node id="mixamorigFBXASC058LeftShoulder" name="mixamorigFBXASC058LeftShoulder" sid="SID_40" type="JOINT">
-                <translate>-0.000651 0.104024 0.201172</translate>
-                <rotate sid="SID_13">0.99725 -0.0463349 0.0578411 91.4384</rotate>
-                <scale>1 1 1</scale>
-                <node id="mixamorigFBXASC058LeftArm" name="mixamorigFBXASC058LeftArm" sid="SID_41" type="JOINT">
-                  <translate>0 0.402925 0</translate>
-                  <rotate sid="SID_15">0.0158868 0.844997 0.534535 180.303</rotate>
+                <node id="mixamorigFBXASC058Neck" name="mixamorigFBXASC058Neck" sid="SID_68" type="JOINT">
+                  <translate>0 0.110942 0</translate>
+                  <rotate sid="SID_9">-0.849414 -0.373024 -0.373503 1.38872</rotate>
                   <scale>1 1 1</scale>
-                  <node id="mixamorigFBXASC058LeftForeArm" name="mixamorigFBXASC058LeftForeArm" sid="SID_43" type="JOINT">
-                    <translate>0 0.44292 0</translate>
-                    <rotate sid="SID_17">-0.159598 -0.974182 -0.15968 96.2911</rotate>
-                    <scale>1 1 1</scale>
-                    <node id="mixamorigFBXASC058LeftHand" name="mixamorigFBXASC058LeftHand" sid="SID_42" type="JOINT">
-                      <matrix>1 0 0 0 0 1 0 0.357179 0 0 1 0 0 0 0 1 </matrix>
+                  <node id="mixamorigFBXASC058Head" name="mixamorigFBXASC058Head" sid="SID_67" type="JOINT">
+                    <translate>0.000117 0.01106 0</translate>
+                    <rotate sid="SID_11">-0.102414 -0.131072 -0.986069 16.0232</rotate>
+                    <node id="mixamorigFBXASC058HeadTop_End" name="mixamorigFBXASC058HeadTop_End">
+                      <matrix>1 0 0 0.017956 0 1 0 1.695494 0 0 1 0 0 0 0 1 </matrix>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node id="mixamorigFBXASC058RightShoulder" name="mixamorigFBXASC058RightShoulder" sid="SID_53" type="JOINT">
-                <translate>-0.000463 0.104009 -0.201172</translate>
-                <rotate sid="SID_19">0.0368038 -0.676952 0.735107 176.864</rotate>
-                <scale>1 1 1</scale>
-                <node id="mixamorigFBXASC058RightArm" name="mixamorigFBXASC058RightArm" sid="SID_54" type="JOINT">
-                  <translate>0 0.402925 0</translate>
-                  <rotate sid="SID_21">0.0309448 0.876034 0.481255 172.818</rotate>
+                <node id="mixamorigFBXASC058LeftShoulder" name="mixamorigFBXASC058LeftShoulder" sid="SID_40" type="JOINT">
+                  <translate>-0.000651 0.104024 0.201172</translate>
+                  <rotate sid="SID_13">0.99725 -0.0463349 0.0578411 91.4384</rotate>
                   <scale>1 1 1</scale>
-                  <node id="mixamorigFBXASC058RightForeArm" name="mixamorigFBXASC058RightForeArm" sid="SID_55" type="JOINT">
-                    <translate>0 0.442921 0</translate>
-                    <rotate sid="SID_23">-0.208734 0.955371 0.209036 98.4315</rotate>
+                  <node id="mixamorigFBXASC058LeftArm" name="mixamorigFBXASC058LeftArm" sid="SID_41" type="JOINT">
+                    <translate>0 0.402925 0</translate>
+                    <rotate sid="SID_15">0.0158868 0.844997 0.534535 180.303</rotate>
                     <scale>1 1 1</scale>
-                    <node id="mixamorigFBXASC058RightHand" name="mixamorigFBXASC058RightHand" sid="SID_56" type="JOINT">
-                      <matrix>1 0 0 0 0 1 0 0.35718 0 0 1 0 0 0 0 1 </matrix>
+                    <node id="mixamorigFBXASC058LeftForeArm" name="mixamorigFBXASC058LeftForeArm" sid="SID_43" type="JOINT">
+                      <translate>0 0.44292 0</translate>
+                      <rotate sid="SID_17">-0.159598 -0.974182 -0.15968 96.2911</rotate>
+                      <scale>1 1 1</scale>
+                      <node id="mixamorigFBXASC058LeftHand" name="mixamorigFBXASC058LeftHand" sid="SID_42" type="JOINT">
+                        <matrix>1 0 0 0 0 1 0 0.357179 0 0 1 0 0 0 0 1 </matrix>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node id="mixamorigFBXASC058RightShoulder" name="mixamorigFBXASC058RightShoulder" sid="SID_53" type="JOINT">
+                  <translate>-0.000463 0.104009 -0.201172</translate>
+                  <rotate sid="SID_19">0.0368038 -0.676952 0.735107 176.864</rotate>
+                  <scale>1 1 1</scale>
+                  <node id="mixamorigFBXASC058RightArm" name="mixamorigFBXASC058RightArm" sid="SID_54" type="JOINT">
+                    <translate>0 0.402925 0</translate>
+                    <rotate sid="SID_21">0.0309448 0.876034 0.481255 172.818</rotate>
+                    <scale>1 1 1</scale>
+                    <node id="mixamorigFBXASC058RightForeArm" name="mixamorigFBXASC058RightForeArm" sid="SID_55" type="JOINT">
+                      <translate>0 0.442921 0</translate>
+                      <rotate sid="SID_23">-0.208734 0.955371 0.209036 98.4315</rotate>
+                      <scale>1 1 1</scale>
+                      <node id="mixamorigFBXASC058RightHand" name="mixamorigFBXASC058RightHand" sid="SID_56" type="JOINT">
+                        <matrix>1 0 0 0 0 1 0 0.35718 0 0 1 0 0 0 0 1 </matrix>
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node id="mixamorigFBXASC058LeftUpLeg" name="mixamorigFBXASC058LeftUpLeg" sid="SID_46" type="JOINT">
-          <translate>0.005667 -0.041118 0.394302</translate>
-          <rotate sid="SID_25">0.108147 0.122123 0.986605 158.373</rotate>
-          <scale>1 1 1</scale>
-          <node id="mixamorigFBXASC058LeftLeg" name="mixamorigFBXASC058LeftLeg" sid="SID_48" type="JOINT">
-            <translate>0 0.529057 0</translate>
-            <rotate sid="SID_27">0.0129224 -0.16234 0.98665 53.1172</rotate>
+          <node id="mixamorigFBXASC058LeftUpLeg" name="mixamorigFBXASC058LeftUpLeg" sid="SID_46" type="JOINT">
+            <translate>0.005667 -0.041118 0.394302</translate>
+            <rotate sid="SID_25">0.108147 0.122123 0.986605 158.373</rotate>
             <scale>1 1 1</scale>
-            <node id="mixamorigFBXASC058LeftFoot" name="mixamorigFBXASC058LeftFoot" sid="SID_50" type="JOINT">
-              <translate>0 0.470579 0</translate>
-              <rotate sid="SID_29">0.568643 0.565289 -0.597573 110.68</rotate>
+            <node id="mixamorigFBXASC058LeftLeg" name="mixamorigFBXASC058LeftLeg" sid="SID_48" type="JOINT">
+              <translate>0 0.529057 0</translate>
+              <rotate sid="SID_27">0.0129224 -0.16234 0.98665 53.1172</rotate>
               <scale>1 1 1</scale>
-              <node id="mixamorigFBXASC058LeftToeBase" name="mixamorigFBXASC058LeftToeBase" sid="SID_49" type="JOINT">
-                <translate>0 0.098173 0</translate>
-                <rotate sid="SID_31">0.982491 0.181223 -0.0432583 24.891</rotate>
-                <node id="mixamorigFBXASC058LeftToe_End" name="mixamorigFBXASC058LeftToe_End">
-                  <matrix>1 0 0 0 0 1 0 0.047584 0 0 1 0 0 0 0 1 </matrix>
+              <node id="mixamorigFBXASC058LeftFoot" name="mixamorigFBXASC058LeftFoot" sid="SID_50" type="JOINT">
+                <translate>0 0.470579 0</translate>
+                <rotate sid="SID_29">0.568643 0.565289 -0.597573 110.68</rotate>
+                <scale>1 1 1</scale>
+                <node id="mixamorigFBXASC058LeftToeBase" name="mixamorigFBXASC058LeftToeBase" sid="SID_49" type="JOINT">
+                  <translate>0 0.098173 0</translate>
+                  <rotate sid="SID_31">0.982491 0.181223 -0.0432583 24.891</rotate>
+                  <node id="mixamorigFBXASC058LeftToe_End" name="mixamorigFBXASC058LeftToe_End">
+                    <matrix>1 0 0 0 0 1 0 0.047584 0 0 1 0 0 0 0 1 </matrix>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node id="mixamorigFBXASC058RightUpLeg" name="mixamorigFBXASC058RightUpLeg" sid="SID_59" type="JOINT">
-          <translate>0.004092 -0.041118 -0.394302</translate>
-          <rotate sid="SID_33">-0.0329001 0.0851859 0.995822 189.323</rotate>
-          <scale>1 1 1</scale>
-          <node id="mixamorigFBXASC058RightLeg" name="mixamorigFBXASC058RightLeg" sid="SID_60" type="JOINT">
-            <translate>0 0.529128 0</translate>
-            <rotate sid="SID_35">0.0648014 0.777364 0.625714 12.9215</rotate>
+          <node id="mixamorigFBXASC058RightUpLeg" name="mixamorigFBXASC058RightUpLeg" sid="SID_59" type="JOINT">
+            <translate>0.004092 -0.041118 -0.394302</translate>
+            <rotate sid="SID_33">-0.0329001 0.0851859 0.995822 189.323</rotate>
             <scale>1 1 1</scale>
-            <node id="mixamorigFBXASC058RightFoot" name="mixamorigFBXASC058RightFoot" sid="SID_62" type="JOINT">
-              <translate>0 0.470467 0</translate>
-              <rotate sid="SID_37">0.478536 0.695903 -0.535465 115.035</rotate>
+            <node id="mixamorigFBXASC058RightLeg" name="mixamorigFBXASC058RightLeg" sid="SID_60" type="JOINT">
+              <translate>0 0.529128 0</translate>
+              <rotate sid="SID_35">0.0648014 0.777364 0.625714 12.9215</rotate>
               <scale>1 1 1</scale>
-              <node id="mixamorigFBXASC058RightToeBase" name="mixamorigFBXASC058RightToeBase" sid="SID_61" type="JOINT">
-                <translate>0 0.103835 0</translate>
-                <rotate sid="SID_39">0.987125 -0.156232 0.0343481 25.7371</rotate>
+              <node id="mixamorigFBXASC058RightFoot" name="mixamorigFBXASC058RightFoot" sid="SID_62" type="JOINT">
+                <translate>0 0.470467 0</translate>
+                <rotate sid="SID_37">0.478536 0.695903 -0.535465 115.035</rotate>
                 <scale>1 1 1</scale>
-                <node id="mixamorigFBXASC058RightToe_End" name="mixamorigFBXASC058RightToe_End">
-                  <matrix>1 0 0 0 0 1 0 0.047529 0 0 1 0 0 0 0 1 </matrix>
+                <node id="mixamorigFBXASC058RightToeBase" name="mixamorigFBXASC058RightToeBase" sid="SID_61" type="JOINT">
+                  <translate>0 0.103835 0</translate>
+                  <rotate sid="SID_39">0.987125 -0.156232 0.0343481 25.7371</rotate>
+                  <scale>1 1 1</scale>
+                  <node id="mixamorigFBXASC058RightToe_End" name="mixamorigFBXASC058RightToe_End">
+                    <matrix>1 0 0 0 0 1 0 0.047529 0 0 1 0 0 0 0 1 </matrix>
+                  </node>
                 </node>
               </node>
             </node>
