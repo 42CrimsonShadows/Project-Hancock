@@ -1248,7 +1248,7 @@ class ChapterSelection {
             SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         
             //Load Idle Animation Node
-            let idleErnieScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Ernie/Ernie@LayingFixed.dae")!
+            let idleErnieScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed.dae")!
             for child in idleErnieScene.rootNode.childNodes {
                 SideCharacter3idleNode.addChildNode(child)
             }
@@ -1256,12 +1256,6 @@ class ChapterSelection {
             SideCharacter3idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
             SideCharacter3idleNode.position = SCNVector3(0, 0.75, 0)
             SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
-        
-            //Load Idle Animation Node
-            let idleIsaacScene = SCNScene(named: "art.scnassets/3DModels/Chapter7Files/Characters/Isaac/Isaac@EatingFixed.dae")!
-            for child in idleIsaacScene.rootNode.childNodes {
-                SideCharacter4idleNode.addChildNode(child)
-            }
         
             //load all the DAE animations for this Chapter
             //load animations for mainCharacter
@@ -1391,9 +1385,9 @@ class ChapterSelection {
             SideCharacter4idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter4idleNode)
-        SideCharacter4idleNode.scale = SCNVector3(1, 1, 1)
-        SideCharacter4idleNode.position = SCNVector3(5, 0.3, -7.5)
-        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        SideCharacter4idleNode.scale = SCNVector3(0.3, 0.3, 0.26)
+        SideCharacter4idleNode.position = SCNVector3(8, 0.35, 8)
+        SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-90), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
         let idleBalloonScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Balloon/Balloon@IdleFixed.dae")!
