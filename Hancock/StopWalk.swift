@@ -25,6 +25,18 @@ extension ViewController{
             case chapterNine:
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
+                //FIXME: chapter 8 letter 1
+                
+                //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+                //TODO: add letter l intro
+                //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                self.shatterLetterOne = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                //load first letter for activityView page
+                self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                //play narration for the first audio instructions for the activity
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
+                })
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
                 //fade out the walking sound
@@ -184,10 +196,22 @@ extension ViewController{
             case chapterNine:
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
+                //FIXME: chapter 8 letter 2
+                
+                self.stopTransitionAnimation(key: "MainCharacterWalking")
+                self.startTransitionAnimation(key: "MainCharacterIdle")
+                //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
+                self.shatterLetterTwo = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
+                    //load first letter for activityView page
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
+                })
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
-                //FIXME: chapter 7 letter 2
-                
                 //fade out the walking sound
                 FXPlayer.setVolume(0, fadeDuration: 1)
                 //stop playing the walking sound
@@ -375,10 +399,9 @@ extension ViewController{
             case chapterNine:
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
+                //FIXME: chapter 8 letter 3
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
-                //FIXME: chapter 7 letter 3
-                
                 //fade out the walking sound
                 FXPlayer.setVolume(0, fadeDuration: 1)
                 //stop playing the walking sound
@@ -570,10 +593,10 @@ extension ViewController{
             case chapterNine:
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
+                //FIXME: chapter 8 letter 4
+                
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
-                //FIXME: chapter 7 letter 4
-                
                 //fade out the walking sound
                 FXPlayer.setVolume(0, fadeDuration: 1)
                 //stop playing the walking sound
@@ -816,10 +839,10 @@ extension ViewController{
             case chapterNine:
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
+                //FIXME: chapter 8 letter 5
+                
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
-                //FIXME: chapter 7 letter 5
-                
                 //fade out the walking sound
                 FXPlayer.setVolume(0, fadeDuration: 1)
                 //stop playing the walking sound
@@ -963,8 +986,6 @@ extension ViewController{
             case chapterEight:
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
-                //FIXME: chapter 7 letter 6
-                
                 //fade out the walking sound
                 FXPlayer.setVolume(0, fadeDuration: 1)
                 //stop playing the walking sound

@@ -128,7 +128,6 @@ extension ViewController {
                 print("do chapter 6 stuff")
                 
             case chapterSeven:
-                //FIXME: 7 letter 1
                 
                 //show the main character as idle
                 startTransitionAnimation(key: "MainCharacterWalking")
@@ -143,6 +142,16 @@ extension ViewController {
                 print("Ursa walks a little bit down the path")
                 
             case chapterEight:
+                //FIXME: 8 letter 1
+                
+                //self.stopTransitionAnimation(key: "MainCharacterLaying")
+                self.startTransitionAnimationOnce(key: "MainCharacterStandup")
+                //play transition to letter l
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    self.mainCharacterIdle?.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-15)), z: 0, duration: 0.5), completionHandler: self.stopWalkAnimation)
+                })
                 print("do chapter 8 stuff")
                 
             case chapterNine:
@@ -252,8 +261,6 @@ extension ViewController {
             case chapterSix:
                 print("do chapter 6 stuff")
             case chapterSeven:
-                //FIXME: 7 letter 2
-                
                 //show the main character as walking
                 stopTransitionAnimation(key: "MainCharacterShouting")
                 startTransitionAnimation(key: "MainCharacterWalking")
@@ -266,6 +273,17 @@ extension ViewController {
                 print("Ursa was to Stanley")
                 
             case chapterEight:
+                //FIXME: 8 letter 2
+                
+                //show the main character as walking
+                stopTransitionAnimation(key: "MainCharacterCheering")
+                startTransitionAnimation(key: "MainCharacterWalking")
+
+                let move1 = SCNAction.move(to: SCNVector3(-0.55, 9.25, 1), duration: 4)  //to yogi the yogurt
+                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(40)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //look at yogi
+                let chapter8Letter2RotMovSeq = SCNAction.sequence([move1, rotate1])
+                mainCharacterIdle?.parent?.runAction((chapter8Letter2RotMovSeq), completionHandler: stopWalkAnimation)
+                
                 print("do chapter 8 stuff")
             case chapterNine:
                 print("do chapter 9 stuff")
@@ -385,7 +403,6 @@ extension ViewController {
             case chapterSix:
                 print("do chapter 6 stuff")
             case chapterSeven:
-                //FIXME: 7 letter 3
                 
                 //show the main character as idle
                 stopTransitionAnimation(key: "MainCharacterIdle")
@@ -402,6 +419,10 @@ extension ViewController {
                 print("Ursa walks to Vivian")
                 
             case chapterEight:
+                //FIXME: 8 letter 3
+                
+                
+                
                 print("do chapter 8 stuff")
             case chapterNine:
                 print("do chapter 9 stuff")
@@ -509,8 +530,6 @@ extension ViewController {
             case chapterSix:
                 print("do chapter 6 stuff")
             case chapterSeven:
-                //FIXME: 7 letter 4
-                
                 //show the main character as idle
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterWalking")
@@ -541,6 +560,8 @@ extension ViewController {
                 print("Ursa walks to Windsor")
                 
             case chapterEight:
+                //FIXME: 8 letter 4
+                
                 print("do chapter 8 stuff")
             case chapterNine:
                 print("do chapter 9 stuff")
@@ -642,7 +663,6 @@ extension ViewController {
             case chapterSix:
                     print("do chapter 6 stuff")
             case chapterSeven:
-                //FIXME: 7 letter 5
                 
                 //show the main character as idle
                 self.stopTransitionAnimation(key: "MainCharacterIdle")
@@ -826,7 +846,6 @@ extension ViewController {
             case chapterSix:
                 print("do chapter 6 stuff")
             case chapterSeven:
-                //FIXME: 7 letter 6
                 
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "mp3") //10 sec long
                 

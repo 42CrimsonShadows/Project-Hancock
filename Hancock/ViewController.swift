@@ -745,7 +745,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func storyTime(){
-        //Wait 3 second for game to load completely
+        //Wait 7 second for game to load completely
         DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
             
             //add extra narration based on chapter
@@ -824,7 +824,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.playWalkAnimation()
                 })
             case chapterEight:
-                print("Do chapter 8 stuff")
+                self.startTransitionAnimation(key: "MainCharacterLaying")
+                //play game intro 1
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                    //move the main character to the first marker
+                    self.playWalkAnimation()
+                })
+                print("Start chapter eight")
             case chapterNine:
                 print("Do chapter 9 stuff")
             case chapterTen:
@@ -931,13 +939,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("Adding animation \(key) for \(sideCharacter)!")
         
         switch sideCharacter {
-        case "Terry", "Ollie", "Velma", "Stanley":
+        case "Terry", "Ollie", "Velma", "Stanley", "Yogi":
             print("Do sideCharacter1 stuff")
             charcterOneIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Lin", "Quinn", "Wallace", "Vivian":
+        case "Lin", "Quinn", "Wallace", "Vivian", "Kimi":
             print("Do sideCharacter2 stuff")
         charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Francine", "Simon", "Winona", "Windsor":
+        case "Francine", "Simon", "Winona", "Windsor", "Ernie":
             print("Do sideCharacter3 stuff")
             charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Eric", "Jillian", "Manny", "Isaac":
@@ -955,15 +963,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     func stopAnimateSideCharacter(key: String, sideCharacter: String) {
         switch sideCharacter {
-        case "Terry", "Ollie", "Velma", "Stanley":
+        case "Terry", "Ollie", "Velma", "Stanley", "Yogi":
             print("Remove stuff")
             charcterOneIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
             //charcterOneIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Lin", "Quinn", "Wallace", "Vivian":
+        case "Lin", "Quinn", "Wallace", "Vivian", "Kimi":
             print("Remove stuff")
             //charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
             charcterTwoIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
-        case "Francine", "Simon", "Winona", "Windsor":
+        case "Francine", "Simon", "Winona", "Windsor", "Ernie":
             print("Remove stuff")
             //charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
             charcterThreeIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))

@@ -775,10 +775,10 @@ public class ActivitySelection {
         print("Called loadActivityl")
         
         //Line #1
-        activityPoints = [[CGFloat(0.25),CGFloat(0.12)], //first point x, y
-            [CGFloat(0.25),CGFloat(0.35)], //first MidPoint1 x, y
-            [CGFloat(0.25),CGFloat(0.6)], //first MidPoint2 x, y
-            [CGFloat(0.25),CGFloat(0.86)]] //second point x, y
+        activityPoints = [[CGFloat(0.5),CGFloat(0.12)], //first point x, y
+            [CGFloat(0.5),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.5),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.5),CGFloat(0.86)]] //second point x, y
         
         let Underlayl = UIImage(named: "art.scnassets/LetterImages/l-.png")
         letterUnderlay = UIImageView(image: Underlayl)
