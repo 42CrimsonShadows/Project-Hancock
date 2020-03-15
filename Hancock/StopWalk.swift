@@ -401,17 +401,15 @@ extension ViewController{
             case chapterEight:
                 //FIXME: chapter 8 letter 3
                 
-                self.stopTransitionAnimation(key: "MainCharacterWalking")
                 self.startTransitionAnimation(key: "MainCharacterIdle")
                 //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration13"]!, type: "mp3")
                 self.shatterLetterThree = true
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //load first letter for activityView page
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
                     //play narration for the first audio instructions for the activity
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration14"]!, type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration15"]!, type: "mp3")
                 })
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:

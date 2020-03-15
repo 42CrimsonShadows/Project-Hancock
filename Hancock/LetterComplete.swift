@@ -287,21 +287,18 @@ extension ViewController{
                 print("Nothing to shatter for this chapter")
                 print("Ernie gets up and turns to Lionel and they cheer")
                 
-                self.stopAnimateSideCharacter(key: "SideCharacter3Laying", sideCharacter: "Ernie")
                 self.startAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                    //Kimi turns to Lionel and they both cheer
+                    //Ernie turns to Lionel and they both cheer
                     self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5))
-                    self.stopAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
                     self.startAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
                     self.startTransitionAnimation(key: "MainCharacterCheering")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration20"]!, type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration27"]!, type: "mp3")
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                         //Kimi stops cheering and looks back toward camera
-                        self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
                         self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
                         self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(35)), z: 0, duration: 0.5))
                         self.playWalkAnimation()
@@ -485,7 +482,6 @@ extension ViewController{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //Kimi turns to Lionel and they both cheer
                     self.charcterTwoIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5))
-                    self.stopAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Kimi")
                     self.startAnimateSideCharacter(key: "SideCharacter2Cheering", sideCharacter: "Kimi")
                     self.startTransitionAnimation(key: "MainCharacterCheering")
                     
@@ -635,16 +631,15 @@ extension ViewController{
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //yogi turns to Lionel and they both cheer
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
+                    
                     self.charcterOneIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-125)), z: 0, duration: 0.5))
-                    self.stopAnimateSideCharacter(key: "SideCharacter1Idle", sideCharacter: "Yogi")
+                    
                     self.startAnimateSideCharacter(key: "SideCharacter1Cheering", sideCharacter: "Yogi")
                     self.startTransitionAnimation(key: "MainCharacterCheering")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
-                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                         //yogi stops cheering and looks back toward camera
-                        self.stopAnimateSideCharacter(key: "SideCharacter1Cheering", sideCharacter: "Yogi")
                         self.startAnimateSideCharacter(key: "SideCharacter1Idle", sideCharacter: "Yogi")
                         self.charcterOneIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-36)), z: 0, duration: 0.5))
                         self.playWalkAnimation()
