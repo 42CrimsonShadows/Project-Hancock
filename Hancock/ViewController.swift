@@ -345,6 +345,77 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("Tapped \(String(describing: name)) with geometry: \(String(describing: geometry))")
             
             switch true{
+            case chapterEight:
+                var LionelOnPlate = false
+                var YogiOnPlate = false
+                var KimiOnPlate = false
+                var ErnieOnPlate = false
+                
+                if shatterLetterFive == true{
+                    switch hitTestResult.node.parent?.name {
+                    case "Lemon":
+                        LionelOnPlate = true
+                        startTransitionAnimation(key: "MainCharacterLaying")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3") //"Good job"
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing1"]!, type: "mp3", rate: 1)
+                        mainCharacterIdle.parent?.position = SCNVector3(0.7, 8.42, 7.1)
+                        mainCharacterIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(237), GLKMathDegreesToRadians(0))
+                         print("Lionel to plate")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3")
+                        })
+                    case "Yogurt":
+                        YogiOnPlate = true
+                        startAnimateSideCharacter(key: "SideCharacter1Sitting", sideCharacter: "Yogi")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3") //"Amazing"
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3", rate: 1)
+                        charcterOneIdle.parent?.position = SCNVector3(1, 8.45, 4.8)
+                        charcterOneIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-40), GLKMathDegreesToRadians(0))
+                        print("Yogi to plate")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
+                        })
+                    case "Kiwi":
+                        KimiOnPlate = true
+                        startAnimateSideCharacter(key: "SideCharacter2Laying", sideCharacter: "Kimi")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "mp3") //"Good job"
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3", rate: 1)
+                        charcterTwoIdle.parent?.position = SCNVector3(-0.8, 8.5, 4.9)
+                        charcterTwoIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(25), GLKMathDegreesToRadians(0))
+                        print("Kimi to plate")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "mp3")
+                        })
+                    case "EnergyBar":
+                        ErnieOnPlate = true
+                        startAnimateSideCharacter(key: "SideCharacter3Laying", sideCharacter: "Ernie")
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "mp3") //"You did it"
+                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3", rate: 1)
+                        charcterThreeIdle.parent?.position = SCNVector3(-1.1, 8.5, 6.6)
+                        charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(-1.5), GLKMathDegreesToRadians(50), GLKMathDegreesToRadians(0))
+                        print("Ernie to plate")
+                    default:
+                        break
+                    }
+                    //if all the characters are on the plate
+                    if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && ErnieOnPlate == true {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            //play the final narration
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration37"]!, type: "mp3")
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
+                                self.resetGame()
+                            })
+                        })
+                    }
+                }
+                print("Chapter Eight is true.")
+            case chapterSeven:
+                print("Chapter Seven is true.")
+            case chapterSix:
+                print("Chapter Six is true.")
             case chapterFive:
                 print("Chapter Five is true.")
                 let key1 = mainCharacterIdle.childNode(withName: "Xylophone_Key1", recursively: true)!
@@ -944,7 +1015,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             charcterOneIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Lin", "Quinn", "Wallace", "Vivian", "Kimi":
             print("Do sideCharacter2 stuff")
-        charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
+            charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Francine", "Simon", "Winona", "Windsor", "Ernie":
             print("Do sideCharacter3 stuff")
             charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)

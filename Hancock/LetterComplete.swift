@@ -291,16 +291,18 @@ extension ViewController{
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                     //Ernie turns to Lionel and they both cheer
-                    self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5))
+                    //self.stopAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
                     self.startAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
+                    self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5))
+                    
                     self.startTransitionAnimation(key: "MainCharacterCheering")
                     
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration27"]!, type: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                        //Kimi stops cheering and looks back toward camera
+                        //Ernie stops cheering and looks back toward camera
                         self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
-                        self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(35)), z: 0, duration: 0.5))
+                        self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
                         self.playWalkAnimation()
                     })
                 })

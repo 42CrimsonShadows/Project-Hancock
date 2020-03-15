@@ -144,7 +144,6 @@ extension ViewController {
             case chapterEight:
                 //FIXME: 8 letter 1
                 
-                //self.stopTransitionAnimation(key: "MainCharacterLaying")
                 self.startTransitionAnimationOnce(key: "MainCharacterStandup")
                 //play transition to letter l
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
@@ -422,6 +421,7 @@ extension ViewController {
                 //FIXME: 8 letter 3
                 
                 //show the main character as walking
+                stopTransitionAnimation(key: "MainCharacterCheering")
                 startTransitionAnimation(key: "MainCharacterWalking")
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration13"]!, type: "mp3")
                 
@@ -440,6 +440,7 @@ extension ViewController {
                     self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 2)) //Lionel heads down to level 2
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.stopTransitionAnimation(key: "MainCharacterStairwalk")
                         self.startTransitionAnimation(key: "MainCharacterWalking")
                         let rotate4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks forward
                         let move4 = SCNAction.move(to: SCNVector3(1.1, 5, -0.78), duration: 2)  //Heads forward
@@ -590,22 +591,24 @@ extension ViewController {
                 //FIXME: 8 letter 4
                 
                 //show the main character as walking
+                stopTransitionAnimation(key: "MainCharacterCheering")
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
-                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(33)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) // lionel turns toward right wall
+                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(33)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) // Lionel turns toward right wall
                 let move1 = SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3)  //Lionel heads to stairs
                 let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-90)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks down the stairs
                 
                 let chapter8Letter4RotMovSeq = SCNAction.sequence([rotate1, move1, rotate2])
                 mainCharacterIdle?.parent?.runAction((chapter8Letter4RotMovSeq))
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6.5, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     self.startTransitionAnimation(key: "MainCharacterStairwalk")
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
                     
-                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)) //Lionel heads down to level 2
+                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 3)) //Lionel heads down to level 1
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        self.stopTransitionAnimation(key: "MainCharacterStairwalk")
                         self.startTransitionAnimation(key: "MainCharacterIdle")
                         self.mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y:  CGFloat(GLKMathDegreesToRadians(-60)), z: 0, duration: 0.5), completionHandler: self.stopWalkAnimation)  //looks at Ernie
                     })
@@ -747,33 +750,49 @@ extension ViewController {
                 //FIXME: 8 Final Walk
                 
                 //show the main character as walking
-                //stopTransitionAnimation(key: "MainCharacterCheering")
+                stopTransitionAnimation(key: "MainCharacterCheering")
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration20"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration28"]!, type: "mp3")
                 
-                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(33)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) // lionel turns toward right wall
-                let move1 = SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3)  //Lionel heads to stairs
-                let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-90)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks down the stairs
-                let move2 = SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 2)  //to heads to top of stairs
-                let rotate3 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-60)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //lionel looks down stairs
+                mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))// lionel turns toward the stairs up
                 
-                let chapter8Letter4RotMovSeq = SCNAction.sequence([rotate1, move1, rotate2, move2, rotate3])
-                mainCharacterIdle?.parent?.runAction((chapter8Letter4RotMovSeq))
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6.5, execute: {
-                    //stopTransitionAnimation(key: "MainCharacterWalking")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.startTransitionAnimation(key: "MainCharacterStairwalk")
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
                     
-                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)) //Lionel heads down to level 2
+                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3)) //Lionel heads up to level 2
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        //stopTransitionAnimation(key: "MainCharacterStairwalk")
-                        self.startTransitionAnimation(key: "MainCharacterIdle")
-                        self.mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5), completionHandler: self.stopWalkAnimation)  //looks at Ernie
+                        self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+                        self.startTransitionAnimation(key: "MainCharacterWalking")
+                        let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(205)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) // lionel turns toward the stairs to level 1
+                        let move1 = SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)  //Lionel heads to stairs
+                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks up the stairs
+                        
+                        let chapter8Letter5RotMovSeq1 = SCNAction.sequence([rotate1, move1, rotate2])
+                        self.mainCharacterIdle?.parent?.runAction((chapter8Letter5RotMovSeq1))
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                            self.startTransitionAnimation(key: "MainCharacterStairwalk")
+                            self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3)) //Lionel heads up to level 1
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                                self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+                                self.startTransitionAnimation(key: "MainCharacterWalking")
+                                
+                                let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) // lionel turns toward center of the fidge
+                                let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)  //Lionel moves to fridge center
+                                let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //looks toward front of fridge
+                                let move3 = SCNAction.move(to: SCNVector3(-0.6, 9.25, 2.5), duration: 3)  //Lionel moves to fridge front
+                                
+                                let chapter8Letter5RotMovSeq2 = SCNAction.sequence([rotate3, move2, rotate4, move3])
+                                self.mainCharacterIdle?.parent?.runAction((chapter8Letter5RotMovSeq2), completionHandler: self.stopWalkAnimation)
+                                
+                            })
+                        })
                     })
                 })
+                
                 
                 print("do chapter 8 stuff")
             case chapterNine:

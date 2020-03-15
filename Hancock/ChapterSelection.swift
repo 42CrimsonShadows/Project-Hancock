@@ -1333,20 +1333,20 @@ class ChapterSelection {
                                   "Narration25" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration26" : "ch1-E-Line3_01", //3 Amazing
             
-                                  //trasition to Final
+                                  //transition to Final
                                   "Narration27" : "ch3L-Final1",
                                   "Narration28" : "ch3L-Final2",
                                   
                                   
                                   //Breakfast Plate interaction
-                                  "Narration29" : "ch3L-Final3-TapLemon1",
-                                  "Narration30" : "ch3L-Final3-TapLemon2",
-                                  "Narration31" : "ch3L-Final3-TapYogurt1",
-                                  "Narration32" : "ch3L-Final3-TapYogurt2",
-                                  "Narration33" : "ch3L-Final3-TapKiwi1",
-                                  "Narration34" : "ch3L-Final3-TapKiwi2",
-                                  "Narration35" : "ch3L-Final3-TapEBar1",
-                                  "Narration36" : "ch3L-Final3-TapEbar2",
+                                  "Narration29" : "ch3L-Final3-TapLemon1", //(4sec)
+                                  "Narration30" : "ch3L-Final3-TapLemon2", //Good job (1sec)
+                                  "Narration31" : "ch3L-Final3-TapYogurt1", //(4sec)
+                                  "Narration32" : "ch3L-Final3-TapYogurt2", //Amazing (1.5sec)
+                                  "Narration33" : "ch3L-Final3-TapKiwi1", //(4sec)
+                                  "Narration34" : "ch3L-Final3-TapKiwi2", //Good job (1sec)
+                                  "Narration35" : "ch3L-Final3-TapEBar1", //(5sec)
+                                  "Narration36" : "ch3L-Final3-TapEbar2", //You did it (1sec)
                                   
                                   //Final
                                   "Narration37" : "ch3L-Final4",
@@ -1440,36 +1440,36 @@ class ChapterSelection {
         SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         
         
-//        //load all the DAE animations for this Chapter
-//        //load animations for mainCharacter
-//        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@TalkingFixed", animationIdentifier: "Keelie@TalkingFixed-1")
-//        //prepareAnimation(withKey: "MainCharacterClaping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@ClapingFixed", animationIdentifier: "Keelie@ClapingFixed-1")
-//        prepareAnimation(withKey: "MainCharacterJogging", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@JoggingFixed", animationIdentifier: "Keelie@JoggingFixed-1")
-//        //prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WalkingFixed", animationIdentifier: "Keelie@WalkingFixed-1")
-//        prepareAnimation(withKey: "MainCharacterWaving", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WavingFixed", animationIdentifier: "Keeling@WavingFixed-1")
-//
-//        //load animation for side character 1
-//        prepareAnimation(withKey: "SideCharacter1Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@KnotTailFixed", animationIdentifier: "Velma@KnotTailFixed-1")
-//        prepareAnimation(withKey: "SideCharacter1Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@HappyFixed", animationIdentifier: "Velma@HappyFixed-1")
-//
-//        //load animation for side character 2
-//        prepareAnimation(withKey: "SideCharacter2Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HurtTailFixed", animationIdentifier: "Wallace@HurtTailFixed-1")
-//        prepareAnimation(withKey: "SideCharacter2Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HappyFixed", animationIdentifier: "Wallace@HappyFixed-1")
-//
-//
-//        //load animation for side character 3
-//        prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@IdleFixed", animationIdentifier: "Winona@IdleFixed-1")
-//        prepareAnimation(withKey: "SideCharacter3Clapping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ClappingFixed", animationIdentifier: "Winona@ClappingFixed-1")
-//        prepareAnimation(withKey: "SideCharacter3Comforting", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ComfortingFixed", animationIdentifier: "Winona@ComfortingFixed-1")
-//
-//        //load animation for side character 4
-//        prepareAnimation(withKey: "SideCharacter4Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@StomachAcheFixed", animationIdentifier: "Manny@StomachAcheFixed-1")
-//        prepareAnimation(withKey: "SideCharacter4Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@EatingBananaFixed", animationIdentifier: "Manny@EatingBananaFixed-1")
-//
-//        //load animation for side character 5
-//        prepareAnimation(withKey: "SideCharacter5Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@HurtFootFixed", animationIdentifier: "Ashton@HurtFootFixed-1")
-//        prepareAnimation(withKey: "SideCharacter5Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@CastFixed", animationIdentifier: "Ashton@CastFixed-1")
-//
+        //load all the DAE animations for this Chapter
+        //load animations for mainCharacter
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@TalkingFixed", animationIdentifier: "Keelie@TalkingFixed-1")
+        //prepareAnimation(withKey: "MainCharacterClaping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@ClapingFixed", animationIdentifier: "Keelie@ClapingFixed-1")
+        prepareAnimation(withKey: "MainCharacterJogging", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@JoggingFixed", animationIdentifier: "Keelie@JoggingFixed-1")
+        //prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WalkingFixed", animationIdentifier: "Keelie@WalkingFixed-1")
+        prepareAnimation(withKey: "MainCharacterWaving", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Keelie/Keelie@WavingFixed", animationIdentifier: "Keeling@WavingFixed-1")
+
+        //load animation for side character 1
+        prepareAnimation(withKey: "SideCharacter1Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@KnotTailFixed", animationIdentifier: "Velma@KnotTailFixed-1")
+        prepareAnimation(withKey: "SideCharacter1Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Velma/Velma@HappyFixed", animationIdentifier: "Velma@HappyFixed-1")
+
+        //load animation for side character 2
+        prepareAnimation(withKey: "SideCharacter2Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HurtTailFixed", animationIdentifier: "Wallace@HurtTailFixed-1")
+        prepareAnimation(withKey: "SideCharacter2Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Wallace/Wallace@HappyFixed", animationIdentifier: "Wallace@HappyFixed-1")
+
+
+        //load animation for side character 3
+        prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@IdleFixed", animationIdentifier: "Winona@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Clapping", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ClappingFixed", animationIdentifier: "Winona@ClappingFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Comforting", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Winona/Winona@ComfortingFixed", animationIdentifier: "Winona@ComfortingFixed-1")
+
+        //load animation for side character 4
+        prepareAnimation(withKey: "SideCharacter4Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@StomachAcheFixed", animationIdentifier: "Manny@StomachAcheFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Manny/Manny@EatingBananaFixed", animationIdentifier: "Manny@EatingBananaFixed-1")
+
+        //load animation for side character 5
+        prepareAnimation(withKey: "SideCharacter5Problem", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@HurtFootFixed", animationIdentifier: "Ashton@HurtFootFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Happy", sceneName: "art.scnassets/3DModels/Chapter4Files/Characters/Ashton/Ashton@CastFixed", animationIdentifier: "Ashton@CastFixed-1")
+
         chapter9NodeArray.append(storyNode)
         
         return chapter9NodeArray

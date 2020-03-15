@@ -26,11 +26,15 @@ extension ViewController{
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 //FIXME: chapter 8 letter 1
+                self.startTransitionAnimation(key: "MainCharacterIdle")
+                self.stopTransitionAnimation(key: "MainCharacterStandup")
                 
-                //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
                 //TODO: add letter l intro
                 //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                
+                //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
                 self.shatterLetterOne = true
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 //load first letter for activityView page
                 self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
@@ -198,7 +202,7 @@ extension ViewController{
             case chapterEight:
                 //FIXME: chapter 8 letter 2
                 
-                self.stopTransitionAnimation(key: "MainCharacterWalking")
+                //self.stopTransitionAnimation(key: "MainCharacterWalking")
                 self.startTransitionAnimation(key: "MainCharacterIdle")
                 //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
@@ -409,7 +413,7 @@ extension ViewController{
                     //load first letter for activityView page
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
                     //play narration for the first audio instructions for the activity
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration15"]!, type: "mp3")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration14"]!, type: "mp3")
                 })
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
@@ -865,6 +869,16 @@ extension ViewController{
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 //FIXME: chapter 8 letter 5
+                
+                stopTransitionAnimation(key: "MainCharacterWalking")
+                startTransitionAnimation(key: "MainCharacterIdle")
+                
+                //play instructions to touch Lionel the lemon
+                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3") //can you tap the lemon?
+                shatterLetterFive = true
+                //Find and unhide the plate
+                let plate =  mainFloor.childNode(withName: "Plate", recursively: true)
+                plate!.isHidden = false
                 
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
