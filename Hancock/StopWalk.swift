@@ -206,7 +206,7 @@ extension ViewController{
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
                     //load first letter for activityView page
-                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
                     //play narration for the first audio instructions for the activity
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
                 })
@@ -400,6 +400,19 @@ extension ViewController{
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 //FIXME: chapter 8 letter 3
+                
+                self.stopTransitionAnimation(key: "MainCharacterWalking")
+                self.startTransitionAnimation(key: "MainCharacterIdle")
+                //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration13"]!, type: "mp3")
+                self.shatterLetterThree = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                    //load first letter for activityView page
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration14"]!, type: "mp3")
+                })
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
                 //fade out the walking sound
@@ -594,6 +607,20 @@ extension ViewController{
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 //FIXME: chapter 8 letter 4
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                    //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration22"]!, type: "mp3")
+                    
+                    self.shatterLetterFour = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                        //load first letter for activityView page
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
+                        //play narration for the first audio instructions for the activity
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration23"]!, type: "mp3")
+                    })
+                })
                 
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:

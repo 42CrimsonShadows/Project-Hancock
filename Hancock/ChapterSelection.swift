@@ -1306,6 +1306,7 @@ class ChapterSelection {
             
                                   //Letter y
                                   "Narration7" : "ch3L-Y-Intro1",
+                                  
                                   "Narration8" : "ch1-E-Line1",    //1 Green to Red
                                   "Narration9" : "ch1-E-Line4_01", //4 Perfect
                                   "Narration10" : "ch1-E-Line2_02", //Blue to Orange
@@ -1314,6 +1315,7 @@ class ChapterSelection {
                                   //Letter k
                                   "Narration12" : "ch3L-K-Transition1",
                                   "Narration13" : "ch3L-K-Intro1",
+                                  
                                   "Narration14" : "ch1-E-Line1",    //1 Green to Red
                                   "Narration15" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration16" : "ch1-E-Line2_02", //Blue to Orange
@@ -1322,9 +1324,10 @@ class ChapterSelection {
                                   "Narration19" : "ch1-E-Line4_01", //4 Perfect
             
                                   //Letter e
-                                  "Narration20" : "chL-E-Transition1",
-                                  "Narration21" : "chL-E-Transition2",
-                                  "Narration22" : "chL-E-Intro1",
+                                  "Narration20" : "ch3L-E-Transition1",
+                                  "Narration21" : "ch3L-E-Transition2",
+                                  "Narration22" : "ch3L-E-Intro1",
+                                  
                                   "Narration23" : "ch1-E-Line1",    //1 Green to Red
                                   "Narration24" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration25" : "ch1-E-Line2_02", //Blue to Orange
