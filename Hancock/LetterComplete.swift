@@ -25,6 +25,14 @@ extension ViewController{
             case chapterNine:
                 print("Nothing to shatter for this chapter")
             case chapterEight:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                    //play the final narration
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration37"]!, type: "mp3")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
+                        self.resetGame()
+                    })
+                })
                 print("Nothing to shatter for this chapter")
             case chapterSeven:
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish1"]!, type: "mp3")
@@ -291,7 +299,7 @@ extension ViewController{
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                     //Ernie turns to Lionel and they both cheer
-                    //self.stopAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
+                    self.stopAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
                     self.startAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
                     self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5))
                     
@@ -301,8 +309,9 @@ extension ViewController{
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                         //Ernie stops cheering and looks back toward camera
-                        self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
                         self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
+                        self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
+                        
                         self.playWalkAnimation()
                     })
                 })
@@ -783,11 +792,20 @@ extension ViewController{
                 print("Nothing to shatter for this chapter")
             case chapterEight:
                 //FIXME: chapter 8 letter 1
-                self.startTransitionAnimation(key: "MainCharacterCheering")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                    self.playWalkAnimation()
+                self.startTransitionAnimation(key: "MainCharacterStandup")
+                self.stopTransitionAnimation(key: "MainCharacterLaying")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    self.mainCharacterIdle?.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-15)), z: 0, duration: 0.5))
+                    self.stopTransitionAnimation(key: "MainCharacterStandup")
+                    self.startTransitionAnimation(key: "MainCharacterCheering")
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                        self.playWalkAnimation()
+                    })
                 })
+                
 
                 print("Nothing to shatter for this chapter")
             case chapterSeven:

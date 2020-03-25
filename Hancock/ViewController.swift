@@ -139,6 +139,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var idle: Bool = true
     var isMoving: Bool = false
     
+    //Bools for special chapter8 tap-handler
+    var LionelOnPlate = false
+    var YogiOnPlate = false
+    var KimiOnPlate = false
+    var ErnieOnPlate = false
+    
     //variables for sound files and audio players
     var walkPlayer = AVAudioPlayer()
     var birdsPlayer = AVAudioPlayer()
@@ -337,6 +343,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let touchLocation = sender.location(in: tappedView)
         
         let  hitTest = tappedView.hitTest(touchLocation, options: nil)
+
         
         if !hitTest.isEmpty {
             let hitTestResult = hitTest.first!
@@ -346,70 +353,85 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             switch true{
             case chapterEight:
-                var LionelOnPlate = false
-                var YogiOnPlate = false
-                var KimiOnPlate = false
-                var ErnieOnPlate = false
-                
                 if shatterLetterFive == true{
                     switch hitTestResult.node.parent?.name {
                     case "Lemon":
-                        LionelOnPlate = true
-                        startTransitionAnimation(key: "MainCharacterLaying")
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3") //"Good job"
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing1"]!, type: "mp3", rate: 1)
-                        mainCharacterIdle.parent?.position = SCNVector3(0.7, 8.42, 7.1)
-                        mainCharacterIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(237), GLKMathDegreesToRadians(0))
-                         print("Lionel to plate")
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3")
-                        })
+                        print("Tapped: ", hitTestResult.node.parent?.name)
+                        if LionelOnPlate == false{
+                            startTransitionAnimation(key: "MainCharacterLaying")
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3") //"Good job"
+                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing1"]!, type: "mp3", rate: 1)
+                            mainCharacterIdle.parent?.position = SCNVector3(0.7, 8.42, 7.1)
+                            mainCharacterIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(237), GLKMathDegreesToRadians(0))
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3")
+                                self.LionelOnPlate = true
+                                print("Lionel on plate = ", self.LionelOnPlate)
+                            })
+                        }
                     case "Yogurt":
-                        YogiOnPlate = true
-                        startAnimateSideCharacter(key: "SideCharacter1Sitting", sideCharacter: "Yogi")
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3") //"Amazing"
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3", rate: 1)
-                        charcterOneIdle.parent?.position = SCNVector3(1, 8.45, 4.8)
-                        charcterOneIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-40), GLKMathDegreesToRadians(0))
-                        print("Yogi to plate")
+                        print("Tapped: ", hitTestResult.node.parent?.name)
+                        print("LionOnPlate status is currently: ", LionelOnPlate)
+                        print("YogiOnPlate state is currently: ", YogiOnPlate)
+                        if LionelOnPlate == true && YogiOnPlate == false{
+                        self.startAnimateSideCharacter(key: "SideCharacter1Sitting", sideCharacter: "Yogi")
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
-                        })
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3") //"Amazing"
+                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3", rate: 1)
+                            charcterOneIdle.parent?.position = SCNVector3(1, 8.45, 4.8)
+                            charcterOneIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-40), GLKMathDegreesToRadians(0))
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
+                                self.YogiOnPlate = true
+                                print("Yogi on plate = ", self.YogiOnPlate)
+                            })
+                        }
                     case "Kiwi":
-                        KimiOnPlate = true
-                        startAnimateSideCharacter(key: "SideCharacter2Laying", sideCharacter: "Kimi")
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "mp3") //"Good job"
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3", rate: 1)
-                        charcterTwoIdle.parent?.position = SCNVector3(-0.8, 8.5, 4.9)
-                        charcterTwoIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(25), GLKMathDegreesToRadians(0))
-                        print("Kimi to plate")
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "mp3")
-                        })
+                        print("Tapped: ", hitTestResult.node.parent?.name)
+                        if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == false{
+                        self.startAnimateSideCharacter(key: "SideCharacter2Laying", sideCharacter: "Kimi")
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "mp3") //"Good job"
+                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3", rate: 1)
+                            charcterTwoIdle.parent?.position = SCNVector3(-0.8, 8.5, 4.9)
+                            charcterTwoIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(25), GLKMathDegreesToRadians(0))
+                            print("Kimi to plate")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "mp3")
+                                self.KimiOnPlate = true
+                                print("Kimi on plate = ", self.KimiOnPlate)
+                            })
+                        }
                     case "EnergyBar":
-                        ErnieOnPlate = true
-                        startAnimateSideCharacter(key: "SideCharacter3Laying", sideCharacter: "Ernie")
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "mp3") //"You did it"
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3", rate: 1)
-                        charcterThreeIdle.parent?.position = SCNVector3(-1.1, 8.5, 6.6)
-                        charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(-1.5), GLKMathDegreesToRadians(50), GLKMathDegreesToRadians(0))
-                        print("Ernie to plate")
+                        print("Tapped: ", hitTestResult.node.parent?.name)
+                        if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && ErnieOnPlate == false{
+                        self.startAnimateSideCharacter(key: "SideCharacter3Sitting", sideCharacter: "Ernie")
+                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "mp3") //"You did it"
+                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3", rate: 1)
+                            charcterThreeIdle.parent?.position = SCNVector3(-1.5, 8.5, 7)
+                            charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(125), GLKMathDegreesToRadians(0))
+                            self.ErnieOnPlate = true
+                            self.shatterLetterSix = true
+                            
+                            //go to final narration and reset
+                            playShatterAnimation()
+                            print("Ernie on plate = ", ErnieOnPlate)
+                        }
                     default:
                         break
                     }
                     //if all the characters are on the plate
-                    if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && ErnieOnPlate == true {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            //play the final narration
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration37"]!, type: "mp3")
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
-                                self.resetGame()
-                            })
-                        })
-                    }
+//                    if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && ErnieOnPlate == true {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//                            //play the final narration
+//                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration37"]!, type: "mp3")
+//
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
+//                                self.resetGame()
+//                            })
+//                        })
+//                    }
                 }
                 print("Chapter Eight is true.")
             case chapterSeven:
@@ -816,102 +838,119 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func storyTime(){
-        //Wait 7 second for game to load completely
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
-            
             //add extra narration based on chapter
             switch true {
             case chapterOne:
-                self.startTransitionAnimation(key: "MainCharacterIdle")
-                print(self.mainCharacterIdle.name!, "is now idle")
-                //play game intro 1
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                //Wait 7 second for game to load completely
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    self.startTransitionAnimation(key: "MainCharacterIdle")
+                    print(self.mainCharacterIdle.name!, "is now idle")
+                    //play game intro 1
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 
-                //wait 7 seconds for the game intro1 to finish
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                    //move the main character to the first letter
-                    self.playWalkAnimation()
-                })
-            case chapterTwo:
-                self.startTransitionAnimation(key: "MainCharacterIdle")
-
-                //play game intro 1
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-               DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
-                    //show the different outfits that you can pick
-                    for node in self.charcterOneIdle.childNodes {
-                        node.isHidden = false
-                    }
-                    for node in self.charcterTwoIdle.childNodes {
-                        node.isHidden = false
-                    }
-                    for node in self.charcterThreeIdle.childNodes {
-                        node.isHidden = false
-                    }
-                    for node in self.charcterFourIdle.childNodes {
-                        node.isHidden = false
-                    }
-                })
-                
-            case chapterThree:
-                self.startTransitionAnimation(key: "MainCharacterIdle")
-                //play game intro 1
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                    //wait 7 seconds for the game intro1 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                         //move the main character to the first letter
                         self.playWalkAnimation()
+                    })
                 })
-                print("Starting chapter three")
+            case chapterTwo:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    self.startTransitionAnimation(key: "MainCharacterIdle")
+
+                    //play game intro 1
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
+                        //show the different outfits that you can pick
+                        for node in self.charcterOneIdle.childNodes {
+                            node.isHidden = false
+                        }
+                        for node in self.charcterTwoIdle.childNodes {
+                            node.isHidden = false
+                        }
+                        for node in self.charcterThreeIdle.childNodes {
+                            node.isHidden = false
+                        }
+                        for node in self.charcterFourIdle.childNodes {
+                            node.isHidden = false
+                        }
+                    })
+                })
+            case chapterThree:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    self.startTransitionAnimation(key: "MainCharacterIdle")
+                    //play game intro 1
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                            //move the main character to the first letter
+                            self.playWalkAnimation()
+                        print("Starting chapter three")
+                    })
+                })
             case chapterFour:
-                self.startTransitionAnimation(key: "MainCharacterWaving")
-                //play game intro 1
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
-                    //move the main character to the first letter
-                    self.playWalkAnimation()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    self.startTransitionAnimation(key: "MainCharacterWaving")
+                    //play game intro 1
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
+                        //move the main character to the first letter
+                        self.playWalkAnimation()
+                        print("Starting chapter four")
+                    })
                 })
-                print("Starting chapter four")
             case chapterFive:
-                //play game intro1
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                    //move the main character to the first letter
-                    self.playWalkAnimation()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    //play game intro1
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                        //move the main character to the first letter
+                        self.playWalkAnimation()
+                    })
                 })
             case chapterSix:
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     print("Do chapter 6 stuff")
+                })
             case chapterSeven:
-                self.startTransitionAnimation(key: "MainCharacterIdle")
-                print(self.mainCharacterIdle.name!, "is now idle")
-                //play game intro 1
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-            
-                //wait 7 seconds for the game intro1 to finish
-                DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
-                //move the main character to the first letter
-                self.playWalkAnimation()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    self.startTransitionAnimation(key: "MainCharacterIdle")
+                    print(self.mainCharacterIdle.name!, "is now idle")
+                    //play game intro 1
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                
+                    //wait 7 seconds for the game intro1 to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                    //move the main character to the first letter
+                    self.playWalkAnimation()
+                    })
                 })
             case chapterEight:
                 self.startTransitionAnimation(key: "MainCharacterLaying")
-                //play game intro 1
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
-                    //move the main character to the first marker
-                    self.playWalkAnimation()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    //play game intro 1
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                        //move the main character to the first marker
+                        self.playWalkAnimation()
+                        print("Start chapter eight")
+                    })
                 })
-                print("Start chapter eight")
             case chapterNine:
-                print("Do chapter 9 stuff")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    print("Do chapter 9 stuff")
+                })
             case chapterTen:
-                print("Do chapter 10 stuff")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    print("Do chapter 10 stuff")
+                })
             default:
                 break
             }
-        })
     }
     
     //pass it an audiofile and it will play it!

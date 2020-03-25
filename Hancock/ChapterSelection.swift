@@ -1215,7 +1215,7 @@ class ChapterSelection {
             storyNode.position = SCNVector3(0, 0, 0)
         
             //Load Idle Animation Node
-            let idleLionelScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Lionel/Lionel@SittingIdleFixed.dae")!
+            let idleLionelScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Lionel/Lionel@IdleFixede.dae")!
             for child in idleLionelScene.rootNode.childNodes {
                 idleNode.addChildNode(child)
             }
@@ -1288,6 +1288,7 @@ class ChapterSelection {
             prepareAnimation(withKey: "SideCharacter3Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StairwalkFixed", animationIdentifier: "Ernie@StairwalkFixed-1")
             prepareAnimation(withKey: "SideCharacter3Standup", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StandupFixed", animationIdentifier: "Ernie@StandupFixed-1")
             prepareAnimation(withKey: "SideCharacter3Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@WalkingFixed", animationIdentifier: "Ernie@WalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter3Sitting", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@SittingFixed", animationIdentifier: "Ernie@SittingFixed-1")
         
             chapter8NodeArray.append(storyNode)
         return chapter8NodeArray
@@ -1296,17 +1297,16 @@ class ChapterSelection {
     func loadChapter8SoundFiles() -> [String: String] {
         let chapter8SoundArray = [
                                   //Intro to chapter
-                                  "Narration1" : "ch3L-Intro1", //Lionel lives in the back of the fridge
+                                  "Narration1" : "ch3L-Intro1", //Lionel lives in the back of the fridge (11)
             
                                   //letter l
-                                  "Narration3" : "ch3L-L-Transition1",
-                                  //TODO: "Narration4" : "ch3L -L-Intro1",
-                                  "Narration5" : "ch1-E-Line1",    //1 Green to Red
-                                  "Narration6" : "ch1-E-Line4_01", //4 Perfect
+                                  "Narration3" : "ch3L-L-Intro1", //trace L to help Lionel get up (10)
+                                  "Narration4" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration5" : "ch1-E-Line4_01", //4 Perfect
             
                                   //Letter y
-                                  "Narration7" : "ch3L-Y-Intro1",
-                                  
+                                  "Narration6" : "ch3L-Y-Transition1", //Lionel is on his way (5)
+                                  "Narration7" : "ch3L-Y-Intro1", //by the milk, Lionel meets yogi (9)
                                   "Narration8" : "ch1-E-Line1",    //1 Green to Red
                                   "Narration9" : "ch1-E-Line4_01", //4 Perfect
                                   "Narration10" : "ch1-E-Line2_02", //Blue to Orange
@@ -1352,7 +1352,7 @@ class ChapterSelection {
                                   "Narration37" : "ch3L-Final4",
                                   
                                   //extra chapter FX sounds
-                                  "BackgroundSound" : "Birds2",
+                                  "BackgroundSound" : "Small_refrigerator",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing1" : "bell-ding_01",
                                   "CoinDing2" : "bell-ding_02",
@@ -1370,7 +1370,7 @@ class ChapterSelection {
         var chapter9NodeArray: [SCNNode] = []
         
         // Load StoryScene Node
-        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Environment/Chapter9Scene.scn")!
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Environments/Chapter9Scene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
         storyNode.scale = SCNVector3(0.03, 0.03, 0.03)
         storyNode.position = SCNVector3(0, 0, 0)

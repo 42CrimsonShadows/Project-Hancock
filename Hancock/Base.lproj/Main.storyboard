@@ -245,13 +245,18 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TL-C2-6tZ">
                                         <rect key="frame" x="136" y="0.0" width="164" height="100"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        <nil key="textColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Pba-2z-aXm"/>
+                                            <constraint firstAttribute="width" constant="164" id="iRL-GM-ce2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="50"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Smc-od-oF7"/>
+                                    <constraint firstItem="1TL-C2-6tZ" firstAttribute="leading" secondItem="Jfi-vY-abv" secondAttribute="trailing" constant="8" symbolic="YES" id="ZPJ-ca-JDH"/>
                                     <constraint firstAttribute="height" constant="100" id="m8N-FI-nQH"/>
                                 </constraints>
                             </stackView>

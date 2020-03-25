@@ -26,20 +26,21 @@ extension ViewController{
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 //FIXME: chapter 8 letter 1
-                self.startTransitionAnimation(key: "MainCharacterIdle")
-                self.stopTransitionAnimation(key: "MainCharacterStandup")
+                //self.stopTransitionAnimation(key: "MainCharacterStandup")
+                //self.startTransitionAnimation(key: "MainCharacterIdle")
                 
-                //TODO: add letter l intro
-                //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                //letter l intro
+                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 
                 //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
                 self.shatterLetterOne = true
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                //load first letter for activityView page
-                self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
-                //play narration for the first audio instructions for the activity
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
+                    
+                    //load first letter for activityView page
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
                 })
                 print("stopwalk chapter 8 stuff")
             case chapterSeven:
@@ -869,13 +870,15 @@ extension ViewController{
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 //FIXME: chapter 8 letter 5
+                                
+                self.stopAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+                self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
                 
-                stopTransitionAnimation(key: "MainCharacterWalking")
-                startTransitionAnimation(key: "MainCharacterIdle")
                 
                 //play instructions to touch Lionel the lemon
                 toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3") //can you tap the lemon?
                 shatterLetterFive = true
+                
                 //Find and unhide the plate
                 let plate =  mainFloor.childNode(withName: "Plate", recursively: true)
                 plate!.isHidden = false

@@ -1,5 +1,15 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
+- "chapterOne"
+- "chapterTwo"
+- "chapterThree"
+- "chapterFour"
+- "chapterFive"
+- "chapterSix"
+- "chapterSeven"
+- "chapterEight"
+- "chapterNine"
+- "chapterTen"
 - "ChapterViewController"
 provides-nominal:
 - "7Hancock21ChapterViewControllerC"
@@ -7,34 +17,58 @@ provides-member:
 - ["7Hancock21ChapterViewControllerC", ""]
 provides-dynamic-lookup:
 - "GifView"
+- "chapter10Label"
 - "chapter1Label"
 - "chapter2Label"
 - "chapter3Label"
 - "chapter4Label"
 - "chapter5Label"
+- "chapter6Label"
+- "chapter7Label"
+- "chapter8Label"
+- "chapter9Label"
+- "conceptView"
+- "cpt10Clicked"
 - "cpt1Clicked"
 - "cpt2Clicked"
 - "cpt3Clicked"
 - "cpt4Clicked"
 - "cpt5Clicked"
+- "cpt6Clicked"
+- "cpt7Clicked"
+- "cpt8Clicked"
+- "cpt9Clicked"
 - "loadingGifView"
 - "viewDidLoad"
 depends-top-level:
 - !private "+"
 - "AssignmentPrecedence"
-- !private "BooleanLiteralType"
+- "Bool"
+- "BooleanLiteralType"
 - !private "CastingPrecedence"
 - "ChapterSelection"
 - "ChapterViewController"
 - !private "DispatchQueue"
 - !private "FloatLiteralType"
 - !private "IntegerLiteralType"
-- !private "StringLiteralType"
+- "StringLiteralType"
 - "UIButton"
-- !private "UIImage"
+- "UIImage"
 - "UIImageView"
 - "UIViewController"
 - !private "ViewController"
+- "chapterEight"
+- "chapterFive"
+- "chapterFour"
+- "chapterNine"
+- "chapterOne"
+- "chapterSeven"
+- "chapterSix"
+- "chapterTen"
+- "chapterThree"
+- "chapterTwo"
+- !private "print"
+- !private "~="
 depends-member:
 - !private ["So15CALayerDelegateP", "image"]
 - !private ["So15CALayerDelegateP", "isHidden"]
@@ -42,17 +76,36 @@ depends-member:
 - ["s7CVarArgP", "ChapterSelection"]
 - !private ["s7CVarArgP", "DispatchQueue"]
 - !private ["s7CVarArgP", "GifView"]
-- !private ["s7CVarArgP", "UIImage"]
+- ["s7CVarArgP", "UIImage"]
 - ["s7CVarArgP", ""]
 - !private ["s7CVarArgP", "asyncAfter"]
+- !private ["s7CVarArgP", "chapter10Label"]
 - !private ["s7CVarArgP", "chapter1Label"]
 - !private ["s7CVarArgP", "chapter2Label"]
 - !private ["s7CVarArgP", "chapter3Label"]
 - !private ["s7CVarArgP", "chapter4Label"]
 - !private ["s7CVarArgP", "chapter5Label"]
+- !private ["s7CVarArgP", "chapter6Label"]
+- !private ["s7CVarArgP", "chapter7Label"]
+- !private ["s7CVarArgP", "chapter8Label"]
+- !private ["s7CVarArgP", "chapter9Label"]
+- !private ["s7CVarArgP", "chapterEight"]
+- !private ["s7CVarArgP", "chapterFive"]
+- !private ["s7CVarArgP", "chapterFour"]
+- !private ["s7CVarArgP", "chapterNine"]
+- !private ["s7CVarArgP", "chapterOne"]
 - !private ["s7CVarArgP", "chapterSelector"]
+- !private ["s7CVarArgP", "chapterSeven"]
+- !private ["s7CVarArgP", "chapterSix"]
+- !private ["s7CVarArgP", "chapterTen"]
+- !private ["s7CVarArgP", "chapterThree"]
+- !private ["s7CVarArgP", "chapterTwo"]
+- !private ["s7CVarArgP", "concept3"]
+- !private ["s7CVarArgP", "concept4"]
+- !private ["s7CVarArgP", "concept5"]
+- !private ["s7CVarArgP", "conceptView"]
 - !private ["s7CVarArgP", "image"]
-- !private ["s7CVarArgP", "init"]
+- ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "instantiateViewController"]
 - !private ["s7CVarArgP", "isHidden"]
 - !private ["s7CVarArgP", "loadGif"]
@@ -60,6 +113,7 @@ depends-member:
 - !private ["s7CVarArgP", "main"]
 - !private ["s7CVarArgP", "pauseAfterPlay"]
 - !private ["s7CVarArgP", "present"]
+- !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "storyboard"]
 - !private ["s7CVarArgP", "tappedMe"]
 - !private ["s7CVarArgP", "viewDidLoad"]
@@ -69,25 +123,50 @@ depends-member:
 - !private ["7Hancock21ChapterViewControllerC", "DispatchQueue"]
 - ["7Hancock21ChapterViewControllerC", "GifView"]
 - ["7Hancock21ChapterViewControllerC", "UIButton"]
-- !private ["7Hancock21ChapterViewControllerC", "UIImage"]
+- ["7Hancock21ChapterViewControllerC", "UIImage"]
 - ["7Hancock21ChapterViewControllerC", "UIImageView"]
 - !private ["7Hancock21ChapterViewControllerC", "ViewController"]
+- ["7Hancock21ChapterViewControllerC", "chapter10Label"]
 - ["7Hancock21ChapterViewControllerC", "chapter1Label"]
 - ["7Hancock21ChapterViewControllerC", "chapter2Label"]
 - ["7Hancock21ChapterViewControllerC", "chapter3Label"]
 - ["7Hancock21ChapterViewControllerC", "chapter4Label"]
 - ["7Hancock21ChapterViewControllerC", "chapter5Label"]
+- ["7Hancock21ChapterViewControllerC", "chapter6Label"]
+- ["7Hancock21ChapterViewControllerC", "chapter7Label"]
+- ["7Hancock21ChapterViewControllerC", "chapter8Label"]
+- ["7Hancock21ChapterViewControllerC", "chapter9Label"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterEight"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterFive"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterFour"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterNine"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterOne"]
 - ["7Hancock21ChapterViewControllerC", "chapterSelector"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterSeven"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterSix"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterTen"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterThree"]
+- !private ["7Hancock21ChapterViewControllerC", "chapterTwo"]
+- ["7Hancock21ChapterViewControllerC", "concept3"]
+- ["7Hancock21ChapterViewControllerC", "concept4"]
+- ["7Hancock21ChapterViewControllerC", "concept5"]
+- ["7Hancock21ChapterViewControllerC", "conceptView"]
+- ["7Hancock21ChapterViewControllerC", "cpt10Clicked"]
 - ["7Hancock21ChapterViewControllerC", "cpt1Clicked"]
 - ["7Hancock21ChapterViewControllerC", "cpt2Clicked"]
 - ["7Hancock21ChapterViewControllerC", "cpt3Clicked"]
 - ["7Hancock21ChapterViewControllerC", "cpt4Clicked"]
 - ["7Hancock21ChapterViewControllerC", "cpt5Clicked"]
+- ["7Hancock21ChapterViewControllerC", "cpt6Clicked"]
+- ["7Hancock21ChapterViewControllerC", "cpt7Clicked"]
+- ["7Hancock21ChapterViewControllerC", "cpt8Clicked"]
+- ["7Hancock21ChapterViewControllerC", "cpt9Clicked"]
 - ["7Hancock21ChapterViewControllerC", "deinit"]
 - ["7Hancock21ChapterViewControllerC", "init"]
 - ["7Hancock21ChapterViewControllerC", "loadingGifView"]
 - ["7Hancock21ChapterViewControllerC", "pauseAfterPlay"]
 - !private ["7Hancock21ChapterViewControllerC", "present"]
+- !private ["7Hancock21ChapterViewControllerC", "print"]
 - !private ["7Hancock21ChapterViewControllerC", "storyboard"]
 - ["7Hancock21ChapterViewControllerC", "tappedMe"]
 - ["7Hancock21ChapterViewControllerC", "viewDidLoad"]
@@ -95,17 +174,36 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "ChapterSelection"]
 - !private ["s28CustomDebugStringConvertibleP", "DispatchQueue"]
 - !private ["s28CustomDebugStringConvertibleP", "GifView"]
-- !private ["s28CustomDebugStringConvertibleP", "UIImage"]
+- ["s28CustomDebugStringConvertibleP", "UIImage"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s28CustomDebugStringConvertibleP", "asyncAfter"]
+- !private ["s28CustomDebugStringConvertibleP", "chapter10Label"]
 - !private ["s28CustomDebugStringConvertibleP", "chapter1Label"]
 - !private ["s28CustomDebugStringConvertibleP", "chapter2Label"]
 - !private ["s28CustomDebugStringConvertibleP", "chapter3Label"]
 - !private ["s28CustomDebugStringConvertibleP", "chapter4Label"]
 - !private ["s28CustomDebugStringConvertibleP", "chapter5Label"]
+- !private ["s28CustomDebugStringConvertibleP", "chapter6Label"]
+- !private ["s28CustomDebugStringConvertibleP", "chapter7Label"]
+- !private ["s28CustomDebugStringConvertibleP", "chapter8Label"]
+- !private ["s28CustomDebugStringConvertibleP", "chapter9Label"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterEight"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterFive"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterFour"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterNine"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterOne"]
 - !private ["s28CustomDebugStringConvertibleP", "chapterSelector"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterSeven"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterSix"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterTen"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterThree"]
+- !private ["s28CustomDebugStringConvertibleP", "chapterTwo"]
+- !private ["s28CustomDebugStringConvertibleP", "concept3"]
+- !private ["s28CustomDebugStringConvertibleP", "concept4"]
+- !private ["s28CustomDebugStringConvertibleP", "concept5"]
+- !private ["s28CustomDebugStringConvertibleP", "conceptView"]
 - !private ["s28CustomDebugStringConvertibleP", "image"]
-- !private ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "instantiateViewController"]
 - !private ["s28CustomDebugStringConvertibleP", "isHidden"]
 - !private ["s28CustomDebugStringConvertibleP", "loadGif"]
@@ -113,6 +211,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "main"]
 - !private ["s28CustomDebugStringConvertibleP", "pauseAfterPlay"]
 - !private ["s28CustomDebugStringConvertibleP", "present"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "storyboard"]
 - !private ["s28CustomDebugStringConvertibleP", "tappedMe"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
@@ -122,17 +221,36 @@ depends-member:
 - ["s23CustomStringConvertibleP", "ChapterSelection"]
 - !private ["s23CustomStringConvertibleP", "DispatchQueue"]
 - !private ["s23CustomStringConvertibleP", "GifView"]
-- !private ["s23CustomStringConvertibleP", "UIImage"]
+- ["s23CustomStringConvertibleP", "UIImage"]
 - ["s23CustomStringConvertibleP", ""]
 - !private ["s23CustomStringConvertibleP", "asyncAfter"]
+- !private ["s23CustomStringConvertibleP", "chapter10Label"]
 - !private ["s23CustomStringConvertibleP", "chapter1Label"]
 - !private ["s23CustomStringConvertibleP", "chapter2Label"]
 - !private ["s23CustomStringConvertibleP", "chapter3Label"]
 - !private ["s23CustomStringConvertibleP", "chapter4Label"]
 - !private ["s23CustomStringConvertibleP", "chapter5Label"]
+- !private ["s23CustomStringConvertibleP", "chapter6Label"]
+- !private ["s23CustomStringConvertibleP", "chapter7Label"]
+- !private ["s23CustomStringConvertibleP", "chapter8Label"]
+- !private ["s23CustomStringConvertibleP", "chapter9Label"]
+- !private ["s23CustomStringConvertibleP", "chapterEight"]
+- !private ["s23CustomStringConvertibleP", "chapterFive"]
+- !private ["s23CustomStringConvertibleP", "chapterFour"]
+- !private ["s23CustomStringConvertibleP", "chapterNine"]
+- !private ["s23CustomStringConvertibleP", "chapterOne"]
 - !private ["s23CustomStringConvertibleP", "chapterSelector"]
+- !private ["s23CustomStringConvertibleP", "chapterSeven"]
+- !private ["s23CustomStringConvertibleP", "chapterSix"]
+- !private ["s23CustomStringConvertibleP", "chapterTen"]
+- !private ["s23CustomStringConvertibleP", "chapterThree"]
+- !private ["s23CustomStringConvertibleP", "chapterTwo"]
+- !private ["s23CustomStringConvertibleP", "concept3"]
+- !private ["s23CustomStringConvertibleP", "concept4"]
+- !private ["s23CustomStringConvertibleP", "concept5"]
+- !private ["s23CustomStringConvertibleP", "conceptView"]
 - !private ["s23CustomStringConvertibleP", "image"]
-- !private ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "instantiateViewController"]
 - !private ["s23CustomStringConvertibleP", "isHidden"]
 - !private ["s23CustomStringConvertibleP", "loadGif"]
@@ -140,6 +258,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "main"]
 - !private ["s23CustomStringConvertibleP", "pauseAfterPlay"]
 - !private ["s23CustomStringConvertibleP", "present"]
+- !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "storyboard"]
 - !private ["s23CustomStringConvertibleP", "tappedMe"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
@@ -157,17 +276,36 @@ depends-member:
 - ["SQ", "ChapterSelection"]
 - !private ["SQ", "DispatchQueue"]
 - !private ["SQ", "GifView"]
-- !private ["SQ", "UIImage"]
+- ["SQ", "UIImage"]
 - ["SQ", ""]
 - !private ["SQ", "asyncAfter"]
+- !private ["SQ", "chapter10Label"]
 - !private ["SQ", "chapter1Label"]
 - !private ["SQ", "chapter2Label"]
 - !private ["SQ", "chapter3Label"]
 - !private ["SQ", "chapter4Label"]
 - !private ["SQ", "chapter5Label"]
+- !private ["SQ", "chapter6Label"]
+- !private ["SQ", "chapter7Label"]
+- !private ["SQ", "chapter8Label"]
+- !private ["SQ", "chapter9Label"]
+- !private ["SQ", "chapterEight"]
+- !private ["SQ", "chapterFive"]
+- !private ["SQ", "chapterFour"]
+- !private ["SQ", "chapterNine"]
+- !private ["SQ", "chapterOne"]
 - !private ["SQ", "chapterSelector"]
+- !private ["SQ", "chapterSeven"]
+- !private ["SQ", "chapterSix"]
+- !private ["SQ", "chapterTen"]
+- !private ["SQ", "chapterThree"]
+- !private ["SQ", "chapterTwo"]
+- !private ["SQ", "concept3"]
+- !private ["SQ", "concept4"]
+- !private ["SQ", "concept5"]
+- !private ["SQ", "conceptView"]
 - !private ["SQ", "image"]
-- !private ["SQ", "init"]
+- ["SQ", "init"]
 - !private ["SQ", "instantiateViewController"]
 - !private ["SQ", "isHidden"]
 - !private ["SQ", "loadGif"]
@@ -176,6 +314,7 @@ depends-member:
 - !private ["SQ", "now"]
 - !private ["SQ", "pauseAfterPlay"]
 - !private ["SQ", "present"]
+- !private ["SQ", "print"]
 - !private ["SQ", "storyboard"]
 - !private ["SQ", "tappedMe"]
 - !private ["SQ", "viewDidLoad"]
@@ -185,17 +324,36 @@ depends-member:
 - ["SH", "ChapterSelection"]
 - !private ["SH", "DispatchQueue"]
 - !private ["SH", "GifView"]
-- !private ["SH", "UIImage"]
+- ["SH", "UIImage"]
 - ["SH", ""]
 - !private ["SH", "asyncAfter"]
+- !private ["SH", "chapter10Label"]
 - !private ["SH", "chapter1Label"]
 - !private ["SH", "chapter2Label"]
 - !private ["SH", "chapter3Label"]
 - !private ["SH", "chapter4Label"]
 - !private ["SH", "chapter5Label"]
+- !private ["SH", "chapter6Label"]
+- !private ["SH", "chapter7Label"]
+- !private ["SH", "chapter8Label"]
+- !private ["SH", "chapter9Label"]
+- !private ["SH", "chapterEight"]
+- !private ["SH", "chapterFive"]
+- !private ["SH", "chapterFour"]
+- !private ["SH", "chapterNine"]
+- !private ["SH", "chapterOne"]
 - !private ["SH", "chapterSelector"]
+- !private ["SH", "chapterSeven"]
+- !private ["SH", "chapterSix"]
+- !private ["SH", "chapterTen"]
+- !private ["SH", "chapterThree"]
+- !private ["SH", "chapterTwo"]
+- !private ["SH", "concept3"]
+- !private ["SH", "concept4"]
+- !private ["SH", "concept5"]
+- !private ["SH", "conceptView"]
 - !private ["SH", "image"]
-- !private ["SH", "init"]
+- ["SH", "init"]
 - !private ["SH", "instantiateViewController"]
 - !private ["SH", "isHidden"]
 - !private ["SH", "loadGif"]
@@ -203,69 +361,134 @@ depends-member:
 - !private ["SH", "main"]
 - !private ["SH", "pauseAfterPlay"]
 - !private ["SH", "present"]
+- !private ["SH", "print"]
 - !private ["SH", "storyboard"]
 - !private ["SH", "tappedMe"]
 - !private ["SH", "viewDidLoad"]
 - ["So8NSCodingP", "ChapterSelection"]
 - !private ["So8NSCodingP", "DispatchQueue"]
 - !private ["So8NSCodingP", "GifView"]
-- !private ["So8NSCodingP", "UIImage"]
+- ["So8NSCodingP", "UIImage"]
 - ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "chapter10Label"]
 - !private ["So8NSCodingP", "chapter1Label"]
 - !private ["So8NSCodingP", "chapter2Label"]
 - !private ["So8NSCodingP", "chapter3Label"]
 - !private ["So8NSCodingP", "chapter4Label"]
 - !private ["So8NSCodingP", "chapter5Label"]
+- !private ["So8NSCodingP", "chapter6Label"]
+- !private ["So8NSCodingP", "chapter7Label"]
+- !private ["So8NSCodingP", "chapter8Label"]
+- !private ["So8NSCodingP", "chapter9Label"]
+- !private ["So8NSCodingP", "chapterEight"]
+- !private ["So8NSCodingP", "chapterFive"]
+- !private ["So8NSCodingP", "chapterFour"]
+- !private ["So8NSCodingP", "chapterNine"]
+- !private ["So8NSCodingP", "chapterOne"]
 - !private ["So8NSCodingP", "chapterSelector"]
+- !private ["So8NSCodingP", "chapterSeven"]
+- !private ["So8NSCodingP", "chapterSix"]
+- !private ["So8NSCodingP", "chapterTen"]
+- !private ["So8NSCodingP", "chapterThree"]
+- !private ["So8NSCodingP", "chapterTwo"]
+- !private ["So8NSCodingP", "concept3"]
+- !private ["So8NSCodingP", "concept4"]
+- !private ["So8NSCodingP", "concept5"]
+- !private ["So8NSCodingP", "conceptView"]
 - !private ["So8NSCodingP", "image"]
-- !private ["So8NSCodingP", "init"]
+- ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "isHidden"]
 - !private ["So8NSCodingP", "loadGif"]
 - !private ["So8NSCodingP", "loadingGifView"]
 - !private ["So8NSCodingP", "pauseAfterPlay"]
 - !private ["So8NSCodingP", "present"]
+- !private ["So8NSCodingP", "print"]
 - !private ["So8NSCodingP", "storyboard"]
 - !private ["So8NSCodingP", "tappedMe"]
 - !private ["So8NSCodingP", "viewDidLoad"]
 - ["So26NSExtensionRequestHandlingP", "ChapterSelection"]
 - !private ["So26NSExtensionRequestHandlingP", "DispatchQueue"]
 - !private ["So26NSExtensionRequestHandlingP", "GifView"]
-- !private ["So26NSExtensionRequestHandlingP", "UIImage"]
+- ["So26NSExtensionRequestHandlingP", "UIImage"]
 - ["So26NSExtensionRequestHandlingP", ""]
+- !private ["So26NSExtensionRequestHandlingP", "chapter10Label"]
 - !private ["So26NSExtensionRequestHandlingP", "chapter1Label"]
 - !private ["So26NSExtensionRequestHandlingP", "chapter2Label"]
 - !private ["So26NSExtensionRequestHandlingP", "chapter3Label"]
 - !private ["So26NSExtensionRequestHandlingP", "chapter4Label"]
 - !private ["So26NSExtensionRequestHandlingP", "chapter5Label"]
+- !private ["So26NSExtensionRequestHandlingP", "chapter6Label"]
+- !private ["So26NSExtensionRequestHandlingP", "chapter7Label"]
+- !private ["So26NSExtensionRequestHandlingP", "chapter8Label"]
+- !private ["So26NSExtensionRequestHandlingP", "chapter9Label"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterEight"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterFive"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterFour"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterNine"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterOne"]
 - !private ["So26NSExtensionRequestHandlingP", "chapterSelector"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterSeven"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterSix"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterTen"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterThree"]
+- !private ["So26NSExtensionRequestHandlingP", "chapterTwo"]
+- !private ["So26NSExtensionRequestHandlingP", "concept3"]
+- !private ["So26NSExtensionRequestHandlingP", "concept4"]
+- !private ["So26NSExtensionRequestHandlingP", "concept5"]
+- !private ["So26NSExtensionRequestHandlingP", "conceptView"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
 - !private ["So26NSExtensionRequestHandlingP", "loadingGifView"]
 - !private ["So26NSExtensionRequestHandlingP", "pauseAfterPlay"]
 - !private ["So26NSExtensionRequestHandlingP", "present"]
+- !private ["So26NSExtensionRequestHandlingP", "print"]
 - !private ["So26NSExtensionRequestHandlingP", "storyboard"]
 - !private ["So26NSExtensionRequestHandlingP", "tappedMe"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
-- !private ["So21NSItemProviderReadingP", "init"]
-- !private ["So21NSItemProviderWritingP", "init"]
+- ["So21NSItemProviderReadingP", "init"]
+- ["So21NSItemProviderWritingP", "init"]
 - ["So8NSObjectC", "ChapterSelection"]
 - !private ["So8NSObjectC", "DispatchQueue"]
 - ["So8NSObjectC", "GifView"]
 - ["So8NSObjectC", "UIButton"]
-- !private ["So8NSObjectC", "UIImage"]
+- ["So8NSObjectC", "UIImage"]
 - ["So8NSObjectC", "UIImageView"]
 - !private ["So8NSObjectC", "ViewController"]
 - !private ["So8NSObjectC", "asyncAfter"]
+- ["So8NSObjectC", "chapter10Label"]
 - ["So8NSObjectC", "chapter1Label"]
 - ["So8NSObjectC", "chapter2Label"]
 - ["So8NSObjectC", "chapter3Label"]
 - ["So8NSObjectC", "chapter4Label"]
 - ["So8NSObjectC", "chapter5Label"]
+- ["So8NSObjectC", "chapter6Label"]
+- ["So8NSObjectC", "chapter7Label"]
+- ["So8NSObjectC", "chapter8Label"]
+- ["So8NSObjectC", "chapter9Label"]
+- !private ["So8NSObjectC", "chapterEight"]
+- !private ["So8NSObjectC", "chapterFive"]
+- !private ["So8NSObjectC", "chapterFour"]
+- !private ["So8NSObjectC", "chapterNine"]
+- !private ["So8NSObjectC", "chapterOne"]
 - ["So8NSObjectC", "chapterSelector"]
+- !private ["So8NSObjectC", "chapterSeven"]
+- !private ["So8NSObjectC", "chapterSix"]
+- !private ["So8NSObjectC", "chapterTen"]
+- !private ["So8NSObjectC", "chapterThree"]
+- !private ["So8NSObjectC", "chapterTwo"]
+- ["So8NSObjectC", "concept3"]
+- ["So8NSObjectC", "concept4"]
+- ["So8NSObjectC", "concept5"]
+- ["So8NSObjectC", "conceptView"]
+- ["So8NSObjectC", "cpt10Clicked"]
 - ["So8NSObjectC", "cpt1Clicked"]
 - ["So8NSObjectC", "cpt2Clicked"]
 - ["So8NSObjectC", "cpt3Clicked"]
 - ["So8NSObjectC", "cpt4Clicked"]
 - ["So8NSObjectC", "cpt5Clicked"]
+- ["So8NSObjectC", "cpt6Clicked"]
+- ["So8NSObjectC", "cpt7Clicked"]
+- ["So8NSObjectC", "cpt8Clicked"]
+- ["So8NSObjectC", "cpt9Clicked"]
 - !private ["So8NSObjectC", "image"]
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "instantiateViewController"]
@@ -275,23 +498,43 @@ depends-member:
 - !private ["So8NSObjectC", "main"]
 - ["So8NSObjectC", "pauseAfterPlay"]
 - !private ["So8NSObjectC", "present"]
+- !private ["So8NSObjectC", "print"]
 - !private ["So8NSObjectC", "storyboard"]
 - ["So8NSObjectC", "tappedMe"]
 - ["So8NSObjectC", "viewDidLoad"]
 - ["So8NSObjectP", "ChapterSelection"]
 - !private ["So8NSObjectP", "DispatchQueue"]
 - !private ["So8NSObjectP", "GifView"]
-- !private ["So8NSObjectP", "UIImage"]
+- ["So8NSObjectP", "UIImage"]
 - ["So8NSObjectP", ""]
 - !private ["So8NSObjectP", "asyncAfter"]
+- !private ["So8NSObjectP", "chapter10Label"]
 - !private ["So8NSObjectP", "chapter1Label"]
 - !private ["So8NSObjectP", "chapter2Label"]
 - !private ["So8NSObjectP", "chapter3Label"]
 - !private ["So8NSObjectP", "chapter4Label"]
 - !private ["So8NSObjectP", "chapter5Label"]
+- !private ["So8NSObjectP", "chapter6Label"]
+- !private ["So8NSObjectP", "chapter7Label"]
+- !private ["So8NSObjectP", "chapter8Label"]
+- !private ["So8NSObjectP", "chapter9Label"]
+- !private ["So8NSObjectP", "chapterEight"]
+- !private ["So8NSObjectP", "chapterFive"]
+- !private ["So8NSObjectP", "chapterFour"]
+- !private ["So8NSObjectP", "chapterNine"]
+- !private ["So8NSObjectP", "chapterOne"]
 - !private ["So8NSObjectP", "chapterSelector"]
+- !private ["So8NSObjectP", "chapterSeven"]
+- !private ["So8NSObjectP", "chapterSix"]
+- !private ["So8NSObjectP", "chapterTen"]
+- !private ["So8NSObjectP", "chapterThree"]
+- !private ["So8NSObjectP", "chapterTwo"]
+- !private ["So8NSObjectP", "concept3"]
+- !private ["So8NSObjectP", "concept4"]
+- !private ["So8NSObjectP", "concept5"]
+- !private ["So8NSObjectP", "conceptView"]
 - !private ["So8NSObjectP", "image"]
-- !private ["So8NSObjectP", "init"]
+- ["So8NSObjectP", "init"]
 - !private ["So8NSObjectP", "instantiateViewController"]
 - !private ["So8NSObjectP", "isHidden"]
 - !private ["So8NSObjectP", "loadGif"]
@@ -299,20 +542,23 @@ depends-member:
 - !private ["So8NSObjectP", "main"]
 - !private ["So8NSObjectP", "pauseAfterPlay"]
 - !private ["So8NSObjectP", "present"]
+- !private ["So8NSObjectP", "print"]
 - !private ["So8NSObjectP", "storyboard"]
 - !private ["So8NSObjectP", "tappedMe"]
 - !private ["So8NSObjectP", "viewDidLoad"]
-- !private ["So14NSSecureCodingP", "init"]
+- ["So14NSSecureCodingP", "init"]
 - !private ["So9OS_objectC", "asyncAfter"]
 - !private ["So9OS_objectC", "main"]
 - !private ["Sq", "image"]
 - !private ["Sq", "isHidden"]
 - !private ["Sq", "loadGif"]
+- !private ["7Combine9SchedulerP", "asyncAfter"]
+- !private ["7Combine9SchedulerP", "main"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "image"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "isHidden"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "loadGif"]
 - !private ["So29UIAccessibilityIdentificationP", "image"]
-- !private ["So29UIAccessibilityIdentificationP", "init"]
+- ["So29UIAccessibilityIdentificationP", "init"]
 - !private ["So29UIAccessibilityIdentificationP", "isHidden"]
 - !private ["So29UIAccessibilityIdentificationP", "loadGif"]
 - !private ["So12UIAppearanceP", "image"]
@@ -321,14 +567,33 @@ depends-member:
 - ["So21UIAppearanceContainerP", "ChapterSelection"]
 - !private ["So21UIAppearanceContainerP", "DispatchQueue"]
 - !private ["So21UIAppearanceContainerP", "GifView"]
-- !private ["So21UIAppearanceContainerP", "UIImage"]
+- ["So21UIAppearanceContainerP", "UIImage"]
 - ["So21UIAppearanceContainerP", ""]
+- !private ["So21UIAppearanceContainerP", "chapter10Label"]
 - !private ["So21UIAppearanceContainerP", "chapter1Label"]
 - !private ["So21UIAppearanceContainerP", "chapter2Label"]
 - !private ["So21UIAppearanceContainerP", "chapter3Label"]
 - !private ["So21UIAppearanceContainerP", "chapter4Label"]
 - !private ["So21UIAppearanceContainerP", "chapter5Label"]
+- !private ["So21UIAppearanceContainerP", "chapter6Label"]
+- !private ["So21UIAppearanceContainerP", "chapter7Label"]
+- !private ["So21UIAppearanceContainerP", "chapter8Label"]
+- !private ["So21UIAppearanceContainerP", "chapter9Label"]
+- !private ["So21UIAppearanceContainerP", "chapterEight"]
+- !private ["So21UIAppearanceContainerP", "chapterFive"]
+- !private ["So21UIAppearanceContainerP", "chapterFour"]
+- !private ["So21UIAppearanceContainerP", "chapterNine"]
+- !private ["So21UIAppearanceContainerP", "chapterOne"]
 - !private ["So21UIAppearanceContainerP", "chapterSelector"]
+- !private ["So21UIAppearanceContainerP", "chapterSeven"]
+- !private ["So21UIAppearanceContainerP", "chapterSix"]
+- !private ["So21UIAppearanceContainerP", "chapterTen"]
+- !private ["So21UIAppearanceContainerP", "chapterThree"]
+- !private ["So21UIAppearanceContainerP", "chapterTwo"]
+- !private ["So21UIAppearanceContainerP", "concept3"]
+- !private ["So21UIAppearanceContainerP", "concept4"]
+- !private ["So21UIAppearanceContainerP", "concept5"]
+- !private ["So21UIAppearanceContainerP", "conceptView"]
 - !private ["So21UIAppearanceContainerP", "image"]
 - !private ["So21UIAppearanceContainerP", "init"]
 - !private ["So21UIAppearanceContainerP", "isHidden"]
@@ -336,6 +601,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "loadingGifView"]
 - !private ["So21UIAppearanceContainerP", "pauseAfterPlay"]
 - !private ["So21UIAppearanceContainerP", "present"]
+- !private ["So21UIAppearanceContainerP", "print"]
 - !private ["So21UIAppearanceContainerP", "storyboard"]
 - !private ["So21UIAppearanceContainerP", "tappedMe"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
@@ -343,18 +609,38 @@ depends-member:
 - ["So18UIContentContainerP", "ChapterSelection"]
 - !private ["So18UIContentContainerP", "DispatchQueue"]
 - !private ["So18UIContentContainerP", "GifView"]
-- !private ["So18UIContentContainerP", "UIImage"]
+- ["So18UIContentContainerP", "UIImage"]
 - ["So18UIContentContainerP", ""]
+- !private ["So18UIContentContainerP", "chapter10Label"]
 - !private ["So18UIContentContainerP", "chapter1Label"]
 - !private ["So18UIContentContainerP", "chapter2Label"]
 - !private ["So18UIContentContainerP", "chapter3Label"]
 - !private ["So18UIContentContainerP", "chapter4Label"]
 - !private ["So18UIContentContainerP", "chapter5Label"]
+- !private ["So18UIContentContainerP", "chapter6Label"]
+- !private ["So18UIContentContainerP", "chapter7Label"]
+- !private ["So18UIContentContainerP", "chapter8Label"]
+- !private ["So18UIContentContainerP", "chapter9Label"]
+- !private ["So18UIContentContainerP", "chapterEight"]
+- !private ["So18UIContentContainerP", "chapterFive"]
+- !private ["So18UIContentContainerP", "chapterFour"]
+- !private ["So18UIContentContainerP", "chapterNine"]
+- !private ["So18UIContentContainerP", "chapterOne"]
 - !private ["So18UIContentContainerP", "chapterSelector"]
+- !private ["So18UIContentContainerP", "chapterSeven"]
+- !private ["So18UIContentContainerP", "chapterSix"]
+- !private ["So18UIContentContainerP", "chapterTen"]
+- !private ["So18UIContentContainerP", "chapterThree"]
+- !private ["So18UIContentContainerP", "chapterTwo"]
+- !private ["So18UIContentContainerP", "concept3"]
+- !private ["So18UIContentContainerP", "concept4"]
+- !private ["So18UIContentContainerP", "concept5"]
+- !private ["So18UIContentContainerP", "conceptView"]
 - !private ["So18UIContentContainerP", "init"]
 - !private ["So18UIContentContainerP", "loadingGifView"]
 - !private ["So18UIContentContainerP", "pauseAfterPlay"]
 - !private ["So18UIContentContainerP", "present"]
+- !private ["So18UIContentContainerP", "print"]
 - !private ["So18UIContentContainerP", "storyboard"]
 - !private ["So18UIContentContainerP", "tappedMe"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
@@ -368,14 +654,33 @@ depends-member:
 - ["So18UIFocusEnvironmentP", "ChapterSelection"]
 - !private ["So18UIFocusEnvironmentP", "DispatchQueue"]
 - !private ["So18UIFocusEnvironmentP", "GifView"]
-- !private ["So18UIFocusEnvironmentP", "UIImage"]
+- ["So18UIFocusEnvironmentP", "UIImage"]
 - ["So18UIFocusEnvironmentP", ""]
+- !private ["So18UIFocusEnvironmentP", "chapter10Label"]
 - !private ["So18UIFocusEnvironmentP", "chapter1Label"]
 - !private ["So18UIFocusEnvironmentP", "chapter2Label"]
 - !private ["So18UIFocusEnvironmentP", "chapter3Label"]
 - !private ["So18UIFocusEnvironmentP", "chapter4Label"]
 - !private ["So18UIFocusEnvironmentP", "chapter5Label"]
+- !private ["So18UIFocusEnvironmentP", "chapter6Label"]
+- !private ["So18UIFocusEnvironmentP", "chapter7Label"]
+- !private ["So18UIFocusEnvironmentP", "chapter8Label"]
+- !private ["So18UIFocusEnvironmentP", "chapter9Label"]
+- !private ["So18UIFocusEnvironmentP", "chapterEight"]
+- !private ["So18UIFocusEnvironmentP", "chapterFive"]
+- !private ["So18UIFocusEnvironmentP", "chapterFour"]
+- !private ["So18UIFocusEnvironmentP", "chapterNine"]
+- !private ["So18UIFocusEnvironmentP", "chapterOne"]
 - !private ["So18UIFocusEnvironmentP", "chapterSelector"]
+- !private ["So18UIFocusEnvironmentP", "chapterSeven"]
+- !private ["So18UIFocusEnvironmentP", "chapterSix"]
+- !private ["So18UIFocusEnvironmentP", "chapterTen"]
+- !private ["So18UIFocusEnvironmentP", "chapterThree"]
+- !private ["So18UIFocusEnvironmentP", "chapterTwo"]
+- !private ["So18UIFocusEnvironmentP", "concept3"]
+- !private ["So18UIFocusEnvironmentP", "concept4"]
+- !private ["So18UIFocusEnvironmentP", "concept5"]
+- !private ["So18UIFocusEnvironmentP", "conceptView"]
 - !private ["So18UIFocusEnvironmentP", "image"]
 - !private ["So18UIFocusEnvironmentP", "init"]
 - !private ["So18UIFocusEnvironmentP", "isHidden"]
@@ -383,6 +688,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "loadingGifView"]
 - !private ["So18UIFocusEnvironmentP", "pauseAfterPlay"]
 - !private ["So18UIFocusEnvironmentP", "present"]
+- !private ["So18UIFocusEnvironmentP", "print"]
 - !private ["So18UIFocusEnvironmentP", "storyboard"]
 - !private ["So18UIFocusEnvironmentP", "tappedMe"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
@@ -392,22 +698,44 @@ depends-member:
 - !private ["So20UIFocusItemContainerP", "image"]
 - !private ["So20UIFocusItemContainerP", "isHidden"]
 - !private ["So20UIFocusItemContainerP", "loadGif"]
-- !private ["So7UIImageC", "init"]
+- ["So7UIImageC", "init"]
 - !private ["So11UIImageViewC", "image"]
 - !private ["So11UIImageViewC", "isHidden"]
 - !private ["So11UIImageViewC", "loadGif"]
-- !private ["So39UIItemProviderPresentationSizeProvidingP", "init"]
+- ["So39UIItemProviderPresentationSizeProvidingP", "init"]
+- !private ["So24UILargeContentViewerItemP", "image"]
+- !private ["So24UILargeContentViewerItemP", "isHidden"]
+- !private ["So24UILargeContentViewerItemP", "loadGif"]
 - ["So30UIPasteConfigurationSupportingP", "ChapterSelection"]
 - !private ["So30UIPasteConfigurationSupportingP", "DispatchQueue"]
 - !private ["So30UIPasteConfigurationSupportingP", "GifView"]
-- !private ["So30UIPasteConfigurationSupportingP", "UIImage"]
+- ["So30UIPasteConfigurationSupportingP", "UIImage"]
 - ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So30UIPasteConfigurationSupportingP", "chapter10Label"]
 - !private ["So30UIPasteConfigurationSupportingP", "chapter1Label"]
 - !private ["So30UIPasteConfigurationSupportingP", "chapter2Label"]
 - !private ["So30UIPasteConfigurationSupportingP", "chapter3Label"]
 - !private ["So30UIPasteConfigurationSupportingP", "chapter4Label"]
 - !private ["So30UIPasteConfigurationSupportingP", "chapter5Label"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapter6Label"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapter7Label"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapter8Label"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapter9Label"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterEight"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterFive"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterFour"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterNine"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterOne"]
 - !private ["So30UIPasteConfigurationSupportingP", "chapterSelector"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterSeven"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterSix"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterTen"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterThree"]
+- !private ["So30UIPasteConfigurationSupportingP", "chapterTwo"]
+- !private ["So30UIPasteConfigurationSupportingP", "concept3"]
+- !private ["So30UIPasteConfigurationSupportingP", "concept4"]
+- !private ["So30UIPasteConfigurationSupportingP", "concept5"]
+- !private ["So30UIPasteConfigurationSupportingP", "conceptView"]
 - !private ["So30UIPasteConfigurationSupportingP", "image"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "isHidden"]
@@ -415,6 +743,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "loadingGifView"]
 - !private ["So30UIPasteConfigurationSupportingP", "pauseAfterPlay"]
 - !private ["So30UIPasteConfigurationSupportingP", "present"]
+- !private ["So30UIPasteConfigurationSupportingP", "print"]
 - !private ["So30UIPasteConfigurationSupportingP", "storyboard"]
 - !private ["So30UIPasteConfigurationSupportingP", "tappedMe"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
@@ -422,20 +751,44 @@ depends-member:
 - !private ["So11UIResponderC", "DispatchQueue"]
 - ["So11UIResponderC", "GifView"]
 - ["So11UIResponderC", "UIButton"]
-- !private ["So11UIResponderC", "UIImage"]
+- ["So11UIResponderC", "UIImage"]
 - ["So11UIResponderC", "UIImageView"]
 - !private ["So11UIResponderC", "ViewController"]
+- ["So11UIResponderC", "chapter10Label"]
 - ["So11UIResponderC", "chapter1Label"]
 - ["So11UIResponderC", "chapter2Label"]
 - ["So11UIResponderC", "chapter3Label"]
 - ["So11UIResponderC", "chapter4Label"]
 - ["So11UIResponderC", "chapter5Label"]
+- ["So11UIResponderC", "chapter6Label"]
+- ["So11UIResponderC", "chapter7Label"]
+- ["So11UIResponderC", "chapter8Label"]
+- ["So11UIResponderC", "chapter9Label"]
+- !private ["So11UIResponderC", "chapterEight"]
+- !private ["So11UIResponderC", "chapterFive"]
+- !private ["So11UIResponderC", "chapterFour"]
+- !private ["So11UIResponderC", "chapterNine"]
+- !private ["So11UIResponderC", "chapterOne"]
 - ["So11UIResponderC", "chapterSelector"]
+- !private ["So11UIResponderC", "chapterSeven"]
+- !private ["So11UIResponderC", "chapterSix"]
+- !private ["So11UIResponderC", "chapterTen"]
+- !private ["So11UIResponderC", "chapterThree"]
+- !private ["So11UIResponderC", "chapterTwo"]
+- ["So11UIResponderC", "concept3"]
+- ["So11UIResponderC", "concept4"]
+- ["So11UIResponderC", "concept5"]
+- ["So11UIResponderC", "conceptView"]
+- ["So11UIResponderC", "cpt10Clicked"]
 - ["So11UIResponderC", "cpt1Clicked"]
 - ["So11UIResponderC", "cpt2Clicked"]
 - ["So11UIResponderC", "cpt3Clicked"]
 - ["So11UIResponderC", "cpt4Clicked"]
 - ["So11UIResponderC", "cpt5Clicked"]
+- ["So11UIResponderC", "cpt6Clicked"]
+- ["So11UIResponderC", "cpt7Clicked"]
+- ["So11UIResponderC", "cpt8Clicked"]
+- ["So11UIResponderC", "cpt9Clicked"]
 - !private ["So11UIResponderC", "image"]
 - ["So11UIResponderC", "init"]
 - !private ["So11UIResponderC", "isHidden"]
@@ -443,20 +796,40 @@ depends-member:
 - ["So11UIResponderC", "loadingGifView"]
 - ["So11UIResponderC", "pauseAfterPlay"]
 - !private ["So11UIResponderC", "present"]
+- !private ["So11UIResponderC", "print"]
 - !private ["So11UIResponderC", "storyboard"]
 - ["So11UIResponderC", "tappedMe"]
 - ["So11UIResponderC", "viewDidLoad"]
 - ["So30UIResponderStandardEditActionsP", "ChapterSelection"]
 - !private ["So30UIResponderStandardEditActionsP", "DispatchQueue"]
 - !private ["So30UIResponderStandardEditActionsP", "GifView"]
-- !private ["So30UIResponderStandardEditActionsP", "UIImage"]
+- ["So30UIResponderStandardEditActionsP", "UIImage"]
 - ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So30UIResponderStandardEditActionsP", "chapter10Label"]
 - !private ["So30UIResponderStandardEditActionsP", "chapter1Label"]
 - !private ["So30UIResponderStandardEditActionsP", "chapter2Label"]
 - !private ["So30UIResponderStandardEditActionsP", "chapter3Label"]
 - !private ["So30UIResponderStandardEditActionsP", "chapter4Label"]
 - !private ["So30UIResponderStandardEditActionsP", "chapter5Label"]
+- !private ["So30UIResponderStandardEditActionsP", "chapter6Label"]
+- !private ["So30UIResponderStandardEditActionsP", "chapter7Label"]
+- !private ["So30UIResponderStandardEditActionsP", "chapter8Label"]
+- !private ["So30UIResponderStandardEditActionsP", "chapter9Label"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterEight"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterFive"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterFour"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterNine"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterOne"]
 - !private ["So30UIResponderStandardEditActionsP", "chapterSelector"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterSeven"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterSix"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterTen"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterThree"]
+- !private ["So30UIResponderStandardEditActionsP", "chapterTwo"]
+- !private ["So30UIResponderStandardEditActionsP", "concept3"]
+- !private ["So30UIResponderStandardEditActionsP", "concept4"]
+- !private ["So30UIResponderStandardEditActionsP", "concept5"]
+- !private ["So30UIResponderStandardEditActionsP", "conceptView"]
 - !private ["So30UIResponderStandardEditActionsP", "image"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "isHidden"]
@@ -464,6 +837,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "loadingGifView"]
 - !private ["So30UIResponderStandardEditActionsP", "pauseAfterPlay"]
 - !private ["So30UIResponderStandardEditActionsP", "present"]
+- !private ["So30UIResponderStandardEditActionsP", "print"]
 - !private ["So30UIResponderStandardEditActionsP", "storyboard"]
 - !private ["So30UIResponderStandardEditActionsP", "tappedMe"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
@@ -471,18 +845,38 @@ depends-member:
 - ["So16UIStateRestoringP", "ChapterSelection"]
 - !private ["So16UIStateRestoringP", "DispatchQueue"]
 - !private ["So16UIStateRestoringP", "GifView"]
-- !private ["So16UIStateRestoringP", "UIImage"]
+- ["So16UIStateRestoringP", "UIImage"]
 - ["So16UIStateRestoringP", ""]
+- !private ["So16UIStateRestoringP", "chapter10Label"]
 - !private ["So16UIStateRestoringP", "chapter1Label"]
 - !private ["So16UIStateRestoringP", "chapter2Label"]
 - !private ["So16UIStateRestoringP", "chapter3Label"]
 - !private ["So16UIStateRestoringP", "chapter4Label"]
 - !private ["So16UIStateRestoringP", "chapter5Label"]
+- !private ["So16UIStateRestoringP", "chapter6Label"]
+- !private ["So16UIStateRestoringP", "chapter7Label"]
+- !private ["So16UIStateRestoringP", "chapter8Label"]
+- !private ["So16UIStateRestoringP", "chapter9Label"]
+- !private ["So16UIStateRestoringP", "chapterEight"]
+- !private ["So16UIStateRestoringP", "chapterFive"]
+- !private ["So16UIStateRestoringP", "chapterFour"]
+- !private ["So16UIStateRestoringP", "chapterNine"]
+- !private ["So16UIStateRestoringP", "chapterOne"]
 - !private ["So16UIStateRestoringP", "chapterSelector"]
+- !private ["So16UIStateRestoringP", "chapterSeven"]
+- !private ["So16UIStateRestoringP", "chapterSix"]
+- !private ["So16UIStateRestoringP", "chapterTen"]
+- !private ["So16UIStateRestoringP", "chapterThree"]
+- !private ["So16UIStateRestoringP", "chapterTwo"]
+- !private ["So16UIStateRestoringP", "concept3"]
+- !private ["So16UIStateRestoringP", "concept4"]
+- !private ["So16UIStateRestoringP", "concept5"]
+- !private ["So16UIStateRestoringP", "conceptView"]
 - !private ["So16UIStateRestoringP", "init"]
 - !private ["So16UIStateRestoringP", "loadingGifView"]
 - !private ["So16UIStateRestoringP", "pauseAfterPlay"]
 - !private ["So16UIStateRestoringP", "present"]
+- !private ["So16UIStateRestoringP", "print"]
 - !private ["So16UIStateRestoringP", "storyboard"]
 - !private ["So16UIStateRestoringP", "tappedMe"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
@@ -490,14 +884,33 @@ depends-member:
 - ["So18UITraitEnvironmentP", "ChapterSelection"]
 - !private ["So18UITraitEnvironmentP", "DispatchQueue"]
 - !private ["So18UITraitEnvironmentP", "GifView"]
-- !private ["So18UITraitEnvironmentP", "UIImage"]
+- ["So18UITraitEnvironmentP", "UIImage"]
 - ["So18UITraitEnvironmentP", ""]
+- !private ["So18UITraitEnvironmentP", "chapter10Label"]
 - !private ["So18UITraitEnvironmentP", "chapter1Label"]
 - !private ["So18UITraitEnvironmentP", "chapter2Label"]
 - !private ["So18UITraitEnvironmentP", "chapter3Label"]
 - !private ["So18UITraitEnvironmentP", "chapter4Label"]
 - !private ["So18UITraitEnvironmentP", "chapter5Label"]
+- !private ["So18UITraitEnvironmentP", "chapter6Label"]
+- !private ["So18UITraitEnvironmentP", "chapter7Label"]
+- !private ["So18UITraitEnvironmentP", "chapter8Label"]
+- !private ["So18UITraitEnvironmentP", "chapter9Label"]
+- !private ["So18UITraitEnvironmentP", "chapterEight"]
+- !private ["So18UITraitEnvironmentP", "chapterFive"]
+- !private ["So18UITraitEnvironmentP", "chapterFour"]
+- !private ["So18UITraitEnvironmentP", "chapterNine"]
+- !private ["So18UITraitEnvironmentP", "chapterOne"]
 - !private ["So18UITraitEnvironmentP", "chapterSelector"]
+- !private ["So18UITraitEnvironmentP", "chapterSeven"]
+- !private ["So18UITraitEnvironmentP", "chapterSix"]
+- !private ["So18UITraitEnvironmentP", "chapterTen"]
+- !private ["So18UITraitEnvironmentP", "chapterThree"]
+- !private ["So18UITraitEnvironmentP", "chapterTwo"]
+- !private ["So18UITraitEnvironmentP", "concept3"]
+- !private ["So18UITraitEnvironmentP", "concept4"]
+- !private ["So18UITraitEnvironmentP", "concept5"]
+- !private ["So18UITraitEnvironmentP", "conceptView"]
 - !private ["So18UITraitEnvironmentP", "image"]
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "isHidden"]
@@ -505,20 +918,40 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "loadingGifView"]
 - !private ["So18UITraitEnvironmentP", "pauseAfterPlay"]
 - !private ["So18UITraitEnvironmentP", "present"]
+- !private ["So18UITraitEnvironmentP", "print"]
 - !private ["So18UITraitEnvironmentP", "storyboard"]
 - !private ["So18UITraitEnvironmentP", "tappedMe"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - ["So23UIUserActivityRestoringP", "ChapterSelection"]
 - !private ["So23UIUserActivityRestoringP", "DispatchQueue"]
 - !private ["So23UIUserActivityRestoringP", "GifView"]
-- !private ["So23UIUserActivityRestoringP", "UIImage"]
+- ["So23UIUserActivityRestoringP", "UIImage"]
 - ["So23UIUserActivityRestoringP", ""]
+- !private ["So23UIUserActivityRestoringP", "chapter10Label"]
 - !private ["So23UIUserActivityRestoringP", "chapter1Label"]
 - !private ["So23UIUserActivityRestoringP", "chapter2Label"]
 - !private ["So23UIUserActivityRestoringP", "chapter3Label"]
 - !private ["So23UIUserActivityRestoringP", "chapter4Label"]
 - !private ["So23UIUserActivityRestoringP", "chapter5Label"]
+- !private ["So23UIUserActivityRestoringP", "chapter6Label"]
+- !private ["So23UIUserActivityRestoringP", "chapter7Label"]
+- !private ["So23UIUserActivityRestoringP", "chapter8Label"]
+- !private ["So23UIUserActivityRestoringP", "chapter9Label"]
+- !private ["So23UIUserActivityRestoringP", "chapterEight"]
+- !private ["So23UIUserActivityRestoringP", "chapterFive"]
+- !private ["So23UIUserActivityRestoringP", "chapterFour"]
+- !private ["So23UIUserActivityRestoringP", "chapterNine"]
+- !private ["So23UIUserActivityRestoringP", "chapterOne"]
 - !private ["So23UIUserActivityRestoringP", "chapterSelector"]
+- !private ["So23UIUserActivityRestoringP", "chapterSeven"]
+- !private ["So23UIUserActivityRestoringP", "chapterSix"]
+- !private ["So23UIUserActivityRestoringP", "chapterTen"]
+- !private ["So23UIUserActivityRestoringP", "chapterThree"]
+- !private ["So23UIUserActivityRestoringP", "chapterTwo"]
+- !private ["So23UIUserActivityRestoringP", "concept3"]
+- !private ["So23UIUserActivityRestoringP", "concept4"]
+- !private ["So23UIUserActivityRestoringP", "concept5"]
+- !private ["So23UIUserActivityRestoringP", "conceptView"]
 - !private ["So23UIUserActivityRestoringP", "image"]
 - !private ["So23UIUserActivityRestoringP", "init"]
 - !private ["So23UIUserActivityRestoringP", "isHidden"]
@@ -526,6 +959,7 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "loadingGifView"]
 - !private ["So23UIUserActivityRestoringP", "pauseAfterPlay"]
 - !private ["So23UIUserActivityRestoringP", "present"]
+- !private ["So23UIUserActivityRestoringP", "print"]
 - !private ["So23UIUserActivityRestoringP", "storyboard"]
 - !private ["So23UIUserActivityRestoringP", "tappedMe"]
 - !private ["So23UIUserActivityRestoringP", "viewDidLoad"]
@@ -536,43 +970,87 @@ depends-member:
 - !private ["So16UIViewControllerC", "DispatchQueue"]
 - ["So16UIViewControllerC", "GifView"]
 - ["So16UIViewControllerC", "UIButton"]
-- !private ["So16UIViewControllerC", "UIImage"]
+- ["So16UIViewControllerC", "UIImage"]
 - ["So16UIViewControllerC", "UIImageView"]
 - !private ["So16UIViewControllerC", "ViewController"]
 - ["So16UIViewControllerC", ""]
+- ["So16UIViewControllerC", "chapter10Label"]
 - ["So16UIViewControllerC", "chapter1Label"]
 - ["So16UIViewControllerC", "chapter2Label"]
 - ["So16UIViewControllerC", "chapter3Label"]
 - ["So16UIViewControllerC", "chapter4Label"]
 - ["So16UIViewControllerC", "chapter5Label"]
+- ["So16UIViewControllerC", "chapter6Label"]
+- ["So16UIViewControllerC", "chapter7Label"]
+- ["So16UIViewControllerC", "chapter8Label"]
+- ["So16UIViewControllerC", "chapter9Label"]
+- !private ["So16UIViewControllerC", "chapterEight"]
+- !private ["So16UIViewControllerC", "chapterFive"]
+- !private ["So16UIViewControllerC", "chapterFour"]
+- !private ["So16UIViewControllerC", "chapterNine"]
+- !private ["So16UIViewControllerC", "chapterOne"]
 - ["So16UIViewControllerC", "chapterSelector"]
+- !private ["So16UIViewControllerC", "chapterSeven"]
+- !private ["So16UIViewControllerC", "chapterSix"]
+- !private ["So16UIViewControllerC", "chapterTen"]
+- !private ["So16UIViewControllerC", "chapterThree"]
+- !private ["So16UIViewControllerC", "chapterTwo"]
+- ["So16UIViewControllerC", "concept3"]
+- ["So16UIViewControllerC", "concept4"]
+- ["So16UIViewControllerC", "concept5"]
+- ["So16UIViewControllerC", "conceptView"]
+- ["So16UIViewControllerC", "cpt10Clicked"]
 - ["So16UIViewControllerC", "cpt1Clicked"]
 - ["So16UIViewControllerC", "cpt2Clicked"]
 - ["So16UIViewControllerC", "cpt3Clicked"]
 - ["So16UIViewControllerC", "cpt4Clicked"]
 - ["So16UIViewControllerC", "cpt5Clicked"]
+- ["So16UIViewControllerC", "cpt6Clicked"]
+- ["So16UIViewControllerC", "cpt7Clicked"]
+- ["So16UIViewControllerC", "cpt8Clicked"]
+- ["So16UIViewControllerC", "cpt9Clicked"]
 - ["So16UIViewControllerC", "init"]
 - ["So16UIViewControllerC", "loadingGifView"]
 - ["So16UIViewControllerC", "pauseAfterPlay"]
 - !private ["So16UIViewControllerC", "present"]
+- !private ["So16UIViewControllerC", "print"]
 - !private ["So16UIViewControllerC", "storyboard"]
 - ["So16UIViewControllerC", "tappedMe"]
 - ["So16UIViewControllerC", "viewDidLoad"]
-- !private ["s26_ExpressibleByImageLiteralP", "init"]
+- ["s26_ExpressibleByImageLiteralP", "init"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "ChapterSelection"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "DispatchQueue"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "GifView"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIImage"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "UIImage"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "asyncAfter"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter10Label"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter1Label"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter2Label"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter3Label"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter4Label"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter5Label"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter6Label"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter7Label"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter8Label"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapter9Label"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterEight"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterFive"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterFour"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterNine"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterOne"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterSelector"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterSeven"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterSix"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterTen"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterThree"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "chapterTwo"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "concept3"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "concept4"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "concept5"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "conceptView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "image"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "instantiateViewController"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isHidden"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "loadGif"]
@@ -580,9 +1058,54 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "pauseAfterPlay"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "present"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "storyboard"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "tappedMe"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ChapterSelection"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "DispatchQueue"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "GifView"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UIImage"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "asyncAfter"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter10Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter1Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter2Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter3Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter4Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter5Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter6Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter7Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter8Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapter9Label"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterEight"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterFive"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterFour"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterNine"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterOne"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterSelector"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterSeven"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterSix"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterTen"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterThree"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "chapterTwo"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "concept3"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "concept4"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "concept5"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "conceptView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "image"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "instantiateViewController"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isHidden"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "loadGif"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "loadingGifView"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "main"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "pauseAfterPlay"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "present"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "storyboard"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "tappedMe"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewDidLoad"]
 - !private ["s21_ObjectiveCBridgeableP", "image"]
 - !private ["s21_ObjectiveCBridgeableP", "isHidden"]
 - !private ["s21_ObjectiveCBridgeableP", "loadGif"]
@@ -608,15 +1131,16 @@ depends-nominal:
 - "SH"
 - "So8NSCodingP"
 - "So26NSExtensionRequestHandlingP"
-- !private "So21NSItemProviderReadingP"
-- !private "So21NSItemProviderWritingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
 - "So8NSObjectC"
 - "So8NSObjectP"
-- !private "So14NSSecureCodingP"
+- "So14NSSecureCodingP"
 - !private "So9OS_objectC"
 - !private "Sq"
+- !private "7Combine9SchedulerP"
 - !private "So48UIAccessibilityContentSizeCategoryImageAdjustingP"
-- !private "So29UIAccessibilityIdentificationP"
+- "So29UIAccessibilityIdentificationP"
 - !private "So12UIAppearanceP"
 - "So21UIAppearanceContainerP"
 - !private "So8UIButtonC"
@@ -627,9 +1151,10 @@ depends-nominal:
 - "So18UIFocusEnvironmentP"
 - !private "So11UIFocusItemP"
 - !private "So20UIFocusItemContainerP"
-- !private "So7UIImageC"
+- "So7UIImageC"
 - !private "So11UIImageViewC"
-- !private "So39UIItemProviderPresentationSizeProvidingP"
+- "So39UIItemProviderPresentationSizeProvidingP"
+- !private "So24UILargeContentViewerItemP"
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
@@ -640,51 +1165,78 @@ depends-nominal:
 - "So23UIUserActivityRestoringP"
 - !private "So6UIViewC"
 - "So16UIViewControllerC"
-- !private "s26_ExpressibleByImageLiteralP"
+- "s26_ExpressibleByImageLiteralP"
 - "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
 - !private "s21_ObjectiveCBridgeableP"
 - !private "s38__DefaultCustomPlaygroundQuickLookableP"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ModelIO.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GLKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ARKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SceneKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SpriteKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/usr/include/objc/ObjectiveC.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/usr/include/Darwin.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "86ff863095e9aaaec0657eff8bb0d9f2"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreMIDI.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ModelIO.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreMedia.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/simd.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreImage.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/QuartzCore.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Dispatch.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Metal.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Darwin.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Foundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/AVFoundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreFoundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreAudio.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreGraphics.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Swift.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/UIKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/GLKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ARKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SceneKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SpriteKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SwiftOnoneSupport.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Combine.framework/Modules/Combine.swiftmodule/arm64-apple-ios.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/ObjectiveC.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreMIDI.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreMedia.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/simd.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreImage.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/QuartzCore.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Dispatch.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Metal.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Darwin.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Foundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/AVFoundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreFoundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreAudio.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreGraphics.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Swift.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/UIKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/GLKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SceneKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SpriteKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/QuickLook.framework/Headers/QuickLook.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "9a4c312754ae2da82ae6ffdc906afb6e"

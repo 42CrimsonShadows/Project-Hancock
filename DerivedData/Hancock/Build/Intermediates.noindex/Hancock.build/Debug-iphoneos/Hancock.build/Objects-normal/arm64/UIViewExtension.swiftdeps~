@@ -1,0 +1,301 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["So6UIViewC", ""]
+- ["So6UIViewC", "pulsate"]
+provides-dynamic-lookup:
+depends-top-level:
+- "AssignmentPrecedence"
+- !private "CASpringAnimation"
+- "UIView"
+depends-member:
+- !private ["So8CAActionP", "autoreverses"]
+- !private ["So8CAActionP", "damping"]
+- !private ["So8CAActionP", "duration"]
+- !private ["So8CAActionP", "fromValue"]
+- !private ["So8CAActionP", "init"]
+- !private ["So8CAActionP", "initialVelocity"]
+- !private ["So8CAActionP", "repeatCount"]
+- !private ["So8CAActionP", "toValue"]
+- !private ["So11CAAnimationC", "autoreverses"]
+- !private ["So11CAAnimationC", "damping"]
+- !private ["So11CAAnimationC", "duration"]
+- !private ["So11CAAnimationC", "fromValue"]
+- !private ["So11CAAnimationC", "init"]
+- !private ["So11CAAnimationC", "initialVelocity"]
+- !private ["So11CAAnimationC", "repeatCount"]
+- !private ["So11CAAnimationC", "toValue"]
+- !private ["So16CABasicAnimationC", "autoreverses"]
+- !private ["So16CABasicAnimationC", "damping"]
+- !private ["So16CABasicAnimationC", "duration"]
+- !private ["So16CABasicAnimationC", "fromValue"]
+- !private ["So16CABasicAnimationC", "init"]
+- !private ["So16CABasicAnimationC", "initialVelocity"]
+- !private ["So16CABasicAnimationC", "repeatCount"]
+- !private ["So16CABasicAnimationC", "toValue"]
+- !private ["So7CALayerC", "add"]
+- !private ["So15CALayerDelegateP", "CASpringAnimation"]
+- !private ["So15CALayerDelegateP", "layer"]
+- !private ["So13CAMediaTimingP", "add"]
+- !private ["So13CAMediaTimingP", "autoreverses"]
+- !private ["So13CAMediaTimingP", "damping"]
+- !private ["So13CAMediaTimingP", "duration"]
+- !private ["So13CAMediaTimingP", "fromValue"]
+- !private ["So13CAMediaTimingP", "init"]
+- !private ["So13CAMediaTimingP", "initialVelocity"]
+- !private ["So13CAMediaTimingP", "repeatCount"]
+- !private ["So13CAMediaTimingP", "toValue"]
+- !private ["So19CAPropertyAnimationC", "autoreverses"]
+- !private ["So19CAPropertyAnimationC", "damping"]
+- !private ["So19CAPropertyAnimationC", "duration"]
+- !private ["So19CAPropertyAnimationC", "fromValue"]
+- !private ["So19CAPropertyAnimationC", "init"]
+- !private ["So19CAPropertyAnimationC", "initialVelocity"]
+- !private ["So19CAPropertyAnimationC", "repeatCount"]
+- !private ["So19CAPropertyAnimationC", "toValue"]
+- !private ["So17CASpringAnimationC", "autoreverses"]
+- !private ["So17CASpringAnimationC", "damping"]
+- !private ["So17CASpringAnimationC", "duration"]
+- !private ["So17CASpringAnimationC", "fromValue"]
+- !private ["So17CASpringAnimationC", "init"]
+- !private ["So17CASpringAnimationC", "initialVelocity"]
+- !private ["So17CASpringAnimationC", "repeatCount"]
+- !private ["So17CASpringAnimationC", "toValue"]
+- !private ["s7CVarArgP", "CASpringAnimation"]
+- !private ["s7CVarArgP", "add"]
+- !private ["s7CVarArgP", "autoreverses"]
+- !private ["s7CVarArgP", "damping"]
+- !private ["s7CVarArgP", "duration"]
+- !private ["s7CVarArgP", "fromValue"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "initialVelocity"]
+- !private ["s7CVarArgP", "layer"]
+- !private ["s7CVarArgP", "repeatCount"]
+- !private ["s7CVarArgP", "toValue"]
+- !private ["s28CustomDebugStringConvertibleP", "CASpringAnimation"]
+- !private ["s28CustomDebugStringConvertibleP", "add"]
+- !private ["s28CustomDebugStringConvertibleP", "autoreverses"]
+- !private ["s28CustomDebugStringConvertibleP", "damping"]
+- !private ["s28CustomDebugStringConvertibleP", "duration"]
+- !private ["s28CustomDebugStringConvertibleP", "fromValue"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "initialVelocity"]
+- !private ["s28CustomDebugStringConvertibleP", "layer"]
+- !private ["s28CustomDebugStringConvertibleP", "repeatCount"]
+- !private ["s28CustomDebugStringConvertibleP", "toValue"]
+- !private ["s23CustomStringConvertibleP", "CASpringAnimation"]
+- !private ["s23CustomStringConvertibleP", "add"]
+- !private ["s23CustomStringConvertibleP", "autoreverses"]
+- !private ["s23CustomStringConvertibleP", "damping"]
+- !private ["s23CustomStringConvertibleP", "duration"]
+- !private ["s23CustomStringConvertibleP", "fromValue"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "initialVelocity"]
+- !private ["s23CustomStringConvertibleP", "layer"]
+- !private ["s23CustomStringConvertibleP", "repeatCount"]
+- !private ["s23CustomStringConvertibleP", "toValue"]
+- !private ["SQ", "CASpringAnimation"]
+- !private ["SQ", "add"]
+- !private ["SQ", "autoreverses"]
+- !private ["SQ", "damping"]
+- !private ["SQ", "duration"]
+- !private ["SQ", "fromValue"]
+- !private ["SQ", "init"]
+- !private ["SQ", "initialVelocity"]
+- !private ["SQ", "layer"]
+- !private ["SQ", "repeatCount"]
+- !private ["SQ", "toValue"]
+- !private ["SH", "CASpringAnimation"]
+- !private ["SH", "add"]
+- !private ["SH", "autoreverses"]
+- !private ["SH", "damping"]
+- !private ["SH", "duration"]
+- !private ["SH", "fromValue"]
+- !private ["SH", "init"]
+- !private ["SH", "initialVelocity"]
+- !private ["SH", "layer"]
+- !private ["SH", "repeatCount"]
+- !private ["SH", "toValue"]
+- !private ["So8NSCodingP", "CASpringAnimation"]
+- !private ["So8NSCodingP", "add"]
+- !private ["So8NSCodingP", "autoreverses"]
+- !private ["So8NSCodingP", "damping"]
+- !private ["So8NSCodingP", "duration"]
+- !private ["So8NSCodingP", "fromValue"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "initialVelocity"]
+- !private ["So8NSCodingP", "layer"]
+- !private ["So8NSCodingP", "repeatCount"]
+- !private ["So8NSCodingP", "toValue"]
+- !private ["So9NSCopyingP", "autoreverses"]
+- !private ["So9NSCopyingP", "damping"]
+- !private ["So9NSCopyingP", "duration"]
+- !private ["So9NSCopyingP", "fromValue"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "initialVelocity"]
+- !private ["So9NSCopyingP", "repeatCount"]
+- !private ["So9NSCopyingP", "toValue"]
+- !private ["So8NSObjectC", "CASpringAnimation"]
+- !private ["So8NSObjectC", "add"]
+- !private ["So8NSObjectC", "autoreverses"]
+- !private ["So8NSObjectC", "damping"]
+- !private ["So8NSObjectC", "duration"]
+- !private ["So8NSObjectC", "fromValue"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "initialVelocity"]
+- !private ["So8NSObjectC", "layer"]
+- ["So8NSObjectC", "pulsate"]
+- !private ["So8NSObjectC", "repeatCount"]
+- !private ["So8NSObjectC", "toValue"]
+- !private ["So8NSObjectP", "CASpringAnimation"]
+- !private ["So8NSObjectP", "add"]
+- !private ["So8NSObjectP", "autoreverses"]
+- !private ["So8NSObjectP", "damping"]
+- !private ["So8NSObjectP", "duration"]
+- !private ["So8NSObjectP", "fromValue"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "initialVelocity"]
+- !private ["So8NSObjectP", "layer"]
+- !private ["So8NSObjectP", "repeatCount"]
+- !private ["So8NSObjectP", "toValue"]
+- !private ["So14NSSecureCodingP", "add"]
+- !private ["So14NSSecureCodingP", "autoreverses"]
+- !private ["So14NSSecureCodingP", "damping"]
+- !private ["So14NSSecureCodingP", "duration"]
+- !private ["So14NSSecureCodingP", "fromValue"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "initialVelocity"]
+- !private ["So14NSSecureCodingP", "repeatCount"]
+- !private ["So14NSSecureCodingP", "toValue"]
+- !private ["So12SCNAnimationP", "autoreverses"]
+- !private ["So12SCNAnimationP", "damping"]
+- !private ["So12SCNAnimationP", "duration"]
+- !private ["So12SCNAnimationP", "fromValue"]
+- !private ["So12SCNAnimationP", "init"]
+- !private ["So12SCNAnimationP", "initialVelocity"]
+- !private ["So12SCNAnimationP", "repeatCount"]
+- !private ["So12SCNAnimationP", "toValue"]
+- !private ["So29UIAccessibilityIdentificationP", "CASpringAnimation"]
+- !private ["So29UIAccessibilityIdentificationP", "layer"]
+- !private ["So12UIAppearanceP", "CASpringAnimation"]
+- !private ["So12UIAppearanceP", "layer"]
+- !private ["So21UIAppearanceContainerP", "CASpringAnimation"]
+- !private ["So21UIAppearanceContainerP", "layer"]
+- !private ["So17UICoordinateSpaceP", "CASpringAnimation"]
+- !private ["So17UICoordinateSpaceP", "layer"]
+- !private ["So13UIDynamicItemP", "CASpringAnimation"]
+- !private ["So13UIDynamicItemP", "layer"]
+- !private ["So18UIFocusEnvironmentP", "CASpringAnimation"]
+- !private ["So18UIFocusEnvironmentP", "layer"]
+- !private ["So11UIFocusItemP", "CASpringAnimation"]
+- !private ["So11UIFocusItemP", "layer"]
+- !private ["So20UIFocusItemContainerP", "CASpringAnimation"]
+- !private ["So20UIFocusItemContainerP", "layer"]
+- !private ["So30UIPasteConfigurationSupportingP", "CASpringAnimation"]
+- !private ["So30UIPasteConfigurationSupportingP", "layer"]
+- !private ["So11UIResponderC", "CASpringAnimation"]
+- !private ["So11UIResponderC", "layer"]
+- ["So11UIResponderC", "pulsate"]
+- !private ["So30UIResponderStandardEditActionsP", "CASpringAnimation"]
+- !private ["So30UIResponderStandardEditActionsP", "layer"]
+- !private ["So18UITraitEnvironmentP", "CASpringAnimation"]
+- !private ["So18UITraitEnvironmentP", "layer"]
+- !private ["So23UIUserActivityRestoringP", "CASpringAnimation"]
+- !private ["So23UIUserActivityRestoringP", "layer"]
+- !private ["So6UIViewC", "CASpringAnimation"]
+- !private ["So6UIViewC", "layer"]
+- ["So6UIViewC", "pulsate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CASpringAnimation"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "add"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "autoreverses"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "damping"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "duration"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "fromValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "initialVelocity"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "layer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "repeatCount"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "toValue"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "CASpringAnimation"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "layer"]
+depends-nominal:
+- !private "So8CAActionP"
+- !private "So11CAAnimationC"
+- !private "So16CABasicAnimationC"
+- !private "So7CALayerC"
+- !private "So15CALayerDelegateP"
+- !private "So13CAMediaTimingP"
+- !private "So19CAPropertyAnimationC"
+- !private "So17CASpringAnimationC"
+- !private "s7CVarArgP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s23CustomStringConvertibleP"
+- !private "SQ"
+- !private "SH"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- "So8NSObjectC"
+- !private "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- !private "So12SCNAnimationP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- !private "So21UIAppearanceContainerP"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- !private "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So20UIFocusItemContainerP"
+- !private "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- !private "So30UIResponderStandardEditActionsP"
+- !private "So18UITraitEnvironmentP"
+- !private "So23UIUserActivityRestoringP"
+- "So6UIViewC"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s38__DefaultCustomPlaygroundQuickLookableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GLKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ARKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SceneKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SpriteKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "33871a6b63dd3aad8ceafaea061bf54f"
