@@ -1473,16 +1473,59 @@ class ChapterSelection {
     }
     
     func loadChapter9SoundFiles() -> [String: String] {
-        let chapter9SoundArray = ["Narration1" : "Line1",
-                                  "Narration2" : "Line2",
-                                  "Narration3" : "Line3",
-                                  "Narration4" : "Line4",
-                                  "Narration5" : "Line5",
-                                  "Narration6" : "Line6",
-                                  "Narration7" : "Line7",
-                                  "Narration8" : "Line8",
-                                  "BackgroundSound" : "Birds2",
-                                  "WalkSound" : "Gravel and Grass Walk",
+        let chapter9SoundArray = [
+                                  //Intro to chaper 9
+                                  "Narration1" : "ch4L-Intro1",
+                                  "Narration2" : "ch4L-Intro2",
+                                  
+                                  //letter p
+                                  "Narration3" : "ch4L-P-Transition1",
+                                  "Narration4" : "ch4L-P-Intro1",
+                                  "Narration5" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration6" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration7" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration8" : "ch1-E-Line3_01", //3 Amazing
+                                  
+                                  //letter r
+                                  "Narration9" : "ch4L-R-Transition1",
+                                  "Narration10" : "ch4L-R-Transition2",
+                                  "Narration11" : "ch4L-R-Transition3",
+                                  "Narration12" : "ch4L-R-Intro1",
+                                  "Narration13" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration14" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration15" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration16" : "ch1-E-Line3_01", //3 Amazing
+                                  
+                                  //letter n
+                                  "Narration17" : "ch4L-N-Transition1",
+                                  "Narration18" : "ch4L-N-Transition2",
+                                  "Narration19" : "ch4L-N-Transition3",
+                                  "Narration20" : "ch4L-N-Intro1",
+                                  "Narration21" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration22" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration23" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration24" : "ch1-E-Line3_01", //3 Amazing
+                                  
+                                  //letter h
+                                  "Narration25" : "ch4L-H-Transition1",
+                                  "Narration26" : "ch4L-H-Transition2",
+                                  "Narration27" : "ch4L-H-Transition3",
+                                  "Narration28" : "ch4L-H-Intro1",
+                                  "Narration29" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration30" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration31" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration32" : "ch1-E-Line3_01", //3 Amazing
+                                  
+                                  //Final
+                                  "Narration33" : "ch4L-Final1",
+                                  "Narration34" : "ch4L-Final2",
+                                  "Narration35" : "ch4L-Final3",
+                                  "Narration36" : "ch4L-Final4",
+                                  
+                                  //FIXME: Add background sound for fairground/racetrack
+                                  //FIXME: Add sound for patricia flying
+                                  //"BackgroundSound" : "Birds2",
+                                  //"WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing1" : "bell-ding_01",
                                   "CoinDing2" : "bell-ding_02",
                                   "CoinDing3" : "bell-ding_03",

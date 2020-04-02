@@ -23,9 +23,11 @@ extension ViewController{
             case chapterTen:
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
+                //FIXME: chapter 9 letter 1
+                
+                
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
-                //FIXME: chapter 8 letter 1
                 //self.stopTransitionAnimation(key: "MainCharacterStandup")
                 //self.startTransitionAnimation(key: "MainCharacterIdle")
                 
@@ -199,10 +201,11 @@ extension ViewController{
             case chapterTen:
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
+                //FIXME: chapter 9 letter 2
+                
+                
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
-                //FIXME: chapter 8 letter 2
-                
                 //self.stopTransitionAnimation(key: "MainCharacterWalking")
                 self.startTransitionAnimation(key: "MainCharacterIdle")
                 //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
@@ -402,10 +405,10 @@ extension ViewController{
             case chapterTen:
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
+                //FIXME: chapter 9 letter 3
+                
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
-                //FIXME: chapter 8 letter 3
-                
                 self.startTransitionAnimation(key: "MainCharacterIdle")
                 //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
                 self.shatterLetterThree = true
@@ -607,10 +610,10 @@ extension ViewController{
             case chapterTen:
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
+                //FIXME: chapter 9 letter 4
+                
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
-                //FIXME: chapter 8 letter 4
-                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                     //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration22"]!, type: "mp3")
@@ -867,10 +870,10 @@ extension ViewController{
             case chapterTen:
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
+                //FIXME: chapter 9 letter 5
+                
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
-                //FIXME: chapter 8 letter 5
-                                
                 self.stopAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
                 self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
                 
@@ -1024,6 +1027,8 @@ extension ViewController{
             case chapterTen:
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
+                //FIXME: chapter 9 letter 6
+                
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 print("stopwalk chapter 8 stuff")

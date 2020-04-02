@@ -23,6 +23,8 @@ extension ViewController{
             case chapterTen:
                 print("Nothing to shatter for this chapter")
             case chapterNine:
+                //FIXME: chapter 9 letter 6
+                
                 print("Nothing to shatter for this chapter")
             case chapterEight:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -287,10 +289,10 @@ extension ViewController{
             case chapterTen:
                 print("Nothing to shatter for this chapter")
             case chapterNine:
+                //FIXME: chapter 9 letter 4
+                
                 print("Nothing to shatter for this chapter")
             case chapterEight:
-                //FIXME: chapter 8 letter 4
-                
                 //letter E completed, starting final sequence
                 print("Nothing to shatter for this chapter")
                 print("Ernie gets up and turns to Lionel and they cheer")
@@ -482,10 +484,10 @@ extension ViewController{
             case chapterTen:
                 print("Nothing to shatter for this chapter")
             case chapterNine:
+                //FIXME: chapter 9 letter 3
+                
                 print("Nothing to shatter for this chapter")
             case chapterEight:
-                //FIXME: chapter 8 letter 3
-                
                 //letter k completed, starting letter e
                 print("Nothing to shatter for this chapter")
                 print("Kimi turns to Lionel and they cheer")
@@ -633,9 +635,10 @@ extension ViewController{
             case chapterTen:
                 print("Nothing to shatter for this chapter")
             case chapterNine:
+                //FIXME: chapter 9 letter 2
+                
                 print("Nothing to shatter for this chapter")
             case chapterEight:
-                //FIXME: chapter 8 letter 2
                 //letter y completed, starting letter k
                 print("Nothing to shatter for this chapter")
                 print("Yogi turns to Lionel and they cheer")
@@ -789,10 +792,10 @@ extension ViewController{
             case chapterTen:
                 print("Nothing to shatter for this chapter")
             case chapterNine:
+                //FIXME: chapter 9 letter 1
+                
                 print("Nothing to shatter for this chapter")
             case chapterEight:
-                //FIXME: chapter 8 letter 1
-                
                 self.startTransitionAnimation(key: "MainCharacterStandup")
                 self.stopTransitionAnimation(key: "MainCharacterLaying")
                 

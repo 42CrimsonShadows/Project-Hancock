@@ -941,8 +941,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     })
                 })
             case chapterNine:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    //play intro Narration to chapter 9
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                     print("Do chapter 9 stuff")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                            self.playWalkAnimation()
+                        })
+                    })
                 })
             case chapterTen:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {

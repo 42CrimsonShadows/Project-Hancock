@@ -142,7 +142,6 @@ extension ViewController {
                 print("Ursa walks a little bit down the path")
                 
             case chapterEight:
-                //FIXME: 8 letter 1
                 
 //                self.startTransitionAnimation(key: "MainCharacterStandup")
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
@@ -159,6 +158,8 @@ extension ViewController {
                 print("do chapter 8 stuff")
                 
             case chapterNine:
+                //FIXME: 9 letter 1
+                
                 print("do chapter 9 stuff")
                 
             case chapterTen:
@@ -277,8 +278,7 @@ extension ViewController {
                 print("Ursa was to Stanley")
                 
             case chapterEight:
-                //FIXME: 8 letter 2
-                
+                                
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
@@ -290,6 +290,8 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
             case chapterNine:
+                //FIXME: 9 letter 2
+                
                 print("do chapter 9 stuff")
             case chapterTen:
                 print("do chapter 10 stuf")
@@ -423,8 +425,6 @@ extension ViewController {
                 print("Ursa walks to Vivian")
                 
             case chapterEight:
-                //FIXME: 8 letter 3
-                
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
@@ -458,6 +458,9 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
             case chapterNine:
+                //FIXME: 9 letter 3
+                
+                
                 print("do chapter 9 stuff")
             case chapterTen:
                 print("do chapter 10 stuf")
@@ -593,8 +596,6 @@ extension ViewController {
                 print("Ursa walks to Windsor")
                 
             case chapterEight:
-                //FIXME: 8 letter 4
-                
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
@@ -620,6 +621,9 @@ extension ViewController {
                 })
                 print("do chapter 8 stuff")
             case chapterNine:
+                //FIXME: 9 letter 4
+                
+                
                 print("do chapter 9 stuff")
             case chapterTen:
                 print("do chapter 10 stuf")
@@ -752,7 +756,7 @@ extension ViewController {
                 print("Ursa walks to top of the hill and sees Isaac")
                 
             case chapterEight:
-                //FIXME: 8 Final Walk
+                //Final Walk
                 
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
@@ -760,7 +764,7 @@ extension ViewController {
                 
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration28"]!, type: "mp3")
                 
-                //FIXME: Lionel's walk
+                //Lionel's walk
                 mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))// lionel turns toward the stairs up
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //walking up the stairs
@@ -805,7 +809,7 @@ extension ViewController {
                 })
                 
                 
-                //FIXME: Ernie's walk
+                //Ernie's walk
                 //Ernie walks to the bottom of the stairs
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                     self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
@@ -857,7 +861,7 @@ extension ViewController {
                         })
                     })
                     
-                    //FIXME: Kimi's walk
+                    //Kimi's walk
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         self.stopAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
                         self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
@@ -901,6 +905,9 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
             case chapterNine:
+                //FIXME: 9 letter 5
+                
+                
                 print("do chapter 9 stuff")
             case chapterTen:
                 print("do chapter 10 stuf")
@@ -1115,6 +1122,8 @@ extension ViewController {
             case chapterEight:
                 print("do chapter 8 stuff")
             case chapterNine:
+                //FIXME: 9 letter 6
+                
                 print("do chapter 9 stuff")
             case chapterTen:
                 print("do chapter 10 stuf")
