@@ -191,6 +191,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             letterFive?.isPaused = true
             letterSix?.isPaused = true
             
+            if chapterNine == true{
+                //special circumstances for keeping balloon from flying away
+                charcterTwoIdle.isPaused = true
+            }
+            
             print("Shatter Animation Paused")
             //you can also pause individual animations
             //storyNode?.childNode(withName: "shard2", recursively: true)?.animationPlayer(forKey: "shard2-Matrix-animation-transform")?.paused = true
@@ -933,7 +938,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     //play game intro 1
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                     
-                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
                         //move the main character to the first marker
                         self.playWalkAnimation()
@@ -941,6 +945,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     })
                 })
             case chapterNine:
+                //set Brennon's fly away Balloon to paused
+                charcterTwoIdle.isHidden = true
+                                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                     //play intro Narration to chapter 9
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")

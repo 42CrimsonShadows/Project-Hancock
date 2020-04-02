@@ -1372,7 +1372,7 @@ class ChapterSelection {
         // Load StoryScene Node
         let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Environments/Chapter9Scene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
-        storyNode.scale = SCNVector3(0.1, 0.1, 0.1)
+        storyNode.scale = SCNVector3(0.05, 0.05, 0.05)
         storyNode.position = SCNVector3(0, 0, 0)
         
         //Load Idle Animation Node
@@ -1398,12 +1398,14 @@ class ChapterSelection {
         SideCharacter1idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
-        let idleBalloonScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Balloon/Balloon@IdleFixed.dae")!
+        let idleBalloonScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Balloon/Balloon@FlyAwayFixed.dae")!
         for child in idleBalloonScene.rootNode.childNodes {
+            child.position = SCNVector3(0,0,0)
             SideCharacter2idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter2idleNode)
         SideCharacter2idleNode.scale = SCNVector3(1, 1, 1)
+//        SideCharacter2idleNode.position = SCNVector3(6.251, -1.863, -33.8)
         SideCharacter2idleNode.position = SCNVector3(0, 0, 0)
         SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         
@@ -1456,7 +1458,7 @@ class ChapterSelection {
         prepareAnimation(withKey: "SideCharacter1Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Brennon/Brennon@IdleFixed", animationIdentifier: "Brennon@IdleFixed-1")
         
         //load animation for side character 2
-        prepareAnimation(withKey: "SideCharacter2FlyAway", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Balloon/Balloon@FlyAwayFixed", animationIdentifier: "Balloon@FlyAwayFixed-1")
+        //prepareAnimation(withKey: "SideCharacter2FlyAway", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Balloon/Balloon@FlyAwayFixed", animationIdentifier: "Balloon@FlyAwayFixed-1")
 
         //load animation for side character 3
         prepareAnimation(withKey: "SideCharacter3Racing", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Ryan/Ryan@RacingFixed", animationIdentifier: "Ryan@RacingFixed-1")
@@ -1524,8 +1526,8 @@ class ChapterSelection {
                                   
                                   //FIXME: Add background sound for fairground/racetrack
                                   //FIXME: Add sound for patricia flying
-                                  //"BackgroundSound" : "Birds2",
-                                  //"WalkSound" : "Gravel and Grass Walk",
+                                  "BackgroundSound" : "Birds2",
+                                  "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing1" : "bell-ding_01",
                                   "CoinDing2" : "bell-ding_02",
                                   "CoinDing3" : "bell-ding_03",

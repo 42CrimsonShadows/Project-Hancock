@@ -159,8 +159,29 @@ extension ViewController {
                 
             case chapterNine:
                 //FIXME: 9 letter 1
+                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 
-                print("do chapter 9 stuff")
+                //Brennon lets go of his ballon
+                let balloon = self.charcterOneIdle.childNode(withName: "Balloon", recursively: true)
+                balloon!.isHidden = true
+                
+                //Brennon turns around
+                charcterOneIdle.childNode(withName: "Brennon", recursively: false)!.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(180)), z: 0, duration: 1))
+                                
+                //Brennon's Balloon flies away
+                charcterTwoIdle.isHidden = false
+                charcterTwoIdle.isPaused = false
+                    
+                //after animation goes all the way through hide it
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8.25, execute: {
+                    self.charcterTwoIdle.isPaused = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                        self.stopWalkAnimation()
+                        
+                        print("do chapter 9 stuff")
+                    })
+                })
                 
             case chapterTen:
                 print("do chapter 10 stuf")
