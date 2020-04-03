@@ -702,6 +702,18 @@ extension ViewController {
                     self.patricia7!.isHidden = true
                     self.patricia7!.isPaused = true
                     
+                    //Brennon gets a new Balloon
+                    let balloon = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
+                    balloon!.isHidden = false
+                    
+                    //Brennon comes out from the Balloon stand
+                    let move1 = SCNAction.move(to: SCNVector3(-9.7,  0.25, -8), duration: 2)
+                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-55)), z: 0, duration: 1)
+                    let move2 = SCNAction.move(to: SCNVector3(-11.15, 0.25, -7), duration: 2)
+                    let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
+
+                    self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {                        
                         self.stopWalkAnimation()
                     })

@@ -291,7 +291,7 @@ extension ViewController{
             case chapterNine:
                 //FIXME: chapter 9 letter 4
                 
-                //Patricia thanks Nikki after she tells him where Brennon is and flies off
+                //Patricia thanks Heidi after she tells him where Brennon is and flies off
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
@@ -835,9 +835,19 @@ extension ViewController{
                     //Patricia flies into the air to get the balloon
                     self.patricia1!.isPaused = false
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 8.4, execute: {
-                        //start playwalk for letter two
-                        self.playWalkAnimation()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                        //Brennon goes to the Balloon stand
+                        let move1 = SCNAction.move(to: SCNVector3(-9.32, 0.25, -8), duration: 4)
+                        let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5)
+                        let move2 = SCNAction.move(to: SCNVector3(-7,  0.25, -8), duration: 2)
+                        let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
+                        
+                        self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.4, execute: {
+                            //start playwalk for letter two
+                            self.playWalkAnimation()
+                        })
                     })
                 })
                 

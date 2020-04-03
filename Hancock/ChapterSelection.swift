@@ -1372,7 +1372,7 @@ class ChapterSelection {
         // Load StoryScene Node
         let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Environments/Chapter9Scene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
-        storyNode.scale = SCNVector3(0.05, 0.05, 0.05)
+        storyNode.scale = SCNVector3(0.03, 0.03, 0.03)
         storyNode.position = SCNVector3(0, 0, 0)
         
         //Load Idle Animation Node
@@ -1426,7 +1426,7 @@ class ChapterSelection {
         }
         lvlFloor.addChildNode(SideCharacter4idleNode)
         SideCharacter4idleNode.scale = SCNVector3(0.5, 0.5, 0.5)
-        SideCharacter4idleNode.position = SCNVector3(0.4, 0.3, 16)
+        SideCharacter4idleNode.position = SCNVector3(4.5, 0.3, 16)
         SideCharacter4idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(30), 0)
         
         //Load Idle Animation Node

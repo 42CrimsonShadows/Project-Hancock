@@ -932,37 +932,49 @@ extension ViewController{
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "mp3")
                 
                 self.shatterLetterFive = true
-                
+                                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
                     self.patricia10!.isHidden = false
                     self.patricia10!.isPaused = false
                     self.patricia9!.isHidden = true
                     self.patricia9!.isPaused = true
-                    
-                    //Patricia give Brennon back his Balloon
-                    let returnedBalloon = self.patricia10?.childNode(withName: "BrennonsBalloon", recursively: true)
-                    returnedBalloon!.isHidden = false
-                    
-                    //Brennon receives his Balloon
-                    
+                                                            
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        
+                        //Patricia give Brennon back his Balloon
+                        let returnedBalloon = self.patricia10?.childNode(withName: "BrennonsBalloon", recursively: true)
+                        returnedBalloon!.isHidden = true
+                        
+                        //Brennon receives his Balloon
+                        let balloon = self.charcterOneIdle.childNode(withName: "Balloon", recursively: true)
+                        balloon!.isHidden = false
+                        
                         //Brennon thanks Patricia and gives her a Balloon too
                         self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "mp3")
                                                 
                         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                             //Brennon gives Patricia her Balloon
+                            let balloon4Patricia = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
+                            balloon4Patricia!.isHidden = true
                             
                             //Patricia Recieves her Balloon
-                            returnedBalloon!.isHidden = true
+                            returnedBalloon!.isHidden = false
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "mp3")
                                 
-                                //the two pals walk to the race
+                                //Patricia is off to the races
                                 self.patricia11!.isHidden = false
                                 self.patricia11!.isPaused = false
                                 self.patricia10!.isHidden = true
                                 self.patricia10!.isPaused = true
+                                
+                                //Brennon is off to the races
+                                let rotate1 = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)
+                                let move1 = SCNAction.move(to: SCNVector3(-9.7, 0.25, 13.7), duration: 8)
+                                let brennonMoveSeq = SCNAction.sequence([rotate1, move1])
+                                 
+                                 self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                                     self.resetGame()
