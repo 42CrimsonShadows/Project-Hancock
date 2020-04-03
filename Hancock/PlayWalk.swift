@@ -313,6 +313,29 @@ extension ViewController {
             case chapterNine:
                 //FIXME: 9 letter 2
                 
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                
+                //unhide the balloon patricia is holding
+                let patriciaBalloon = self.patricia1!.childNode(withName: "BrennonsBalloon", recursively: true)
+                patriciaBalloon?.isHidden = false
+                
+                //hide the balloon that is floating in the scene
+                charcterTwoIdle.isHidden = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                    //patricia notice that brennon is gone... where could he be?
+                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.3, execute: {
+                        self.patricia2!.isHidden = false
+                        self.patricia2!.isPaused = false
+                        self.patricia1!.isHidden = true
+                        self.patricia1!.isPaused = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: {
+                            self.stopWalkAnimation()
+                        })
+                    })
+                })
                 print("do chapter 9 stuff")
             case chapterTen:
                 print("do chapter 10 stuf")
@@ -480,8 +503,32 @@ extension ViewController {
                 print("do chapter 8 stuff")
             case chapterNine:
                 //FIXME: 9 letter 3
-                
-                
+
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 9.6, execute: {
+                    //Patricia scoots back to take off again
+                    self.patricia5!.isHidden = false
+                    self.patricia5!.isPaused = false
+                    self.patricia4!.isHidden = true
+                    self.patricia4!.isPaused = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.4, execute: {
+                        //patricia flies back up into the air to find Nikki
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
+                        self.patricia6!.isHidden = false
+                        self.patricia6!.isPaused = false
+                        self.patricia5!.isHidden = true
+                        self.patricia5!.isPaused = true
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 10.7, execute: {
+                            //Patricia looks arounf for Nikki
+                            self.patricia6!.isPaused = true
+                            
+                            self.stopWalkAnimation()
+                        })
+                    })
+                })
                 print("do chapter 9 stuff")
             case chapterTen:
                 print("do chapter 10 stuf")
@@ -644,7 +691,21 @@ extension ViewController {
             case chapterNine:
                 //FIXME: 9 letter 4
                 
-                
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration26"]!, type: "mp3")
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration27"]!, type: "mp3")
+                    
+                    //Patricia flies back up to find Heidi
+                    self.patricia8!.isHidden = false
+                    self.patricia8!.isPaused = false
+                    self.patricia7!.isHidden = true
+                    self.patricia7!.isPaused = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {                        
+                        self.stopWalkAnimation()
+                    })
+                })
                 print("do chapter 9 stuff")
             case chapterTen:
                 print("do chapter 10 stuf")
@@ -928,6 +989,10 @@ extension ViewController {
             case chapterNine:
                 //FIXME: 9 letter 5
                 
+                self.patricia9!.isPaused = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: {
+                    self.stopWalkAnimation()
+                })
                 
                 print("do chapter 9 stuff")
             case chapterTen:

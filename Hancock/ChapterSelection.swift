@@ -1443,9 +1443,9 @@ class ChapterSelection {
         //load all the DAE animations for this Chapter
         //load animations for mainCharacter
         prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Patricia/Patricia@IdleFixed", animationIdentifier: "Patricia@IdleFixed-1")
+        prepareAnimation(withKey: "MainCharacterIdle1", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Patricia/Patricia@Idle1Fixed", animationIdentifier: "Patricia@Idle1Fixed-1")
         prepareAnimation(withKey: "MainCharacterIdle2", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Patricia/Patricia@Idle2Fixed", animationIdentifier: "Patricia@Idle2Fixed-1")
         prepareAnimation(withKey: "MainCharacterIdle3", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Patricia/Patricia@Idle3Fixed", animationIdentifier: "Patricia@Idle3Fixed-1")
-        //prepareAnimation(withKey: "MainCharacterRunway1", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Patricia/Patricia@Runway1Fixed", animationIdentifier: "Patricia@Runway1Fixed-1")
         prepareAnimation(withKey: "MainCharacterRunway2", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Patricia/Patricia@Runway2Fixed", animationIdentifier: "Patricia@Runway2Fixed-1")
         prepareAnimation(withKey: "MainCharacterToRace", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Patricia/Patricia@ToRaceFixed", animationIdentifier: "Patricia@ToRaceFixed-1")
         prepareAnimation(withKey: "MainCharacterToBalloon", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Patricia/Patricia@GettingBalloonFixed", animationIdentifier: "Patricia@GettingBalloonFixed-1")
@@ -1456,9 +1456,6 @@ class ChapterSelection {
         
         //load animation for side character 1
         prepareAnimation(withKey: "SideCharacter1Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Brennon/Brennon@IdleFixed", animationIdentifier: "Brennon@IdleFixed-1")
-        
-        //load animation for side character 2
-        //prepareAnimation(withKey: "SideCharacter2FlyAway", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Balloon/Balloon@FlyAwayFixed", animationIdentifier: "Balloon@FlyAwayFixed-1")
 
         //load animation for side character 3
         prepareAnimation(withKey: "SideCharacter3Racing", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Ryan/Ryan@RacingFixed", animationIdentifier: "Ryan@RacingFixed-1")

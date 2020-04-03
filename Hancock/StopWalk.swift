@@ -32,7 +32,8 @@ extension ViewController{
                 self.shatterLetterOne = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
-                    
+                    self.mainCharacterIdle.isHidden = true
+                    self.patricia1?.isHidden = false
                     //load first letter for activityView page
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
                     //play narration for the first audio instructions for the activity
@@ -215,6 +216,20 @@ extension ViewController{
             case chapterNine:
                 //FIXME: chapter 9 letter 2
                 
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
+                //patricia idles in the air looking for Brennon
+                
+                self.shatterLetterTwo = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
+                    self.patricia2!.isHidden = true
+                    self.patricia3!.isHidden = false
+                    //load first letter for activityView page
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
+                    
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration13"]!, type: "mp3")
+                })
                 
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
@@ -419,6 +434,18 @@ extension ViewController{
             case chapterNine:
                 //FIXME: chapter 9 letter 3
                 
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration20"]!, type: "mp3")                
+                self.shatterLetterThree = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    self.patricia6!.isHidden = true
+                    self.patricia7!.isHidden = false
+                    //load first letter for activityView page
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
+                    
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
+                })
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 self.startTransitionAnimation(key: "MainCharacterIdle")
@@ -624,6 +651,23 @@ extension ViewController{
             case chapterNine:
                 //FIXME: chapter 9 letter 4
                 
+                //patricia stops when she finds Heidi
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration28"]!, type: "mp3")
+                self.patricia8!.isPaused = true
+                
+                self.shatterLetterFour = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                    self.patricia8!.isHidden = true
+                    self.patricia9!.isHidden = false
+                    
+                    //load first letter for activityView page
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
+                    
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3")
+                })
+                    
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
@@ -883,6 +927,50 @@ extension ViewController{
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
                 //FIXME: chapter 9 letter 5
+                
+                //patricia lands by Brennon
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "mp3")
+                
+                self.shatterLetterFive = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
+                    self.patricia10!.isHidden = false
+                    self.patricia10!.isPaused = false
+                    self.patricia9!.isHidden = true
+                    self.patricia9!.isPaused = true
+                    
+                    //Patricia give Brennon back his Balloon
+                    let returnedBalloon = self.patricia10?.childNode(withName: "BrennonsBalloon", recursively: true)
+                    returnedBalloon!.isHidden = false
+                    
+                    //Brennon receives his Balloon
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        //Brennon thanks Patricia and gives her a Balloon too
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "mp3")
+                                                
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                            //Brennon gives Patricia her Balloon
+                            
+                            //Patricia Recieves her Balloon
+                            returnedBalloon!.isHidden = true
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "mp3")
+                                
+                                //the two pals walk to the race
+                                self.patricia11!.isHidden = false
+                                self.patricia11!.isPaused = false
+                                self.patricia10!.isHidden = true
+                                self.patricia10!.isPaused = true
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                                    self.resetGame()
+                                })
+                            })
+                        })
+                    })
+                })
                 
                 print("stopwalk chapter 9 stuff")
             case chapterEight:

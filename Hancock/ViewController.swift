@@ -145,6 +145,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var KimiOnPlate = false
     var ErnieOnPlate = false
     
+    //Bools for special chapter nine aircraft
+    var patricia1: SCNNode?
+    var patricia2: SCNNode?
+    var patricia3: SCNNode?
+    var patricia4: SCNNode?
+    var patricia5: SCNNode?
+    var patricia6: SCNNode?
+    var patricia7: SCNNode?
+    var patricia8: SCNNode?
+    var patricia9: SCNNode?
+    var patricia10: SCNNode?
+    var patricia11: SCNNode?
+    var patricia12: SCNNode?
+    
+    
     //variables for sound files and audio players
     var walkPlayer = AVAudioPlayer()
     var birdsPlayer = AVAudioPlayer()
@@ -194,6 +209,42 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if chapterNine == true{
                 //special circumstances for keeping balloon from flying away
                 charcterTwoIdle.isPaused = true
+                
+                patricia1 = mainFloor.childNode(withName: "Patricia1", recursively: true)
+                patricia2 = mainFloor.childNode(withName: "Patricia2", recursively: true)
+                patricia3 = mainFloor.childNode(withName: "Patricia3", recursively: true)
+                patricia4 = mainFloor.childNode(withName: "Patricia4", recursively: true)
+                patricia5 = mainFloor.childNode(withName: "Patricia5", recursively: true)
+                patricia6 = mainFloor.childNode(withName: "Patricia6", recursively: true)
+                patricia7 = mainFloor.childNode(withName: "Patricia7", recursively: true)
+                patricia8 = mainFloor.childNode(withName: "Patricia8", recursively: true)
+                patricia9 = mainFloor.childNode(withName: "Patricia9", recursively: true)
+                patricia10 = mainFloor.childNode(withName: "Patricia10", recursively: true)
+                patricia11 = mainFloor.childNode(withName: "Patricia11", recursively: true)
+                
+                patricia1!.isPaused = true
+                patricia2!.isPaused = true
+                patricia3!.isPaused = true
+                patricia4!.isPaused = true
+                patricia5!.isPaused = true
+                patricia6!.isPaused = true
+                patricia7!.isPaused = true
+                patricia8!.isPaused = true
+                patricia9!.isPaused = true
+                patricia10!.isPaused = true
+                patricia11!.isPaused = true
+
+                patricia1!.isHidden = true
+                patricia2!.isHidden = true
+                patricia3!.isHidden = true
+                patricia4!.isHidden = true
+                patricia5!.isHidden = true
+                patricia6!.isHidden = true
+                patricia7!.isHidden = true
+                patricia8!.isHidden = true
+                patricia9!.isHidden = true
+                patricia10!.isHidden = true
+                patricia11!.isHidden = true
             }
             
             print("Shatter Animation Paused")
@@ -737,7 +788,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         storymask = sceneView.scene.rootNode.childNode(withName: "StoryMask", recursively: true)
         
         //generic story main character idle animation
-        //mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter_Idle", recursively: true)
         mainCharacterIdle = sceneView.scene.rootNode.childNode(withName: "MainCharacter", recursively: true)
         mainCharacterIdle?.isHidden = false
         charcterOneIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter1", recursively: true)

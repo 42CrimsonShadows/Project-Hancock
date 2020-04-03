@@ -291,6 +291,13 @@ extension ViewController{
             case chapterNine:
                 //FIXME: chapter 9 letter 4
                 
+                //Patricia thanks Nikki after she tells him where Brennon is and flies off
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                    self.playWalkAnimation()
+                })
+                
                 print("Nothing to shatter for this chapter")
             case chapterEight:
                 //letter E completed, starting final sequence
@@ -486,6 +493,16 @@ extension ViewController{
             case chapterNine:
                 //FIXME: chapter 9 letter 3
                 
+                //Patricia lands down by Nikki
+                self.patricia7!.isPaused = false
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration25"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {
+                    self.patricia7!.isPaused = true
+                    
+                    self.playWalkAnimation()
+                })
+                
                 print("Nothing to shatter for this chapter")
             case chapterEight:
                 //letter k completed, starting letter e
@@ -636,6 +653,25 @@ extension ViewController{
                 print("Nothing to shatter for this chapter")
             case chapterNine:
                 //FIXME: chapter 9 letter 2
+                
+                //Patricia flies down to Ryan and asks where Brennon is
+                self.patricia3!.isHidden = false
+                self.patricia3!.isPaused = false
+                self.patricia2!.isHidden = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration17"]!, type: "mp3")
+                                        
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 9.8, execute: {
+                        //Patricia idles on the track while talking to Ryan
+                        self.patricia4!.isHidden = false
+                        self.patricia4!.isPaused = false
+                        self.patricia3!.isHidden = true
+                        
+                        //start playwalk for letter two
+                        self.playWalkAnimation()
+                    })
+                })
                 
                 print("Nothing to shatter for this chapter")
             case chapterEight:
@@ -793,6 +829,17 @@ extension ViewController{
                 print("Nothing to shatter for this chapter")
             case chapterNine:
                 //FIXME: chapter 9 letter 1
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
+                    
+                    //Patricia flies into the air to get the balloon
+                    self.patricia1!.isPaused = false
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 8.4, execute: {
+                        //start playwalk for letter two
+                        self.playWalkAnimation()
+                    })
+                })
                 
                 print("Nothing to shatter for this chapter")
             case chapterEight:
