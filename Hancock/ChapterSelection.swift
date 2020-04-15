@@ -1540,6 +1540,40 @@ class ChapterSelection {
         //var array of chapter 10 assest
         var chapter10NodeArray: [SCNNode] = []
         
+        // Load StoryScene Node
+                let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter10Files/Environments/Chapter10Scene.scn")!
+                storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
+                storyNode.scale = SCNVector3(0.5, 0.5, 0.5)
+                storyNode.position = SCNVector3(0, 0, 0)
+                
+                //Load Idle Animation Node
+                let idleUrsaScene = SCNScene(named: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@IdleFixed.dae")!
+                for child in idleUrsaScene.rootNode.childNodes {
+                    idleNode.addChildNode(child)
+                }
+                storyNode.addChildNode(idleNode)
+                idleNode.scale = SCNVector3(1, 1, 1)
+                //idleNode.position = SCNVector3(-186, 0, 93)
+                idleNode.position = SCNVector3(0, 0, 0)
+                idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+                
+                let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+                
+                
+                //load all the DAE animations for this Chapter
+                //load animations for mainCharacter
+                prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@IdleFixed", animationIdentifier: "Finn@IdleFixed-1")
+                prepareAnimation(withKey: "MainCharacterWalking", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@WalkingFixed", animationIdentifier: "Finn@WalkingFixed-1")
+                prepareAnimation(withKey: "MainCharacterWaving", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@WavingFixed", animationIdentifier: "Finn@WavingFixed-1")
+                prepareAnimation(withKey: "MainCharacterLooking", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@LookingAroundFixed", animationIdentifier: "Finn@LookingAroundFixed-1")
+                prepareAnimation(withKey: "MainCharacterPickup", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@PickupFromWallFixed", animationIdentifier: "Finn@PickupFromWallFixed-1")
+                prepareAnimation(withKey: "MainCharacterPutBack", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@PutBackOnWallFixed", animationIdentifier: "Finn@Finn@PutBackOnWallFixed-1")
+                prepareAnimation(withKey: "MainCharacterFlute", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@FluteFixed", animationIdentifier: "Finn@Finn@FluteFixed-1")
+                prepareAnimation(withKey: "MainCharacterQuill", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@QuillFixed", animationIdentifier: "Finn@Finn@QuillFixed-1")
+                prepareAnimation(withKey: "MainCharacterXylophone", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@XylophoneFixed", animationIdentifier: "Finn@Finn@XylophoneFixed-1")
+                prepareAnimation(withKey: "MainCharacterZambomba", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@ZambombaFixed", animationIdentifier: "Finn@Finn@ZambombaFixed-1")
+                        
+        chapter10NodeArray.append(storyNode)
         return chapter10NodeArray
     }
     
@@ -1589,10 +1623,15 @@ class ChapterSelection {
                                   "Narration30" : "Final4", //Thank you - Good Job - final line of narration
                                   
                      //Letter Completion Feedback
-                                  "Narration31" : "ch5L-F-GreatJob", //Good Job
-                                  "Narration32" : "ch5L-Q-Perfect", //Perfect
-                                  "Narration33" : "ch5L-X-Wonderful", //Wonderful
-                                  "Narration34" : "ch5L-Z-YoureARockstar", //You're a Rockstar 
+                                  "Narration31" : "FluteInstrument",
+                                  "Narration32" : "PanFluteInstrument",
+                                  "Narration33" : "XylophoneInstrument",
+                                  "Narration34" : "ZambombaInstrument",
+                    //Extra SFX
+                                  "Narration35" : "ch5L-F-GreatJob",
+                                  "Narration36" : "ch5L-F-GreatJob",
+                                  "Narration37" : "ch5L-F-GreatJob",
+                                  "Narration38" : "ch5L-F-GreatJob",
                                   
                     //Extra Template
                                   "BackgroundSound" : "Birds2",
