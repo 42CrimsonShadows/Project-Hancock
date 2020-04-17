@@ -158,8 +158,7 @@ extension ViewController {
                 print("do chapter 8 stuff")
                 
             case chapterNine:
-                //FIXME: 9 letter 1
-                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 
                 //Brennon lets go of his ballon
                 let balloon = self.charcterOneIdle.childNode(withName: "Balloon", recursively: true)
@@ -184,9 +183,24 @@ extension ViewController {
                 })
                 
             case chapterTen:
-                print("do chapter 10 stuf")
-                print("move floor for chapter five")
-                
+                //FIXME: 10 letter 1
+             
+                toggleAudioNarrationFile(file: "Narration3", type: "mp3")
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                    //Finn walks over to the woodwind section
+                    self.startTransitionAnimation(key: "MainCharacterWalking")
+                    
+                    // x= (-)west/(+)east, z= (-)north/(+)south
+                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+                    let move2 = SCNAction.move(to: SCNVector3(-3.6, 0, 4.1), duration: 3)
+                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+                    let move3 = SCNAction.move(to: SCNVector3(-3.6, 0, 1.75), duration: 3)
+                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+                    let chapter10Letter1MoveSeq = SCNAction.sequence([rotate1, move2, rotate2, move3, rotate3])
+                    self.mainCharacterIdle?.parent?.runAction((chapter10Letter1MoveSeq), completionHandler: self.stopWalkAnimation)
+                })
+                print("do chapter 10 stuff")
             default:
                 break
             }
@@ -311,7 +325,7 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
             case chapterNine:
-                //FIXME: 9 letter 2
+                
                 
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
                 
@@ -338,6 +352,7 @@ extension ViewController {
                 })
                 print("do chapter 9 stuff")
             case chapterTen:
+                //FIXME: 10 letter 2
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -502,8 +517,6 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
             case chapterNine:
-                //FIXME: 9 letter 3
-
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 9.6, execute: {
@@ -531,6 +544,8 @@ extension ViewController {
                 })
                 print("do chapter 9 stuff")
             case chapterTen:
+                //FIXME: 10 letter 3
+
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -689,7 +704,7 @@ extension ViewController {
                 })
                 print("do chapter 8 stuff")
             case chapterNine:
-                //FIXME: 9 letter 4
+                
                 
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration26"]!, type: "mp3")
 
@@ -720,6 +735,7 @@ extension ViewController {
                 })
                 print("do chapter 9 stuff")
             case chapterTen:
+                //FIXME: 10 letter 4
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -999,7 +1015,7 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
             case chapterNine:
-                //FIXME: 9 letter 5
+                
                 
                 self.patricia9!.isPaused = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: {
@@ -1008,6 +1024,7 @@ extension ViewController {
                 
                 print("do chapter 9 stuff")
             case chapterTen:
+                //FIXME: 10 letter 5
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -1220,10 +1237,9 @@ extension ViewController {
             case chapterEight:
                 print("do chapter 8 stuff")
             case chapterNine:
-                //FIXME: 9 letter 6
-                
                 print("do chapter 9 stuff")
             case chapterTen:
+                //FIXME: 10 letter 6
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:

@@ -21,9 +21,10 @@ extension ViewController{
         case shatterLetterSix:
             switch true{
             case chapterTen:
+                //FIXME: chapter 10 letter 6
+                
                 print("Nothing to shatter for this chapter")
             case chapterNine:
-                //FIXME: chapter 9 letter 6
                 
                 print("Nothing to shatter for this chapter")
             case chapterEight:
@@ -161,11 +162,13 @@ extension ViewController{
         case shatterLetterFive:
             switch true{
             case chapterTen:
+                //FIXME: chapter 10 letter 5
+                
                 print("Nothing to shatter for this chapter")
             case chapterNine:
+                
                 print("Nothing to shatter for this chapter")
             case chapterEight:
-                //FIXME: chapter 8 letter 5
                 
                 print("Nothing to shatter for this chapter")
             case chapterSeven:
@@ -287,10 +290,10 @@ extension ViewController{
         case shatterLetterFour:
             switch true{
             case chapterTen:
+                //FIXME: chapter 10 letter 4
+
                 print("Nothing to shatter for this chapter")
             case chapterNine:
-                //FIXME: chapter 9 letter 4
-                
                 //Patricia thanks Heidi after she tells him where Brennon is and flies off
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
                 
@@ -489,10 +492,10 @@ extension ViewController{
         case shatterLetterThree:
             switch true{
             case chapterTen:
+                //FIXME: chapter 10 letter 3
+                
                 print("Nothing to shatter for this chapter")
             case chapterNine:
-                //FIXME: chapter 9 letter 3
-                
                 //Patricia lands down by Nikki
                 self.patricia7!.isPaused = false
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration25"]!, type: "mp3")
@@ -650,10 +653,9 @@ extension ViewController{
         case shatterLetterTwo:
             switch true{
             case chapterTen:
+                //FIXME: chapter 10 letter 2
                 print("Nothing to shatter for this chapter")
             case chapterNine:
-                //FIXME: chapter 9 letter 2
-                
                 //Patricia flies down to Ryan and asks where Brennon is
                 self.patricia3!.isHidden = false
                 self.patricia3!.isPaused = false
@@ -826,9 +828,45 @@ extension ViewController{
         case shatterLetterOne:
             switch true{
             case chapterTen:
+                //FIXME: chapter 10 letter 1
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration37"]!, type: "mp3") //Great Job
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        self.startTransitionAnimationOnce(key: "MainCharacterPickup")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                        //about 1 second into the pickup animation turn on the flute
+                        let flute = self.mainCharacterIdle.childNode(withName: "Flute", recursively: true)
+                        flute!.isHidden = false
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.95, execute: {
+                                //self.stopTransitionAnimation(key: "MainCharacterPickup")
+                                //play the flute playing animation
+                                self.startTransitionAnimationOnce(key: "MainCharacterFlute")
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {     //play the flute sound clip
+                                    //play flute clip
+                                    self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
+                                
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 14.7, execute: {
+                                        //self.stopTransitionAnimation(key: "MainCharacterFlute")
+                                        self.startTransitionAnimationOnce(key: "MainCharacterPutBack")
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 11.5, execute: {
+                                            //self.stopTransitionAnimation(key: "MainCharacterPutBack")
+                                            //start playwalk for letter two
+                                            self.playWalkAnimation()
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+                
                 print("Nothing to shatter for this chapter")
             case chapterNine:
-                //FIXME: chapter 9 letter 1
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
                     

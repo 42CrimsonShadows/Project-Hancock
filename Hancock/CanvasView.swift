@@ -782,7 +782,7 @@ class CanvasView: UIView {
             return ["Narration24", "Narration25", "Narration26"]
         case "f":
             print("Load f narration")
-            return ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
+            return ["Narration6", "Narration7", "Narration8"]
         case "g":
             print("Load g narration")
             return ["Narration4", "Narration5", "Narration6"]
@@ -815,7 +815,7 @@ class CanvasView: UIView {
             return ["Narration6", "Narration7", "Narration8"]
         case "q":
             print("Load q narration")
-            return ["Narration14", "Narration15", "Narration16"]
+            return ["Narration12", "Narration13", "Narration14"]
         case "r":
             print("Load r narration")
             return ["Narration14", "Narration15", "Narration16"]
@@ -836,13 +836,13 @@ class CanvasView: UIView {
             return ["Narration22", "Narration23", "Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
         case "x":
             print("Load x narration")
-            return ["Narration33", "Narration34", "Narration35"]
+            return ["Narration18", "Narration19", "Narration20"]
         case "y":
             print("Load y narration")
             return ["Narration9", "Narration10", "Narration11"]
         case "z":
             print("Load z narration")
-            return ["Narration14", "Narration15", "Narration16", "Narration17", "Narration18"]
+            return ["Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
         default:
             return ["Narration", "Narration"]
         }

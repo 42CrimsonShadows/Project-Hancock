@@ -1543,19 +1543,18 @@ class ChapterSelection {
         // Load StoryScene Node
                 let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter10Files/Environments/Chapter10Scene.scn")!
                 storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
-                storyNode.scale = SCNVector3(0.5, 0.5, 0.5)
+                storyNode.scale = SCNVector3(0.1, 0.1, 0.1)
                 storyNode.position = SCNVector3(0, 0, 0)
                 
                 //Load Idle Animation Node
-                let idleUrsaScene = SCNScene(named: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@IdleFixed.dae")!
-                for child in idleUrsaScene.rootNode.childNodes {
+                let idleFinnScene = SCNScene(named: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@IdleFixed.dae")!
+                for child in idleFinnScene.rootNode.childNodes {
                     idleNode.addChildNode(child)
                 }
                 storyNode.addChildNode(idleNode)
-                idleNode.scale = SCNVector3(1, 1, 1)
-                //idleNode.position = SCNVector3(-186, 0, 93)
-                idleNode.position = SCNVector3(0, 0, 0)
-                idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+                idleNode.scale = SCNVector3(0.25, 0.25, 0.25)
+                idleNode.position = SCNVector3(0.6, 0, 4.1)
+                idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-180), GLKMathDegreesToRadians(0))
                 
                 let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
                 
@@ -1567,11 +1566,11 @@ class ChapterSelection {
                 prepareAnimation(withKey: "MainCharacterWaving", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@WavingFixed", animationIdentifier: "Finn@WavingFixed-1")
                 prepareAnimation(withKey: "MainCharacterLooking", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@LookingAroundFixed", animationIdentifier: "Finn@LookingAroundFixed-1")
                 prepareAnimation(withKey: "MainCharacterPickup", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@PickupFromWallFixed", animationIdentifier: "Finn@PickupFromWallFixed-1")
-                prepareAnimation(withKey: "MainCharacterPutBack", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@PutBackOnWallFixed", animationIdentifier: "Finn@Finn@PutBackOnWallFixed-1")
-                prepareAnimation(withKey: "MainCharacterFlute", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@FluteFixed", animationIdentifier: "Finn@Finn@FluteFixed-1")
-                prepareAnimation(withKey: "MainCharacterQuill", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@QuillFixed", animationIdentifier: "Finn@Finn@QuillFixed-1")
-                prepareAnimation(withKey: "MainCharacterXylophone", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@XylophoneFixed", animationIdentifier: "Finn@Finn@XylophoneFixed-1")
-                prepareAnimation(withKey: "MainCharacterZambomba", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@ZambombaFixed", animationIdentifier: "Finn@Finn@ZambombaFixed-1")
+                prepareAnimation(withKey: "MainCharacterPutBack", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@PutBackOnWallFixed", animationIdentifier: "Finn@PutBackOnWallFixed-1")
+                prepareAnimation(withKey: "MainCharacterFlute", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@FluteFixed", animationIdentifier: "Finn@FluteFixed-1")
+                prepareAnimation(withKey: "MainCharacterQuill", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@QuillFixed", animationIdentifier: "Finn@QuillFixed-1")
+                prepareAnimation(withKey: "MainCharacterXylophone", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@XylophoneFixed", animationIdentifier: "Finn@XylophoneFixed-1")
+                prepareAnimation(withKey: "MainCharacterZambomba", sceneName: "art.scnassets/3DModels/Chapter10Files/Characters/Finn/Finn@ZambombaFixed", animationIdentifier: "Finn@ZambombaFixed-1")
                         
         chapter10NodeArray.append(storyNode)
         return chapter10NodeArray
@@ -1591,14 +1590,15 @@ class ChapterSelection {
                                   "Narration6" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration7" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration8" : "ch1-E-Line3_01", //3 Amazing
-                                  "Narration9" : "ch1-E-Line3_02", //Yellow to Purple
+  
         
                         //Letter Q Narration
-                                  "Narration10" : "ch5L-Q-TransitionToQ",// Flute is neat, but Finn wants to try more
-                                  "Narration11" : "ch5L-Q-Intro", //Trace the letter Q to try the Quill
-                                  "Narration12" : "ch1-E-Line1",    //1 Green to Red
-                                  "Narration13" : "ch1-E-Line2_01", //2 Great Job
-                                  "Narration14" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration9" : "ch5L-Q-TransitionToQ",// Flute is neat, but Finn wants to try more
+                                  "Narration10" : "ch5L-Q-Intro", //Trace the letter Q to try the Quill
+                                  "Narration11" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration12" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration13" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration14" : "ch1-E-Line3_01", //3 Amazing
             
                         //Letter X Narration
                                   "Narration15" : "ch5L-X-TransitionToX", //Finn not a fan of the Quill and wants to try another
@@ -1606,32 +1606,34 @@ class ChapterSelection {
                                   "Narration17" : "ch1-E-Line1",    //1 Green to Red
                                   "Narration18" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration19" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration20" : "ch1-E-Line3_01", //3 Amazing
                                   
                        //Letter Z Narration
-                                  "Narration20" : "ch5L-Z-TransitionToZ", //Intro to Zambomba Drum
-                                  "Narration21" : "ch5L-Z-Intro", //Trace the Letter Z to Try the Zambomba
-                                  "Narration22" : "ch1-E-Line1",    //1 Green to Red
-                                  "Narration23" : "ch1-E-Line2_01", //2 Great Job
-                                  "Narration24" : "ch1-E-Line2_02", //Blue to Orange
-                                  "Narration25" : "ch1-E-Line3_01", //3 Amazing
-                                  "Narration26" : "ch1-E-Line3_02", //Yellow to Purple
+                                  "Narration21" : "ch5L-Z-TransitionToZ", //Intro to Zambomba Drum
+                                  "Narration22" : "ch5L-Z-Intro", //Trace the Letter Z to Try the Zambomba
+                                  "Narration23" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration24" : "ch1-E-Line2_01", // Great Job
+                                  "Narration25" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration26" : "ch1-E-Line3_01", //2 Amazing
+                                  "Narration27" : "ch1-E-Line3_02", //Yellow to Purple
+                                  "Narration28" : "ch1-F-Line3_01", //3  Fantastic
                                   
                       //Final Narration
-                                  "Narration27" : "Final1", //Zambomba isnt for Finn
-                                  "Narration28" : "Final2", //Finn knows what instrument he wants to pick
-                                  "Narration29" : "Final3", //Finn is going to get the flute
-                                  "Narration30" : "Final4", //Thank you - Good Job - final line of narration
+                                  "Narration29" : "Final1", //Zambomba isnt for Finn
+                                  "Narration30" : "Final2", //Finn knows what instrument he wants to pick
+                                  "Narration31" : "Final3", //Finn is going to get the flute
+                                  "Narration32" : "Final4", //Thank you - Good Job - final line of narration
                                   
                      //Letter Completion Feedback
-                                  "Narration31" : "FluteInstrument",
-                                  "Narration32" : "PanFluteInstrument",
-                                  "Narration33" : "XylophoneInstrument",
-                                  "Narration34" : "ZambombaInstrument",
+                                  "Narration33" : "FluteInstrument",
+                                  "Narration34" : "PanFluteInstrument",
+                                  "Narration35" : "XylophoneInstrument",
+                                  "Narration36" : "ZambombaInstrument",
                     //Extra SFX
-                                  "Narration35" : "ch5L-F-GreatJob",
-                                  "Narration36" : "ch5L-F-GreatJob",
                                   "Narration37" : "ch5L-F-GreatJob",
-                                  "Narration38" : "ch5L-F-GreatJob",
+                                  "Narration38" : "ch5L-Q-Perfect",
+                                  "Narration39" : "ch5L-X-Wonderful",
+                                  "Narration40" : "ch5L-Z-YourARockstar",
                                   
                     //Extra Template
                                   "BackgroundSound" : "Birds2",

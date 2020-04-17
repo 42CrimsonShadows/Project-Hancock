@@ -900,6 +900,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     self.startTransitionAnimation(key: "MainCharacterIdle")
                     print(self.mainCharacterIdle.name!, "is now idle")
+                    
                     //play game intro 1
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                 
@@ -1012,9 +1013,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     })
                 })
             case chapterTen:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
-                    print("Do chapter 10 stuff")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                    //play intro Narration to chapter 10
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    //Finn is waving
+                    self.startTransitionAnimation(key: "MainCharacterWaving")
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
+                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+
+                        //Finn starts looking around
+                        self.stopTransitionAnimation(key: "MainCharacterWaving")
+                        self.startTransitionAnimation(key: "MainCharacterLooking")
+
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
+                            self.stopTransitionAnimation(key: "MainCharacterLooking")
+                            self.playWalkAnimation()
+                        })
+                    })
                 })
+                print("Do chapter 10 stuff")
             default:
                 break
             }
@@ -1054,9 +1072,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             try FXPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio2Path!))
             FXPlayer.enableRate = true
-            FXPlayer.rate = rate
-            FXPlayer.setVolume(0.5, fadeDuration: 0)
-            self.FXPlayer.play()
+            //FXPlayer.rate = rate
+            //FXPlayer.setVolume(0.5, fadeDuration: 0)
+            //self.FXPlayer.play()
+            FXPlayer.play()
             
         } catch {
             print("FXPlayer not available!")

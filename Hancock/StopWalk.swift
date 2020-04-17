@@ -21,10 +21,24 @@ extension ViewController{
         case .toLetter1:
             switch true {
             case chapterTen:
-                print("stopwalk chapter 10 stuff")
+                //FIXME: chapter 10 letter 1
+                
+                stopTransitionAnimation(key: "MainCharacterWalking")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                    
+                    //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
+                    self.shatterLetterOne = true
+                    
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
+                    
+                    print("stopwalk chapter 10 stuff")
+                })
+                
             case chapterNine:
-                //FIXME: chapter 9 letter 1
-                                
                 //letter l intro
                 toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
                 
@@ -212,9 +226,10 @@ extension ViewController{
         case .toLetter2:
             switch true {
             case chapterTen:
+                //FIXME: chapter 10 letter 2
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
-                //FIXME: chapter 9 letter 2
+                
                 
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
                 //patricia idles in the air looking for Brennon
@@ -430,9 +445,10 @@ extension ViewController{
         case .toLetter3:
             switch true {
             case chapterTen:
+                //FIXME: chapter 10 letter 3
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
-                //FIXME: chapter 9 letter 3
+                
                 
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration20"]!, type: "mp3")                
                 self.shatterLetterThree = true
@@ -647,9 +663,10 @@ extension ViewController{
         case .toLetter4:
             switch true {
             case chapterTen:
+                //FIXME: chapter 10 letter 4
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
-                //FIXME: chapter 9 letter 4
+                
                 
                 //patricia stops when she finds Heidi
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration28"]!, type: "mp3")
@@ -924,9 +941,10 @@ extension ViewController{
         case .toLetter5:
             switch true {
             case chapterTen:
+                //FIXME: chapter 10 letter 5
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
-                //FIXME: chapter 9 letter 5
+                
                 
                 //patricia lands by Brennon
                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "mp3")
@@ -1137,10 +1155,11 @@ extension ViewController{
         case .toLetter6:
             switch true {
             case chapterTen:
+                //FIXME: chapter 10 letter 6
+
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
-                //FIXME: chapter 9 letter 6
-                
+                                
                 print("stopwalk chapter 9 stuff")
             case chapterEight:
                 print("stopwalk chapter 8 stuff")
