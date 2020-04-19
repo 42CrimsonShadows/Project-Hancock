@@ -158,7 +158,7 @@ extension ViewController {
                 print("do chapter 8 stuff")
                 
             case chapterNine:
-                                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
                 
                 //Brennon lets go of his ballon
                 let balloon = self.charcterOneIdle.childNode(withName: "Balloon", recursively: true)
@@ -184,9 +184,9 @@ extension ViewController {
                 
             case chapterTen:
                 //FIXME: 10 letter 1
-             
-                toggleAudioNarrationFile(file: "Narration3", type: "mp3")
 
+                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     //Finn walks over to the woodwind section
                     self.startTransitionAnimation(key: "MainCharacterWalking")
@@ -353,7 +353,22 @@ extension ViewController {
                 print("do chapter 9 stuff")
             case chapterTen:
                 //FIXME: 10 letter 2
-                print("do chapter 10 stuf")
+                
+                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
+                    //Finn walks over to the Quill section
+                    self.startTransitionAnimation(key: "MainCharacterWalking")
+                    
+                    // x= (-)west/(+)east, z= (-)north/(+)south
+                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+                    let move2 = SCNAction.move(to: SCNVector3(-3.6, 0, -0.75), duration: 2.5)
+                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+                    let chapter10Letter2MoveSeq = SCNAction.sequence([rotate1, move2, rotate2])
+                    self.mainCharacterIdle?.parent?.runAction((chapter10Letter2MoveSeq), completionHandler: self.stopWalkAnimation)
+                })
+                
+                print("do chapter 10 stuff")
                 print("move floor for chapter five")
             default:
                 break
@@ -546,6 +561,26 @@ extension ViewController {
             case chapterTen:
                 //FIXME: 10 letter 3
 
+                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration15"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                    //Finn walks over to the Xylophone
+                    self.startTransitionAnimation(key: "MainCharacterWalking")
+                    
+                    // x= (-)west/(+)east, z= (-)north/(+)south
+                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+                    let move2 = SCNAction.move(to: SCNVector3(-3.6, 0, -3.4), duration: 2.5)
+                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-270)), z: 0, duration: 0.5)
+                    let move3 = SCNAction.move(to: SCNVector3(2.8, 0, -3.4), duration: 4)
+                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+                    let move4 = SCNAction.move(to: SCNVector3(2.8, 0, -6.25), duration: 2)
+                    let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+                    let move5 = SCNAction.move(to: SCNVector3(0.85, 1.05, -6.25), duration: 1.5)
+                    let move6 = SCNAction.move(to: SCNVector3(-0.7, 1.05, -6.25), duration: 1.5)
+                    let rotate5 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+                    let chapter10Letter3MoveSeq = SCNAction.sequence([rotate1, move2, rotate2, move3, rotate3, move4, rotate4, move5, move6, rotate5])
+                    self.mainCharacterIdle?.parent?.runAction((chapter10Letter3MoveSeq), completionHandler: self.stopWalkAnimation)
+                })
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -736,6 +771,25 @@ extension ViewController {
                 print("do chapter 9 stuff")
             case chapterTen:
                 //FIXME: 10 letter 4
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
+                
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                        //Finn walks over to the Zambomba
+                        self.startTransitionAnimation(key: "MainCharacterWalking")
+                        
+                        // x= (-)west/(+)east, z= (-)north/(+)south
+                        let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-270)), z: 0, duration: 0.5)
+                        let move1 = SCNAction.move(to: SCNVector3(0.85, 1.05, -6.25), duration: 1.5)
+                        let move2 = SCNAction.move(to: SCNVector3(2.25, 0, -6.25), duration: 1)
+                        let move3 = SCNAction.move(to: SCNVector3(2.8, 0, -6.25), duration: 1)
+                        let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-360)), z: 0, duration: 0.5)
+                        let move4 = SCNAction.move(to: SCNVector3(2.35, 0, -0.93), duration: 4)
+                        let chapter10Letter3MoveSeq = SCNAction.sequence([rotate1, move1, move2, move3, rotate2, move4])
+                        self.mainCharacterIdle?.parent?.runAction((chapter10Letter3MoveSeq), completionHandler: self.stopWalkAnimation)
+                    })
+                })
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -1025,6 +1079,26 @@ extension ViewController {
                 print("do chapter 9 stuff")
             case chapterTen:
                 //FIXME: 10 letter 5
+                
+                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3") //the zambomba isn't for finn
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                    //Finn walks to the flute again
+                    self.startTransitionAnimation(key: "MainCharacterWalking")
+                    
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3") //finn knows which instrument he wants
+                    
+                    // x= (-)west/(+)east, z= (-)north/(+)south
+                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 1)
+                    let move1 = SCNAction.move(to: SCNVector3(2.35, 0, -3.6), duration: 2)
+                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+                    let move2 = SCNAction.move(to: SCNVector3(-3.6, 0, -3.6), duration: 4)
+                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(0)), z: 0, duration: 0.5)
+                    let move3 = SCNAction.move(to: SCNVector3(-3.6, 0, 1.75), duration: 4)
+                    let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+                    let chapter10Letter3MoveSeq = SCNAction.sequence([rotate1, move1, rotate2, move2, rotate3, move3, rotate4])
+                    self.mainCharacterIdle?.parent?.runAction((chapter10Letter3MoveSeq), completionHandler: self.stopWalkAnimation)
+                })
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:

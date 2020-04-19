@@ -1012,8 +1012,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         })
                     })
                 })
-            case chapterTen:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            case chapterTen:               
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     //play intro Narration to chapter 10
                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                     //Finn is waving

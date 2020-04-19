@@ -129,7 +129,7 @@ extension ViewController{
                             //after the final animation, play the fishing narration
                             self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish"]!, type: "mp3")
                             
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
                                 self.resetGame()
                             })
                         })
@@ -164,6 +164,46 @@ extension ViewController{
             case chapterTen:
                 //FIXME: chapter 10 letter 5
                 
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3") //finns first choise was the right one
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        self.startTransitionAnimationOnce(key: "MainCharacterPickup")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        //about 1 second into the pickup animation turn on the flute
+                        let flute = self.mainCharacterIdle.childNode(withName: "Flute", recursively: true)
+                        flute!.isHidden = false
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.6, execute: {
+                                //self.stopTransitionAnimation(key: "MainCharacterPickup")
+                                //play the flute playing animation
+                                self.startTransitionAnimationOnce(key: "MainCharacterFlute")
+                                //finn turns around to face the camera
+                                self.mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 1))
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                    //play flute clip
+                                    self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
+                                
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 14.7, execute: {
+                                        //self.stopTransitionAnimation(key: "MainCharacterFlute")
+
+                                        //finn waves at the camera
+                                        self.startTransitionAnimation(key: "MainCharacterWaving")
+                                        //play final narration clip
+                                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3")
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                                            //go back to the menu
+                                            self.resetGame()
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
                 print("Nothing to shatter for this chapter")
             case chapterNine:
                 
@@ -292,6 +332,33 @@ extension ViewController{
             case chapterTen:
                 //FIXME: chapter 10 letter 4
 
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration40"]!, type: "mp3") //Great Job
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.startTransitionAnimationOnce(key: "MainCharacterZambomba")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        //turn on the butterstick
+                        let butterstick = self.mainCharacterIdle.childNode(withName: "ButterStick", recursively: true)
+                        butterstick!.isHidden = false
+                                //play quill sound clip
+                                self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "wav", rate: 1)
+                                
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 8.5, execute: {
+                                //turn off the butterstick
+                                butterstick!.isHidden = true
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                                    self.stopTransitionAnimation(key: "MainCharacterZambomba")
+                                    
+                                    //start playwalk for letter 5
+                                    self.playWalkAnimation()
+                                })
+                            })
+                        })
+                    })
+                })
                 print("Nothing to shatter for this chapter")
             case chapterNine:
                 //Patricia thanks Heidi after she tells him where Brennon is and flies off
@@ -494,6 +561,44 @@ extension ViewController{
             case chapterTen:
                 //FIXME: chapter 10 letter 3
                 
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration39"]!, type: "mp3") //Great Job
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        self.startTransitionAnimationOnce(key: "MainCharacterXylophone")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
+                        //about 0.15 seconds into the pickup animation turn on the first mallet
+                        let mallet1 = self.mainCharacterIdle.childNode(withName: "XylophoneMallet1", recursively: true)
+                        let mallet2 = self.mainCharacterIdle.childNode(withName: "XylophoneMallet2", recursively: true)
+                        mallet1!.isHidden = false
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.85, execute: {
+                                //about 1 second into the pickup animation turn on the second mallet
+                                mallet2!.isHidden = false
+                                
+                                //play quill sound clip
+                               self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "wav", rate: 1)
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
+                                    //about 21 seconds into the xylophone animation turn off the second mallet
+                                    mallet2!.isHidden = true
+                                    
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                                        //about 22 seconds into the xylophone animation turn off the first mallet
+                                        mallet1!.isHidden = true
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+                                            self.stopTransitionAnimation(key: "MainCharacterXylophone")
+                                            
+                                            //start playwalk for letter two
+                                            self.playWalkAnimation()
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
                 print("Nothing to shatter for this chapter")
             case chapterNine:
                 //Patricia lands down by Nikki
@@ -654,6 +759,49 @@ extension ViewController{
             switch true{
             case chapterTen:
                 //FIXME: chapter 10 letter 2
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration38"]!, type: "mp3") //Great Job
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        self.startTransitionAnimationOnce(key: "MainCharacterPickup")
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                        //about 1 second into the pickup animation turn on the flute
+                        let quill = self.mainCharacterIdle.childNode(withName: "PanFlute", recursively: true)
+                        quill!.isHidden = false
+                            
+                            //DispatchQueue.main.asyncAfter(deadline: .now() + 2.6, execute: {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                                self.stopTransitionAnimation(key: "MainCharacterPickup")
+                                //play the Quill playing animation
+                                self.startTransitionAnimationOnce(key: "MainCharacterQuill")
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.2, execute: {
+                                    //play quill sound clip
+                                    self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "wav", rate: 1)
+                                
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 20.8, execute: {
+                                        self.stopTransitionAnimation(key: "MainCharacterQuill")
+                                        self.startTransitionAnimationOnce(key: "MainCharacterPutBack")
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.75, execute: {
+                                            quill!.isHidden = true
+                                            
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.3, execute: {
+                                                self.stopTransitionAnimation(key: "MainCharacterPutBack")
+                                                
+                                                //start playwalk for letter two
+                                                self.playWalkAnimation()
+                                            })
+                                            
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
                 print("Nothing to shatter for this chapter")
             case chapterNine:
                 //Patricia flies down to Ryan and asks where Brennon is
@@ -835,28 +983,35 @@ extension ViewController{
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                         self.startTransitionAnimationOnce(key: "MainCharacterPickup")
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                         //about 1 second into the pickup animation turn on the flute
                         let flute = self.mainCharacterIdle.childNode(withName: "Flute", recursively: true)
                         flute!.isHidden = false
                             
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.95, execute: {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.6, execute: {
                                 //self.stopTransitionAnimation(key: "MainCharacterPickup")
                                 //play the flute playing animation
                                 self.startTransitionAnimationOnce(key: "MainCharacterFlute")
                                 
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {     //play the flute sound clip
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                     //play flute clip
                                     self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
                                 
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 14.7, execute: {
-                                        //self.stopTransitionAnimation(key: "MainCharacterFlute")
+                                        self.stopTransitionAnimation(key: "MainCharacterFlute")
                                         self.startTransitionAnimationOnce(key: "MainCharacterPutBack")
                                         
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 11.5, execute: {
-                                            //self.stopTransitionAnimation(key: "MainCharacterPutBack")
-                                            //start playwalk for letter two
-                                            self.playWalkAnimation()
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.75, execute: {
+                                            flute!.isHidden = true
+                                            
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.25, execute: {
+                                                self.stopTransitionAnimation(key: "MainCharacterPickup")
+                                                self.stopTransitionAnimation(key: "MainCharacterPutBack")
+                                                
+                                                //start playwalk for letter two
+                                                self.playWalkAnimation()
+                                            })
+                                            
                                         })
                                     })
                                 })

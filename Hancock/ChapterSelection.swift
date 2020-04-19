@@ -1590,7 +1590,6 @@ class ChapterSelection {
                                   "Narration6" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration7" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration8" : "ch1-E-Line3_01", //3 Amazing
-  
         
                         //Letter Q Narration
                                   "Narration9" : "ch5L-Q-TransitionToQ",// Flute is neat, but Finn wants to try more
@@ -1619,30 +1618,31 @@ class ChapterSelection {
                                   "Narration28" : "ch1-F-Line3_01", //3  Fantastic
                                   
                       //Final Narration
-                                  "Narration29" : "Final1", //Zambomba isnt for Finn
-                                  "Narration30" : "Final2", //Finn knows what instrument he wants to pick
-                                  "Narration31" : "Final3", //Finn is going to get the flute
-                                  "Narration32" : "Final4", //Thank you - Good Job - final line of narration
+                                  "Narration29" : "ch5L-Final1", //Zambomba isnt for Finn
+                                  "Narration30" : "ch5L-Final2", //Finn knows what instrument he wants to pick
+                                  "Narration31" : "ch5L-Final3", //Finn is going to get the flute
+                                  "Narration32" : "ch5L-Final4", //Thank you - Good Job - final line of narration
                                   
                      //Letter Completion Feedback
                                   "Narration33" : "FluteInstrument",
                                   "Narration34" : "PanFluteInstrument",
-                                  "Narration35" : "XylophoneInstrument",
+                                  "Narration35" : "XyloInstrument",
                                   "Narration36" : "ZambombaInstrument",
                     //Extra SFX
                                   "Narration37" : "ch5L-F-GreatJob",
                                   "Narration38" : "ch5L-Q-Perfect",
                                   "Narration39" : "ch5L-X-Wonderful",
-                                  "Narration40" : "ch5L-Z-YourARockstar",
+                                  "Narration40" : "ch5L-Z-YoureARockstar",
                                   
                     //Extra Template
-                                  "BackgroundSound" : "Birds2",
+                                  "BackgroundSound" : "RoomToneOffice",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing1" : "bell-ding_01",
                                   "CoinDing2" : "bell-ding_02",
                                   "CoinDing3" : "bell-ding_03",
                                   "CoinDing4" : "bell-ding_04",
                                   "Break1" : "RockBreak3",
+                                  "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter10SoundArray
     }

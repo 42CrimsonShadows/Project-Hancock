@@ -25,9 +25,9 @@ extension ViewController{
                 
                 stopTransitionAnimation(key: "MainCharacterWalking")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
-                    
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
                     //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
                     self.shatterLetterOne = true
                     
@@ -227,6 +227,19 @@ extension ViewController{
             switch true {
             case chapterTen:
                 //FIXME: chapter 10 letter 2
+                
+                stopTransitionAnimation(key: "MainCharacterWalking")
+                
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
+                    //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
+                    self.shatterLetterTwo = true
+                    
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                })
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
                 
@@ -446,6 +459,19 @@ extension ViewController{
             switch true {
             case chapterTen:
                 //FIXME: chapter 10 letter 3
+                
+                stopTransitionAnimation(key: "MainCharacterWalking")
+                 
+                 self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration16"]!, type: "mp3")
+                 
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+                     //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
+                     self.shatterLetterThree = true
+                     
+                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
+                     //play narration for the first audio instructions for the activity
+                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration17"]!, type: "mp3")
+                 })
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
                 
@@ -664,6 +690,19 @@ extension ViewController{
             switch true {
             case chapterTen:
                 //FIXME: chapter 10 letter 4
+                
+                stopTransitionAnimation(key: "MainCharacterWalking")
+                
+                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration22"]!, type: "mp3") //Trace the Letter Z to Try the Zambomba
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: {
+                    //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
+                    self.shatterLetterFour = true
+                    
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
+                    //play narration for the first audio instructions for the activity
+                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration23"]!, type: "mp3")
+                })
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
                 
@@ -942,6 +981,11 @@ extension ViewController{
             switch true {
             case chapterTen:
                 //FIXME: chapter 10 letter 5
+                stopTransitionAnimation(key: "MainCharacterWalking")
+                
+                self.shatterLetterFive = true
+                self.playShatterAnimation()
+                    
                 print("stopwalk chapter 10 stuff")
             case chapterNine:
                 
