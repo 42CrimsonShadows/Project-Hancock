@@ -28,6 +28,13 @@ enum GameProgress: Int16 {
     case chapterFinished
 }
 
+enum AudioType: String {
+    case Background
+    case Effect
+    case Narration
+    case Character
+}
+
 //By adopting the UITextFieldDelegate protocol, you tell the compiler that the ViewController class can act as a valid text field delegate. This means you can implement the protocol’s methods to handle text input, and you can assign instances of the ViewController class as the delegate of the text field.
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -58,18 +65,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //while game is playing we need a go back button to return to the beginning
         resetButton.isHidden = false
         
-        switch true {
-        case chapterOne:
+        switch currentChapter {
+        case .Chapter1:
             showAllBtn.isHidden = false
-        case chapterTwo:
+        case .Chapter2:
             //don't need to hide everything in this scene
             showAllBtn.isHidden = true
-        case chapterThree:
+        case .Chapter3:
             //don't need to hide everything in this scene
             showAllBtn.isHidden = true
-        case chapterFour:
+        case .Chapter4:
             showAllBtn.isHidden = true
-        case chapterFive:
+        case .Chapter5:
             showAllBtn.isHidden = true
         default:
             break
@@ -161,13 +168,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     //variables for sound files and audio players
-    var walkPlayer = AVAudioPlayer()
-    var birdsPlayer = AVAudioPlayer()
-    
-    var narrationPlayer = AVAudioPlayer()
-    var FXPlayer = AVAudioPlayer()
-    var BGPlayer = AVAudioPlayer()
-    var CharacterPlayer = AVAudioPlayer()
+    var audioPlayers: Set<AVAudioPlayer> = Set<AVAudioPlayer>()
 
     // MARK: - Start Functions
     override func viewDidLoad() {
@@ -187,7 +188,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sceneView.addGestureRecognizer(tapGestureRecognizer)
         
 //        //setup audio player by loading an file address into the variable
-//        let backgroundAudioPath = Bundle.main.path(forResource: (chapterSelectedSoundDict!["Background2"]), ofType: "wav", inDirectory: "art.scnassets/Sounds")
+//        let backgroundAudioPath = Bundle.main.path(forResource: (chapterSelectedSoundDict!["Background2"]), offileExtension: "wav", inDirectory: "art.scnassets/Sounds")
 //        do
 //        {
 //            //assign the file address to the AVAudioPlayer
@@ -206,7 +207,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             letterFive?.isPaused = true
             letterSix?.isPaused = true
             
-            if chapterNine == true{
+            if currentChapter == .Chapter9 {
                 //special circumstances for keeping balloon from flying away
                 charcterTwoIdle.isPaused = true
                 
@@ -407,21 +408,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let geometry = hitTestResult.node.geometry
             print("Tapped \(String(describing: name)) with geometry: \(String(describing: geometry))")
             
-            switch true{
-            case chapterEight:
+            switch currentChapter {
+            case .Chapter8:
                 if shatterLetterFive == true{
                     switch hitTestResult.node.parent?.name {
                     case "Lemon":
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == false{
                             startTransitionAnimation(key: "MainCharacterLaying")
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3") //"Good job"
-                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing1"]!, type: "mp3", rate: 1)
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration30"]!, fileExtension: "mp3") //"Good job"
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing1"]!, fileExtension: "mp3", rate: 1)
                             mainCharacterIdle.parent?.position = SCNVector3(0.7, 8.42, 7.1)
                             mainCharacterIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(237), GLKMathDegreesToRadians(0))
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3")
+                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
                                 self.LionelOnPlate = true
                                 print("Lionel on plate = ", self.LionelOnPlate)
                             })
@@ -433,13 +434,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         if LionelOnPlate == true && YogiOnPlate == false{
                         self.startAnimateSideCharacter(key: "SideCharacter1Sitting", sideCharacter: "Yogi")
                         
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3") //"Amazing"
-                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3", rate: 1)
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3") //"Amazing"
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing2"]!, fileExtension: "mp3", rate: 1)
                             charcterOneIdle.parent?.position = SCNVector3(1, 8.45, 4.8)
                             charcterOneIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-40), GLKMathDegreesToRadians(0))
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
+                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
                                 self.YogiOnPlate = true
                                 print("Yogi on plate = ", self.YogiOnPlate)
                             })
@@ -448,13 +449,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == false{
                         self.startAnimateSideCharacter(key: "SideCharacter2Laying", sideCharacter: "Kimi")
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "mp3") //"Good job"
-                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3", rate: 1)
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "mp3") //"Good job"
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing3"]!, fileExtension: "mp3", rate: 1)
                             charcterTwoIdle.parent?.position = SCNVector3(-0.8, 8.5, 4.9)
                             charcterTwoIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(25), GLKMathDegreesToRadians(0))
                             print("Kimi to plate")
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "mp3")
+                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3")
                                 self.KimiOnPlate = true
                                 print("Kimi on plate = ", self.KimiOnPlate)
                             })
@@ -463,8 +464,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && ErnieOnPlate == false{
                         self.startAnimateSideCharacter(key: "SideCharacter3Sitting", sideCharacter: "Ernie")
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "mp3") //"You did it"
-                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3", rate: 1)
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3") //"You did it"
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing4"]!, fileExtension: "mp3", rate: 1)
                             charcterThreeIdle.parent?.position = SCNVector3(-1.5, 8.5, 7)
                             charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(125), GLKMathDegreesToRadians(0))
                             self.ErnieOnPlate = true
@@ -481,7 +482,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //                    if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && ErnieOnPlate == true {
 //                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
 //                            //play the final narration
-//                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration37"]!, type: "mp3")
+//                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration37"]!, fileExtension: "mp3")
 //
 //                            DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
 //                                self.resetGame()
@@ -490,11 +491,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //                    }
                 }
                 print("Chapter Eight is true.")
-            case chapterSeven:
+            case .Chapter7:
                 print("Chapter Seven is true.")
-            case chapterSix:
+            case .Chapter6:
                 print("Chapter Six is true.")
-            case chapterFive:
+            case .Chapter5:
                 print("Chapter Five is true.")
                 let key1 = mainCharacterIdle.childNode(withName: "Xylophone_Key1", recursively: true)!
                 let key2 = mainCharacterIdle.childNode(withName: "Xylophone_Key2", recursively: true)!
@@ -504,33 +505,33 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 switch hitTestResult.node.name {
                     case "Xylophone_Key1":
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone1"]!, type: "mp3", rate: 1)
+                        self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Xylophone1"]!, fileExtension: "mp3", rate: 1)
                         print("Ding Ding 1")
                     
                     case "Xylophone_Key2":
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone2"]!, type: "mp3", rate: 1)
+                        self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Xylophone2"]!, fileExtension: "mp3", rate: 1)
                         print("Ding Ding 1")
                     
                     case "Xylophone_Key3":
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone3"]!, type: "mp3", rate: 1)
+                        self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Xylophone3"]!, fileExtension: "mp3", rate: 1)
                         print("Ding Ding 1")
                     
                     case "Xylophone_Key4":
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone4"]!, type: "mp3", rate: 1)
+                        self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Xylophone4"]!, fileExtension: "mp3", rate: 1)
                         print("Ding Ding 1")
                     
                     case "Xylophone_Key5":
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Xylophone5"]!, type: "mp3", rate: 1)
+                        self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Xylophone5"]!, fileExtension: "mp3", rate: 1)
                         print("Ding Ding 1")
                     
                     default:
                         break
                 }
-            case chapterFour:
+            case .Chapter4:
                 print("Chapter Four is true.")
-            case chapterThree:
+            case .Chapter3:
                 print("Chapter Three is true.")
-            case chapterTwo:
+            case .Chapter2:
                 print("Chapter Two is true.")
                 let shirt = mainCharacterIdle.childNode(withName: "PiperShirt", recursively: true)!
                 let shorts = mainCharacterIdle.childNode(withName: "PiperShorts", recursively: true)!
@@ -562,7 +563,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         helmetDeco1.isHidden = true
                         helmetDeco2.isHidden = true
                         
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
                         //wait 4 seconds for the game intro1 to finish
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                             //move the main character to the first letter
@@ -586,7 +587,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         helmetDeco1.isHidden = false
                         helmetDeco2.isHidden = true
                         
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
                         //wait 4 seconds for the game intro1 to finish
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                             //move the main character to the first letter
@@ -610,7 +611,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         helmetDeco1.isHidden = true
                         helmetDeco2.isHidden = false
                         
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
                         //wait 4 seconds for the game intro1 to finish
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                             //move the main character to the first letter
@@ -634,7 +635,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         helmetDeco1.isHidden = true
                         helmetDeco2.isHidden = true
                         
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
                         //wait 4 seconds for the game intro1 to finish
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                             //move the main character to the first letter
@@ -644,7 +645,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         break
                 }
                 
-            case chapterOne:
+            case .Chapter1:
                 print("Chapter Four is true.")
             default:
                 break
@@ -706,7 +707,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.startButton.isHidden = true
             self.gameState = .playGame
             //player background music/ambient
-            self.toggleAudioBGFile(file: chapterSelectedSoundDict!["BackgroundSound"]!, type: "mp3")
+            self.playAudio(type: .Background, file: chapterSelectedSoundDict!["BackgroundSound"]!, fileExtension: "mp3")
         }
         storyTime()
     }
@@ -727,6 +728,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //            self.CharacterPlayer.stop()
 //        }
         
+        // We're going to the main menu now!
+        currentChapter = .MainMenu
+        
         DispatchQueue.main.async {
             //hide the main nodes
             //self.rootStoryNode.isHidden = true
@@ -738,10 +742,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.gameState = .detectSurface
             
             //stop all sound
-            self.toggleAudioBGFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav")
-            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav", rate: 1.5)
-            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav")
-            self.toggleAudioCharacterFile(file: chapterSelectedSoundDict!["Stop"]!, type: "wav")
+            for player:AVAudioPlayer in self.audioPlayers {
+                player.stop()
+                self.audioPlayers.remove(player)
+            }
             
             //stop all animations
             //self.stopWalkAnimation()
@@ -847,29 +851,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter3:
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 //play game intro 1
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter2Finish"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter2Finish"]!, fileExtension: "mp3")
             })
         case .toLetter4:
             //play narration for finishing letter 4
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter3Finish"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter3Finish"]!, fileExtension: "mp3")
                 })
         case .toLetter5:
             //play narration for finishing letter 5
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter4Finish"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter4Finish"]!, fileExtension: "mp3")
                     })
         case .toLetter6:
             //play narration for finishing letter 6
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter5Finish"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter5Finish"]!, fileExtension: "mp3")
                     })
         case .chapterFinished :
             //play narration for finishing the chapter
            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["letter6Finish"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish"]!, fileExtension: "mp3")
                     })
             })
         }
@@ -894,14 +898,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func storyTime(){
             //add extra narration based on chapter
-            switch true {
-            case chapterOne:
+            switch currentChapter {
+            case .Chapter1:
                 //Wait 7 second for game to load completely
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     self.startTransitionAnimation(key: "MainCharacterIdle")
                     print(self.mainCharacterIdle.name!, "is now idle")
                     //play game intro 1
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                 
                     //wait 7 seconds for the game intro1 to finish
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
@@ -909,12 +913,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         self.playWalkAnimation()
                     })
                 })
-            case chapterTwo:
+            case .Chapter2:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     self.startTransitionAnimation(key: "MainCharacterIdle")
 
                     //play game intro 1
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
                         //show the different outfits that you can pick
                         for node in self.charcterOneIdle.childNodes {
@@ -931,11 +935,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         }
                     })
                 })
-            case chapterThree:
+            case .Chapter3:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     self.startTransitionAnimation(key: "MainCharacterIdle")
                     //play game intro 1
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                 
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
                             //move the main character to the first letter
@@ -943,11 +947,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Starting chapter three")
                     })
                 })
-            case chapterFour:
+            case .Chapter4:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     self.startTransitionAnimation(key: "MainCharacterWaving")
                     //play game intro 1
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
                         //move the main character to the first letter
@@ -955,26 +959,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Starting chapter four")
                     })
                 })
-            case chapterFive:
+            case .Chapter5:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     //play game intro1
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                         //move the main character to the first letter
                         self.playWalkAnimation()
                     })
                 })
-            case chapterSix:
+            case .Chapter6:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     print("Do chapter 6 stuff")
                 })
-            case chapterSeven:
+            case .Chapter7:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     self.startTransitionAnimation(key: "MainCharacterIdle")
                     print(self.mainCharacterIdle.name!, "is now idle")
                     //play game intro 1
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                 
                     //wait 7 seconds for the game intro1 to finish
                     DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
@@ -982,11 +986,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.playWalkAnimation()
                     })
                 })
-            case chapterEight:
+            case .Chapter8:
                 self.startTransitionAnimation(key: "MainCharacterLaying")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     //play game intro 1
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
                         //move the main character to the first marker
@@ -994,24 +998,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Start chapter eight")
                     })
                 })
-            case chapterNine:
+            case .Chapter9:
                 //set Brennon's fly away Balloon to paused
                 charcterTwoIdle.isHidden = true
                                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                     //play intro Narration to chapter 9
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     print("Do chapter 9 stuff")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                             self.playWalkAnimation()
                         })
                     })
                 })
-            case chapterTen:
+            case .Chapter10:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     print("Do chapter 10 stuff")
                 })
@@ -1020,87 +1024,59 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
     }
     
-    //pass it an audiofile and it will play it!
-    func toggleAudioNarrationFile(file: String, type: String) {
-        //get the url
-        let audio1Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
-        //make sure we have the path, otherwise abort
-        guard audio1Path != nil else { return }
+    @discardableResult func playAudio(type: AudioType, file: String, fileExtension: String, rate:Float = 1.0) -> AVAudioPlayer? {
+        if currentChapter == .MainMenu {
+            return nil
+        }
         
-        do
-        {
-            if narrationPlayer == AVPlayer(url: URL(fileURLWithPath: audio1Path!)){
-                print("Stoping narrationPlayer")
-                narrationPlayer.stop()
-            }
-            
-            try narrationPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio1Path!))
-            narrationPlayer.play()
-            
-        } catch {
-            print("AudioPlayer not available!")
-        }
+        return _playAudio(type: type, file: file, fileExtension: fileExtension, rate: rate)
     }
     
-    //pass it an audiofile and it will play it!
-    func toggleAudioFXFile(file: String, type: String, rate: Float) {
-        let audio2Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
-        do
-        {
-            if FXPlayer == AVPlayer(url: URL(fileURLWithPath: audio2Path!)){
-                print("Stoping FXPlayer")
-                FXPlayer.stop()
-            }
-            
-            try FXPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio2Path!))
-            FXPlayer.enableRate = true
-            FXPlayer.rate = rate
-            FXPlayer.setVolume(0.5, fadeDuration: 0)
-            self.FXPlayer.play()
-            
-        } catch {
-            print("FXPlayer not available!")
+    @discardableResult func playAudioMenu(type: AudioType, file: String, fileExtension: String, rate:Float = 1.0) -> AVAudioPlayer? {
+        if currentChapter != .MainMenu {
+            return nil
         }
+        
+        return _playAudio(type: type, file: file, fileExtension: fileExtension, rate: rate)
     }
     
-    //pass it an audiofile and it will play/stop it!
-    func toggleAudioBGFile(file: String, type: String) {
-        var audio3Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
-        do
-        {
-            if BGPlayer == AVPlayer(url: URL(fileURLWithPath: audio3Path!)){
-                print("Stoping BGPlayer")
-                BGPlayer.stop()
+    // Jonathan: New audio "system" to fix an inherent bug with the previous one
+    func _playAudio(type: AudioType, file: String, fileExtension: String, rate:Float) -> AVAudioPlayer? {
+        // Fetch the audio path of the desired sound
+        let audioPath = Bundle.main.path(forResource: file, ofType: fileExtension, inDirectory: "art.scnassets/Sounds")
+        
+        // Make sure the asset exists
+        if audioPath == nil {
+            return nil
+        }
+        
+        var player:AVAudioPlayer? = nil
+        
+        do {
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            
+            switch type {
+                case .Effect:
+                    player?.enableRate = true
+                    player?.rate = rate
+                    player?.setVolume(0.5, fadeDuration: 0)
+                case .Background:
+                    player?.numberOfLoops = -1
+                default:
+                    break
             }
             
-            try BGPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio3Path!))
-            //set BGPlayer to play infinitly (-1)
-            BGPlayer.numberOfLoops = -1
-            BGPlayer.play()
+            // Play the sound
+            player?.play()
             
+            // Add the sound to our storage list
+            self.audioPlayers.insert(player!)
         } catch {
-            print("BGPlayer not available!")
+            print("Failed to create AudioPlayer for file '" + file + "." + fileExtension + "'")
         }
+        
+        return player
     }
-    
-    //pass it an audiofile and it will play it!
-    func toggleAudioCharacterFile(file: String, type: String) {
-        let audio4Path = Bundle.main.path(forResource: file, ofType: type, inDirectory: "art.scnassets/Sounds")
-        do
-        {
-            if CharacterPlayer == AVPlayer(url: URL(fileURLWithPath: audio4Path!)){
-                print("Stoping characterPlayer")
-                CharacterPlayer.stop()
-            }
-            
-            try CharacterPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audio4Path!))
-            self.CharacterPlayer.play()
-            
-        } catch {
-            print("CharacterPlayer not available!")
-        }
-    }
-    
     
     func loadActivityLetter(activityString: String) {
         

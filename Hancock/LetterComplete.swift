@@ -19,25 +19,25 @@ extension ViewController{
             //----------------------------------------------------
         //MARK: Letter 6
         case shatterLetterSix:
-            switch true{
-            case chapterTen:
+            switch currentChapter {
+            case .Chapter10:
                 print("Nothing to shatter for this chapter")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: chapter 9 letter 6
                 
                 print("Nothing to shatter for this chapter")
-            case chapterEight:
+            case .Chapter8:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                     //play the final narration
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration37"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration37"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
                         self.resetGame()
                     })
                 })
                 print("Nothing to shatter for this chapter")
-            case chapterSeven:
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish1"]!, type: "mp3")
+            case .Chapter7:
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Finish1"]!, fileExtension: "mp3")
                 
                 self.stopAnimateSideCharacter(key: "SideCharacter5Talking", sideCharacter: "Tyler")
                 self.startAnimateSideCharacter(key: "SideCharacter5Walking", sideCharacter: "Tyler")
@@ -67,7 +67,7 @@ extension ViewController{
                         self.startTransitionAnimation(key: "MainCharacterWalking")
                         
                         //play walk sound
-                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                        self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                         
                         //rotate Ursa
                         let rotateUrsa1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(60)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 5) //hold rotate while moving
@@ -88,7 +88,7 @@ extension ViewController{
                             self.stopTransitionAnimation(key: "MainCharacterWalking")
                             self.startTransitionAnimation(key: "MainCharacterIdle")
                             //Final narration
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish2"]!, type: "mp3")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Finish2"]!, fileExtension: "mp3")
                             
                             //wait while finaldialog plays
                             DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
@@ -99,21 +99,21 @@ extension ViewController{
                 })
                 print("Tyler brings Ursa back to her family")
                 
-            case chapterSix:
+            case .Chapter6:
                 print("Nothing to shatter for this chapter")
-            case chapterFive:
+            case .Chapter5:
                 letterOne!.isPaused = false
                 animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
-            case chapterFour:
+                playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
+            case .Chapter4:
                 letterOne!.isPaused = false
                 animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
-            case chapterThree:
+                playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
+            case .Chapter3:
                 print("Nothing to shatter for this chapter")
                 print("not 6 letters in this chapter")
                 
-            case chapterTwo:
+            case .Chapter2:
                 print("Nothing to shatter for this chapter")
                 print("Character cheers and does skateboard animation")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -126,7 +126,7 @@ extension ViewController{
                         //after the U trick play the walk to next letter animation
                         DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
                             //after the final animation, play the fishing narration
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish"]!, type: "mp3")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
                                 self.resetGame()
@@ -134,7 +134,7 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterOne:
+            case .Chapter1:
                 //francine stop idle /dancing
                 self.stopAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Francine")
                 self.startAnimateSideCharacter(key: "SideCharacter3Dance2", sideCharacter: "Francine")
@@ -152,23 +152,23 @@ extension ViewController{
                 
                 letterSix!.isPaused = false
                 animateLetterHide(fadeThis: letterSix!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
             default:
                 break
             }
             //----------------------------------------------------
         //MARK: Letter 5
         case shatterLetterFive:
-            switch true{
-            case chapterTen:
+            switch currentChapter {
+            case .Chapter10:
                 print("Nothing to shatter for this chapter")
-            case chapterNine:
+            case .Chapter9:
                 print("Nothing to shatter for this chapter")
-            case chapterEight:
+            case .Chapter8:
                 //FIXME: chapter 8 letter 5
                 
                 print("Nothing to shatter for this chapter")
-            case chapterSeven:
+            case .Chapter7:
                 //Isaac goes back to what he was doing
                 self.stopAnimateSideCharacter(key: "SideCharacter4Talking", sideCharacter: "Isaac")
                 self.startAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Isaac")
@@ -180,17 +180,17 @@ extension ViewController{
                 
                 print("Ursa begins climbing over the log and finds Tyler by the stream")
                 
-            case chapterSix:
+            case .Chapter6:
                 print("Nothing to shatter for this chapter")
-            case chapterFive:
+            case .Chapter5:
                 print("Nothing to shatter for this chapter")
                 print("Xylophone gets put back together again")
                 
-            case chapterFour:
+            case .Chapter4:
                 //letter A completed, finishing chapter narration
                 print("Nothing to shatter for this chapter")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Finish1"]!, fileExtension: "mp3")
                     //Keelie fixed Ashton
                     self.stopAnimateSideCharacter(key: "SideCharacter5Problem", sideCharacter: "Ashton")
                     self.startAnimateSideCharacter(key: "SideCharacter5Happy", sideCharacter: "Ashton")
@@ -202,7 +202,7 @@ extension ViewController{
                         
                         //play last narration for chapter
                         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish2"]!, type: "mp3")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Finish2"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                                 self.resetGame()
@@ -210,11 +210,11 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterThree:
+            case .Chapter3:
                 //letter J completed, finishing narration
                 print("Nothing to shatter for this chapter")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish1"]!, fileExtension: "mp3")
                     self.stopAnimateSideCharacter(key: "SideCharacter1Idle4", sideCharacter: "Ollie")
                     self.startAnimateSideCharacter(key: "SideCharacter1Idle5", sideCharacter: "Ollie")
                     
@@ -223,7 +223,7 @@ extension ViewController{
                     self.charcterOneIdle.parent?.runAction(SCNAction.move(to: moveOllieFinish, duration: 2))
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["chapterFinish2"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish2"]!, fileExtension: "mp3")
                         self.stopAnimateSideCharacter(key: "SideCharacter1Idle5", sideCharacter: "Ollie")
                         self.startAnimateSideCharacter(key: "SideCharacter1Twirl", sideCharacter: "Ollie")
                         
@@ -232,7 +232,7 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterTwo:
+            case .Chapter2:
                 print("Nothing to shatter for this chapter")
                 print("Character cheers and does skateboard animation")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -248,7 +248,7 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterOne:
+            case .Chapter1:
                 //drop Eric down from letter E
                 self.startAnimateSideCharacter(key: "SideCharacter4Climb", sideCharacter: "Eric")
                 //play for 3 seconds
@@ -269,7 +269,7 @@ extension ViewController{
                     
                     self.letterFive!.isPaused = false
                     self.animateLetterHide(fadeThis: self.letterFive!)
-                    self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                    self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
                     
                     //wait 5 seconds
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
@@ -285,21 +285,21 @@ extension ViewController{
             //----------------------------------------------------
         //MARK: Letter 4
         case shatterLetterFour:
-            switch true{
-            case chapterTen:
+            switch currentChapter {
+            case .Chapter10:
                 print("Nothing to shatter for this chapter")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: chapter 9 letter 4
                 
                 //Patricia thanks Heidi after she tells him where Brennon is and flies off
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
                     self.playWalkAnimation()
                 })
                 
                 print("Nothing to shatter for this chapter")
-            case chapterEight:
+            case .Chapter8:
                 //letter E completed, starting final sequence
                 print("Nothing to shatter for this chapter")
                 print("Ernie gets up and turns to Lionel and they cheer")
@@ -314,7 +314,7 @@ extension ViewController{
                     
                     self.startTransitionAnimation(key: "MainCharacterCheering")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration27"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                         //Ernie stops cheering and looks back toward camera
@@ -326,13 +326,13 @@ extension ViewController{
                 })
                 
                 print("Nothing to shatter for this chapter")
-            case chapterSeven:
+            case .Chapter7:
                 //Windsor goes back to what he was doing
                 self.stopAnimateSideCharacter(key: "SideCharacter3Talking", sideCharacter: "Windsor")
                 self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Windsor")
                 
                 //Ursa climbs the hill
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //animate the main character to rotate a bit on the y axis
@@ -346,9 +346,9 @@ extension ViewController{
                 
                 print("Ursa climbs the slope and sees Isaac")
                 
-            case chapterSix:
+            case .Chapter6:
                 print("Nothing to shatter for this chapter")
-            case chapterFive:
+            case .Chapter5:
                 print("Nothing to shatter for this chapter")
                 print("Xylophone gets put back together again")
                 
@@ -361,10 +361,10 @@ extension ViewController{
                 xylophone_3!.isHidden = true
                 
                 //"xylophone back together"
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish1"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Finish1"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Finish2"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Finish2"]!, fileExtension: "mp3")
                     
                     self.mainCharacterIdle?.parent?.runAction(SCNAction.move(to: SCNVector3(0 ,11.5 ,0), duration: 4))
                     self.mainCharacterIdle?.parent?.runAction(SCNAction.scale(to: 0.05, duration: 5))
@@ -373,11 +373,11 @@ extension ViewController{
                         self.resetGame()
                     })
                 })
-            case chapterFour:
+            case .Chapter4:
                 //letter M completed, starting letter A
                 print("Nothing to shatter for this chapter")
                 print("Keelie fixes Manny")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration40"]!, type: "mp3")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration40"]!, fileExtension: "mp3")
                     
                     self.stopAnimateSideCharacter(key: "SideCharacter4Problem", sideCharacter: "Manny")
                     self.startAnimateSideCharacter(key: "SideCharacter4Happy", sideCharacter: "Manny")
@@ -386,11 +386,11 @@ extension ViewController{
                         self.playWalkAnimation()
                     })
                 })
-            case chapterThree:
+            case .Chapter3:
                 //letter J completed, starting letter O
                 print("Nothing to shatter for this chapter")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
                         self.stopAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Jillian")
@@ -409,7 +409,7 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterTwo:
+            case .Chapter2:
                 print("Nothing to shatter for this chapter")
                 print("Character cheers and does skateboard animation")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -427,10 +427,10 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterOne:
+            case .Chapter1:
                 letterFour!.isPaused = false
                 animateLetterHide(fadeThis: letterFour!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
                 
                 //drop side Francine down from letter F
                 let rotateTo0 = SCNAction.rotateTo(x: 0, y: 3.5, z: 0, duration: 0.1)
@@ -487,15 +487,15 @@ extension ViewController{
             //----------------------------------------------------
         //MARK: Letter 3
         case shatterLetterThree:
-            switch true{
-            case chapterTen:
+            switch currentChapter {
+            case .Chapter10:
                 print("Nothing to shatter for this chapter")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: chapter 9 letter 3
                 
                 //Patricia lands down by Nikki
                 self.patricia7!.isPaused = false
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration25"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration25"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {
                     self.patricia7!.isPaused = true
@@ -504,7 +504,7 @@ extension ViewController{
                 })
                 
                 print("Nothing to shatter for this chapter")
-            case chapterEight:
+            case .Chapter8:
                 //letter k completed, starting letter e
                 print("Nothing to shatter for this chapter")
                 print("Kimi turns to Lionel and they cheer")
@@ -515,7 +515,7 @@ extension ViewController{
                     self.startAnimateSideCharacter(key: "SideCharacter2Cheering", sideCharacter: "Kimi")
                     self.startTransitionAnimation(key: "MainCharacterCheering")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration20"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                         //Kimi stops cheering and looks back toward camera
@@ -526,7 +526,7 @@ extension ViewController{
                     })
                 })
                 print("Nothing to shatter for this chapter")
-            case chapterSeven:
+            case .Chapter7:
                 //Vivian goes back to what she was doing
                 stopAnimateSideCharacter(key: "SideCharacter2Talking", sideCharacter: "Vivian")
                 startAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Vivian")
@@ -538,9 +538,9 @@ extension ViewController{
                 
                 print("You traced the letter V and Ursa has made it across the ravine")
                 
-            case chapterSix:
+            case .Chapter6:
                 print("Nothing to shatter for this chapter")
-            case chapterFive:
+            case .Chapter5:
                 print("Nothing to shatter for this chapter")
                 print("Xylophone gets Yarn for mallet")
                 //show mallet head
@@ -548,16 +548,16 @@ extension ViewController{
                 malletHead!.isHidden = false
                 
                 //"we now have all the yarn we need"
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                     self.playWalkAnimation()
                 })
-            case chapterFour:
+            case .Chapter4:
                 //letter W completed, starting letter M
                 print("Nothing to shatter for this chapter")
                 print("Keelie fixes Wallace")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
                     
                     //Keelie helps Velma
                     self.stopAnimateSideCharacter(key: "SideCharacter2Problem", sideCharacter: "Wallace")
@@ -570,14 +570,14 @@ extension ViewController{
                         self.playWalkAnimation()
                     })
                 })
-            case chapterThree:
+            case .Chapter3:
                 //letter S completed, starting letter J
                 print("Nothing to shatter for this chapter")
                 print("Ollie relaxes a little")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.stopAnimateSideCharacter(key: "SideCharacter1Idle3", sideCharacter: "Ollie")
                     self.startAnimateSideCharacter(key: "SideCharacter1Idle4", sideCharacter: "Ollie")
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration23"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration23"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 27, execute: {
                         //Simon leaves
@@ -593,7 +593,7 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterTwo:
+            case .Chapter2:
                 print("Nothing to shatter for this chapter")
                 print("Character cheers and does skateboard animation")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -609,10 +609,10 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterOne:
+            case .Chapter1:
                 letterThree!.isPaused = false
                 animateLetterHide(fadeThis: letterThree!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
                 
                 // x= (-)west/(+)east, z= (-)north/(+)south
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
@@ -648,10 +648,10 @@ extension ViewController{
             //----------------------------------------------------
         //MARK: Letter 2
         case shatterLetterTwo:
-            switch true{
-            case chapterTen:
+            switch currentChapter {
+            case .Chapter10:
                 print("Nothing to shatter for this chapter")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: chapter 9 letter 2
                 
                 //Patricia flies down to Ryan and asks where Brennon is
@@ -660,7 +660,7 @@ extension ViewController{
                 self.patricia2!.isHidden = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration17"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration17"]!, fileExtension: "mp3")
                                         
                     DispatchQueue.main.asyncAfter(deadline: .now() + 9.8, execute: {
                         //Patricia idles on the track while talking to Ryan
@@ -674,14 +674,14 @@ extension ViewController{
                 })
                 
                 print("Nothing to shatter for this chapter")
-            case chapterEight:
+            case .Chapter8:
                 //letter y completed, starting letter k
                 print("Nothing to shatter for this chapter")
                 print("Yogi turns to Lionel and they cheer")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //yogi turns to Lionel and they both cheer
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration12"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration12"]!, fileExtension: "mp3")
                     
                     self.charcterOneIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-125)), z: 0, duration: 0.5))
                     
@@ -696,7 +696,7 @@ extension ViewController{
                     })
                 })
                 print("Nothing to shatter for this chapter")
-            case chapterSeven:
+            case .Chapter7:
                 //stanley goes back to what he was doing
                 self.stopAnimateSideCharacter(key: "SideCharacter1Talking", sideCharacter: "Stanley")
                 self.startAnimateSideCharacter(key: "SideCharacter1Idle", sideCharacter: "Stanley")
@@ -709,9 +709,9 @@ extension ViewController{
                 })
                 print("Ursa is on her way down the trail to vivian")
                 
-            case chapterSix:
+            case .Chapter6:
                 print("Nothing to shatter for this chapter")
-            case chapterFive:
+            case .Chapter5:
                 print("Nothing to shatter for this chapter")
                 print("Xylophone gets zebra stripes")
                 
@@ -723,16 +723,16 @@ extension ViewController{
                 let xylophone_2 = self.mainCharacterIdle.childNode(withName: "xylophone_2 reference", recursively: true)
                 xylophone_2!.isHidden = true
                 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     self.playWalkAnimation()
                 })
                 
-            case chapterFour:
+            case .Chapter4:
                 print("Nothing to shatter for this chapter")
                 print("Keelie fixes Velma")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3")
                     
                     //Keelie helps Velma
                     self.stopAnimateSideCharacter(key: "SideCharacter1Problem", sideCharacter: "Velma")
@@ -742,14 +742,14 @@ extension ViewController{
                     })
                 })
                 
-            case chapterThree:
+            case .Chapter3:
                 //letter Q completed, starting letter S
                 print("Nothing to shatter for this chapter")
                 print("Ollie relaxes a little")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.stopAnimateSideCharacter(key: "SideCharacter1Idle2", sideCharacter: "Ollie")
                     self.startAnimateSideCharacter(key: "SideCharacter1Idle3", sideCharacter: "Ollie")
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3")
                     self.stopAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Quinn")
                     self.startAnimateSideCharacter(key: "SideCharacter2Swimming", sideCharacter: "Quinn")
                     
@@ -772,7 +772,7 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterTwo:
+            case .Chapter2:
                 print("Nothing to shatter for this chapter")
                 print("Character cheers and does skateboard animation")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -788,10 +788,10 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterOne:
+            case .Chapter1:
                 letterTwo!.isPaused = false
                 animateLetterHide(fadeThis: letterTwo!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
                 
                 // x= (-)west/(+)east, z= (-)north/(+)south
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
@@ -824,13 +824,13 @@ extension ViewController{
             //----------------------------------------------------
         //MARK: Letter 1
         case shatterLetterOne:
-            switch true{
-            case chapterTen:
+            switch currentChapter {
+            case .Chapter10:
                 print("Nothing to shatter for this chapter")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: chapter 9 letter 1
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration9"]!, fileExtension: "mp3")
                     
                     //Patricia flies into the air to get the balloon
                     self.patricia1!.isPaused = false
@@ -852,7 +852,7 @@ extension ViewController{
                 })
                 
                 print("Nothing to shatter for this chapter")
-            case chapterEight:
+            case .Chapter8:
                 self.startTransitionAnimation(key: "MainCharacterStandup")
                 self.stopTransitionAnimation(key: "MainCharacterLaying")
                 
@@ -860,7 +860,7 @@ extension ViewController{
                     self.mainCharacterIdle?.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-15)), z: 0, duration: 0.5))
                     self.stopTransitionAnimation(key: "MainCharacterStandup")
                     self.startTransitionAnimation(key: "MainCharacterCheering")
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration6"]!, fileExtension: "mp3")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                         self.playWalkAnimation()
                     })
@@ -868,21 +868,21 @@ extension ViewController{
                 
 
                 print("Nothing to shatter for this chapter")
-            case chapterSeven:
+            case .Chapter7:
                 print("Ursa has calls out for her parents and continues down the path")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.stopTransitionAnimation(key: "MainCharacterIdle")
                     self.startTransitionAnimation(key: "MainCharacterShouting")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration7"]!, fileExtension: "mp3")
                     //wait 3 seconds and then play animation
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
                         self.playWalkAnimation()
                     })
                 })
-            case chapterSix:
+            case .Chapter6:
                 print("Nothing to shatter for this chapter")
-            case chapterFive:
+            case .Chapter5:
                 print("Nothing to shatter for this chapter")
                 print("Xylophone get nail pegs")
                 
@@ -894,39 +894,39 @@ extension ViewController{
                 let xylophone_1 = self.mainCharacterIdle.childNode(withName: "xylophone_1 reference", recursively: true)
                 xylophone_1!.isHidden = true
                 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
                     self.playWalkAnimation()
                 })
-            case chapterFour:
+            case .Chapter4:
                 print("Nothing to shatter for this chapter")
                 print("Character gets coat on")
                 //letterOne!.isPaused = false
                 //animateLetterHide(fadeThis: letterOne!)
-                //toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                //playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     let coat = self.mainCharacterIdle.childNode(withName: "Coat", recursively: true)
                     coat?.isHidden = false
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
                         self.playWalkAnimation()
                     })
                 })
-            case chapterThree:
+            case .Chapter3:
                 //letter G completed, starting letter Q
                 print("Nothing to shatter for this chapter")
                 print("Ollie relaxes a little")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.stopAnimateSideCharacter(key: "SideCharacter1Idle1", sideCharacter: "Ollie")
                     self.startAnimateSideCharacter(key: "SideCharacter1Idle2", sideCharacter: "Ollie")
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 16, execute: {
                         self.playWalkAnimation()
                     })
                 })
-            case chapterTwo:
+            case .Chapter2:
                 print("Nothing to shatter for this chapter")
                 print("Character cheers and does skateboard animation")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -941,10 +941,10 @@ extension ViewController{
                         })
                     })
                 })
-            case chapterOne:
+            case .Chapter1:
                 letterOne!.isPaused = false
                 animateLetterHide(fadeThis: letterOne!)
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["Shatter1"]!, type: "wav", rate: 1.5)
+                playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
             default:
                 break
             }

@@ -1,16 +1,21 @@
 
 import UIKit
 
-var chapterOne: Bool = false
-var chapterTwo: Bool = false
-var chapterThree: Bool = false
-var chapterFour: Bool = false
-var chapterFive: Bool = false
-var chapterSix: Bool = false
-var chapterSeven: Bool = false
-var chapterEight: Bool = false
-var chapterNine: Bool = false
-var chapterTen: Bool = false
+enum Chapter: Int {
+    case MainMenu = 0
+    case Chapter1 = 1
+    case Chapter2 = 2
+    case Chapter3 = 3
+    case Chapter4 = 4
+    case Chapter5 = 5
+    case Chapter6 = 6
+    case Chapter7 = 7
+    case Chapter8 = 8
+    case Chapter9 = 9
+    case Chapter10 = 10
+}
+
+var currentChapter: Chapter = .MainMenu
 
 class ChapterViewController: UIViewController {
     
@@ -43,151 +48,61 @@ class ChapterViewController: UIViewController {
 //    let concept10 = UIImage (imageLiteralResourceName: "concept10")
     
     @IBAction func cpt1Clicked(_ sender: Any) {
-        chapterOne = true
-        chapterTwo = false
-        chapterThree = false
-        chapterFour = false
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = false
-        chapterTen = false
+        currentChapter = .Chapter1
         //conceptView.image = concept1
         chapterSelector.chapterLoader(picked: 1)
         tappedMe()
     }
     @IBAction func cpt2Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = true
-        chapterThree = false
-        chapterFour = false
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = false
-        chapterTen = false
+        currentChapter = .Chapter2
         //conceptView.image = concept2
         chapterSelector.chapterLoader(picked: 2)
         tappedMe()
     }
     @IBAction func cpt3Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = false
-        chapterThree = true
-        chapterFour = false
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = false
-        chapterTen = false
+        currentChapter = .Chapter3
         conceptView.image = concept3
         chapterSelector.chapterLoader(picked: 3)
         tappedMe()
     }
     @IBAction func cpt4Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = false
-        chapterThree = false
-        chapterFour = true
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = false
-        chapterTen = false
+        currentChapter = .Chapter4
         conceptView.image = concept4
         chapterSelector.chapterLoader(picked: 4)
         tappedMe()
     }
     @IBAction func cpt5Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = false
-        chapterThree = false
-        chapterFour = false
-        chapterFive = true
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = false
-        chapterTen = false
+        currentChapter = .Chapter5
         conceptView.image = concept5
         chapterSelector.chapterLoader(picked: 5)
         tappedMe()
     }
     @IBAction func cpt6Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = false
-        chapterThree = false
-        chapterFour = false
-        chapterFive = false
-        chapterSix = true
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = false
-        chapterTen = false
+        currentChapter = .Chapter6
         //conceptView.image = concept6
         chapterSelector.chapterLoader(picked: 6)
         tappedMe()
     }
     @IBAction func cpt7Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = false
-        chapterThree = false
-        chapterFour = false
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = true
-        chapterEight = false
-        chapterNine = false
-        chapterTen = false
+        currentChapter = .Chapter7
         //conceptView.image = concept7
         chapterSelector.chapterLoader(picked: 7)
         tappedMe()
     }
     @IBAction func cpt8Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = false
-        chapterThree = false
-        chapterFour = false
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = true
-        chapterNine = false
-        chapterTen = false
+        currentChapter = .Chapter8
         //conceptView.image = concept8
         chapterSelector.chapterLoader(picked: 8)
         tappedMe()
     }
     @IBAction func cpt9Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = false
-        chapterThree = false
-        chapterFour = false
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = true
-        chapterTen = false
+        currentChapter = .Chapter9
         //conceptView.image = concept9
         chapterSelector.chapterLoader(picked: 9)
         tappedMe()
     }
     @IBAction func cpt10Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = false
-        chapterThree = false
-        chapterFour = false
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = false
-        chapterTen = true
+        currentChapter = .Chapter10
         //conceptView.image = concept10
         chapterSelector.chapterLoader(picked: 10)
         tappedMe()
@@ -249,40 +164,8 @@ class ChapterViewController: UIViewController {
     
     
     func tappedMe(){
-        switch true {
-        case chapterOne:
-            //chapterOneConceptImage = true
-            print("chapter 1 loaded")
-        case chapterTwo:
-            //chapterOneConceptImage = true
-            print("chapter 2 loaded")
-        case chapterThree:
-            //chapterOneConceptImage = true
-            print("chapter 3 loaded")
-        case chapterFour:
-            //chapterOneConceptImage = true
-            print("chapter 4 loaded")
-        case chapterFive:
-            //chapterOneConceptImage = true
-            print("chapter 5 loaded")
-        case chapterSix:
-            //chapterOneConceptImage = true
-            print("chapter 6 loaded")
-        case chapterSeven:
-            //chapterOneConceptImage = true
-            print("chapter 7 loaded")
-        case chapterEight:
-            //chapterOneConceptImage = true
-            print("chapter 8 loaded")
-        case chapterNine:
-            //chapterOneConceptImage = true
-            print("chapter 9 loaded")
-        case chapterTen:
-            //chapterOneConceptImage = true
-            print("chapter 10 loaded")
-        default:
-            break
-        }
+        print("chapter " + String(currentChapter.rawValue) + " loaded")
+        
         conceptView.isHidden = false
         loadingGifView.isHidden = false
         

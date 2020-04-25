@@ -13,7 +13,17 @@ import AVFoundation
 
 import Foundation
 
+var walkSound:AVAudioPlayer? = nil
+
 extension ViewController {
+    
+    func fadeoutWalkingSound() {
+        //fade out the walking sound
+        walkSound?.setVolume(0, fadeDuration: 1)
+        //stop playing the walking sound
+        walkSound?.stop()
+        walkSound = nil
+    }
     
     func playWalkAnimation() {
         //Based on Letter
@@ -22,22 +32,22 @@ extension ViewController {
         //MARK: Letter 1
         case .toLetter1:
             //change points based on Chapter
-            switch true {
-            case chapterOne:
+            switch currentChapter {
+            case .Chapter1:
                 //move position for letter:
                 //I (chapter1 - letter 1)
                 
                 //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
                 startTransitionAnimation(key: "MainCharacterWalking")
                 //play walk sound
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                walkSound = playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                 //animate the main character to rotate a bit on the y axis
                 mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new chapter 1
                 //animate the mainFloor node to move and stop when the translation is complete
                 mainFloor.runAction(SCNAction.moveBy(x:0, y: 0, z: -0.2, duration: 2), completionHandler: stopWalkAnimation)
                 print("move floor for chapter one")
                 
-            case chapterTwo:
+            case .Chapter2:
                 //move position for letter:
                 //P (chapter2 - letter1)
                 
@@ -59,7 +69,7 @@ extension ViewController {
                 })
                 
                 print("move character for chapter two")
-            case chapterThree:
+            case .Chapter3:
                 //move position for letter:
                 //G (chapter3 - letter1)
                 
@@ -84,7 +94,7 @@ extension ViewController {
                 })
                 
                 print("move for chapter three, letter1")
-            case chapterFour:
+            case .Chapter4:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 stopWalkAnimation()
@@ -93,11 +103,11 @@ extension ViewController {
                 
                 
                 print("move floor for chapter four")
-            case chapterFive:
+            case .Chapter5:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 //play game intro 1
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                     
@@ -113,7 +123,7 @@ extension ViewController {
                     let xylophone_0 = self.mainCharacterIdle.childNode(withName: "xylophone_0 reference", recursively: true)
                     xylophone_0!.isHidden = true
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
                     //TODO: ADD touches and raytracing to select Nails
                     
                     //look around for nails at teachers desk
@@ -124,15 +134,15 @@ extension ViewController {
                 })
                 //move position for letter:
             //N
-            case chapterSix:
+            case .Chapter6:
                 print("do chapter 6 stuff")
                 
-            case chapterSeven:
+            case .Chapter7:
                 
                 //show the main character as idle
                 startTransitionAnimation(key: "MainCharacterWalking")
                 //play walk sound
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                walkSound = playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                 //animate the main character to rotate a bit on the y axis
                 mainCharacterIdle?.parent?.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new chapter 1
                 //animate the mainFloor node to move and stop when the translation is complete
@@ -141,7 +151,7 @@ extension ViewController {
                 print("move floor for chapter seven, letter 1")
                 print("Ursa walks a little bit down the path")
                 
-            case chapterEight:
+            case .Chapter8:
                 
 //                self.startTransitionAnimation(key: "MainCharacterStandup")
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
@@ -149,7 +159,7 @@ extension ViewController {
 //                })
                 
                 //play transition to letter l
-                //toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                //playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
                 
                 //DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
                     stopWalkAnimation()
@@ -157,9 +167,9 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
                 
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: 9 letter 1
-                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration3"]!, type: "mp3")
+                playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
                 
                 //Brennon lets go of his ballon
                 let balloon = self.charcterOneIdle.childNode(withName: "Balloon", recursively: true)
@@ -183,7 +193,7 @@ extension ViewController {
                     })
                 })
                 
-            case chapterTen:
+            case .Chapter10:
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
                 
@@ -194,8 +204,8 @@ extension ViewController {
         //MARK: Letter 2
         case .toLetter2:
             //change points based on Chapter
-            switch true {
-            case chapterOne:
+            switch currentChapter {
+            case .Chapter1:
                 //T (chapter1 - letter 2)
                 
                 //show the main character as idle and hide the walking version of him
@@ -203,12 +213,12 @@ extension ViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //play narration for finishing letter 2
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
                 })
                 
                 mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -1.3, duration: 10), completionHandler: stopWalkAnimation)
                 
-            case chapterTwo:
+            case .Chapter2:
                 //R (chapter2 - letter2)
                 
                 startTransitionAnimationOnce(key: "MainCharacterSkating")
@@ -232,7 +242,7 @@ extension ViewController {
                 })
                 
                 print("move floor for chapter two")
-            case chapterThree:
+            case .Chapter3:
                 //Q (chapter3 - letter2)
                 
                 startTransitionAnimation(key: "MainCharacterSwimming")
@@ -247,7 +257,7 @@ extension ViewController {
                 mainCharacterIdle?.parent?.runAction((chapter3Letter2MoveSeq), completionHandler: stopWalkAnimation)
                 
                 print("move for chapter three")
-            case chapterFour:
+            case .Chapter4:
                 //V (chapter4 - letter2)
                 stopTransitionAnimation(key: "MainCharacterWaving")
                 startTransitionAnimation(key: "MainCharacterJogging")
@@ -271,7 +281,7 @@ extension ViewController {
                 mainCharacterIdle?.parent?.runAction((chapter4Letter2RotationSeq), completionHandler: stopWalkAnimation)
                 
                 print("move floor for chapter four")
-            case chapterFive:
+            case .Chapter5:
                 //(chapter5 -- letter2)
                 
                 //TODO: ADD touches and raytracing to select Nails
@@ -284,21 +294,21 @@ extension ViewController {
                 //Z
                 
                 print("move floor for chapter five")
-            case chapterSix:
+            case .Chapter6:
                 print("do chapter 6 stuff")
-            case chapterSeven:
+            case .Chapter7:
                 //show the main character as walking
                 stopTransitionAnimation(key: "MainCharacterShouting")
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
                 //play walk sound
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                walkSound = playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                 //animate the mainFloor node to move and stop when the translation is complete
                 mainFloor.runAction(SCNAction.move(to: SCNVector3(148, 0, -50), duration: 6), completionHandler: stopWalkAnimation)
                 print("move floor for chapter seven, letter 2")
                 print("Ursa was to Stanley")
                 
-            case chapterEight:
+            case .Chapter8:
                                 
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
@@ -310,10 +320,10 @@ extension ViewController {
                 mainCharacterIdle?.parent?.runAction((chapter8Letter2RotMovSeq), completionHandler: stopWalkAnimation)
                 
                 print("do chapter 8 stuff")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: 9 letter 2
                 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
                 
                 //unhide the balloon patricia is holding
                 let patriciaBalloon = self.patricia1!.childNode(withName: "BrennonsBalloon", recursively: true)
@@ -324,7 +334,7 @@ extension ViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
                     //patricia notice that brennon is gone... where could he be?
-                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4.3, execute: {
                         self.patricia2!.isHidden = false
@@ -337,7 +347,7 @@ extension ViewController {
                     })
                 })
                 print("do chapter 9 stuff")
-            case chapterTen:
+            case .Chapter10:
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -347,15 +357,15 @@ extension ViewController {
         //MARK: Letter 3
         case .toLetter3:
             //change points based on Chapter
-            switch true {
-            case chapterOne:
+            switch currentChapter {
+            case .Chapter1:
                 //L (chapter1 - letter 3)
                 //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     //play narration for finishing letter 2
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration17"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration17"]!, fileExtension: "mp3")
                 })
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
@@ -373,7 +383,7 @@ extension ViewController {
                 mainCharacterIdle?.runAction(chapter1Letter3RotSeq)
                 
                 
-            case chapterTwo:
+            case .Chapter2:
                 //B (chapter2 - letter3)
                 
                 startTransitionAnimationOnce(key: "MainCharacterSkating")
@@ -391,7 +401,7 @@ extension ViewController {
                     self.startTransitionAnimationOnce(key: "MainCharacterStopping")
                 })
                 
-            case chapterThree:
+            case .Chapter3:
                 //S (chapter3 - letter3)
                 
                 startTransitionAnimation(key: "MainCharacterSwimming")
@@ -404,13 +414,13 @@ extension ViewController {
                 mainCharacterIdle?.parent?.runAction((chapter3Letter3MoveSeq), completionHandler: stopWalkAnimation)
                 
                 print("move for chapter three")
-            case chapterFour:
+            case .Chapter4:
                 //W (chapter4 - letter3)
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
                 })
                 
                 stopTransitionAnimation(key: "MainCharacterIdle")
@@ -436,7 +446,7 @@ extension ViewController {
                 //W
                 
                 print("move floor for chapter four")
-            case chapterFive:
+            case .Chapter5:
                 //(chapter5 -- letter3)
                 
                 //TODO: Chapter 5 - ADD touches and raytracing to select Yarn
@@ -450,29 +460,29 @@ extension ViewController {
                 //Y
                 
                 print("move floor for chapter five")
-            case chapterSix:
+            case .Chapter6:
                 print("do chapter 6 stuff")
-            case chapterSeven:
+            case .Chapter7:
                 
                 //show the main character as idle
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
                 
                 //play walk sound
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                walkSound = playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                 //animate the mainFloor node to move and stop when the translation is complete
                 //mainFloor.runAction(SCNAction.moveBy(x:0, y: 0, z: -0.2, duration: 2), completionHandler: stopWalkAnimation)
                 mainFloor.runAction(SCNAction.move(to: SCNVector3(86, 0, -40), duration: 8), completionHandler: stopWalkAnimation)
                 print("move floor for chapter seven, letter 3")
                 print("Ursa walks to Vivian")
                 
-            case chapterEight:
+            case .Chapter8:
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration13"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration13"]!, fileExtension: "mp3")
                 
                 let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(200)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) // lionel turns around
                 let move1 = SCNAction.move(to: SCNVector3(-1.2, 9.25, -0.8), duration: 2)  //to heads to back of fridge
@@ -501,10 +511,10 @@ extension ViewController {
                 })
                 
                 print("do chapter 8 stuff")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: 9 letter 3
 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3")
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 9.6, execute: {
                     //Patricia scoots back to take off again
@@ -515,7 +525,7 @@ extension ViewController {
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.4, execute: {
                         //patricia flies back up into the air to find Nikki
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration19"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
                         self.patricia6!.isHidden = false
                         self.patricia6!.isPaused = false
                         self.patricia5!.isHidden = true
@@ -530,7 +540,7 @@ extension ViewController {
                     })
                 })
                 print("do chapter 9 stuff")
-            case chapterTen:
+            case .Chapter10:
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -540,8 +550,8 @@ extension ViewController {
         //MARK: Letter 4
         case .toLetter4:
             //change points based on Chapter
-            switch true {
-            case chapterOne:
+            switch currentChapter {
+            case .Chapter1:
                 //F (chapter1 - letter 4)
                 
                 //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
@@ -563,7 +573,7 @@ extension ViewController {
                 let chapter1Letter4RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3, rotate4])
                 mainCharacterIdle?.runAction(chapter1Letter4RotSeq)
                 
-            case chapterTwo:
+            case .Chapter2:
                 //C (chapter2 - letter4)
                 
                 startTransitionAnimationOnce(key: "MainCharacterSkating")
@@ -590,7 +600,7 @@ extension ViewController {
                     self.startTransitionAnimationOnce(key: "MainCharacterStopping")
                 })
                 
-            case chapterThree:
+            case .Chapter3:
                 //J (chapter3 - letter4)
                 
                 startTransitionAnimation(key: "MainCharacterSwimming")
@@ -603,11 +613,11 @@ extension ViewController {
                 mainCharacterIdle?.parent?.runAction((chapter3Letter4MoveSeq), completionHandler: stopWalkAnimation)
                 
                 print("move for chapter three, letter 4")
-            case chapterFour:
+            case .Chapter4:
                 //M (chapter4 - letter4)
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration30"]!, fileExtension: "mp3")
                 
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterJogging")
@@ -620,7 +630,7 @@ extension ViewController {
                 //M
                 print("move floor for chapter four")
                 
-            case chapterFive:
+            case .Chapter5:
                 //(chapter5 -- letter4)
                 
                 //look around for nails at teachers desk
@@ -631,15 +641,15 @@ extension ViewController {
                 //X
                 
                 print("move floor for chapter five")
-            case chapterSix:
+            case .Chapter6:
                 print("do chapter 6 stuff")
-            case chapterSeven:
+            case .Chapter7:
                 //show the main character as idle
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
                 //play walk sound
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                walkSound = playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                 
                 //play Ursa's roation sequence
                 let rotateUrsa1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(100)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 6)
@@ -658,12 +668,12 @@ extension ViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     //move the main character to the first letter
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration18"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3")
                 })
                 print("move floor for chapter seven, letter 4")
                 print("Ursa walks to Windsor")
                 
-            case chapterEight:
+            case .Chapter8:
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
@@ -677,7 +687,7 @@ extension ViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     self.startTransitionAnimation(key: "MainCharacterStairwalk")
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
                     
                     self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 3)) //Lionel heads down to level 1
                     
@@ -688,13 +698,13 @@ extension ViewController {
                     })
                 })
                 print("do chapter 8 stuff")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: 9 letter 4
                 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration26"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration27"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
                     
                     //Patricia flies back up to find Heidi
                     self.patricia8!.isHidden = false
@@ -719,7 +729,7 @@ extension ViewController {
                     })
                 })
                 print("do chapter 9 stuff")
-            case chapterTen:
+            case .Chapter10:
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -729,8 +739,8 @@ extension ViewController {
         //MARK: Letter 5
         case .toLetter5:
             //change points based on Chapter
-            switch true {
-            case chapterOne:
+            switch currentChapter {
+            case .Chapter1:
                 //E (chapter1 - letter 5)
                 
                 //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
@@ -752,7 +762,7 @@ extension ViewController {
                 let chapter1Letter5RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3])
                 mainCharacterIdle?.runAction(chapter1Letter5RotSeq)
                 
-            case chapterTwo:
+            case .Chapter2:
                 //D (chapter2 - letter5)
                 
                 startTransitionAnimationOnce(key: "MainCharacterSkating")
@@ -772,7 +782,7 @@ extension ViewController {
                 })
                 
                 print("move floor for chapter two")
-            case chapterThree:
+            case .Chapter3:
                 //O (chapter3 - letter5)
                 
                 startTransitionAnimation(key: "MainCharacterSwimming")
@@ -787,11 +797,11 @@ extension ViewController {
                 mainCharacterIdle?.parent?.runAction((chapter3Letter5MoveSeq), completionHandler: stopWalkAnimation)
                 
                 print("move for chapter three")
-            case chapterFour:
+            case .Chapter4:
                 //A (chapter4 - letter5)
                 //start narration for the Ashton
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration41"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration41"]!, fileExtension: "mp3")
                 })
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterJogging")
@@ -807,23 +817,23 @@ extension ViewController {
                 //A
                 print("move floor for chapter four")
                 
-            case chapterFive:
+            case .Chapter5:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 
                 //-----
                 
                 print("move floor for chapter five")
-            case chapterSix:
+            case .Chapter6:
                     print("do chapter 6 stuff")
-            case chapterSeven:
+            case .Chapter7:
                 
                 //show the main character as idle
                 self.stopTransitionAnimation(key: "MainCharacterIdle")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
                 
                 //play walk sound
-                self.toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                walkSound = self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                 
                 //play Ursa's roation sequence
                 let rotateUrsa1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(100)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 3.5) //to hill bottom
@@ -849,14 +859,14 @@ extension ViewController {
                 print("move floor for chapter seven, letter 5")
                 print("Ursa walks to top of the hill and sees Isaac")
                 
-            case chapterEight:
+            case .Chapter8:
                 //Final Walk
                 
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
                 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration28"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
                 
                 //Lionel's walk
                 mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))// lionel turns toward the stairs up
@@ -998,7 +1008,7 @@ extension ViewController {
                 })
                 
                 print("do chapter 8 stuff")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: 9 letter 5
                 
                 self.patricia9!.isPaused = false
@@ -1007,7 +1017,7 @@ extension ViewController {
                 })
                 
                 print("do chapter 9 stuff")
-            case chapterTen:
+            case .Chapter10:
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -1017,8 +1027,8 @@ extension ViewController {
         //MARK: Letter 6
         case .toLetter6:
             //change points based on Chapter
-            switch true {
-            case chapterOne:
+            switch currentChapter {
+            case .Chapter1:
                 //H (chapter1 - letter 6)
                 
                 //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
@@ -1046,15 +1056,11 @@ extension ViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6.5, execute: {
                     //Hannah stop dancing and Idle till narration done
-                    [weak self] in self?.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration42"]!, type: "mp3")
+                    [weak self] in self?.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
                     self?.charcterFiveIdle.parent?.runAction(SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-135)), z: 0, duration: 0.5))
                     self?.stopTransitionAnimation(key: "MainCharacterWalking")
                     
-                    //fade out the walking sound
-                    self?.FXPlayer.setVolume(0, fadeDuration: 1)
-                    //stop playing the walking sound
-                    self?.FXPlayer.stop()
-                    self?.FXPlayer.setVolume(1, fadeDuration: 0)
+                    self?.fadeoutWalkingSound()
                     
                     self?.stopAnimateSideCharacter(key: "SideCharacter5Dancing", sideCharacter: "Hannah")
                     self?.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
@@ -1068,7 +1074,7 @@ extension ViewController {
                         self?.startTransitionAnimation(key: "MainCharacterWalking")
                         
                         //start walking sound
-                        self?.toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                        walkSound = self?.playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                         
                         //                        let hannahRotate1 = SCNAction.rotateBy(x: 0, y: 0.75, z: 0, duration: 1)
                         let hannahRotate1 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(45)), z: 0, duration: 1)
@@ -1114,7 +1120,7 @@ extension ViewController {
                 
                 //H
                 
-            case chapterTwo:
+            case .Chapter2:
                 //U (chapter2 - letter6)
                 
                 startTransitionAnimationOnce(key: "MainCharacterSkating")
@@ -1134,35 +1140,35 @@ extension ViewController {
                 })
                 
                 print("move floor for chapter two")
-            case chapterThree:
+            case .Chapter3:
                 //S (chapter3 - letter3)
                 print("no letter 6 for chapter 3")
-            case chapterFour:
+            case .Chapter4:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 
                 //----
                 
                 print("move floor for chapter four")
-            case chapterFive:
+            case .Chapter5:
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 
                 //---
                 
                 print("move floor for chapter five")
-            case chapterSix:
+            case .Chapter6:
                 print("do chapter 6 stuff")
-            case chapterSeven:
+            case .Chapter7:
                 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "mp3") //10 sec long
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3") //10 sec long
                 
                 //show the main character as walking
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
                 //play walk sound
-                toggleAudioFXFile(file: chapterSelectedSoundDict!["WalkSound"]!, type: "wav", rate: 0.5)
+                walkSound = playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                 
                 //play Ursa's roation sequence
                 //first move 3 seconds
@@ -1217,13 +1223,13 @@ extension ViewController {
                 print("move floor for chapter seven, letter 6")
                 print("Ursa walk over the log and goes to Tyler")
                 
-            case chapterEight:
+            case .Chapter8:
                 print("do chapter 8 stuff")
-            case chapterNine:
+            case .Chapter9:
                 //FIXME: 9 letter 6
                 
                 print("do chapter 9 stuff")
-            case chapterTen:
+            case .Chapter10:
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -1237,27 +1243,27 @@ extension ViewController {
             
             print("Reached the end of the chapter")
             
-            switch true {
-            case chapterOne:
+            switch currentChapter {
+            case .Chapter1:
                 print("end sequence for chapter one")
-            case chapterTwo:
+            case .Chapter2:
                 print("end sequence for chapter two")
-            case chapterThree:
+            case .Chapter3:
                 print("end sequence for chapter three")
-            case chapterFour:
+            case .Chapter4:
                 print("end sequence for chapter four")
-            case chapterFive:
+            case .Chapter5:
                 print("end sequence for chapter five")
-            case chapterSix:
+            case .Chapter6:
                 print("end sequence for chapter six")
-            case chapterSeven:
+            case .Chapter7:
                 print("end sequence for chapter seven")
                 print("Ursa walks to her parents")
-            case chapterEight:
+            case .Chapter8:
                 print("end sequence for chapter eight")
-            case chapterNine:
+            case .Chapter9:
                 print("end sequence for chapter nine")
-            case chapterTen:
+            case .Chapter10:
                 print("end sequence for chapter ten")
             default:
                 break
