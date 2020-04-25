@@ -226,7 +226,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         setupMiddleDots()
         
         //load animations
-        antChillImage.loadGif(name: "Anthony-Chillaxing")
+        antChillImage.loadGif(name: "Anthony-Chillaxing") //can be set to different images for different chapters
         grassImage.loadGif(name: "Grass-Blowing")
         
         antFace.isHidden = true
@@ -570,7 +570,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         if canvasView.goodTouch {
             canvasView.drawTouches(touches, withEvent: event)
             
@@ -718,6 +717,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 })
             }
             
+            //removing coins from total if the line was not completed
             guard let lastPoint = touches.first?.location(in: canvasView) else { return }
             if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
                 if canvasView.coin1Collected == true {

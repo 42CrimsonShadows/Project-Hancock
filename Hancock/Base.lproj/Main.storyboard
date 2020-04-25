@@ -87,7 +87,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2J-AN-RMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-717.27672035139085" y="131.8359375"/>
+            <point key="canvasLocation" x="47" y="132"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -205,7 +205,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2138.671875" y="131.77159590043922"/>
+            <point key="canvasLocation" x="1468" y="846"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="UCZ-aa-5Qc">
@@ -291,7 +291,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoG-Ho-9Jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121.6796875" y="826.64714494875545"/>
+            <point key="canvasLocation" x="2148" y="846"/>
         </scene>
         <!--Login-->
         <scene sceneID="1KO-3Y-sYB">
@@ -484,7 +484,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3q-2t-rfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48.6328125" y="130.89311859443629"/>
+            <point key="canvasLocation" x="47" y="846"/>
         </scene>
         <!--Registration-->
         <scene sceneID="NE0-vK-vox">
@@ -704,7 +704,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 <exit id="yQJ-4o-fte" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juF-hh-CnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.875" y="845.9736456808198"/>
+            <point key="canvasLocation" x="-619" y="1494"/>
         </scene>
         <!--Home-->
         <scene sceneID="Rds-js-1Tg">
@@ -1317,7 +1317,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8l-IK-xen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="846"/>
+            <point key="canvasLocation" x="797" y="846"/>
         </scene>
     </scenes>
     <resources>
