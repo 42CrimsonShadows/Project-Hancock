@@ -161,7 +161,8 @@ extension ViewController{
                 switch currentChapter {
                     case .Chapter10:
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3") //finns first choise was the right one
+                            //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration31"]!, type: "mp3") //finns first choise was the right one
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                                 self.startTransitionAnimationOnce(key: "MainCharacterPickup")
@@ -180,7 +181,8 @@ extension ViewController{
                                         
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                             //play flute clip
-                                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
+                                            //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
+                                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
                                         
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 14.7, execute: {
                                                 //self.stopTransitionAnimation(key: "MainCharacterFlute")
@@ -188,7 +190,8 @@ extension ViewController{
                                                 //finn waves at the camera
                                                 self.startTransitionAnimation(key: "MainCharacterWaving")
                                                 //play final narration clip
-                                                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3")
+                                                //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration32"]!, type: "mp3")
+                                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3")
                                                 
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
                                                     //go back to the menu
@@ -325,10 +328,10 @@ extension ViewController{
             case shatterLetterFour:
                 switch currentChapter {
                     case .Chapter10:
-                        case chapterTen:
                         //FIXME: chapter 10 letter 4
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration40"]!, type: "mp3") //Great Job
+                            //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration40"]!, type: "mp3") //Great Job
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration40"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                 self.startTransitionAnimationOnce(key: "MainCharacterZambomba")
@@ -338,7 +341,8 @@ extension ViewController{
                                 let butterstick = self.mainCharacterIdle.childNode(withName: "ButterStick", recursively: true)
                                 butterstick!.isHidden = false
                                         //play quill sound clip
-                                        self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "wav", rate: 1)
+                                        //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "wav", rate: 1)
+                                        self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3")
                                         
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 8.5, execute: {
                                         //turn off the butterstick
@@ -558,7 +562,8 @@ extension ViewController{
                     case .Chapter10:
                     //FIXME: chapter 10 letter 3
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration39"]!, type: "mp3") //Great Job
+                            //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration39"]!, type: "mp3") //Great Job
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration39"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                 self.startTransitionAnimationOnce(key: "MainCharacterXylophone")
@@ -574,7 +579,8 @@ extension ViewController{
                                         mallet2!.isHidden = false
                                         
                                         //play quill sound clip
-                                       self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "wav", rate: 1)
+                                       //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "wav", rate: 1)
+                                        self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3")
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: {
                                             //about 21 seconds into the xylophone animation turn off the second mallet
                                             mallet2!.isHidden = true
@@ -756,7 +762,8 @@ extension ViewController{
                 switch currentChapter {
                     case .Chapter10:
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration38"]!, type: "mp3") //Great Job
+                            //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration38"]!, type: "mp3") //Great Job
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration38"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                                 self.startTransitionAnimationOnce(key: "MainCharacterPickup")
@@ -774,7 +781,8 @@ extension ViewController{
                                         
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.2, execute: {
                                             //play quill sound clip
-                                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "wav", rate: 1)
+                                            //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "wav", rate: 1)
+                                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "mp3")
                                         
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 20.8, execute: {
                                                 self.stopTransitionAnimation(key: "MainCharacterQuill")
@@ -973,7 +981,8 @@ extension ViewController{
                 switch currentChapter {
                     case .Chapter10:
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                            self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration37"]!, type: "mp3") //Great Job
+                            //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration37"]!, type: "mp3") //Great Job
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration37"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                                 self.startTransitionAnimationOnce(key: "MainCharacterPickup")
@@ -990,7 +999,8 @@ extension ViewController{
                                         
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                             //play flute clip
-                                            self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
+                                            //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
+                                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
                                         
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 14.7, execute: {
                                                 self.stopTransitionAnimation(key: "MainCharacterFlute")

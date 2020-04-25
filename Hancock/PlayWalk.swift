@@ -364,7 +364,8 @@ extension ViewController {
             case .Chapter10:
                 //FIXME: 10 letter 2
                 
-                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
+                //toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration9"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
                     //Finn walks over to the Quill section
@@ -572,7 +573,8 @@ extension ViewController {
             case .Chapter10:
                 //FIXME: 10 letter 3
 
-                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration15"]!, type: "mp3")
+                //toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration15"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration15"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
                     //Finn walks over to the Xylophone
@@ -784,7 +786,8 @@ extension ViewController {
                 //FIXME: 10 letter 4
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
+                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
                 
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                         //Finn walks over to the Zambomba
@@ -1089,13 +1092,15 @@ extension ViewController {
                 print("do chapter 9 stuff")
             case .Chapter10:
                 //FIXME: 10 letter 5
-                toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3") //the zambomba isn't for finn
+                //toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3") //the zambomba isn't for finn
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     //Finn walks to the flute again
                     self.startTransitionAnimation(key: "MainCharacterWalking")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3") //finn knows which instrument he wants
+                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3") //finn knows which instrument he wants
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration30"]!, fileExtension: "mp3")
                     
                     // x= (-)west/(+)east, z= (-)north/(+)south
                     let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 1)

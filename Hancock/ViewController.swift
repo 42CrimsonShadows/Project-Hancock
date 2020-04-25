@@ -1019,12 +1019,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             case .Chapter10:
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
                     //play intro Narration to chapter 10
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     //Finn is waving
                     self.startTransitionAnimation(key: "MainCharacterWaving")
 
                     DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
 
                         //Finn starts looking around
                         self.stopTransitionAnimation(key: "MainCharacterWaving")

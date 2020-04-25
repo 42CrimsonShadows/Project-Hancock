@@ -25,7 +25,8 @@ extension ViewController{
                 
                 stopTransitionAnimation(key: "MainCharacterWalking")
                 
-                self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration4"]!, fileExtension: "mp3")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
                     //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
@@ -33,7 +34,8 @@ extension ViewController{
                     
                     self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
                     //play narration for the first audio instructions for the activity
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
+                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration5"]!, fileExtension: "mp3")
                     
                     print("stopwalk chapter 10 stuff")
                 })
@@ -222,7 +224,8 @@ extension ViewController{
                     
                     stopTransitionAnimation(key: "MainCharacterWalking")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
                         //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
@@ -230,7 +233,8 @@ extension ViewController{
                         
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
                         //play narration for the first audio instructions for the activity
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                        //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration11"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
                     })
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
@@ -444,7 +448,8 @@ extension ViewController{
                     
                     stopTransitionAnimation(key: "MainCharacterWalking")
                      
-                     self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration16"]!, type: "mp3")
+                     //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration16"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration16"]!, fileExtension: "mp3")
                      
                      DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
                          //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
@@ -452,7 +457,8 @@ extension ViewController{
                          
                          self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
                          //play narration for the first audio instructions for the activity
-                         self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration17"]!, type: "mp3")
+                         //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration17"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration17"]!, fileExtension: "mp3")
                      })
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
@@ -665,7 +671,8 @@ extension ViewController{
                     
                     stopTransitionAnimation(key: "MainCharacterWalking")
                     
-                    self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration22"]!, type: "mp3") //Trace the Letter Z to Try the Zambomba
+                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration22"]!, type: "mp3") //Trace the Letter Z to Try the Zambomba
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration22"]!, fileExtension: "mp3")
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: {
                         //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
@@ -673,7 +680,8 @@ extension ViewController{
                         
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
                         //play narration for the first audio instructions for the activity
-                        self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration23"]!, type: "mp3")
+                        //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration23"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration23"]!, fileExtension: "mp3")
                     })
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
