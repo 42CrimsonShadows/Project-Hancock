@@ -166,6 +166,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var patricia11: SCNNode?
     var patricia12: SCNNode?
     
+    //workitems hold dispatchQueues and are cancelled with reset button
+    var walkSound:AVAudioPlayer? = nil
+    var workItem1:DispatchWorkItem? = nil
+    var workItem2:DispatchWorkItem? = nil
+    var workItem3:DispatchWorkItem? = nil
+    var workItem4:DispatchWorkItem? = nil
+    var workItem5:DispatchWorkItem? = nil
+    var workItem6:DispatchWorkItem? = nil
+    var workItem7:DispatchWorkItem? = nil
+    var workItem8:DispatchWorkItem? = nil
+    var workItem9:DispatchWorkItem? = nil
+    var workItem10:DispatchWorkItem? = nil
+    var workItem11:DispatchWorkItem? = nil
+    var workItem12:DispatchWorkItem? = nil
+    var workItem13:DispatchWorkItem? = nil
+    var workItem14:DispatchWorkItem? = nil
+    var workItem15:DispatchWorkItem? = nil
     
     //variables for sound files and audio players
     var audioPlayers: Set<AVAudioPlayer> = Set<AVAudioPlayer>()
@@ -730,7 +747,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // We're going to the main menu now!
         currentChapter = .MainMenu
-        
+
         DispatchQueue.main.async {
             //hide the main nodes
             //self.rootStoryNode.isHidden = true
@@ -747,6 +764,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.audioPlayers.remove(player)
             }
             
+            //dispatchMain.async tasks that are setup as dispatchWorkItems named workItem are canceled
+            //this prevents background tasks from continueing if the chapter is quit and another is loaded
+            self.workItem15?.cancel()
+            self.workItem14?.cancel()
+            self.workItem13?.cancel()
+            self.workItem12?.cancel()
+            self.workItem11?.cancel()
+            self.workItem10?.cancel()
+            self.workItem9?.cancel()
+            self.workItem8?.cancel()
+            self.workItem7?.cancel()
+            self.workItem6?.cancel()
+            self.workItem5?.cancel()
+            self.workItem4?.cancel()
+            self.workItem3?.cancel()
+            self.workItem2?.cancel()
+            self.workItem1?.cancel()
+            
             //stop all animations
             //self.stopWalkAnimation()
             //self.stopAnimation2()
@@ -759,7 +794,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //self.mainCharacterIdle.position = SCNVector3(0, 0, 0)
             //self.mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
             
-            self.removeModels(chapterNode: self.chapterNodeArray!)
+            self.removeModels(chapterNode: self.chapterNodeArray!)            
             
             let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "bookARViewController") as! HomeViewController
             self.present(chapterARView, animated: true)
@@ -901,143 +936,294 @@ class ViewController: UIViewController, UITextFieldDelegate {
             switch currentChapter {
             case .Chapter1:
                 //Wait 7 second for game to load completely
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem2 = DispatchWorkItem{
+                    //move the main character to the first letter
+                    self.playWalkAnimation()
+                }
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimation(key: "MainCharacterIdle")
                     print(self.mainCharacterIdle.name!, "is now idle")
-                    
                     //play game intro 1
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
-                
                     //wait 7 seconds for the game intro1 to finish
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                        //move the main character to the first letter
-                        self.playWalkAnimation()
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    self.startTransitionAnimation(key: "MainCharacterIdle")
+//                    print(self.mainCharacterIdle.name!, "is now idle")
+//
+//                    //play game intro 1
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+//
+//                    //wait 7 seconds for the game intro1 to finish
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+//                        //move the main character to the first letter
+//                        self.playWalkAnimation()
+//                    })
+//                })
             case .Chapter2:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem2 = DispatchWorkItem{
+                    //show the different outfits that you can pick
+                    for node in self.charcterOneIdle.childNodes {
+                        node.isHidden = false
+                    }
+                    for node in self.charcterTwoIdle.childNodes {
+                        node.isHidden = false
+                    }
+                    for node in self.charcterThreeIdle.childNodes {
+                        node.isHidden = false
+                    }
+                    for node in self.charcterFourIdle.childNodes {
+                        node.isHidden = false
+                    }
+                }
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimation(key: "MainCharacterIdle")
 
                     //play game intro 1
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
-                        //show the different outfits that you can pick
-                        for node in self.charcterOneIdle.childNodes {
-                            node.isHidden = false
-                        }
-                        for node in self.charcterTwoIdle.childNodes {
-                            node.isHidden = false
-                        }
-                        for node in self.charcterThreeIdle.childNodes {
-                            node.isHidden = false
-                        }
-                        for node in self.charcterFourIdle.childNodes {
-                            node.isHidden = false
-                        }
-                    })
-                })
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+                    
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    self.startTransitionAnimation(key: "MainCharacterIdle")
+//
+//                    //play game intro 1
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: {
+//                        //show the different outfits that you can pick
+//                        for node in self.charcterOneIdle.childNodes {
+//                            node.isHidden = false
+//                        }
+//                        for node in self.charcterTwoIdle.childNodes {
+//                            node.isHidden = false
+//                        }
+//                        for node in self.charcterThreeIdle.childNodes {
+//                            node.isHidden = false
+//                        }
+//                        for node in self.charcterFourIdle.childNodes {
+//                            node.isHidden = false
+//                        }
+//                    })
+//                })
             case .Chapter3:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem2 = DispatchWorkItem{
+                    //move the main character to the first letter
+                    self.playWalkAnimation()
+                    print("Starting chapter three")
+                }
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimation(key: "MainCharacterIdle")
                     //play game intro 1
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
                 
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
-                            //move the main character to the first letter
-                            self.playWalkAnimation()
-                        print("Starting chapter three")
-                    })
-                })
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    self.startTransitionAnimation(key: "MainCharacterIdle")
+//                    //play game intro 1
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+//                            //move the main character to the first letter
+//                            self.playWalkAnimation()
+//                        print("Starting chapter three")
+//                    })
+//                })
             case .Chapter4:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem2 = DispatchWorkItem{
+                    //move the main character to the first letter
+                    self.playWalkAnimation()
+                    print("Starting chapter four")
+                }
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimation(key: "MainCharacterWaving")
                     //play game intro 1
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
-                        //move the main character to the first letter
-                        self.playWalkAnimation()
-                        print("Starting chapter four")
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    self.startTransitionAnimation(key: "MainCharacterWaving")
+//                    //play game intro 1
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: {
+//                        //move the main character to the first letter
+//                        self.playWalkAnimation()
+//                        print("Starting chapter four")
+//                    })
+//                })
             case .Chapter5:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem2 = DispatchWorkItem{
+                    //move the main character to the first letter
+                    self.playWalkAnimation()
+                }
+                workItem1 = DispatchWorkItem{
                     //play game intro1
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                        //move the main character to the first letter
-                        self.playWalkAnimation()
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    //play game intro1
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+//                        //move the main character to the first letter
+//                        self.playWalkAnimation()
+//                    })
+//                })
             case .Chapter6:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem1 = DispatchWorkItem{
                     print("Do chapter 6 stuff")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    print("Do chapter 6 stuff")
+//                })
             case .Chapter7:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem2 = DispatchWorkItem{
+                    //move the main character to the first letter
+                    self.playWalkAnimation()
+                }
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimation(key: "MainCharacterIdle")
                     print(self.mainCharacterIdle.name!, "is now idle")
                     //play game intro 1
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                 
                     //wait 7 seconds for the game intro1 to finish
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
-                    //move the main character to the first letter
-                    self.playWalkAnimation()
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    self.startTransitionAnimation(key: "MainCharacterIdle")
+//                    print(self.mainCharacterIdle.name!, "is now idle")
+//                    //play game intro 1
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+//
+//                    //wait 7 seconds for the game intro1 to finish
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+//                    //move the main character to the first letter
+//                    self.playWalkAnimation()
+//                    })
+//                })
             case .Chapter8:
                 self.startTransitionAnimation(key: "MainCharacterLaying")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem2 = DispatchWorkItem{
+                    //move the main character to the first marker
+                    self.playWalkAnimation()
+                    print("Start chapter eight")
+                }
+                workItem1 = DispatchWorkItem{
                     //play game intro 1
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
-                        //move the main character to the first marker
-                        self.playWalkAnimation()
-                        print("Start chapter eight")
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    //play game intro 1
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+//                        //move the main character to the first marker
+//                        self.playWalkAnimation()
+//                        print("Start chapter eight")
+//                    })
+//                })
             case .Chapter9:
                 //set Brennon's fly away Balloon to paused
                 charcterTwoIdle.isHidden = true
-                                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+                
+                workItem3 = DispatchWorkItem{
+                    self.playWalkAnimation()
+                }
+                workItem2 = DispatchWorkItem{
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem3!)
+                }
+                workItem1 = DispatchWorkItem{
                     //play intro Narration to chapter 9
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     print("Do chapter 9 stuff")
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                            self.playWalkAnimation()
-                        })
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+//                    //play intro Narration to chapter 9
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+//                    print("Do chapter 9 stuff")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+//                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
+//
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+//                            self.playWalkAnimation()
+//                        })
+//                    })
+//                })
             case .Chapter10:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                
+                workItem3 = DispatchWorkItem{
+                    self.stopTransitionAnimation(key: "MainCharacterLooking")
+                    self.playWalkAnimation()
+                }
+                workItem2 = DispatchWorkItem{
+                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
+
+                    //Finn starts looking around
+                    self.stopTransitionAnimation(key: "MainCharacterWaving")
+                    self.startTransitionAnimation(key: "MainCharacterLooking")
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: self.workItem3!)
+                }
+                workItem1 = DispatchWorkItem{
                     //play intro Narration to chapter 10
                     //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
                     //Finn is waving
                     self.startTransitionAnimation(key: "MainCharacterWaving")
 
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
-                        //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
-
-                        //Finn starts looking around
-                        self.stopTransitionAnimation(key: "MainCharacterWaving")
-                        self.startTransitionAnimation(key: "MainCharacterLooking")
-
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
-                            self.stopTransitionAnimation(key: "MainCharacterLooking")
-                            self.playWalkAnimation()
-                        })
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: self.workItem2!)
+                        
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    //play intro Narration to chapter 10
+//                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration1"]!, type: "mp3")
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
+//                    //Finn is waving
+//                    self.startTransitionAnimation(key: "MainCharacterWaving")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
+//                        //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration2"]!, type: "mp3")
+//                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
+//
+//                        //Finn starts looking around
+//                        self.stopTransitionAnimation(key: "MainCharacterWaving")
+//                        self.startTransitionAnimation(key: "MainCharacterLooking")
+//
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
+//                            self.stopTransitionAnimation(key: "MainCharacterLooking")
+//                            self.playWalkAnimation()
+//                        })
+//                    })
+//                })
                 print("Do chapter 10 stuff")
             default:
                 break
@@ -1128,7 +1314,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case "Hannah", "InnerTube", "Ashton", "Tyler":
             print("Do sideCharacter5 stuff")
             charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Indy", "Gary", "Keelie", "Barry", "Ursa":
+        case "Indy", "Gary", "Keelie", "Barry", "Ursa", "Lionel", "Finn":
             print("Do mainCharacter stuff")
             mainCharacterIdle?.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         default:
@@ -1157,7 +1343,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("Remove stuff")
             //charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
             charcterFiveIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
-        case "Indy", "Gary", "Keelie", "Ursa":
+        case "Indy", "Gary", "Keelie", "Ursa", "Lionel", "Finn":
             print("Remove stuff")
             //mainCharacterIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
             mainCharacterIdle?.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
@@ -1229,7 +1415,8 @@ extension ViewController : ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-        DispatchQueue.main.async {
+        
+        DispatchQueue.main.async{
             let planeNode = self.createARPlaneNode(
                 planeAnchor: planeAnchor,
                 color: UIColor.blue.withAlphaComponent(0))
@@ -1239,11 +1426,20 @@ extension ViewController : ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        
+        print("****This is before checking for render update.")
+    
         DispatchQueue.main.async {
-            self.updateARPlaneNode(
-                planeNode: node.childNodes[0],
-                planeAchor: planeAnchor)
+            if currentChapter != .MainMenu{
+                self.updateARPlaneNode(
+                    planeNode: node.childNodes[0],
+                    planeAchor: planeAnchor)
+                
+                print("This is in updateARPlane for render update.****")
+            }
         }
+        
+        print("This is after checking for render update.****")
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {

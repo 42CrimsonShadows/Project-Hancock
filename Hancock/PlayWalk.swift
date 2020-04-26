@@ -13,8 +13,6 @@ import AVFoundation
 
 import Foundation
 
-var walkSound:AVAudioPlayer? = nil
-
 extension ViewController {
     
     func fadeoutWalkingSound() {
@@ -64,9 +62,13 @@ extension ViewController {
                 let chapter2Letter1MoveSeq = SCNAction.sequence([rotate1, move2, rotate2, move3, rotate3, move4, rotate4])
                 mainCharacterIdle?.parent?.runAction((chapter2Letter1MoveSeq), completionHandler: stopWalkAnimation)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
-                    self.startTransitionAnimationOnce(key: "MainCharacterStopping")
-                })
+                workItem1 = DispatchWorkItem{self.startTransitionAnimationOnce(key: "MainCharacterStopping")}
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: workItem1!)
+                
+                //DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+                    //self.startTransitionAnimationOnce(key: "MainCharacterStopping")
+                //})
+                
                 
                 print("move character for chapter two")
             case .Chapter3:
@@ -87,11 +89,16 @@ extension ViewController {
                 let chapter3Letter1MoveSeq = SCNAction.sequence([move1])
                 mainCharacterIdle?.parent?.runAction((chapter3Letter1MoveSeq), completionHandler: stopWalkAnimation)
                 
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4.9, execute: {
+                workItem1 = DispatchWorkItem{
                     self.stopTransitionAnimation(key: "MainChracterSwimming")
                     self.startTransitionAnimation(key: "MainCharacterIdle")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4.9, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 4.9, execute: {
+//                    self.stopTransitionAnimation(key: "MainChracterSwimming")
+//                    self.startTransitionAnimation(key: "MainCharacterIdle")
+//                })
                 
                 print("move for chapter three, letter1")
             case .Chapter4:
@@ -109,29 +116,56 @@ extension ViewController {
                 //play game intro 1
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                    
+                workItem2 = DispatchWorkItem{
+                    //move the main character to the first letter
+                    self.stopWalkAnimation()
+                }
+                workItem1 = DispatchWorkItem{
                     //show busted Xylophone
                     let xylophone_1 = self.mainCharacterIdle.childNode(withName: "xylophone_1 reference", recursively: true)
                     xylophone_1!.isHidden = false
-                    
+
                     //hide mallet head
                     let malletHead = self.mainCharacterIdle.childNode(withName: "Head", recursively: true)
                     malletHead!.isHidden = true
-                    
+
                     //hide first xylophone
                     let xylophone_0 = self.mainCharacterIdle.childNode(withName: "xylophone_0 reference", recursively: true)
                     xylophone_0!.isHidden = true
-                    
+
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
                     //TODO: ADD touches and raytracing to select Nails
-                    
+
                     //look around for nails at teachers desk
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 18, execute: {
-                        //move the main character to the first letter
-                        self.stopWalkAnimation()
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 18, execute: self.workItem2!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute:workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+//
+//                    //show busted Xylophone
+//                    let xylophone_1 = self.mainCharacterIdle.childNode(withName: "xylophone_1 reference", recursively: true)
+//                    xylophone_1!.isHidden = false
+//
+//                    //hide mallet head
+//                    let malletHead = self.mainCharacterIdle.childNode(withName: "Head", recursively: true)
+//                    malletHead!.isHidden = true
+//
+//                    //hide first xylophone
+//                    let xylophone_0 = self.mainCharacterIdle.childNode(withName: "xylophone_0 reference", recursively: true)
+//                    xylophone_0!.isHidden = true
+//
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
+//                    //TODO: ADD touches and raytracing to select Nails
+//
+//                    //look around for nails at teachers desk
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 18, execute: {
+//                        //move the main character to the first letter
+//                        self.stopWalkAnimation()
+//                    })
+//                })
+                
                 //move position for letter:
             //N
             case .Chapter6:
@@ -169,7 +203,6 @@ extension ViewController {
                 
 
             case .Chapter9:
-                //FIXME: 9 letter 1
                 playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
                 
                 //Brennon lets go of his ballon
@@ -182,23 +215,34 @@ extension ViewController {
                 //Brennon's Balloon flies away
                 charcterTwoIdle.isHidden = false
                 charcterTwoIdle.isPaused = false
-                    
-                //after animation goes all the way through hide it
-                DispatchQueue.main.asyncAfter(deadline: .now() + 8.25, execute: {
+                
+                workItem2 = DispatchWorkItem{
+                    self.stopWalkAnimation()
+                    print("do chapter 9 stuff")
+                }
+                workItem1 = DispatchWorkItem{
                     self.charcterTwoIdle.isPaused = true
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-                        self.stopWalkAnimation()
-                        
-                        print("do chapter 9 stuff")
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8.25, execute:workItem1!)
+                
+                //after animation goes all the way through hide it
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 8.25, execute: {
+//                    self.charcterTwoIdle.isPaused = true
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+//                        self.stopWalkAnimation()
+//
+//                        print("do chapter 9 stuff")
+//                    })
+//                })
                 
             case .Chapter10:
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                workItem1 = DispatchWorkItem{
                     //Finn walks over to the woodwind section
                     self.startTransitionAnimation(key: "MainCharacterWalking")
                     
@@ -210,7 +254,22 @@ extension ViewController {
                     let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
                     let chapter10Letter1MoveSeq = SCNAction.sequence([rotate1, move2, rotate2, move3, rotate3])
                     self.mainCharacterIdle?.parent?.runAction((chapter10Letter1MoveSeq), completionHandler: self.stopWalkAnimation)
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+//                    //Finn walks over to the woodwind section
+//                    self.startTransitionAnimation(key: "MainCharacterWalking")
+//
+//                    // x= (-)west/(+)east, z= (-)north/(+)south
+//                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+//                    let move2 = SCNAction.move(to: SCNVector3(-3.6, 0, 4.1), duration: 3)
+//                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+//                    let move3 = SCNAction.move(to: SCNVector3(-3.6, 0, 1.75), duration: 3)
+//                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+//                    let chapter10Letter1MoveSeq = SCNAction.sequence([rotate1, move2, rotate2, move3, rotate3])
+//                    self.mainCharacterIdle?.parent?.runAction((chapter10Letter1MoveSeq), completionHandler: self.stopWalkAnimation)
+//                })
                 print("do chapter 10 stuff")
             default:
                 break
@@ -226,10 +285,16 @@ extension ViewController {
                 //show the main character as idle and hide the walking version of him
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                workItem1 = DispatchWorkItem{
                     //play narration for finishing letter 2
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                    //play narration for finishing letter 2
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
+//                })
                 
                 mainFloor.runAction(SCNAction.moveBy(x: -0.1, y: 0, z: -1.3, duration: 10), completionHandler: stopWalkAnimation)
                 
@@ -252,9 +317,14 @@ extension ViewController {
                 let chapter2Letter2MoveSeq = SCNAction.sequence([rotate1, move1,  move2, move3, rotate4, move4, rotate5])
                 mainCharacterIdle?.parent?.runAction((chapter2Letter2MoveSeq), completionHandler: stopWalkAnimation)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimationOnce(key: "MainCharacterStopping")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+//                    self.startTransitionAnimationOnce(key: "MainCharacterStopping")
+//                })
                 
                 print("move floor for chapter two")
             case .Chapter3:
@@ -301,10 +371,15 @@ extension ViewController {
                 
                 //TODO: ADD touches and raytracing to select Nails
                 
-                //look around for nails at teachers desk
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                workItem1 = DispatchWorkItem{
                     self.stopWalkAnimation()
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                
+                //look around for nails at teachers desk
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                    self.stopWalkAnimation()
+//                })
                 
                 //Z
                 
@@ -335,8 +410,6 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
             case .Chapter9:
-                //FIXME: 9 letter 2
-                
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
                 
                 //unhide the balloon patricia is holding
@@ -346,28 +419,43 @@ extension ViewController {
                 //hide the balloon that is floating in the scene
                 charcterTwoIdle.isHidden = true
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                workItem3 = DispatchWorkItem{
+                    self.stopWalkAnimation()
+                }
+                workItem2 = DispatchWorkItem{
+                    self.patricia2!.isHidden = false
+                    self.patricia2!.isPaused = false
+                    self.patricia1!.isHidden = true
+                    self.patricia1!.isPaused = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: self.workItem3!)
+                }
+                workItem1 = DispatchWorkItem{
                     //patricia notice that brennon is gone... where could he be?
-                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.3, execute: {
-                        self.patricia2!.isHidden = false
-                        self.patricia2!.isPaused = false
-                        self.patricia1!.isHidden = true
-                        self.patricia1!.isPaused = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: {
-                            self.stopWalkAnimation()
-                        })
-                    })
-                })
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.3, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+//                    //patricia notice that brennon is gone... where could he be?
+//                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.3, execute: {
+//                        self.patricia2!.isHidden = false
+//                        self.patricia2!.isPaused = false
+//                        self.patricia1!.isHidden = true
+//                        self.patricia1!.isPaused = true
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: {
+//                            self.stopWalkAnimation()
+//                        })
+//                    })
+//                })
                 print("do chapter 9 stuff")
             case .Chapter10:
-                //FIXME: 10 letter 2
-                
                 //toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration9"]!, fileExtension: "mp3")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
+                workItem1 = DispatchWorkItem{
                     //Finn walks over to the Quill section
                     self.startTransitionAnimation(key: "MainCharacterWalking")
                     
@@ -377,7 +465,20 @@ extension ViewController {
                     let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
                     let chapter10Letter2MoveSeq = SCNAction.sequence([rotate1, move2, rotate2])
                     self.mainCharacterIdle?.parent?.runAction((chapter10Letter2MoveSeq), completionHandler: self.stopWalkAnimation)
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute:workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
+//                    //Finn walks over to the Quill section
+//                    self.startTransitionAnimation(key: "MainCharacterWalking")
+//
+//                    // x= (-)west/(+)east, z= (-)north/(+)south
+//                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+//                    let move2 = SCNAction.move(to: SCNVector3(-3.6, 0, -0.75), duration: 2.5)
+//                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+//                    let chapter10Letter2MoveSeq = SCNAction.sequence([rotate1, move2, rotate2])
+//                    self.mainCharacterIdle?.parent?.runAction((chapter10Letter2MoveSeq), completionHandler: self.stopWalkAnimation)
+//                })
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -393,10 +494,16 @@ extension ViewController {
                 //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
                 startTransitionAnimation(key: "MainCharacterWalking")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                workItem1 = DispatchWorkItem{
                     //play narration for finishing letter 2
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration17"]!, fileExtension: "mp3")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                    //play narration for finishing letter 2
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration17"]!, fileExtension: "mp3")
+//                })
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 // x= (-)west/(+)east, z= (-)north/(+)south
@@ -427,9 +534,14 @@ extension ViewController {
                 let chapter2Letter3MoveSeq = SCNAction.sequence([rotate1, move1, rotate2])
                 mainCharacterIdle?.parent?.runAction((chapter2Letter3MoveSeq), completionHandler: stopWalkAnimation)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimationOnce(key: "MainCharacterStopping")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute:workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+//                    self.startTransitionAnimationOnce(key: "MainCharacterStopping")
+//                })
                 
             case .Chapter3:
                 //S (chapter3 - letter3)
@@ -449,14 +561,19 @@ extension ViewController {
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                workItem1 = DispatchWorkItem{
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute:workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
+//                })
                 
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterJogging")
-                //                //animate the mainFloor node to move and stop when the translation is complete
-                //                //animate the main character to rotate
+                //animate the mainFloor node to move and stop when the translation is complete
+                //animate the main character to rotate
                 let rotate8 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-90)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.25)
                 let move7 = SCNAction.move(to: SCNVector3(34.781 ,2.7 ,-29.814), duration: 2)
                 let rotate7 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-120)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.25)
@@ -481,11 +598,17 @@ extension ViewController {
                 
                 //TODO: Chapter 5 - ADD touches and raytracing to select Yarn
                 
-                //look around for nails at teachers desk
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                workItem1 = DispatchWorkItem{
                     //move the main character to the first letter
                     self.stopWalkAnimation()
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                
+                //look around for nails at teachers desk
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                    //move the main character to the first letter
+//                    self.stopWalkAnimation()
+//                })
                 
                 //Y
                 
@@ -523,13 +646,8 @@ extension ViewController {
                 let chapter8Letter3RotMovSeq1 = SCNAction.sequence([rotate1, move1, rotate2, move2, rotate3])
                 mainCharacterIdle?.parent?.runAction((chapter8Letter3RotMovSeq1))
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5.5, execute: {
-                    self.startTransitionAnimation(key: "MainCharacterStairwalk")
-                    
-                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 2)) //Lionel heads down to level 2
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+                workItem2 = DispatchWorkItem{
+                    self.stopTransitionAnimation(key: "MainCharacterStairwalk")
                         self.startTransitionAnimation(key: "MainCharacterWalking")
                         let rotate4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks forward
                         let move4 = SCNAction.move(to: SCNVector3(1.1, 5, -0.78), duration: 2)  //Heads forward
@@ -537,46 +655,93 @@ extension ViewController {
                         
                         let chapter8Letter3RotMovSeq2 = SCNAction.sequence([rotate4, move4, rotate5])
                         self.mainCharacterIdle?.parent?.runAction((chapter8Letter3RotMovSeq2), completionHandler: self.stopWalkAnimation)
-                    })
-                })
+                }
+                workItem1 = DispatchWorkItem{
+                    self.startTransitionAnimation(key: "MainCharacterStairwalk")
+                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 2)) //Lionel heads down to level 2
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem2!)
+                }
+            
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.5, execute: workItem1!)
+                    
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 5.5, execute: {
+//                    self.startTransitionAnimation(key: "MainCharacterStairwalk")
+//
+//                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 2)) //Lionel heads down to level 2
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//                        self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+//                        self.startTransitionAnimation(key: "MainCharacterWalking")
+//                        let rotate4 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(0)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks forward
+//                        let move4 = SCNAction.move(to: SCNVector3(1.1, 5, -0.78), duration: 2)  //Heads forward
+//                        let rotate5 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-50)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Lionel looks at Kimi
+//
+//                        let chapter8Letter3RotMovSeq2 = SCNAction.sequence([rotate4, move4, rotate5])
+//                        self.mainCharacterIdle?.parent?.runAction((chapter8Letter3RotMovSeq2), completionHandler: self.stopWalkAnimation)
+//                    })
+//                })
                 
                 print("do chapter 8 stuff")
 
             case .Chapter9:
-                //FIXME: 9 letter 3
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3")
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + 9.6, execute: {
-                    //Patricia scoots back to take off again
-                    self.patricia5!.isHidden = false
-                    self.patricia5!.isPaused = false
-                    self.patricia4!.isHidden = true
-                    self.patricia4!.isPaused = true
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.4, execute: {
+                
+                workItem3 = DispatchWorkItem{
+                        //Patricia looks arounf for Nikki
+                        self.patricia6!.isPaused = true
+                        self.stopWalkAnimation()
+                }
+                workItem2 = DispatchWorkItem{
                         //patricia flies back up into the air to find Nikki
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
                         self.patricia6!.isHidden = false
                         self.patricia6!.isPaused = false
                         self.patricia5!.isHidden = true
                         self.patricia5!.isPaused = true
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 10.7, execute: {
-                            //Patricia looks arounf for Nikki
-                            self.patricia6!.isPaused = true
-                            
-                            self.stopWalkAnimation()
-                        })
-                    })
-                })
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 10.7, execute:self.workItem3!)
+                }
+                workItem1 = DispatchWorkItem{
+                    //Patricia scoots back to take off again
+                    self.patricia5!.isHidden = false
+                    self.patricia5!.isPaused = false
+                    self.patricia4!.isHidden = true
+                    self.patricia4!.isPaused = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.4, execute: self.workItem2!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 9.6, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 9.6, execute: {
+//                    //Patricia scoots back to take off again
+//                    self.patricia5!.isHidden = false
+//                    self.patricia5!.isPaused = false
+//                    self.patricia4!.isHidden = true
+//                    self.patricia4!.isPaused = true
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.4, execute: {
+//                        //patricia flies back up into the air to find Nikki
+//                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
+//                        self.patricia6!.isHidden = false
+//                        self.patricia6!.isPaused = false
+//                        self.patricia5!.isHidden = true
+//                        self.patricia5!.isPaused = true
+//
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 10.7, execute: {
+//                            //Patricia looks arounf for Nikki
+//                            self.patricia6!.isPaused = true
+//
+//                            self.stopWalkAnimation()
+//                        })
+//                    })
+//                })
                 print("do chapter 9 stuff")
             case .Chapter10:
-                //FIXME: 10 letter 3
 
                 //toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration15"]!, type: "mp3")
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration15"]!, fileExtension: "mp3")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                workItem1 = DispatchWorkItem{
                     //Finn walks over to the Xylophone
                     self.startTransitionAnimation(key: "MainCharacterWalking")
                     
@@ -593,7 +758,28 @@ extension ViewController {
                     let rotate5 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
                     let chapter10Letter3MoveSeq = SCNAction.sequence([rotate1, move2, rotate2, move3, rotate3, move4, rotate4, move5, move6, rotate5])
                     self.mainCharacterIdle?.parent?.runAction((chapter10Letter3MoveSeq), completionHandler: self.stopWalkAnimation)
-                })
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                    //Finn walks over to the Xylophone
+//                    self.startTransitionAnimation(key: "MainCharacterWalking")
+//
+//                    // x= (-)west/(+)east, z= (-)north/(+)south
+//                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+//                    let move2 = SCNAction.move(to: SCNVector3(-3.6, 0, -3.4), duration: 2.5)
+//                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-270)), z: 0, duration: 0.5)
+//                    let move3 = SCNAction.move(to: SCNVector3(2.8, 0, -3.4), duration: 4)
+//                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+//                    let move4 = SCNAction.move(to: SCNVector3(2.8, 0, -6.25), duration: 2)
+//                    let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+//                    let move5 = SCNAction.move(to: SCNVector3(0.85, 1.05, -6.25), duration: 1.5)
+//                    let move6 = SCNAction.move(to: SCNVector3(-0.7, 1.05, -6.25), duration: 1.5)
+//                    let rotate5 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 0.5)
+//                    let chapter10Letter3MoveSeq = SCNAction.sequence([rotate1, move2, rotate2, move3, rotate3, move4, rotate4, move5, move6, rotate5])
+//                    self.mainCharacterIdle?.parent?.runAction((chapter10Letter3MoveSeq), completionHandler: self.stopWalkAnimation)
+//                })
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -649,9 +835,14 @@ extension ViewController {
                 let chapter2Letter1MoveSeq = SCNAction.sequence([rotate1, move1, move2, rotate3, move3, rotate4, move4, move5, move6, rotate7])
                 mainCharacterIdle?.parent?.runAction((chapter2Letter1MoveSeq), completionHandler: stopWalkAnimation)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimationOnce(key: "MainCharacterStopping")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+//                    self.startTransitionAnimationOnce(key: "MainCharacterStopping")
+//                })
                 
             case .Chapter3:
                 //J (chapter3 - letter4)
@@ -686,11 +877,17 @@ extension ViewController {
             case .Chapter5:
                 //(chapter5 -- letter4)
                 
-                //look around for nails at teachers desk
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                workItem1 = DispatchWorkItem{
                     //move the main character to the first letter
                     self.stopWalkAnimation()
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                
+                //look around for nails at teachers desk
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                    //move the main character to the first letter
+//                    self.stopWalkAnimation()
+//                })
                 //X
                 
                 print("move floor for chapter five")
@@ -719,10 +916,16 @@ extension ViewController {
                 let chapter7Letter4MoveSeq = SCNAction.sequence([moveScene1, moveScene2, moveScene3])
                 mainFloor.runAction((chapter7Letter4MoveSeq), completionHandler: stopWalkAnimation)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem1 = DispatchWorkItem{
                     //move the main character to the first letter
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    //move the main character to the first letter
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3")
+//                })
                 print("move floor for chapter seven, letter 4")
                 print("Ursa walks to Windsor")
                 
@@ -738,25 +941,41 @@ extension ViewController {
                 let chapter8Letter4RotMovSeq = SCNAction.sequence([rotate1, move1, rotate2])
                 mainCharacterIdle?.parent?.runAction((chapter8Letter4RotMovSeq))
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                workItem2 = DispatchWorkItem{
+                    self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+                    self.startTransitionAnimation(key: "MainCharacterIdle")
+                    self.mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y:  CGFloat(GLKMathDegreesToRadians(-60)), z: 0, duration: 0.5), completionHandler: self.stopWalkAnimation)  //looks at Ernie
+                }
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimation(key: "MainCharacterStairwalk")
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
-                    
                     self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 3)) //Lionel heads down to level 1
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        self.stopTransitionAnimation(key: "MainCharacterStairwalk")
-                        self.startTransitionAnimation(key: "MainCharacterIdle")
-                        self.mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y:  CGFloat(GLKMathDegreesToRadians(-60)), z: 0, duration: 0.5), completionHandler: self.stopWalkAnimation)  //looks at Ernie
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+//                    self.startTransitionAnimation(key: "MainCharacterStairwalk")
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
+//
+//                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 3)) //Lionel heads down to level 1
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                        self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+//                        self.startTransitionAnimation(key: "MainCharacterIdle")
+//                        self.mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y:  CGFloat(GLKMathDegreesToRadians(-60)), z: 0, duration: 0.5), completionHandler: self.stopWalkAnimation)  //looks at Ernie
+//                    })
+//                })
                 print("do chapter 8 stuff")
 
             case .Chapter9:
-                //FIXME: 9 letter 4
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                workItem2 = DispatchWorkItem{
+                    self.stopWalkAnimation()
+                }
+                workItem1 = DispatchWorkItem{
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
                     
                     //Patricia flies back up to find Heidi
@@ -777,19 +996,39 @@ extension ViewController {
 
                     self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {                        
-                        self.stopWalkAnimation()
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: self.workItem2!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
+//
+//                    //Patricia flies back up to find Heidi
+//                    self.patricia8!.isHidden = false
+//                    self.patricia8!.isPaused = false
+//                    self.patricia7!.isHidden = true
+//                    self.patricia7!.isPaused = true
+//
+//                    //Brennon gets a new Balloon
+//                    let balloon = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
+//                    balloon!.isHidden = false
+//
+//                    //Brennon comes out from the Balloon stand
+//                    let move1 = SCNAction.move(to: SCNVector3(-9.7,  0.25, -8), duration: 2)
+//                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-55)), z: 0, duration: 1)
+//                    let move2 = SCNAction.move(to: SCNVector3(-11.15, 0.25, -7), duration: 2)
+//                    let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
+//
+//                    self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {
+//                        self.stopWalkAnimation()
+//                    })
+//                })
                 print("do chapter 9 stuff")
             case .Chapter10:
-                //FIXME: 10 letter 4
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
-                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
-                
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                workItem2 = DispatchWorkItem{
                         //Finn walks over to the Zambomba
                         self.startTransitionAnimation(key: "MainCharacterWalking")
                         
@@ -802,8 +1041,34 @@ extension ViewController {
                         let move4 = SCNAction.move(to: SCNVector3(2.35, 0, -0.93), duration: 4)
                         let chapter10Letter3MoveSeq = SCNAction.sequence([rotate1, move1, move2, move3, rotate2, move4])
                         self.mainCharacterIdle?.parent?.runAction((chapter10Letter3MoveSeq), completionHandler: self.stopWalkAnimation)
-                    })
-                })
+                }
+                workItem1 = DispatchWorkItem{
+                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration21"]!, type: "mp3")
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+//                        //Finn walks over to the Zambomba
+//                        self.startTransitionAnimation(key: "MainCharacterWalking")
+//
+//                        // x= (-)west/(+)east, z= (-)north/(+)south
+//                        let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-270)), z: 0, duration: 0.5)
+//                        let move1 = SCNAction.move(to: SCNVector3(0.85, 1.05, -6.25), duration: 1.5)
+//                        let move2 = SCNAction.move(to: SCNVector3(2.25, 0, -6.25), duration: 1)
+//                        let move3 = SCNAction.move(to: SCNVector3(2.8, 0, -6.25), duration: 1)
+//                        let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-360)), z: 0, duration: 0.5)
+//                        let move4 = SCNAction.move(to: SCNVector3(2.35, 0, -0.93), duration: 4)
+//                        let chapter10Letter3MoveSeq = SCNAction.sequence([rotate1, move1, move2, move3, rotate2, move4])
+//                        self.mainCharacterIdle?.parent?.runAction((chapter10Letter3MoveSeq), completionHandler: self.stopWalkAnimation)
+//                    })
+//                })
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -851,9 +1116,14 @@ extension ViewController {
                 let chapter2Letter1MoveSeq = SCNAction.sequence([rotate1, move1, rotate2, move2, move3])
                 mainCharacterIdle?.parent?.runAction((chapter2Letter1MoveSeq), completionHandler: stopWalkAnimation)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+                workItem1 = DispatchWorkItem{
                     self.startTransitionAnimationOnce(key: "MainCharacterStopping")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+//                    self.startTransitionAnimationOnce(key: "MainCharacterStopping")
+//                })
                 
                 print("move floor for chapter two")
             case .Chapter3:
@@ -873,10 +1143,15 @@ extension ViewController {
                 print("move for chapter three")
             case .Chapter4:
                 //A (chapter4 - letter5)
-                //start narration for the Ashton
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                workItem1 = DispatchWorkItem{
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration41"]!, fileExtension: "mp3")
-                })
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
+                
+                //start narration for the Ashton
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration41"]!, fileExtension: "mp3")
+//                })
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterJogging")
                 
@@ -942,144 +1217,288 @@ extension ViewController {
                 
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
                 
-                //Lionel's walk
-                mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))// lionel turns toward the stairs up
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                workItem5 = DispatchWorkItem{
+                    self.stopTransitionAnimation(key: "MainCharacterWalking")
+                    self.startTransitionAnimation(key: "MainCharacterIdle")
+                }
+                workItem4 = DispatchWorkItem{
+                    self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+                    self.startTransitionAnimation(key: "MainCharacterWalking")
+                    
+                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) // lionel turns toward center of the fidge
+                    let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)  //Lionel moves to fridge center
+                    let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //looks toward front of fridge
+                    let move3 = SCNAction.move(to: SCNVector3(-0.6, 9.25, 2.5), duration: 3)  //Lionel moves to fridge front
+                    
+                    let chapter8Letter5RotMovSeq2 = SCNAction.sequence([rotate3, move2, rotate4, move3])
+                    self.mainCharacterIdle?.parent?.runAction((chapter8Letter5RotMovSeq2))
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: self.workItem5!)
+                }
+                workItem3 = DispatchWorkItem{
+                    //walking up the stairs
+                    self.startTransitionAnimation(key: "MainCharacterStairwalk")
+                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3)) //Lionel heads up to level 1
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem4!)
+                }
+                workItem2 = DispatchWorkItem{
+                    self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+                    self.startTransitionAnimation(key: "MainCharacterWalking")
+                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(205)), z: 0, duration: 0.5) // lionel turns toward the stairs to level 1
+                    let move1 = SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)  //Lionel heads to stairs
+                    let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks up the stairs to top level
+                    
+                    let chapter8Letter5RotMovSeq1 = SCNAction.sequence([rotate1, move1, rotate2])
+                    self.mainCharacterIdle?.parent?.runAction((chapter8Letter5RotMovSeq1))
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem3!)
+                }
+                workItem1 = DispatchWorkItem{
                     //walking up the stairs
                     self.startTransitionAnimation(key: "MainCharacterStairwalk")
                     self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3)) //Lionel heads up to level 2
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        self.stopTransitionAnimation(key: "MainCharacterStairwalk")
-                        self.startTransitionAnimation(key: "MainCharacterWalking")
-                        let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(205)), z: 0, duration: 0.5) // lionel turns toward the stairs to level 1
-                        let move1 = SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)  //Lionel heads to stairs
-                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks up the stairs to top level
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem2!)
+                }
                         
-                        let chapter8Letter5RotMovSeq1 = SCNAction.sequence([rotate1, move1, rotate2])
-                        self.mainCharacterIdle?.parent?.runAction((chapter8Letter5RotMovSeq1))
+                //Lionel's walk
+                mainCharacterIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))// lionel turns toward the stairs up
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                    //walking up the stairs
+//                    self.startTransitionAnimation(key: "MainCharacterStairwalk")
+//                    self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3)) //Lionel heads up to level 2
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                        self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+//                        self.startTransitionAnimation(key: "MainCharacterWalking")
+//                        let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(205)), z: 0, duration: 0.5) // lionel turns toward the stairs to level 1
+//                        let move1 = SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)  //Lionel heads to stairs
+//                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks up the stairs to top level
+//
+//                        let chapter8Letter5RotMovSeq1 = SCNAction.sequence([rotate1, move1, rotate2])
+//                        self.mainCharacterIdle?.parent?.runAction((chapter8Letter5RotMovSeq1))
+//
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+//                            //walking up the stairs
+//                            self.startTransitionAnimation(key: "MainCharacterStairwalk")
+//                            self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3)) //Lionel heads up to level 1
+//
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                                self.stopTransitionAnimation(key: "MainCharacterStairwalk")
+//                                self.startTransitionAnimation(key: "MainCharacterWalking")
+//
+//                                let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) // lionel turns toward center of the fidge
+//                                let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)  //Lionel moves to fridge center
+//                                let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //looks toward front of fridge
+//                                let move3 = SCNAction.move(to: SCNVector3(-0.6, 9.25, 2.5), duration: 3)  //Lionel moves to fridge front
+//
+//                                let chapter8Letter5RotMovSeq2 = SCNAction.sequence([rotate3, move2, rotate4, move3])
+//                                self.mainCharacterIdle?.parent?.runAction((chapter8Letter5RotMovSeq2))
+//
+//                                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                                    self.stopTransitionAnimation(key: "MainCharacterWalking")
+//                                    self.startTransitionAnimation(key: "MainCharacterIdle")
+//                                })
+//
+//                            })
+//                        })
+//                    })
+                
+                workItem11 = DispatchWorkItem{
+                    self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
+                    self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+                    
+                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Ernie turns to the center of the level floor
+                    let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)
+                        //Ernie walks to the center of the level 1 floor
+                    let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Ernie turns to the front of the fridge
+                    let move3 = SCNAction.move(to: SCNVector3(-0.34, 9.25, 0.45), duration: 3)  //Ernie walks to the front of the fridge
+                    let chapter8Letter5RotMovSeq4 = SCNAction.sequence([rotate3, move2, rotate4, move3])
+                    self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq4), completionHandler: self.stopWalkAnimation)
+
+                }
+                workItem10 = DispatchWorkItem{
+                    //walking up the stairs
+                    self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
+                    self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
+                    
+                    //Ernie Level 1
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem11!)
+                }
+                workItem9 = DispatchWorkItem{
+                        self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
+                        self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+                        let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(205)), z: 0, duration: 0.5) //Ernie turns toward the bottom of the stairs to level 1
+                        let move1 = SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)  //Ernie walks to the bottom of the stairs to level 1
+                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Ernie looks up the stairs
+                        let chapter8Letter5RotMovSeq3 = SCNAction.sequence([rotate1, move1, rotate2])
+                        self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq3))
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                            //walking up the stairs
-                            self.startTransitionAnimation(key: "MainCharacterStairwalk")
-                            self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3)) //Lionel heads up to level 1
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                                self.stopTransitionAnimation(key: "MainCharacterStairwalk")
-                                self.startTransitionAnimation(key: "MainCharacterWalking")
-                                
-                                let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) // lionel turns toward center of the fidge
-                                let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)  //Lionel moves to fridge center
-                                let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //looks toward front of fridge
-                                let move3 = SCNAction.move(to: SCNVector3(-0.6, 9.25, 2.5), duration: 3)  //Lionel moves to fridge front
-                                
-                                let chapter8Letter5RotMovSeq2 = SCNAction.sequence([rotate3, move2, rotate4, move3])
-                                self.mainCharacterIdle?.parent?.runAction((chapter8Letter5RotMovSeq2))
-                                
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
-                                    self.stopTransitionAnimation(key: "MainCharacterWalking")
-                                    self.startTransitionAnimation(key: "MainCharacterIdle")
-                                })
-                                
-                            })
-                        })
-                    })
-                })
-                
-                
-                //Ernie's walk
-                //Ernie walks to the bottom of the stairs
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        //Ernie walks up the stairs to level 1
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem10!)
+                }
+                workItem8 = DispatchWorkItem{
+                        //walking up the stairs
+                        self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
+                        self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3))
+                        
+                        //Ernie level 2
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem9!)
+                }
+                workItem7 = DispatchWorkItem{
+                    self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))
+                                            
+                    //Ernie walks up the stairs to Level 2
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: self.workItem8!)
+                }
+                workItem6 = DispatchWorkItem{
                     self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
                     self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
                     self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 1))
                     
                     //Ernie looks up the stairs
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))
-                                                
-                        //Ernie walks up the stairs to Level 2
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                            //walking up the stairs
-                            self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-                            self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3))
-                            
-                            //Ernie level 2
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                                self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-                                self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
-                                let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(205)), z: 0, duration: 0.5) //Ernie turns toward the bottom of the stairs to level 1
-                                let move1 = SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)  //Ernie walks to the bottom of the stairs to level 1
-                                let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Ernie looks up the stairs
-                                let chapter8Letter5RotMovSeq3 = SCNAction.sequence([rotate1, move1, rotate2])
-                                self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq3))
-                                
-                                //Ernie walks up the stairs to level 1
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                                    //walking up the stairs
-                                    self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-                                    self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
-                                    
-                                    //Ernie Level 1
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                                        self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-                                        self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
-                                        
-                                        let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Ernie turns to the center of the level floor
-                                        let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)
-                                            //Ernie walks to the center of the level 1 floor
-                                        let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Ernie turns to the front of the fridge
-                                        let move3 = SCNAction.move(to: SCNVector3(-0.34, 9.25, 0.45), duration: 3)  //Ernie walks to the front of the fridge
-                                        let chapter8Letter5RotMovSeq4 = SCNAction.sequence([rotate3, move2, rotate4, move3])
-                                        self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq4), completionHandler: self.stopWalkAnimation)
-                                        
-                                    })
-                                })
-                            })
-                        })
-                    })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem7!)
+                        
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: workItem6!)
+                //Ernie's walk
+                //Ernie walks to the bottom of the stairs
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                    self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
+//                    self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+//                    self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 1))
+//
+//                    //Ernie looks up the stairs
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                        self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))
+//
+//                        //Ernie walks up the stairs to Level 2
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                            //walking up the stairs
+//                            self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
+//                            self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3))
+//
+//                            //Ernie level 2
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                                self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
+//                                self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+//                                let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(205)), z: 0, duration: 0.5) //Ernie turns toward the bottom of the stairs to level 1
+//                                let move1 = SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)  //Ernie walks to the bottom of the stairs to level 1
+//                                let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Ernie looks up the stairs
+//                                let chapter8Letter5RotMovSeq3 = SCNAction.sequence([rotate1, move1, rotate2])
+//                                self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq3))
+//
+//                                //Ernie walks up the stairs to level 1
+//                                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+//                                    //walking up the stairs
+//                                    self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
+//                                    self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
+//
+//                                    //Ernie Level 1
+//                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                                        self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
+//                                        self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+//
+//                                        let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Ernie turns to the center of the level floor
+//                                        let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)
+//                                            //Ernie walks to the center of the level 1 floor
+//                                        let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Ernie turns to the front of the fridge
+//                                        let move3 = SCNAction.move(to: SCNVector3(-0.34, 9.25, 0.45), duration: 3)  //Ernie walks to the front of the fridge
+//                                        let chapter8Letter5RotMovSeq4 = SCNAction.sequence([rotate3, move2, rotate4, move3])
+//                                        self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq4), completionHandler: self.stopWalkAnimation)
+//
+//                                    })
+//                                })
+//                            })
+//                        })
+//                    })
+                
+                workItem15 = DispatchWorkItem{
+                    self.stopAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
+                    self.startAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Kimi")
+                }
+                workItem14 = DispatchWorkItem{
+                    self.stopAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
+                    self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
                     
+                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Kimi looks at the center of the frig
+                    let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)
+                        //Kimi walks to the center of the frig
+                    let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Kimi looks to the front of the frig
+                    let move3 = SCNAction.move(to: SCNVector3(-0.8, 9.25, 1.25), duration: 3)  //Kimi walks to the front of the frig
+                    let chapter8Letter5RotMovSeq6 = SCNAction.sequence([rotate3, move2, rotate4, move3])
+                    self.charcterTwoIdle?.parent?.runAction(chapter8Letter5RotMovSeq6)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: self.workItem15!)
+                }
+                workItem13 = DispatchWorkItem{
+                    self.startAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
+                    self.charcterTwoIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
+                    
+                    //Ernie Level 1
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem14!)
+                }
+                workItem12 = DispatchWorkItem{
+                    self.stopAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
+                    self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
+                    
+                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5) //Kimi looks toward center of floor 2
+                    let move1 = SCNAction.move(to: SCNVector3(-1, 5, 0.35), duration: 2)  //Kimi walks to center of floor 2
+                    let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(135)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Kimi looks to bottom of stairs
+                    let move2 = SCNAction.move(to: SCNVector3(1.2, 5, -1.8), duration: 2) //Kimi walks to the bottom of the stairs to level 1
+                    let rotate3 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Kimi looks up the stairs
+                    let chapter8Letter5RotMovSeq5 = SCNAction.sequence([rotate1, move1, rotate2, move2, rotate3])
+                    self.charcterTwoIdle?.parent?.runAction(chapter8Letter5RotMovSeq5)
+                    
+                    //Kimi walks up the stairs
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.5, execute: self.workItem13!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem12!)
+                
                     //Kimi's walk
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.stopAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
-                        self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
-                        
-                        let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5) //Kimi looks toward center of floor 2 
-                        let move1 = SCNAction.move(to: SCNVector3(-1, 5, 0.35), duration: 2)  //Kimi walks to center of floor 2
-                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(135)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Kimi looks to bottom of stairs
-                        let move2 = SCNAction.move(to: SCNVector3(1.2, 5, -1.8), duration: 2) //Kimi walks to the bottom of the stairs to level 1
-                        let rotate3 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Kimi looks up the stairs
-                        let chapter8Letter5RotMovSeq5 = SCNAction.sequence([rotate1, move1, rotate2, move2, rotate3])
-                        self.charcterTwoIdle?.parent?.runAction(chapter8Letter5RotMovSeq5)
-                        
-                        //Kimi walks up the stairs
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5.5, execute: {
-                            self.startAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
-                            self.charcterTwoIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
-                            
-                            //Ernie Level 1
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                                self.stopAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
-                                self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
-                                
-                                let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Kimi looks at the center of the frig
-                                let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)
-                                    //Kimi walks to the center of the frig
-                                let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Kimi looks to the front of the frig
-                                let move3 = SCNAction.move(to: SCNVector3(-0.8, 9.25, 1.25), duration: 3)  //Kimi walks to the front of the frig
-                                let chapter8Letter5RotMovSeq6 = SCNAction.sequence([rotate3, move2, rotate4, move3])
-                                self.charcterTwoIdle?.parent?.runAction(chapter8Letter5RotMovSeq6)
-                                
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
-                                    self.stopAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
-                                    self.startAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Kimi")
-                                })
-                            })
-                        })
-
-                    })
-
-                })
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                        self.stopAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
+//                        self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
+//
+//                        let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5) //Kimi looks toward center of floor 2
+//                        let move1 = SCNAction.move(to: SCNVector3(-1, 5, 0.35), duration: 2)  //Kimi walks to center of floor 2
+//                        let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(135)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Kimi looks to bottom of stairs
+//                        let move2 = SCNAction.move(to: SCNVector3(1.2, 5, -1.8), duration: 2) //Kimi walks to the bottom of the stairs to level 1
+//                        let rotate3 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Kimi looks up the stairs
+//                        let chapter8Letter5RotMovSeq5 = SCNAction.sequence([rotate1, move1, rotate2, move2, rotate3])
+//                        self.charcterTwoIdle?.parent?.runAction(chapter8Letter5RotMovSeq5)
+//
+//                        //Kimi walks up the stairs
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 5.5, execute: {
+//                            self.startAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
+//                            self.charcterTwoIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
+//
+//                            //Ernie Level 1
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                                self.stopAnimateSideCharacter(key: "SideCharacter2Stairwalk", sideCharacter: "Kimi")
+//                                self.startAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
+//
+//                                let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Kimi looks at the center of the frig
+//                                let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)
+//                                    //Kimi walks to the center of the frig
+//                                let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Kimi looks to the front of the frig
+//                                let move3 = SCNAction.move(to: SCNVector3(-0.8, 9.25, 1.25), duration: 3)  //Kimi walks to the front of the frig
+//                                let chapter8Letter5RotMovSeq6 = SCNAction.sequence([rotate3, move2, rotate4, move3])
+//                                self.charcterTwoIdle?.parent?.runAction(chapter8Letter5RotMovSeq6)
+//
+//                                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                                    self.stopAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Kimi")
+//                                    self.startAnimateSideCharacter(key: "SideCharacter2Idle", sideCharacter: "Kimi")
+//                                })
+//                            })
+//                        })
+//
+//                    })
                 
                 print("do chapter 8 stuff")
             case .Chapter9:
@@ -1095,7 +1514,7 @@ extension ViewController {
                 //toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3") //the zambomba isn't for finn
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+                workItem1 = DispatchWorkItem{
                     //Finn walks to the flute again
                     self.startTransitionAnimation(key: "MainCharacterWalking")
                     
@@ -1112,7 +1531,28 @@ extension ViewController {
                     let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
                     let chapter10Letter3MoveSeq = SCNAction.sequence([rotate1, move1, rotate2, move2, rotate3, move3, rotate4])
                     self.mainCharacterIdle?.parent?.runAction((chapter10Letter3MoveSeq), completionHandler: self.stopWalkAnimation)
-                })
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
+                    
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
+//                    //Finn walks to the flute again
+//                    self.startTransitionAnimation(key: "MainCharacterWalking")
+//
+//                    //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration30"]!, type: "mp3") //finn knows which instrument he wants
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration30"]!, fileExtension: "mp3")
+//
+//                    // x= (-)west/(+)east, z= (-)north/(+)south
+//                    let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-180)), z: 0, duration: 1)
+//                    let move1 = SCNAction.move(to: SCNVector3(2.35, 0, -3.6), duration: 2)
+//                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+//                    let move2 = SCNAction.move(to: SCNVector3(-3.6, 0, -3.6), duration: 4)
+//                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(0)), z: 0, duration: 0.5)
+//                    let move3 = SCNAction.move(to: SCNVector3(-3.6, 0, 1.75), duration: 4)
+//                    let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-90)), z: 0, duration: 0.5)
+//                    let chapter10Letter3MoveSeq = SCNAction.sequence([rotate1, move1, rotate2, move2, rotate3, move3, rotate4])
+//                    self.mainCharacterIdle?.parent?.runAction((chapter10Letter3MoveSeq), completionHandler: self.stopWalkAnimation)
+//                })
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
@@ -1149,27 +1589,26 @@ extension ViewController {
                 let chapter1Letter6MoveSeq1_1 = SCNAction.sequence([rotate1, rotatePause, rotate2])
                 self.mainCharacterIdle.parent?.runAction((chapter1Letter6MoveSeq1_1))
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6.5, execute: {
-                    //Hannah stop dancing and Idle till narration done
-                    [weak self] in self?.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
-                    self?.charcterFiveIdle.parent?.runAction(SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-135)), z: 0, duration: 0.5))
-                    self?.stopTransitionAnimation(key: "MainCharacterWalking")
-                    
-                    self?.fadeoutWalkingSound()
-                    
-                    self?.stopAnimateSideCharacter(key: "SideCharacter5Dancing", sideCharacter: "Hannah")
-                    self?.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+                workItem4 = DispatchWorkItem{
+                    self.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+                    self.startAnimateSideCharacter(key: "SideCharacter5Surprise", sideCharacter: "Hannah")
+                }
+                workItem3 = DispatchWorkItem{
+                        self.stopAnimateSideCharacter(key: "SideCharacter5Walk", sideCharacter: "Hannah")
+                        self.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+                        
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: self.workItem4!)
+                }
+                workItem2 = DispatchWorkItem{
                         //Hannah and Indy walk together to the Tree
                         
                         //hannah sequence
-                        self?.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
-                        self?.startAnimateSideCharacter(key: "SideCharacter5Walk", sideCharacter: "Hannah")
-                        self?.startTransitionAnimation(key: "MainCharacterWalking")
+                        self.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+                        self.startAnimateSideCharacter(key: "SideCharacter5Walk", sideCharacter: "Hannah")
+                        self.startTransitionAnimation(key: "MainCharacterWalking")
                         
                         //start walking sound
-                        walkSound = self?.playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
+                        self.walkSound = self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
                         
                         //                        let hannahRotate1 = SCNAction.rotateBy(x: 0, y: 0.75, z: 0, duration: 1)
                         let hannahRotate1 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(45)), z: 0, duration: 1)
@@ -1178,7 +1617,7 @@ extension ViewController {
                         let hannahMove3 = SCNAction.move(to: SCNVector3(x: 21.4,y: 1.4,z: 4.7), duration: 4)
                         
                         let hannahLetter6MoveSeq = SCNAction.sequence([hannahRotate1, hannahMove1, hannahMove2, hannahMove3])
-                        self?.charcterFiveIdle.parent?.runAction(hannahLetter6MoveSeq)
+                        self.charcterFiveIdle.parent?.runAction(hannahLetter6MoveSeq)
                         
                         //Indy sequence
                         //let rotate3 = SCNAction.rotateBy(x: 0, y: -1.50, z: 0, duration: 0.5)
@@ -1194,24 +1633,92 @@ extension ViewController {
                         
                         //Indy rotating to H
                         let chapter1Letter6MoveSeq2_0 = SCNAction.sequence([rotate3, rotatePause1, rotate4])
-                        self?.mainCharacterIdle.parent?.runAction((chapter1Letter6MoveSeq2_0))
+                        self.mainCharacterIdle.parent?.runAction((chapter1Letter6MoveSeq2_0))
                         //Indy walking to H
                         let chapter1Letter6MoveSeq2 = SCNAction.sequence([move3, move4, move5])
-                        self?.mainFloor.runAction((chapter1Letter6MoveSeq2), completionHandler: self?.stopWalkAnimation)
+                        self.mainFloor.runAction((chapter1Letter6MoveSeq2), completionHandler: self.stopWalkAnimation)
                         
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
-                            self?.stopAnimateSideCharacter(key: "SideCharacter5Walk", sideCharacter: "Hannah")
-                            self?.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                                self?.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
-                                self?.startAnimateSideCharacter(key: "SideCharacter5Surprise", sideCharacter: "Hannah")
-                            })
-                            
-                        })
-                    })
-                })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: self.workItem3!)
+                }
+                workItem1 = DispatchWorkItem{
+                    //Hannah stop dancing and Idle till narration done
+                    [weak self] in self?.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
+                    self?.charcterFiveIdle.parent?.runAction(SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-135)), z: 0, duration: 0.5))
+                    self?.stopTransitionAnimation(key: "MainCharacterWalking")
+                    
+                    self?.fadeoutWalkingSound()
+                    
+                    self?.stopAnimateSideCharacter(key: "SideCharacter5Dancing", sideCharacter: "Hannah")
+                    self?.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: self!.workItem2!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6.5, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 6.5, execute: {
+//                    //Hannah stop dancing and Idle till narration done
+//                    [weak self] in self?.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
+//                    self?.charcterFiveIdle.parent?.runAction(SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-135)), z: 0, duration: 0.5))
+//                    self?.stopTransitionAnimation(key: "MainCharacterWalking")
+//
+//                    self?.fadeoutWalkingSound()
+//
+//                    self?.stopAnimateSideCharacter(key: "SideCharacter5Dancing", sideCharacter: "Hannah")
+//                    self?.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+//                        //Hannah and Indy walk together to the Tree
+//
+//                        //hannah sequence
+//                        self?.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+//                        self?.startAnimateSideCharacter(key: "SideCharacter5Walk", sideCharacter: "Hannah")
+//                        self?.startTransitionAnimation(key: "MainCharacterWalking")
+//
+//                        //start walking sound
+//                        walkSound = self?.playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
+//
+//                        //                        let hannahRotate1 = SCNAction.rotateBy(x: 0, y: 0.75, z: 0, duration: 1)
+//                        let hannahRotate1 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(45)), z: 0, duration: 1)
+//                        let hannahMove1 = SCNAction.move(to: SCNVector3(x: 21.5,y: 1.1,z: -11.2), duration: 2)
+//                        let hannahMove2 = SCNAction.move(to: SCNVector3(x: 19.75,y: 1.7,z: -0.65), duration: 4)
+//                        let hannahMove3 = SCNAction.move(to: SCNVector3(x: 21.4,y: 1.4,z: 4.7), duration: 4)
+//
+//                        let hannahLetter6MoveSeq = SCNAction.sequence([hannahRotate1, hannahMove1, hannahMove2, hannahMove3])
+//                        self?.charcterFiveIdle.parent?.runAction(hannahLetter6MoveSeq)
+//
+//                        //Indy sequence
+//                        //let rotate3 = SCNAction.rotateBy(x: 0, y: -1.50, z: 0, duration: 0.5)
+//                        let rotate3 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-80)), z: 0, duration: 0.5)
+//                        let rotatePause1 = SCNAction.rotateBy(x: 0, y: 0, z: 0, duration: 1.5)
+//                        //let rotate4 = SCNAction.rotateBy(x: 0, y: -0.40, z: 0, duration: 0.5)
+//                        let rotate4 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(-20)), z: 0, duration: 0.5)
+//
+//                        //move indy uphill by moving the floor down
+//                        let move3 = SCNAction.move(by: SCNVector3(x: 0.2, y: -0.04, z: 0.4), duration: 2)
+//                        let move4 = SCNAction.move(by: SCNVector3(x: 0.1, y: 0, z: 0.5), duration: 4)
+//                        let move5 = SCNAction.move(by: SCNVector3(x: -0.1, y: -0.02, z: 0.6), duration: 4)
+//
+//                        //Indy rotating to H
+//                        let chapter1Letter6MoveSeq2_0 = SCNAction.sequence([rotate3, rotatePause1, rotate4])
+//                        self?.mainCharacterIdle.parent?.runAction((chapter1Letter6MoveSeq2_0))
+//                        //Indy walking to H
+//                        let chapter1Letter6MoveSeq2 = SCNAction.sequence([move3, move4, move5])
+//                        self?.mainFloor.runAction((chapter1Letter6MoveSeq2), completionHandler: self?.stopWalkAnimation)
+//
+//
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 11, execute: {
+//                            self?.stopAnimateSideCharacter(key: "SideCharacter5Walk", sideCharacter: "Hannah")
+//                            self?.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+//
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+//                                self?.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Hannah")
+//                                self?.startAnimateSideCharacter(key: "SideCharacter5Surprise", sideCharacter: "Hannah")
+//                            })
+//
+//                        })
+//                    })
+//                })
                 
                 //H
                 
@@ -1230,9 +1737,14 @@ extension ViewController {
                 let chapter2Letter1MoveSeq = SCNAction.sequence([move1, move2, move3])
                 mainCharacterIdle?.parent?.runAction((chapter2Letter1MoveSeq), completionHandler: stopWalkAnimation)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
-                    self.startTransitionAnimationOnce(key: "MainCharacterStopping")
-                })
+                workItem1 = DispatchWorkItem{
+                   self.startTransitionAnimationOnce(key: "MainCharacterStopping")
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: workItem1!)
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2.9, execute: {
+//                    self.startTransitionAnimationOnce(key: "MainCharacterStopping")
+//                })
                 
                 print("move floor for chapter two")
             case .Chapter3:
