@@ -169,6 +169,33 @@ extension ViewController {
                 //move position for letter:
             //N
             case .Chapter6:
+                //FIXME: Chapter6 Letter 1
+                //Barry at starting line. 5, 4, 3, 2, 1, GO!
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3") //6.65
+                
+                //Barry gets to the finishingline and takes off
+                mainCharacterIdle.isPaused = false
+                
+                workItem3 = DispatchWorkItem{
+                    //Barry is paused before the hurdle obsticles
+                    self.mainCharacterIdle.isPaused = true
+                    self.stopWalkAnimation()
+                }
+                workItem2 = DispatchWorkItem{
+                    //Barry is off and running to the first obsticle
+                    self.mainCharacterIdle.isPaused = false
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: self.workItem3!)
+                }
+                workItem1 = DispatchWorkItem{
+                    //Barry waits for the GO!
+                    self.mainCharacterIdle.isPaused = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: self.workItem2!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute:workItem1!)
+                
                 print("do chapter 6 stuff")
                 
             case .Chapter7:
@@ -385,6 +412,25 @@ extension ViewController {
                 
                 print("move floor for chapter five")
             case .Chapter6:
+                //FIXME: Chapter6 Letter 2
+                //Barry jumps all the hurdles
+                self.mainCharacterIdle.isPaused = false
+                
+                //play narration for transition to "a" tires
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration6"]!, fileExtension: "mp3") //4.58
+                
+                workItem2 = DispatchWorkItem{
+                    self.stopWalkAnimation()
+                }
+                workItem1 = DispatchWorkItem{
+                    //wait 3 seconds and then play animation
+                    self.mainCharacterIdle.isPaused = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute:self.workItem2!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:self.workItem1!)
+                
                 print("do chapter 6 stuff")
             case .Chapter7:
                 //show the main character as walking
@@ -614,6 +660,26 @@ extension ViewController {
                 
                 print("move floor for chapter five")
             case .Chapter6:
+                //FIXME: Chapter6 Letter 3
+                //Barry hops through all the tires
+                self.mainCharacterIdle.isPaused = false
+                
+                //play narration for transition to "a" tires
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration12"]!, fileExtension: "mp3") //5.11
+                
+                workItem2 = DispatchWorkItem{
+                    self.stopWalkAnimation()
+                }
+                workItem1 = DispatchWorkItem{
+                    //wait 4 seconds and then pause animation
+                    self.mainCharacterIdle.isPaused = true
+                    
+                    //wait a couple more seconds for transition narration  to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute:self.workItem2!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem1!)
+                
                 print("do chapter 6 stuff")
             case .Chapter7:
                 
@@ -892,6 +958,25 @@ extension ViewController {
                 
                 print("move floor for chapter five")
             case .Chapter6:
+                //FIXME: Chapter6 Letter 4
+                //Barry hops through all spinners
+                self.mainCharacterIdle.isPaused = false
+                
+                //play narration for transition to "g" lowbars
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3") //5.35
+                
+                workItem2 = DispatchWorkItem{
+                    self.stopWalkAnimation()
+                }
+                workItem1 = DispatchWorkItem{
+                    //wait 2.35 seconds and then pause animation
+                    self.mainCharacterIdle.isPaused = true
+                    
+                    //wait 6 more seconds for transition narration  to finish
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem2!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.35, execute:self.workItem1!)
                 print("do chapter 6 stuff")
             case .Chapter7:
                 //show the main character as idle
@@ -1174,6 +1259,25 @@ extension ViewController {
                 
                 print("move floor for chapter five")
             case .Chapter6:
+                    //FIXME: Chapter6 Letter 5
+                    //Barry crawls under all the low bars
+                    self.mainCharacterIdle.isPaused = false
+                    
+                    //play narration for transition to "o" rings
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration24"]!, fileExtension: "mp3") //6.74
+                    
+                    workItem2 = DispatchWorkItem{
+                        self.stopWalkAnimation()
+                    }
+                    workItem1 = DispatchWorkItem{
+                        //wait 3 seconds and then pause animation
+                        self.mainCharacterIdle.isPaused = true
+                        
+                        //wait for transition narration  to finish
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.25, execute:self.workItem2!)
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute:self.workItem1!)
                     print("do chapter 6 stuff")
             case .Chapter7:
                 
@@ -1502,7 +1606,6 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
             case .Chapter9:
-                //FIXME: 9 letter 5
                 self.patricia9!.isPaused = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: {
                     self.stopWalkAnimation()
@@ -1510,7 +1613,6 @@ extension ViewController {
                 
                 print("do chapter 9 stuff")
             case .Chapter10:
-                //FIXME: 10 letter 5
                 //toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration29"]!, type: "mp3") //the zambomba isn't for finn
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
                 
@@ -1765,6 +1867,23 @@ extension ViewController {
                 
                 print("move floor for chapter five")
             case .Chapter6:
+                //FIXME: Chapter6 Letter 6
+                //Barry swings through all the "o" rings
+                self.mainCharacterIdle.isPaused = false
+                
+                //play narration for Barry winning the race
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Finish"]!, fileExtension: "mp3") //5.04
+                
+                workItem2 = DispatchWorkItem{
+                    self.resetGame()
+                }
+                workItem1 = DispatchWorkItem{
+                    //Barry win pose
+                    self.mainCharacterIdle.isPaused = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute:self.workItem2!)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute:self.workItem1!)
                 print("do chapter 6 stuff")
             case .Chapter7:
                 
@@ -1833,7 +1952,6 @@ extension ViewController {
             case .Chapter8:
                 print("do chapter 8 stuff")
             case .Chapter9:
-                //FIXME: 9 letter 6
                 print("do chapter 9 stuff")
             case .Chapter10:
                 print("do chapter 10 stuf")

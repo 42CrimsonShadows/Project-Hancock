@@ -265,6 +265,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 patricia11!.isHidden = true
             }
             
+            if currentChapter == .Chapter6 {
+                //pause Barry since the chapter contains one long animation for him
+                //we start him when the story starts in storyTime()
+                mainCharacterIdle!.isPaused = true
+            }
+            
             print("Shatter Animation Paused")
             //you can also pause individual animations
             //storyNode?.childNode(withName: "shard2", recursively: true)?.animationPlayer(forKey: "shard2-Matrix-animation-transform")?.paused = true
@@ -1085,13 +1091,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //                    })
 //                })
             case .Chapter6:
-                workItem1 = DispatchWorkItem{
-                    print("Do chapter 6 stuff")
+                workItem3 = DispatchWorkItem{
+                    //move the main character to the first letter
+                    self.playWalkAnimation()
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {
-//                    print("Do chapter 6 stuff")
-//                })
+                workItem2 = DispatchWorkItem{
+                    //Barry stops after stretching
+                    self.mainCharacterIdle.isPaused = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 7.25, execute: self.workItem3!)
+                }
+                workItem1 = DispatchWorkItem{
+                    //play game intro1
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3") //12.19
+                    
+                    //Barryy starts stretching before the race
+                    self.mainCharacterIdle.isPaused = false
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.75, execute: self.workItem2!)
+                }
+                
+                //Wait 5 seconds for the chapter to load completely
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: workItem1!)
+                
             case .Chapter7:
                 workItem2 = DispatchWorkItem{
                     //move the main character to the first letter
@@ -1426,20 +1448,14 @@ extension ViewController : ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-        
-        print("****This is before checking for render update.")
-    
+            
         DispatchQueue.main.async {
             if currentChapter != .MainMenu{
                 self.updateARPlaneNode(
                     planeNode: node.childNodes[0],
                     planeAchor: planeAnchor)
-                
-                print("This is in updateARPlane for render update.****")
             }
         }
-        
-        print("This is after checking for render update.****")
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {

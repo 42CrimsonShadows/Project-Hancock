@@ -23,7 +23,6 @@ extension ViewController{
                     case .Chapter10:
                         print("Nothing to shatter for this chapter")
                     case .Chapter9:
-                        //FIXME: chapter 9 letter 6
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
                         
@@ -173,6 +172,10 @@ extension ViewController{
                         print("Tyler brings Ursa back to her family")
                         
                     case .Chapter6:
+                        //FIXME: chapter 6 letter 6
+                        
+                        
+                        
                         print("Nothing to shatter for this chapter")
                     case .Chapter5:
                         letterOne!.isPaused = false
@@ -357,7 +360,6 @@ extension ViewController{
                     case .Chapter9:
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
-                        //FIXME: chapter 8 letter 5
                         print("Nothing to shatter for this chapter")
                     case .Chapter7:
                         //Isaac goes back to what he was doing
@@ -377,6 +379,14 @@ extension ViewController{
                         print("Ursa begins climbing over the log and finds Tyler by the stream")
                         
                     case .Chapter6:
+                        //FIXME: chapter 6 letter 5
+                        workItem1 = DispatchWorkItem{
+                            self.playWalkAnimation()
+                        }
+                        
+                        //wait 1 second for the screen to return from the activity screen
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem1!)
+                        
                         print("Nothing to shatter for this chapter")
                     case .Chapter5:
                         print("Nothing to shatter for this chapter")
@@ -730,6 +740,15 @@ extension ViewController{
                         print("Ursa climbs the slope and sees Isaac")
                         
                     case .Chapter6:
+                        //FIXME: chapter 6 letter 4
+                        workItem1 = DispatchWorkItem{
+                            self.playWalkAnimation()
+                        }
+                        
+                        //wait 1 second for the screen to return from the activity screen
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem1!)
+                        
+                        
                         print("Nothing to shatter for this chapter")
                     case .Chapter5:
                         print("Nothing to shatter for this chapter")
@@ -1147,6 +1166,14 @@ extension ViewController{
                         print("You traced the letter V and Ursa has made it across the ravine")
                         
                     case .Chapter6:
+                        //FIXME: chapter 6 letter 3
+                        workItem1 = DispatchWorkItem{
+                            self.playWalkAnimation()
+                        }
+                        
+                        //wait 1 second for the screen to return from the activity screen
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem1!)
+                        
                         print("Nothing to shatter for this chapter")
                     case .Chapter5:
                         print("Nothing to shatter for this chapter")
@@ -1450,7 +1477,6 @@ extension ViewController{
 //                        })
                         print("Nothing to shatter for this chapter")
                     case .Chapter9:
-                        //FIXME: chapter 9 letter 2
                         //Patricia flies down to Ryan and asks where Brennon is
                         self.patricia3!.isHidden = false
                         self.patricia3!.isPaused = false
@@ -1549,6 +1575,14 @@ extension ViewController{
                         print("Ursa is on her way down the trail to vivian")
                         
                     case .Chapter6:
+                        //FIXME: chapter 6 letter 2
+                        workItem1 = DispatchWorkItem{
+                            self.playWalkAnimation()
+                        }
+                        
+                        //wait 1 second for the screen to return from the activity screen
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem1!)
+                        
                         print("Nothing to shatter for this chapter")
                     case .Chapter5:
                         print("Nothing to shatter for this chapter")
@@ -1964,6 +1998,13 @@ extension ViewController{
 //                            })
 //                        })
                     case .Chapter6:
+                        //FIXME: chapter 6 letter 1
+                        workItem1 = DispatchWorkItem{
+                            self.playWalkAnimation()
+                        }
+                        //wait 1 second for the screen to return from the activity screen
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem1!)
+                        
                         print("Nothing to shatter for this chapter")
                     case .Chapter5:
                         print("Nothing to shatter for this chapter")

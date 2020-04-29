@@ -21,8 +21,6 @@ extension ViewController{
         case .toLetter1:
             switch currentChapter {
             case .Chapter10:
-                //FIXME: chapter 10 letter 1
-                
                 stopTransitionAnimation(key: "MainCharacterWalking")
                 
                 //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
@@ -55,7 +53,6 @@ extension ViewController{
 //                })
                 print("stopwalk chapter 10 stuff")
             case .Chapter9:
-                //FIXME: chapter 9 letter 1
                 //letter l intro
                 playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration4"]!, fileExtension: "mp3")
                 
@@ -164,6 +161,21 @@ extension ViewController{
 //                })
                 print("Ursa stops at mid-path")
             case .Chapter6:
+                //FIXME: chapter 6 letter 1
+                self.shatterLetterOne = true
+                
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
+                
+                workItem1 = DispatchWorkItem{
+                    //load first letter for activityView page
+                    print("Loading activity \(chapterSelectedLetterArray![0])")
+                    self.loadActivityLetter(activityString: chapterSelectedLetterArray![0])
+                    //play narration for the first audio instructions for the activity
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration4"]!, fileExtension: "mp3")
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: workItem1!)
+                
                 print("stopwalk chapter 6 stuff")
             case .Chapter5:
                 print("Prepare to shatter letter 1")
@@ -390,8 +402,6 @@ extension ViewController{
         case .toLetter2:
             switch currentChapter {
                 case .Chapter10:
-                    //FIXME: chapter 10 letter 2
-                    
                     stopTransitionAnimation(key: "MainCharacterWalking")
                     
                     //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration10"]!, type: "mp3")
@@ -531,6 +541,24 @@ extension ViewController{
 //                    })
                     print("Ursa stops at Stanley")
                 case .Chapter6:
+                    //FIXME: chapter 6 letter 2
+                    print("Prepare to shatter letter 2")
+                    self.shatterLetterTwo = true
+                    
+                    //play intro narration for "a"
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration7"]!, fileExtension: "mp3") //7.08
+                    
+                    workItem1 = DispatchWorkItem{
+                        print("Loading activity \(chapterSelectedLetterArray![1])")
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![1])
+                        
+                        //play narration for the first audio instructions for the activity
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration8"]!, fileExtension: "mp3")
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: workItem1!)
+                    
+                    
                     print("stopwalk chapter 6 stuff")
                 case .Chapter5:
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration12"]!, fileExtension: "mp3")
@@ -805,8 +833,6 @@ extension ViewController{
         case .toLetter3:
             switch currentChapter {
                 case .Chapter10:
-                    //FIXME: chapter 10 letter 3
-                    
                     stopTransitionAnimation(key: "MainCharacterWalking")
                      
                      //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration16"]!, type: "mp3")
@@ -835,7 +861,6 @@ extension ViewController{
 //                     })
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
-                    //FIXME: chapter 9 letter 3
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
                     self.shatterLetterThree = true
                     
@@ -945,6 +970,22 @@ extension ViewController{
 //                    })
                     print("Ursa stops at Vivian")
                 case .Chapter6:
+                    //FIXME: chapter 6 letter 3
+                    print("Prepare to shatter letter 3")
+                    self.shatterLetterThree = true
+                    
+                    //play intro narration for "d"
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration13"]!, fileExtension: "mp3") //7.22
+                    
+                    workItem1 = DispatchWorkItem{
+                        print("Loading activity \(chapterSelectedLetterArray![2])")
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
+                        
+                        //play narration for the first audio instructions for the activity
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration14"]!, fileExtension: "mp3")
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 8.5, execute: workItem1!)
                     print("stopwalk chapter 6 stuff")
                 case .Chapter5:
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
@@ -1227,8 +1268,6 @@ extension ViewController{
         case .toLetter4:
             switch currentChapter {
                 case .Chapter10:
-                    //FIXME: chapter 10 letter 4
-                    
                     stopTransitionAnimation(key: "MainCharacterWalking")
                     
                     //self.toggleAudioNarrationFile(file: chapterSelectedSoundDict!["Narration22"]!, type: "mp3") //Trace the Letter Z to Try the Zambomba
@@ -1257,7 +1296,6 @@ extension ViewController{
 //                    })
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
-                    //FIXME: chapter 9 letter 4
                     //patricia stops when she finds Heidi
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
                     self.patricia8!.isPaused = true
@@ -1395,6 +1433,24 @@ extension ViewController{
                     print("Ursa stops at Windsor")
                     
                 case .Chapter6:
+                    //FIXME: chapter 6 letter 4
+                    print("Prepare to shatter letter 4")
+                    self.shatterLetterFour = true
+                    
+                    //play intro narration for "g"
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3") //7.78
+                    
+                    workItem1 = DispatchWorkItem{
+                        print("Loading activity \(chapterSelectedLetterArray![3])")
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
+                        
+                        //play narration for the first audio instructions for the activity
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: workItem1!)
+                    
+                    
                     print("stopwalk chapter 6 stuff")
                 case .Chapter5:
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration30"]!, fileExtension: "mp3")
@@ -1773,14 +1829,12 @@ extension ViewController{
         case .toLetter5:
             switch currentChapter {
                 case .Chapter10:
-                    //FIXME: chapter 10 letter 5
                     stopTransitionAnimation(key: "MainCharacterWalking")
                     
                     self.shatterLetterFive = true
                     self.playShatterAnimation()
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
-                    //FIXME: chapter 9 letter 5
                     //patricia lands by Brennon
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "mp3")
                     
@@ -1971,6 +2025,22 @@ extension ViewController{
                     
                     print("Trace the letter i to have Ursa climb over the log")
                 case .Chapter6:
+                    //FIXME: chapter 6 letter 5
+                    print("Prepare to shatter letter 5")
+                    self.shatterLetterFive = true
+                    
+                    //play intro narration for "o"
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration25"]!, fileExtension: "mp3") //9.1
+                    
+                    workItem1 = DispatchWorkItem{
+                        print("Loading activity \(chapterSelectedLetterArray![4])")
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
+                        
+                        //play narration for the first audio instructions for the activity
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: workItem1!)
                     print("stopwalk chapter 6 stuff")
                 case .Chapter5:
                     stopTransitionAnimation(key: "MainCharacterWalking")
@@ -2161,7 +2231,6 @@ extension ViewController{
                 case .Chapter10:
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
-                    //FIXME: chapter 9 letter 6
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
                     print("stopwalk chapter 8 stuff")
@@ -2215,6 +2284,10 @@ extension ViewController{
                     print("Ursa stops at Tyler and he tells her to follow him")
                     
                 case .Chapter6:
+                    //FIXME: chapter 6 letter 6
+                    
+                    
+                    
                     print("stopwalk chapter 6 stuff")
                 case .Chapter5:
                     stopTransitionAnimation(key: "MainCharacterWalking")

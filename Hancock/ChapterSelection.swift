@@ -978,10 +978,24 @@ class ChapterSelection {
         var chapter6NodeArray: [SCNNode] = []
         
         // Load StoryScene Node
-        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter5Files/Environments/Chapter5Scene.scn")!
+        let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter6Files/Environments/Chapter6Scene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
-        storyNode.scale = SCNVector3(0.03, 0.03, 0.03)
+        storyNode.scale = SCNVector3(0.0001, 0.0001, 0.0001)
         storyNode.position = SCNVector3(0, 0, 0)
+        
+        //Load Idle Animation Node
+        let idleBarryScene = SCNScene(named: "art.scnassets/3DModels/Chapter6Files/Characters/Barry/Barry@FullLapFixed.dae")!
+        for child in idleBarryScene.rootNode.childNodes {
+            idleNode.addChildNode(child)
+        }
+        storyNode.addChildNode(idleNode)
+        idleNode.scale = SCNVector3(1, 1, 1)
+        idleNode.position = SCNVector3(-2428.747, 0, 1656.2)
+        idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(90), GLKMathDegreesToRadians(0))
+        
+        let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!
+        
+        prepareAnimation(withKey: "MainCharacterIdle", sceneName: "art.scnassets/3DModels/Chapter6Files/Characters/Barry/Barry@FullLapFixed", animationIdentifier: "Barry@FullLapFixed-1")
         
         chapter6NodeArray.append(storyNode)
         
@@ -989,23 +1003,56 @@ class ChapterSelection {
     }
     
     func loadChapter6SoundFiles() -> [String: String] {
-        let chapter6SoundArray = ["Narration1" : "Line1",
-                                  "Narration2" : "Line2",
-                                  "Narration3" : "Line3",
-                                  "Narration4" : "Line4",
-                                  "Narration5" : "Line5",
-                                  "Narration6" : "Line6",
-                                  "Narration7" : "Line7",
-                                  "Narration8" : "Line8",
-                                  "BackgroundSound" : "Birds2",
-                                  "WalkSound" : "Gravel and Grass Walk",
-                                  "CoinDing1" : "bell-ding_01",
-                                  "CoinDing2" : "bell-ding_02",
-                                  "CoinDing3" : "bell-ding_03",
-                                  "CoinDing4" : "bell-ding_04",
-                                  "Break1" : "RockBreak3",
-                                  "Stop" : "stop",
-                                  "LetterComplete" : "yeahOutside"]
+        let chapter6SoundArray = [//sounds for Letter c
+                                "Narration1" : "ch1L-Intro1", //12.19
+                                "Narration2" : "ch1L-Intro2", //6.65
+                                "Narration3" : "ch1L-C-Intro", //6.74
+                                "Narration4" : "ch1-E-Line1",    //Green to Red
+                                "Narration5" : "ch1-E-Line2_01", //Great Job
+        
+                                //sounds for Letter a
+                                "Narration6" : "ch1L-A-Transition1", //4.58
+                                "Narration7" : "ch1L-A-Intro", //7.08
+                                "Narration8" : "ch1-E-Line1",    //Green to Red
+                                "Narration9" : "ch1-E-Line2_01", //Great Job
+                                "Narration10" : "ch1-E-Line2_02", //Blue to Orange
+                                "Narration11" : "ch1-E-Line3_01", //Amazing
+        
+                                //sounds for Letter d
+                                "Narration12" : "ch1L-D-Transition1", //5.11
+                                "Narration13" : "ch1L-D-Intro", //7.22
+                                "Narration14" : "ch1-E-Line1",    //Green to Red
+                                "Narration15" : "ch1-E-Line2_01", //Great Job
+                                "Narration16" : "ch1-E-Line2_02", //Blue to Orange
+                                "Narration17" : "ch1-E-Line3_01", //Amazing
+        
+                                //sounds for Letter g
+                                "Narration18" : "ch1L-G-Transition1", //5.35
+                                "Narration19" : "ch1L-G-Intro", //7.78
+                                "Narration20" : "ch1-E-Line1",    //Green to Red
+                                "Narration21" : "ch1-E-Line2_01", //Great Job
+                                "Narration22" : "ch1-E-Line2_02", //Blue to Orange
+                                "Narration23" : "ch1-E-Line3_01", //Amazing
+                                
+                                //sounds for Letter o
+                                "Narration24" : "ch1L-O-Transition1", //6.74
+                                "Narration25" : "ch1L-O-Intro", //9.1
+                                "Narration26" : "ch1-E-Line1",    //Green to Red
+                                "Narration27" : "ch1-E-Line2_01", //Great Job
+        
+                                //Finishing Narration
+                                "Finish" : "ch1L-Final", //5.04
+                                
+                                //extra chapter FX sounds
+                                "BackgroundSound" : "Birds2",
+                                "WalkSound" : "Gravel and Grass Walk",
+                                "CoinDing1" : "bell-ding_01",
+                                "CoinDing2" : "bell-ding_02",
+                                "CoinDing3" : "bell-ding_03",
+                                "CoinDing4" : "bell-ding_04",
+                                "Break3" : "RockBreak3",
+                                "Stop" : "stop",
+                                "LetterComplete" : "yeahOutside"]
         return chapter6SoundArray
     }
     
