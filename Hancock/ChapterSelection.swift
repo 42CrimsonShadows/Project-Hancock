@@ -88,6 +88,26 @@ class ChapterSelection {
             chapterSelectedNodeArray = loadChapter10NodeFiles()
             chapterSelectedLetterArray = ["f", "q", "x", "z"]
             chapterSelectedSoundDict = loadChapter10SoundFiles()
+        case 11:
+            print("Loading Chapter ", picked)
+            chapterSelectedLetterArray = ["-", "/", "'\'", "'\'"]
+            chapterSelectedSoundDict = loadlineTypeSoundFiles()
+        case 12:
+            print("Loading Chapter ", picked)
+            chapterSelectedLetterArray = ["cross+", "crossx"]
+            chapterSelectedSoundDict = loadlineTypeSoundFiles()
+        case 13:
+            print("Loading Chapter ", picked)
+            chapterSelectedLetterArray = ["square"]
+            chapterSelectedSoundDict = loadlineTypeSoundFiles()
+        case 14:
+            print("Loading Chapter ", picked)
+            chapterSelectedLetterArray = ["circle"]
+            chapterSelectedSoundDict = loadlineTypeSoundFiles()
+        case 15:
+            print("Loading Chapter ", picked)
+            chapterSelectedLetterArray = ["triangle"]
+            chapterSelectedSoundDict = loadlineTypeSoundFiles()
         default:
             break
         }
@@ -260,8 +280,7 @@ class ChapterSelection {
         prepareAnimation(withKey: "SideCharacter5Walk", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@WalkFixed", animationIdentifier: "Hannah@WalkFixed-1")
         prepareAnimation(withKey: "SideCharacter5Surprise", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@SurpriseFixed", animationIdentifier: "Hannah@SurpriseFixed-1")
         prepareAnimation(withKey: "SideCharacter5Dance", sceneName: "art.scnassets/3DModels/Chapter1Files/Characters/Hannah/Hannah@DanceFixed", animationIdentifier: "Hannah@DanceFixed-1")
-        
-        //chapter1NodeArray.append(focusNode)                                                                                                                                                                                                                                                                                                                                                       
+           
         chapter1NodeArray.append(storyNode)
         
         return chapter1NodeArray
@@ -1692,6 +1711,32 @@ class ChapterSelection {
                                   "Stop" : "stop",
                                   "LetterComplete" : "yeahOutside"]
         return chapter10SoundArray
+    }
+    
+    
+    func loadlineTypeSoundFiles() -> [String: String] {
+        let lineTypeSoundArray = [
+                        // - Narration
+                                  "GreenToRed" : "ch1-E-Line1",    //1 Green to Red
+                                  "GreatJob" : "ch1-E-Line2_01", //2 Great Job
+                                  "BlueToOrange" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Amazing" : "ch1-E-Line3_01", //3 Amazing
+                                  "YellowToPurple" : "ch1-E-Line3_02", //Yellow to Purple
+                                  "Fantastic" : "ch1-F-Line3_01", //3  Fantastic
+                                  //TODO: ADD PINK TO WHITE DOT NARRATION
+                                  //"Narration27" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                  "AwesomeJob" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+                                  
+                    //Extra Template
+                                  //"BackgroundSound" : "RoomToneOffice",
+                                  "CoinDing1" : "bell-ding_01",
+                                  "CoinDing2" : "bell-ding_02",
+                                  "CoinDing3" : "bell-ding_03",
+                                  "CoinDing4" : "bell-ding_04",
+                                  "Break1" : "RockBreak3",
+                                  "Stop" : "stop",
+                                  "LetterComplete" : "yeahOutside"]
+        return lineTypeSoundArray
     }
     
     //prep the animations by loading them into an public Animations Dictionary

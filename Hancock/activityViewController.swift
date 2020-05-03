@@ -925,6 +925,24 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             activitySelection.loadActivityy()
         case "z":
             activitySelection.loadActivityz()
+        case "-":
+            activitySelection.loadActivityHorizontal()
+        case "/":
+            activitySelection.loadActivityDiagonalRight()
+        case "|":
+            activitySelection.loadActivityVertical()
+        case "'\'":
+            activitySelection.loadActivityDiagonalLeft()
+        case "cross+":
+            activitySelection.loadActivityPerpendicularCross()
+        case "crossx":
+            activitySelection.loadActivityDiagonalCross()
+        case "square":
+            activitySelection.loadActivitySquare()
+        case "circle":
+            activitySelection.loadActivityCircle()
+        case "triangle":
+            activitySelection.loadActivityTriangle()
         default: return
         }
     }
