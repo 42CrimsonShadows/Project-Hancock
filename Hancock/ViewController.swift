@@ -1256,11 +1256,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if currentChapter == .MainMenu {
             return nil
         }
-        
         return _playAudio(type: type, file: file, fileExtension: fileExtension, rate: rate)
     }
     
-
     //pass in an audiofile and it will play it!
     @discardableResult func playAudioMenu(type: AudioType, file: String, fileExtension: String, rate:Float = 1.0) -> AVAudioPlayer? {
         if currentChapter != .MainMenu {
@@ -1270,7 +1268,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Jonathan: New audio "system" to fix an inherent bug with the previous one
-    func _playAudio(type: AudioType, file: String, fileExtension: String, rate:Float) -> AVAudioPlayer? {
+    public func _playAudio(type: AudioType, file: String, fileExtension: String, rate:Float) -> AVAudioPlayer? {
         // Fetch the audio path of the desired sound
         let audioPath = Bundle.main.path(forResource: file, ofType: fileExtension, inDirectory: "art.scnassets/Sounds")
         

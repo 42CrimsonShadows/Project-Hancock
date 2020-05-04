@@ -1,8 +1,6 @@
 import UIKit
 
-
 class HomeViewController: UIViewController {
-    
     
     @IBOutlet weak var upperCaseImage: UIImageView!
     @IBOutlet weak var lowerCaseImage: UIImageView!

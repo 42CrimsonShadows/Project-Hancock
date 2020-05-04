@@ -832,31 +832,31 @@ class CanvasView: UIView {
             return ["Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
         case "-":
             print("Load - narration")
-            return ["GreenToRed", "GreatJob"]
+            return ["GreatJob"]
         case "/":
             print("Load / narration")
-            return ["GreenToRed", "GreatJob"]
+            return ["GreatJob"]
         case "|":
             print("Load | narration")
-            return ["GreenToRed", "GreatJob"]
+            return ["GreatJob"]
         case "'\'":
             print("Load '\' narration")
-            return ["GreenToRed", "GreatJob"]
+            return ["GreatJob"]
         case "cross+":
             print("Load cross+ narration")
-            return ["GreenToRed", "GreatJob", "BlueToOrange", "Amazing"]
+            return ["GreatJob", "BlueToOrange", "Amazing"]
         case "crossx":
             print("Load crossx narration")
-            return ["GreenToRed", "GreatJob", "BlueToOrange", "Amazing"]
+            return ["GreatJob", "BlueToOrange", "Amazing"]
         case "triangle":
             print("Load triangle narration")
-            return ["GreenToRed", "GreatJob", "BlueToOrange", "Amazing", "YellowToPurple", "Fantastic"]
+            return ["GreatJob", "BlueToOrange", "Amazing", "YellowToPurple", "Fantastic"]
         case "circle":
             print("Load circle narration")
-            return ["GreenToRed", "GreatJob"]
+            return ["GreatJob"]
         case "square":
             print("Load square narration")
-            return ["GreenToRed", "GreatJob", "BlueToOrange", "Amazing", "YellowToPurple", "Fantastic", "YellowToPurple", "AwesomeJob"]
+            return ["GreatJob", "BlueToOrange", "Amazing", "YellowToPurple", "Fantastic", "YellowToPurple", "AwesomeJob"]
         default:
             return ["Narration", "Narration"]
         }

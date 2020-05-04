@@ -247,6 +247,15 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.Line3 = false
         canvasView.Line4 = false
         
+        //FIXME: if the chapter is one of the line chapters play the first narration
+        if (selectedActivity == "-" || selectedActivity == "/" || selectedActivity == "|" || selectedActivity == "'\'" || selectedActivity == "cross+" || selectedActivity == "crossx" || selectedActivity == "square" || selectedActivity == "circle" || selectedActivity == "triangle"){
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.canvasView.playAudioNarrationFile(file: chapterSelectedSoundDict!["GreenToRed"]!, type: "mp3")
+            })
+        }
+        
+            
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             //play the pulsate animation for the first dot
             self.canvasView.greenDot?.pulsate(duration: 0.6)
@@ -337,8 +346,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             
             //if there is more than two lines
             if dotArraySize > 8 {
-                //purpleDot6 = CGPoint(x: 600 * activityPoints[8][0], y: 900 * activityPoints[8][1])
-                //yellowDot7 = CGPoint(x: 600 * activityPoints[11][0], y: 900 * activityPoints[11][1])
                 yellowDot7 = CGPoint(x: 600 * activityPoints[8][0], y: 900 * activityPoints[8][1])
                 purpleDot6 = CGPoint(x: 600 * activityPoints[11][0], y: 900 * activityPoints[11][1])
                 
@@ -551,10 +558,10 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
         print("My Touch Location = CGpointX", firstPoint.x / canvasView.bounds.maxX, "and CGpointY", firstPoint.y / canvasView.bounds.maxY)
         
-        if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 50 {
+        if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 25 {
             // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
             canvasView.goodTouch = true
-            print("Touch was within 50 units")
+            print("Touch was within 25 units")
             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing1"]!, type: "mp3")
             
             canvasView.drawTouches(touches, withEvent: event)
@@ -582,11 +589,11 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             }
             
             //each time we move the touch...
-            touches.forEach { (touch) in
+            touches.forEach {(touch) in
                 
                 //check to see if we interact with coins
                 if canvasView.Line1 == true {
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
                         if canvasView.coin1Collected == false {
                             canvasView.coin1Collected = true
                             canvasView.blackDot1?.isHidden = true
@@ -598,7 +605,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             
                         }
                     }
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
                         if canvasView.coin2Collected == false {
                             canvasView.coin2Collected = true
                             canvasView.blackDot2?.isHidden = true
@@ -611,7 +618,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 }
                 //**************
                 if canvasView.Line2 == true {
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
                         if canvasView.coin1Collected == false {
                             canvasView.coin1Collected = true
                             canvasView.blackDot3?.isHidden = true
@@ -621,7 +628,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
                         if canvasView.coin2Collected == false {
                             canvasView.coin2Collected = true
                             canvasView.blackDot4?.isHidden = true
@@ -634,7 +641,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 }
                 //*************
                 if canvasView.Line3 == true {
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
                         if canvasView.coin1Collected == false {
                             canvasView.coin1Collected = true
                             canvasView.blackDot5?.isHidden = true
@@ -644,7 +651,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
                         if canvasView.coin2Collected == false {
                             canvasView.coin2Collected = true
                             canvasView.blackDot6?.isHidden = true
@@ -657,7 +664,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 }
                 //************
                 if canvasView.Line4 == true {
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
                         if canvasView.coin1Collected == false {
                             canvasView.coin1Collected = true
                             canvasView.blackDot7?.isHidden = true
@@ -667,7 +674,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
                         if canvasView.coin2Collected == false {
                             canvasView.coin2Collected = true
                             canvasView.blackDot8?.isHidden = true
@@ -677,7 +684,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
-                    
                 }
             }
         }
@@ -719,7 +725,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             
             //removing coins from total if the line was not completed
             guard let lastPoint = touches.first?.location(in: canvasView) else { return }
-            if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
+            if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 25 {
                 if canvasView.coin1Collected == true {
                     totalCoins -= 1
                     setupCoinLabel()

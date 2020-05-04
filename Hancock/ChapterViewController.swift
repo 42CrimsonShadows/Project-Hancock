@@ -18,6 +18,10 @@ enum Chapter: Int {
     case LineType3 = 13
     case LineType4 = 14
     case LineType5 = 15
+    case LineType6 = 16
+    case LineType7 = 17
+    case LineType8 = 18
+    case LineType9 = 19
 }
 
 var currentChapter: Chapter = .MainMenu
@@ -47,8 +51,11 @@ class ChapterViewController: UIViewController {
     @IBOutlet weak var lineType3Label: UIButton!
     @IBOutlet weak var lineType4Label: UIButton!
     @IBOutlet weak var lineType5Label: UIButton!
-    
-    
+    @IBOutlet weak var lineType6Label: UIButton!
+    @IBOutlet weak var lineType7Label: UIButton!
+    @IBOutlet weak var lineType8Label: UIButton!
+    @IBOutlet weak var lineType9Label: UIButton!
+        
     
 //    let concept1 = UIImage (imageLiteralResourceName: "concept1")
 //    let concept2 = UIImage (imageLiteralResourceName: "concept2")
@@ -121,6 +128,8 @@ class ChapterViewController: UIViewController {
         chapterSelector.chapterLoader(picked: 10)
         tappedMe()
     }
+    
+    
     @IBAction func lineType1Clicked(_ sender: Any) {
         currentChapter = .LineType1
         chapterSelector.chapterLoader(picked: 11)
@@ -146,18 +155,37 @@ class ChapterViewController: UIViewController {
         chapterSelector.chapterLoader(picked: 15)
         tappedThis()
     }
-    
+    @IBAction func lineType6Clicked(_ sender: Any) {
+        currentChapter = .LineType6
+        chapterSelector.chapterLoader(picked: 16)
+        tappedThis()
+    }
+    @IBAction func lineType7Clicked(_ sender: Any) {
+        currentChapter = .LineType7
+        chapterSelector.chapterLoader(picked: 17)
+        tappedThis()
+    }
+    @IBAction func lineType8Clicked(_ sender: Any) {
+        currentChapter = .LineType8
+        chapterSelector.chapterLoader(picked: 18)
+        tappedThis()
+    }
+    @IBAction func lineType9Clicked(_ sender: Any) {
+        currentChapter = .LineType9
+        chapterSelector.chapterLoader(picked: 19)
+        tappedThis()
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GifView.loadGif(name: "BookAnimation")
+        GifView?.loadGif(name: "BookAnimation")
         
-        loadingGifView.loadGif(name: "Loading")
-        loadingGifView.isHidden = true
-        conceptView.isHidden = true
+        loadingGifView?.loadGif(name: "Loading")
+        loadingGifView?.isHidden = true
+        conceptView?.isHidden = true
         
         chapter1Label?.isHidden = true
         chapter2Label?.isHidden = true
@@ -174,38 +202,46 @@ class ChapterViewController: UIViewController {
         lineType3Label?.isHidden = true
         lineType4Label?.isHidden = true
         lineType5Label?.isHidden = true
+        lineType6Label?.isHidden = true
+        lineType7Label?.isHidden = true
+        lineType8Label?.isHidden = true
+        lineType9Label?.isHidden = true
         
         pauseAfterPlay()
     }
     
     func pauseAfterPlay(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.75, execute: {
-            //self.GifView.stopAnimating()
-            self.GifView.image = UIImage(named: "BookOpened")
+            self.GifView?.stopAnimating()
+            self.GifView?.image = UIImage(named: "BookOpened")
             self.chapter1Label?.isHidden = false
             self.chapter6Label?.isHidden = false
             self.lineType1Label?.isHidden = false
+            self.lineType2Label?.isHidden = false
             
             //bing bing bing bing synchronous appearance
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 self.chapter2Label?.isHidden = false
                 self.chapter7Label?.isHidden = false
-                self.lineType2Label?.isHidden = false
+                self.lineType3Label?.isHidden = false
+                self.lineType4Label?.isHidden = false
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                     self.chapter3Label?.isHidden = false
                     self.chapter8Label?.isHidden = false
-                    self.lineType3Label?.isHidden = false
+                    self.lineType5Label?.isHidden = false
+                    self.lineType6Label?.isHidden = false
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                         self.chapter4Label?.isHidden = false
                         self.chapter9Label?.isHidden = false
-                        self.lineType4Label?.isHidden = false
+                        self.lineType7Label?.isHidden = false
+                        self.lineType8Label?.isHidden = false
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                             self.chapter5Label?.isHidden = false
                             self.chapter10Label?.isHidden = false
-                            self.lineType5Label?.isHidden = false
+                            self.lineType9Label?.isHidden = false
                         })
                     })
                 })
@@ -229,10 +265,8 @@ class ChapterViewController: UIViewController {
     }
     
     func tappedThis(){
-        conceptView.isHidden = false
-        loadingGifView.isHidden = false
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            
             selectedActivity = chapterSelectedLetterArray![0]
             print("loadActivityLetter is loading ", chapterSelectedLetterArray![0])
             

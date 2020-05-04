@@ -90,21 +90,37 @@ class ChapterSelection {
             chapterSelectedSoundDict = loadChapter10SoundFiles()
         case 11:
             print("Loading Chapter ", picked)
-            chapterSelectedLetterArray = ["-", "/", "'\'", "'\'"]
+            chapterSelectedLetterArray = ["-"]
             chapterSelectedSoundDict = loadlineTypeSoundFiles()
         case 12:
             print("Loading Chapter ", picked)
-            chapterSelectedLetterArray = ["cross+", "crossx"]
+            chapterSelectedLetterArray = ["/"]
             chapterSelectedSoundDict = loadlineTypeSoundFiles()
         case 13:
             print("Loading Chapter ", picked)
-            chapterSelectedLetterArray = ["square"]
+            chapterSelectedLetterArray = ["'\'"]
             chapterSelectedSoundDict = loadlineTypeSoundFiles()
         case 14:
             print("Loading Chapter ", picked)
-            chapterSelectedLetterArray = ["circle"]
+            chapterSelectedLetterArray = ["|"]
             chapterSelectedSoundDict = loadlineTypeSoundFiles()
         case 15:
+            print("Loading Chapter ", picked)
+            chapterSelectedLetterArray = ["cross+"]
+            chapterSelectedSoundDict = loadlineTypeSoundFiles()
+        case 16:
+            print("Loading Chapter ", picked)
+            chapterSelectedLetterArray = ["crossx"]
+            chapterSelectedSoundDict = loadlineTypeSoundFiles()
+        case 17:
+            print("Loading Chapter ", picked)
+            chapterSelectedLetterArray = ["square"]
+            chapterSelectedSoundDict = loadlineTypeSoundFiles()
+        case 18:
+            print("Loading Chapter ", picked)
+            chapterSelectedLetterArray = ["circle"]
+            chapterSelectedSoundDict = loadlineTypeSoundFiles()
+        case 19:
             print("Loading Chapter ", picked)
             chapterSelectedLetterArray = ["triangle"]
             chapterSelectedSoundDict = loadlineTypeSoundFiles()
@@ -1715,8 +1731,7 @@ class ChapterSelection {
     
     
     func loadlineTypeSoundFiles() -> [String: String] {
-        let lineTypeSoundArray = [
-                        // - Narration
+        let lineTypeSoundArray = [// - Narration
                                   "GreenToRed" : "ch1-E-Line1",    //1 Green to Red
                                   "GreatJob" : "ch1-E-Line2_01", //2 Great Job
                                   "BlueToOrange" : "ch1-E-Line2_02", //Blue to Orange
@@ -1726,8 +1741,8 @@ class ChapterSelection {
                                   //TODO: ADD PINK TO WHITE DOT NARRATION
                                   //"Narration27" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
                                   "AwesomeJob" : "ch1-E-Line5_01", //5 narration40 Awesome Job
-                                  
-                    //Extra Template
+            
+                                  //Extra Template
                                   //"BackgroundSound" : "RoomToneOffice",
                                   "CoinDing1" : "bell-ding_01",
                                   "CoinDing2" : "bell-ding_02",
