@@ -1,5 +1,6 @@
 
 import UIKit
+import Foundation
 
 var chapterOne: Bool = false
 var chapterTwo: Bool = false
@@ -11,6 +12,7 @@ var chapterSeven: Bool = false
 var chapterEight: Bool = false
 var chapterNine: Bool = false
 var chapterTen: Bool = false
+var lastActive = Date()
 
 class ChapterViewController: UIViewController {
     
@@ -43,34 +45,44 @@ class ChapterViewController: UIViewController {
 //    let concept10 = UIImage (imageLiteralResourceName: "concept10")
     
     @IBAction func cpt1Clicked(_ sender: Any) {
-        chapterOne = true
-        chapterTwo = false
-        chapterThree = false
-        chapterFour = false
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = false
-        chapterTen = false
-        //conceptView.image = concept1
-        chapterSelector.chapterLoader(picked: 1)
-        tappedMe()
+//        chapterOne = true
+//        chapterTwo = false
+//        chapterThree = false
+//        chapterFour = false
+//        chapterFive = false
+//        chapterSix = false
+//        chapterSeven = false
+//        chapterEight = false
+//        chapterNine = false
+//        chapterTen = false
+//        //conceptView.image = concept1
+//        chapterSelector.chapterLoader(picked: 1)
+//        tappedMe()
+        
+        print(Service.TimeSinceActive(lastActive: lastActive))
     }
     @IBAction func cpt2Clicked(_ sender: Any) {
-        chapterOne = false
-        chapterTwo = true
-        chapterThree = false
-        chapterFour = false
-        chapterFive = false
-        chapterSix = false
-        chapterSeven = false
-        chapterEight = false
-        chapterNine = false
-        chapterTen = false
-        //conceptView.image = concept2
-        chapterSelector.chapterLoader(picked: 2)
-        tappedMe()
+//        chapterOne = false
+//        chapterTwo = true
+//        chapterThree = false
+//        chapterFour = false
+//        chapterFive = false
+//        chapterSix = false
+//        chapterSeven = false
+//        chapterEight = false
+//        chapterNine = false
+//        chapterTen = false
+//        //conceptView.image = concept2
+//        chapterSelector.chapterLoader(picked: 2)
+//        tappedMe()
+        lastActive = Date()
+        //Temporarily commented this out for testing the database
+        //Service.StartSession(date: lastActive)
+        //Service.register()
+        Service.login()
+         
+        
+
     }
     @IBAction func cpt3Clicked(_ sender: Any) {
         chapterOne = false
@@ -292,4 +304,6 @@ class ChapterViewController: UIViewController {
             self.present(homeARView, animated: true)
         })
     }
+    
+    
 }

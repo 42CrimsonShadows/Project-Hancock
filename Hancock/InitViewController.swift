@@ -20,6 +20,7 @@ class InitViewController: UIViewController {
        
         //if Auth.auth().currentUser != nil{
             self.performSegue(withIdentifier: "toHomeScreen", sender: self)
+            
         //}
     }
 
