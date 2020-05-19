@@ -241,7 +241,7 @@ class Service {
         print("Most recent session:",lastActive)
         
     }
-    static func TimeSinceActive(lastActive: Date) -> String {
+    static func TimeSinceActive(lastActive: Date) -> [Int32] {
         let currentTime = Date()
         print("Offset:", currentTime.offset(from: lastActive))
         print("Current Time:", currentTime)
@@ -254,33 +254,35 @@ class Service {
 
 extension Date {
     
-    func years(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
+    func years(from date: Date) -> Int32 {
+        return Int32(Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0)
     }
-    func months(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.month], from: date, to: self).month ?? 0
+    func months(from date: Date) -> Int32 {
+        return Int32(Calendar.current.dateComponents([.month], from: date, to: self).month ?? 0)
     }
-    func days(from date: Date) -> Int{
-        return Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0
+    func days(from date: Date) -> Int32{
+        return Int32(Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0)
     }
-    func hours(from date: Date) -> Int{
-          return Calendar.current.dateComponents([.hour], from: date, to: self).hour ?? 0
+    func hours(from date: Date) -> Int32{
+        return Int32(Calendar.current.dateComponents([.hour], from: date, to: self).hour ?? 0)
     }
-    func minutes(from date: Date) -> Int{
-          return Calendar.current.dateComponents([.minute], from: date, to: self).minute ?? 0
+    func minutes(from date: Date) -> Int32 {
+        return Int32(Calendar.current.dateComponents([.minute], from: date, to: self).minute ?? 0)
     }
-    func seconds(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.second], from: date, to: self).second ?? 0
+    func seconds(from date: Date) -> Int32 {
+        return Int32(Calendar.current.dateComponents([.second], from: date, to: self).second ?? 0)
     }
     
-    func offset(from date: Date) -> String {
-        if years(from: date) > 0 { return "\(years(from: date))y \(months(from: date))M \(days(from: date))d \(hours(from: date))h \(minutes(from: date))m \(seconds(from: date))s" }
-        if months(from: date) > 0 { return "\(months(from: date))M \(days(from: date))d \(hours(from: date))h \(minutes(from: date))m \(seconds(from: date))s" }
-        if days(from: date) > 0 { return "\(days(from: date))d \(hours(from: date))h \(minutes(from: date))m \(seconds(from: date))s" }
-        if hours(from: date) > 0 { return "\(hours(from: date))h \(minutes(from: date))m \(seconds(from: date))s" }
-        if minutes(from: date) > 0 { return "\(minutes(from: date))m \(seconds(from: date)-(minutes(from: date)*60))s" }
-        if seconds(from: date) > 0 { return "\(seconds(from: date))s" }
-        return ""
+    func offset(from date: Date) -> [Int32] {
+        var time: [Int32] = []
+        if years(from: date) > 0 { return []}
+        if months(from: date) > 0 { return [] }
+        if days(from: date) > 0 {return [] }
+        if hours(from: date) > 0 {time[0] = date.hours(from: lastActive) }
+        if minutes(from: date) > 0 { time[1] = date.minutes(from: lastActive) }
+        if seconds(from: date) > 0 { time[2] = date.seconds(from: lastActive) }
+        print(time)
+        return time
     }
 }
 
