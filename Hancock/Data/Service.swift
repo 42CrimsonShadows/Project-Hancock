@@ -11,10 +11,43 @@ import Foundation
 class Service {
     
     
-
+    var username: String = ""
+    var password: String = ""
+    
     //MARK: --CREATE(POST)
     //All these functions are created for adding new entries to the database
     
+    static func updateCharacterData(){
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let test = SingleActivityReport(username: "poop", password: "butt", letter: "A", score: 2, timeToComplete: 123, totalPointsEarned: 10, totalPointsPossible: 10)
+        do{
+            let endpoint = "https://abcgoapp.org/api/users/Data"
+            let data = try encoder.encode(test)
+            guard let url = URL(string: endpoint) else {
+                print("Could not set the URL, contact the developer")
+
+                return
+                
+            }
+                //print(String(data: data, encoding: .utf8)!)
+        
+            var request = URLRequest(url: url)
+            request.setValue("application/json", forHTTPHeaderField: "content-type")
+            request.httpMethod = "POST"
+            request.httpBody = data
+        
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                print(response)
+                if let error = error {
+                    //Ping(text: error.localizedDescription, style: .danger).show()
+                    print(error)
+                }
+            }.resume()
+        } catch {
+            print("Could not encode")
+        }
+    }
     //Register new users
     static func register() {
 //        struct user: Codable {
@@ -92,7 +125,6 @@ class Service {
     
     //MARK: --READ(GET)
     //These functions will return a value from the database
-    
     static func getObject(id: String) {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted

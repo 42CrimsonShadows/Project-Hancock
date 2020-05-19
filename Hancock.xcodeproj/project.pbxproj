@@ -451,7 +451,7 @@
 			baseConfigurationReference = B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5VSY8CPT7Z;
 				INFOPLIST_FILE = Hancock/Info.plist;
@@ -474,7 +474,7 @@
 			baseConfigurationReference = 7F29B875A1DB16B48327DFAC /* Pods-Hancock.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5VSY8CPT7Z;
 				INFOPLIST_FILE = Hancock/Info.plist;
