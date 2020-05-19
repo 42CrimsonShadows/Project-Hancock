@@ -62,20 +62,20 @@ class ChapterViewController: UIViewController {
         print(Service.TimeSinceActive(lastActive: lastActive))
     }
     @IBAction func cpt2Clicked(_ sender: Any) {
-//        chapterOne = false
-//        chapterTwo = true
-//        chapterThree = false
-//        chapterFour = false
-//        chapterFive = false
-//        chapterSix = false
-//        chapterSeven = false
-//        chapterEight = false
-//        chapterNine = false
-//        chapterTen = false
-//        //conceptView.image = concept2
-//        chapterSelector.chapterLoader(picked: 2)
-//        tappedMe()
-        lastActive = Date()
+        chapterOne = false
+        chapterTwo = true
+        chapterThree = false
+        chapterFour = false
+        chapterFive = false
+        chapterSix = false
+        chapterSeven = false
+        chapterEight = false
+        chapterNine = false
+        chapterTen = false
+        //conceptView.image = concept2
+        chapterSelector.chapterLoader(picked: 2)
+        tappedMe()
+        //lastActive = Date()
         //Temporarily commented this out for testing the database
         //Service.StartSession(date: lastActive)
         //Service.register()

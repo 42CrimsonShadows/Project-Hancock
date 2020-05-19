@@ -241,11 +241,12 @@ class Service {
         print("Most recent session:",lastActive)
         
     }
-    static func TimeSinceActive(lastActive: Date) -> [Int32] {
+    static func TimeSinceActive(lastActive: Date) -> Int32 {
         let currentTime = Date()
-        print("Offset:", currentTime.offset(from: lastActive))
+        print("Offset:", currentTime.seconds(from: lastActive))
         print("Current Time:", currentTime)
-        return currentTime.offset(from: lastActive)
+        print("Star Time:", startTime)
+        return currentTime.seconds(from: lastActive)
         
     }
     
@@ -273,17 +274,17 @@ extension Date {
         return Int32(Calendar.current.dateComponents([.second], from: date, to: self).second ?? 0)
     }
     
-    func offset(from date: Date) -> [Int32] {
-        var time: [Int32] = []
-        if years(from: date) > 0 { return []}
-        if months(from: date) > 0 { return [] }
-        if days(from: date) > 0 {return [] }
-        if hours(from: date) > 0 {time[0] = date.hours(from: lastActive) }
-        if minutes(from: date) > 0 { time[1] = date.minutes(from: lastActive) }
-        if seconds(from: date) > 0 { time[2] = date.seconds(from: lastActive) }
-        print(time)
-        return time
-    }
+//    func offset(from date: Date) -> Int32 {
+        //var time: Int32 = 0
+//        if years(from: date) > 0 { return []}
+//        if months(from: date) > 0 { return [] }
+//        if days(from: date) > 0 {return [] }
+//        if hours(from: date) > 0 {time[0] = date.hours(from: lastActive) }
+//        if minutes(from: date) > 0 { time[1] = date.minutes(from: lastActive) }
+        //if seconds(from: date) > 0 { return date.seconds(from: lastActive) }
+//        print(time)
+//        return seconds(from: date)
+//    }
 }
 
 //extension NSDate {
