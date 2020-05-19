@@ -20,6 +20,8 @@ import UIKit
 public var selectedActivity = ""
 
 public var totalCoins = 0
+// total coins user can get on letter
+public var coinsPossible: Int32 = 0
 
 enum LetterState: Int16 {
     case P1_P2 //first line
@@ -702,6 +704,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                     //separatorView.isHidden = true
                 }
             }
+            // adding total amount of coins possible to get
+            coinsPossible += 2
             
             if canvasView.letterComplete == true {
                 //play last ding
@@ -710,7 +714,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 //play cheer
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
-                    
+                // send character data to db
+                Service.updateCharacterData(username: "poop", password: "butt", letter: selectedActivity, score: Int32(totalCoins), timeToComplete: 44, totalPointsEarned: Int32(totalCoins), totalPointsPossible: 20)
                 //dismiss activity view
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     self.dismiss(animated: false, completion: nil)
@@ -729,6 +734,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                         setupCoinLabel()
                     }
                 }
+                // subtracting total amount of coins possible if line wasn't finished
+                coinsPossible -= 2
             }
             //reset collected booleans
             canvasView.coin1Collected = false

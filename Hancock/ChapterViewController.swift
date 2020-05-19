@@ -79,7 +79,7 @@ class ChapterViewController: UIViewController {
         //Temporarily commented this out for testing the database
         //Service.StartSession(date: lastActive)
         //Service.register()
-        Service.login()
+        //Service.updateCharacterData()
          
         
 

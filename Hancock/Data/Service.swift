@@ -90,6 +90,39 @@ class Service {
         }
     }
     
+    static func updateCharacterData(username: String, password: String, letter: String, score: Int32, timeToComplete: Int32, totalPointsEarned: Int32, totalPointsPossible: Int32){
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let test = SingleActivityReport(username: username, password: password, letter: letter, score: score, timeToComplete: timeToComplete, totalPointsEarned: totalPointsEarned, totalPointsPossible: totalPointsPossible)
+        do{
+            let endpoint = "https://abcgoapp.org/api/users/Data"
+            let data = try encoder.encode(test)
+            guard let url = URL(string: endpoint) else {
+                print("Could not set the URL, contact the developer")
+
+                return
+                
+            }
+                //print(String(data: data, encoding: .utf8)!)
+        
+            var request = URLRequest(url: url)
+            request.setValue("application/json", forHTTPHeaderField: "content-type")
+            request.httpMethod = "POST"
+            request.httpBody = data
+        
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                print(response)
+                if let error = error {
+                    //Ping(text: error.localizedDescription, style: .danger).show()
+                    print(error)
+                }
+            }.resume()
+        
+        } catch {
+            print("Could not encode")
+        }
+    }
+    
     //MARK: --READ(GET)
     //These functions will return a value from the database
     
@@ -127,6 +160,7 @@ class Service {
     }
     //MARK: --UPDATE(PUT)
     //These will edit an existing entry in the database
+    
     
     static func pushData(){
         let encoder = JSONEncoder()

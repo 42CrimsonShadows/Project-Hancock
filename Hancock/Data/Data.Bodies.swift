@@ -97,11 +97,13 @@ struct TotalActivityReport: Codable {
 
 //Should be edited and added for each attempt of the activity.
 struct SingleActivityReport: Codable {
-    var date: String
+    var username: String
+    var password: String
+    //var date: String
     var letter: String
-    var Chapter: String
+    //var Chapter: String
     var score: Int32
-    var timeToComplete: String
+    var timeToComplete: Int32
     var totalPointsEarned: Int32
     var totalPointsPossible: Int32
     
