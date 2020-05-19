@@ -80,6 +80,7 @@ class ChapterViewController: UIViewController {
         //Service.StartSession(date: lastActive)
         //Service.register()
         //Service.updateCharacterData()
+
          
         
 

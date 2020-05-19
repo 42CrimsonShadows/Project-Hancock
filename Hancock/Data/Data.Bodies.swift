@@ -21,7 +21,7 @@ struct Student: Codable {
 }
 
 struct Teacher: Codable {
-    var type: String
+    var type: String    
     var TOKEN: String
     var firstName: String
     var lastName: String
