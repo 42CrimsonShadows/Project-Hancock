@@ -325,10 +325,10 @@ public class ActivitySelection {
                         [CGFloat(0.59),CGFloat(0.6)], //fifth MidPoint2 x, y
                         [CGFloat(0.79),CGFloat(0.86)], //sixth point
                         //Line #3
-                        [CGFloat(0.79),CGFloat(0.12)], //fifth point
+                        [CGFloat(0.79),CGFloat(0.86)], //fifth point
                         [CGFloat(0.79),CGFloat(0.35)], //fifth MidPoint1 x, y
                         [CGFloat(0.79),CGFloat(0.6)], //fifth MidPoint2 x, y
-                        [CGFloat(0.79),CGFloat(0.86)]] //sixth point
+                        [CGFloat(0.79),CGFloat(0.12)]] //sixth point
         
         let UnderlayN = UIImage(named: "art.scnassets/LetterImages/N.png")
         letterUnderlay = UIImageView(image: UnderlayN)
@@ -1110,15 +1110,16 @@ public class ActivitySelection {
     public func loadActivityPerpendicularCross() {
         print("Called loadActivityPerpendicularCross")
         //Line #1
-        activityPoints = [[CGFloat(0.1),CGFloat(0.485)], //first point x, y
-                          [CGFloat(0.36),CGFloat(0.485)], //first MidPoint1 x, y
-                          [CGFloat(0.64),CGFloat(0.485)], //first MidPoint2 x, y
-                          [CGFloat(0.9),CGFloat(0.485)], //second point x, y
+        activityPoints = [[CGFloat(0.5),CGFloat(0.11)], //first point x, y
+                                  [CGFloat(0.5),CGFloat(0.35)], //first MidPoint1 x, y
+                                  [CGFloat(0.5),CGFloat(0.6)], //first MidPoint2 x, y
+                                  [CGFloat(0.5),CGFloat(0.88)], //second point x, y
                           //Line #2
-                          [CGFloat(0.5),CGFloat(0.11)], //first point x, y
-                          [CGFloat(0.5),CGFloat(0.35)], //first MidPoint1 x, y
-                          [CGFloat(0.5),CGFloat(0.6)], //first MidPoint2 x, y
-                          [CGFloat(0.5),CGFloat(0.88)]] //sixth point
+                                  [CGFloat(0.1),CGFloat(0.485)], //first point x, y
+                                  [CGFloat(0.36),CGFloat(0.485)], //first MidPoint1 x, y
+                                  [CGFloat(0.64),CGFloat(0.485)], //first MidPoint2 x, y
+                                  [CGFloat(0.9),CGFloat(0.485)]] //sixth point
+        
         
         let UnderlayPerpendicularCross = UIImage(named: "art.scnassets/LineTypeImages/PerpendicularCross.png")
         letterUnderlay = UIImageView(image: UnderlayPerpendicularCross)
@@ -1147,24 +1148,24 @@ public class ActivitySelection {
         print("Called loadActivitySquare")
         //Line #1
         activityPoints = [[CGFloat(0.11),CGFloat(0.2)], //first point x, y
-                          [CGFloat(0.36),CGFloat(0.2)], //first MidPoint1 x, y
-                          [CGFloat(0.62),CGFloat(0.2)], //first MidPoint2 x, y
-                          [CGFloat(0.89),CGFloat(0.2)], //first point x, y
+                                  [CGFloat(0.11),CGFloat(0.57)], //first MidPoint1 x, y
+                                  [CGFloat(0.11),CGFloat(0.38)], //first MidPoint2 x, y
+                                  [CGFloat(0.11),CGFloat(0.775)], //first point x, y
                           //Line #2
-                          [CGFloat(0.89),CGFloat(0.2)], //second point
-                          [CGFloat(0.89),CGFloat(0.38)], //second MidPoint1 x, y
-                          [CGFloat(0.89),CGFloat(0.57)], //second MidPoint2 x, y
-                          [CGFloat(0.89),CGFloat(0.775)], //second point
+                                  [CGFloat(0.11),CGFloat(0.775)], //second point
+                                  [CGFloat(0.62),CGFloat(0.775)], //second MidPoint1 x, y
+                                  [CGFloat(0.36),CGFloat(0.775)], //second MidPoint2 x, y
+                                  [CGFloat(0.89),CGFloat(0.775)], //second point
                           //Line #3
-                          [CGFloat(0.89),CGFloat(0.775)], //third point
-                          [CGFloat(0.62),CGFloat(0.775)], //third MidPoint2 x, y
-                          [CGFloat(0.36),CGFloat(0.775)], //third MidPoint1 x, y
-                          [CGFloat(0.11),CGFloat(0.775)], //third point x, y
+                                  [CGFloat(0.89),CGFloat(0.775)], //third point
+                                  [CGFloat(0.89),CGFloat(0.38)], //third MidPoint2 x, y
+                                  [CGFloat(0.89),CGFloat(0.57)], //third MidPoint1 x, y
+                                  [CGFloat(0.89),CGFloat(0.2)], //third point x, y
                           //Line #3
-                          [CGFloat(0.11),CGFloat(0.775)], //fourth point
-                          [CGFloat(0.11),CGFloat(0.57)], //fourth MidPoint1 x, y
-                          [CGFloat(0.11),CGFloat(0.38)], //fourth MidPoint2 x, y
-                          [CGFloat(0.11),CGFloat(0.2)]] //fourth point
+                                  [CGFloat(0.89),CGFloat(0.2)], //fourth point
+                                  [CGFloat(0.62),CGFloat(0.2)], //fourth MidPoint1 x, y
+                                  [CGFloat(0.36),CGFloat(0.2)], //fourth MidPoint2 x, y
+                                  [CGFloat(0.11),CGFloat(0.2)]] //fourth point
         
         let UnderlaySquare = UIImage(named: "art.scnassets/LineTypeImages/Square.png")
         letterUnderlay = UIImageView(image: UnderlaySquare)
@@ -1174,10 +1175,10 @@ public class ActivitySelection {
     public func loadActivityCircle() {
         print("Called loadActivityCircle")
         //Line #1
-        activityPoints = [[CGFloat(0.53),CGFloat(0.16)], //first point x, y
-                          [CGFloat(0.85),CGFloat(0.65)], //first MidPoint1 x, y
-                          [CGFloat(0.15),CGFloat(0.65)], //first MidPoint2 x, y
-                          [CGFloat(0.47),CGFloat(0.16)]] //first point x, y
+        activityPoints = [[CGFloat(0.47),CGFloat(0.16)], //first point x, y
+                                  [CGFloat(0.85),CGFloat(0.65)], //first MidPoint1 x, y
+                                  [CGFloat(0.15),CGFloat(0.65)], //first MidPoint2 x, y
+                                  [CGFloat(0.53),CGFloat(0.16)]] //first point x, y
         
         let UnderlayCircle = UIImage(named: "art.scnassets/LineTypeImages/Circle.png")
         letterUnderlay = UIImageView(image: UnderlayCircle)
@@ -1188,19 +1189,19 @@ public class ActivitySelection {
         print("Called loadActivityTriangle")
         //Line #1
         activityPoints = [[CGFloat(0.5),CGFloat(0.20)], //first point x, y
-                          [CGFloat(0.63),CGFloat(0.35)], //first MidPoint1 x, y
-                          [CGFloat(0.78),CGFloat(0.55)], //first MidPoint2 x, y
-                          [CGFloat(0.9),CGFloat(0.725)], //second point x, y
+                                  [CGFloat(0.22),CGFloat(0.55)], //first MidPoint1 x, y
+                                  [CGFloat(0.37),CGFloat(0.35)], //first MidPoint2 x, y
+                                  [CGFloat(0.1),CGFloat(0.725)], //second point x, y
                           //Line #2
-                          [CGFloat(0.9),CGFloat(0.725)], //fifth point
-                          [CGFloat(0.62),CGFloat(0.725)], //fifth MidPoint1 x, y
-                          [CGFloat(0.36),CGFloat(0.725)], //fifth MidPoint2 x, y
-                          [CGFloat(0.1),CGFloat(0.725)], //sixth point
+                                  [CGFloat(0.1),CGFloat(0.725)], //fifth point
+                                  [CGFloat(0.62),CGFloat(0.725)], //fifth MidPoint1 x, y
+                                  [CGFloat(0.36),CGFloat(0.725)], //fifth MidPoint2 x, y
+                                  [CGFloat(0.9),CGFloat(0.725)], //sixth point
                           //Line #3
-                          [CGFloat(0.1),CGFloat(0.725)], //fifth point
-                          [CGFloat(0.22),CGFloat(0.55)], //fifth MidPoint1 x, y
-                          [CGFloat(0.37),CGFloat(0.35)], //fifth MidPoint2 x, y
-                          [CGFloat(0.5),CGFloat(0.20)]] //sixth point
+                                  [CGFloat(0.9),CGFloat(0.725)], //fifth point
+                                  [CGFloat(0.63),CGFloat(0.35)], //fifth MidPoint1 x, y
+                                  [CGFloat(0.78),CGFloat(0.55)], //fifth MidPoint2 x, y
+                                 [CGFloat(0.5),CGFloat(0.20)]] //sixth point
         
         let UnderlayTriangle = UIImage(named: "art.scnassets/LineTypeImages/Triangle.png")
         letterUnderlay = UIImageView(image: UnderlayTriangle)
