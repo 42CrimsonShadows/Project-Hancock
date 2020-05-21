@@ -6,31 +6,33 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>28CAF41D-12FE-46B2-977B-FDB4B67B783D</key>
+		<key>A4565317-DD4A-408C-AF49-DE1F6B005A65</key>
 		<dict>
 			<key>className</key>
-			<string>IDEActivityLogSection</string>
+			<string>IDEActivityLogMajorGroupSection</string>
 			<key>documentTypeString</key>
 			<string>&lt;nil&gt;</string>
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>28CAF41D-12FE-46B2-977B-FDB4B67B783D.xcactivitylog</string>
+			<string>A4565317-DD4A-408C-AF49-DE1F6B005A65.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>E</string>
+				<string>W</string>
 			</dict>
 			<key>signature</key>
 			<string>Hancock-aenklprhvkorzbbrsiahwbqccpxy</string>
 			<key>timeStartedRecording</key>
-			<real>584998028.45570397</real>
+			<real>606029990.98841298</real>
 			<key>timeStoppedRecording</key>
-			<real>584998056.92823803</real>
+			<real>606030012.251912</real>
 			<key>title</key>
 			<string>Build target Hancock</string>
 			<key>uniqueIdentifier</key>
-			<string>28CAF41D-12FE-46B2-977B-FDB4B67B783D</string>
+			<string>A4565317-DD4A-408C-AF49-DE1F6B005A65</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

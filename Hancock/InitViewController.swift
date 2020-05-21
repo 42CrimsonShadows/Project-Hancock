@@ -1,9 +1,5 @@
 //
-//  InitViewController.swift
-//  Hancock
-//
 //  Created by Casey on 5/30/19.
-//  Copyright © 2019 Chris Ross. All rights reserved.
 //
 
 import UIKit
