@@ -7,12 +7,16 @@ provides-member:
 - ["7Hancock18HomeViewControllerC", ""]
 provides-dynamic-lookup:
 - "logoutHandler"
-- "tappedMe"
+- "lowerCaseImage"
+- "tappedLower"
+- "tappedUpper"
 - "upperCaseImage"
 - "viewDidLoad"
 depends-top-level:
 - "AssignmentPrecedence"
+- !private "BooleanLiteralType"
 - "HomeViewController"
+- !private "StringLiteralType"
 - "UIImageView"
 - !private "UITapGestureRecognizer"
 - "UIViewController"
@@ -26,9 +30,11 @@ depends-member:
 - !private ["s7CVarArgP", "dismiss"]
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "isUserInteractionEnabled"]
+- !private ["s7CVarArgP", "lowerCaseImage"]
 - !private ["s7CVarArgP", "performSegue"]
 - !private ["s7CVarArgP", "print"]
-- !private ["s7CVarArgP", "tappedMe"]
+- !private ["s7CVarArgP", "tappedLower"]
+- !private ["s7CVarArgP", "tappedUpper"]
 - !private ["s7CVarArgP", "upperCaseImage"]
 - !private ["s7CVarArgP", "viewDidLoad"]
 - !private ["s28CustomDebugStringConvertibleP", "UITapGestureRecognizer"]
@@ -37,9 +43,11 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "dismiss"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "isUserInteractionEnabled"]
+- !private ["s28CustomDebugStringConvertibleP", "lowerCaseImage"]
 - !private ["s28CustomDebugStringConvertibleP", "performSegue"]
 - !private ["s28CustomDebugStringConvertibleP", "print"]
-- !private ["s28CustomDebugStringConvertibleP", "tappedMe"]
+- !private ["s28CustomDebugStringConvertibleP", "tappedLower"]
+- !private ["s28CustomDebugStringConvertibleP", "tappedUpper"]
 - !private ["s28CustomDebugStringConvertibleP", "upperCaseImage"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
 - !private ["s17CustomReflectableP", "addGestureRecognizer"]
@@ -50,9 +58,11 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "dismiss"]
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "isUserInteractionEnabled"]
+- !private ["s23CustomStringConvertibleP", "lowerCaseImage"]
 - !private ["s23CustomStringConvertibleP", "performSegue"]
 - !private ["s23CustomStringConvertibleP", "print"]
-- !private ["s23CustomStringConvertibleP", "tappedMe"]
+- !private ["s23CustomStringConvertibleP", "tappedLower"]
+- !private ["s23CustomStringConvertibleP", "tappedUpper"]
 - !private ["s23CustomStringConvertibleP", "upperCaseImage"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
 - !private ["Se", "addGestureRecognizer"]
@@ -65,9 +75,11 @@ depends-member:
 - !private ["SQ", "dismiss"]
 - !private ["SQ", "init"]
 - !private ["SQ", "isUserInteractionEnabled"]
+- !private ["SQ", "lowerCaseImage"]
 - !private ["SQ", "performSegue"]
 - !private ["SQ", "print"]
-- !private ["SQ", "tappedMe"]
+- !private ["SQ", "tappedLower"]
+- !private ["SQ", "tappedUpper"]
 - !private ["SQ", "upperCaseImage"]
 - !private ["SQ", "viewDidLoad"]
 - !private ["s23ExpressibleByNilLiteralP", "addGestureRecognizer"]
@@ -78,9 +90,11 @@ depends-member:
 - !private ["SH", "dismiss"]
 - !private ["SH", "init"]
 - !private ["SH", "isUserInteractionEnabled"]
+- !private ["SH", "lowerCaseImage"]
 - !private ["SH", "performSegue"]
 - !private ["SH", "print"]
-- !private ["SH", "tappedMe"]
+- !private ["SH", "tappedLower"]
+- !private ["SH", "tappedUpper"]
 - !private ["SH", "upperCaseImage"]
 - !private ["SH", "viewDidLoad"]
 - ["7Hancock18HomeViewControllerC", "UIImageView"]
@@ -89,9 +103,11 @@ depends-member:
 - !private ["7Hancock18HomeViewControllerC", "dismiss"]
 - ["7Hancock18HomeViewControllerC", "init"]
 - ["7Hancock18HomeViewControllerC", "logoutHandler"]
+- ["7Hancock18HomeViewControllerC", "lowerCaseImage"]
 - !private ["7Hancock18HomeViewControllerC", "performSegue"]
 - !private ["7Hancock18HomeViewControllerC", "print"]
-- ["7Hancock18HomeViewControllerC", "tappedMe"]
+- ["7Hancock18HomeViewControllerC", "tappedLower"]
+- ["7Hancock18HomeViewControllerC", "tappedUpper"]
 - ["7Hancock18HomeViewControllerC", "upperCaseImage"]
 - ["7Hancock18HomeViewControllerC", "viewDidLoad"]
 - !private ["So8NSCodingP", "UITapGestureRecognizer"]
@@ -100,18 +116,22 @@ depends-member:
 - !private ["So8NSCodingP", "dismiss"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "isUserInteractionEnabled"]
+- !private ["So8NSCodingP", "lowerCaseImage"]
 - !private ["So8NSCodingP", "performSegue"]
 - !private ["So8NSCodingP", "print"]
-- !private ["So8NSCodingP", "tappedMe"]
+- !private ["So8NSCodingP", "tappedLower"]
+- !private ["So8NSCodingP", "tappedUpper"]
 - !private ["So8NSCodingP", "upperCaseImage"]
 - !private ["So8NSCodingP", "viewDidLoad"]
 - !private ["So26NSExtensionRequestHandlingP", "UITapGestureRecognizer"]
 - ["So26NSExtensionRequestHandlingP", ""]
 - !private ["So26NSExtensionRequestHandlingP", "dismiss"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "lowerCaseImage"]
 - !private ["So26NSExtensionRequestHandlingP", "performSegue"]
 - !private ["So26NSExtensionRequestHandlingP", "print"]
-- !private ["So26NSExtensionRequestHandlingP", "tappedMe"]
+- !private ["So26NSExtensionRequestHandlingP", "tappedLower"]
+- !private ["So26NSExtensionRequestHandlingP", "tappedUpper"]
 - !private ["So26NSExtensionRequestHandlingP", "upperCaseImage"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - ["So8NSObjectC", "UIImageView"]
@@ -121,9 +141,11 @@ depends-member:
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "isUserInteractionEnabled"]
 - ["So8NSObjectC", "logoutHandler"]
+- ["So8NSObjectC", "lowerCaseImage"]
 - !private ["So8NSObjectC", "performSegue"]
 - !private ["So8NSObjectC", "print"]
-- ["So8NSObjectC", "tappedMe"]
+- ["So8NSObjectC", "tappedLower"]
+- ["So8NSObjectC", "tappedUpper"]
 - ["So8NSObjectC", "upperCaseImage"]
 - ["So8NSObjectC", "viewDidLoad"]
 - !private ["So8NSObjectP", "UITapGestureRecognizer"]
@@ -132,9 +154,11 @@ depends-member:
 - !private ["So8NSObjectP", "dismiss"]
 - !private ["So8NSObjectP", "init"]
 - !private ["So8NSObjectP", "isUserInteractionEnabled"]
+- !private ["So8NSObjectP", "lowerCaseImage"]
 - !private ["So8NSObjectP", "performSegue"]
 - !private ["So8NSObjectP", "print"]
-- !private ["So8NSObjectP", "tappedMe"]
+- !private ["So8NSObjectP", "tappedLower"]
+- !private ["So8NSObjectP", "tappedUpper"]
 - !private ["So8NSObjectP", "upperCaseImage"]
 - !private ["So8NSObjectP", "viewDidLoad"]
 - !private ["Sq", "addGestureRecognizer"]
@@ -151,18 +175,22 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "dismiss"]
 - !private ["So21UIAppearanceContainerP", "init"]
 - !private ["So21UIAppearanceContainerP", "isUserInteractionEnabled"]
+- !private ["So21UIAppearanceContainerP", "lowerCaseImage"]
 - !private ["So21UIAppearanceContainerP", "performSegue"]
 - !private ["So21UIAppearanceContainerP", "print"]
-- !private ["So21UIAppearanceContainerP", "tappedMe"]
+- !private ["So21UIAppearanceContainerP", "tappedLower"]
+- !private ["So21UIAppearanceContainerP", "tappedUpper"]
 - !private ["So21UIAppearanceContainerP", "upperCaseImage"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
 - !private ["So18UIContentContainerP", "UITapGestureRecognizer"]
 - ["So18UIContentContainerP", ""]
 - !private ["So18UIContentContainerP", "dismiss"]
 - !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "lowerCaseImage"]
 - !private ["So18UIContentContainerP", "performSegue"]
 - !private ["So18UIContentContainerP", "print"]
-- !private ["So18UIContentContainerP", "tappedMe"]
+- !private ["So18UIContentContainerP", "tappedLower"]
+- !private ["So18UIContentContainerP", "tappedUpper"]
 - !private ["So18UIContentContainerP", "upperCaseImage"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - !private ["So17UICoordinateSpaceP", "addGestureRecognizer"]
@@ -175,9 +203,11 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "dismiss"]
 - !private ["So18UIFocusEnvironmentP", "init"]
 - !private ["So18UIFocusEnvironmentP", "isUserInteractionEnabled"]
+- !private ["So18UIFocusEnvironmentP", "lowerCaseImage"]
 - !private ["So18UIFocusEnvironmentP", "performSegue"]
 - !private ["So18UIFocusEnvironmentP", "print"]
-- !private ["So18UIFocusEnvironmentP", "tappedMe"]
+- !private ["So18UIFocusEnvironmentP", "tappedLower"]
+- !private ["So18UIFocusEnvironmentP", "tappedUpper"]
 - !private ["So18UIFocusEnvironmentP", "upperCaseImage"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
 - !private ["So11UIFocusItemP", "addGestureRecognizer"]
@@ -187,15 +217,19 @@ depends-member:
 - !private ["So19UIGestureRecognizerC", "init"]
 - !private ["So11UIImageViewC", "addGestureRecognizer"]
 - !private ["So11UIImageViewC", "isUserInteractionEnabled"]
+- !private ["So24UILargeContentViewerItemP", "addGestureRecognizer"]
+- !private ["So24UILargeContentViewerItemP", "isUserInteractionEnabled"]
 - !private ["So30UIPasteConfigurationSupportingP", "UITapGestureRecognizer"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So30UIPasteConfigurationSupportingP", "addGestureRecognizer"]
 - !private ["So30UIPasteConfigurationSupportingP", "dismiss"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "isUserInteractionEnabled"]
+- !private ["So30UIPasteConfigurationSupportingP", "lowerCaseImage"]
 - !private ["So30UIPasteConfigurationSupportingP", "performSegue"]
 - !private ["So30UIPasteConfigurationSupportingP", "print"]
-- !private ["So30UIPasteConfigurationSupportingP", "tappedMe"]
+- !private ["So30UIPasteConfigurationSupportingP", "tappedLower"]
+- !private ["So30UIPasteConfigurationSupportingP", "tappedUpper"]
 - !private ["So30UIPasteConfigurationSupportingP", "upperCaseImage"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - ["So11UIResponderC", "UIImageView"]
@@ -205,9 +239,11 @@ depends-member:
 - ["So11UIResponderC", "init"]
 - !private ["So11UIResponderC", "isUserInteractionEnabled"]
 - ["So11UIResponderC", "logoutHandler"]
+- ["So11UIResponderC", "lowerCaseImage"]
 - !private ["So11UIResponderC", "performSegue"]
 - !private ["So11UIResponderC", "print"]
-- ["So11UIResponderC", "tappedMe"]
+- ["So11UIResponderC", "tappedLower"]
+- ["So11UIResponderC", "tappedUpper"]
 - ["So11UIResponderC", "upperCaseImage"]
 - ["So11UIResponderC", "viewDidLoad"]
 - !private ["So30UIResponderStandardEditActionsP", "UITapGestureRecognizer"]
@@ -216,18 +252,22 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "dismiss"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "isUserInteractionEnabled"]
+- !private ["So30UIResponderStandardEditActionsP", "lowerCaseImage"]
 - !private ["So30UIResponderStandardEditActionsP", "performSegue"]
 - !private ["So30UIResponderStandardEditActionsP", "print"]
-- !private ["So30UIResponderStandardEditActionsP", "tappedMe"]
+- !private ["So30UIResponderStandardEditActionsP", "tappedLower"]
+- !private ["So30UIResponderStandardEditActionsP", "tappedUpper"]
 - !private ["So30UIResponderStandardEditActionsP", "upperCaseImage"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
 - !private ["So16UIStateRestoringP", "UITapGestureRecognizer"]
 - ["So16UIStateRestoringP", ""]
 - !private ["So16UIStateRestoringP", "dismiss"]
 - !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "lowerCaseImage"]
 - !private ["So16UIStateRestoringP", "performSegue"]
 - !private ["So16UIStateRestoringP", "print"]
-- !private ["So16UIStateRestoringP", "tappedMe"]
+- !private ["So16UIStateRestoringP", "tappedLower"]
+- !private ["So16UIStateRestoringP", "tappedUpper"]
 - !private ["So16UIStateRestoringP", "upperCaseImage"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - !private ["So22UITapGestureRecognizerC", "init"]
@@ -237,9 +277,11 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "dismiss"]
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "isUserInteractionEnabled"]
+- !private ["So18UITraitEnvironmentP", "lowerCaseImage"]
 - !private ["So18UITraitEnvironmentP", "performSegue"]
 - !private ["So18UITraitEnvironmentP", "print"]
-- !private ["So18UITraitEnvironmentP", "tappedMe"]
+- !private ["So18UITraitEnvironmentP", "tappedLower"]
+- !private ["So18UITraitEnvironmentP", "tappedUpper"]
 - !private ["So18UITraitEnvironmentP", "upperCaseImage"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - !private ["So23UIUserActivityRestoringP", "UITapGestureRecognizer"]
@@ -248,9 +290,11 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "dismiss"]
 - !private ["So23UIUserActivityRestoringP", "init"]
 - !private ["So23UIUserActivityRestoringP", "isUserInteractionEnabled"]
+- !private ["So23UIUserActivityRestoringP", "lowerCaseImage"]
 - !private ["So23UIUserActivityRestoringP", "performSegue"]
 - !private ["So23UIUserActivityRestoringP", "print"]
-- !private ["So23UIUserActivityRestoringP", "tappedMe"]
+- !private ["So23UIUserActivityRestoringP", "tappedLower"]
+- !private ["So23UIUserActivityRestoringP", "tappedUpper"]
 - !private ["So23UIUserActivityRestoringP", "upperCaseImage"]
 - !private ["So23UIUserActivityRestoringP", "viewDidLoad"]
 - !private ["So6UIViewC", "addGestureRecognizer"]
@@ -261,9 +305,11 @@ depends-member:
 - !private ["So16UIViewControllerC", "dismiss"]
 - ["So16UIViewControllerC", "init"]
 - ["So16UIViewControllerC", "logoutHandler"]
+- ["So16UIViewControllerC", "lowerCaseImage"]
 - !private ["So16UIViewControllerC", "performSegue"]
 - !private ["So16UIViewControllerC", "print"]
-- ["So16UIViewControllerC", "tappedMe"]
+- ["So16UIViewControllerC", "tappedLower"]
+- ["So16UIViewControllerC", "tappedUpper"]
 - ["So16UIViewControllerC", "upperCaseImage"]
 - ["So16UIViewControllerC", "viewDidLoad"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UITapGestureRecognizer"]
@@ -272,11 +318,26 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dismiss"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isUserInteractionEnabled"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "lowerCaseImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "performSegue"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "tappedMe"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "tappedLower"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "tappedUpper"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "upperCaseImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UITapGestureRecognizer"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "addGestureRecognizer"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "dismiss"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isUserInteractionEnabled"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "lowerCaseImage"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "performSegue"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "tappedLower"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "tappedUpper"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "upperCaseImage"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewDidLoad"]
 - !private ["s21_ObjectiveCBridgeableP", "addGestureRecognizer"]
 - !private ["s21_ObjectiveCBridgeableP", "isUserInteractionEnabled"]
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "addGestureRecognizer"]
@@ -310,6 +371,7 @@ depends-nominal:
 - !private "So20UIFocusItemContainerP"
 - !private "So19UIGestureRecognizerC"
 - !private "So11UIImageViewC"
+- !private "So24UILargeContentViewerItemP"
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
@@ -320,49 +382,75 @@ depends-nominal:
 - !private "So6UIViewC"
 - "So16UIViewControllerC"
 - "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
 - !private "s21_ObjectiveCBridgeableP"
 - !private "s38__DefaultCustomPlaygroundQuickLookableP"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ModelIO.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GLKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ARKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SceneKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SpriteKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/usr/include/objc/ObjectiveC.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/usr/include/Darwin.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "f49b54c87051f119694763e587ed4201"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreMIDI.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ModelIO.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreMedia.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/simd.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreImage.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/QuartzCore.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Dispatch.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Metal.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Darwin.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Foundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/AVFoundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreFoundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreAudio.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreGraphics.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Swift.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/UIKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/GLKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ARKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SceneKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SpriteKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SwiftOnoneSupport.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Combine.framework/Modules/Combine.swiftmodule/arm64-apple-ios.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/ObjectiveC.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreMIDI.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreMedia.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreImage.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/QuartzCore.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Dispatch.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Metal.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Darwin.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Foundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/AVFoundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreFoundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreAudio.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreGraphics.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Swift.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/UIKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/GLKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SceneKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SpriteKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/QuickLook.framework/Headers/QuickLook.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "608137cdfce0c3139a9e28128e6ae3e5"
