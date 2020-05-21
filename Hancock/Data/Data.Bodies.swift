@@ -16,51 +16,15 @@ struct Student: Codable {
     var type: String
     var firstName: String
     var lastName: String
+    var email: String
     var username: String
     var password: String
 }
 
-struct Teacher: Codable {
-    var type: String    
-    var TOKEN: String
-    var firstName: String
-    var lastName: String
-    var userName: String
-    var password: String
-    var email: String
-}
-
-struct Parent: Codable {
-    var type: String
-    var TOKEN: String
-    var email: String
-    var firstName: String
-    var lastName: String
-    var userName: String
+struct Credentials: Codable {
+    var username: String
     var password: String
 }
-
-struct Doctor: Codable {
-    var type: String
-    var TOKEN: String
-    var firstName: String
-    var lastName: String
-    var userName: String
-    var password: String
-    var email: String
-}
-
-struct Admin: Codable {
-    var type: String
-    var TOKEN: String
-    var firstName: String
-    var lastName: String
-    var userName: String
-    var password: String
-    var email: String
-}
-
-
 //MARK: --Reports
 
 //MARK: --Time reports

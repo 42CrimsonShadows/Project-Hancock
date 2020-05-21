@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class Service {
     
     
@@ -17,39 +18,8 @@ class Service {
     //MARK: --CREATE(POST)
     //All these functions are created for adding new entries to the database
     
-    static func updateCharacterData(){
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-        let test = SingleActivityReport(username: "poop", password: "butt", letter: "A", score: 2, timeToComplete: 123, totalPointsEarned: 10, totalPointsPossible: 10)
-        do{
-            let endpoint = "https://abcgoapp.org/api/users/Data"
-            let data = try encoder.encode(test)
-            guard let url = URL(string: endpoint) else {
-                print("Could not set the URL, contact the developer")
-
-                return
-                
-            }
-                //print(String(data: data, encoding: .utf8)!)
-        
-            var request = URLRequest(url: url)
-            request.setValue("application/json", forHTTPHeaderField: "content-type")
-            request.httpMethod = "POST"
-            request.httpBody = data
-        
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
-                print(response)
-                if let error = error {
-                    //Ping(text: error.localizedDescription, style: .danger).show()
-                    print(error)
-                }
-            }.resume()
-        } catch {
-            print("Could not encode")
-        }
-    }
     //Register new users
-    static func register() {
+    static func register (firstName: String, lastName: String, email: String, username: String, password: String) {
 //        struct user: Codable {
 //            var firstName: String
 //            var lastName: String
@@ -61,10 +31,11 @@ class Service {
         
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
-        let test = Student(type: "Student", firstName: "Student1", lastName: "testing", username: "Student1", password: "Test")
+        let user = Student(type: "Student", firstName: firstName, lastName: lastName, email: email, username: username, password: password)
+        //let test = Student(type: "Student", firstName: "Student1", lastName: "testing", username: "Student1", password: "Test")
         do{
             let endpoint = "https://abcgoapp.org/api/users/register"
-            let data = try encoder.encode(test)
+            let data = try encoder.encode(user)
             guard let url = URL(string: endpoint) else {
                 print("Could not set the URL, contact the developer")
 
@@ -90,17 +61,18 @@ class Service {
         }
     }
     
-    static func login(){
+    static func login(username:String, password:String) -> Bool{
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
-        let test = Student(type: "Student", firstName: "Student1", lastName: "testing", username: "Student1", password: "Test")
+        let user = Credentials(username:username, password:password)
+        //let test = Student(type: "Student", firstName: "Student1", lastName: "testing", email: "email", username: "Student1", password: "Test")
         do{
             let endpoint = "https://abcgoapp.org/api/users/authenticate"
-            let data = try encoder.encode(test)
+            let data = try encoder.encode(user)
             guard let url = URL(string: endpoint) else {
                 print("Could not set the URL, contact the developer")
-
-                return
+                
+                return false
                 
             }
                 //print(String(data: data, encoding: .utf8)!)
@@ -109,17 +81,31 @@ class Service {
             request.setValue("application/json", forHTTPHeaderField: "content-type")
             request.httpMethod = "POST"
             request.httpBody = data
+            var code = 0
         
             URLSession.shared.dataTask(with: request) { (data, response, error) in
-                print(response)
+                //print(response)
+                if let HTTPResponse = response as? HTTPURLResponse
+                {
+                    print(HTTPResponse.statusCode)
+                    code = HTTPResponse.statusCode
+                    switch code {
+                    case 200:
+                        SignInViewController.loginSuccess()
+                    default:
+                        SignInViewController.loginFailure()
+                    }
+                }
                 if let error = error {
                     //Ping(text: error.localizedDescription, style: .danger).show()
-                    print(error)
+                    //print(error.localizedDescription)
                 }
             }.resume()
+             return true
         
         } catch {
             print("Could not encode")
+            return false
         }
     }
     
@@ -298,3 +284,6 @@ extension Date {
 //        return hour
 //    }
 //}
+
+
+

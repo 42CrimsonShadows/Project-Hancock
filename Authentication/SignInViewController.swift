@@ -7,8 +7,6 @@
 //
 
 import UIKit
-//import firebase
-
 
 class SignInViewController: UIViewController {
 
@@ -21,7 +19,7 @@ class SignInViewController: UIViewController {
     @IBAction func Login(_ sender: Any) {
         
     print("Logging in...")
-        guard let email = IDField.text else { return }
+        guard let username = IDField.text else { return }
         guard let pass = PassField.text else { return }
         
 //        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
@@ -35,20 +33,22 @@ class SignInViewController: UIViewController {
 //
 //            }
 //        }
-//    }
+        
+        Service.login(username:username, password:pass)
+    }
     
-    func RegisterButton(_ sender: Any) {
+    @IBAction func RegisterButton(_ sender: Any) {
         print("Loading Registration Forms...")
     }
     
     
-   func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
 //        if let user = Auth.auth().currentUser{
@@ -57,7 +57,21 @@ class SignInViewController: UIViewController {
         
     }
     
+    static func loginSuccess()
+    {
+        print("SUCCESS")
 
+    }
+    
+    static func loginFailure()
+    {
+        print("Not a surprise")
+    }
+    
+    func doThing()
+    {
+        self.performSegue(withIdentifier: "toHomePage", sender: self)
+    }
     /*
     // MARK: - Navigation
 
@@ -68,5 +82,5 @@ class SignInViewController: UIViewController {
     }
     */
 
-    }
 }
+
