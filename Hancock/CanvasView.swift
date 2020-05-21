@@ -200,7 +200,7 @@ class CanvasView: UIView {
             if arraySize > 8 {
                 //start point and end for the current letter's third line
                 startingPoint = CGPoint(x: bounds.maxX * activityPoints[8][0], y: bounds.maxY * activityPoints[8][1])
-                middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[9][0], y: bounds.maxY * activityPoints[11][1])
+                middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[9][0], y: bounds.maxY * activityPoints[9][1])
                 middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[10][0], y: bounds.maxY * activityPoints[10][1])
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[11][0], y: bounds.maxY * activityPoints[11][1])
                 
@@ -408,24 +408,15 @@ class CanvasView: UIView {
             case .P7_P8:
                 //A4GreenLine?.isHidden = false
                 //playAudioFile(file: "RockExplode", type: "wav")
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    //self.playAudioFile(file: "Line5", type: "mp3")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
-                    
-                    //print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[7])")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[7]]!, type: "mp3")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[6]]!, type: "mp3")
                     
                     if !self.letterComplete {
                         //wait 1 second
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
-                            
-                            //print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[8])")
-                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[8]]!, type: "mp3")
                             self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[7]]!, type: "mp3")
                             
                             self.pinkDot?.isHidden = true
@@ -442,26 +433,17 @@ class CanvasView: UIView {
                 
             case .P5_P6:
                 //A3GreenLine?.isHidden = false
-                //playAudioFile(file: "RockExplode", type: "wav")
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
-                
+                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
                     //wait 1 second
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        //self.playAudioFile(file: "Line5", type: "mp3")
-                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration8"]!, type: "mp3")
-                        
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                         print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[4])")
-                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[5]]!, type: "mp3")
                         self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[4]]!, type: "mp3")
                         
                         if !self.letterComplete {
-                            //wait 1 second
+                            //wait 2 second
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration9"]!, type: "mp3")
-                                
                                 print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[5])")
-                                //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[6]]!, type: "mp3")
                                 self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[5]]!, type: "mp3")
                                 
                                 //wait 2 seconds
@@ -487,13 +469,11 @@ class CanvasView: UIView {
                 }
             case .P3_P4:
                 //A2GreenLine?.isHidden = false
-                
-                //playAudioFile(file: "RockBreak2", type: "aiff")
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
                 
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     //self.playAudioFile(file: "Line5", type: "mp3")
                     //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
                     
@@ -513,11 +493,13 @@ class CanvasView: UIView {
                             
                             //wait 2 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.purpleDot?.pulsate(duration: 0.6)
+                                //self.purpleDot?.pulsate(duration: 0.6)
+                                self.yellowDot?.pulsate(duration: 0.6)
                                 
                                 //wait 2 seconds
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                    self.yellowDot?.pulsate(duration: 0.6)
+                                    //self.yellowDot?.pulsate(duration: 0.6)
+                                    self.purpleDot?.pulsate(duration: 0.6)
                                 })
                             })
                         })
@@ -534,44 +516,39 @@ class CanvasView: UIView {
                 
             case .P1_P2:
                 //A1GreenLine?.isHidden = false
-                //playAudioFile(file: "RockBreak1", type: "wav")
-                playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                //playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
+                if activityPoints.count < 5 {
+                    letterComplete = true
+                }
                 
                 //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    //self.playAudioFile(file: "Line5", type: "mp3")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration4"]!, type: "mp3")
-                    
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[0])")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[0]]!, type: "mp3")
+
                     self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[0]]!, type: "mp3")
-                    //wait 1 second
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                        //self.playAudioFile(file: "Line6", type: "mp3")
-                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration5"]!, type: "mp3")
-                        
-                        print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[1])")
-                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[1]]!, type: "mp3")
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[1]]!, type: "mp3")
-                        
-                        //wait 3 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                            self.blueDot?.pulsate(duration: 0.6)
-                            //wait 2 seconds
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.orangeDot?.pulsate(duration: 0.6)
+
+                    if self.letterComplete == false{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[1])")
+                            self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[1]]!, type: "mp3")
+                            
+                            //wait 3 seconds
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                                self.blueDot?.pulsate(duration: 0.6)
+                                //wait 2 seconds
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                    self.orangeDot?.pulsate(duration: 0.6)
+                                })
                             })
                         })
-                    })
+                    }
                 })
                 letterState = .P3_P4
                 Line1 = false
                 Line2 = true
                 Line3 = false
                 Line4 = false
-                if activityPoints.count < 5 {
-                    letterComplete = true
-                }
             }
         }
     }
@@ -627,6 +604,7 @@ class CanvasView: UIView {
             // Store into finished lines to allow for a full redraw on option changes.
             finishedLines.append(line)
             print("good line")
+            
         } else {
             print("not a good line")
             
@@ -693,96 +671,194 @@ class CanvasView: UIView {
     
     func loadletterNarration(currentletter: String) -> [String]{
         
-        var narrationArray: [String] = []
+        //var narrationArray: [String] = []
         
         switch currentletter {
         case "A":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load A narration")
+            return ["Narration44", "Narration45", "Narration46", "Narration47", "Narration48"]
         case "B":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load B narration")
+            return ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
         case "C":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load C narration")
+            return ["letter4Finish", "letter5Finish"]
         case "D":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load D narration")
+            return ["ThankYou", "Narration34", "letter3Finish"]
         case "E":
             print("Load E narration")
-            narrationArray = ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
-            //return ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
+            return ["Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39", "Narration40"]
         case "F":
             print("Load F narration")
-            narrationArray = ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
-            //return ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
+            return ["Narration26", "Narration27", "Narration28", "Narration29", "Narration30"]
         case "G":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load G narration")
+            return ["Narration4", "Narration5", "Narration6"]
         case "H":
             print("Load H narration")
-            narrationArray = ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
-            //return ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
+            return ["Narration46", "Narration47", "Narration48", "Narration49", "Narration50"]
         case "I":
             print("Load I narration")
-            narrationArray = ["Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
-            //return ["Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
+            return ["Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
         case "J":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load J narration")
+            return ["Narration28", "Narration29", "Narration30"]
         case "K":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load K narration")
+            return ["Narration3", "Narration4", "Narration5", "Narration6", "Narration7", "Narration8", "Narration9"]
         case "L":
             print("Load L narration")
-            narrationArray = ["Narration20", "Narration21", "Narration22"]
-            //return ["Narration20", "Narration21", "Narration22"]
+            return ["Narration20", "Narration21", "Narration22"]
         case "M":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load M narration")
+            return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
         case "N":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load N narration")
+            return ["Narration6", "Narration7", "Narration8", "Narration9", "Narration10"]
         case "O":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load O narration")
+            return ["Narration34"]
         case "P":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load P narration")
+            return ["letter4Finish", "Narration6", "ThankYou"]
         case "Q":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load Q narration")
+            return ["Narration14", "Narration15", "Narration16"]
         case "R":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load R narration")
+            return ["letter2Finish", "Narration13", "letter5Finish", "Narration14", "letter3Finish"]
         case "S":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load S narration")
+            return ["Narration22", "Stop"]
         case "T":
             print("Load T narration")
-            narrationArray = ["Narration13", "Narration14", "Narration15"]
-            //return ["Narration13", "Narration14", "Narration15"]
+            return ["Narration13", "Narration14", "Narration15"]
         case "U":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load U narration")
+            return ["letter3Finish", "letter5Finish"]
         case "V":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load V narration")
+            return ["Narration14", "Narration15", "Narration16"]
         case "W":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load W narration")
+            return ["Narration22", "Narration23", "Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
         case "X":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load X narration")
+            return ["Narration33", "Narration34", "Narration35"]
         case "Y":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load Y narration")
+            return ["Narration22", "Narration23", "Narration24", "Narration25", "Narration26"]
         case "Z":
-            print("do stuff")
-            return ["Narration", "Narration"]
+            print("Load Z narration")
+            return ["Narration14", "Narration15", "Narration16", "Narration17", "Narration18"]
+        case "a":
+            print("Load a narration")
+            return ["Narration9", "Narration10", "Narration11"]
+        case "b":
+            print("Load b narration")
+            return ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
+        case "c":
+            print("Load c narration")
+            return ["Narration5"]
+        case "d":
+            print("Load d narration")
+            return ["Narration15", "Narration16", "Narration17"]
+        case "e":
+            print("Load e narration")
+            return ["Narration24", "Narration25", "Narration26"]
+        case "f":
+            print("Load f narration")
+            return ["Narration6", "Narration7", "Narration8"]
+        case "g":
+            print("Load g narration")
+            return ["Narration21", "Narration22", "Narration23"]
+        case "h":
+            print("Load h narration")
+            return ["Narration30", "Narration31", "Narration32"]
+        case "i":
+            print("Load i narration")
+            return ["Narration32", "Narration33", "Narration34"]
+        case "j":
+            print("Load j narration")
+            return ["Narration28", "Narration29", "Narration30"]
+        case "k":
+            print("Load k narration")
+            return ["Narration15", "Narration16", "Narration17", "Narration18", "Narration19"]
+        case "l":
+            print("Load l narration")
+            return ["Narration5"]
+        case "m":
+            print("Load m narration")
+            return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
+        case "n":
+            print("Load n narration")
+            return ["Narration22", "Narration23", "Narration24"]
+        case "o":
+            print("Load o narration")
+            return ["Narration27"]
+        case "p":
+            print("Load p narration")
+            return ["Narration6", "Narration7", "Narration8"]
+        case "q":
+            print("Load q narration")
+            return ["Narration12", "Narration13", "Narration14"]
+        case "r":
+            print("Load r narration")
+            return ["Narration14", "Narration15", "Narration16"]
+        case "s":
+            print("Load s narration")
+            return ["Narration10"]
+        case "t":
+            print("Load t narration")
+            return ["Narration38", "Narration39", "Narration40"]
+        case "u":
+            print("Load u narration")
+            return ["Narration4", "Narration5", "Narration6"]
+        case "v":
+            print("Load v narration")
+            return ["Narration15", "Narration16", "Narration17"]
+        case "w":
+            print("Load w narration")
+            return ["Narration22", "Narration23", "Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
+        case "x":
+            print("Load x narration")
+            return ["Narration18", "Narration19", "Narration20"]
+        case "y":
+            print("Load y narration")
+            return ["Narration9", "Narration10", "Narration11"]
+        case "z":
+            print("Load z narration")
+            return ["Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
+        case "-":
+            print("Load - narration")
+            return ["GreatJob"]
+        case "/":
+            print("Load / narration")
+            return ["GreatJob"]
+        case "|":
+            print("Load | narration")
+            return ["GreatJob"]
+        case "'\'":
+            print("Load '\' narration")
+            return ["GreatJob"]
+        case "cross+":
+            print("Load cross+ narration")
+            return ["GreatJob", "BlueToOrange", "Amazing"]
+        case "crossx":
+            print("Load crossx narration")
+            return ["GreatJob", "BlueToOrange", "Amazing"]
+        case "triangle":
+            print("Load triangle narration")
+            return ["GreatJob", "BlueToOrange", "Amazing", "YellowToPurple", "Fantastic"]
+        case "circle":
+            print("Load circle narration")
+            return ["GreatJob"]
+        case "square":
+            print("Load square narration")
+            return ["GreatJob", "BlueToOrange", "Amazing", "YellowToPurple", "Fantastic", "YellowToPurple", "AwesomeJob"]
         default:
             return ["Narration", "Narration"]
         }
-        return narrationArray
     }
 }

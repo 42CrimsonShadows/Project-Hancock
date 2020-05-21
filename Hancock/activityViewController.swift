@@ -188,6 +188,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         return BlackDotView8
     }()
     
+    
     //MARK: - ACTIONS
     
     @IBAction func backButton(_ sender: Any) {
@@ -225,7 +226,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         setupMiddleDots()
         
         //load animations
-        antChillImage.loadGif(name: "Anthony-Chillaxing")
+        antChillImage.loadGif(name: "Anthony-Chillaxing") //can be set to different images for different chapters
         grassImage.loadGif(name: "Grass-Blowing")
         
         antFace.isHidden = true
@@ -246,6 +247,15 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.Line3 = false
         canvasView.Line4 = false
         
+        //FIXME: if the chapter is one of the line chapters play the first narration
+        if (selectedActivity == "-" || selectedActivity == "/" || selectedActivity == "|" || selectedActivity == "'\'" || selectedActivity == "cross+" || selectedActivity == "crossx" || selectedActivity == "square" || selectedActivity == "circle" || selectedActivity == "triangle"){
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.canvasView.playAudioNarrationFile(file: chapterSelectedSoundDict!["GreenToRed"]!, type: "mp3")
+            })
+        }
+        
+            
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             //play the pulsate animation for the first dot
             self.canvasView.greenDot?.pulsate(duration: 0.6)
@@ -325,7 +335,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         var purpleDot6: CGPoint?
         var yellowDot7: CGPoint?
         var PinkDot8: CGPoint?
-        var WhiteDot8: CGPoint?
+        var WhiteDot9: CGPoint?
         
         let dotArraySize = activityPoints.count
         
@@ -336,17 +346,18 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             
             //if there is more than two lines
             if dotArraySize > 8 {
-                purpleDot6 = CGPoint(x: 600 * activityPoints[8][0], y: 900 * activityPoints[8][1])
-                yellowDot7 = CGPoint(x: 600 * activityPoints[11][0], y: 900 * activityPoints[11][1])
+                yellowDot7 = CGPoint(x: 600 * activityPoints[8][0], y: 900 * activityPoints[8][1])
+                purpleDot6 = CGPoint(x: 600 * activityPoints[11][0], y: 900 * activityPoints[11][1])
                 
                 //if there is more than three lines
                 if dotArraySize > 12 {
                     PinkDot8 = CGPoint(x: 600 * activityPoints[12][0], y: 900 * activityPoints[12][1])
-                    WhiteDot8 = CGPoint(x: 600 * activityPoints[15][0], y: 900 * activityPoints[15][1])
+                    WhiteDot9 = CGPoint(x: 600 * activityPoints[15][0], y: 900 * activityPoints[15][1])
+
                 }
             }
         }
-        
+        //Set up GREEN dot
         view.insertSubview(GreenDotView, belowSubview: canvasView)
         GreenDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: greenDot1.x).isActive = true
         GreenDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: greenDot1.y).isActive = true
@@ -411,8 +422,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         
         //set up white dot
         view.insertSubview(WhiteDotView, belowSubview: canvasView)
-        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: WhiteDot8?.x ?? 0).isActive = true
-        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: WhiteDot8?.y ?? 0).isActive = true
+        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: WhiteDot9?.x ?? 0).isActive = true
+        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: WhiteDot9?.y ?? 0).isActive = true
         WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         WhiteDotView.isHidden = true
@@ -547,10 +558,11 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
         print("My Touch Location = CGpointX", firstPoint.x / canvasView.bounds.maxX, "and CGpointY", firstPoint.y / canvasView.bounds.maxY)
         
-        if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 50 {
+        if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 25 {
             // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
             canvasView.goodTouch = true
-            print("Touch was within 50 units")
+            print("Touch was within 25 units")
+            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing1"]!, type: "mp3")
             
             canvasView.drawTouches(touches, withEvent: event)
             touches.forEach { (touch) in updateGagues(with: touch)
@@ -565,7 +577,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         if canvasView.goodTouch {
             canvasView.drawTouches(touches, withEvent: event)
             
@@ -578,11 +589,11 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             }
             
             //each time we move the touch...
-            touches.forEach { (touch) in
+            touches.forEach {(touch) in
                 
                 //check to see if we interact with coins
                 if canvasView.Line1 == true {
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
                         if canvasView.coin1Collected == false {
                             canvasView.coin1Collected = true
                             canvasView.blackDot1?.isHidden = true
@@ -590,84 +601,89 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             setupCoinLabel()
                             print("***DINGDING***")
                             //TODO: add one to the Coin tally
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                             
                         }
                     }
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
                         if canvasView.coin2Collected == false {
                             canvasView.coin2Collected = true
                             canvasView.blackDot2?.isHidden = true
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
                 }
                 //**************
                 if canvasView.Line2 == true {
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
                         if canvasView.coin1Collected == false {
                             canvasView.coin1Collected = true
                             canvasView.blackDot3?.isHidden = true
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
                         if canvasView.coin2Collected == false {
                             canvasView.coin2Collected = true
                             canvasView.blackDot4?.isHidden = true
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
                 }
                 //*************
                 if canvasView.Line3 == true {
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
                         if canvasView.coin1Collected == false {
                             canvasView.coin1Collected = true
                             canvasView.blackDot5?.isHidden = true
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
                         if canvasView.coin2Collected == false {
                             canvasView.coin2Collected = true
                             canvasView.blackDot6?.isHidden = true
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
                 }
                 //************
                 if canvasView.Line4 == true {
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
                         if canvasView.coin1Collected == false {
                             canvasView.coin1Collected = true
                             canvasView.blackDot7?.isHidden = true
                             totalCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
-                            //call ding sound
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 50 {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
                         if canvasView.coin2Collected == false {
                             canvasView.coin2Collected = true
                             canvasView.blackDot8?.isHidden = true
 
                             totalCoins += 1
                             setupCoinLabel()
-                            print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
-                    
                 }
             }
         }
@@ -693,16 +709,23 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             }
             
             if canvasView.letterComplete == true {
-                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
+                //play last ding
+                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+                //play cheer
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
                     
+                //dismiss activity view
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                     self.dismiss(animated: false, completion: nil)
+                    })
                 })
             }
             
+            //removing coins from total if the line was not completed
             guard let lastPoint = touches.first?.location(in: canvasView) else { return }
-            if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
+            if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 25 {
                 if canvasView.coin1Collected == true {
                     totalCoins -= 1
                     setupCoinLabel()
@@ -856,6 +879,76 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             activitySelection.loadActivityY()
         case "Z":
             activitySelection.loadActivityZ()
+        case "a":
+            activitySelection.loadActivitya()
+        case "b":
+            activitySelection.loadActivityb()
+        case "c":
+            activitySelection.loadActivityc()
+        case "d":
+            activitySelection.loadActivityd()
+        case "e":
+            activitySelection.loadActivitye()
+        case "f":
+            activitySelection.loadActivityf()
+        case "g":
+            activitySelection.loadActivityg()
+        case "h":
+            activitySelection.loadActivityh()
+        case "i":
+            activitySelection.loadActivityi()
+        case "j":
+            activitySelection.loadActivityj()
+        case "k":
+            activitySelection.loadActivityk()
+        case "l":
+            activitySelection.loadActivityl()
+        case "m":
+            activitySelection.loadActivitym()
+        case "n":
+            activitySelection.loadActivityn()
+        case "o":
+            activitySelection.loadActivityo()
+        case "p":
+            activitySelection.loadActivityp()
+        case "q":
+            activitySelection.loadActivityq()
+        case "r":
+            activitySelection.loadActivityr()
+        case "s":
+            activitySelection.loadActivitys()
+        case "t":
+            activitySelection.loadActivityt()
+        case "u":
+            activitySelection.loadActivityu()
+        case "v":
+            activitySelection.loadActivityv()
+        case "w":
+            activitySelection.loadActivityw()
+        case "x":
+            activitySelection.loadActivityx()
+        case "y":
+            activitySelection.loadActivityy()
+        case "z":
+            activitySelection.loadActivityz()
+        case "-":
+            activitySelection.loadActivityHorizontal()
+        case "/":
+            activitySelection.loadActivityDiagonalRight()
+        case "|":
+            activitySelection.loadActivityVertical()
+        case "'\'":
+            activitySelection.loadActivityDiagonalLeft()
+        case "cross+":
+            activitySelection.loadActivityPerpendicularCross()
+        case "crossx":
+            activitySelection.loadActivityDiagonalCross()
+        case "square":
+            activitySelection.loadActivitySquare()
+        case "circle":
+            activitySelection.loadActivityCircle()
+        case "triangle":
+            activitySelection.loadActivityTriangle()
         default: return
         }
     }

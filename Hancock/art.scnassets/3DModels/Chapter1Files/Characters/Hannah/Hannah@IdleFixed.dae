@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2019-08-26T01:37:12Z</created>
-  <modified>2019-08-26T01:37:12Z</modified>
+  <created>2019-10-14T19:45:13Z</created>
+  <modified>2019-10-14T19:45:13Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -877,6 +877,9 @@
       <diffuse>
        <texture texture="ID218_image217" texcoord="CHANNEL2"/>
       </diffuse>
+      <shininess>
+       <float>100</float>
+      </shininess>
       <transparent opaque="RGB_ZERO">
        <color>0 0 0 1</color>
       </transparent>
@@ -985,155 +988,157 @@
  </library_controllers>
  <library_visual_scenes>
   <visual_scene id="scene228">
-   <node id="Armature" name="Armature">
-    <matrix sid="SID_30">99.9735 0.163877 2.29476 1.80264 -2.28961 -2.65418 99.9385 466.796 0.224683 -99.9646 -2.64973 30.3086 0 0 0 1 </matrix>
-    <node id="Chest" name="Chest" sid="SID_37" type="JOINT">
-     <matrix sid="SID_36">0.999987 -0.005111 -0.000865 -0 -0.002478 -0.324662 -0.945827 0 0.004554 0.945816 -0.32467 0 0 0 0 1 </matrix>
-     <node id="Head" name="Head" sid="SID_38" type="JOINT">
-      <matrix sid="SID_14">0.961225 -0.010354 -0.275569 0 -0.016094 0.995485 -0.093542 1.98369 0.275293 0.09435 0.956719 0 0 0 0 1 </matrix>
-      <node id="AntennaFBXASC046L" name="AntennaFBXASC046L" sid="SID_39" type="JOINT">
-       <matrix sid="SID_17">0.97906 0.031949 0.201051 0.364407 -0.001745 0.988889 -0.148646 0.884911 -0.203567 0.145183 0.968237 0.08995 0 0 0 1 </matrix>
-       <node id="AntennaFBXASC046L_end" name="AntennaFBXASC046L_end" sid="SID_40" type="JOINT">
-        <matrix sid="SID_13">1 0 0 -0 -0 1 -0 2.18279 -0 0 1 0 0 0 0 1 </matrix>
-        <node id="AntennaFBXASC046L_end_end" name="AntennaFBXASC046L_end_end">
-         <matrix>1 0 0 0 0 1 0 2.182785 0 0 1 0 0 0 0 1 </matrix>
+   <node id="SideCharacter5" name="SideCharacter5">
+    <node id="Armature" name="Armature">
+     <matrix sid="SID_30">99.9735 0.163877 2.29476 1.80264 -2.28961 -2.65418 99.9385 466.796 0.224683 -99.9646 -2.64973 30.3086 0 0 0 1 </matrix>
+     <node id="Chest" name="Chest" sid="SID_37" type="JOINT">
+      <matrix sid="SID_36">0.999987 -0.005111 -0.000865 -0 -0.002478 -0.324662 -0.945827 0 0.004554 0.945816 -0.32467 0 0 0 0 1 </matrix>
+      <node id="Head" name="Head" sid="SID_38" type="JOINT">
+       <matrix sid="SID_14">0.961225 -0.010354 -0.275569 0 -0.016094 0.995485 -0.093542 1.98369 0.275293 0.09435 0.956719 0 0 0 0 1 </matrix>
+       <node id="AntennaFBXASC046L" name="AntennaFBXASC046L" sid="SID_39" type="JOINT">
+        <matrix sid="SID_17">0.97906 0.031949 0.201051 0.364407 -0.001745 0.988889 -0.148646 0.884911 -0.203567 0.145183 0.968237 0.08995 0 0 0 1 </matrix>
+        <node id="AntennaFBXASC046L_end" name="AntennaFBXASC046L_end" sid="SID_40" type="JOINT">
+         <matrix sid="SID_13">1 0 0 -0 -0 1 -0 2.18279 -0 0 1 0 0 0 0 1 </matrix>
+         <node id="AntennaFBXASC046L_end_end" name="AntennaFBXASC046L_end_end">
+          <matrix>1 0 0 0 0 1 0 2.182785 0 0 1 0 0 0 0 1 </matrix>
+         </node>
+        </node>
+       </node>
+       <node id="AntennaFBXASC046R" name="AntennaFBXASC046R" sid="SID_41" type="JOINT">
+        <matrix sid="SID_29">0.978266 0.050802 0.201037 -0.295325 -0.030987 0.994453 -0.100512 0.886087 -0.205028 0.092098 0.974413 0.227122 0 0 0 1 </matrix>
+        <node id="AntennaFBXASC046R_end" name="AntennaFBXASC046R_end" sid="SID_42" type="JOINT">
+         <matrix sid="SID_5">1 0 -0 0 -0 1 -0 2.18279 0 0 1 -0 0 0 0 1 </matrix>
+         <node id="AntennaFBXASC046R_end_end" name="AntennaFBXASC046R_end_end">
+          <matrix>1 0 0 0 0 1 0 2.182785 0 0 1 0 0 0 0 1 </matrix>
+         </node>
         </node>
        </node>
       </node>
-      <node id="AntennaFBXASC046R" name="AntennaFBXASC046R" sid="SID_41" type="JOINT">
-       <matrix sid="SID_29">0.978266 0.050802 0.201037 -0.295325 -0.030987 0.994453 -0.100512 0.886087 -0.205028 0.092098 0.974413 0.227122 0 0 0 1 </matrix>
-       <node id="AntennaFBXASC046R_end" name="AntennaFBXASC046R_end" sid="SID_42" type="JOINT">
-        <matrix sid="SID_5">1 0 -0 0 -0 1 -0 2.18279 0 0 1 -0 0 0 0 1 </matrix>
-        <node id="AntennaFBXASC046R_end_end" name="AntennaFBXASC046R_end_end">
-         <matrix>1 0 0 0 0 1 0 2.182785 0 0 1 0 0 0 0 1 </matrix>
+      <node id="TopShoulderFBXASC046L" name="TopShoulderFBXASC046L" sid="SID_43" type="JOINT">
+       <matrix sid="SID_10">-0.376567 0.695265 0.612212 0.212528 0.22361 -0.573099 0.788388 1.38512 0.898997 0.433778 0.060341 0.259669 0 0 0 1 </matrix>
+       <node id="TopElbowFBXASC046L" name="TopElbowFBXASC046L" sid="SID_44" type="JOINT">
+        <matrix sid="SID_12">0.757629 0.426291 -0.49424 0 -0.38942 0.902931 0.181845 1.56273 0.523783 0.054696 0.850094 -0 0 0 0 1 </matrix>
+        <node id="TopHandFBXASC046L" name="TopHandFBXASC046L" sid="SID_45" type="JOINT">
+         <matrix sid="SID_32">0.966885 -0.186805 0.17389 0 0.15277 0.969435 0.191982 1.15089 -0.204438 -0.159059 0.96587 0 0 0 0 1 </matrix>
+         <node id="TopHandFBXASC046L_end" name="TopHandFBXASC046L_end" sid="SID_46" type="JOINT">
+          <matrix sid="SID_25">1 -1e-06 1e-06 0 1e-06 1 -1e-06 0.514222 -1e-06 1e-06 1 -0 0 0 0 1 </matrix>
+          <node id="TopHandFBXASC046L_end_end" name="TopHandFBXASC046L_end_end">
+           <matrix>1 0 0 0 0 1 0 0.514222 0 0 1 0 0 0 0 1 </matrix>
+          </node>
+         </node>
         </node>
        </node>
       </node>
-     </node>
-     <node id="TopShoulderFBXASC046L" name="TopShoulderFBXASC046L" sid="SID_43" type="JOINT">
-      <matrix sid="SID_10">-0.376567 0.695265 0.612212 0.212528 0.22361 -0.573099 0.788388 1.38512 0.898997 0.433778 0.060341 0.259669 0 0 0 1 </matrix>
-      <node id="TopElbowFBXASC046L" name="TopElbowFBXASC046L" sid="SID_44" type="JOINT">
-       <matrix sid="SID_12">0.757629 0.426291 -0.49424 0 -0.38942 0.902931 0.181845 1.56273 0.523783 0.054696 0.850094 -0 0 0 0 1 </matrix>
-       <node id="TopHandFBXASC046L" name="TopHandFBXASC046L" sid="SID_45" type="JOINT">
-        <matrix sid="SID_32">0.966885 -0.186805 0.17389 0 0.15277 0.969435 0.191982 1.15089 -0.204438 -0.159059 0.96587 0 0 0 0 1 </matrix>
-        <node id="TopHandFBXASC046L_end" name="TopHandFBXASC046L_end" sid="SID_46" type="JOINT">
-         <matrix sid="SID_25">1 -1e-06 1e-06 0 1e-06 1 -1e-06 0.514222 -1e-06 1e-06 1 -0 0 0 0 1 </matrix>
-         <node id="TopHandFBXASC046L_end_end" name="TopHandFBXASC046L_end_end">
-          <matrix>1 0 0 0 0 1 0 0.514222 0 0 1 0 0 0 0 1 </matrix>
+      <node id="BottomShoulderFBXASC046L" name="BottomShoulderFBXASC046L" sid="SID_47" type="JOINT">
+       <matrix sid="SID_20">-0.37933 0.694118 0.611808 0.32566 0.224368 -0.572486 0.788618 0.809903 0.897646 0.436416 0.061424 0.039847 0 0 0 1 </matrix>
+       <node id="BottomElbowFBXASC046L" name="BottomElbowFBXASC046L" sid="SID_48" type="JOINT">
+        <matrix sid="SID_23">0.866042 0.424146 -0.26471 0 -0.384078 0.903355 0.190876 1.56273 0.320086 -0.063638 0.945249 -0 0 0 0 1 </matrix>
+        <node id="BottomHandFBXASC046L" name="BottomHandFBXASC046L" sid="SID_49" type="JOINT">
+         <matrix sid="SID_18">0.987315 -0.158299 0.012283 -0 0.153152 0.969903 0.189294 1.09725 -0.041879 -0.185012 0.981844 -0 0 0 0 1 </matrix>
+         <node id="BottomHandFBXASC046L_end" name="BottomHandFBXASC046L_end" sid="SID_50" type="JOINT">
+          <matrix sid="SID_21">1 -0 0 0 0 1 -0 0.567866 -0 0 1 -0 0 0 0 1 </matrix>
+          <node id="BottomHandFBXASC046L_end_end" name="BottomHandFBXASC046L_end_end">
+           <matrix>1 0 0 0 0 1 0 0.567866 0 0 1 0 0 0 0 1 </matrix>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+      <node id="TopShoulderFBXASC046R" name="TopShoulderFBXASC046R" sid="SID_51" type="JOINT">
+       <matrix sid="SID_16">-0.392023 -0.685169 -0.61389 -0.212528 -0.254952 -0.56025 0.788111 1.38512 -0.883921 0.46547 0.044946 0.259669 0 0 0 1 </matrix>
+       <node id="TopElbowFBXASC046R" name="TopElbowFBXASC046R" sid="SID_52" type="JOINT">
+        <matrix sid="SID_19">0.779956 -0.396824 0.483942 0 0.363711 0.916693 0.16549 1.56273 -0.509297 0.04694 0.85931 0 0 0 0 1 </matrix>
+        <node id="TopHandFBXASC046R" name="TopHandFBXASC046R" sid="SID_53" type="JOINT">
+         <matrix sid="SID_1">0.98143 0.179584 -0.067416 -0 -0.181833 0.982908 -0.028803 1.15089 0.061091 0.040527 0.997309 -0 0 0 0 1 </matrix>
+         <node id="TopHandFBXASC046R_end" name="TopHandFBXASC046R_end" sid="SID_54" type="JOINT">
+          <matrix sid="SID_27">1 1e-06 0 -0 -1e-06 1 0 0.514222 -0 -0 1 -0 0 0 0 1 </matrix>
+          <node id="TopHandFBXASC046R_end_end" name="TopHandFBXASC046R_end_end">
+           <matrix>1 0 0 0 0 1 0 0.514222 0 0 1 0 0 0 0 1 </matrix>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+      <node id="BottomShoulderFBXASC046R" name="BottomShoulderFBXASC046R" sid="SID_55" type="JOINT">
+       <matrix sid="SID_6">-0.392023 -0.68518 -0.613878 -0.32566 -0.254945 -0.56024 0.78812 0.809903 -0.883923 0.465467 0.044944 0.039847 0 0 0 1 </matrix>
+       <node id="BottomElbowFBXASC046R" name="BottomElbowFBXASC046R" sid="SID_56" type="JOINT">
+        <matrix sid="SID_15">0.883767 -0.393934 0.252531 -0 0.3588 0.916924 0.174679 1.56273 -0.300364 -0.063768 0.951691 0 0 0 0 1 </matrix>
+        <node id="BottomHandFBXASC046R" name="BottomHandFBXASC046R" sid="SID_57" type="JOINT">
+         <matrix sid="SID_2">0.978029 0.184072 0.097858 0 -0.181818 0.982826 -0.031556 1.09725 -0.101986 0.01307 0.9947 0 0 0 0 1 </matrix>
+         <node id="BottomHandFBXASC046R_end" name="BottomHandFBXASC046R_end" sid="SID_58" type="JOINT">
+          <matrix sid="SID_33">1 -0 -0 0 0 1 -0 0.567866 0 0 1 0 0 0 0 1 </matrix>
+          <node id="BottomHandFBXASC046R_end_end" name="BottomHandFBXASC046R_end_end">
+           <matrix>1 0 0 0 0 1 0 0.567866 0 0 1 0 0 0 0 1 </matrix>
+          </node>
          </node>
         </node>
        </node>
       </node>
      </node>
-     <node id="BottomShoulderFBXASC046L" name="BottomShoulderFBXASC046L" sid="SID_47" type="JOINT">
-      <matrix sid="SID_20">-0.37933 0.694118 0.611808 0.32566 0.224368 -0.572486 0.788618 0.809903 0.897646 0.436416 0.061424 0.039847 0 0 0 1 </matrix>
-      <node id="BottomElbowFBXASC046L" name="BottomElbowFBXASC046L" sid="SID_48" type="JOINT">
-       <matrix sid="SID_23">0.866042 0.424146 -0.26471 0 -0.384078 0.903355 0.190876 1.56273 0.320086 -0.063638 0.945249 -0 0 0 0 1 </matrix>
-       <node id="BottomHandFBXASC046L" name="BottomHandFBXASC046L" sid="SID_49" type="JOINT">
-        <matrix sid="SID_18">0.987315 -0.158299 0.012283 -0 0.153152 0.969903 0.189294 1.09725 -0.041879 -0.185012 0.981844 -0 0 0 0 1 </matrix>
-        <node id="BottomHandFBXASC046L_end" name="BottomHandFBXASC046L_end" sid="SID_50" type="JOINT">
-         <matrix sid="SID_21">1 -0 0 0 0 1 -0 0.567866 -0 0 1 -0 0 0 0 1 </matrix>
-         <node id="BottomHandFBXASC046L_end_end" name="BottomHandFBXASC046L_end_end">
-          <matrix>1 0 0 0 0 1 0 0.567866 0 0 1 0 0 0 0 1 </matrix>
+     <node id="Butt" name="Butt" sid="SID_59" type="JOINT">
+      <matrix sid="SID_9">0.98964 -0.000129 -0.143572 0 0.111399 0.631532 0.767306 -0 0.090572 -0.77535 0.625003 0 0 0 0 1 </matrix>
+      <node id="ThighFBXASC046L" name="ThighFBXASC046L" sid="SID_60" type="JOINT">
+       <matrix sid="SID_11">0.93658 0.10387 0.334706 0.271611 -0.320919 0.637942 0.700029 0.21183 -0.140811 -0.763047 0.630818 0.145537 0 0 0 1 </matrix>
+       <node id="ThighFBXASC046LFBXASC046001" name="ThighFBXASC046LFBXASC046001" sid="SID_61" type="JOINT">
+        <matrix sid="SID_22">0.809078 -0.411768 -0.419333 -0 0.178367 0.851904 -0.492387 1.95077 0.559981 0.323584 0.762702 -0 0 0 0 1 </matrix>
+        <node id="ThighFBXASC046LFBXASC046002" name="ThighFBXASC046LFBXASC046002" sid="SID_62" type="JOINT">
+         <matrix sid="SID_35">0.991441 -0.045624 -0.122319 -0 0.122706 0.005776 0.992426 2.12844 -0.044572 -0.998942 0.011325 -0 0 0 0 1 </matrix>
+         <node id="ThighFBXASC046LFBXASC046002_end" name="ThighFBXASC046LFBXASC046002_end" sid="SID_63" type="JOINT">
+          <matrix sid="SID_34">1 0 2e-06 -0 -0 1 0 0.774094 -2e-06 -0 1 0 0 0 0 1 </matrix>
+          <node id="ThighFBXASC046LFBXASC046002_end_end" name="ThighFBXASC046LFBXASC046002_end_end">
+           <matrix>1 0 0 0 0 1 0 0.774094 0 0 1 0 0 0 0 1 </matrix>
+          </node>
+         </node>
+        </node>
+       </node>
+      </node>
+      <node id="ThighFBXASC046R" name="ThighFBXASC046R" sid="SID_64" type="JOINT">
+       <matrix sid="SID_3">0.928963 -0.369543 0.02157 -0.219001 0.242032 0.650448 0.719957 0.211894 -0.280086 -0.663593 0.693683 0.216714 0 0 0 1 </matrix>
+       <node id="ThighFBXASC046RFBXASC046001" name="ThighFBXASC046RFBXASC046001" sid="SID_65" type="JOINT">
+        <matrix sid="SID_28">0.846358 0.390646 0.362041 -0 -0.224933 0.878311 -0.421871 1.95077 -0.482787 0.27562 0.831235 -0 0 0 0 1 </matrix>
+        <node id="ThighFBXASC046RFBXASC046002" name="ThighFBXASC046RFBXASC046002" sid="SID_66" type="JOINT">
+         <matrix sid="SID_8">0.984692 0.016119 0.173555 -0 -0.174291 0.102571 0.979338 2.12844 -0.002016 -0.994595 0.10381 -0 0 0 0 1 </matrix>
+         <node id="ThighFBXASC046RFBXASC046002_end" name="ThighFBXASC046RFBXASC046002_end" sid="SID_67" type="JOINT">
+          <matrix sid="SID_7">1 -0 -1e-06 0 0 1 -0 0.774094 1e-06 0 1 -0 0 0 0 1 </matrix>
+          <node id="ThighFBXASC046RFBXASC046002_end_end" name="ThighFBXASC046RFBXASC046002_end_end">
+           <matrix>1 0 0 0 0 1 0 0.774094 0 0 1 0 0 0 0 1 </matrix>
+          </node>
          </node>
         </node>
        </node>
       </node>
      </node>
-     <node id="TopShoulderFBXASC046R" name="TopShoulderFBXASC046R" sid="SID_51" type="JOINT">
-      <matrix sid="SID_16">-0.392023 -0.685169 -0.61389 -0.212528 -0.254952 -0.56025 0.788111 1.38512 -0.883921 0.46547 0.044946 0.259669 0 0 0 1 </matrix>
-      <node id="TopElbowFBXASC046R" name="TopElbowFBXASC046R" sid="SID_52" type="JOINT">
-       <matrix sid="SID_19">0.779956 -0.396824 0.483942 0 0.363711 0.916693 0.16549 1.56273 -0.509297 0.04694 0.85931 0 0 0 0 1 </matrix>
-       <node id="TopHandFBXASC046R" name="TopHandFBXASC046R" sid="SID_53" type="JOINT">
-        <matrix sid="SID_1">0.98143 0.179584 -0.067416 -0 -0.181833 0.982908 -0.028803 1.15089 0.061091 0.040527 0.997309 -0 0 0 0 1 </matrix>
-        <node id="TopHandFBXASC046R_end" name="TopHandFBXASC046R_end" sid="SID_54" type="JOINT">
-         <matrix sid="SID_27">1 1e-06 0 -0 -1e-06 1 0 0.514222 -0 -0 1 -0 0 0 0 1 </matrix>
-         <node id="TopHandFBXASC046R_end_end" name="TopHandFBXASC046R_end_end">
-          <matrix>1 0 0 0 0 1 0 0.514222 0 0 1 0 0 0 0 1 </matrix>
-         </node>
-        </node>
+     <node id="WingFBXASC046L" name="WingFBXASC046L" sid="SID_68" type="JOINT">
+      <matrix sid="SID_4">0.988286 0.138243 0.064651 0.438512 -0.138242 0.63146 0.762986 -0.174322 0.064652 -0.762986 0.643174 1.47807 0 0 0 1 </matrix>
+      <node id="WingFBXASC046L_end" name="WingFBXASC046L_end" sid="SID_69" type="JOINT">
+       <matrix sid="SID_31">1 0 -0 -0 -0 1 -0 4.78117 0 0 1 -0 0 0 0 1 </matrix>
+       <node id="WingFBXASC046L_end_end" name="WingFBXASC046L_end_end">
+        <matrix>1 0 0 0 0 1 0 4.781166 0 0 1 0 0 0 0 1 </matrix>
        </node>
       </node>
      </node>
-     <node id="BottomShoulderFBXASC046R" name="BottomShoulderFBXASC046R" sid="SID_55" type="JOINT">
-      <matrix sid="SID_6">-0.392023 -0.68518 -0.613878 -0.32566 -0.254945 -0.56024 0.78812 0.809903 -0.883923 0.465467 0.044944 0.039847 0 0 0 1 </matrix>
-      <node id="BottomElbowFBXASC046R" name="BottomElbowFBXASC046R" sid="SID_56" type="JOINT">
-       <matrix sid="SID_15">0.883767 -0.393934 0.252531 -0 0.3588 0.916924 0.174679 1.56273 -0.300364 -0.063768 0.951691 0 0 0 0 1 </matrix>
-       <node id="BottomHandFBXASC046R" name="BottomHandFBXASC046R" sid="SID_57" type="JOINT">
-        <matrix sid="SID_2">0.978029 0.184072 0.097858 0 -0.181818 0.982826 -0.031556 1.09725 -0.101986 0.01307 0.9947 0 0 0 0 1 </matrix>
-        <node id="BottomHandFBXASC046R_end" name="BottomHandFBXASC046R_end" sid="SID_58" type="JOINT">
-         <matrix sid="SID_33">1 -0 -0 0 0 1 -0 0.567866 0 0 1 0 0 0 0 1 </matrix>
-         <node id="BottomHandFBXASC046R_end_end" name="BottomHandFBXASC046R_end_end">
-          <matrix>1 0 0 0 0 1 0 0.567866 0 0 1 0 0 0 0 1 </matrix>
-         </node>
-        </node>
+     <node id="WingFBXASC046R" name="WingFBXASC046R" sid="SID_70" type="JOINT">
+      <matrix sid="SID_26">0.988286 -0.138243 -0.064651 -0.438512 0.138242 0.63146 0.762986 -0.174322 -0.064652 -0.762986 0.643174 1.47807 0 0 0 1 </matrix>
+      <node id="WingFBXASC046R_end" name="WingFBXASC046R_end" sid="SID_71" type="JOINT">
+       <matrix sid="SID_24">1 -0 0 0 0 1 -0 4.78117 -0 0 1 -0 0 0 0 1 </matrix>
+       <node id="WingFBXASC046R_end_end" name="WingFBXASC046R_end_end">
+        <matrix>1 0 0 0 0 1 0 4.781166 0 0 1 0 0 0 0 1 </matrix>
        </node>
       </node>
      </node>
     </node>
-    <node id="Butt" name="Butt" sid="SID_59" type="JOINT">
-     <matrix sid="SID_9">0.98964 -0.000129 -0.143572 0 0.111399 0.631532 0.767306 -0 0.090572 -0.77535 0.625003 0 0 0 0 1 </matrix>
-     <node id="ThighFBXASC046L" name="ThighFBXASC046L" sid="SID_60" type="JOINT">
-      <matrix sid="SID_11">0.93658 0.10387 0.334706 0.271611 -0.320919 0.637942 0.700029 0.21183 -0.140811 -0.763047 0.630818 0.145537 0 0 0 1 </matrix>
-      <node id="ThighFBXASC046LFBXASC046001" name="ThighFBXASC046LFBXASC046001" sid="SID_61" type="JOINT">
-       <matrix sid="SID_22">0.809078 -0.411768 -0.419333 -0 0.178367 0.851904 -0.492387 1.95077 0.559981 0.323584 0.762702 -0 0 0 0 1 </matrix>
-       <node id="ThighFBXASC046LFBXASC046002" name="ThighFBXASC046LFBXASC046002" sid="SID_62" type="JOINT">
-        <matrix sid="SID_35">0.991441 -0.045624 -0.122319 -0 0.122706 0.005776 0.992426 2.12844 -0.044572 -0.998942 0.011325 -0 0 0 0 1 </matrix>
-        <node id="ThighFBXASC046LFBXASC046002_end" name="ThighFBXASC046LFBXASC046002_end" sid="SID_63" type="JOINT">
-         <matrix sid="SID_34">1 0 2e-06 -0 -0 1 0 0.774094 -2e-06 -0 1 0 0 0 0 1 </matrix>
-         <node id="ThighFBXASC046LFBXASC046002_end_end" name="ThighFBXASC046LFBXASC046002_end_end">
-          <matrix>1 0 0 0 0 1 0 0.774094 0 0 1 0 0 0 0 1 </matrix>
-         </node>
-        </node>
-       </node>
-      </node>
-     </node>
-     <node id="ThighFBXASC046R" name="ThighFBXASC046R" sid="SID_64" type="JOINT">
-      <matrix sid="SID_3">0.928963 -0.369543 0.02157 -0.219001 0.242032 0.650448 0.719957 0.211894 -0.280086 -0.663593 0.693683 0.216714 0 0 0 1 </matrix>
-      <node id="ThighFBXASC046RFBXASC046001" name="ThighFBXASC046RFBXASC046001" sid="SID_65" type="JOINT">
-       <matrix sid="SID_28">0.846358 0.390646 0.362041 -0 -0.224933 0.878311 -0.421871 1.95077 -0.482787 0.27562 0.831235 -0 0 0 0 1 </matrix>
-       <node id="ThighFBXASC046RFBXASC046002" name="ThighFBXASC046RFBXASC046002" sid="SID_66" type="JOINT">
-        <matrix sid="SID_8">0.984692 0.016119 0.173555 -0 -0.174291 0.102571 0.979338 2.12844 -0.002016 -0.994595 0.10381 -0 0 0 0 1 </matrix>
-        <node id="ThighFBXASC046RFBXASC046002_end" name="ThighFBXASC046RFBXASC046002_end" sid="SID_67" type="JOINT">
-         <matrix sid="SID_7">1 -0 -1e-06 0 0 1 -0 0.774094 1e-06 0 1 -0 0 0 0 1 </matrix>
-         <node id="ThighFBXASC046RFBXASC046002_end_end" name="ThighFBXASC046RFBXASC046002_end_end">
-          <matrix>1 0 0 0 0 1 0 0.774094 0 0 1 0 0 0 0 1 </matrix>
-         </node>
-        </node>
-       </node>
-      </node>
-     </node>
+    <node id="Hannah" name="Hannah">
+     <instance_controller url="#skin226">
+      <skeleton>#Armature</skeleton>
+      <bind_material>
+       <technique_common>
+        <instance_material symbol="geometryElement225" target="#lambert3SG">
+         <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
+        </instance_material>
+       </technique_common>
+      </bind_material>
+     </instance_controller>
     </node>
-    <node id="WingFBXASC046L" name="WingFBXASC046L" sid="SID_68" type="JOINT">
-     <matrix sid="SID_4">0.988286 0.138243 0.064651 0.438512 -0.138242 0.63146 0.762986 -0.174322 0.064652 -0.762986 0.643174 1.47807 0 0 0 1 </matrix>
-     <node id="WingFBXASC046L_end" name="WingFBXASC046L_end" sid="SID_69" type="JOINT">
-      <matrix sid="SID_31">1 0 -0 -0 -0 1 -0 4.78117 0 0 1 -0 0 0 0 1 </matrix>
-      <node id="WingFBXASC046L_end_end" name="WingFBXASC046L_end_end">
-       <matrix>1 0 0 0 0 1 0 4.781166 0 0 1 0 0 0 0 1 </matrix>
-      </node>
-     </node>
-    </node>
-    <node id="WingFBXASC046R" name="WingFBXASC046R" sid="SID_70" type="JOINT">
-     <matrix sid="SID_26">0.988286 -0.138243 -0.064651 -0.438512 0.138242 0.63146 0.762986 -0.174322 -0.064652 -0.762986 0.643174 1.47807 0 0 0 1 </matrix>
-     <node id="WingFBXASC046R_end" name="WingFBXASC046R_end" sid="SID_71" type="JOINT">
-      <matrix sid="SID_24">1 -0 0 0 0 1 -0 4.78117 -0 0 1 -0 0 0 0 1 </matrix>
-      <node id="WingFBXASC046R_end_end" name="WingFBXASC046R_end_end">
-       <matrix>1 0 0 0 0 1 0 4.781166 0 0 1 0 0 0 0 1 </matrix>
-      </node>
-     </node>
-    </node>
-   </node>
-   <node id="Hannah" name="Hannah">
-    <instance_controller url="#skin226">
-     <skeleton>#Armature</skeleton>
-     <bind_material>
-      <technique_common>
-       <instance_material symbol="geometryElement225" target="#lambert3SG">
-        <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
-       </instance_material>
-      </technique_common>
-     </bind_material>
-    </instance_controller>
    </node>
   </visual_scene>
  </library_visual_scenes>
