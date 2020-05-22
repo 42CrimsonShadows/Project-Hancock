@@ -12,6 +12,7 @@ class SignInViewController: UIViewController {
 
     @IBOutlet weak var IDField: UITextField!
     @IBOutlet weak var PassField: UITextField!
+    var success = false
     
     @IBAction func ForgotPasswordPopup(_ sender: UIButton) {
         print("forgot password?")
@@ -34,7 +35,11 @@ class SignInViewController: UIViewController {
 //            }
 //        }
         
-        Service.login(username:username, password:pass)
+        Service.login(username:username, password:pass) {(isSuccess) in self.success = isSuccess
+            DispatchQueue.main.async{
+                self.doThing()
+            }
+        }
     }
     
     @IBAction func RegisterButton(_ sender: Any) {
@@ -70,7 +75,10 @@ class SignInViewController: UIViewController {
     
     func doThing()
     {
-        self.performSegue(withIdentifier: "toHomePage", sender: self)
+        if(success)
+        {
+            self.performSegue(withIdentifier: "toRegisterPage", sender: self)
+        }
     }
     /*
     // MARK: - Navigation

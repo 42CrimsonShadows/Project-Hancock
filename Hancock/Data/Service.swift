@@ -61,7 +61,7 @@ class Service {
         }
     }
     
-    static func login(username:String, password:String) -> Bool{
+    static func login(username:String, password:String,_ completionHandler: @escaping (_ isSuccess:Bool)-> Void) {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         let user = Credentials(username:username, password:password)
@@ -72,7 +72,7 @@ class Service {
             guard let url = URL(string: endpoint) else {
                 print("Could not set the URL, contact the developer")
                 
-                return false
+                return
                 
             }
                 //print(String(data: data, encoding: .utf8)!)
@@ -91,9 +91,9 @@ class Service {
                     code = HTTPResponse.statusCode
                     switch code {
                     case 200:
-                        SignInViewController.loginSuccess()
+                        completionHandler(true)
                     default:
-                        SignInViewController.loginFailure()
+                        completionHandler(false)
                     }
                 }
                 if let error = error {
@@ -101,11 +101,11 @@ class Service {
                     //print(error.localizedDescription)
                 }
             }.resume()
-             return true
+             return
         
         } catch {
             print("Could not encode")
-            return false
+            return
         }
     }
     
