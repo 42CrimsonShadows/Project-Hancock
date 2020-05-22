@@ -19,15 +19,7 @@ class Service {
     //All these functions are created for adding new entries to the database
     
     //Register new users
-    static func register (firstName: String, lastName: String, email: String, username: String, password: String) {
-//        struct user: Codable {
-//            var firstName: String
-//            var lastName: String
-//            var username: String
-//            var password: String
-//        }
-        
-        
+    static func register (firstName: String, lastName: String, email: String, username: String, password: String, _ completionHandler: @escaping (_ isSuccess:Bool)-> Void) {
         
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
@@ -48,8 +40,20 @@ class Service {
             request.setValue("application/json", forHTTPHeaderField: "content-type")
             request.httpMethod = "POST"
             request.httpBody = data
+            var code = 0
         
             URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let HTTPResponse = response as? HTTPURLResponse
+                {
+                    code = HTTPResponse.statusCode
+                    print(code)
+                    switch code {
+                    case 200:
+                        completionHandler(true)
+                    default:
+                        completionHandler(false)
+                    }
+                }
                 if let error = error {
                     //Ping(text: error.localizedDescription, style: .danger).show()
                     print(error)
@@ -87,7 +91,7 @@ class Service {
                 //print(response)
                 if let HTTPResponse = response as? HTTPURLResponse
                 {
-                    print(HTTPResponse.statusCode)
+                    print(HTTPResponse)
                     code = HTTPResponse.statusCode
                     switch code {
                     case 200:

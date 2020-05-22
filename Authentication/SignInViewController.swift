@@ -8,10 +8,14 @@
 
 import UIKit
 
+public var user = ""
+public var pass = ""
+
 class SignInViewController: UIViewController {
 
     @IBOutlet weak var IDField: UITextField!
     @IBOutlet weak var PassField: UITextField!
+    @IBOutlet weak var ErrorLabel: UILabel!
     var success = false
     
     @IBAction func ForgotPasswordPopup(_ sender: UIButton) {
@@ -21,7 +25,7 @@ class SignInViewController: UIViewController {
         
     print("Logging in...")
         guard let username = IDField.text else { return }
-        guard let pass = PassField.text else { return }
+        guard let password = PassField.text else { return }
         
 //        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
 //            if error == nil && Auth.auth().currentUser != nil {
@@ -35,9 +39,9 @@ class SignInViewController: UIViewController {
 //            }
 //        }
         
-        Service.login(username:username, password:pass) {(isSuccess) in self.success = isSuccess
+        Service.login(username:username, password:password) {(isSuccess) in self.success = isSuccess
             DispatchQueue.main.async{
-                self.doThing()
+                self.doSegue(username: username, password:password)
             }
         }
     }
@@ -49,35 +53,26 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        if let user = Auth.auth().currentUser{
-//            print("Welcome ", Auth.auth().currentUser?.displayName)
-//            }
-        
     }
     
-    static func loginSuccess()
-    {
-        print("SUCCESS")
-
-    }
-    
-    static func loginFailure()
-    {
-        print("Not a surprise")
-    }
-    
-    func doThing()
+    func doSegue(username: String, password: String)
     {
         if(success)
         {
-            self.performSegue(withIdentifier: "toRegisterPage", sender: self)
+            user = username
+            pass = password
+            print("LOGIN")
+            ErrorLabel.text = ""
+            self.performSegue(withIdentifier: "toHomePage", sender: self)
+        }
+        else
+        {
+            print("Invalid Username or Password")
+            ErrorLabel.text = "Invalid Username or Password"
         }
     }
     /*
