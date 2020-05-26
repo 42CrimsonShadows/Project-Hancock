@@ -20,7 +20,7 @@ class Service {
     
     //Register new users
     static func register (firstName: String, lastName: String, email: String, username: String, password: String, _ completionHandler: @escaping (_ isSuccess:Bool)-> Void) {
-        
+        // escaping the completionHandler allows the closure to be called in RegisterViewController after this function has completed
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         let user = Student(type: "Student", firstName: firstName, lastName: lastName, email: email, username: username, password: password)
@@ -45,11 +45,11 @@ class Service {
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let HTTPResponse = response as? HTTPURLResponse
                 {
-                    code = HTTPResponse.statusCode
+                    code = HTTPResponse.statusCode // only returns 200 on successful registration
                     print(code)
                     switch code {
                     case 200:
-                        completionHandler(true)
+                        completionHandler(true) // this is what gets set to success bool in RegisterViewController
                     default:
                         completionHandler(false)
                     }
@@ -66,6 +66,7 @@ class Service {
     }
     
     static func login(username:String, password:String,_ completionHandler: @escaping (_ isSuccess:Bool)-> Void) {
+        // escaping the completionHandler allows the closure to be called in SignInViewController after this function has completed
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         let user = Credentials(username:username, password:password)
@@ -92,10 +93,10 @@ class Service {
                 if let HTTPResponse = response as? HTTPURLResponse
                 {
                     print(HTTPResponse)
-                    code = HTTPResponse.statusCode
+                    code = HTTPResponse.statusCode // only set to 200 on authorized login
                     switch code {
                     case 200:
-                        completionHandler(true)
+                        completionHandler(true) // this is what success bool is set to in SignInViewController
                     default:
                         completionHandler(false)
                     }

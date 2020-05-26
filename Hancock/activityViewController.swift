@@ -720,9 +720,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 //play cheer
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
-                    // send character data to db
                     
-                    Service.updateCharacterData(username: "poop", password: "butt", letter: selectedActivity, score: Int32(totalCoins), timeToComplete: Service.TimeSinceActive(lastActive: startTime), totalPointsEarned: Int32(totalCoins), totalPointsPossible: coinsPossible)
+                    // send character data to db with user credentials from login
+                    Service.updateCharacterData(username: user, password: pass, letter: selectedActivity, score: Int32(totalCoins), timeToComplete: Service.TimeSinceActive(lastActive: startTime), totalPointsEarned: Int32(totalCoins), totalPointsPossible: coinsPossible)
                     //dismiss activity view
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                         self.dismiss(animated: false, completion: nil)

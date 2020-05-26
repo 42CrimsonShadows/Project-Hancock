@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// User State Vars
 public var user = ""
 public var pass = ""
 
@@ -39,6 +41,8 @@ class SignInViewController: UIViewController {
 //            }
 //        }
         
+        // api calls run on a background thread, so we use this lambda to get the result from Service and use it in main thread
+        // Call login, set success, and call segue on main thread
         Service.login(username:username, password:password) {(isSuccess) in self.success = isSuccess
             DispatchQueue.main.async{
                 self.doSegue(username: username, password:password)
@@ -61,6 +65,7 @@ class SignInViewController: UIViewController {
     
     func doSegue(username: String, password: String)
     {
+        // check for successful auth, set error label, and login successful and if not already logged in
         if(success)
         {
             ErrorLabel.text = ""

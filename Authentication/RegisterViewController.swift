@@ -23,12 +23,13 @@ class RegisterViewController: UIViewController {
     
     @IBAction func RequestRegistration(_ sender: Any) {
         print("Attempting to Register")
+        // check for empty fields
         if((UsernameField.text == "") || (FirstNameField.text == "") || (LastNameField.text == "") || (PassField.text == "") || (CPassField.text == "") || (PEmailField.text == ""))
         {
             print("Empty fields")
             ErrorLabel.text = "Must fill out all fields"
         }else {
-            if(PassField.text != CPassField.text)
+            if(PassField.text != CPassField.text) // check to make sure passwords match
             {
                 print("Passwords don't match")
                 ErrorLabel.text = "Passwords need to match"
@@ -39,6 +40,9 @@ class RegisterViewController: UIViewController {
                 guard let password = PassField.text else { return }
                 guard let first = FirstNameField.text else { return }
                 guard let last = LastNameField.text else { return }
+                
+                // api calls run on a background thread, so we use this lambda to get the result from Service and use it in main thread
+                // call register and set success, call segue on main thread
                 Service.register(firstName: first, lastName: last, email: email, username: username, password: password) {(isSuccess) in self.success = isSuccess
                     DispatchQueue.main.async{
                         self.doSegue(username: username, password:password)
@@ -57,6 +61,7 @@ class RegisterViewController: UIViewController {
     
     func doSegue(username: String, password: String)
     {
+        // check for successful registration, and send to login
         if(success)
         {
             print("REGISTER")
