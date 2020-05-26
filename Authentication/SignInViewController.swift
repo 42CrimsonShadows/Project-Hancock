@@ -63,11 +63,15 @@ class SignInViewController: UIViewController {
     {
         if(success)
         {
-            user = username
-            pass = password
-            print("LOGIN")
             ErrorLabel.text = ""
-            self.performSegue(withIdentifier: "toHomePage", sender: self)
+
+            if(user == "" && pass == "")
+            {
+                user = username
+                pass = password
+                print("LOGIN")
+                self.performSegue(withIdentifier: "toHomePage", sender: self)
+            }
         }
         else
         {

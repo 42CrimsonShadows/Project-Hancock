@@ -59,8 +59,6 @@ class RegisterViewController: UIViewController {
     {
         if(success)
         {
-            user = username
-            pass = password
             print("REGISTER")
             ErrorLabel.text = ""
             self.performSegue(withIdentifier: "toLogin", sender: self)
