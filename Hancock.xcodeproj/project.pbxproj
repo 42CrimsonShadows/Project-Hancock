@@ -60,7 +60,7 @@
 		A08A2D4822BEDEA20076B814 /* BookAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BookAnimation.gif; sourceTree = "<group>"; };
 		A08A2D5222C02AA30076B814 /* Grass-Blowing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Grass-Blowing.gif"; sourceTree = "<group>"; };
 		A08A2D5322C02AA40076B814 /* Anthony-Chillaxing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Anthony-Chillaxing.gif"; sourceTree = "<group>"; };
-		A0A028B8227CA9F500A7C787 /* Hancock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hancock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0A028B8227CA9F500A7C787 /* ABC Go AR .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ABC Go AR .app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A028BB227CA9F500A7C787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A028BD227CA9F500A7C787 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		A0A028BF227CA9F500A7C787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
@@ -121,7 +121,7 @@
 		A0A028B9227CA9F500A7C787 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0A028B8227CA9F500A7C787 /* Hancock.app */,
+				A0A028B8227CA9F500A7C787 /* ABC Go AR .app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,7 +190,7 @@
 			);
 			name = Hancock;
 			productName = Hancock;
-			productReference = A0A028B8227CA9F500A7C787 /* Hancock.app */;
+			productReference = A0A028B8227CA9F500A7C787 /* ABC Go AR .app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -442,6 +442,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = RX5X2KDAVM;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -449,8 +450,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 6;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate.abcgoar;
+				PRODUCT_NAME = "ABC Go AR ";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -466,6 +468,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = RX5X2KDAVM;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -473,8 +476,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 6;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate.abcgoar;
+				PRODUCT_NAME = "ABC Go AR ";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
