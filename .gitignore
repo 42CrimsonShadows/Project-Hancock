@@ -16,3 +16,7 @@ Hancock/art.scnassets/3DModels/Chapter4Files/Environment/Environment4Scene.scn
 Hancock/art.scnassets/3DModels/Chapter4Files/Environment/WholeScene.obj
 Hancock/art.scnassets/3DModels/Chapter7Files/Environments/Environment7Scene.scn
 .DS_Store
+Hancock.xcodeproj/project.xcworkspace/xcuserdata/chrisross.xcuserdatad/WorkspaceSettings.xcsettings
+Hancock.xcodeproj/project.xcworkspace/xcuserdata/chrisross.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
+*.xcsettings
