@@ -227,9 +227,9 @@ class Line: NSObject {
 
         let arrayIndex = point.sequenceNumber - points.first!.sequenceNumber
 
-        if arrayIndex > 0 {
-            rect = rect.union(updateRectForLinePoint(point, previousPoint: points[arrayIndex - 1]))
-        }
+       // if arrayIndex > 0 {
+         //   rect = rect.union(updateRectForLinePoint(point, previousPoint: points[arrayIndex - 1]))
+      //  }
         if arrayIndex + 1 < points.count {
             rect = rect.union(updateRectForLinePoint(point, previousPoint: points[arrayIndex + 1]))
         }

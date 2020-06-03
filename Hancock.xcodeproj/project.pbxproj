@@ -442,7 +442,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RX5X2KDAVM;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -450,7 +450,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6;
+				MARKETING_VERSION = 7;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate.abcgoar;
 				PRODUCT_NAME = "ABC Go AR ";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -468,7 +468,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RX5X2KDAVM;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -476,7 +476,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6;
+				MARKETING_VERSION = 7;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate.abcgoar;
 				PRODUCT_NAME = "ABC Go AR ";
 				PROVISIONING_PROFILE_SPECIFIER = "";
