@@ -890,29 +890,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter2:
             print("Do nothing")
         case .toLetter3:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            print("Do nothing") //LM
+           /* DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 //play game intro 1
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter2Finish"]!, fileExtension: "mp3")
-            })
+            })*/
         case .toLetter4:
+             print("Do nothing") //LM
             //play narration for finishing letter 4
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+           /* DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter3Finish"]!, fileExtension: "mp3")
-                })
+                })*/
         case .toLetter5:
+             print("Do nothing") //LM
             //play narration for finishing letter 5
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+               /* DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter4Finish"]!, fileExtension: "mp3")
-                    })
+                    })*/
         case .toLetter6:
+             print("Do nothing") //LM
             //play narration for finishing letter 6
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+             /*   DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter5Finish"]!, fileExtension: "mp3")
-                    })
-        case .chapterFinished :
+                    })*/
+        case .chapterFinished : //LM left off 6.4.20 - need to check app and then go from here. 
+            print("Do nothing")//LM
             //play narration for finishing the chapter
            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")
+              //  self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish"]!, fileExtension: "mp3")
                     })

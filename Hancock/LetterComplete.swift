@@ -166,6 +166,10 @@ extension ViewController{
                         letterSix!.isPaused = false
                         animateLetterHide(fadeThis: letterSix!)
                         playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
+                                            
+                        workItem1 = DispatchWorkItem{
+                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")//LM
+                    }
                     default:
                         break
                 }
@@ -339,14 +343,18 @@ extension ViewController{
                             self.startAnimateSideCharacter(key: "SideCharacter4Dance1", sideCharacter: "Eric")
                             self.charcterFourIdle.parent?.position = SCNVector3(x: 19.5, y: 2, z: 7.5)
                             self.charcterFourIdle.parent?.eulerAngles = SCNVector3(x: 0, y: GLKMathDegreesToRadians(180), z: 0)
+                            
+                            
                         }
                         workItem1 = DispatchWorkItem{
                             self.letterFive!.isPaused = false
                             self.animateLetterHide(fadeThis: self.letterFive!)
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
-                            
+                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter5Finish"]!, fileExtension: "mp3")//LM
                             //wait 5 seconds
+                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute:self.workItem2!)
+                            
                                 
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 12.5, execute:self.workItem1!)
@@ -595,6 +603,7 @@ extension ViewController{
                             
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute:self.workItem4!)
+                             
                         }
                         workItem2 = DispatchWorkItem{
                             self.stopAnimateSideCharacter(key: "SideCharacter3Walk", sideCharacter: "Francine")
@@ -602,6 +611,7 @@ extension ViewController{
                             
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem3!)
+                           
                         }
                         workItem1 = DispatchWorkItem{
                             self.stopAnimateSideCharacter(key: "SideCharacter3Jump", sideCharacter: "Francine")
@@ -614,6 +624,8 @@ extension ViewController{
                             let move1 = SCNAction.move(to: endSpot1, duration: 1.5)
                             let francineMoveSeq1 = SCNAction.sequence([rotate1, move1])
                             self.charcterThreeIdle.parent?.runAction(francineMoveSeq1)
+                            
+                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter4Finish"]!, fileExtension: "mp3")//LM
                             
                             //play for 3 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.1, execute:self.workItem2!)
@@ -829,6 +841,7 @@ extension ViewController{
                             //TO-DO: Fix Bone structure for Lin so that transitions of animations work correctly
                             //self.stopAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Lin")
                             //self.startAnimateSideCharacter(key: "SideCharacter2Dancing", sideCharacter: "Lin")
+                            
                         }
                         workItem2 = DispatchWorkItem{
                             //play Lin through a sequence of movements so he turns and then walks to the Letter H
@@ -849,6 +862,7 @@ extension ViewController{
                         workItem1 = DispatchWorkItem{
                             //drop side Lin down from letter L
                             self.charcterTwoIdle.parent?.runAction(SCNAction.moveBy(x:0, y: -0.8, z: 0, duration: 0.5))
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter3Finish"]!, fileExtension: "mp3")//LM
                             
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute:self.workItem2!)
@@ -1087,6 +1101,7 @@ extension ViewController{
                         workItem3 = DispatchWorkItem{
                             self.stopAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
                             self.startAnimateSideCharacter(key: "SideCharacter1Waving", sideCharacter: "Terry")
+                           
                         }
                         workItem2 = DispatchWorkItem{
                             //play Terry through a sequence of movements so he turns and then walks to the Letter H
@@ -1099,6 +1114,7 @@ extension ViewController{
                             
                             //play side character animation
                             self.startAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter2Finish"]!, fileExtension: "mp3")//LM
                             
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute:self.workItem3!)
