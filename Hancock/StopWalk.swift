@@ -804,7 +804,7 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self!.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: workItem1!) //LM Test
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -1800,7 +1800,7 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)//LM
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -2189,17 +2189,18 @@ extension ViewController{
                         
                         print("Loading activity \(chapterSelectedLetterArray![4])")
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
-                        
+                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3") //LM
                         //wait 6 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem3!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem3!)
                     }
                     workItem1 = DispatchWorkItem{
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3")
+                        //self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3")
+                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
                         //wait 4 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem2!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: self.workItem2!)//LM
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)//LM
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {

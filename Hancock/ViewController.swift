@@ -913,11 +913,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
              /*   DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter5Finish"]!, fileExtension: "mp3")
                     })*/
-        case .chapterFinished : //LM left off 6.4.20 - need to check app and then go from here. 
-            print("Do nothing")//LM
+        case .chapterFinished : //LM
+            print("Do nothing")//LM - this all needs to be moved to LetterComplete - leaving here because I cant get it to integrate properly. It keeps calling the letter H draw
             //play narration for finishing the chapter
-           DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-              //  self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+              self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish"]!, fileExtension: "mp3")
                     })

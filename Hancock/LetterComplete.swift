@@ -166,10 +166,13 @@ extension ViewController{
                         letterSix!.isPaused = false
                         animateLetterHide(fadeThis: letterSix!)
                         playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
+                         //self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")
+                         // DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:self.workItem1!)
                                             
-                        workItem1 = DispatchWorkItem{
-                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")//LM
-                    }
+                      //  workItem1 = DispatchWorkItem{
+                                               // self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish"]!, fileExtension: "mp3")
+                                               // }
+                                    
                     default:
                         break
                 }
@@ -1097,7 +1100,6 @@ extension ViewController{
                         letterTwo!.isPaused = false
                         animateLetterHide(fadeThis: letterTwo!)
                         playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
-                        
                         workItem3 = DispatchWorkItem{
                             self.stopAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
                             self.startAnimateSideCharacter(key: "SideCharacter1Waving", sideCharacter: "Terry")
@@ -1115,14 +1117,13 @@ extension ViewController{
                             //play side character animation
                             self.startAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter2Finish"]!, fileExtension: "mp3")//LM
-                            
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute:self.workItem3!)
                         }
                         workItem1 = DispatchWorkItem{
                             //drop side terry down from the top of the letter T
                             self.charcterOneIdle.parent?.runAction(SCNAction.moveBy(x:0, y: -4.1, z: 0.2, duration: 1))
-                            
+                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration16"]!, fileExtension: "mp3")//LM
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute:self.workItem2!)
                         }
@@ -1340,6 +1341,11 @@ extension ViewController{
                         letterOne!.isPaused = false
                         animateLetterHide(fadeThis: letterOne!)
                         playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
+                        workItem1 = DispatchWorkItem{
+                            //self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration9"]!, fileExtension: "mp3") // LM needs more spacing. Do we want this when Indie starts walking?
+                    }
+                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:self.workItem1!)
+                      
                     default:
                         break
                 }
