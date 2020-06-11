@@ -358,7 +358,7 @@ class ChapterSelection {
                                   //sounds for Letter H
                                   "Narration42" : "ch1-H-Intro1",
                                   "Narration43" : "ch1-H-Intro2",
-                                  "Narration44" : "ch1-H-Intro3",
+                                  "Narration44" : "ch1-H-Intro3", //Can you trace the letter H to help all her friends say happy birthday
                                   "Narration45" : "ch1-H-Line1",    //1 narration45
                                   "Narration46" : "ch1-H-Line2_01", //2 narration46
                                   "Narration47" : "ch1-H-Line2_02",
