@@ -2347,7 +2347,7 @@ extension ViewController{
 //                            })
 //                        })
 //                    })
-                case .Chapter1://LM TESTING
+                case .Chapter1://LM 
                     fadeoutWalkingSound()
                     
                     stopTransitionAnimation(key: "MainCharacterWalking")
