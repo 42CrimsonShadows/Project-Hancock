@@ -20,6 +20,7 @@ class ChapterSelection {
     let SideCharacter3idleNode = SCNNode()
     let SideCharacter4idleNode = SCNNode()
     let SideCharacter5idleNode = SCNNode()
+    let SideCharacter6idleNode = SCNNode()
     let animationNode = SCNNode()
     let letter1Node = SCNNode()
     let letter2Node = SCNNode()
@@ -1512,14 +1513,24 @@ class ChapterSelection {
         SideCharacter4idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(30), 0)
         
         //Load Idle Animation Node
-        let idleHeidiScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed.dae")!
-        for child in idleHeidiScene.rootNode.childNodes {
+        let idleMikkenaScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@FigureEightFixed.dae")!
+        for child in idleMikkenaScene.rootNode.childNodes {
             SideCharacter5idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter5idleNode)
         SideCharacter5idleNode.scale = SCNVector3(1, 1, 1)
         SideCharacter5idleNode.position = SCNVector3(0, 0, 0)
-        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        SideCharacter5idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(0), 0)
+        
+        //Load Idle Animation Node
+        let idleHeidiScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed.dae")!
+        for child in idleHeidiScene.rootNode.childNodes {
+            SideCharacter6idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter6idleNode)
+        SideCharacter6idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter6idleNode.position = SCNVector3(0, 0, 0)
+        SideCharacter6idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         
         
         //load all the DAE animations for this Chapter
@@ -1546,7 +1557,13 @@ class ChapterSelection {
         prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Nikki/Nikki@IdleFixed", animationIdentifier: "Nikki@IdleFixed-1")
 
         //load animation for side character 5
-        prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed", animationIdentifier: "Heidi@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@FigureEightFixed", animationIdentifier: "Mikkena@FigureEightFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Approach", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@ApproachFixed", animationIdentifier: "Mikkena@ApproachFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Return", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@ReturnFixed", animationIdentifier: "Mikkena@ReturnFixed-1")
+        
+        //load animation for side character 6
+        prepareAnimation(withKey: "SideCharacter6Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Nikki/Nikki@IdleFixed", animationIdentifier: "Nikki@IdleFixed-1")
+        
 
         chapter9NodeArray.append(storyNode)
         
