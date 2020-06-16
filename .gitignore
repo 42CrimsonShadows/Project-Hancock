@@ -1,32 +1,7 @@
-
-Hancock/art.scnassets/Ground2/Ground_1001_BaseColor.png
-Hancock/art.scnassets/Ground2/Ground_1001_Normal.png
-Hancock/art.scnassets/Ground2/Ground_1001_Roughness.png
-Hancock/art.scnassets/Ground2/Ground_1001_Metallic.png
-Hancock/art.scnassets/Ground2/Ground_1001_Height.png
 Hancock.xcworkspace/xcuserdata/caseykawamura.xcuserdatad/UserInterfaceState.xcuserstate
-Hancock/art.scnassets/3DModels/Chapter1Files/Environment/Environment1Scene.scn
-Hancock/art.scnassets/3DModels/Chapter1Files/Environment/Environment1Scene.scn
-Hancock/art.scnassets/3DModels/Chapter3Files/Environment/Chapter3Scene.scn
-Hancock/art.scnassets/3DModels/Chapter3Files/Environment/Environmetn3Scene.scn
-Hancock/art.scnassets/3DModels/Chapter3Files/Environment/Chapter3Scene.scn
-Hancock/art.scnassets/3DModels/Chapter1Files/Environment/Chapter1Scene.scn
-Hancock/art.scnassets/3DModels/Chapter3Files/Characters/Gary/Gary@IdleFixed.dae
-Hancock/art.scnassets/3DModels/Chapter4Files/Environment/Environment4Scene.scn
-Hancock/art.scnassets/3DModels/Chapter4Files/Environment/WholeScene.obj
-Hancock/art.scnassets/3DModels/Chapter7Files/Environments/Environment7Scene.scn
-<<<<<<< Updated upstream
 .DS_Store
-Hancock.xcodeproj/project.xcworkspace/xcuserdata/chrisross.xcuserdatad/WorkspaceSettings.xcsettings
-Hancock.xcodeproj/project.xcworkspace/xcuserdata/chrisross.xcuserdatad/UserInterfaceState.xcuserstate
+.DS_Store
 *.xcuserstate
-*.xcsettings
-=======
-DerivedData/Hancock/Build/Products/Debug-iphoneos/Hancock.app/art.scnassets/3DModels/Chapter7Files/Environments/Environment7Scene.scn
-DerivedData/Hancock/Build/Products/Debug-iphoneos/Hancock.app/art.scnassets/3DModels/Chapter1Files/Environment/Environment1Scene.scn
-DerivedData/Hancock/Build/Products/Debug-iphoneos/Hancock.app/art.scnassets/3DModels/Chapter3Files/Environment/Environmetn3Scene.scn
-DerivedData/Hancock/Build/Products/Debug-iphoneos/Hancock.app/art.scnassets/3DModels/Chapter4Files/Environment/Environment4Scene.scn
-DerivedData/Hancock/Build/Products/Debug-iphoneos/Hancock.app/art.scnassets/3DModels/Chapter7Files/Environments/Environment7Scene.scn
-Hancock/art.scnassets/3DModels/Chapter10Files/Environments/Environment10Scene.scn
->>>>>>> Stashed changes
-Hancock/art.scnassets/3DModels/.DS_Store
+.DS_Store
+*.xcuserstate
+Hancock/.DS_Store

@@ -226,18 +226,11 @@ class Line: NSObject {
         var rect = updateRectForLinePoint(point)
 
         let arrayIndex = point.sequenceNumber - points.first!.sequenceNumber
-        
-//        if arrayIndex > 0 {
-//            print("-------------------")
-//            print("arrayIndex > 0 at length of: ", arrayIndex)
-//
-//            //FIXME: - array out of range error -
-//
-//            rect = rect.union(updateRectForLinePoint(point, previousPoint: points[arrayIndex - 1]))
-//        }
+
+       // if arrayIndex > 0 {
+         //   rect = rect.union(updateRectForLinePoint(point, previousPoint: points[arrayIndex - 1]))
+      //  }
         if arrayIndex + 1 < points.count {
-            print("arrayIndex + 1 < :", points.count,",at length of:", arrayIndex + 1)
-            print("-------------------")
             rect = rect.union(updateRectForLinePoint(point, previousPoint: points[arrayIndex + 1]))
         }
         return rect
