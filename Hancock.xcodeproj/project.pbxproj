@@ -16,6 +16,7 @@
 		A00E7B5A22CA8D25009BA733 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7B5922CA8D25009BA733 /* UIViewExtension.swift */; };
 		A02AB3372476ED5500AEC16A /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = A02AB3362476ED5500AEC16A /* AppIcon.appiconset */; };
 		A02BCC3B22A86EA70059E3D8 /* activityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BCC3A22A86EA70059E3D8 /* activityViewController.swift */; };
+		A044CA61249AB9D300F79181 /* LetterMatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044CA60249AB9D300F79181 /* LetterMatchingViewController.swift */; };
 		A051592623957A070026485B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C7227CA9F600A7C787 /* LaunchScreen.storyboard */; };
 		A07974B12285FC4A00606889 /* StudentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */; };
 		A07974B322861DB000606889 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B222861DB000606889 /* StudentTableViewController.swift */; };
@@ -52,6 +53,7 @@
 		A00E7B5922CA8D25009BA733 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A02AB3362476ED5500AEC16A /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		A02BCC3A22A86EA70059E3D8 /* activityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityViewController.swift; sourceTree = "<group>"; };
+		A044CA60249AB9D300F79181 /* LetterMatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterMatchingViewController.swift; sourceTree = "<group>"; };
 		A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsTableViewCell.swift; sourceTree = "<group>"; };
 		A07974B222861DB000606889 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
 		A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				A0A028C7227CA9F600A7C787 /* LaunchScreen.storyboard */,
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
 				A0A028C1227CA9F500A7C787 /* Main.storyboard */,
+				A044CA60249AB9D300F79181 /* LetterMatchingViewController.swift */,
 				A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */,
 			);
 			path = Hancock;
@@ -286,6 +289,7 @@
 				34DC042522B2DA36001C70DB /* CanvasView.swift in Sources */,
 				A0A028BC227CA9F500A7C787 /* AppDelegate.swift in Sources */,
 				C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */,
+				A044CA61249AB9D300F79181 /* LetterMatchingViewController.swift in Sources */,
 				A0E9B7B823EBAAA600929F4A /* StopWalk.swift in Sources */,
 				3400A23722D543AD00B3EA3A /* ActivitySelection.swift in Sources */,
 				3446B59522B8201600C785BE /* Formatters.swift in Sources */,
@@ -442,7 +446,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = RX5X2KDAVM;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -468,7 +472,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = RX5X2KDAVM;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;

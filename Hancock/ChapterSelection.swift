@@ -305,7 +305,7 @@ class ChapterSelection {
     func loadChapter1SoundFiles() -> [String: String] {
         let chapter1SoundArray = [ //sounds for Letter I
                                   "Narration1" : "ch1-I-Intro1",
-                                  "Narration2" : "ch1-I-Intro2",
+                                  "Narration2" : "ch1-I-Intro2", 
                                   "Narration3" : "ch1-I-Line1",     //1 narration3
                                   "Narration4" : "ch1-I-Line2_01",  //2 narration4
                                   "Narration5" : "ch1-I-Line2_02",
@@ -314,7 +314,7 @@ class ChapterSelection {
                                   //Narration5" : "ch1-E-Line3_02", //"Next" yellow to purple
                                   "Narration7" : "ch1-F-Line3_02", //"Finally" yellow to purple
                                   "Narration8" : "ch1-I-Line4_01",  //4 narration8
-                                  "Narration9" : "ch1-I-Line4_02",
+                                  "Narration9" : "ch1-I-Line4_02", //You have traced the letter I and Indie is on his way
                                   
                                   //sounds for Letter T
                                   "Narration10" : "ch1-T-Intro1",
@@ -323,6 +323,7 @@ class ChapterSelection {
                                   "Narration13" : "ch1-T-Line2_01", //2 narration13
                                   "Narration14" : "ch1-T-Line2_02",
                                   "Narration15" : "ch1-T-Line3_01", //3 narration14
+                                   "Narration16": "ch1-T-Line3_02", //You have traced the Letter T and Terry is free
             
                                   //sounds for Letter L
                                   "Narration17" : "ch1-L-Intro1",
@@ -357,7 +358,7 @@ class ChapterSelection {
                                   //sounds for Letter H
                                   "Narration42" : "ch1-H-Intro1",
                                   "Narration43" : "ch1-H-Intro2",
-                                  "Narration44" : "ch1-H-Intro3",
+                                  "Narration44" : "ch1-H-Intro3", //Can you trace the letter H to help all her friends say happy birthday
                                   "Narration45" : "ch1-H-Line1",    //1 narration45
                                   "Narration46" : "ch1-H-Line2_01", //2 narration46
                                   "Narration47" : "ch1-H-Line2_02",
