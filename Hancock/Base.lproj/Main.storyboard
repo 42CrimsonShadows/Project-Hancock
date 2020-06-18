@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jmb-Cg-UZK">
-    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -54,7 +54,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJk-j4-2T1">
-                                <rect key="frame" x="903" y="1268.5" width="71" height="47.5"/>
+                                <rect key="frame" x="903" y="1248.5" width="71" height="47.5"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aJk-j4-2T1" secondAttribute="height" multiplier="3:2" id="nds-qb-PU6"/>
@@ -98,10 +98,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnd-S8-8gH">
-                                <rect key="frame" x="849" y="1191" width="125" height="125"/>
+                                <rect key="frame" x="849" y="1171" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="cIn-6z-IKs"/>
                                     <constraint firstAttribute="width" constant="125" id="wJk-fB-jNX"/>
@@ -115,7 +115,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-dN-ay7">
-                                <rect key="frame" x="50" y="1191" width="125" height="125"/>
+                                <rect key="frame" x="50" y="1171" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="0jx-zD-7zz"/>
                                     <constraint firstAttribute="width" constant="125" id="57v-dh-Lns"/>
@@ -155,7 +155,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAe-dA-dqL">
-                                <rect key="frame" x="275" y="1191" width="125" height="125"/>
+                                <rect key="frame" x="275" y="1171" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="LWH-EN-s8Q"/>
                                     <constraint firstAttribute="height" constant="125" id="a9L-6S-Uot"/>
@@ -216,14 +216,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S0V-F7-tnM" userLabel="Grass View">
-                                <rect key="frame" x="0.0" y="1041" width="543.5" height="325"/>
+                                <rect key="frame" x="0.0" y="1021" width="543.5" height="325"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="S0V-F7-tnM" secondAttribute="height" multiplier="547:327" id="3hu-yt-fgL"/>
                                     <constraint firstAttribute="height" constant="325" id="VEs-BB-mR0"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aO0-GI-co4" userLabel="Ant Chill View">
-                                <rect key="frame" x="675" y="1010" width="349" height="356"/>
+                                <rect key="frame" x="675" y="990" width="349" height="356"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aO0-GI-co4" secondAttribute="height" multiplier="50:51" id="tNA-z1-dJL"/>
                                     <constraint firstAttribute="height" constant="356" id="wdE-ey-SWx"/>
@@ -448,7 +448,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyerImage2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOc-nt-cLM">
-                                <rect key="frame" x="20" y="1058" width="432" height="308"/>
+                                <rect key="frame" x="20" y="1038" width="432" height="308"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="432" id="IeD-MY-MZd"/>
                                     <constraint firstAttribute="height" constant="308" id="J64-0r-lsL"/>
@@ -714,87 +714,126 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVB-Nt-58i" userLabel="LabelView">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="297"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rvf-0q-Q1v">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letter Matching" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccq-5F-mab">
-                                        <rect key="frame" x="76" y="112" width="872" height="73"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="61"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find all the b's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5H-am-lH6" userLabel="LetterLabel">
-                                        <rect key="frame" x="439" y="193" width="222" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="222" id="go5-MP-6ou"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="u5H-am-lH6" firstAttribute="leading" secondItem="gVB-Nt-58i" secondAttribute="leading" constant="439" id="6fS-P2-8bp"/>
-                                    <constraint firstItem="ccq-5F-mab" firstAttribute="leading" secondItem="gVB-Nt-58i" secondAttribute="leading" constant="76" id="DRC-Fo-Tq8"/>
-                                    <constraint firstItem="u5H-am-lH6" firstAttribute="top" secondItem="ccq-5F-mab" secondAttribute="bottom" constant="8" id="EQq-lR-zt7"/>
-                                    <constraint firstAttribute="bottom" secondItem="u5H-am-lH6" secondAttribute="bottom" constant="75" id="JFY-Ja-AkV"/>
-                                    <constraint firstItem="ccq-5F-mab" firstAttribute="centerY" secondItem="gVB-Nt-58i" secondAttribute="centerY" id="Oem-s3-rTS"/>
-                                    <constraint firstItem="ccq-5F-mab" firstAttribute="centerX" secondItem="gVB-Nt-58i" secondAttribute="centerX" id="yB7-G8-xsJ"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCQ-ii-EP7" userLabel="ProgressView">
-                                <rect key="frame" x="0.0" y="1130" width="1024" height="226"/>
-                                <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-qD-WB4">
-                                        <rect key="frame" x="40" y="117" width="715" height="10"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="Cch-mB-sTm"/>
-                                        </constraints>
-                                    </progressView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b-.png" translatesAutoresizingMaskIntoConstraints="NO" id="EWL-UR-OwT">
-                                        <rect key="frame" x="824" y="-7" width="180" height="240"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="KB0-qD-WB4" firstAttribute="leading" secondItem="hCQ-ii-EP7" secondAttribute="leading" constant="40" id="Bv9-Bl-cZQ"/>
-                                    <constraint firstItem="KB0-qD-WB4" firstAttribute="top" secondItem="hCQ-ii-EP7" secondAttribute="top" constant="117" id="EzF-Jh-Imz"/>
-                                    <constraint firstItem="EWL-UR-OwT" firstAttribute="leading" secondItem="KB0-qD-WB4" secondAttribute="trailing" constant="69" id="Pzb-L1-P2g"/>
-                                    <constraint firstAttribute="trailing" secondItem="EWL-UR-OwT" secondAttribute="trailing" constant="20" id="fjC-ou-hVY"/>
-                                    <constraint firstItem="EWL-UR-OwT" firstAttribute="centerY" secondItem="hCQ-ii-EP7" secondAttribute="centerY" id="vbX-PV-eFb"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="hLD-X0-akO">
-                                <rect key="frame" x="33" y="325" width="957" height="211"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kys-iF-f4h">
-                                        <rect key="frame" x="0.0" y="0.0" width="177" height="211"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DPQ-2n-sdU">
-                                        <rect key="frame" x="195" y="0.0" width="177" height="211"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXT-9w-0bX">
-                                        <rect key="frame" x="390" y="0.0" width="177" height="211"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vwc-Pt-KwL">
-                                        <rect key="frame" x="585" y="0.0" width="177" height="211"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="itO-PO-qBn">
-                                        <rect key="frame" x="780" y="0.0" width="177" height="211"/>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-le-oJt" userLabel="TitleStackView">
+                                        <rect key="frame" x="284.5" y="0.0" width="455" height="212"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Letter Matching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIe-Ui-k6c" userLabel="TitleLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="455" height="175"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="69"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Find all the b's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqc-Z8-uHf" userLabel="InstructionLabel">
+                                                <rect key="frame" x="153.5" y="183" width="148" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uBw-em-08K" userLabel="1stLetterRowStackView">
+                                        <rect key="frame" x="21.5" y="227" width="981" height="211.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rSz-Fo-k6R">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bag-dH-u1m">
+                                                <rect key="frame" x="201" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zyN-wP-wt9">
+                                                <rect key="frame" x="402" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyP-b9-2Kh">
+                                                <rect key="frame" x="603" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yfZ-5q-IeX">
+                                                <rect key="frame" x="804" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Sem-OD-loz" userLabel="2ndLetterRowStackView">
+                                        <rect key="frame" x="21.5" y="453.5" width="981" height="212"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y2b-kR-zfN">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9xl-v5-MzC">
+                                                <rect key="frame" x="201" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f75-7d-fTT">
+                                                <rect key="frame" x="402" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c4S-lF-pLf">
+                                                <rect key="frame" x="603" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGa-83-1G1">
+                                                <rect key="frame" x="804" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="vOX-RF-5zS" userLabel="3rdLetterRowStackView">
+                                        <rect key="frame" x="21.5" y="680.5" width="981" height="212"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="67t-T4-45k">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V2S-RR-RiL">
+                                                <rect key="frame" x="201" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ION-Nu-gon">
+                                                <rect key="frame" x="402" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x73-0P-ABf">
+                                                <rect key="frame" x="603" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AnQ-3d-hD1">
+                                                <rect key="frame" x="804" y="0.0" width="177" height="212"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="cmK-Rk-HUa" userLabel="4thLetterRowStackView">
+                                        <rect key="frame" x="21.5" y="907.5" width="981" height="211.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-lA-jAv">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1P8-4j-3RY">
+                                                <rect key="frame" x="201" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CDw-pF-tOW">
+                                                <rect key="frame" x="402" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SzW-pf-hkV">
+                                                <rect key="frame" x="603" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eZn-bi-bUP">
+                                                <rect key="frame" x="804" y="0.0" width="177" height="211.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="109" translatesAutoresizingMaskIntoConstraints="NO" id="my5-py-Gn0" userLabel="ProgressStackView">
+                                        <rect key="frame" x="144" y="1134" width="736" height="212"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-7d-hhV">
+                                                <rect key="frame" x="0.0" y="105" width="477" height="2"/>
+                                            </progressView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dnf-5n-m0u">
+                                                <rect key="frame" x="586" y="37.5" width="150" height="137"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hCQ-ii-EP7" firstAttribute="trailing" secondItem="gVB-Nt-58i" secondAttribute="trailing" id="3NY-xc-KSX"/>
-                            <constraint firstItem="hCQ-ii-EP7" firstAttribute="bottom" secondItem="LZS-VL-20T" secondAttribute="bottom" constant="-10" id="Fd0-wp-xc6"/>
-                            <constraint firstItem="hCQ-ii-EP7" firstAttribute="centerX" secondItem="ncB-yH-5Sf" secondAttribute="centerX" id="Jmf-d0-5Lf"/>
-                            <constraint firstItem="hCQ-ii-EP7" firstAttribute="leading" secondItem="LZS-VL-20T" secondAttribute="leading" id="NMn-RA-7OX"/>
-                            <constraint firstItem="hCQ-ii-EP7" firstAttribute="leading" secondItem="gVB-Nt-58i" secondAttribute="leading" id="eer-Il-AY6"/>
-                            <constraint firstItem="hCQ-ii-EP7" firstAttribute="top" secondItem="ncB-yH-5Sf" secondAttribute="top" constant="1130" id="lOm-MT-NNF"/>
-                            <constraint firstItem="gVB-Nt-58i" firstAttribute="top" secondItem="LZS-VL-20T" secondAttribute="top" constant="20" id="tOe-xa-4l2"/>
+                            <constraint firstItem="LZS-VL-20T" firstAttribute="trailing" secondItem="rvf-0q-Q1v" secondAttribute="trailing" id="DCh-gd-92p"/>
+                            <constraint firstItem="rvf-0q-Q1v" firstAttribute="leading" secondItem="ncB-yH-5Sf" secondAttribute="leading" id="OQw-MC-vo0"/>
+                            <constraint firstItem="rvf-0q-Q1v" firstAttribute="top" secondItem="LZS-VL-20T" secondAttribute="top" id="Ozb-FP-oVN"/>
+                            <constraint firstItem="LZS-VL-20T" firstAttribute="bottom" secondItem="rvf-0q-Q1v" secondAttribute="bottom" id="SUH-4A-zbT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LZS-VL-20T"/>
                     </view>
@@ -992,7 +1031,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwE-xS-SbD">
-                                <rect key="frame" x="30" y="1290" width="100" height="46"/>
+                                <rect key="frame" x="30" y="1270" width="100" height="46"/>
                                 <color key="backgroundColor" red="0.9384416937828064" green="0.93565088510513306" blue="0.95562607049942017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="4H6-oq-fRX"/>
@@ -1008,7 +1047,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQt-OX-PEX">
-                                <rect key="frame" x="894" y="1290" width="100" height="46"/>
+                                <rect key="frame" x="894" y="1270" width="100" height="46"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="iDH-Cl-O2f"/>
@@ -1502,27 +1541,27 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a9j-KB-RBi">
-                                <rect key="frame" x="20" y="20" width="984" height="1326"/>
+                                <rect key="frame" x="35" y="40" width="954" height="1286"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qCd-Wo-gua">
-                                        <rect key="frame" x="0.0" y="0.0" width="984" height="442"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="954" height="428.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEb-2T-cZV">
-                                                <rect key="frame" x="0.0" y="0.0" width="314.5" height="442"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304.5" height="428.5"/>
                                                 <state key="normal" image="Vertical"/>
                                                 <connections>
                                                     <action selector="lineType1Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="p7p-B3-BsH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctf-OS-NDj">
-                                                <rect key="frame" x="334.5" y="0.0" width="315" height="442"/>
+                                                <rect key="frame" x="324.5" y="0.0" width="305" height="428.5"/>
                                                 <state key="normal" image="Horizontal"/>
                                                 <connections>
                                                     <action selector="lineType2Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="scQ-D4-awy"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOK-2f-C89">
-                                                <rect key="frame" x="669.5" y="0.0" width="314.5" height="442"/>
+                                                <rect key="frame" x="649.5" y="0.0" width="304.5" height="428.5"/>
                                                 <state key="normal" image="Circle"/>
                                                 <connections>
                                                     <action selector="lineType3Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="u2P-C9-qSO"/>
@@ -1531,24 +1570,24 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ujZ-0C-SAb">
-                                        <rect key="frame" x="0.0" y="442" width="984" height="442"/>
+                                        <rect key="frame" x="0.0" y="428.5" width="954" height="429"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPv-N8-dh7">
-                                                <rect key="frame" x="0.0" y="0.0" width="314.5" height="442"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304.5" height="429"/>
                                                 <state key="normal" image="PerpCross"/>
                                                 <connections>
                                                     <action selector="lineType4Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="4jq-WQ-eYO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gde-RX-DxV">
-                                                <rect key="frame" x="334.5" y="0.0" width="315" height="442"/>
+                                                <rect key="frame" x="324.5" y="0.0" width="305" height="429"/>
                                                 <state key="normal" image="Square"/>
                                                 <connections>
                                                     <action selector="lineType5Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="cf3-nF-ZIp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8al-Di-Xft">
-                                                <rect key="frame" x="669.5" y="0.0" width="314.5" height="442"/>
+                                                <rect key="frame" x="649.5" y="0.0" width="304.5" height="429"/>
                                                 <state key="normal" image="DiagonalRight"/>
                                                 <connections>
                                                     <action selector="lineType6Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="P1D-tI-HoL"/>
@@ -1557,24 +1596,24 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ATd-yK-jrD">
-                                        <rect key="frame" x="0.0" y="884" width="984" height="442"/>
+                                        <rect key="frame" x="0.0" y="857.5" width="954" height="428.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mth-tp-wGe">
-                                                <rect key="frame" x="0.0" y="0.0" width="314.5" height="442"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304.5" height="428.5"/>
                                                 <state key="normal" image="DiagonalLeft"/>
                                                 <connections>
                                                     <action selector="lineType7Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="Xmw-hX-tpQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v14-vL-t5I">
-                                                <rect key="frame" x="334.5" y="0.0" width="315" height="442"/>
+                                                <rect key="frame" x="324.5" y="0.0" width="305" height="428.5"/>
                                                 <state key="normal" image="DiagonalCross"/>
                                                 <connections>
                                                     <action selector="lineType8Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="OlN-T6-Z4J"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rI7-wb-Qn6">
-                                                <rect key="frame" x="669.5" y="0.0" width="314.5" height="442"/>
+                                                <rect key="frame" x="649.5" y="0.0" width="304.5" height="428.5"/>
                                                 <state key="normal" image="Triangle"/>
                                                 <connections>
                                                     <action selector="lineType9Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="eqI-mF-yKl"/>
@@ -1666,7 +1705,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Square" width="375" height="500"/>
         <image name="Triangle" width="375" height="500"/>
         <image name="Vertical" width="375" height="500"/>
-        <image name="b-.png" width="180" height="240"/>
         <image name="profilePic.png" width="225" height="225"/>
     </resources>
 </document>
