@@ -81,6 +81,9 @@ class CanvasView: UIView {
             setNeedsDisplay()
         }
     }
+    // for free draw
+    var freeDraw:Bool = false
+    
     private var needsFullRedraw = true
     
     /// Array containing all line objects that need to be drawn in `drawRect(_:)`.
@@ -393,162 +396,164 @@ class CanvasView: UIView {
             // This touch is ending, remove the line corresponding to it from `activeLines`.
             activeLines.removeObject(forKey: touch)
         }
-        
-        if CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
-            lines.removeAll()
-            needsFullRedraw = true
-            setNeedsDisplay()
-        }
-            
-        else {
-            
-            let myLetterArray = loadletterNarration(currentletter: selectedActivity)
-            
-            switch letterState {
-            case .P7_P8:
-                //A4GreenLine?.isHidden = false
-                //playAudioFile(file: "RockExplode", type: "wav")
-                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
+        if(!freeDraw) {
+
+            if CGPointDistance(from: lastPoint, to: targetPoint) > 50 {
+                lines.removeAll()
+                needsFullRedraw = true
+                setNeedsDisplay()
+            }
                 
-                //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[6]]!, type: "mp3")
+            else {
+                
+                let myLetterArray = loadletterNarration(currentletter: selectedActivity)
+                
+                switch letterState {
+                case .P7_P8:
+                    //A4GreenLine?.isHidden = false
+                    //playAudioFile(file: "RockExplode", type: "wav")
+                    playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                     
-                    if !self.letterComplete {
-                        //wait 1 second
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[7]]!, type: "mp3")
-                            
-                            self.pinkDot?.isHidden = true
-                            self.whiteDot?.isHidden = true
-                        })
-                    }
-                })
-                print("reached .P7_P8")
-                Line1 = false
-                Line2 = false
-                Line3 = false
-                Line4 = false
-                letterComplete = true
-                
-            case .P5_P6:
-                //A3GreenLine?.isHidden = false
-                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
-                
                     //wait 1 second
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                        print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[4])")
-                        self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[4]]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[6]]!, type: "mp3")
                         
                         if !self.letterComplete {
-                            //wait 2 second
+                            //wait 1 second
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[5])")
-                                self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[5]]!, type: "mp3")
+                                self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[7]]!, type: "mp3")
                                 
-                                //wait 2 seconds
+                                self.pinkDot?.isHidden = true
+                                self.whiteDot?.isHidden = true
+                            })
+                        }
+                    })
+                    print("reached .P7_P8")
+                    Line1 = false
+                    Line2 = false
+                    Line3 = false
+                    Line4 = false
+                    letterComplete = true
+                    
+                case .P5_P6:
+                    //A3GreenLine?.isHidden = false
+                    playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
+                    
+                        //wait 1 second
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                            print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[4])")
+                            self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[4]]!, type: "mp3")
+                            
+                            if !self.letterComplete {
+                                //wait 2 second
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                    self.pinkDot?.pulsate(duration: 0.6)
+                                    print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[5])")
+                                    self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[5]]!, type: "mp3")
                                     
                                     //wait 2 seconds
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                        self.whiteDot?.pulsate(duration: 0.6)
+                                        self.pinkDot?.pulsate(duration: 0.6)
+                                        
+                                        //wait 2 seconds
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                            self.whiteDot?.pulsate(duration: 0.6)
+                                        })
+                                    })
+                                })
+                            }
+                        })
+
+                    letterState = .P7_P8
+                    Line1 = false
+                    Line2 = false
+                    Line3 = false
+                    Line4 = true
+                    if activityPoints.count < 13 {
+                        letterComplete = true
+                    }
+                case .P3_P4:
+                    //A2GreenLine?.isHidden = false
+                    playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
+                    
+                    
+                    //wait 1 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        //self.playAudioFile(file: "Line5", type: "mp3")
+                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
+                        
+                        print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[2])")
+                        //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[3]]!, type: "mp3")
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[2]]!, type: "mp3")
+                        
+                        if !self.letterComplete {
+                            //wait 1 second
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                //self.playAudioFile(file: "Line7", type: "mp3")
+                                //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
+                                
+                                print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[3])")
+                                //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[4]]!, type: "mp3")
+                                self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[3]]!, type: "mp3")
+                                
+                                //wait 2 seconds
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                    //self.purpleDot?.pulsate(duration: 0.6)
+                                    self.yellowDot?.pulsate(duration: 0.6)
+                                    
+                                    //wait 2 seconds
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                        //self.yellowDot?.pulsate(duration: 0.6)
+                                        self.purpleDot?.pulsate(duration: 0.6)
                                     })
                                 })
                             })
                         }
                     })
+                    letterState = .P5_P6
+                    Line1 = false
+                    Line2 = false
+                    Line3 = true
+                    Line4 = false
+                    if activityPoints.count < 9 {
+                        letterComplete = true
+                    }
+                    
+                case .P1_P2:
+                    //A1GreenLine?.isHidden = false
+                    //playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
+                    playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
+                    if activityPoints.count < 5 {
+                        letterComplete = true
+                    }
+                    
+                    //wait 1 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[0])")
 
-                letterState = .P7_P8
-                Line1 = false
-                Line2 = false
-                Line3 = false
-                Line4 = true
-                if activityPoints.count < 13 {
-                    letterComplete = true
-                }
-            case .P3_P4:
-                //A2GreenLine?.isHidden = false
-                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
-                
-                
-                //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                    //self.playAudioFile(file: "Line5", type: "mp3")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration6"]!, type: "mp3")
-                    
-                    print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[2])")
-                    //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[3]]!, type: "mp3")
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[2]]!, type: "mp3")
-                    
-                    if !self.letterComplete {
-                        //wait 1 second
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            //self.playAudioFile(file: "Line7", type: "mp3")
-                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict!["Narration7"]!, type: "mp3")
-                            
-                            print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[3])")
-                            //self.playAudioNarrationFile(file: chapterSelectedSoundDict![self.loadletterNarration(currentletter: selectedActivity)[4]]!, type: "mp3")
-                            self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[3]]!, type: "mp3")
-                            
-                            //wait 2 seconds
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[0]]!, type: "mp3")
+
+                        if self.letterComplete == false{
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                //self.purpleDot?.pulsate(duration: 0.6)
-                                self.yellowDot?.pulsate(duration: 0.6)
+                                print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[1])")
+                                self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[1]]!, type: "mp3")
                                 
-                                //wait 2 seconds
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                    //self.yellowDot?.pulsate(duration: 0.6)
-                                    self.purpleDot?.pulsate(duration: 0.6)
+                                //wait 3 seconds
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                                    self.blueDot?.pulsate(duration: 0.6)
+                                    //wait 2 seconds
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                        self.orangeDot?.pulsate(duration: 0.6)
+                                    })
                                 })
                             })
-                        })
-                    }
-                })
-                letterState = .P5_P6
-                Line1 = false
-                Line2 = false
-                Line3 = true
-                Line4 = false
-                if activityPoints.count < 9 {
-                    letterComplete = true
+                        }
+                    })
+                    letterState = .P3_P4
+                    Line1 = false
+                    Line2 = true
+                    Line3 = false
+                    Line4 = false
                 }
-                
-            case .P1_P2:
-                //A1GreenLine?.isHidden = false
-                //playAudioFXFile(file: chapterSelectedSoundDict!["Break3"]!, type: "wav")
-                playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
-                if activityPoints.count < 5 {
-                    letterComplete = true
-                }
-                
-                //wait 1 second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                    print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[0])")
-
-                    self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[0]]!, type: "mp3")
-
-                    if self.letterComplete == false{
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                            print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[1])")
-                            self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[1]]!, type: "mp3")
-                            
-                            //wait 3 seconds
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                                self.blueDot?.pulsate(duration: 0.6)
-                                //wait 2 seconds
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                    self.orangeDot?.pulsate(duration: 0.6)
-                                })
-                            })
-                        })
-                    }
-                })
-                letterState = .P3_P4
-                Line1 = false
-                Line2 = true
-                Line3 = false
-                Line4 = false
             }
         }
     }
