@@ -35,6 +35,7 @@
 		A0E9B7B823EBAAA600929F4A /* StopWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B723EBAAA600929F4A /* StopWalk.swift */; };
 		A0E9B7BA23EBAAE500929F4A /* LetterComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */; };
 		A78A6C51249BA75200F32D3D /* RemoveMeAfterTesting.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A78A6C50249BA75200F32D3D /* RemoveMeAfterTesting.mp4 */; };
+		A78A6C5324A0F7E200F32D3D /* LevelTwoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A6C5224A0F7E200F32D3D /* LevelTwoMenuViewController.swift */; };
 		A7E62789249AAC560031126F /* LevelTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E62788249AAC560031126F /* LevelTwoViewController.swift */; };
 		C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55D229F302500D15A2B /* SignInViewController.swift */; };
 		C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B55F229F305900D15A2B /* RegisterViewController.swift */; };
@@ -75,6 +76,7 @@
 		A0E9B7B723EBAAA600929F4A /* StopWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWalk.swift; sourceTree = "<group>"; };
 		A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterComplete.swift; sourceTree = "<group>"; };
 		A78A6C50249BA75200F32D3D /* RemoveMeAfterTesting.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RemoveMeAfterTesting.mp4; sourceTree = "<group>"; };
+		A78A6C5224A0F7E200F32D3D /* LevelTwoMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoMenuViewController.swift; sourceTree = "<group>"; };
 		A7E62788249AAC560031126F /* LevelTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoViewController.swift; sourceTree = "<group>"; };
 		B44EF93E8A528B6F2D413511 /* Pods-Hancock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hancock.debug.xcconfig"; path = "Target Support Files/Pods-Hancock/Pods-Hancock.debug.xcconfig"; sourceTree = "<group>"; };
 		C939B55D229F302500D15A2B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = Authentication/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -152,6 +154,7 @@
 				A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */,
 				C99A9BE022A058A700554D9A /* HomeViewController.swift */,
 				C99A9BE222A06C0700554D9A /* InitViewController.swift */,
+				A78A6C5224A0F7E200F32D3D /* LevelTwoMenuViewController.swift */,
 				A7E62788249AAC560031126F /* LevelTwoViewController.swift */,
 				A07974B222861DB000606889 /* StudentTableViewController.swift */,
 				A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */,
@@ -301,6 +304,7 @@
 				C99A9BE122A058A700554D9A /* HomeViewController.swift in Sources */,
 				C939B55E229F302500D15A2B /* SignInViewController.swift in Sources */,
 				A00678EC22AEEB5B00846A2D /* line.swift in Sources */,
+				A78A6C5324A0F7E200F32D3D /* LevelTwoMenuViewController.swift in Sources */,
 				C99A9BE322A06C0700554D9A /* InitViewController.swift in Sources */,
 				A07974B322861DB000606889 /* StudentTableViewController.swift in Sources */,
 				A08A2D4522BED3A40076B814 /* ChapterViewController.swift in Sources */,

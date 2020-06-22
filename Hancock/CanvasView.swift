@@ -81,7 +81,7 @@ class CanvasView: UIView {
             setNeedsDisplay()
         }
     }
-    // for free draw
+    // added to stop line clearing after finger/pencil lifts
     var freeDraw:Bool = false
     
     private var needsFullRedraw = true
@@ -396,6 +396,7 @@ class CanvasView: UIView {
             // This touch is ending, remove the line corresponding to it from `activeLines`.
             activeLines.removeObject(forKey: touch)
         }
+        // if not free draw then do the level 3 checks and story progression
         if(!freeDraw) {
 
             if CGPointDistance(from: lastPoint, to: targetPoint) > 50 {

@@ -12,27 +12,76 @@ import AVKit // for the video player
 class LevelTwoViewController: UIViewController {
     
     // MARK: - Variables
-    @IBOutlet weak var letterLabel: UILabel!
-    @IBOutlet weak var letterVideoView: UIView!
-    @IBOutlet weak var replaySoundBtn: UIButton!
+    @IBOutlet weak var letterLabel: UILabel! // shows the letter to draw
+    @IBOutlet weak var letterVideoView: UIView! // shows letter video
+    @IBOutlet weak var replaySoundBtn: UIButton! // replay the video
     @IBOutlet weak var canvasView: CanvasView!
-    @IBOutlet weak var resetCanvasBtn: UIButton!
-    private var isDoneDrawingLetter:Bool = false
-    private var player = AVPlayer()
-    private var letterToDraw:String = "A"
-//    private var letterToDraw:String? {
-//        didSet {
-//            setUp()
-//        }
-//    }
-    private let videoDictionary = ["A":"RemoveMeAfterTesting","B":"RemoveMeAfterTesting"]
+    @IBOutlet weak var resetCanvasBtn: UIButton! // clears lines from canvas
+    private var player = AVPlayer() // video player
+    var letterToDraw:String? // set in LevelTwoMenuVC in prepare: forSegue
+    // dictionary to grab letter video
+    private let videoDictionary = [
+        "a":"RemoveMeAfterTesting",
+        "b":"RemoveMeAfterTesting",
+        "c":"RemoveMeAfterTesting",
+        "d":"RemoveMeAfterTesting",
+        "e":"RemoveMeAfterTesting",
+        "f":"RemoveMeAfterTesting",
+        "g":"RemoveMeAfterTesting",
+        "h":"RemoveMeAfterTesting",
+        "i":"RemoveMeAfterTesting",
+        "j":"RemoveMeAfterTesting",
+        "k":"RemoveMeAfterTesting",
+        "l":"RemoveMeAfterTesting",
+        "m":"RemoveMeAfterTesting",
+        "n":"RemoveMeAfterTesting",
+        "o":"RemoveMeAfterTesting",
+        "p":"RemoveMeAfterTesting",
+        "q":"RemoveMeAfterTesting",
+        "r":"RemoveMeAfterTesting",
+        "s":"RemoveMeAfterTesting",
+        "t":"RemoveMeAfterTesting",
+        "u":"RemoveMeAfterTesting",
+        "v":"RemoveMeAfterTesting",
+        "w":"RemoveMeAfterTesting",
+        "x":"RemoveMeAfterTesting",
+        "y":"RemoveMeAfterTesting",
+        "z":"RemoveMeAfterTesting",
+            "A":"RemoveMeAfterTesting",
+            "B":"RemoveMeAfterTesting",
+            "C":"RemoveMeAfterTesting",
+            "D":"RemoveMeAfterTesting",
+            "E":"RemoveMeAfterTesting",
+            "F":"RemoveMeAfterTesting",
+            "G":"RemoveMeAfterTesting",
+            "H":"RemoveMeAfterTesting",
+            "I":"RemoveMeAfterTesting",
+            "J":"RemoveMeAfterTesting",
+            "K":"RemoveMeAfterTesting",
+            "L":"RemoveMeAfterTesting",
+            "M":"RemoveMeAfterTesting",
+            "N":"RemoveMeAfterTesting",
+            "O":"RemoveMeAfterTesting",
+            "P":"RemoveMeAfterTesting",
+            "Q":"RemoveMeAfterTesting",
+            "R":"RemoveMeAfterTesting",
+            "S":"RemoveMeAfterTesting",
+            "T":"RemoveMeAfterTesting",
+            "U":"RemoveMeAfterTesting",
+            "V":"RemoveMeAfterTesting",
+            "W":"RemoveMeAfterTesting",
+            "X":"RemoveMeAfterTesting",
+            "Y":"RemoveMeAfterTesting",
+            "Z":"RemoveMeAfterTesting"]
     
     
     // MARK: - ViewDidLoad and Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUp()
+        if letterToDraw != nil {
+            setUp()
+        }
         
         // Canvas setup
         canvasView.backgroundColor = UIColor(white: 1, alpha: 1)
@@ -40,25 +89,35 @@ class LevelTwoViewController: UIViewController {
         canvasView.translatesAutoresizingMaskIntoConstraints = false
         canvasView.heightAnchor.constraint(equalToConstant: 700).isActive = true
         canvasView.widthAnchor.constraint(equalToConstant: view.bounds.width / 2).isActive = true
+        // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
     }
     
     private func setUp() {
-        print("Setup Letter \(letterToDraw)")
-        letterLabel.text = "Let's Draw \"\(letterToDraw)\" Together!"
-        guard let video = videoDictionary[letterToDraw] else {
-            print("No value for key \(letterToDraw)")
+        print("Setup Letter \(letterToDraw!)")
+        // show letter to draw
+        letterLabel.text = "Let's Draw \"\(letterToDraw!)\" Together!"
+        // find video name for letter
+        guard let video = videoDictionary[letterToDraw!] else {
+            print("No value for key \(letterToDraw!)")
             return
         }
+        // find video path in the main bundle
         guard let path = Bundle.main.path(forResource: video, ofType: ".mp4") else {
             print("Could not find path for video")
             return
         }
+        // create local url with the path
         let url = URL(fileURLWithPath: path)
+        // assign AVPlayer to play the video
         player = AVPlayer(url: url)
+        // create a layer to put the player on so it doesn't take up the whole screen
         let playerLayer = AVPlayerLayer(player: player)
+        // the the frame to the sized view in the storyboard
         playerLayer.frame = letterVideoView.bounds
+        // add the player layer to the sized view
         letterVideoView.layer.addSublayer(playerLayer)
+        // play the video
         player.play()
     }
     
@@ -82,12 +141,21 @@ class LevelTwoViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func replayVideo(_ sender: UIButton) {
+        // set the player's video time position to zero and play
         player.seek(to: .zero)
         player.play()
     }
     
-    @IBAction func resetCanvas(_ sender: Any) {
+    @IBAction func resetCanvas(_ sender: UIButton) {
+        // removes all lines from canvas view
         canvasView.clear()
     }
     
+    @IBAction func donePressed(_ sender: UIButton) {
+        // done with letter so send data return to menu selection
+        // TODO: Send data to backend
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.dismiss(animated: false, completion: nil)
+        })
+    }
 }
