@@ -157,7 +157,7 @@ class LevelTwoActivityViewController: UIViewController {
         // this is a screenshot of the canvas view
         let image = screenShot()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute:{
-            //self.dismiss(animated: false, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         })
     }
     
