@@ -30,7 +30,7 @@ class LevelTwoMenuViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // if we're going to the activity
-         if let destination = segue.destination as? LevelTwoViewController {
+         if let destination = segue.destination as? LevelTwoActivityViewController {
             // set letterToDraw (which is needed to load the video and letter label)
             destination.letterToDraw = letterToLoad! // segue is only performed after letterToLoad is set
         }

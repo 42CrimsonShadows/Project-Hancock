@@ -9,7 +9,7 @@
 import UIKit
 import AVKit // for the video player
 
-class LevelTwoViewController: UIViewController {
+class LevelTwoActivityViewController: UIViewController {
     
     // MARK: - Variables
     @IBOutlet weak var letterLabel: UILabel! // shows the letter to draw
@@ -154,8 +154,21 @@ class LevelTwoViewController: UIViewController {
     @IBAction func donePressed(_ sender: UIButton) {
         // done with letter so send data return to menu selection
         // TODO: Send data to backend
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-            self.dismiss(animated: false, completion: nil)
+        // this is a screenshot of the canvas view
+        let image = screenShot()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute:{
+            //self.dismiss(animated: false, completion: nil)
         })
+    }
+    
+    
+    // MARK: - Utilities
+    private func screenShot() -> UIImage? {
+        //Create the UIImage
+        UIGraphicsBeginImageContext(canvasView.frame.size)
+        canvasView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }
