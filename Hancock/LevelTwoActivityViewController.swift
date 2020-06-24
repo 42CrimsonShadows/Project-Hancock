@@ -12,13 +12,16 @@ import AVKit // for the video player
 class LevelTwoActivityViewController: UIViewController {
     
     // MARK: - Variables
+    @IBOutlet weak var doneBtn: UIButton! // to return to level 2 menu
     @IBOutlet weak var letterLabel: UILabel! // shows the letter to draw
     @IBOutlet weak var letterVideoView: UIView! // shows letter video
     @IBOutlet weak var replaySoundBtn: UIButton! // replay the video
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var resetCanvasBtn: UIButton! // clears lines from canvas
-    private var player = AVPlayer() // video player
+    private var player = AVPlayer() // video player IF VIDEOS AND NOT GIFS
     var letterToDraw:String? // set in LevelTwoMenuVC in prepare: forSegue
+    
+    // TODO: Get videos or gifs and link them
     // dictionary to grab letter video
     private let videoDictionary = [
         "a":"RemoveMeAfterTesting",
@@ -83,6 +86,9 @@ class LevelTwoActivityViewController: UIViewController {
             setUp()
         }
         
+        // make button corners rounded
+        doneBtn.layer.cornerRadius = 10
+        
         // Canvas setup
         canvasView.backgroundColor = UIColor(white: 1, alpha: 1)
         //this enables autolayout for our canvas
@@ -107,6 +113,9 @@ class LevelTwoActivityViewController: UIViewController {
             print("Could not find path for video")
             return
         }
+        
+        // FOR VIDEOS AND NOT GIFS
+        
         // create local url with the path
         let url = URL(fileURLWithPath: path)
         // assign AVPlayer to play the video
@@ -141,6 +150,9 @@ class LevelTwoActivityViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func replayVideo(_ sender: UIButton) {
+        
+        // FOR VIDEOS AND NOT GIFS
+        
         // set the player's video time position to zero and play
         player.seek(to: .zero)
         player.play()
@@ -155,7 +167,17 @@ class LevelTwoActivityViewController: UIViewController {
         // done with letter so send data return to menu selection
         // TODO: Send data to backend
         // this is a screenshot of the canvas view
-        let image = screenShot()
+        if let image = screenShot() {
+            // we could try saving a 'png'
+            // there is also a jpeg option
+            if let pngData = image.pngData() {
+                // did some testing and this pngData can be successfully written to a .png file
+                // i'm thinking that we can send the pngData as Data to the db and then be able to display it on the website
+                // but we could also try a base64EncodedString if that doesn't work
+//                let base64String = pngData.base64EncodedString()
+                print("Did screenshot Level2 and this is the pngData: \(pngData)")
+            }
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute:{
             self.dismiss(animated: false, completion: nil)
         })

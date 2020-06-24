@@ -721,66 +721,66 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="0.0" width="1004" height="253"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wim-y9-ac4">
-                                                <rect key="frame" x="0.0" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="I">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="qrx-hP-1z5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhi-Og-0eC">
-                                                <rect key="frame" x="169" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="169" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="T">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="hWW-Ny-Kx1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTP-0Q-fPR">
-                                                <rect key="frame" x="338" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="338" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="L">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="T0F-T8-uvF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bw7-Nn-sm7">
-                                                <rect key="frame" x="507" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="507" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="F">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="vBF-l6-vUF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaV-4T-sTo">
-                                                <rect key="frame" x="676" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="676" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="E">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="bKj-1d-CkS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXo-86-NEP">
-                                                <rect key="frame" x="845" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="845" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="H">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="a4G-7D-DXe"/>
@@ -792,66 +792,66 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="253" width="1004" height="253.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-tV-NBK">
-                                                <rect key="frame" x="0.0" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="P">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="3cY-0t-JK8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHp-mC-Wrg">
-                                                <rect key="frame" x="169" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="169" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="R">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="nIX-KL-NLu"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96F-d9-lH2">
-                                                <rect key="frame" x="338" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="338" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="B">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="zij-Xt-GhG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhB-Xu-vcS">
-                                                <rect key="frame" x="507" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="507" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="C">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="t1V-Tt-YMi"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LL-Fz-j4g">
-                                                <rect key="frame" x="676" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="676" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="D">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="IpT-2q-oxN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCN-qD-2Z1">
-                                                <rect key="frame" x="845" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="845" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="U">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="qF1-gy-lba"/>
@@ -863,55 +863,55 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="506.5" width="1004" height="253"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lG8-dn-k45">
-                                                <rect key="frame" x="0.0" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="G">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="5ry-tS-msH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSJ-Gb-CQp">
-                                                <rect key="frame" x="203" y="84.5" width="192.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="203" y="75.5" width="192.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="O">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="LwI-3x-ucC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p58-5h-h12">
-                                                <rect key="frame" x="405.5" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="405.5" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="Q">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="dAB-nP-Aqx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gio-f6-Imf">
-                                                <rect key="frame" x="608.5" y="84.5" width="192.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="608.5" y="75.5" width="192.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="S">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="LTb-Ts-pjx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haB-Av-ZdI">
-                                                <rect key="frame" x="811" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="811" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="J">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="xrL-GN-r9P"/>
@@ -923,55 +923,55 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="759.5" width="1004" height="253.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oht-2J-hwF">
-                                                <rect key="frame" x="0.0" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="K">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="2AP-SX-DJs"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8t-3F-Qdm">
-                                                <rect key="frame" x="203" y="84.5" width="192.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="203" y="75.5" width="192.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="V">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="ylW-LJ-5OD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1P-tt-Z9h">
-                                                <rect key="frame" x="405.5" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="405.5" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="W">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="xPw-xg-047"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hG-Rj-Fcx">
-                                                <rect key="frame" x="608.5" y="84.5" width="192.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="608.5" y="75.5" width="192.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="M">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="u1E-ON-r4Y"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nW-K9-wDp">
-                                                <rect key="frame" x="811" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="811" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="A">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="bvl-pl-MhB"/>
@@ -983,44 +983,44 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="1013" width="1004" height="253"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em8-Qv-AMg">
-                                                <rect key="frame" x="0.0" y="84.5" width="243.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="243.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="N">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="S9Q-DA-rYa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSz-R2-5OZ">
-                                                <rect key="frame" x="253.5" y="84.5" width="243.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="253.5" y="75.5" width="243.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="Z">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="o07-nU-fv4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQX-mH-PmG">
-                                                <rect key="frame" x="507" y="84.5" width="243.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="507" y="75.5" width="243.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="Y">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="EZH-xt-XCH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTQ-UP-BsE">
-                                                <rect key="frame" x="760.5" y="84.5" width="243.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="760.5" y="75.5" width="243.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="X">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="ZaT-xX-lqU" eventType="touchUpInside" id="UUs-zP-FMp"/>
@@ -1043,7 +1043,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPd-o6-7C4">
-                                <rect key="frame" x="0.0" y="20" width="100" height="100"/>
+                                <rect key="frame" x="10" y="20" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1gd-rg-MOK"/>
                                     <constraint firstAttribute="width" constant="100" id="pdb-80-JLa"/>
@@ -1054,12 +1055,12 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="GPd-o6-7C4" firstAttribute="top" secondItem="hOv-qy-M34" secondAttribute="top" constant="20" id="1bH-zf-j9J"/>
                             <constraint firstItem="CZt-5t-bt3" firstAttribute="leading" secondItem="hOv-qy-M34" secondAttribute="leading" id="Fhs-iS-wtx"/>
                             <constraint firstItem="CZt-5t-bt3" firstAttribute="trailing" secondItem="hOv-qy-M34" secondAttribute="trailing" id="Ral-Mx-S4H"/>
-                            <constraint firstItem="GPd-o6-7C4" firstAttribute="leading" secondItem="hOv-qy-M34" secondAttribute="leading" id="bAv-Ly-VNP"/>
+                            <constraint firstItem="GPd-o6-7C4" firstAttribute="leading" secondItem="hOv-qy-M34" secondAttribute="leading" constant="10" id="bAv-Ly-VNP"/>
                             <constraint firstItem="CZt-5t-bt3" firstAttribute="top" secondItem="hOv-qy-M34" secondAttribute="top" constant="100" id="zYK-95-Dod"/>
                             <constraint firstItem="CZt-5t-bt3" firstAttribute="bottom" secondItem="hOv-qy-M34" secondAttribute="bottom" id="zeZ-iG-iH6"/>
                         </constraints>
@@ -1100,8 +1101,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Draw &quot;A&quot; Together!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lw-uU-ssd">
-                                <rect key="frame" x="0.0" y="282" width="1024" height="85"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="60"/>
+                                <rect key="frame" x="0.0" y="253.5" width="1024" height="113.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1154,10 +1155,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAg-o3-z5S">
-                                <rect key="frame" x="849" y="40" width="135" height="72"/>
+                                <rect key="frame" x="828" y="40" width="156" height="72"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="DONE">
+                                <state key="normal" title=" DONE ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1191,6 +1192,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="QrL-KL-f2d"/>
                     <connections>
                         <outlet property="canvasView" destination="cz0-fH-fWB" id="VFg-Jf-xjM"/>
+                        <outlet property="doneBtn" destination="ZAg-o3-z5S" id="KNX-Ci-Myz"/>
                         <outlet property="letterLabel" destination="6lw-uU-ssd" id="ikx-rg-qgE"/>
                         <outlet property="letterVideoView" destination="Vz4-7o-9yG" id="JW8-sn-2hb"/>
                         <outlet property="replaySoundBtn" destination="hyt-Qe-EjN" id="zuq-zt-IkW"/>
@@ -1209,7 +1211,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zx-mB-L4d">
+                            <stackView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zx-mB-L4d">
                                 <rect key="frame" x="62" y="352.5" width="900" height="361"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KWr-r1-H1A" userLabel="UpperStack View">
@@ -1309,17 +1311,23 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDd-aw-62Y">
-                                <rect key="frame" x="408" y="872" width="216" height="48"/>
+                                <rect key="frame" x="418" y="874" width="226" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="LEVEL 2 LOWER"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="LEVEL 2 LOWER">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="PWC-du-3cN" kind="presentation" modalPresentationStyle="fullScreen" id="6ge-Ew-5yy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPU-ZM-h3D">
-                                <rect key="frame" x="109" y="872" width="208" height="48"/>
+                                <rect key="frame" x="109" y="874" width="218" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="LEVEL 2 UPPER"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="LEVEL 2 UPPER">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="ZaT-xX-lqU" kind="presentation" modalPresentationStyle="fullScreen" id="M01-BM-JLo"/>
                                 </connections>
@@ -2068,55 +2076,55 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="0.0" width="1004" height="253"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9p-Hj-AJY">
-                                                <rect key="frame" x="0.0" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="c">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="RuX-bA-vp4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImI-tr-ZWE">
-                                                <rect key="frame" x="203" y="84.5" width="192.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="203" y="75.5" width="192.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="a">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="ESb-aq-Ld7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elj-Uo-Gpd">
-                                                <rect key="frame" x="405.5" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="405.5" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="d">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="97T-ZW-g5Z"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUi-WR-kot">
-                                                <rect key="frame" x="608.5" y="84.5" width="192.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="608.5" y="75.5" width="192.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="g">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="01g-cn-TYo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBY-pb-EsJ">
-                                                <rect key="frame" x="811" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="811" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="o">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="L3w-GA-GRK"/>
@@ -2128,66 +2136,66 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="253" width="1004" height="253.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acq-KV-dNI">
-                                                <rect key="frame" x="0.0" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="u">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="QZj-BD-4Ez"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Www-Jd-nQx">
-                                                <rect key="frame" x="169" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="169" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="s">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="q5v-qy-ZVE"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-yK-Rld">
-                                                <rect key="frame" x="338" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="338" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="v">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="a3B-b2-CLX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJc-MM-7a9">
-                                                <rect key="frame" x="507" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="507" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="w">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="nkY-1d-Ozg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ge-Nw-TOF">
-                                                <rect key="frame" x="676" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="676" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="i">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="g40-Rz-j7T"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCC-08-Ikx">
-                                                <rect key="frame" x="845" y="85" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="845" y="76" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="t">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="VJP-Pa-lrh"/>
@@ -2199,55 +2207,55 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="506.5" width="1004" height="253"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1N-La-j2Y">
-                                                <rect key="frame" x="0.0" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="l">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="5P0-xr-7zo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVE-LJ-FGj">
-                                                <rect key="frame" x="203" y="84.5" width="192.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="203" y="75.5" width="192.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="y">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="cfb-C2-104"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLf-fg-gY5">
-                                                <rect key="frame" x="405.5" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="405.5" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="k">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="fwh-LT-nLg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gks-Mj-Z8N">
-                                                <rect key="frame" x="608.5" y="84.5" width="192.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="608.5" y="75.5" width="192.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="e">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="2nL-WO-FUC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fye-bh-MxA">
-                                                <rect key="frame" x="811" y="84.5" width="193" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="811" y="75.5" width="193" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="j">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="BXS-3Q-rfh"/>
@@ -2259,66 +2267,66 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="759.5" width="1004" height="253.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDj-EP-6ce">
-                                                <rect key="frame" x="0.0" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="p">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="sck-d0-Yi0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoB-92-XDh">
-                                                <rect key="frame" x="169" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="169" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="r">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="Poa-fZ-FNB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzM-D3-aoz">
-                                                <rect key="frame" x="338" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="338" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="n">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="4IM-UW-9Oo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lha-bT-60F">
-                                                <rect key="frame" x="507" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="507" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="h">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="tcU-ys-3GM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Uc-ZR-l34">
-                                                <rect key="frame" x="676" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="676" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="b">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="gol-hQ-deR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbv-Cc-oMI">
-                                                <rect key="frame" x="845" y="84.5" width="159" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="845" y="75.5" width="159" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="m">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="lKR-DZ-pkA"/>
@@ -2330,44 +2338,44 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <rect key="frame" x="10" y="1013" width="1004" height="253"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8y-SP-Bw0">
-                                                <rect key="frame" x="0.0" y="84.5" width="243.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="243.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="f">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="4bU-9p-QbA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5y-BW-4K0">
-                                                <rect key="frame" x="253.5" y="84.5" width="243.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="253.5" y="75.5" width="243.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="q">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="yNB-O5-Tpl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87H-ql-bzi">
-                                                <rect key="frame" x="507" y="84.5" width="243.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="507" y="75.5" width="243.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="x">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="uZx-Sp-j1J"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZC-OA-5MY">
-                                                <rect key="frame" x="760.5" y="84.5" width="243.5" height="84"/>
-                                                <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                                <rect key="frame" x="760.5" y="75.5" width="243.5" height="102"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="80"/>
                                                 <state key="normal" title="z">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="loadLetter:" destination="PWC-du-3cN" eventType="touchUpInside" id="Lb0-qN-S8t"/>
@@ -2390,7 +2398,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cox-ch-DH4">
-                                <rect key="frame" x="0.0" y="20" width="100" height="100"/>
+                                <rect key="frame" x="10" y="20" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="vCM-jq-hkC"/>
                                     <constraint firstAttribute="height" constant="100" id="yiW-BU-Ug3"/>
@@ -2401,10 +2410,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Yrn-mb-pul" firstAttribute="bottom" secondItem="lqT-BC-OTO" secondAttribute="bottom" id="4r3-fW-CDo"/>
-                            <constraint firstItem="Cox-ch-DH4" firstAttribute="leading" secondItem="lqT-BC-OTO" secondAttribute="leading" id="Cux-Ph-jou"/>
+                            <constraint firstItem="Cox-ch-DH4" firstAttribute="leading" secondItem="lqT-BC-OTO" secondAttribute="leading" constant="10" id="Cux-Ph-jou"/>
                             <constraint firstItem="Yrn-mb-pul" firstAttribute="trailing" secondItem="lqT-BC-OTO" secondAttribute="trailing" id="DRM-Dy-UMZ"/>
                             <constraint firstItem="Cox-ch-DH4" firstAttribute="top" secondItem="lqT-BC-OTO" secondAttribute="top" constant="20" id="hud-Fh-vlf"/>
                             <constraint firstItem="Yrn-mb-pul" firstAttribute="top" secondItem="lqT-BC-OTO" secondAttribute="top" constant="100" id="noa-Gl-NRj"/>
