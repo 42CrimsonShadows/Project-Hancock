@@ -19,11 +19,11 @@ class LevelTwoActivityViewController: UIViewController {
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var resetCanvasBtn: UIButton! // clears lines from canvas
     private var audioPlayer = AVAudioPlayer() // for audio instructions
-    private var videoPlayer = AVPlayer() // video player IF VIDEOS AND NOT GIFS
+    private var videoPlayer = AVPlayer() // video player
     var letterToDraw:String? // set in LevelTwoMenuVC in prepare: forSegue
     
     // MARK: - Dictionaries
-    // TODO: Get videos or gifs and link them
+    // TODO: Get videos and link them
     // dictionary to grab letter video
     private let videoDictionary = [
         "a":"RemoveMeAfterTesting",
@@ -171,7 +171,6 @@ class LevelTwoActivityViewController: UIViewController {
             return
         }
         
-        // FOR VIDEOS AND NOT GIFS
         // create local url with the path
         let url = URL(fileURLWithPath: path)
         // assign AVPlayer to play the video
@@ -238,7 +237,6 @@ class LevelTwoActivityViewController: UIViewController {
         // set audio position time to zero and play
         audioPlayer.currentTime = .zero
         audioPlayer.play()
-        // FOR VIDEOS AND NOT GIFS
         // set the player's video time position to zero and play
         videoPlayer.seek(to: .zero)
         videoPlayer.play()
