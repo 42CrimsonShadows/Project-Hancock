@@ -15,12 +15,14 @@ class LevelTwoActivityViewController: UIViewController {
     @IBOutlet weak var doneBtn: UIButton! // to return to level 2 menu
     @IBOutlet weak var letterLabel: UILabel! // shows the letter to draw
     @IBOutlet weak var letterVideoView: UIView! // shows letter video
-    @IBOutlet weak var replaySoundBtn: UIButton! // replay the video
+    @IBOutlet weak var replaySoundBtn: UIButton! // replay the video & audio
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var resetCanvasBtn: UIButton! // clears lines from canvas
-    private var player = AVPlayer() // video player IF VIDEOS AND NOT GIFS
+    private var audioPlayer = AVAudioPlayer() // for audio instructions
+    private var videoPlayer = AVPlayer() // video player IF VIDEOS AND NOT GIFS
     var letterToDraw:String? // set in LevelTwoMenuVC in prepare: forSegue
     
+    // MARK: - Dictionaries
     // TODO: Get videos or gifs and link them
     // dictionary to grab letter video
     private let videoDictionary = [
@@ -76,6 +78,60 @@ class LevelTwoActivityViewController: UIViewController {
             "X":"RemoveMeAfterTesting",
             "Y":"RemoveMeAfterTesting",
             "Z":"RemoveMeAfterTesting"]
+    // dictionary to grab letter audio
+    private let audioDictionary = [
+        "a":"Gravel and Grass Walk",
+        "b":"Gravel and Grass Walk",
+        "c":"Gravel and Grass Walk",
+        "d":"Gravel and Grass Walk",
+        "e":"Gravel and Grass Walk",
+        "f":"Gravel and Grass Walk",
+        "g":"Gravel and Grass Walk",
+        "h":"Gravel and Grass Walk",
+        "i":"Gravel and Grass Walk",
+        "j":"Gravel and Grass Walk",
+        "k":"Gravel and Grass Walk",
+        "l":"Gravel and Grass Walk",
+        "m":"Gravel and Grass Walk",
+        "n":"Gravel and Grass Walk",
+        "o":"Gravel and Grass Walk",
+        "p":"Gravel and Grass Walk",
+        "q":"Gravel and Grass Walk",
+        "r":"Gravel and Grass Walk",
+        "s":"Gravel and Grass Walk",
+        "t":"Gravel and Grass Walk",
+        "u":"Gravel and Grass Walk",
+        "v":"Gravel and Grass Walk",
+        "w":"Gravel and Grass Walk",
+        "x":"Gravel and Grass Walk",
+        "y":"Gravel and Grass Walk",
+        "z":"Gravel and Grass Walk",
+            "A":"Gravel and Grass Walk",
+            "B":"Gravel and Grass Walk",
+            "C":"Gravel and Grass Walk",
+            "D":"Gravel and Grass Walk",
+            "E":"Gravel and Grass Walk",
+            "F":"Gravel and Grass Walk",
+            "G":"Gravel and Grass Walk",
+            "H":"Gravel and Grass Walk",
+            "I":"Gravel and Grass Walk",
+            "J":"Gravel and Grass Walk",
+            "K":"Gravel and Grass Walk",
+            "L":"Gravel and Grass Walk",
+            "M":"Gravel and Grass Walk",
+            "N":"Gravel and Grass Walk",
+            "O":"Gravel and Grass Walk",
+            "P":"Gravel and Grass Walk",
+            "Q":"Gravel and Grass Walk",
+            "R":"Gravel and Grass Walk",
+            "S":"Gravel and Grass Walk",
+            "T":"Gravel and Grass Walk",
+            "U":"Gravel and Grass Walk",
+            "V":"Gravel and Grass Walk",
+            "W":"Gravel and Grass Walk",
+            "X":"Gravel and Grass Walk",
+            "Y":"Gravel and Grass Walk",
+            "Z":"Gravel and Grass Walk"]
     
     
     // MARK: - ViewDidLoad and Setup
@@ -83,7 +139,11 @@ class LevelTwoActivityViewController: UIViewController {
         super.viewDidLoad()
         
         if letterToDraw != nil {
-            setUp()
+            print("Setup Letter \(letterToDraw!)")
+            // show letter to draw
+            letterLabel.text = "Let's Draw \"\(letterToDraw!)\" Together!"
+            setUpVideo()
+            setUpAudio()
         }
         
         // make button corners rounded
@@ -99,13 +159,10 @@ class LevelTwoActivityViewController: UIViewController {
         canvasView.freeDraw = true
     }
     
-    private func setUp() {
-        print("Setup Letter \(letterToDraw!)")
-        // show letter to draw
-        letterLabel.text = "Let's Draw \"\(letterToDraw!)\" Together!"
+    private func setUpVideo() {
         // find video name for letter
         guard let video = videoDictionary[letterToDraw!] else {
-            print("No value for key \(letterToDraw!)")
+            print("No videoDictionary value for key \(letterToDraw!)")
             return
         }
         // find video path in the main bundle
@@ -115,19 +172,42 @@ class LevelTwoActivityViewController: UIViewController {
         }
         
         // FOR VIDEOS AND NOT GIFS
-        
         // create local url with the path
         let url = URL(fileURLWithPath: path)
         // assign AVPlayer to play the video
-        player = AVPlayer(url: url)
+        videoPlayer = AVPlayer(url: url)
+        // turn sound off of video to hear the audio
+        videoPlayer.volume = 0.0
         // create a layer to put the player on so it doesn't take up the whole screen
-        let playerLayer = AVPlayerLayer(player: player)
+        let playerLayer = AVPlayerLayer(player: videoPlayer)
         // the the frame to the sized view in the storyboard
         playerLayer.frame = letterVideoView.bounds
         // add the player layer to the sized view
         letterVideoView.layer.addSublayer(playerLayer)
         // play the video
-        player.play()
+        videoPlayer.play()
+    }
+    
+    private func setUpAudio() {
+        // find audio name for letter
+        guard let audio = audioDictionary[letterToDraw!] else {
+            print("No audioDictionary value for key \(letterToDraw!)")
+            return
+        }
+        // find audio path in the main bundle
+        guard let path = Bundle.main.path(forResource: audio, ofType: "wav", inDirectory: "art.scnassets/Sounds") else {
+            print("Could not find path for audio")
+            return
+        }
+        do {
+            // assign AVAudioPlayer to play the audio
+            try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+        }
+        catch {
+            print("Could not create AudioPlayer")
+        }
+        // play the audio
+        self.audioPlayer.play()
     }
     
     
@@ -150,12 +230,18 @@ class LevelTwoActivityViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func replayVideo(_ sender: UIButton) {
-        
+        // if there is a current sound playing stop sound
+        if(audioPlayer.isPlaying)
+        {
+            audioPlayer.stop()
+        }
+        // set audio position time to zero and play
+        audioPlayer.currentTime = .zero
+        audioPlayer.play()
         // FOR VIDEOS AND NOT GIFS
-        
         // set the player's video time position to zero and play
-        player.seek(to: .zero)
-        player.play()
+        videoPlayer.seek(to: .zero)
+        videoPlayer.play()
     }
     
     @IBAction func resetCanvas(_ sender: UIButton) {
