@@ -18,6 +18,7 @@ class LevelTwoActivityViewController: UIViewController {
     @IBOutlet weak var replaySoundBtn: UIButton! // replay the video & audio
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var resetCanvasBtn: UIButton! // clears lines from canvas
+    @IBOutlet weak var letterIV: UIImageView! // to show gifs instead of videos
     private var audioPlayer = AVAudioPlayer() // for audio instructions
     private var videoPlayer = AVPlayer() // video player
     var letterToDraw:String? // set in LevelTwoMenuVC in prepare: forSegue
@@ -142,12 +143,16 @@ class LevelTwoActivityViewController: UIViewController {
             print("Setup Letter \(letterToDraw!)")
             // show letter to draw
             letterLabel.text = "Let's Draw \"\(letterToDraw!)\" Together!"
+            letterIV.isHidden = true
             setUpVideo()
             setUpAudio()
-        }
         
+            //letterIV.loadGif(name: "Anthony-Chillaxing") // replace with videoDictionary[letterToDraw!]
+        }
         // make button corners rounded
         doneBtn.layer.cornerRadius = 10
+        replaySoundBtn.layer.cornerRadius = 10
+        resetCanvasBtn.layer.cornerRadius = 10
         
         // Canvas setup
         canvasView.backgroundColor = UIColor(white: 1, alpha: 1)

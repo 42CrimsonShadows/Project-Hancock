@@ -1121,6 +1121,12 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <action selector="replayVideo:" destination="3hw-5Z-k07" eventType="touchUpInside" id="zwf-QI-1gA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Clear Drawing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxS-Ra-fIS">
+                                <rect key="frame" x="626" y="485" width="190" height="43"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyt-Qe-EjN">
                                 <rect key="frame" x="518" y="457" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1135,14 +1141,29 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <action selector="resetCanvas:" destination="3hw-5Z-k07" eventType="touchUpInside" id="7lN-eO-uE4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Replay Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGC-te-hKE">
+                                <rect key="frame" x="128" y="486" width="173" height="43"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LqZ-qQ-mhO">
                                 <rect key="frame" x="0.0" y="565" width="1030" height="700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vz4-7o-9yG">
                                         <rect key="frame" x="0.0" y="0.0" width="512" height="700"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oiu-4E-n0R">
+                                                <rect key="frame" x="0.0" y="0.0" width="512" height="700"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="oiu-4E-n0R" secondAttribute="trailing" id="2h2-hR-1Wi"/>
+                                            <constraint firstItem="oiu-4E-n0R" firstAttribute="leading" secondItem="Vz4-7o-9yG" secondAttribute="leading" id="DFe-W7-jSh"/>
                                             <constraint firstAttribute="height" constant="700" id="XaI-PN-idF"/>
+                                            <constraint firstItem="oiu-4E-n0R" firstAttribute="top" secondItem="Vz4-7o-9yG" secondAttribute="top" id="ii9-Mo-ydT"/>
+                                            <constraint firstAttribute="bottom" secondItem="oiu-4E-n0R" secondAttribute="bottom" id="wlY-5e-nnm"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cz0-fH-fWB" customClass="CanvasView" customModule="ABC_Go_AR" customModuleProvider="target">
@@ -1169,19 +1190,25 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <color key="backgroundColor" red="0.46014549404466398" green="0.61795175656466295" blue="0.71668781725888331" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="5o3-KV-Frw" firstAttribute="centerX" secondItem="PR4-4H-QoM" secondAttribute="centerX" id="0S2-px-lKQ"/>
+                            <constraint firstItem="LqZ-qQ-mhO" firstAttribute="top" secondItem="tGC-te-hKE" secondAttribute="bottom" constant="36" id="3Xo-Da-8tg"/>
+                            <constraint firstItem="tGC-te-hKE" firstAttribute="centerY" secondItem="NFG-Fb-NzZ" secondAttribute="centerY" id="4uZ-2e-rOw"/>
                             <constraint firstItem="LqZ-qQ-mhO" firstAttribute="top" secondItem="NFG-Fb-NzZ" secondAttribute="bottom" constant="8" id="B5c-wg-HvX"/>
+                            <constraint firstItem="KxS-Ra-fIS" firstAttribute="leading" secondItem="hyt-Qe-EjN" secondAttribute="trailing" constant="8" id="H9Y-72-c67"/>
                             <constraint firstItem="5o3-KV-Frw" firstAttribute="leading" secondItem="6lw-uU-ssd" secondAttribute="leading" id="HF0-mf-OJk"/>
                             <constraint firstItem="KYF-W4-wa6" firstAttribute="top" secondItem="5o3-KV-Frw" secondAttribute="bottom" constant="8" id="HeH-EV-fqU"/>
                             <constraint firstItem="NFG-Fb-NzZ" firstAttribute="leading" secondItem="PR4-4H-QoM" secondAttribute="leadingMargin" id="Iyp-Wl-guW"/>
                             <constraint firstItem="5o3-KV-Frw" firstAttribute="top" secondItem="O6p-Nd-dnC" secondAttribute="top" id="JXX-fj-vKx"/>
                             <constraint firstItem="NFG-Fb-NzZ" firstAttribute="top" secondItem="6lw-uU-ssd" secondAttribute="bottom" constant="90" id="PqQ-3h-KLe"/>
+                            <constraint firstItem="LqZ-qQ-mhO" firstAttribute="top" secondItem="KxS-Ra-fIS" secondAttribute="bottom" constant="37" id="QsD-YS-g4U"/>
                             <constraint firstItem="O6p-Nd-dnC" firstAttribute="trailing" secondItem="hyt-Qe-EjN" secondAttribute="trailing" constant="406" id="Tji-Xp-s2e"/>
                             <constraint firstItem="5o3-KV-Frw" firstAttribute="trailing" secondItem="6lw-uU-ssd" secondAttribute="trailing" id="WPQ-IX-o6U"/>
                             <constraint firstItem="O6p-Nd-dnC" firstAttribute="trailing" secondItem="ZAg-o3-z5S" secondAttribute="trailing" constant="40" id="Zz8-tu-4HY"/>
+                            <constraint firstItem="KxS-Ra-fIS" firstAttribute="centerY" secondItem="hyt-Qe-EjN" secondAttribute="centerY" id="dKk-vj-VNI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LqZ-qQ-mhO" secondAttribute="trailing" constant="-26" id="fem-g4-Slu"/>
                             <constraint firstItem="LqZ-qQ-mhO" firstAttribute="leading" secondItem="6lw-uU-ssd" secondAttribute="leading" id="l4j-Aj-TLt"/>
                             <constraint firstItem="5o3-KV-Frw" firstAttribute="trailing" secondItem="KYF-W4-wa6" secondAttribute="trailing" id="nlp-1e-UBH"/>
                             <constraint firstItem="5o3-KV-Frw" firstAttribute="leading" secondItem="KYF-W4-wa6" secondAttribute="leading" id="ooz-v6-daC"/>
+                            <constraint firstItem="tGC-te-hKE" firstAttribute="leading" secondItem="NFG-Fb-NzZ" secondAttribute="trailing" constant="8" id="peb-Mh-ogU"/>
                             <constraint firstItem="5o3-KV-Frw" firstAttribute="leading" secondItem="O6p-Nd-dnC" secondAttribute="leading" id="sj4-FU-hff"/>
                             <constraint firstItem="NFG-Fb-NzZ" firstAttribute="top" secondItem="hyt-Qe-EjN" secondAttribute="top" id="tcH-Xa-BoZ"/>
                             <constraint firstItem="NFG-Fb-NzZ" firstAttribute="top" secondItem="PR4-4H-QoM" secondAttribute="top" constant="457" id="tfe-WQ-EWC"/>
@@ -1193,6 +1220,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <connections>
                         <outlet property="canvasView" destination="cz0-fH-fWB" id="VFg-Jf-xjM"/>
                         <outlet property="doneBtn" destination="ZAg-o3-z5S" id="KNX-Ci-Myz"/>
+                        <outlet property="letterIV" destination="oiu-4E-n0R" id="rfx-bF-75b"/>
                         <outlet property="letterLabel" destination="6lw-uU-ssd" id="ikx-rg-qgE"/>
                         <outlet property="letterVideoView" destination="Vz4-7o-9yG" id="JW8-sn-2hb"/>
                         <outlet property="replaySoundBtn" destination="hyt-Qe-EjN" id="zuq-zt-IkW"/>
