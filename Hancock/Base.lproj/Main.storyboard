@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jmb-Cg-UZK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LAD-Jj-Ebs">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -720,13 +720,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-le-oJt" userLabel="TitleStackView">
                                         <rect key="frame" x="284.5" y="0.0" width="455" height="212"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Letter Matching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIe-Ui-k6c" userLabel="TitleLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Letter Matching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIe-Ui-k6c" userLabel="TitleLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="455" height="175"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="69"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Find all the b's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqc-Z8-uHf" userLabel="InstructionLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find all the b's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqc-Z8-uHf" userLabel="InstructionLabel">
                                                 <rect key="frame" x="153.5" y="183" width="148" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
@@ -734,23 +734,23 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uBw-em-08K" userLabel="1stLetterRowStackView">
-                                        <rect key="frame" x="21.5" y="227" width="981" height="211.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="uBw-em-08K" userLabel="1stLetterRowStackView">
+                                        <rect key="frame" x="19" y="227" width="986" height="211.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rSz-Fo-k6R">
-                                                <rect key="frame" x="0.0" y="0.0" width="177" height="211.5"/>
-                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bag-dH-u1m">
-                                                <rect key="frame" x="201" y="0.0" width="177" height="211.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="186" height="211.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uqx-Yi-GHO">
+                                                <rect key="frame" x="200" y="0.0" width="186" height="211.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zyN-wP-wt9">
-                                                <rect key="frame" x="402" y="0.0" width="177" height="211.5"/>
+                                                <rect key="frame" x="400" y="0.0" width="186" height="211.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyP-b9-2Kh">
-                                                <rect key="frame" x="603" y="0.0" width="177" height="211.5"/>
+                                                <rect key="frame" x="600" y="0.0" width="186" height="211.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yfZ-5q-IeX">
-                                                <rect key="frame" x="804" y="0.0" width="177" height="211.5"/>
+                                                <rect key="frame" x="800" y="0.0" width="186" height="211.5"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -826,6 +826,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uBw-em-08K" secondAttribute="trailing" constant="19" id="5Bi-Ke-ccD"/>
+                                    <constraint firstItem="uBw-em-08K" firstAttribute="leading" secondItem="rvf-0q-Q1v" secondAttribute="leading" constant="19" id="fiK-N8-oh0"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -837,6 +841,30 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LZS-VL-20T"/>
                     </view>
+                    <connections>
+                        <outlet property="instructionImageView" destination="dnf-5n-m0u" id="qgK-b6-L8O"/>
+                        <outlet property="instructionLabel" destination="Kqc-Z8-uHf" id="kHf-09-SF6"/>
+                        <outlet property="rowFourCardFiveImageView" destination="eZn-bi-bUP" id="Vsy-Le-YpQ"/>
+                        <outlet property="rowFourCardFourImageView" destination="SzW-pf-hkV" id="0s8-SW-azO"/>
+                        <outlet property="rowFourCardOneImageView" destination="xAa-lA-jAv" id="tci-Ab-582"/>
+                        <outlet property="rowFourCardThreeImageView" destination="CDw-pF-tOW" id="Mpd-Cq-2bU"/>
+                        <outlet property="rowFourCardTwoImageView" destination="1P8-4j-3RY" id="KXQ-gd-ISu"/>
+                        <outlet property="rowOneCardFiveImageView" destination="yfZ-5q-IeX" id="jIw-ii-Auf"/>
+                        <outlet property="rowOneCardFourImageView" destination="cyP-b9-2Kh" id="RKE-HL-F2t"/>
+                        <outlet property="rowOneCardOneImageView" destination="Bag-dH-u1m" id="j6b-aZ-fXs"/>
+                        <outlet property="rowOneCardThreeImageView" destination="zyN-wP-wt9" id="64y-yP-RUd"/>
+                        <outlet property="rowOneCardTwoImageView" destination="Bag-dH-u1m" id="paK-vt-GjW"/>
+                        <outlet property="rowThreeCardFiveImageView" destination="AnQ-3d-hD1" id="Yqh-e4-xeR"/>
+                        <outlet property="rowThreeCardFourImageView" destination="x73-0P-ABf" id="2ma-f5-VRP"/>
+                        <outlet property="rowThreeCardOneImageView" destination="67t-T4-45k" id="hPC-hn-XQb"/>
+                        <outlet property="rowThreeCardThreeImageView" destination="ION-Nu-gon" id="C24-cT-9AE"/>
+                        <outlet property="rowThreeCardTwoImageView" destination="V2S-RR-RiL" id="VhY-yc-827"/>
+                        <outlet property="rowTwoCardFiveImageView" destination="gGa-83-1G1" id="u3e-ID-Ovb"/>
+                        <outlet property="rowTwoCardFourImageView" destination="c4S-lF-pLf" id="T9l-mT-kHY"/>
+                        <outlet property="rowTwoCardOneImageView" destination="y2b-kR-zfN" id="VV3-KY-P1r"/>
+                        <outlet property="rowTwoCardThreeImageView" destination="f75-7d-fTT" id="W8b-NQ-g53"/>
+                        <outlet property="rowTwoCardTwoImageView" destination="9xl-v5-MzC" id="maC-Wk-kaI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfo-dT-dUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1317,7 +1345,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t80-ww-KYb" userLabel="Concept View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t80-ww-KYb" userLabel="Concept View">
                                 <rect key="frame" x="0.0" y="171" width="1024" height="1024"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nyC-Yu-V0h">
@@ -1358,8 +1386,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="LJU-aR-2aU" firstAttribute="centerX" secondItem="upf-Uj-sZY" secondAttribute="centerX" constant="-200" id="Xso-GN-eQU"/>
                             <constraint firstItem="nyC-Yu-V0h" firstAttribute="top" secondItem="FPw-kR-OSp" secondAttribute="top" id="XyH-jy-481"/>
                             <constraint firstItem="2BT-AN-5wz" firstAttribute="leading" secondItem="FPw-kR-OSp" secondAttribute="leading" id="Ysr-ya-d6z"/>
+                            <constraint firstItem="t80-ww-KYb" firstAttribute="leading" secondItem="2BT-AN-5wz" secondAttribute="leading" id="aHu-vy-P6I"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="t80-ww-KYb" secondAttribute="bottom" id="lnW-ud-2yI"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t80-ww-KYb" secondAttribute="trailing" id="p31-rP-XXs"/>
+                            <constraint firstItem="t80-ww-KYb" firstAttribute="top" secondItem="nyC-Yu-V0h" secondAttribute="bottom" constant="71" id="vXv-lX-jF5"/>
                             <constraint firstItem="FPw-kR-OSp" firstAttribute="trailing" secondItem="nyC-Yu-V0h" secondAttribute="trailing" id="vrl-DI-w6g"/>
                             <constraint firstItem="t80-ww-KYb" firstAttribute="centerX" secondItem="upf-Uj-sZY" secondAttribute="centerX" id="xKn-KE-dfc"/>
                         </constraints>
@@ -1468,7 +1498,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFP-Q0-NWu" userLabel="Concept View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFP-Q0-NWu" userLabel="Concept View">
                                 <rect key="frame" x="0.0" y="171" width="1024" height="1024"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLv-tY-SIT">
@@ -1502,9 +1532,11 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="bwk-4y-egg" firstAttribute="centerY" secondItem="8o8-nh-0Z8" secondAttribute="centerY" constant="12" id="6qr-ln-pSn"/>
                             <constraint firstItem="8o8-nh-0Z8" firstAttribute="top" secondItem="gJ0-bq-cKi" secondAttribute="top" constant="20" id="COl-WI-vzo"/>
                             <constraint firstItem="nB7-ee-X2u" firstAttribute="leading" secondItem="gJ0-bq-cKi" secondAttribute="leading" id="Eq0-BE-3tV"/>
+                            <constraint firstItem="aFP-Q0-NWu" firstAttribute="leading" secondItem="nB7-ee-X2u" secondAttribute="leading" id="MuI-SB-Zd2"/>
                             <constraint firstItem="aFP-Q0-NWu" firstAttribute="centerY" secondItem="ENl-7X-l9m" secondAttribute="centerY" id="MvR-hY-MTV"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aFP-Q0-NWu" secondAttribute="bottom" id="Nj7-mS-RKB"/>
                             <constraint firstItem="bLv-tY-SIT" firstAttribute="top" secondItem="gJ0-bq-cKi" secondAttribute="top" id="Yee-3P-gBF"/>
+                            <constraint firstItem="aFP-Q0-NWu" firstAttribute="top" secondItem="bLv-tY-SIT" secondAttribute="bottom" constant="71" id="cCr-Sh-lfD"/>
                             <constraint firstItem="bwk-4y-egg" firstAttribute="centerX" secondItem="ENl-7X-l9m" secondAttribute="centerX" constant="-200" id="fb1-Br-7sT"/>
                             <constraint firstItem="aFP-Q0-NWu" firstAttribute="centerX" secondItem="ENl-7X-l9m" secondAttribute="centerX" id="ffz-Hj-x4r"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aFP-Q0-NWu" secondAttribute="trailing" id="g5i-f7-Ult"/>
@@ -1680,7 +1712,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <segue reference="lk7-ni-Qgd"/>
         <segue reference="tkb-zN-uOx"/>
         <segue reference="2Q2-TJ-gJR"/>
-        <segue reference="aeR-De-qzQ"/>
+        <segue reference="5IO-Gm-Cu4"/>
         <segue reference="2O5-wy-OoL"/>
     </inferredMetricsTieBreakers>
     <resources>
