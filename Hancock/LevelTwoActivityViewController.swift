@@ -14,7 +14,7 @@ class LevelTwoActivityViewController: UIViewController {
     // MARK: - Variables
     @IBOutlet weak var doneBtn: UIButton! // to return to level 2 menu
     @IBOutlet weak var letterLabel: UILabel! // shows the letter to draw
-    @IBOutlet weak var letterVideoView: UIView! // shows letter video
+    @IBOutlet weak var letterAnimationView: UIView! // shows letter video
     @IBOutlet weak var replaySoundBtn: UIButton! // replay the video & audio
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var resetCanvasBtn: UIButton! // clears lines from canvas
@@ -26,7 +26,7 @@ class LevelTwoActivityViewController: UIViewController {
     // MARK: - Dictionaries
     // TODO: Get videos and link them
     // dictionary to grab letter video
-    private let videoDictionary = [
+    private let letterAnimationDictionary = [
         "a":"RemoveMeAfterTesting",
         "b":"RemoveMeAfterTesting",
         "c":"RemoveMeAfterTesting",
@@ -135,19 +135,18 @@ class LevelTwoActivityViewController: UIViewController {
             "Z":"Gravel and Grass Walk"]
     
     
-    // MARK: - ViewDidLoad and Setup
+    // MARK: - ViewDidLoad/Appear and Setup
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if letterToDraw != nil {
             print("Setup Letter \(letterToDraw!)")
             // show letter to draw
             letterLabel.text = "Let's Draw \"\(letterToDraw!)\" Together!"
-            letterIV.isHidden = true
-            setUpVideo()
+            //letterIV.isHidden = true
+            //setUpVideo()
+            setUpGif()
             setUpAudio()
-        
-            //letterIV.loadGif(name: "Anthony-Chillaxing") // replace with videoDictionary[letterToDraw!]
+            
         }
         // make button corners rounded
         doneBtn.layer.cornerRadius = 10
@@ -164,9 +163,15 @@ class LevelTwoActivityViewController: UIViewController {
         canvasView.freeDraw = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Start the animation
+        letterIV.startAnimating()
+    }
+    
     private func setUpVideo() {
         // find video name for letter
-        guard let video = videoDictionary[letterToDraw!] else {
+        guard let video = letterAnimationDictionary[letterToDraw!] else {
             print("No videoDictionary value for key \(letterToDraw!)")
             return
         }
@@ -185,9 +190,9 @@ class LevelTwoActivityViewController: UIViewController {
         // create a layer to put the player on so it doesn't take up the whole screen
         let playerLayer = AVPlayerLayer(player: videoPlayer)
         // the the frame to the sized view in the storyboard
-        playerLayer.frame = letterVideoView.bounds
+        playerLayer.frame = letterAnimationView.bounds
         // add the player layer to the sized view
-        letterVideoView.layer.addSublayer(playerLayer)
+        letterAnimationView.layer.addSublayer(playerLayer)
         // play the video
         videoPlayer.play()
     }
@@ -212,6 +217,18 @@ class LevelTwoActivityViewController: UIViewController {
         }
         // play the audio
         self.audioPlayer.play()
+    }
+    
+    private func setUpGif() {
+        if let letterGif = UIImage.gif(name:"Anthony-Chillaxing") {
+            letterIV.image = letterGif.images?.last
+            // Set the images from the UIImage
+            letterIV.animationImages = letterGif.images
+            // Set the duration of the UIImage
+            letterIV.animationDuration = letterGif.duration
+            // Set the repetitioncount
+            letterIV.animationRepeatCount = 1
+        }
     }
     
     
@@ -242,9 +259,12 @@ class LevelTwoActivityViewController: UIViewController {
         // set audio position time to zero and play
         audioPlayer.currentTime = .zero
         audioPlayer.play()
+        
+        // Start the animation
+        letterIV.startAnimating()
         // set the player's video time position to zero and play
-        videoPlayer.seek(to: .zero)
-        videoPlayer.play()
+//        videoPlayer.seek(to: .zero)
+//        videoPlayer.play()
     }
     
     @IBAction func resetCanvas(_ sender: UIButton) {

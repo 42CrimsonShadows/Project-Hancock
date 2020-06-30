@@ -1220,9 +1220,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <connections>
                         <outlet property="canvasView" destination="cz0-fH-fWB" id="VFg-Jf-xjM"/>
                         <outlet property="doneBtn" destination="ZAg-o3-z5S" id="KNX-Ci-Myz"/>
+                        <outlet property="letterAnimationView" destination="Vz4-7o-9yG" id="JW8-sn-2hb"/>
                         <outlet property="letterIV" destination="oiu-4E-n0R" id="rfx-bF-75b"/>
                         <outlet property="letterLabel" destination="6lw-uU-ssd" id="ikx-rg-qgE"/>
-                        <outlet property="letterVideoView" destination="Vz4-7o-9yG" id="JW8-sn-2hb"/>
                         <outlet property="replaySoundBtn" destination="hyt-Qe-EjN" id="zuq-zt-IkW"/>
                         <outlet property="resetCanvasBtn" destination="NFG-Fb-NzZ" id="xd4-eW-fBa"/>
                     </connections>
