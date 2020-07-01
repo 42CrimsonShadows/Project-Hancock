@@ -81,8 +81,10 @@ class CanvasView: UIView {
             setNeedsDisplay()
         }
     }
-    // added to stop line clearing after finger/pencil lifts
+    // added to stop line clearing after finger/pencil lifts on level2 and level4
     var freeDraw:Bool = false
+    // added to adjust line width for level4 (Free Write)
+    var lineWidth:CGFloat = 20
     
     private var needsFullRedraw = true
     
@@ -266,6 +268,7 @@ class CanvasView: UIView {
         }
         
         for line in lines {
+            line.lineWidth = lineWidth
             line.drawInContext(context, isDebuggingEnabled: isDebuggingEnabled, usePreciseLocation: usePreciseLocations)
         }
         context.setStrokeColor(dotPointColor)
@@ -299,7 +302,6 @@ class CanvasView: UIView {
         for touch in touches {
             // Retrieve a line from `activeLines`. If no line exists, create one.
             let line: Line = activeLines.object(forKey: touch) ?? addActiveLineForTouch(touch)
-            
             /*
              Remove prior predicted points and update the `updateRect` based on the removals. The touches
              used to create these points are predictions provided to offer additional data. They are stale
@@ -331,7 +333,6 @@ class CanvasView: UIView {
     
     private func addActiveLineForTouch(_ touch: UITouch) -> Line {
         let newLine = Line()
-        
         activeLines.setObject(newLine, forKey: touch)
         
         lines.append(newLine)
@@ -380,7 +381,6 @@ class CanvasView: UIView {
         for touch in touches {
             // Skip over touches that do not correspond to an active line.
             guard let line = activeLines.object(forKey: touch) else { continue }
-            
             // If this is a touch cancellation, cancel the associated line.
             if cancel { updateRect = updateRect.union(line.cancel()) }
             

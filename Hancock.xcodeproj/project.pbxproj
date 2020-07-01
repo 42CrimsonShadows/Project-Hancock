@@ -34,6 +34,7 @@
 		A0E9B7B623EBA70200929F4A /* PlayWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B523EBA70200929F4A /* PlayWalk.swift */; };
 		A0E9B7B823EBAAA600929F4A /* StopWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B723EBAAA600929F4A /* StopWalk.swift */; };
 		A0E9B7BA23EBAAE500929F4A /* LetterComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */; };
+		A713540624ACC7CE00E6D656 /* FreeWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713540524ACC7CE00E6D656 /* FreeWriteViewController.swift */; };
 		A78A6C51249BA75200F32D3D /* RemoveMeAfterTesting.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A78A6C50249BA75200F32D3D /* RemoveMeAfterTesting.mp4 */; };
 		A78A6C5324A0F7E200F32D3D /* LevelTwoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A6C5224A0F7E200F32D3D /* LevelTwoMenuViewController.swift */; };
 		A7E62789249AAC560031126F /* LevelTwoActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E62788249AAC560031126F /* LevelTwoActivityViewController.swift */; };
@@ -75,6 +76,7 @@
 		A0E9B7B523EBA70200929F4A /* PlayWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWalk.swift; sourceTree = "<group>"; };
 		A0E9B7B723EBAAA600929F4A /* StopWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWalk.swift; sourceTree = "<group>"; };
 		A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterComplete.swift; sourceTree = "<group>"; };
+		A713540524ACC7CE00E6D656 /* FreeWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeWriteViewController.swift; sourceTree = "<group>"; };
 		A78A6C50249BA75200F32D3D /* RemoveMeAfterTesting.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RemoveMeAfterTesting.mp4; sourceTree = "<group>"; };
 		A78A6C5224A0F7E200F32D3D /* LevelTwoMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoMenuViewController.swift; sourceTree = "<group>"; };
 		A7E62788249AAC560031126F /* LevelTwoActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoActivityViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				C99A9BE222A06C0700554D9A /* InitViewController.swift */,
 				A78A6C5224A0F7E200F32D3D /* LevelTwoMenuViewController.swift */,
 				A7E62788249AAC560031126F /* LevelTwoActivityViewController.swift */,
+				A713540524ACC7CE00E6D656 /* FreeWriteViewController.swift */,
 				A07974B222861DB000606889 /* StudentTableViewController.swift */,
 				A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */,
 				34DC042422B2DA36001C70DB /* ReticleView.swift */,
@@ -294,6 +297,7 @@
 				34DC042622B2DA36001C70DB /* ReticleView.swift in Sources */,
 				A0A028C0227CA9F500A7C787 /* ViewController.swift in Sources */,
 				34DC042522B2DA36001C70DB /* CanvasView.swift in Sources */,
+				A713540624ACC7CE00E6D656 /* FreeWriteViewController.swift in Sources */,
 				A0A028BC227CA9F500A7C787 /* AppDelegate.swift in Sources */,
 				C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */,
 				A0E9B7B823EBAAA600929F4A /* StopWalk.swift in Sources */,
