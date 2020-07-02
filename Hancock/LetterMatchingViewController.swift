@@ -45,7 +45,7 @@ class LetterMatchingViewController: UIViewController {
     
      override func viewDidLoad() {
         super.viewDidLoad()
-        
+                      
         //set instruction label to show instruction image
         //instructionLabel.text = "test"
         
@@ -80,6 +80,7 @@ class LetterMatchingViewController: UIViewController {
         
         
 }// End of ViewDidLoad
+    
     
 
    

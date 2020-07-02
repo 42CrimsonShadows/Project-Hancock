@@ -853,7 +853,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowOneCardFourImageView" destination="cyP-b9-2Kh" id="RKE-HL-F2t"/>
                         <outlet property="rowOneCardOneImageView" destination="Bag-dH-u1m" id="j6b-aZ-fXs"/>
                         <outlet property="rowOneCardThreeImageView" destination="zyN-wP-wt9" id="64y-yP-RUd"/>
-                        <outlet property="rowOneCardTwoImageView" destination="Bag-dH-u1m" id="paK-vt-GjW"/>
+                        <outlet property="rowOneCardTwoImageView" destination="uqx-Yi-GHO" id="ZmG-KK-DQe"/>
                         <outlet property="rowThreeCardFiveImageView" destination="AnQ-3d-hD1" id="Yqh-e4-xeR"/>
                         <outlet property="rowThreeCardFourImageView" destination="x73-0P-ABf" id="2ma-f5-VRP"/>
                         <outlet property="rowThreeCardOneImageView" destination="67t-T4-45k" id="hPC-hn-XQb"/>
