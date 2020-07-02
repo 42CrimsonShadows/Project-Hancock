@@ -157,8 +157,7 @@ class LevelTwoActivityViewController: UIViewController {
         canvasView.backgroundColor = UIColor(white: 1, alpha: 1)
         //this enables autolayout for our canvas
         canvasView.translatesAutoresizingMaskIntoConstraints = false
-        canvasView.heightAnchor.constraint(equalToConstant: 700).isActive = true
-        canvasView.widthAnchor.constraint(equalToConstant: view.bounds.width / 2).isActive = true
+        canvasView.heightAnchor.constraint(lessThanOrEqualToConstant: 700).isActive = true
         // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
     }

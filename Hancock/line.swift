@@ -23,7 +23,7 @@ class Line: NSObject {
         return pointsWaitingForUpdatesByEstimationIndex.isEmpty
     }
     
-    var lineWidth:CGFloat = 20
+    var lineWidth:CGFloat = 10
 
     func updateWithTouch(_ touch: UITouch) -> (Bool, CGRect) {
         if let estimationUpdateIndex = touch.estimationUpdateIndex,

@@ -10,25 +10,40 @@ import UIKit
 
 class FreeWriteViewController: UIViewController {
     
+    // MARK: - Variables
     @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var writingView: UIView!
     @IBOutlet weak var backgroundIV: UIImageView!
     @IBOutlet weak var canvasView: CanvasView!
+    @IBOutlet weak var paperTypeBtn1: UIButton!
+    @IBOutlet weak var paperTypeBtn2: UIButton!
+    @IBOutlet weak var paperTypeBtn3: UIButton!
+    @IBOutlet weak var paperScaleBtn1: UIButton!
+    @IBOutlet weak var paperScaleBtn2: UIButton!
+    @IBOutlet weak var paperScaleBtn3: UIButton!
+    @IBOutlet weak var penScaleBtn1: UIButton!
+    @IBOutlet weak var penScaleBtn2: UIButton!
+    @IBOutlet weak var penScaleBtn3: UIButton!
+    @IBOutlet weak var penScaleBtn4: UIButton!
     
-    //private var pageUnderlay = UIImageView()
-    
+        
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // make button corners rounded
         doneBtn.layer.cornerRadius = 10
+        paperTypeBtn1.layer.borderWidth = 3
+        paperScaleBtn1.layer.borderWidth = 3
+        penScaleBtn2.layer.borderWidth = 3
+
         
         // Canvas setup
         canvasView.backgroundColor = UIColor(white: 0.5, alpha: 0)
         //this enables autolayout for our canvas
         canvasView.translatesAutoresizingMaskIntoConstraints = false
-        canvasView.heightAnchor.constraint(equalToConstant: 1000).isActive = true
-        canvasView.widthAnchor.constraint(equalToConstant: 1000).isActive = true
+        writingView.heightAnchor.constraint(lessThanOrEqualToConstant: 1000).isActive = true
+        writingView.widthAnchor.constraint(greaterThanOrEqualToConstant: 1000)
         // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
         
@@ -62,13 +77,22 @@ class FreeWriteViewController: UIViewController {
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
         if(sender.currentTitle == "Paper1") {
             // change background image
+            paperTypeBtn1.layer.borderWidth = 3
+            paperTypeBtn2.layer.borderWidth = 0
+            paperTypeBtn3.layer.borderWidth = 0
             backgroundIV.image = UIImage(named: "art.scnassets/UI-art/AntFace.png")
         }
         else if (sender.currentTitle == "Paper2") {
+            paperTypeBtn1.layer.borderWidth = 0
+            paperTypeBtn2.layer.borderWidth = 3
+            paperTypeBtn3.layer.borderWidth = 0
             backgroundIV.image = UIImage(named: "art.scnassets/UI-art/PlayBtn.png")
         }
         else if (sender.currentTitle == "Paper3") {
             backgroundIV.image = UIImage(named: "art.scnassets/UI-art/Book Cover Image Upper.png")
+            paperTypeBtn1.layer.borderWidth = 0
+            paperTypeBtn2.layer.borderWidth = 0
+            paperTypeBtn3.layer.borderWidth = 3
         }
         else {
             print("No Paper Button Title Match: \(sender.currentTitle)")
@@ -80,12 +104,21 @@ class FreeWriteViewController: UIViewController {
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
         if(sender.currentTitle == "Scale1") {
             // change background image
+            paperScaleBtn1.layer.borderWidth = 3
+            paperScaleBtn2.layer.borderWidth = 0
+            paperScaleBtn3.layer.borderWidth = 0
             backgroundIV.image = UIImage(named: "art.scnassets/UI-art/AntFace.png")
         }
         else if (sender.currentTitle == "Scale2") {
+            paperScaleBtn1.layer.borderWidth = 0
+            paperScaleBtn2.layer.borderWidth = 3
+            paperScaleBtn3.layer.borderWidth = 0
             backgroundIV.image = UIImage(named: "art.scnassets/UI-art/PlayBtn.png")
         }
         else if (sender.currentTitle == "Scale3") {
+            paperScaleBtn1.layer.borderWidth = 0
+            paperScaleBtn2.layer.borderWidth = 0
+            paperScaleBtn3.layer.borderWidth = 3
             backgroundIV.image = UIImage(named: "art.scnassets/UI-art/Book Cover Image Upper.png")
         }
         else {
@@ -98,15 +131,31 @@ class FreeWriteViewController: UIViewController {
     @IBAction func penLinePressed(_ sender: UIButton) {
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
         if(sender.currentTitle == "Pen1") {
+            penScaleBtn1.layer.borderWidth = 3
+            penScaleBtn2.layer.borderWidth = 0
+            penScaleBtn3.layer.borderWidth = 0
+            penScaleBtn4.layer.borderWidth = 0
             canvasView.lineWidth = 10
         }
         else if (sender.currentTitle == "Pen2") {
+            penScaleBtn1.layer.borderWidth = 0
+            penScaleBtn2.layer.borderWidth = 3
+            penScaleBtn3.layer.borderWidth = 0
+            penScaleBtn4.layer.borderWidth = 0
             canvasView.lineWidth = 20
         }
         else if (sender.currentTitle == "Pen3") {
+            penScaleBtn1.layer.borderWidth = 0
+            penScaleBtn2.layer.borderWidth = 0
+            penScaleBtn3.layer.borderWidth = 3
+            penScaleBtn4.layer.borderWidth = 0
             canvasView.lineWidth = 30
         }
         else if (sender.currentTitle == "Pen4") {
+            penScaleBtn1.layer.borderWidth = 0
+            penScaleBtn2.layer.borderWidth = 0
+            penScaleBtn3.layer.borderWidth = 0
+            penScaleBtn4.layer.borderWidth = 3
             canvasView.lineWidth = 40
         }
         else {
