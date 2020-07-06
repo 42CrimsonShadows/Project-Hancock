@@ -8,7 +8,8 @@
 
 import UIKit
 
-class LetterMatchingViewController: UIViewController {
+class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegate {
+      
     //setting up instruction label
     @IBOutlet weak var instructionLabel: UILabel!
                 //setting up image views - named by row and column position - LM
@@ -39,9 +40,14 @@ class LetterMatchingViewController: UIViewController {
     //instruction image
     @IBOutlet weak var instructionImageView: UIImageView!
     //end of image view set up
+    
+    //tappedImage variable setup
+    var tappedImage:UIImage? = nil
 
     //setting up image array using an image literal
-    let letterMatchingArray = [ #imageLiteral(resourceName: "PerpCross"), #imageLiteral(resourceName: "Triangle"), #imageLiteral(resourceName: "DiagonalCross"), #imageLiteral(resourceName: "Horizontal"), #imageLiteral(resourceName: "BookLine"), #imageLiteral(resourceName: "DiagonalRight") ] //testing with shapes
+    let letterMatchingArray = [ #imageLiteral(resourceName: "a-"), #imageLiteral(resourceName: "c-"), #imageLiteral(resourceName: "d-"), #imageLiteral(resourceName: "e-"), #imageLiteral(resourceName: "x-"), #imageLiteral(resourceName: "r-") ]
+    
+ 
     
      override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +57,7 @@ class LetterMatchingViewController: UIViewController {
         
         //setup image on cards
         //row 1
-        rowOneCardOneImageView.image =   letterMatchingArray.randomElement()
+        rowOneCardOneImageView.image =  letterMatchingArray.randomElement()
         rowOneCardTwoImageView.image =   letterMatchingArray.randomElement()
         rowOneCardThreeImageView.image =   letterMatchingArray.randomElement()
         rowOneCardFourImageView.image =   letterMatchingArray.randomElement()
@@ -75,13 +81,51 @@ class LetterMatchingViewController: UIViewController {
         rowFourCardFourImageView.image =   letterMatchingArray.randomElement()
         rowFourCardFiveImageView.image =   letterMatchingArray.randomElement()
         //instruction image
-        instructionImageView.image =   letterMatchingArray.randomElement()
+        instructionImageView.image =   #imageLiteral(resourceName: "a-")
         //end of image setup
+        
+        //set up array of image views
+     let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageView, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageView, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView]
+     // 2
+     for  imageView in imageViews {
+       // 3
+       let tapGesture = UITapGestureRecognizer(
+         target: self,
+         action: #selector(matchTapped)
+                 
+       )
+
+       // 4
+       tapGesture.delegate = self
+        imageView?.addGestureRecognizer(tapGesture)
+
+       // TODO: Add a custom gesture recognizer too
+     }
         
         
 }// End of ViewDidLoad
     
+    @objc func matchTapped(__ sender: UITapGestureRecognizer) {
+        
+        let tappedImageView = sender.view as! UIImageView
+        
+         let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageView, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageView, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView]
+        
+        print(sender.view!)
+        print("I have been tapped")
+        
+        //if rowOneCardOneImageView.image == instructionImageView.image{
+        //    print("you win")
+        //    rowOneCardOneImageView.image = #imageLiteral(resourceName: "Coin")
+       // }//testing getting reference
+        
+        for _ in imageViews {
+            if tappedImageView.image == instructionImageView.image {
+                print("you win")
+                tappedImageView.image = #imageLiteral(resourceName: "Coin")
+                tappedImageView.alpha = 0.10
+            }
+        }//this at least taps into the array - now i just need to figure out how to get it so that it doesnt just change the image when it loads. When i click one, it makes all the other matching ones coins as well... dont want that. i need a tapped image varable here to throw the reference into and refer back to.
+}//end of matchTapped
     
-
-   
-}
+}//end of LetterMatchingViewController Class
