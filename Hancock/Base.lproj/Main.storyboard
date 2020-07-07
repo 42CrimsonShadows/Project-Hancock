@@ -1278,6 +1278,18 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <constraint firstAttribute="bottom" secondItem="t7k-qq-RsZ" secondAttribute="bottom" id="zHy-fj-8Yz"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H23-Qt-tNS">
+                                <rect key="frame" x="12" y="20" width="75" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="a66-AH-rkx"/>
+                                    <constraint firstAttribute="height" constant="75" id="iEV-VP-uBM"/>
+                                </constraints>
+                                <state key="normal" image="Reset"/>
+                                <connections>
+                                    <action selector="goBackPressed:" destination="7N0-2m-uqw" eventType="touchUpInside" id="8Cq-2i-VYH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.46014549399999999" green="0.61795175660000001" blue="0.71668781729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1287,12 +1299,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="HKv-5e-Yfc" firstAttribute="top" secondItem="8b2-J6-usa" secondAttribute="bottom" constant="8" id="JbA-p1-8lM"/>
                             <constraint firstItem="vEp-nb-i2y" firstAttribute="leading" secondItem="8b2-J6-usa" secondAttribute="trailing" constant="8" id="KOB-Ba-PFX"/>
                             <constraint firstItem="HKv-5e-Yfc" firstAttribute="leading" secondItem="Ovp-z3-0Gr" secondAttribute="leading" constant="12" id="LSq-h3-Vto"/>
+                            <constraint firstItem="H23-Qt-tNS" firstAttribute="leading" secondItem="Ovp-z3-0Gr" secondAttribute="leading" constant="12" id="LfH-FJ-LQQ"/>
                             <constraint firstItem="8b2-J6-usa" firstAttribute="top" secondItem="Aiv-ai-aJo" secondAttribute="bottom" constant="17" id="Myr-gg-cWd"/>
                             <constraint firstItem="Pjv-gM-pvx" firstAttribute="top" secondItem="Ovp-z3-0Gr" secondAttribute="top" constant="20" id="Odk-UW-KAC"/>
                             <constraint firstItem="Ovp-z3-0Gr" firstAttribute="trailing" secondItem="Aiv-ai-aJo" secondAttribute="trailing" constant="22" id="TVY-5P-2rP"/>
                             <constraint firstItem="HKv-5e-Yfc" firstAttribute="top" secondItem="vEp-nb-i2y" secondAttribute="bottom" constant="28" id="UOR-Nw-kYb"/>
                             <constraint firstItem="9br-92-DhP" firstAttribute="centerX" secondItem="TmD-2u-Hi5" secondAttribute="centerX" id="Vng-sr-LnS"/>
                             <constraint firstItem="Aiv-ai-aJo" firstAttribute="top" secondItem="9br-92-DhP" secondAttribute="bottom" constant="20" id="Zks-iY-2po"/>
+                            <constraint firstItem="H23-Qt-tNS" firstAttribute="top" secondItem="Ovp-z3-0Gr" secondAttribute="top" constant="20" id="nMm-a8-TI3"/>
                             <constraint firstItem="9br-92-DhP" firstAttribute="top" secondItem="Ovp-z3-0Gr" secondAttribute="top" constant="10" id="neq-wO-dKt"/>
                             <constraint firstItem="Pjv-gM-pvx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9br-92-DhP" secondAttribute="trailing" constant="8" symbolic="YES" id="oZj-Sc-NcK"/>
                             <constraint firstItem="Ovp-z3-0Gr" firstAttribute="trailing" secondItem="HKv-5e-Yfc" secondAttribute="trailing" constant="12" id="syq-Xw-mC8"/>
@@ -1428,6 +1442,22 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAT-HD-47a">
+                                <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="LWA-As-ciP"/>
+                                    <constraint firstAttribute="width" constant="100" id="jbh-VU-udA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" image="Reset">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackPressed:" destination="3hw-5Z-k07" eventType="touchUpInside" id="LRt-b5-Mu3"/>
+                                    <action selector="replayVideo:" destination="3hw-5Z-k07" eventType="touchUpInside" id="MXl-HJ-bgF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.46014549404466398" green="0.61795175656466295" blue="0.71668781725888331" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1449,7 +1479,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="tGC-te-hKE" firstAttribute="leading" secondItem="NFG-Fb-NzZ" secondAttribute="trailing" constant="8" id="Zce-OQ-IH1"/>
                             <constraint firstItem="O6p-Nd-dnC" firstAttribute="trailing" secondItem="ZAg-o3-z5S" secondAttribute="trailing" constant="40" id="Zz8-tu-4HY"/>
                             <constraint firstItem="O6p-Nd-dnC" firstAttribute="trailing" secondItem="hyt-Qe-EjN" secondAttribute="trailing" constant="20" id="lsH-52-BvH"/>
+                            <constraint firstItem="LAT-HD-47a" firstAttribute="top" secondItem="O6p-Nd-dnC" secondAttribute="top" constant="20" id="r0g-Vp-55q"/>
                             <constraint firstItem="6lw-uU-ssd" firstAttribute="trailing" secondItem="O6p-Nd-dnC" secondAttribute="trailing" id="ryH-26-NbK"/>
+                            <constraint firstItem="LAT-HD-47a" firstAttribute="leading" secondItem="O6p-Nd-dnC" secondAttribute="leading" constant="20" id="sdY-Pe-CA3"/>
                             <constraint firstItem="5o3-KV-Frw" firstAttribute="leading" secondItem="O6p-Nd-dnC" secondAttribute="leading" id="sj4-FU-hff"/>
                             <constraint firstItem="ZAg-o3-z5S" firstAttribute="top" secondItem="O6p-Nd-dnC" secondAttribute="top" constant="40" id="vlg-ZK-GC9"/>
                         </constraints>

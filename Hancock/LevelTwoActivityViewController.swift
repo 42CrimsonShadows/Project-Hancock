@@ -286,11 +286,12 @@ class LevelTwoActivityViewController: UIViewController {
                 print("Did screenshot Level2 and this is the pngData: \(pngData)")
             }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute:{
-            self.dismiss(animated: false, completion: nil)
-        })
+        goBack()
     }
     
+    @IBAction func goBackPressed(_ sender: UIButton) {
+        goBack()
+    }
     
     // MARK: - Utilities
     private func screenShot() -> UIImage? {
@@ -300,5 +301,11 @@ class LevelTwoActivityViewController: UIViewController {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
+    }
+    
+    private func goBack() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute:{
+            self.dismiss(animated: false, completion: nil)
+        })
     }
 }

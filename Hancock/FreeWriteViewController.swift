@@ -175,11 +175,13 @@ class FreeWriteViewController: UIViewController {
                 print("Did screenshot Free Write and this is the pngData: \(pngData)")
             }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute:{
-            self.dismiss(animated: false, completion: nil)
-        })
+        goBack()
     }
-
+    
+    @IBAction func goBackPressed(_ sender: UIButton) {
+        goBack()
+    }
+    
     @IBAction func clearPagePressed(_ sender: UIButton) {
         canvasView.clear()
     }
@@ -192,5 +194,11 @@ class FreeWriteViewController: UIViewController {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
+    }
+    
+    private func goBack() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute:{
+            self.dismiss(animated: false, completion: nil)
+        })
     }
 }
