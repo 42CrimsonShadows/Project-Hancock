@@ -1416,11 +1416,28 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <constraint firstAttribute="bottom" secondItem="oiu-4E-n0R" secondAttribute="bottom" id="wlY-5e-nnm"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cz0-fH-fWB" customClass="CanvasView" customModule="ABC_Go_AR" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNW-Cr-cIO">
                                         <rect key="frame" x="495" y="0.0" width="489" height="700"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cr3-ca-yBB">
+                                                <rect key="frame" x="0.0" y="0.0" width="489" height="700"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cz0-fH-fWB" customClass="CanvasView" customModule="ABC_Go_AR" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="489" height="700"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="700" id="Nr9-RN-vOl"/>
+                                            <constraint firstItem="cz0-fH-fWB" firstAttribute="top" secondItem="NNW-Cr-cIO" secondAttribute="top" id="1v0-Ed-Xc8"/>
+                                            <constraint firstAttribute="trailing" secondItem="cz0-fH-fWB" secondAttribute="trailing" id="2sO-j9-LgW"/>
+                                            <constraint firstItem="Cr3-ca-yBB" firstAttribute="top" secondItem="NNW-Cr-cIO" secondAttribute="top" id="3pj-Vo-uFD"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cr3-ca-yBB" secondAttribute="trailing" id="3wV-1q-7IG"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cr3-ca-yBB" secondAttribute="bottom" id="611-Fn-ZYp"/>
+                                            <constraint firstAttribute="bottom" secondItem="cz0-fH-fWB" secondAttribute="bottom" id="KNz-q4-eed"/>
+                                            <constraint firstItem="Cr3-ca-yBB" firstAttribute="leading" secondItem="NNW-Cr-cIO" secondAttribute="leading" id="QJO-I5-rtQ"/>
+                                            <constraint firstAttribute="height" constant="700" id="dPe-Nl-Xce"/>
+                                            <constraint firstItem="cz0-fH-fWB" firstAttribute="leading" secondItem="NNW-Cr-cIO" secondAttribute="leading" id="g1m-RV-Mi4"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1455,7 +1472,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </state>
                                 <connections>
                                     <action selector="goBackPressed:" destination="3hw-5Z-k07" eventType="touchUpInside" id="LRt-b5-Mu3"/>
-                                    <action selector="replayVideo:" destination="3hw-5Z-k07" eventType="touchUpInside" id="MXl-HJ-bgF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1489,6 +1505,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     </view>
                     <navigationItem key="navigationItem" id="QrL-KL-f2d"/>
                     <connections>
+                        <outlet property="canvasBGIV" destination="Cr3-ca-yBB" id="cko-FU-RMV"/>
                         <outlet property="canvasView" destination="cz0-fH-fWB" id="VFg-Jf-xjM"/>
                         <outlet property="doneBtn" destination="ZAg-o3-z5S" id="KNX-Ci-Myz"/>
                         <outlet property="letterAnimationView" destination="Vz4-7o-9yG" id="JW8-sn-2hb"/>
@@ -1496,6 +1513,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="letterLabel" destination="6lw-uU-ssd" id="ikx-rg-qgE"/>
                         <outlet property="replaySoundBtn" destination="NFG-Fb-NzZ" id="k4l-hh-hrY"/>
                         <outlet property="resetCanvasBtn" destination="hyt-Qe-EjN" id="2GJ-bC-JD7"/>
+                        <outlet property="writingView" destination="NNW-Cr-cIO" id="Wfv-O0-4OB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR4-yb-HWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

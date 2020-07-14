@@ -16,7 +16,9 @@ class LevelTwoActivityViewController: UIViewController {
     @IBOutlet weak var letterLabel: UILabel! // shows the letter to draw
     @IBOutlet weak var letterAnimationView: UIView! // shows letter video
     @IBOutlet weak var replaySoundBtn: UIButton! // replay the video & audio
+    @IBOutlet weak var writingView: UIView!
     @IBOutlet weak var canvasView: CanvasView!
+    @IBOutlet weak var canvasBGIV: UIImageView!
     @IBOutlet weak var resetCanvasBtn: UIButton! // clears lines from canvas
     @IBOutlet weak var letterIV: UIImageView! // to show gifs instead of videos
     private var audioPlayer = AVAudioPlayer() // for audio instructions
@@ -154,10 +156,11 @@ class LevelTwoActivityViewController: UIViewController {
         resetCanvasBtn.layer.cornerRadius = 10
         
         // Canvas setup
-        canvasView.backgroundColor = UIColor(white: 1, alpha: 1)
+        canvasView.backgroundColor = UIColor(white: 0.5, alpha: 0)
         //this enables autolayout for our canvas
         canvasView.translatesAutoresizingMaskIntoConstraints = false
-        canvasView.heightAnchor.constraint(lessThanOrEqualToConstant: 700).isActive = true
+        writingView.heightAnchor.constraint(lessThanOrEqualToConstant: 700).isActive = true
+        canvasBGIV.image = UIImage(named: "art.scnassets/UI-art/AntFace.png")
         // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
     }
@@ -171,7 +174,7 @@ class LevelTwoActivityViewController: UIViewController {
     private func setUpVideo() {
         // find video name for letter
         guard let video = letterAnimationDictionary[letterToDraw!] else {
-            print("No videoDictionary value for key \(letterToDraw!)")
+            print("No letterAnimationDictionary value for key \(letterToDraw!)")
             return
         }
         // find video path in the main bundle
@@ -219,6 +222,13 @@ class LevelTwoActivityViewController: UIViewController {
     }
     
     private func setUpGif() {
+        // find gif name for letter
+        guard let image = letterAnimationDictionary[letterToDraw!] else {
+            print("No letterAnimationDictionary value for key \(letterToDraw!)")
+                return
+        }
+        // find and setup letter gif
+        //if let letterGif = UIImage.gif(name: image) {
         if let letterGif = UIImage.gif(name:"Anthony-Chillaxing") {
             letterIV.image = letterGif.images?.last
             // Set the images from the UIImage
