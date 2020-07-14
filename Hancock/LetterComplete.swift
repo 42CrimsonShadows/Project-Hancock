@@ -199,7 +199,7 @@ extension ViewController{
                         workItem5 = DispatchWorkItem{
                             //play flute clip
                             //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
-                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "wav")
                         
                             DispatchQueue.main.asyncAfter(deadline: .now() + 14.7, execute: self.workItem6!)
                         }
@@ -386,7 +386,7 @@ extension ViewController{
                             butterstick!.isHidden = false
                             //play quill sound clip
                             //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "wav", rate: 1)
-                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "wav")
                                     
                             DispatchQueue.main.asyncAfter(deadline: .now() + 8.5, execute:self.workItem4!)
                                     
@@ -667,7 +667,7 @@ extension ViewController{
                              mallet2!.isHidden = false
                              //play quill sound clip
                             //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "wav", rate: 1)
-                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3")
+                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "wav")
                              DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute:self.workItem5!)
                         }
                         workItem3 = DispatchWorkItem{
@@ -900,7 +900,7 @@ extension ViewController{
                         workItem5 = DispatchWorkItem{
                             //play quill sound clip
                             //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "wav", rate: 1)
-                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "wav")
                         
                             DispatchQueue.main.asyncAfter(deadline: .now() + 20.8, execute:self.workItem6!)
                         }
@@ -1160,7 +1160,7 @@ extension ViewController{
                         workItem5 = DispatchWorkItem{
                             //play flute clip
                                 //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
-                                self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
+                                self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "wav")
                             
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 14.7, execute:self.workItem6!)
                         }

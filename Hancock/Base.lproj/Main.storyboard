@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LAD-Jj-Ebs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e2i-hj-zRG">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -489,17 +489,25 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--Letter Matching Menu View Controller-->
         <scene sceneID="diD-jf-hqS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="efH-bA-CgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="letterMatchingMeniViewController" modalPresentationStyle="fullScreen" id="e2i-hj-zRG" customClass="letterMatchingMenuViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LNP-Im-pd3">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyerImage2" translatesAutoresizingMaskIntoConstraints="NO" id="zUv-QI-OTi">
-                                <rect key="frame" x="20" y="1085.5" width="376" height="247.5"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3m-CN-EU6">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="igq-3u-7Pf">
+                                <rect key="frame" x="0.0" y="1065.5" width="416" height="287.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlyerImage2" translatesAutoresizingMaskIntoConstraints="NO" id="zUv-QI-OTi">
+                                        <rect key="frame" x="20" y="20" width="376" height="247.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3m-CN-EU6">
                                 <rect key="frame" x="9" y="32" width="1024" height="360.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FlyerImage1.png" translatesAutoresizingMaskIntoConstraints="NO" id="yf0-W9-vA2">
                                         <rect key="frame" x="749" y="20" width="233" height="217"/>
@@ -523,47 +531,44 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZ6-g8-EcF">
-                                <rect key="frame" x="398" y="433" width="228" height="86"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yYg-be-1i2">
+                                <rect key="frame" x="378" y="413" width="277" height="441"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title="A - Z"/>
-                                <connections>
-                                    <action selector="aThroughZTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="sdI-tc-MT6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE5-mZ-Ld9">
-                                <rect key="frame" x="398" y="598" width="228" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title="B &amp; D"/>
-                                <connections>
-                                    <action selector="aThroughZTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="kKa-Ss-SmG"/>
-                                    <action selector="bAndDTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="UK7-xc-NpS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-6e-1Kb">
-                                <rect key="frame" x="407" y="748" width="228" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title="P, G &amp; Q"/>
-                                <connections>
-                                    <action selector="aThroughZTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="54p-p3-Sxp"/>
-                                    <action selector="pGQTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="smk-t0-7GL"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZ6-g8-EcF">
+                                        <rect key="frame" x="20" y="20" width="228" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                        <state key="normal" title="A - Z"/>
+                                        <connections>
+                                            <action selector="aThroughZTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="sdI-tc-MT6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE5-mZ-Ld9">
+                                        <rect key="frame" x="20" y="185" width="228" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                        <state key="normal" title="B &amp; D"/>
+                                        <connections>
+                                            <action selector="aThroughZTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="kKa-Ss-SmG"/>
+                                            <action selector="bAndDTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="UK7-xc-NpS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frr-6e-1Kb">
+                                        <rect key="frame" x="29" y="335" width="228" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                        <state key="normal" title="P, G &amp; Q"/>
+                                        <connections>
+                                            <action selector="aThroughZTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="54p-p3-Sxp"/>
+                                            <action selector="pGQTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="smk-t0-7GL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="zUv-QI-OTi" firstAttribute="top" secondItem="g3m-CN-EU6" secondAttribute="bottom" constant="693" id="AlE-vK-fVA"/>
-                            <constraint firstItem="g3m-CN-EU6" firstAttribute="top" secondItem="dbS-NM-jRb" secondAttribute="top" constant="32" id="PKI-GU-CrU"/>
-                            <constraint firstItem="dbS-NM-jRb" firstAttribute="trailing" secondItem="zUv-QI-OTi" secondAttribute="trailing" constant="628" id="T5Y-MX-6Eg"/>
-                            <constraint firstItem="zUv-QI-OTi" firstAttribute="leading" secondItem="dbS-NM-jRb" secondAttribute="leading" constant="20" id="TEH-St-YDK"/>
-                            <constraint firstItem="dbS-NM-jRb" firstAttribute="bottom" secondItem="zUv-QI-OTi" secondAttribute="bottom" constant="13" id="XnZ-Ne-Rq5"/>
-                            <constraint firstItem="zUv-QI-OTi" firstAttribute="top" secondItem="g3m-CN-EU6" secondAttribute="bottom" constant="693" id="b7x-fg-B5V"/>
-                            <constraint firstItem="g3m-CN-EU6" firstAttribute="leading" secondItem="dbS-NM-jRb" secondAttribute="leading" constant="9" id="lIG-dM-rIG"/>
-                            <constraint firstAttribute="trailing" secondItem="g3m-CN-EU6" secondAttribute="trailing" constant="-9" id="nu8-JA-Sbv"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dbS-NM-jRb"/>
                     </view>
                     <navigationItem key="navigationItem" id="bgN-tc-iIb"/>
@@ -571,6 +576,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <segue destination="LAD-Jj-Ebs" kind="presentation" identifier="aThroughZ" modalPresentationStyle="fullScreen" id="FUb-Sc-k7I"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efH-bA-CgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="603" y="1530"/>
         </scene>
