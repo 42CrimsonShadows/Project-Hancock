@@ -109,6 +109,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var focusPoint: CGPoint!
     var focusNode: SCNNode!
     var chapterNodeArray: [SCNNode]!
+    let scene = SCNScene(named: "art.scnassets/Arrow.scn")
+    var arrowVisible: Bool = false
+    var arrow: SCNNode!
     
     //main movement nodes for every story
     var rootStoryNode: SCNNode!
@@ -196,6 +199,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.initARSession()
         self.loadModels(chapterNode: chapterNodeArray!)
         self.referenceMainNodes()
+        arrow = scene?.rootNode.childNode(withName: "obelisk", recursively: false)
         
         //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
@@ -1371,6 +1375,47 @@ class ViewController: UIViewController, UITextFieldDelegate {
             break
         }
     }
+    func findCharacter() {
+        if gameState == .playGame {
+            if currentChapter == .Chapter4 {
+                guard let characterNode = mainCharacterIdle else {
+                    print("View Controller - Find Character: Could Not Find Main Character")
+                    return
+                }
+                
+                arrow.constraints = [SCNLookAtConstraint.init(target: characterNode)]
+            
+                if let pointOfView = sceneView.pointOfView{
+                    let isVisible = sceneView.isNode((characterNode.presentation), insideFrustumOf: pointOfView)
+                    if isVisible{
+                        if arrowVisible{
+                            arrow.removeFromParentNode()
+                            arrowVisible = false
+                            let light = SCNLight()
+                            light.type = SCNLight.LightType.spot
+                            light.intensity = 2000
+                            light.color = UIColor.red
+                            let node = SCNNode()
+                            node.light = light
+                            node.worldPosition = SCNVector3(characterNode.worldPosition.x, characterNode.worldPosition.y, characterNode.worldPosition.z)
+                            characterNode.addChildNode(node)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                                node.removeFromParentNode()
+                            })
+                            print("View Controller - Find Character: Arrow Removed")
+                        }
+                    }
+                    else {
+                        if !arrowVisible{
+                            sceneView.pointOfView?.addChildNode(arrow)
+                            arrowVisible = true
+                            print("View Controller - Find Character: Arrow Added")
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension ViewController : ARSCNViewDelegate {
@@ -1381,6 +1426,7 @@ extension ViewController : ARSCNViewDelegate {
         DispatchQueue.main.async {
             self.updateStatus()
             self.updateFocusNode()
+            self.findCharacter()
         }
     }
     
