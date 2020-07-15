@@ -28,6 +28,11 @@ class letterMatchingMenuViewController: UIViewController {
     @IBAction func pGQTapped(_ sender: Any) {
         performSegue(withIdentifier: "pGQ", sender: self)
     }
+    @IBAction func homeButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "home", sender: self)
+    }
+    
+    
     
 
     /*
