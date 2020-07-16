@@ -1389,15 +1389,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     let isVisible = sceneView.isNode((characterNode.presentation), insideFrustumOf: pointOfView)
                     if isVisible{
                         if arrowVisible{
-                            arrow.removeFromParentNode()
+                            //arrow.removeFromParentNode()
                             arrowVisible = false
                             let light = SCNLight()
                             light.type = SCNLight.LightType.spot
-                            light.intensity = 2000
+                            light.intensity = 50
                             light.color = UIColor.red
                             let node = SCNNode()
                             node.light = light
-                            node.worldPosition = SCNVector3(characterNode.worldPosition.x, characterNode.worldPosition.y, characterNode.worldPosition.z)
                             characterNode.addChildNode(node)
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                                 node.removeFromParentNode()
@@ -1407,7 +1406,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                     else {
                         if !arrowVisible{
-                            sceneView.pointOfView?.addChildNode(arrow)
+                            //sceneView.pointOfView?.addChildNode(arrow)
                             arrowVisible = true
                             print("View Controller - Find Character: Arrow Added")
                         }
