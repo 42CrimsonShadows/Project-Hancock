@@ -22,11 +22,11 @@ class letterMatchingMenuViewController: UIViewController {
     }
     
     @IBAction func bAndDTapped(_ sender: Any) {
-        performSegue(withIdentifier: "bAndD", sender: self)
+        performSegue(withIdentifier: "bAndDTapped", sender: self)
     }
     
     @IBAction func pGQTapped(_ sender: Any) {
-        performSegue(withIdentifier: "pGQ", sender: self)
+        performSegue(withIdentifier: "pGAndQTapped", sender: self)
     }
     @IBAction func homeButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "home", sender: self)
