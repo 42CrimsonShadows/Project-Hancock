@@ -1394,10 +1394,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             let light = SCNLight()
                             light.type = SCNLight.LightType.spot
                             light.intensity = 50
-                            light.color = UIColor.red
+                            light.color = UIColor.yellow
                             let node = SCNNode()
                             node.light = light
+                            node.position = SCNVector3(0, 1, 1)
+                            print(characterNode.frame.width)
                             characterNode.addChildNode(node)
+                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                                 node.removeFromParentNode()
                             })
