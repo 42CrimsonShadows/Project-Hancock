@@ -617,16 +617,16 @@ public class ActivitySelection {
     public func loadActivityd() {
         print("Called loadActivityd")
         //Line #1
-        activityPoints = [[CGFloat(0.61),CGFloat(0.1)], //first point x, y
-                          [CGFloat(0.61),CGFloat(0.3)], //first MidPoint1 x, y
-                          [CGFloat(0.61),CGFloat(0.6)], //first MidPoint2 x, y
-                          [CGFloat(0.62),CGFloat(0.88)], //second point x, y
+        activityPoints = [[CGFloat(0.61),CGFloat(0.52)], //first point x, y
+                                  [CGFloat(0.32),CGFloat(0.6)], //first MidPoint1 x, y
+                                 [CGFloat(0.32),CGFloat(0.85)], //first MidPoint2 x, y
+                                 [CGFloat(0.62),CGFloat(0.81)], //second point x, y
                         
                           //Line #2
-                          [CGFloat(0.61),CGFloat(0.52)], //fifth point
-                          [CGFloat(0.32),CGFloat(0.6)], //fifth MidPoint1 x, y
-                          [CGFloat(0.32),CGFloat(0.85)], //fifth MidPoint2 x, y
-                          [CGFloat(0.61),CGFloat(0.81)]] //sixth point
+                          [CGFloat(0.61),CGFloat(0.1)], //fifth point
+                          [CGFloat(0.61),CGFloat(0.3)], //fifth MidPoint1 x, y
+                          [CGFloat(0.61),CGFloat(0.6)], //fifth MidPoint2 x, y
+                          [CGFloat(0.62),CGFloat(0.88)]] //sixth point
         
         let Underlayd = UIImage(named: "art.scnassets/LetterImages/d-.png")
         letterUnderlay = UIImageView(image: Underlayd)
