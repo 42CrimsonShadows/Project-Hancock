@@ -18,6 +18,7 @@ import UIKit
 
 // MARK: - Game State
 public var selectedActivity = ""
+public var backgroundImage = "" //LM
 
 public var totalCoins = 0
 
@@ -58,6 +59,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     @IBOutlet weak var grassImage: UIImageView!
     @IBOutlet weak var antChillImage: UIImageView!
     @IBOutlet weak var CoinCountLabel: UILabel!
+    
+    //LMTest
+    @IBOutlet weak var testImage: UIImageView! //LM
     
     let BlueDotView: UIImageView = {
         //Add the Blue Dot image to the canvas
@@ -206,6 +210,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         canvasView.addSubview(reticleView)
+               
         
         //to toggle on on start, uncomment this line
         //toggleDebugDrawing(debugButton)
@@ -228,6 +233,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         //load animations
         antChillImage.loadGif(name: "Anthony-Chillaxing") //can be set to different images for different chapters
         grassImage.loadGif(name: "Grass-Blowing")
+        testImage.image = #imageLiteral(resourceName: "BookCoverLower")
+        testImage.alpha = 0.5
         
         antFace.isHidden = true
         
@@ -950,6 +957,15 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         case "triangle":
             activitySelection.loadActivityTriangle()
         default: return
+        }
+    }
+    //LM Test
+   public func loadBackgroundImage() {
+        switch backgroundImage {
+        case "Chapter 1":
+            testImage.image = #imageLiteral(resourceName: "M")
+        default:return
+            
         }
     }
 }

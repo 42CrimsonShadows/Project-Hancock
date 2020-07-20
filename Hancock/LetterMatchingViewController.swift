@@ -54,7 +54,7 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
     //setting up image array using an image literal
     let letterMatchingArray = [ #imageLiteral(resourceName: "a-"), #imageLiteral(resourceName: "c-"), #imageLiteral(resourceName: "d-"), #imageLiteral(resourceName: "e-"), #imageLiteral(resourceName: "x-"), #imageLiteral(resourceName: "r-") ,#imageLiteral(resourceName: "b-"), #imageLiteral(resourceName: "f-"), #imageLiteral(resourceName: "g-"), #imageLiteral(resourceName: "h-.png"), #imageLiteral(resourceName: "i-"), #imageLiteral(resourceName: "j-.png"), #imageLiteral(resourceName: "k-.png"), #imageLiteral(resourceName: "l-.png"),#imageLiteral(resourceName: "m-.png"), #imageLiteral(resourceName: "n-"), #imageLiteral(resourceName: "o-.png"), #imageLiteral(resourceName: "p-.png"), #imageLiteral(resourceName: "q-.png"), #imageLiteral(resourceName: "t-.png"), #imageLiteral(resourceName: "s-.png"), #imageLiteral(resourceName: "u-.png"), #imageLiteral(resourceName: "v-.png"), #imageLiteral(resourceName: "w-.png"), #imageLiteral(resourceName: "y-.png"), #imageLiteral(resourceName: "z-.png"), #imageLiteral(resourceName: "A.png"), #imageLiteral(resourceName: "B.png"), #imageLiteral(resourceName: "C"), #imageLiteral(resourceName: "D.png"), #imageLiteral(resourceName: "E.png"), #imageLiteral(resourceName: "F.png"), #imageLiteral(resourceName: "G.png"), #imageLiteral(resourceName: "H.png"), #imageLiteral(resourceName: "I.png"), #imageLiteral(resourceName: "J.png"), #imageLiteral(resourceName: "K.png"), #imageLiteral(resourceName: "L.png"), #imageLiteral(resourceName: "M.png"), #imageLiteral(resourceName: "N.png"), #imageLiteral(resourceName: "O.png"), #imageLiteral(resourceName: "P.png"), #imageLiteral(resourceName: "Q.png"), #imageLiteral(resourceName: "R.png"), #imageLiteral(resourceName: "S.png"), #imageLiteral(resourceName: "T.png"), #imageLiteral(resourceName: "U.png"), #imageLiteral(resourceName: "V.png"), #imageLiteral(resourceName: "W.png"), #imageLiteral(resourceName: "X.png"), #imageLiteral(resourceName: "Y.png"), #imageLiteral(resourceName: "Z.png")]
     
-    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,7 +148,13 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
             }
             for _ in imageViews {
                 if tappedImageView.image != instructionImageView.image {
-                    // tappedImageView.alpha = 0.10
+                     tappedImageView.alpha = 0.10
+                    
+                    let delay = 2 * Double(NSEC_PER_SEC)
+                    let time = DispatchTime.now()
+                    
+                
+                    
                     //print("you lose")
                 }
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e2i-hj-zRG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EbW-Xz-ygt">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -215,6 +215,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="KI7-J2-7xP">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S0V-F7-tnM" userLabel="Grass View">
                                 <rect key="frame" x="0.0" y="1021" width="543.5" height="325"/>
                                 <constraints>
@@ -287,6 +291,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="antFace" destination="Jib-iA-ZV1" id="WRo-oV-a6L"/>
                         <outlet property="canvasView" destination="Las-os-uIu" id="N7y-Jx-Ufa"/>
                         <outlet property="grassImage" destination="S0V-F7-tnM" id="x1V-hO-IGV"/>
+                        <outlet property="testImage" destination="KI7-J2-7xP" id="VXY-6n-jDk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoG-Ho-9Jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2402,10 +2407,11 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <segue reference="tkb-zN-uOx"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="PoJ-fZ-qZg"/>
-        <segue reference="tKi-lD-GsJ"/>
+        <segue reference="77j-iz-6Lf"/>
         <segue reference="2O5-wy-OoL"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="1024.png" width="1024" height="1024"/>
         <image name="ARexample" width="682.5" height="384"/>
         <image name="AntFace" width="243" height="281.5"/>
         <image name="B" width="750" height="1000"/>
