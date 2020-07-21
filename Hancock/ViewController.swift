@@ -1378,36 +1378,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func findCharacter() {
         if gameState == .playGame {
             if currentChapter == .Chapter4 {
+                // if for some reason we're in game but the character isn't there
                 guard let characterNode = mainCharacterIdle else {
                     print("View Controller - Find Character: Could Not Find Main Character")
                     return
                 }
                 
-                arrow.constraints = [SCNLookAtConstraint.init(target: characterNode)]
-            
+                //arrow.constraints = [SCNLookAtConstraint.init(target: characterNode)]
+                // if the camera is active in the scene, the point of view is what's on screen
                 if let pointOfView = sceneView.pointOfView{
+                    // ifVisible = Keelie is visible on the screen
                     let isVisible = sceneView.isNode((characterNode.presentation), insideFrustumOf: pointOfView)
                     if isVisible{
+                        // if we have established that keelie wasn't on screen
                         if arrowVisible{
                             //arrow.removeFromParentNode()
                             arrowVisible = false
+                            // create yellow spotlight to shine on Keelie
                             let light = SCNLight()
                             light.type = SCNLight.LightType.spot
-                            light.intensity = 50
+                            light.intensity = 100
                             light.color = UIColor.yellow
-                            let node = SCNNode()
-                            node.light = light
-                            node.position = SCNVector3(0, 1, 1)
-                            print(characterNode.frame.width)
-                            characterNode.addChildNode(node)
+                            light.spotInnerAngle = 45
+                            light.spotOuterAngle = 45
+                            // create node to add light to, to attach to and shine down on Keelie
+                            let lightNode = SCNNode()
+                            lightNode.light = light
+                            lightNode.position = SCNVector3Make(0, 500, 1)
+                            lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                            characterNode.addChildNode(lightNode)
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-                                node.removeFromParentNode()
+                                lightNode.removeFromParentNode()
                             })
                             print("View Controller - Find Character: Arrow Removed")
                         }
                     }
                     else {
+                        // if we haven't already established that Keelie isn't on screen
                         if !arrowVisible{
                             //sceneView.pointOfView?.addChildNode(arrow)
                             arrowVisible = true
@@ -1428,7 +1436,7 @@ extension ViewController : ARSCNViewDelegate {
         DispatchQueue.main.async {
             self.updateStatus()
             self.updateFocusNode()
-            self.findCharacter()
+            self.findCharacter() // chapter 4 to find Keelie
         }
     }
     
