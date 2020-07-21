@@ -18,7 +18,7 @@ import UIKit
 
 // MARK: - Game State
 public var selectedActivity = ""
-public var backgroundImage = "" //LM
+
 
 public var totalCoins = 0
 
@@ -193,6 +193,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     
     
+    
     //MARK: - ACTIONS
     
     @IBAction func backButton(_ sender: Any) {
@@ -210,7 +211,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         canvasView.addSubview(reticleView)
-               
+                               
         
         //to toggle on on start, uncomment this line
         //toggleDebugDrawing(debugButton)
@@ -233,9 +234,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         //load animations
         antChillImage.loadGif(name: "Anthony-Chillaxing") //can be set to different images for different chapters
         grassImage.loadGif(name: "Grass-Blowing")
-        testImage.image = #imageLiteral(resourceName: "BookCoverLower")
-        testImage.alpha = 0.5
-        
+               
         antFace.isHidden = true
         
         //antChillImage.contentMode = .scaleAspectFit
@@ -852,6 +851,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             activitySelection.loadActivityH()
         case "I":
             activitySelection.loadActivityI()
+             testImage.image = #imageLiteral(resourceName: "Image") //LM Test
         case "J":
             activitySelection.loadActivityJ()
         case "K":
@@ -959,13 +959,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         default: return
         }
     }
-    //LM Test
-   public func loadBackgroundImage() {
-        switch backgroundImage {
-        case "Chapter 1":
-            testImage.image = #imageLiteral(resourceName: "M")
-        default:return
-            
-        }
-    }
+    
+ 
+
 }

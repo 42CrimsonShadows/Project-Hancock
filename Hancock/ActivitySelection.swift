@@ -36,7 +36,7 @@ public class ActivitySelection {
         letterUnderlay = UIImageView(image: UnderlayA)
         //this enables autolayout for our letter1UnderlayView
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
-    }
+}
     public func loadActivityB() {
         print("Called loadActivityB")
         
