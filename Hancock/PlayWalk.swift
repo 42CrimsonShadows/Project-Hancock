@@ -131,7 +131,27 @@ extension ViewController {
 
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
                     //TODO: ADD touches and raytracing to select Nails
-
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: {
+                        // create yellow spotlight to shine on Nails
+                        let light = SCNLight()
+                        light.type = SCNLight.LightType.spot
+                        light.intensity = 20
+                        light.color = UIColor.yellow
+                        light.spotInnerAngle = 0
+                        light.spotOuterAngle = 45
+                        // create node to add light to, to attach to and shine down on Nails
+                        let lightNode = SCNNode()
+                        lightNode.light = light
+                        lightNode.position = SCNVector3Make(5, 20, 2)
+                        lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                        self.charcterOneIdle.addChildNode(lightNode)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                            lightNode.removeFromParentNode()
+                        })
+                    })
+                    
                     //look around for nails at teachers desk
                     DispatchQueue.main.asyncAfter(deadline: .now() + 18, execute: self.workItem2!)
                 }

@@ -1397,14 +1397,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             // create yellow spotlight to shine on Keelie
                             let light = SCNLight()
                             light.type = SCNLight.LightType.spot
-                            light.intensity = 100
+                            light.intensity = 50
                             light.color = UIColor.yellow
                             light.spotInnerAngle = 45
                             light.spotOuterAngle = 45
                             // create node to add light to, to attach to and shine down on Keelie
                             let lightNode = SCNNode()
                             lightNode.light = light
-                            lightNode.position = SCNVector3Make(0, 500, 1)
+                            lightNode.position = SCNVector3Make(0, 500, 0)
                             lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
                             characterNode.addChildNode(lightNode)
                             
