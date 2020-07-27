@@ -655,7 +655,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-Eu-T42">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="YouWin" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-Eu-T42">
                                 <rect key="frame" x="0.0" y="-3" width="1024" height="1372"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -843,6 +843,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="xuR-9b-W4d"/>
                     <connections>
                         <outlet property="instructionImageView" destination="zhf-zh-bCc" id="x2e-zX-ucs"/>
+                        <outlet property="lineLabel" destination="a8W-rP-nqc" id="Y3W-Sd-Bjj"/>
                         <outlet property="rowFiveCardFiveImageView" destination="Wnl-ie-6Qj" id="eMz-yJ-Zz1"/>
                         <outlet property="rowFiveCardFourImageView" destination="u1B-iY-iit" id="dJh-yg-Vgt"/>
                         <outlet property="rowFiveCardOneImageView" destination="3KN-aW-ufn" id="BN8-r4-9vV"/>
@@ -1965,6 +1966,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="YouWin" translatesAutoresizingMaskIntoConstraints="NO" id="5kq-ek-TAs">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sAb-BD-MOJ">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
                                 <subviews>
@@ -2149,6 +2154,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="gKX-MA-HX7"/>
                     <connections>
                         <outlet property="instructionImageView" destination="ecI-F4-vj5" id="3pw-aT-tTV"/>
+                        <outlet property="lineLabel" destination="qGv-cz-QCm" id="PYn-bG-NBi"/>
                         <outlet property="rowFiveCardFiveImageView" destination="wg4-Q2-Rqa" id="xxQ-hG-pPn"/>
                         <outlet property="rowFiveCardFourImageView" destination="Twh-MK-UsF" id="wqT-GC-x0L"/>
                         <outlet property="rowFiveCardOneImageView" destination="eae-fF-FhR" id="w80-XJ-mTR"/>
@@ -2174,12 +2180,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoCardOneImageView" destination="TbN-Io-R5T" id="VDm-bZ-f1t"/>
                         <outlet property="rowTwoCardThreeImageView" destination="vT3-6P-MaX" id="lpe-p5-JmD"/>
                         <outlet property="rowTwoCardTwoImageView" destination="Li7-ai-NgT" id="8M4-L2-BFF"/>
+                        <outlet property="youWinPic" destination="5kq-ek-TAs" id="Psh-Ei-a4n"/>
                         <segue destination="e2i-hj-zRG" kind="show" identifier="mainMenu" id="RMR-yy-ZbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R12-af-GLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40" y="2223"/>
+            <point key="canvasLocation" x="39.84375" y="2222.9868228404098"/>
         </scene>
         <!--Letter MatchingPGQ View Controller-->
         <scene sceneID="guY-Yc-d2E">
@@ -2189,6 +2196,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="YouWin" translatesAutoresizingMaskIntoConstraints="NO" id="ENW-Da-4AW">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rlt-1c-VOF">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
                                 <subviews>
@@ -2373,6 +2384,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="0sR-nt-VPk"/>
                     <connections>
                         <outlet property="instructionImageView" destination="3OP-Ua-j8H" id="DbJ-Ro-nNN"/>
+                        <outlet property="lineLabel" destination="cwT-Ij-cxx" id="Yyw-I2-Q4Z"/>
                         <outlet property="rowFiveCardFiveImageView" destination="DvT-3N-Rzw" id="TM5-FS-gKJ"/>
                         <outlet property="rowFiveCardFourImageView" destination="2Ci-he-ODv" id="nXO-K1-FZg"/>
                         <outlet property="rowFiveCardOneImageView" destination="uIP-rm-yOS" id="IhQ-S3-8fU"/>
@@ -2398,12 +2410,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoCardOneImageView" destination="RlG-Zv-Zoa" id="kXH-Hm-dti"/>
                         <outlet property="rowTwoCardThreeImageView" destination="VfB-92-IbR" id="Tf5-Xs-deT"/>
                         <outlet property="rowTwoCardTwoImageView" destination="1fK-Cm-5ek" id="0i5-Nl-U84"/>
+                        <outlet property="youWinPic" destination="ENW-Da-4AW" id="NQ1-9b-6rC"/>
                         <segue destination="e2i-hj-zRG" kind="show" identifier="mainMenu" id="tKi-lD-GsJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Y9-hz-Hbz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="726" y="2229"/>
+            <point key="canvasLocation" x="725.9765625" y="2228.6969253294287"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -2412,7 +2425,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <segue reference="tkb-zN-uOx"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="PoJ-fZ-qZg"/>
-        <segue reference="41T-yv-9Ha"/>
+        <segue reference="tKi-lD-GsJ"/>
         <segue reference="2O5-wy-OoL"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -2439,6 +2452,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Square" width="375" height="500"/>
         <image name="Triangle" width="375" height="500"/>
         <image name="Vertical" width="375" height="500"/>
+        <image name="YouWin" width="1024" height="1024"/>
         <image name="profilePic.png" width="225" height="225"/>
     </resources>
 </document>

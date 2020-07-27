@@ -48,6 +48,11 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
     @IBOutlet weak var instructionImageView: UIImageView!
     //end of image view set up
     
+    //setting up Line Label
+    @IBOutlet weak var lineLabel: UILabel!
+    
+    
+    
     //tappedImage variable setup
     var tappedImage:UIImage? = nil
     
@@ -73,8 +78,13 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
         instructionImageView.image =  letterMatchingArray.randomElement()
         youWinPic.isHidden = true
         
+        //set up boolean to hide images on win condition
+        
+        
         
         let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageView, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageView, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView, rowFiveCardOneImageView, rowFiveCardTwoImageView, rowFiveCardThreeImageView, rowFiveCardFourImageView, rowFiveCardFiveImageView]
+        
+        
         
         var imageViewsCopy = imageViews
         
@@ -129,6 +139,14 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
     
     @IBAction func resetTapped(_ sender: Any) {
         viewDidLoad()
+        lineLabel.isHidden = false
+        
+        let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageView, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageView, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView, rowFiveCardOneImageView, rowFiveCardTwoImageView, rowFiveCardThreeImageView, rowFiveCardFourImageView, rowFiveCardFiveImageView, instructionImageView]
+        
+        
+        for imageView in imageViews {
+            imageView?.isHidden = false
+        }
     }
     
     
@@ -141,7 +159,7 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
         var newTempImagesCount = newTempImages.count
         
         
-        let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageView, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageView, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView]
+        let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageView, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageView, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView, rowFiveCardOneImageView, rowFiveCardTwoImageView, rowFiveCardThreeImageView, rowFiveCardFourImageView, rowFiveCardFiveImageView]
         
         print(sender.view!)
         print("I have been tapped")
@@ -157,10 +175,10 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
                     
                     workItem1 = DispatchWorkItem{
                         //play the final narration
-                       // tappedImageView.alpha = 1.0
+                        tappedImageView.alpha = 1.0
                         print("test")
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.30, execute:self.workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute:self.workItem1!)
                 }
             }
             
@@ -182,11 +200,19 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
             
             if newTempImages.count == winningImage.count {
                 print("you win")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem2!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.55, execute:self.workItem2!)
             }
             workItem2 = DispatchWorkItem{
                 self.youWinPic.isHidden = false
-                self.youWinPic.image = #imageLiteral(resourceName: "concept4")
+                //self.youWinPic.image = #imageLiteral(resourceName: "YouWin.png")
+                self.lineLabel.isHidden = true
+                
+                let imageViews = [self.rowOneCardOneImageView, self.rowOneCardTwoImageView, self.rowOneCardThreeImageView, self.rowOneCardFourImageView, self.rowOneCardFiveImageView, self.rowTwoCardOneImageView, self.rowTwoCardTwoImageView, self.rowTwoCardThreeImageView, self.rowTwoCardFourImageView, self.rowTwoCardFiveImageView, self.rowThreeCardOneImageView, self.rowThreeCardTwoImageView, self.rowThreeCardThreeImageView, self.rowThreeCardFourImageView, self.rowThreeCardFiveImageView, self.rowFourCardOneImageView, self.rowFourCardTwoImageView, self.rowFourCardThreeImageView, self.rowFourCardFourImageView, self.rowFourCardFiveImageView,self.rowFiveCardOneImageView, self.rowFiveCardTwoImageView, self.rowFiveCardThreeImageView, self.rowFiveCardFourImageView, self.rowFiveCardFiveImageView, self.instructionImageView]
+                
+                
+                for imageView in imageViews {
+                    imageView?.isHidden = true
+                }
                 
             }
         }
