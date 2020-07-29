@@ -851,7 +851,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             activitySelection.loadActivityH()
         case "I":
             activitySelection.loadActivityI()
-             testImage.image = #imageLiteral(resourceName: "Image") //LM Test
+             //testImage.image = #imageLiteral(resourceName: "Image") //LM Test
         case "J":
             activitySelection.loadActivityJ()
         case "K":
