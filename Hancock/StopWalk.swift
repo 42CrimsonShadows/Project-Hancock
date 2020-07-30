@@ -63,7 +63,7 @@ extension ViewController{
                 lightItem1 = DispatchWorkItem{
                     lightNode.removeFromParentNode()
                 }
-                self.mainCharacterIdle.childNode(withName: "Patricia", recursively: false)?.addChildNode(lightNode)
+                self.mainCharacterIdle.childNode(withName: "Patricia", recursively: false)!.addChildNode(lightNode)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem1!)
                 //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
                 self.shatterLetterOne = true
