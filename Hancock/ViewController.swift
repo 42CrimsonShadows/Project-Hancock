@@ -1176,18 +1176,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //set Brennon's fly away Balloon to paused
                 charcterTwoIdle.isHidden = true
                 
-                if let sparkleScene = SCNScene(named: "art.scnassets/sparkleTest.scn") {
-                    if let particles = sparkleScene.particleSystems?.first {
-                        charcterOneIdle.childNode(withName: "Brennon", recursively: false)!.addParticleSystem(particles)
-                    }
-                    else {
-                        print("ViewController - storyTime : Could not find particles")
-                    }
-                }
-                else {
-                    print("ViewController - storyTime : Could not find scene")
-                }
-                
                 // Light on Brennon
                 let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
                 lightNode.position = SCNVector3Make(0, 25, 0)

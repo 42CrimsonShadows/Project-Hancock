@@ -1066,6 +1066,30 @@ extension ViewController {
 
             case .Chapter9:
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
+                
+                // Put Particles on Heidi
+                let particles = SCNParticleSystem()
+                particles.birthRate = 6.0
+                particles.birthLocation = .surface
+                particles.birthDirection = .random
+                particles.particleLifeSpan = 0.5
+                particles.particleVelocity = 0.5
+                particles.speedFactor = 1.0
+                particles.particleImage = UIImage(named: "art.scnassets/DotImages/YellowDot.png")
+                particles.particleColor = UIColor.yellow
+                particles.particleColorVariation = SCNVector4(0,0,0,0)
+                particles.particleSize = 0.005
+                particles.particleIntensity = 1.0
+                particles.emissionDuration = 1.0
+                particles.loops = true
+                
+                lightItem2 = DispatchWorkItem {
+                    self.charcterFiveIdle.childNode(withName: "HeidiGroup", recursively: false)!.removeParticleSystem(particles)
+                }
+                lightItem1 = DispatchWorkItem {
+                    self.charcterFiveIdle.childNode(withName: "HeidiGroup", recursively: false)!.addParticleSystem(particles)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                }
 
                 workItem2 = DispatchWorkItem{
                     self.stopWalkAnimation()
@@ -1090,6 +1114,8 @@ extension ViewController {
                     let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
 
                     self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.lightItem1!)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: self.workItem2!)
                 }
