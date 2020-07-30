@@ -56,6 +56,15 @@ extension ViewController{
                 //letter l intro
                 playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration4"]!, fileExtension: "mp3")
                 
+                // Light on Patricia
+                let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                lightNode.position = SCNVector3Make(0, 10, 0)
+                lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                lightItem1 = DispatchWorkItem{
+                    lightNode.removeFromParentNode()
+                }
+                self.mainCharacterIdle.childNode(withName: "Patricia", recursively: false)?.addChildNode(lightNode)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem1!)
                 //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
                 self.shatterLetterOne = true
                 
@@ -432,6 +441,19 @@ extension ViewController{
                 case .Chapter9:
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration12"]!, fileExtension: "mp3")
                     //patricia idles in the air looking for Brennon
+                    
+                    // Light on Ryan
+                    let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                    lightNode.position = SCNVector3Make(0, 15, 0)
+                    lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                    lightItem2 = DispatchWorkItem{
+                        lightNode.removeFromParentNode()
+                    }
+                    lightItem1 = DispatchWorkItem{
+                        self.charcterThreeIdle.childNode(withName: "Ryan", recursively: false)!.addChildNode(lightNode)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.lightItem1!)
                     
                     self.shatterLetterTwo = true
                     
@@ -863,6 +885,19 @@ extension ViewController{
                 case .Chapter9:
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
                     self.shatterLetterThree = true
+                    
+                    // Light on Nikki
+                    let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                    lightNode.position = SCNVector3Make(0, 10, 0)
+                    lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                    lightItem2 = DispatchWorkItem{
+                        lightNode.removeFromParentNode()
+                    }
+                    lightItem1 = DispatchWorkItem{
+                        self.charcterFourIdle.addChildNode(lightNode)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.lightItem1!)
                     
                     workItem1 = DispatchWorkItem{
                         self.patricia6!.isHidden = true
@@ -1839,6 +1874,19 @@ extension ViewController{
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "mp3")
                     
                     self.shatterLetterFive = true
+                    
+                    // Light on Patricia
+                    let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                    lightNode.position = SCNVector3Make(0, 5, 0)
+                    lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                    lightItem2 = DispatchWorkItem{
+                        lightNode.removeFromParentNode()
+                    }
+                    lightItem1 = DispatchWorkItem{
+                        self.patricia1?.childNode(withName: "Patricia", recursively: false)!.addChildNode(lightNode)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.lightItem1!)
                     
                     workItem5 = DispatchWorkItem{
                         self.resetGame()

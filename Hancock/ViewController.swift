@@ -186,6 +186,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var workItem13:DispatchWorkItem? = nil
     var workItem14:DispatchWorkItem? = nil
     var workItem15:DispatchWorkItem? = nil
+    var lightItem1:DispatchWorkItem? = nil
+    var lightItem2:DispatchWorkItem? = nil
     
     //variables for sound files and audio players
     var audioPlayers: Set<AVAudioPlayer> = Set<AVAudioPlayer>()
@@ -776,6 +778,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //dispatchMain.async tasks that are setup as dispatchWorkItems named workItem are canceled
             //this prevents background tasks from continueing if the chapter is quit and another is loaded
+            self.lightItem2?.cancel()
+            self.lightItem1?.cancel()
             self.workItem15?.cancel()
             self.workItem14?.cancel()
             self.workItem13?.cancel()
@@ -1172,6 +1176,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //set Brennon's fly away Balloon to paused
                 charcterTwoIdle.isHidden = true
                 
+                if let sparkleScene = SCNScene(named: "art.scnassets/sparkleTest.scn") {
+                    if let particles = sparkleScene.particleSystems?.first {
+                        charcterOneIdle.childNode(withName: "Brennon", recursively: false)!.addParticleSystem(particles)
+                    }
+                    else {
+                        print("ViewController - storyTime : Could not find particles")
+                    }
+                }
+                else {
+                    print("ViewController - storyTime : Could not find scene")
+                }
+                
+                // Light on Brennon
+                let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                lightNode.position = SCNVector3Make(0, 25, 0)
+                lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                lightItem2 = DispatchWorkItem{
+                    lightNode.removeFromParentNode()
+                }
+                lightItem1 = DispatchWorkItem{
+                    self.charcterOneIdle.childNode(withName: "Brennon", recursively: false)!.addChildNode(lightNode)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 17.0, execute: self.lightItem1!)
+                
                 workItem3 = DispatchWorkItem{
                     self.playWalkAnimation()
                 }
@@ -1395,22 +1424,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             //arrow.removeFromParentNode()
                             arrowVisible = false
                             // create yellow spotlight to shine on Keelie
-                            let light = SCNLight()
-                            light.type = SCNLight.LightType.spot
-                            light.intensity = 50
-                            light.color = UIColor.yellow
-                            light.spotInnerAngle = 45
-                            light.spotOuterAngle = 45
-                            // create node to add light to, to attach to and shine down on Keelie
-                            let lightNode = SCNNode()
-                            lightNode.light = light
+                            let lightNode = createSpotLightNode(intensity: 50, spotInnerAngle: 45, spotOuterAngle: 45)
                             lightNode.position = SCNVector3Make(0, 500, 0)
                             lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
-                            characterNode.addChildNode(lightNode)
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                            lightItem1 = DispatchWorkItem{
                                 lightNode.removeFromParentNode()
-                            })
+                            }
+                            characterNode.addChildNode(lightNode)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem1!)
+                            
+
+                                
+
                             print("View Controller - Find Character: Arrow Removed")
                         }
                     }
@@ -1425,6 +1450,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+    }
+    func createSpotLightNode(intensity: CGFloat, spotInnerAngle: CGFloat, spotOuterAngle: CGFloat) -> SCNNode {
+        // create yellow spotlight
+        let light = SCNLight()
+        light.type = SCNLight.LightType.spot
+        light.intensity = intensity
+        light.color = UIColor.yellow
+        light.spotInnerAngle = spotInnerAngle
+        light.spotOuterAngle = spotOuterAngle
+        // create node to add light to
+        let lightNode = SCNNode()
+        lightNode.light = light
+        return lightNode
     }
 }
 

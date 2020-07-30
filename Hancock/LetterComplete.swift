@@ -1000,25 +1000,18 @@ extension ViewController{
                         
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                            // create yellow spotlight to shine on Yarn
-                            let light = SCNLight()
-                            light.type = SCNLight.LightType.spot
-                            light.intensity = 20
-                            light.color = UIColor.yellow
-                            light.spotInnerAngle = 0
-                            light.spotOuterAngle = 45
-                            // create node to add light to, to attach to and shine down on Yarn
-                            let lightNode = SCNNode()
-                            lightNode.light = light
-                            lightNode.position = SCNVector3Make(0, 5, 0)
-                            lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                        // create yellow spotlight to shine on Yarn
+                        let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                        lightNode.position = SCNVector3Make(0, 5, 0)
+                        lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                        lightItem2 = DispatchWorkItem{
+                            lightNode.removeFromParentNode()
+                        }
+                        lightItem1 = DispatchWorkItem{
                             self.charcterThreeIdle.addChildNode(lightNode)
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-                                lightNode.removeFromParentNode()
-                            })
-                        })
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.lightItem1!)
                         workItem1 = DispatchWorkItem{
                          self.playWalkAnimation()
                         }
@@ -1277,24 +1270,18 @@ extension ViewController{
                         
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: {
-                            // create yellow spotlight to shine on Zebra Clock
-                            let light = SCNLight()
-                            light.type = SCNLight.LightType.spot
-                            light.intensity = 20
-                            light.color = UIColor.yellow
-                            light.spotInnerAngle = 0
-                            light.spotOuterAngle = 45
-                            // create node to add light to, to attach to and shine down on Zebra Clock
-                            let lightNode = SCNNode()
-                            lightNode.light = light
-                            lightNode.position = SCNVector3Make(-2.5, 0, 15)
+                        // create yellow spotlight to shine on Zebra Clock
+                        let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                        lightNode.position = SCNVector3Make(-2.5, 0, 15)
+                        
+                        lightItem2 = DispatchWorkItem{
+                            lightNode.removeFromParentNode()
+                        }
+                        lightItem1 = DispatchWorkItem{
                             self.charcterTwoIdle.addChildNode(lightNode)
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-                                lightNode.removeFromParentNode()
-                            })
-                        })
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: self.lightItem1!)
                         workItem1 = DispatchWorkItem{
                             self.playWalkAnimation()
                         }
