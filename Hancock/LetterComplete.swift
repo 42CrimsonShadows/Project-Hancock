@@ -677,6 +677,10 @@ extension ViewController{
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration25"]!, fileExtension: "mp3")
                         
                         workItem1 = DispatchWorkItem{
+                            self.particleItem3?.cancel()
+                            self.patricia7!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                            self.patriciaNumber = 0
+                            self.patriciaFlying = false
                             self.patricia7!.isPaused = true
                             self.playWalkAnimation()
                         }
@@ -916,12 +920,20 @@ extension ViewController{
                         print("Nothing to shatter for this chapter")
                     case .Chapter9:
                         //Patricia flies down to Ryan and asks where Brennon is
+                        self.particleItem3?.cancel()
+                        self.patricia2!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                        self.patriciaNumber = 3
+                        self.patriciaFlying = true
                         self.patricia3!.isHidden = false
                         self.patricia3!.isPaused = false
                         self.patricia2!.isHidden = true
                         
                         workItem2 = DispatchWorkItem{
                             //Patricia idles on the track while talking to Ryan
+                            self.particleItem3?.cancel()
+                            self.patricia3!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                            self.patriciaNumber = 0
+                            self.patriciaFlying = false
                             self.patricia4!.isHidden = false
                             self.patricia4!.isPaused = false
                             self.patricia3!.isHidden = true
@@ -1208,6 +1220,8 @@ extension ViewController{
                             
                             //Patricia flies into the air to get the balloon
                             self.patricia1!.isPaused = false
+                            self.patriciaFlying = true
+                            self.patriciaNumber = 1
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem2!)
                         }

@@ -458,6 +458,10 @@ extension ViewController{
                     self.shatterLetterTwo = true
                     
                     workItem1 = DispatchWorkItem{
+                        self.particleItem3?.cancel()
+                        self.patricia2!.childNode(withName: "Patricia", recursively: true)!.removeAllParticleSystems()
+                        self.patriciaNumber = 3
+                        self.patriciaFlying = true
                         self.patricia2!.isHidden = true
                         self.patricia3!.isHidden = false
                         //load first letter for activityView page
@@ -900,6 +904,10 @@ extension ViewController{
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.lightItem1!)
                     
                     workItem1 = DispatchWorkItem{
+                        self.particleItem3?.cancel()
+                        self.patricia6!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                        self.patriciaNumber = 7
+                        self.patriciaFlying = true
                         self.patricia6!.isHidden = true
                         self.patricia7!.isHidden = false
                         //load first letter for activityView page
@@ -1338,6 +1346,10 @@ extension ViewController{
                     self.shatterLetterFour = true
                     
                     workItem1 = DispatchWorkItem{
+                        self.particleItem3?.cancel()
+                        self.patricia8!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                        self.patriciaNumber = 9
+                        self.patriciaFlying = true
                         self.patricia8!.isHidden = true
                         self.patricia9!.isHidden = false
                         
@@ -1939,6 +1951,10 @@ extension ViewController{
                     workItem1 = DispatchWorkItem{
                         self.patricia10!.isHidden = false
                         self.patricia10!.isPaused = false
+                        self.particleItem3?.cancel()
+                        self.patricia9!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                        self.patriciaNumber = 0
+                        self.patriciaFlying = false
                         self.patricia9!.isHidden = true
                         self.patricia9!.isPaused = true
                                                                 

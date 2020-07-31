@@ -112,6 +112,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let scene = SCNScene(named: "art.scnassets/Arrow.scn")
     var arrowVisible: Bool = false
     var arrow: SCNNode!
+    var patriciaFlying: Bool = false
+    var patriciaNumber:Int = 0
     
     //main movement nodes for every story
     var rootStoryNode: SCNNode!
@@ -188,6 +190,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var workItem15:DispatchWorkItem? = nil
     var lightItem1:DispatchWorkItem? = nil
     var lightItem2:DispatchWorkItem? = nil
+    var particleItem1:DispatchWorkItem? = nil
+    var particleItem2:DispatchWorkItem? = nil
+    var particleItem3:DispatchWorkItem? = nil
     
     //variables for sound files and audio players
     var audioPlayers: Set<AVAudioPlayer> = Set<AVAudioPlayer>()
@@ -778,6 +783,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //dispatchMain.async tasks that are setup as dispatchWorkItems named workItem are canceled
             //this prevents background tasks from continueing if the chapter is quit and another is loaded
+            self.particleItem2?.cancel()
+            self.particleItem1?.cancel()
             self.lightItem2?.cancel()
             self.lightItem1?.cancel()
             self.workItem15?.cancel()
@@ -1420,10 +1427,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             }
                             characterNode.addChildNode(lightNode)
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem1!)
-                            
-
-                                
-
                             print("View Controller - Find Character: Arrow Removed")
                         }
                     }
@@ -1433,6 +1436,69 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             //sceneView.pointOfView?.addChildNode(arrow)
                             arrowVisible = true
                             print("View Controller - Find Character: Arrow Added")
+                        }
+                    }
+                }
+            }
+            else if currentChapter == .Chapter9 {
+                if patriciaFlying {
+                    var characterNode = mainCharacterIdle!
+                    switch patriciaNumber {
+                        case 1 :
+                            characterNode = patricia1!.childNode(withName: "Patricia", recursively: false)!
+                        case 2 :
+                            characterNode = patricia2!.childNode(withName: "Patricia", recursively: false)!
+                        case 3 :
+                            characterNode = patricia3!.childNode(withName: "Patricia", recursively: false)!
+                        case 4 :
+                            characterNode = patricia4!.childNode(withName: "Patricia", recursively: false)!
+                        case 5 :
+                            characterNode = patricia5!.childNode(withName: "Patricia", recursively: false)!
+                        case 6 :
+                            characterNode = patricia6!.childNode(withName: "Patricia", recursively: false)!
+                        case 7 :
+                            characterNode = patricia7!.childNode(withName: "Patricia", recursively: false)!
+                        case 8 :
+                            characterNode = patricia8!.childNode(withName: "Patricia", recursively: false)!
+                        case 9 :
+                            characterNode = patricia9!.childNode(withName: "Patricia", recursively: false)!
+                        case 10 :
+                            characterNode = patricia10!.childNode(withName: "Patricia", recursively: false)!
+                        case 11 :
+                            characterNode = patricia11!.childNode(withName: "Patricia", recursively: false)!
+                        case 12 :
+                            characterNode = patricia12!.childNode(withName: "Patricia", recursively: false)!
+                        default :
+                            characterNode = mainCharacterIdle!
+                    }
+                
+                    //arrow.constraints = [SCNLookAtConstraint.init(target: characterNode)]
+                    // if the camera is active in the scene, the point of view is what's on screen
+                    if let pointOfView = sceneView.pointOfView{
+                        // ifVisible = Patricia is visible on the screen
+                        let isVisible = sceneView.isNode((characterNode.presentation), insideFrustumOf: pointOfView)
+                        if isVisible{
+                            // if we have established that patricia wasn't on screen
+                            if arrowVisible{
+                                //arrow.removeFromParentNode()
+                                arrowVisible = false
+                                // create yellow spotlight to shine on Patricia
+                                let particles = createParticleSystem()
+                                particleItem3 = DispatchWorkItem{
+                                    characterNode.removeParticleSystem(particles)
+                                }
+                                characterNode.addParticleSystem(particles)
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.particleItem3!)
+                                print("View Controller - Find Character: Arrow Removed \(patriciaNumber)")
+                            }
+                        }
+                        else {
+                            // if we haven't already established that Patricia isn't on screen
+                            if !arrowVisible{
+                                //sceneView.pointOfView?.addChildNode(arrow)
+                                arrowVisible = true
+                                print("View Controller - Find Character: Arrow Added \(patriciaNumber)")
+                            }
                         }
                     }
                 }
@@ -1451,6 +1517,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let lightNode = SCNNode()
         lightNode.light = light
         return lightNode
+    }
+    func createParticleSystem() -> SCNParticleSystem {
+        let particles = SCNParticleSystem()
+        particles.birthRate = 6.0
+        particles.birthLocation = .surface
+        particles.birthDirection = .random
+        particles.particleLifeSpan = 0.5
+        particles.particleVelocity = 0.5
+        particles.speedFactor = 1.0
+        particles.particleImage = UIImage(named: "art.scnassets/DotImages/YellowDot.png")
+        particles.particleColor = UIColor.yellow
+        particles.particleColorVariation = SCNVector4(0,0,0,0)
+        particles.particleSize = 0.005
+        particles.particleIntensity = 1.0
+        particles.emissionDuration = 1.0
+        particles.loops = true
+        return particles
     }
 }
 
