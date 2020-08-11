@@ -34,9 +34,17 @@ class FreeWriteViewController: UIViewController {
 
         // make button corners rounded
         doneBtn.layer.cornerRadius = 10
-        paperTypeBtn1.layer.borderWidth = 3
-        paperScaleBtn2.layer.borderWidth = 3
-        penScaleBtn2.layer.borderWidth = 3
+        // set border around current paper type, line scale, and pen scale
+        paperTypeBtn1.layer.borderWidth = 4
+        paperTypeBtn2.layer.borderWidth = 1
+        paperTypeBtn3.layer.borderWidth = 1
+        paperScaleBtn1.layer.borderWidth = 1
+        paperScaleBtn2.layer.borderWidth = 4
+        paperScaleBtn3.layer.borderWidth = 1
+        penScaleBtn1.layer.borderWidth = 1
+        penScaleBtn2.layer.borderWidth = 4
+        penScaleBtn3.layer.borderWidth = 1
+        penScaleBtn4.layer.borderWidth = 1
 
         
         // Canvas setup
@@ -48,12 +56,6 @@ class FreeWriteViewController: UIViewController {
         backgroundIV.image = UIImage(named: "paper2")
         // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
-        
-        //Add the letter A underlay image to the UIView under the canvas
-//        view.insertSubview(pageUnderlay, belowSubview: canvasView)
-//        pageUnderlay.centerXAnchor.constraint(equalTo: canvasView.centerXAnchor).isActive = true
-//        pageUnderlay.widthAnchor.constraint(equalToConstant: 1000).isActive = true
-//        pageUnderlay.heightAnchor.constraint(equalToConstant: 1050).isActive = true
     }
     
     // MARK: - Touches
@@ -76,31 +78,32 @@ class FreeWriteViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func changePaperPressed(_ sender: UIButton) {
-        // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
+        // if(sender.currentImage == #imageLiteral(resourceName: "paper2"))
         if(sender.currentTitle == "Paper1") {
             // provided paper (yellow/white)
-            paperTypeBtn1.layer.borderWidth = 3
-            paperTypeBtn2.layer.borderWidth = 0
-            paperTypeBtn3.layer.borderWidth = 0
-            paperScaleBtn1.layer.borderWidth = 0
-            paperScaleBtn2.layer.borderWidth = 3
-            paperScaleBtn3.layer.borderWidth = 0
+            paperTypeBtn1.layer.borderWidth = 4
+            paperTypeBtn2.layer.borderWidth = 1
+            paperTypeBtn3.layer.borderWidth = 1
+            paperScaleBtn1.layer.borderWidth = 1
+            paperScaleBtn2.layer.borderWidth = 4
+            paperScaleBtn3.layer.borderWidth = 1
             backgroundIV.image = UIImage(named: "paper2")
             paperNum = 1
         }
         else if (sender.currentTitle == "Paper2") {
-            paperTypeBtn1.layer.borderWidth = 0
-            paperTypeBtn2.layer.borderWidth = 3
-            paperTypeBtn3.layer.borderWidth = 0
+            // this could be taken out if unused
+            paperTypeBtn1.layer.borderWidth = 1
+            paperTypeBtn2.layer.borderWidth = 4
+            paperTypeBtn3.layer.borderWidth = 1
             backgroundIV.image = UIImage(named: "art.scnassets/UI-art/PlayBtn.png")
             paperNum = 2
         }
         else if (sender.currentTitle == "Paper3") {
             // white copy paper (no image)
             backgroundIV.image = nil
-            paperTypeBtn1.layer.borderWidth = 0
-            paperTypeBtn2.layer.borderWidth = 0
-            paperTypeBtn3.layer.borderWidth = 3
+            paperTypeBtn1.layer.borderWidth = 1
+            paperTypeBtn2.layer.borderWidth = 1
+            paperTypeBtn3.layer.borderWidth = 4
             paperNum = 3
         }
         else {
@@ -110,29 +113,30 @@ class FreeWriteViewController: UIViewController {
     }
     
     @IBAction func lineScalePressed(_ sender: UIButton) {
+        // line scale is currently only used for paper type 1
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
-        if(sender.currentTitle == "Scale1") {
+        if(sender.currentTitle == "Small") {
             // change background image
-            paperScaleBtn1.layer.borderWidth = 3
-            paperScaleBtn2.layer.borderWidth = 0
-            paperScaleBtn3.layer.borderWidth = 0
             if (paperNum == 1) {
+                paperScaleBtn1.layer.borderWidth = 4
+                paperScaleBtn2.layer.borderWidth = 1
+                paperScaleBtn3.layer.borderWidth = 1
                 backgroundIV.image = UIImage(named: "paper1")
             }
         }
-        else if (sender.currentTitle == "Scale2") {
-            paperScaleBtn1.layer.borderWidth = 0
-            paperScaleBtn2.layer.borderWidth = 3
-            paperScaleBtn3.layer.borderWidth = 0
+        else if (sender.currentTitle == "Med") {
             if (paperNum == 1) {
+                paperScaleBtn1.layer.borderWidth = 1
+                paperScaleBtn2.layer.borderWidth = 4
+                paperScaleBtn3.layer.borderWidth = 1
                 backgroundIV.image = UIImage(named: "paper2")
             }
         }
-        else if (sender.currentTitle == "Scale3") {
-            paperScaleBtn1.layer.borderWidth = 0
-            paperScaleBtn2.layer.borderWidth = 0
-            paperScaleBtn3.layer.borderWidth = 3
+        else if (sender.currentTitle == "Big") {
             if (paperNum == 1) {
+                paperScaleBtn1.layer.borderWidth = 1
+                paperScaleBtn2.layer.borderWidth = 1
+                paperScaleBtn3.layer.borderWidth = 4
                 backgroundIV.image = UIImage(named: "paper3")
             }
         }
@@ -144,33 +148,34 @@ class FreeWriteViewController: UIViewController {
     }
     
     @IBAction func penLinePressed(_ sender: UIButton) {
+        // pen linewidth probably needs size adjustments based on feedback
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
-        if(sender.currentTitle == "Pen1") {
-            penScaleBtn1.layer.borderWidth = 3
-            penScaleBtn2.layer.borderWidth = 0
-            penScaleBtn3.layer.borderWidth = 0
-            penScaleBtn4.layer.borderWidth = 0
+        if(sender.currentTitle == "Tiny") {
+            penScaleBtn1.layer.borderWidth = 4
+            penScaleBtn2.layer.borderWidth = 1
+            penScaleBtn3.layer.borderWidth = 1
+            penScaleBtn4.layer.borderWidth = 1
             canvasView.lineWidth = 10
         }
-        else if (sender.currentTitle == "Pen2") {
-            penScaleBtn1.layer.borderWidth = 0
-            penScaleBtn2.layer.borderWidth = 3
-            penScaleBtn3.layer.borderWidth = 0
-            penScaleBtn4.layer.borderWidth = 0
+        else if (sender.currentTitle == "Small") {
+            penScaleBtn1.layer.borderWidth = 1
+            penScaleBtn2.layer.borderWidth = 4
+            penScaleBtn3.layer.borderWidth = 1
+            penScaleBtn4.layer.borderWidth = 1
             canvasView.lineWidth = 20
         }
-        else if (sender.currentTitle == "Pen3") {
-            penScaleBtn1.layer.borderWidth = 0
-            penScaleBtn2.layer.borderWidth = 0
-            penScaleBtn3.layer.borderWidth = 3
-            penScaleBtn4.layer.borderWidth = 0
+        else if (sender.currentTitle == "Med") {
+            penScaleBtn1.layer.borderWidth = 1
+            penScaleBtn2.layer.borderWidth = 1
+            penScaleBtn3.layer.borderWidth = 4
+            penScaleBtn4.layer.borderWidth = 1
             canvasView.lineWidth = 30
         }
-        else if (sender.currentTitle == "Pen4") {
-            penScaleBtn1.layer.borderWidth = 0
-            penScaleBtn2.layer.borderWidth = 0
-            penScaleBtn3.layer.borderWidth = 0
-            penScaleBtn4.layer.borderWidth = 3
+        else if (sender.currentTitle == "Big") {
+            penScaleBtn1.layer.borderWidth = 1
+            penScaleBtn2.layer.borderWidth = 1
+            penScaleBtn3.layer.borderWidth = 1
+            penScaleBtn4.layer.borderWidth = 4
             canvasView.lineWidth = 40
         }
         else {
@@ -186,7 +191,7 @@ class FreeWriteViewController: UIViewController {
         if let image = screenShot() {
             if let pngData = image.pngData() {
                 // but we could also try a base64EncodedString
-    //                let base64String = pngData.base64EncodedString()
+                    let base64String = pngData.base64EncodedString()
                 print("Did screenshot Free Write and this is the pngData: \(pngData)")
             }
         }
