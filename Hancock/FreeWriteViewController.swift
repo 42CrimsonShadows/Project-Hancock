@@ -104,6 +104,9 @@ class FreeWriteViewController: UIViewController {
             paperTypeBtn1.layer.borderWidth = 1
             paperTypeBtn2.layer.borderWidth = 1
             paperTypeBtn3.layer.borderWidth = 4
+            paperScaleBtn1.layer.borderWidth = 1
+            paperScaleBtn2.layer.borderWidth = 1
+            paperScaleBtn3.layer.borderWidth = 1
             paperNum = 3
         }
         else {
