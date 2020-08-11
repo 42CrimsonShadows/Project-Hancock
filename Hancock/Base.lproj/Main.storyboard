@@ -1258,7 +1258,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKv-5e-Yfc">
                                 <rect key="frame" x="12" y="315" width="1000" height="1031"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GFF-a5-6xH">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GFF-a5-6xH">
                                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1031"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>

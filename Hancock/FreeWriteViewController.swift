@@ -25,6 +25,7 @@ class FreeWriteViewController: UIViewController {
     @IBOutlet weak var penScaleBtn2: UIButton!
     @IBOutlet weak var penScaleBtn3: UIButton!
     @IBOutlet weak var penScaleBtn4: UIButton!
+    private var paperNum: Int = 1
     
         
     // MARK: - ViewDidLoad
@@ -34,7 +35,7 @@ class FreeWriteViewController: UIViewController {
         // make button corners rounded
         doneBtn.layer.cornerRadius = 10
         paperTypeBtn1.layer.borderWidth = 3
-        paperScaleBtn1.layer.borderWidth = 3
+        paperScaleBtn2.layer.borderWidth = 3
         penScaleBtn2.layer.borderWidth = 3
 
         
@@ -44,6 +45,7 @@ class FreeWriteViewController: UIViewController {
         canvasView.translatesAutoresizingMaskIntoConstraints = false
         writingView.heightAnchor.constraint(lessThanOrEqualToConstant: 1000).isActive = true
         writingView.widthAnchor.constraint(greaterThanOrEqualToConstant: 1000)
+        backgroundIV.image = UIImage(named: "paper2")
         // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
         
@@ -76,23 +78,30 @@ class FreeWriteViewController: UIViewController {
     @IBAction func changePaperPressed(_ sender: UIButton) {
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
         if(sender.currentTitle == "Paper1") {
-            // change background image
+            // provided paper (yellow/white)
             paperTypeBtn1.layer.borderWidth = 3
             paperTypeBtn2.layer.borderWidth = 0
             paperTypeBtn3.layer.borderWidth = 0
-            backgroundIV.image = UIImage(named: "art.scnassets/UI-art/AntFace.png")
+            paperScaleBtn1.layer.borderWidth = 0
+            paperScaleBtn2.layer.borderWidth = 3
+            paperScaleBtn3.layer.borderWidth = 0
+            backgroundIV.image = UIImage(named: "paper2")
+            paperNum = 1
         }
         else if (sender.currentTitle == "Paper2") {
             paperTypeBtn1.layer.borderWidth = 0
             paperTypeBtn2.layer.borderWidth = 3
             paperTypeBtn3.layer.borderWidth = 0
             backgroundIV.image = UIImage(named: "art.scnassets/UI-art/PlayBtn.png")
+            paperNum = 2
         }
         else if (sender.currentTitle == "Paper3") {
-            backgroundIV.image = UIImage(named: "art.scnassets/UI-art/Book Cover Image Upper.png")
+            // white copy paper (no image)
+            backgroundIV.image = nil
             paperTypeBtn1.layer.borderWidth = 0
             paperTypeBtn2.layer.borderWidth = 0
             paperTypeBtn3.layer.borderWidth = 3
+            paperNum = 3
         }
         else {
             print("No Paper Button Title Match: \(sender.currentTitle)")
@@ -107,19 +116,25 @@ class FreeWriteViewController: UIViewController {
             paperScaleBtn1.layer.borderWidth = 3
             paperScaleBtn2.layer.borderWidth = 0
             paperScaleBtn3.layer.borderWidth = 0
-            backgroundIV.image = UIImage(named: "art.scnassets/UI-art/AntFace.png")
+            if (paperNum == 1) {
+                backgroundIV.image = UIImage(named: "paper1")
+            }
         }
         else if (sender.currentTitle == "Scale2") {
             paperScaleBtn1.layer.borderWidth = 0
             paperScaleBtn2.layer.borderWidth = 3
             paperScaleBtn3.layer.borderWidth = 0
-            backgroundIV.image = UIImage(named: "art.scnassets/UI-art/PlayBtn.png")
+            if (paperNum == 1) {
+                backgroundIV.image = UIImage(named: "paper2")
+            }
         }
         else if (sender.currentTitle == "Scale3") {
             paperScaleBtn1.layer.borderWidth = 0
             paperScaleBtn2.layer.borderWidth = 0
             paperScaleBtn3.layer.borderWidth = 3
-            backgroundIV.image = UIImage(named: "art.scnassets/UI-art/Book Cover Image Upper.png")
+            if (paperNum == 1) {
+                backgroundIV.image = UIImage(named: "paper3")
+            }
         }
         else {
             print("No Scale Button Title Match: \(sender.currentTitle)")
