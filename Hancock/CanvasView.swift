@@ -790,8 +790,7 @@ class CanvasView: UIView {
             return ["Narration5"]
         case "m":
             print("Load m narration")
-            //return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
-            return ["Narration42", "Narration43", "Narration44", "Narration45", "Narration46", "Narration47", "Narration48"]
+            return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
         case "n":
             print("Load n narration")
             return ["Narration22", "Narration23", "Narration24"]

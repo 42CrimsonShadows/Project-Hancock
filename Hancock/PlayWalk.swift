@@ -1964,16 +1964,12 @@ extension ViewController {
                 print("do chapter 8 stuff")
             case .Chapter9:
                 print("do chapter 9 stuff")
-                
             case .Chapter10:
                 print("do chapter 10 stuf")
                 print("move floor for chapter five")
             default:
                 break
             }
-            
-            
-            
             
             //Finish
             //----------------------------------------------------
