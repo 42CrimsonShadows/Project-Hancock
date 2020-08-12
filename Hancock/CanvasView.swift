@@ -383,7 +383,6 @@ class CanvasView: UIView {
             guard let line = activeLines.object(forKey: touch) else { continue }
             // If this is a touch cancellation, cancel the associated line.
             if cancel { updateRect = updateRect.union(line.cancel()) }
-            
             // If the line is complete (no points needing updates) or updating isn't enabled, move the line to the `frozenImage`.
             if line.isComplete {
                 finishLine(line)
@@ -557,6 +556,12 @@ class CanvasView: UIView {
                 }
             }
         }
+        else {
+            for touch in touches {
+                guard let line = pendingLines.object(forKey: touch) else { return }
+                finishLine(line)
+            }
+        }
     }
     
     func updateEstimatedPropertiesForTouches(_ touches: Set<UITouch>) {
@@ -569,10 +574,8 @@ class CanvasView: UIView {
                 isPending = pendingLine != nil
                 return pendingLine
                 }()
-            
             // If no line is related to the touch, return as there is no additional work to do.
             guard let line = possibleLine else { return }
-            
             switch line.updateWithTouch(touch) {
             case (true, let updateRect):
                 setNeedsDisplay(updateRect)
