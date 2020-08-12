@@ -750,7 +750,7 @@ extension ViewController {
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3")
                 
                 workItem3 = DispatchWorkItem{
-                        //Patricia looks arounf for Nikki
+                        //Patricia looks around for Nikki
                         self.patricia6!.isPaused = true
                         self.stopWalkAnimation()
                 }

@@ -1331,7 +1331,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case "Eric", "Jillian", "Manny", "Isaac":
             print("Do sideCharacter4 stuff")
             charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Hannah", "InnerTube", "Ashton", "Tyler":
+        case "Hannah", "InnerTube", "Ashton", "Tyler", "Mikkena":
             print("Do sideCharacter5 stuff")
             charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Indy", "Gary", "Keelie", "Barry", "Ursa", "Lionel", "Finn":
@@ -1359,7 +1359,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("Remove stuff")
             //charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
             charcterFourIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
-        case "Hannah", "InnerTube", "Ashton", "Tyler":
+        case "Hannah", "InnerTube", "Ashton", "Tyler", "Mikkena":
             print("Remove stuff")
             //charcterFiveIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
             charcterFiveIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))

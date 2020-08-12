@@ -674,13 +674,22 @@ extension ViewController{
                     case .Chapter9:
                         //Patricia lands down by Nikki
                         self.patricia7!.isPaused = false
+                        self.startAnimateSideCharacter(key: "SideCharacter5Approach", sideCharacter: "Mikkena")
+                        self.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Mikkena")
+                        
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration25"]!, fileExtension: "mp3")
                         
-                        workItem1 = DispatchWorkItem{
+                        workItem2 = DispatchWorkItem {
                             self.patricia7!.isPaused = true
                             self.playWalkAnimation()
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute:self.workItem1!)
+                        
+                        workItem1 = DispatchWorkItem{
+                           self.charcterFiveIdle.isPaused = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 8.3, execute:self.workItem2!)
+                        
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.1, execute:self.workItem1!)
                         
 //                        DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {
 //                            self.patricia7!.isPaused = true
