@@ -95,10 +95,13 @@ class FreeWriteViewController: UIViewController {
             paperTypeBtn1.layer.borderWidth = 1
             paperTypeBtn2.layer.borderWidth = 4
             paperTypeBtn3.layer.borderWidth = 1
-            backgroundIV.image = UIImage(named: "art.scnassets/UI-art/PlayBtn.png")
+            paperScaleBtn1.layer.borderWidth = 1
+            paperScaleBtn2.layer.borderWidth = 4
+            paperScaleBtn3.layer.borderWidth = 1
+            backgroundIV.image = UIImage(named: "linedPaper2")
             paperNum = 2
         }
-        else if (sender.currentTitle == "Paper3") {
+        else if (sender.currentTitle == "Blank") {
             // white copy paper (no image)
             backgroundIV.image = nil
             paperTypeBtn1.layer.borderWidth = 1
@@ -126,6 +129,12 @@ class FreeWriteViewController: UIViewController {
                 paperScaleBtn3.layer.borderWidth = 1
                 backgroundIV.image = UIImage(named: "paper1")
             }
+            else if (paperNum == 2) {
+                paperScaleBtn1.layer.borderWidth = 4
+                paperScaleBtn2.layer.borderWidth = 1
+                paperScaleBtn3.layer.borderWidth = 1
+                backgroundIV.image = UIImage(named: "linedPaper1")
+            }
         }
         else if (sender.currentTitle == "Med") {
             if (paperNum == 1) {
@@ -134,6 +143,12 @@ class FreeWriteViewController: UIViewController {
                 paperScaleBtn3.layer.borderWidth = 1
                 backgroundIV.image = UIImage(named: "paper2")
             }
+            else if (paperNum == 2) {
+                paperScaleBtn1.layer.borderWidth = 1
+                paperScaleBtn2.layer.borderWidth = 4
+                paperScaleBtn3.layer.borderWidth = 1
+                backgroundIV.image = UIImage(named: "linedPaper2")
+            }
         }
         else if (sender.currentTitle == "Big") {
             if (paperNum == 1) {
@@ -141,6 +156,12 @@ class FreeWriteViewController: UIViewController {
                 paperScaleBtn2.layer.borderWidth = 1
                 paperScaleBtn3.layer.borderWidth = 4
                 backgroundIV.image = UIImage(named: "paper3")
+            }
+            else if (paperNum == 2) {
+                paperScaleBtn1.layer.borderWidth = 1
+                paperScaleBtn2.layer.borderWidth = 1
+                paperScaleBtn3.layer.borderWidth = 4
+                backgroundIV.image = UIImage(named: "linedPaper3")
             }
         }
         else {

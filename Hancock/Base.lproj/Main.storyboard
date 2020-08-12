@@ -1124,10 +1124,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <action selector="changePaperPressed:" destination="7N0-2m-uqw" eventType="touchUpInside" id="TPb-Hj-Ejw"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y1-VU-Ofp">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y1-VU-Ofp">
                                                         <rect key="frame" x="108.5" y="0.0" width="106.5" height="100"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="Paper2">
+                                                        <state key="normal" title="Paper2" image="linedPaper1">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -2821,6 +2820,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Square" width="375" height="500"/>
         <image name="Triangle" width="375" height="500"/>
         <image name="Vertical" width="375" height="500"/>
+        <image name="linedPaper1" width="2100" height="1449"/>
         <image name="paper3" width="1005" height="686"/>
         <image name="profilePic.png" width="225" height="225"/>
     </resources>
