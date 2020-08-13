@@ -111,7 +111,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var chapterNodeArray: [SCNNode]!
     let scene = SCNScene(named: "art.scnassets/Arrow.scn")
     var arrowVisible: Bool = false
-    var arrow: SCNNode!
+    var arrow: SCNNode?
     var patriciaFlying: Bool = false
     var patriciaNumber:Int = 0
     
@@ -207,6 +207,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.loadModels(chapterNode: chapterNodeArray!)
         self.referenceMainNodes()
         arrow = scene?.rootNode.childNode(withName: "obelisk", recursively: false)
+        //arrow!.position = SCNVector3Make(0, -1, -1)
         
         //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
@@ -1472,7 +1473,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             characterNode = mainCharacterIdle!
                     }
                 
-                    //arrow.constraints = [SCNLookAtConstraint.init(target: characterNode)]
+                    arrow!.constraints = [SCNLookAtConstraint.init(target: characterNode)]
                     // if the camera is active in the scene, the point of view is what's on screen
                     if let pointOfView = sceneView.pointOfView{
                         // ifVisible = Patricia is visible on the screen
@@ -1480,7 +1481,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         if isVisible{
                             // if we have established that patricia wasn't on screen
                             if arrowVisible{
-                                //arrow.removeFromParentNode()
+                                arrow!.removeFromParentNode()
                                 arrowVisible = false
                                 // create yellow spotlight to shine on Patricia
                                 let particles = createParticleSystem()
@@ -1495,7 +1496,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         else {
                             // if we haven't already established that Patricia isn't on screen
                             if !arrowVisible{
-                                //sceneView.pointOfView?.addChildNode(arrow)
+                                pointOfView.addChildNode(arrow!)
+                                var yVal = pointOfView.worldPosition.y + 0.5
+                                if pointOfView.worldPosition.y < mainFloor.worldPosition.y {
+                                    yVal = mainFloor!.worldPosition.y + 0.5
+                                }
+                                arrow!.worldPosition = SCNVector3Make(pointOfView.worldPosition.x - 2, yVal, pointOfView.worldPosition.z - 2)
+                                print(arrow!.worldPosition)
+                                print(mainFloor!.worldPosition)
+                                arrow!.constraints = [SCNLookAtConstraint.init(target: characterNode)]
                                 arrowVisible = true
                                 print("View Controller - Find Character: Arrow Added \(patriciaNumber)")
                             }
@@ -1520,16 +1529,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     func createParticleSystem() -> SCNParticleSystem {
         let particles = SCNParticleSystem()
-        particles.birthRate = 6.0
+        particles.birthRate = 20.0
         particles.birthLocation = .surface
         particles.birthDirection = .random
-        particles.particleLifeSpan = 0.5
+        particles.particleLifeSpan = 0.3
         particles.particleVelocity = 0.5
         particles.speedFactor = 1.0
         particles.particleImage = UIImage(named: "art.scnassets/DotImages/YellowDot.png")
         particles.particleColor = UIColor.yellow
         particles.particleColorVariation = SCNVector4(0,0,0,0)
-        particles.particleSize = 0.005
+        particles.particleSize = 0.002
         particles.particleIntensity = 1.0
         particles.emissionDuration = 1.0
         particles.loops = true

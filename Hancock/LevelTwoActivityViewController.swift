@@ -55,32 +55,32 @@ class LevelTwoActivityViewController: UIViewController {
         "x":"RemoveMeAfterTesting",
         "y":"RemoveMeAfterTesting",
         "z":"RemoveMeAfterTesting",
-            "A":"RemoveMeAfterTesting",
-            "B":"RemoveMeAfterTesting",
-            "C":"RemoveMeAfterTesting",
-            "D":"RemoveMeAfterTesting",
-            "E":"RemoveMeAfterTesting",
-            "F":"RemoveMeAfterTesting",
-            "G":"RemoveMeAfterTesting",
-            "H":"RemoveMeAfterTesting",
-            "I":"RemoveMeAfterTesting",
-            "J":"RemoveMeAfterTesting",
-            "K":"RemoveMeAfterTesting",
-            "L":"RemoveMeAfterTesting",
-            "M":"RemoveMeAfterTesting",
-            "N":"RemoveMeAfterTesting",
-            "O":"RemoveMeAfterTesting",
-            "P":"RemoveMeAfterTesting",
-            "Q":"RemoveMeAfterTesting",
-            "R":"RemoveMeAfterTesting",
-            "S":"RemoveMeAfterTesting",
-            "T":"RemoveMeAfterTesting",
-            "U":"RemoveMeAfterTesting",
-            "V":"RemoveMeAfterTesting",
-            "W":"RemoveMeAfterTesting",
-            "X":"RemoveMeAfterTesting",
-            "Y":"RemoveMeAfterTesting",
-            "Z":"RemoveMeAfterTesting"]
+            "A":"A",
+            "B":"B",
+            "C":"C",
+            "D":"D",
+            "E":"E",
+            "F":"F",
+            "G":"G",
+            "H":"H",
+            "I":"I",
+            "J":"J",
+            "K":"K",
+            "L":"L",
+            "M":"M",
+            "N":"N",
+            "O":"O",
+            "P":"P",
+            "Q":"Q",
+            "R":"R",
+            "S":"S",
+            "T":"T",
+            "U":"U",
+            "V":"V",
+            "W":"W",
+            "X":"X",
+            "Y":"Y",
+            "Z":"Z"]
     // dictionary to grab letter audio
     private let audioDictionary = [
         "a":"Gravel and Grass Walk",
@@ -147,7 +147,7 @@ class LevelTwoActivityViewController: UIViewController {
             //letterIV.isHidden = true
             //setUpVideo()
             setUpGif()
-            setUpAudio()
+            //setUpAudio()
             
         }
         // make button corners rounded
@@ -160,7 +160,7 @@ class LevelTwoActivityViewController: UIViewController {
         //this enables autolayout for our canvas
         canvasView.translatesAutoresizingMaskIntoConstraints = false
         writingView.heightAnchor.constraint(lessThanOrEqualToConstant: 700).isActive = true
-        canvasBGIV.image = UIImage(named: "art.scnassets/UI-art/AntFace.png")
+        //canvasBGIV.image = UIImage(named: "art.scnassets/UI-art/AntFace.png")
         // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
     }
@@ -168,7 +168,10 @@ class LevelTwoActivityViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // Start the animation
-        letterIV.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.letterIV.startAnimating()
+        }
+        
     }
     
     private func setUpVideo() {
@@ -228,8 +231,8 @@ class LevelTwoActivityViewController: UIViewController {
                 return
         }
         // find and setup letter gif
-        //if let letterGif = UIImage.gif(name: image) {
-        if let letterGif = UIImage.gif(name:"Anthony-Chillaxing") {
+        if let letterGif = UIImage.gif(name: image) {
+        //if let letterGif = UIImage.gif(name:"Anthony-Chillaxing") {
             letterIV.image = letterGif.images?.last
             // Set the images from the UIImage
             letterIV.animationImages = letterGif.images
@@ -261,16 +264,17 @@ class LevelTwoActivityViewController: UIViewController {
     // MARK: - Actions
     @IBAction func replayVideo(_ sender: UIButton) {
         // if there is a current sound playing stop sound
-        if(audioPlayer.isPlaying)
-        {
-            audioPlayer.stop()
-        }
-        // set audio position time to zero and play
-        audioPlayer.currentTime = .zero
-        audioPlayer.play()
+//        if(audioPlayer.isPlaying)
+//        {
+//            audioPlayer.stop()
+//        }
+//        // set audio position time to zero and play
+//        audioPlayer.currentTime = .zero
+//        audioPlayer.play()
         
         // Start the animation
         letterIV.startAnimating()
+        
         // set the player's video time position to zero and play
 //        videoPlayer.seek(to: .zero)
 //        videoPlayer.play()
@@ -292,7 +296,7 @@ class LevelTwoActivityViewController: UIViewController {
                 // did some testing and this pngData can be successfully written to a .png file
                 // i'm thinking that we can send the pngData as Data to the db and then be able to display it on the website
                 // but we could also try a base64EncodedString if that doesn't work
-//                let base64String = pngData.base64EncodedString()
+                let base64String = pngData.base64EncodedString()
                 print("Did screenshot Level2 and this is the pngData: \(pngData)")
             }
         }
