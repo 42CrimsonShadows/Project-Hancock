@@ -1481,7 +1481,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         if isVisible{
                             // if we have established that patricia wasn't on screen
                             if arrowVisible{
-                                arrow!.removeFromParentNode()
+//                                arrow!.removeFromParentNode()
                                 arrowVisible = false
                                 // create yellow spotlight to shine on Patricia
                                 let particles = createParticleSystem()
@@ -1496,15 +1496,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         else {
                             // if we haven't already established that Patricia isn't on screen
                             if !arrowVisible{
-                                pointOfView.addChildNode(arrow!)
-                                var yVal = pointOfView.worldPosition.y + 0.5
-                                if pointOfView.worldPosition.y < mainFloor.worldPosition.y {
-                                    yVal = mainFloor!.worldPosition.y + 0.5
-                                }
-                                arrow!.worldPosition = SCNVector3Make(pointOfView.worldPosition.x - 2, yVal, pointOfView.worldPosition.z - 2)
-                                print(arrow!.worldPosition)
-                                print(mainFloor!.worldPosition)
-                                arrow!.constraints = [SCNLookAtConstraint.init(target: characterNode)]
+//                                pointOfView.addChildNode(arrow!)
+//                                var yVal = pointOfView.worldPosition.y + 0.5
+//                                if pointOfView.worldPosition.y < mainFloor.worldPosition.y {
+//                                    yVal = mainFloor!.worldPosition.y + 0.5
+//                                }
+//                                arrow!.worldPosition = SCNVector3Make(pointOfView.worldPosition.x - 2, yVal, pointOfView.worldPosition.z - 2)
+//                                print(arrow!.worldPosition)
+//                                print(mainFloor!.worldPosition)
+//                                arrow!.constraints = [SCNLookAtConstraint.init(target: characterNode)]
                                 arrowVisible = true
                                 print("View Controller - Find Character: Arrow Added \(patriciaNumber)")
                             }
