@@ -31,7 +31,6 @@
 		A0A028BC227CA9F500A7C787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A028BB227CA9F500A7C787 /* AppDelegate.swift */; };
 		A0A028BE227CA9F500A7C787 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A028BD227CA9F500A7C787 /* art.scnassets */; };
 		A0A028C0227CA9F500A7C787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A028BF227CA9F500A7C787 /* ViewController.swift */; };
-		A0A028C3227CA9F500A7C787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C1227CA9F500A7C787 /* Main.storyboard */; };
 		A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C4227CA9F600A7C787 /* Assets.xcassets */; };
 		A0DEC69C24BCBD15008A38F1 /* letterMatchingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DEC69B24BCBD15008A38F1 /* letterMatchingMenuViewController.swift */; };
 		A0E86BE222C08F150009A214 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0E86BE122C08F150009A214 /* Loading.gif */; };
@@ -67,6 +66,7 @@
 		A7ACFFF124E5CAB3004F1E87 /* aLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFD724E5CAB1004F1E87 /* aLower.gif */; };
 		A7ACFFF224E5CAB3004F1E87 /* zLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFD824E5CAB2004F1E87 /* zLower.gif */; };
 		A7ACFFF324E5CAB3004F1E87 /* nLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFD924E5CAB3004F1E87 /* nLower.gif */; };
+		A7ACFFF524E70B3B004F1E87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFF424E70B3B004F1E87 /* Main.storyboard */; };
 		A7CBF51024E594150066988F /* M.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7CBF4F624E592CD0066988F /* M.gif */; };
 		A7CBF51124E594150066988F /* K.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7CBF4F724E592E00066988F /* K.gif */; };
 		A7CBF51224E594150066988F /* R.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7CBF4F824E592F10066988F /* R.gif */; };
@@ -126,7 +126,6 @@
 		A0A028BB227CA9F500A7C787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A028BD227CA9F500A7C787 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		A0A028BF227CA9F500A7C787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
-		A0A028C2227CA9F500A7C787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0A028C4227CA9F600A7C787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0A028C7227CA9F600A7C787 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = LaunchScreen.storyboard; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0A028C9227CA9F600A7C787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +163,7 @@
 		A7ACFFD724E5CAB1004F1E87 /* aLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aLower.gif; sourceTree = "<group>"; };
 		A7ACFFD824E5CAB2004F1E87 /* zLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zLower.gif; sourceTree = "<group>"; };
 		A7ACFFD924E5CAB3004F1E87 /* nLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = nLower.gif; sourceTree = "<group>"; };
+		A7ACFFF424E70B3B004F1E87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A7CBF4F624E592CD0066988F /* M.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = M.gif; sourceTree = "<group>"; };
 		A7CBF4F724E592E00066988F /* K.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = K.gif; sourceTree = "<group>"; };
 		A7CBF4F824E592F10066988F /* R.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = R.gif; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 				A00E7B5922CA8D25009BA733 /* UIViewExtension.swift */,
 				A0A028C7227CA9F600A7C787 /* LaunchScreen.storyboard */,
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
-				A0A028C1227CA9F500A7C787 /* Main.storyboard */,
+				A7ACFFF424E70B3B004F1E87 /* Main.storyboard */,
 				A023DF8D24C12E0000306A44 /* LetterMatchingPGQViewController.swift */,
 				A023DF8B24C1249200306A44 /* LetterMatchingDBViewController.swift */,
 				A0DEC69B24BCBD15008A38F1 /* letterMatchingMenuViewController.swift */,
@@ -449,6 +449,7 @@
 				A7CBF52324E594150066988F /* D.gif in Resources */,
 				A7ACFFE324E5CAB3004F1E87 /* fLower.gif in Resources */,
 				A7ACFFEC24E5CAB3004F1E87 /* wLower.gif in Resources */,
+				A7ACFFF524E70B3B004F1E87 /* Main.storyboard in Resources */,
 				A7ACFFE624E5CAB3004F1E87 /* kLower.gif in Resources */,
 				A051592623957A070026485B /* LaunchScreen.storyboard in Resources */,
 				A7CBF52124E594150066988F /* Z.gif in Resources */,
@@ -480,7 +481,6 @@
 				A7CBF52424E594150066988F /* B.gif in Resources */,
 				A7CBF51924E594150066988F /* Y.gif in Resources */,
 				A7ACFFEE24E5CAB3004F1E87 /* bLower.gif in Resources */,
-				A0A028C3227CA9F500A7C787 /* Main.storyboard in Resources */,
 				A7ACFFE524E5CAB3004F1E87 /* hLower.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,17 +549,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A0A028C1227CA9F500A7C787 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0A028C2227CA9F500A7C787 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A0A028CA227CA9F600A7C787 /* Debug */ = {
