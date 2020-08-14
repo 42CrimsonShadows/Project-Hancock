@@ -683,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 10;
+				MARKETING_VERSION = 11;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate.abcgoar;
 				PRODUCT_NAME = "ABC Go AR";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -709,7 +709,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 10;
+				MARKETING_VERSION = 11;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate.abcgoar;
 				PRODUCT_NAME = "ABC Go AR";
 				PROVISIONING_PROFILE_SPECIFIER = "";
