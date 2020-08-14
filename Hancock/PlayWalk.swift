@@ -35,6 +35,8 @@ extension ViewController {
                 startTransitionAnimation(key: "MainCharacterWalking")
                 //play walk sound
                 walkSound = playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
+                                                                 
+                                   
                 //animate the main character to rotate a bit on the y axis
                 mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new chapter 1
                 //animate the mainFloor node to move and stop when the translation is complete
@@ -324,9 +326,15 @@ extension ViewController {
                 
                 workItem1 = DispatchWorkItem{
                     //play narration for finishing letter 2
-                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
+                    //self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
+                    self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration9"]!, fileExtension: "mp3") //LM TEST
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem2!)//LM TEST
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: workItem1!)
+                
+                workItem2 = DispatchWorkItem{//LM TEST
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")//LM TEST
+                }
                 
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
 //                    //play narration for finishing letter 2
@@ -883,7 +891,7 @@ extension ViewController {
                 
                 //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
                 startTransitionAnimation(key: "MainCharacterWalking")
-                
+                                 
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 // x= (-)west/(+)east, z= (-)north/(+)south
@@ -899,6 +907,12 @@ extension ViewController {
                 let rotate4 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 1)
                 let chapter1Letter4RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3, rotate4])
                 mainCharacterIdle?.runAction(chapter1Letter4RotSeq)
+                
+                workItem1 = DispatchWorkItem{
+                      self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration23"]!, fileExtension: "mp3") //LM TEST
+                }
+                
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: workItem1!) //LM TEST
                 
             case .Chapter2:
                 //C (chapter2 - letter4)

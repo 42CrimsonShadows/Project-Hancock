@@ -830,7 +830,7 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self!.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: workItem1!) //LM Test
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -1847,7 +1847,7 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)//LM
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -2253,17 +2253,18 @@ extension ViewController{
                         
                         print("Loading activity \(chapterSelectedLetterArray![4])")
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
-                        
+                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3") //LM
                         //wait 6 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem3!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem3!)
                     }
                     workItem1 = DispatchWorkItem{
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3")
+                        //self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3")
+                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
                         //wait 4 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem2!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: self.workItem2!)//LM
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)//LM
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -2410,32 +2411,45 @@ extension ViewController{
 //                            })
 //                        })
 //                    })
-                case .Chapter1:
+                case .Chapter1://LM 
                     fadeoutWalkingSound()
                     
                     stopTransitionAnimation(key: "MainCharacterWalking")
                     
-                    workItem3 = DispatchWorkItem{
+                    workItem5 = DispatchWorkItem {
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration45"]!, fileExtension: "mp3")
                     }
-                    workItem2 = DispatchWorkItem{
-                        //get ready to shatter a when ViewDidAppear() is called
+                    workItem3 = DispatchWorkItem{
+                        //self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration45"]!, fileExtension: "mp3")
                         print("Prepare to shatter letter 6")
-                        self.shatterLetterSix = true
+                                               self.shatterLetterSix = true
+                                               
+                                               print("Loading activity \(chapterSelectedLetterArray![5])")
+                                               self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
                         
-                        print("Loading activity \(chapterSelectedLetterArray![5])")
-                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem5!)
+                                               
+                    }
+                    workItem2 = DispatchWorkItem{
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3")
+                        //get ready to shatter a when ViewDidAppear() is called
+                      //  print("Prepare to shatter letter 6")
+                       // self.shatterLetterSix = true
+                        
+                       // print("Loading activity \(chapterSelectedLetterArray![5])")
+                       // self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
                         
                         //wait 6 seconds
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem3!)
                     }
                     workItem1 = DispatchWorkItem{
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration43"]!, fileExtension: "mp3")
+                       // self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3")
                         //wait 4 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem2!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute:self.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: workItem1!)
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
