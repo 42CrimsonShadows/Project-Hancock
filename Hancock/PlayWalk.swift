@@ -114,9 +114,21 @@ extension ViewController {
                 //play game intro 1
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
                 
+                // create yellow spotlight to shine on Nails
+                let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 30)
+                lightNode.position = SCNVector3Make(5, 20, 2)
+                lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                
                 workItem2 = DispatchWorkItem{
                     //move the main character to the first letter
                     self.stopWalkAnimation()
+                }
+                lightItem2 = DispatchWorkItem{
+                    lightNode.removeFromParentNode()
+                }
+                lightItem1 = DispatchWorkItem{
+                    self.charcterOneIdle.addChildNode(lightNode)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
                 }
                 workItem1 = DispatchWorkItem{
                     //show busted Xylophone
@@ -133,7 +145,9 @@ extension ViewController {
 
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
                     //TODO: ADD touches and raytracing to select Nails
-
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: self.lightItem1!)
+                    
                     //look around for nails at teachers desk
                     DispatchQueue.main.asyncAfter(deadline: .now() + 18, execute: self.workItem2!)
                 }
@@ -475,6 +489,10 @@ extension ViewController {
                 workItem2 = DispatchWorkItem{
                     self.patricia2!.isHidden = false
                     self.patricia2!.isPaused = false
+                    self.particleItem3?.cancel()
+                    self.patricia1!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                    self.patriciaNumber = 2
+                    self.patriciaFlying = true
                     self.patricia1!.isHidden = true
                     self.patricia1!.isPaused = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: self.workItem3!)
@@ -766,6 +784,10 @@ extension ViewController {
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
                         self.patricia6!.isHidden = false
                         self.patricia6!.isPaused = false
+                        self.particleItem3?.cancel()
+                        self.patricia5!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                        self.patriciaNumber = 6
+                        self.patriciaFlying = true
                         self.patricia5!.isHidden = true
                         self.patricia5!.isPaused = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 10.7, execute:self.workItem3!)
@@ -774,6 +796,10 @@ extension ViewController {
                     //Patricia scoots back to take off again
                     self.patricia5!.isHidden = false
                     self.patricia5!.isPaused = false
+                    self.particleItem3?.cancel()
+                    self.patricia4!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                    self.patriciaNumber = 5
+                    self.patriciaFlying = true
                     self.patricia4!.isHidden = true
                     self.patricia4!.isPaused = true
                     
@@ -1066,6 +1092,16 @@ extension ViewController {
 
             case .Chapter9:
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
+                
+                // Put Particles on Heidi
+                let particles = self.createParticleSystem()
+                particleItem2 = DispatchWorkItem {
+                    self.charcterFiveIdle.childNode(withName: "HeidiGroup", recursively: false)!.removeParticleSystem(particles)
+                }
+                particleItem1 = DispatchWorkItem {
+                    self.charcterFiveIdle.childNode(withName: "HeidiGroup", recursively: false)!.addParticleSystem(particles)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.particleItem2!)
+                }
 
                 workItem2 = DispatchWorkItem{
                     self.stopWalkAnimation()
@@ -1076,6 +1112,8 @@ extension ViewController {
                     //Patricia flies back up to find Heidi
                     self.patricia8!.isHidden = false
                     self.patricia8!.isPaused = false
+                    self.patriciaNumber = 8
+                    self.patriciaFlying = true
                     self.patricia7!.isHidden = true
                     self.patricia7!.isPaused = true
                     
@@ -1090,6 +1128,8 @@ extension ViewController {
                     let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
 
                     self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.particleItem1!)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: self.workItem2!)
                 }
