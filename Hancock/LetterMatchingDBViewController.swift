@@ -47,6 +47,8 @@ class LetterMatchingDBViewController: UIViewController, UIGestureRecognizerDeleg
     @IBOutlet weak var rowFiveCardFiveImageView: UIImageView!
     //end of row five setup
     //end of image view setup
+    //set up topBorder
+    @IBOutlet weak var topBorder: UIImageView!
     
     //tappedImage variable setup
     var tappedImage:UIImage? = nil
@@ -62,7 +64,7 @@ class LetterMatchingDBViewController: UIViewController, UIGestureRecognizerDeleg
     @IBOutlet weak var youWinPic: UIImageView!
     
     //line label - setting it up so that it can be hidden when the game is won
-    @IBOutlet weak var lineLabel: UILabel!
+   // @IBOutlet weak var lineLabel: UILabel!
     
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
@@ -81,7 +83,8 @@ class LetterMatchingDBViewController: UIViewController, UIGestureRecognizerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         youWinPic.isHidden = true
-        lineLabel.isHidden = false
+       // lineLabel.isHidden = false
+        topBorder.isHidden = false
         
         instructionImageView.image = letterMatchingArray.randomElement()
         
@@ -166,7 +169,8 @@ class LetterMatchingDBViewController: UIViewController, UIGestureRecognizerDeleg
             workItem2 = DispatchWorkItem{
                 self.youWinPic.isHidden = false
                 self.youWinPic.image = #imageLiteral(resourceName: "YouWin.png")
-                self.lineLabel.isHidden = true
+                self.topBorder.isHidden = true 
+                //self.lineLabel.isHidden = true
                 
                 let imageViews = [self.rowOneCardOneImageView, self.rowOneCardTwoImageView, self.rowOneCardThreeImageView, self.rowOneCardFourImageView, self.rowOneCardFiveImageView, self.rowTwoCardOneImageView, self.rowTwoCardTwoImageView, self.rowTwoCardThreeImageView, self.rowTwoCardFourImageView, self.rowTwoCardFiveImageView, self.rowThreeCardOneImageVIew, self.rowThreeCardTwoImageView, self.rowThreeCardThreeImageView, self.rowThreeCardFourImageView, self.rowThreeCardFiveImageVIew, self.rowFourCardOneImageView, self.rowFourCardTwoImageView, self.rowFourCardThreeImageView, self.rowFourCardFourImageView, self.rowFourCardFiveImageView,self.rowFiveCardOneImageView, self.rowFiveCardTwoImageView, self.rowFiveCardThreeImageView, self.rowFiveCardFourImageView, self.rowFiveCardFiveImageView, self.instructionImageView]
                 

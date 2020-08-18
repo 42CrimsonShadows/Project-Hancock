@@ -54,7 +54,10 @@ class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDele
     var workItem2:DispatchWorkItem? = nil
     
     //setting up line label so it can be hidden when win condition is met
-    @IBOutlet weak var lineLabel: UILabel!
+  //  @IBOutlet weak var lineLabel: UILabel!
+    //setting up top border
+    @IBOutlet weak var topBorder: UIImageView!
+    
     
     //setting up youWinPic
     @IBOutlet weak var youWinPic: UIImageView!
@@ -72,7 +75,7 @@ class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDele
     @IBAction func resetButtonTapped(_ sender: Any) {
         viewDidLoad()
         
-        lineLabel.isHidden = false 
+       // lineLabel.isHidden = false
         
         let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageVIew, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageVIew, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView, rowFiveCardOneImageView, rowFiveCardTwoImageView, rowFiveCardThreeImageView, rowFiveCardFourImageView, rowFiveCardFiveImageView, instructionImageView]
         
@@ -84,6 +87,7 @@ class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         youWinPic.isHidden = true
+        topBorder.isHidden = false 
         
         instructionImageView.image = letterMatchingArray.randomElement()
         
@@ -168,7 +172,8 @@ class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDele
             workItem2 = DispatchWorkItem{
                 self.youWinPic.isHidden = false
                 self.youWinPic.image = #imageLiteral(resourceName: "YouWin.png")
-                self.lineLabel.isHidden = true
+                self.topBorder.isHidden = true
+                //self.lineLabel.isHidden = true
                 
                 let imageViews = [self.rowOneCardOneImageView, self.rowOneCardTwoImageView, self.rowOneCardThreeImageView, self.rowOneCardFourImageView, self.rowOneCardFiveImageView, self.rowTwoCardOneImageView, self.rowTwoCardTwoImageView, self.rowTwoCardThreeImageView, self.rowTwoCardFourImageView, self.rowTwoCardFiveImageView, self.rowThreeCardOneImageVIew, self.rowThreeCardTwoImageView, self.rowThreeCardThreeImageView, self.rowThreeCardFourImageView, self.rowThreeCardFiveImageVIew, self.rowFourCardOneImageView, self.rowFourCardTwoImageView, self.rowFourCardThreeImageView, self.rowFourCardFourImageView, self.rowFourCardFiveImageView,self.rowFiveCardOneImageView, self.rowFiveCardTwoImageView, self.rowFiveCardThreeImageView, self.rowFiveCardFourImageView, self.rowFiveCardFiveImageView, self.instructionImageView]
                 

@@ -177,6 +177,8 @@ class ChapterViewController: UIViewController {
     }
     
     
+        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -206,6 +208,7 @@ class ChapterViewController: UIViewController {
         lineType7Label?.isHidden = true
         lineType8Label?.isHidden = true
         lineType9Label?.isHidden = true
+         
         
         pauseAfterPlay()
     }

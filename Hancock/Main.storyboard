@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jmb-Cg-UZK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t6x-o2-efZ">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -508,6 +508,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pv-Ev-LWA">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="450"/>
                                                 <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double1.1" translatesAutoresizingMaskIntoConstraints="NO" id="3Fo-I3-tQP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="276" id="GxP-HJ-5st"/>
+                                                            <constraint firstAttribute="width" constant="1024" id="vBl-lX-N8d"/>
+                                                        </constraints>
+                                                    </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGH-xJ-djh">
                                                         <rect key="frame" x="20" y="38" width="58" height="39"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -516,50 +523,32 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <action selector="homeButtonTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="qrn-1I-G8Y"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeF-UY-Hsk">
-                                                        <rect key="frame" x="321" y="126" width="346" height="62.5"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Letter Matching">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.13257008789999999" green="0.56740862130000003" blue="0.087604619559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    <font key="NSFont" metaFont="system" size="52"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyerImage1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSm-aQ-jgN">
-                                                        <rect key="frame" x="742" y="20" width="244" height="258"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="244" id="PrB-L3-Usa"/>
-                                                            <constraint firstAttribute="height" constant="258" id="VC1-it-gUR"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVz-Ac-tqx">
-                                                        <rect key="frame" x="-416" y="170" width="1440" height="19.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="1440" id="pGl-79-bcx"/>
-                                                        </constraints>
-                                                        <string key="text">____________________________________________________________________________________________________________________________________________________________________________________________________________</string>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letter Matching" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6D-Kv-xcM">
+                                                        <rect key="frame" x="0.0" y="108" width="1024" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                        <color key="textColor" red="0.51027148960000002" green="0.47504884000000003" blue="0.72672432659999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="bSm-aQ-jgN" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" constant="20" id="0eX-ig-Zcs"/>
-                                                    <constraint firstAttribute="trailing" secondItem="bSm-aQ-jgN" secondAttribute="trailing" constant="38" id="5Pj-QR-0Ky"/>
-                                                    <constraint firstItem="aVz-Ac-tqx" firstAttribute="top" secondItem="pGH-xJ-djh" secondAttribute="bottom" constant="93" id="7Gn-Rx-gFC"/>
+                                                    <constraint firstItem="f6D-Kv-xcM" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" constant="108" id="7fS-UN-7L1"/>
                                                     <constraint firstItem="pGH-xJ-djh" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" constant="38" id="8Xv-b1-LSX"/>
                                                     <constraint firstItem="pGH-xJ-djh" firstAttribute="leading" secondItem="0Pv-Ev-LWA" secondAttribute="leading" constant="20" id="A31-Nm-vdx"/>
-                                                    <constraint firstItem="bSm-aQ-jgN" firstAttribute="leading" secondItem="JeF-UY-Hsk" secondAttribute="trailing" constant="75" id="R1P-wW-6xe"/>
-                                                    <constraint firstAttribute="trailing" secondItem="aVz-Ac-tqx" secondAttribute="trailing" id="Ug8-88-8HA"/>
-                                                    <constraint firstItem="JeF-UY-Hsk" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" constant="126" id="Xyj-bj-UW4"/>
+                                                    <constraint firstItem="3Fo-I3-tQP" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" id="Azl-9J-daD"/>
+                                                    <constraint firstItem="f6D-Kv-xcM" firstAttribute="leading" secondItem="0Pv-Ev-LWA" secondAttribute="leading" id="DMG-Xa-Ctw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="f6D-Kv-xcM" secondAttribute="trailing" id="N55-KX-Ft0"/>
+                                                    <constraint firstItem="3Fo-I3-tQP" firstAttribute="leading" secondItem="0Pv-Ev-LWA" secondAttribute="leading" id="OuV-KB-N3S"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3Fo-I3-tQP" secondAttribute="trailing" id="qsq-4o-CPL"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="0Pv-Ev-LWA" secondAttribute="trailing" id="9ky-eM-Vxs"/>
+                                            <constraint firstItem="0Pv-Ev-LWA" firstAttribute="leading" secondItem="fnq-qz-54Z" secondAttribute="leading" id="Zdd-9Z-nSq"/>
+                                            <constraint firstAttribute="bottom" secondItem="0Pv-Ev-LWA" secondAttribute="bottom" id="oUA-MX-W94"/>
+                                            <constraint firstItem="0Pv-Ev-LWA" firstAttribute="top" secondItem="fnq-qz-54Z" secondAttribute="top" id="wwz-q2-ECg"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uwi-rf-sFv">
                                         <rect key="frame" x="0.0" y="458" width="1024" height="450"/>
@@ -573,7 +562,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vh-Tn-hhh">
                                                                 <rect key="frame" x="28" y="0.0" width="94" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                                <state key="normal" title="A - Z "/>
+                                                                <state key="normal" title="A - Z ">
+                                                                    <color key="titleColor" red="0.74844872949999997" green="0.68137478829999998" blue="0.43056520819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="aThroughZTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="cJb-Py-Vqt"/>
                                                                 </connections>
@@ -581,7 +572,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POC-nw-fgQ">
                                                                 <rect key="frame" x="26.5" y="107" width="97" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                                <state key="normal" title="B &amp; D"/>
+                                                                <state key="normal" title="B &amp; D">
+                                                                    <color key="titleColor" red="0.46236735579999999" green="0.64952975509999999" blue="0.73771816489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="bAndDTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="pYf-qq-RKG"/>
                                                                 </connections>
@@ -589,7 +582,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEa-1W-i53">
                                                                 <rect key="frame" x="0.0" y="214" width="150" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                                <state key="normal" title="P, G, &amp; Q"/>
+                                                                <state key="normal" title="P, G, &amp; Q">
+                                                                    <color key="titleColor" red="0.63155335189999995" green="0.45282793049999998" blue="0.81937450170000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="pGQTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="jj1-F6-nao"/>
                                                                 </connections>
@@ -611,27 +606,40 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-iZ-Tdh">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="450"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyerImage2" translatesAutoresizingMaskIntoConstraints="NO" id="eco-Wp-Tew">
-                                                        <rect key="frame" x="8" y="188.5" width="317.5" height="247.5"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double1.2" translatesAutoresizingMaskIntoConstraints="NO" id="UAf-tn-Exd">
+                                                        <rect key="frame" x="0.0" y="174" width="1024" height="276"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="276" id="HFc-ak-yPW"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1024" id="UJi-EY-fiR"/>
+                                                            <constraint firstAttribute="width" constant="1024" id="td5-gQ-SRa"/>
+                                                            <constraint firstAttribute="height" constant="276" id="yJk-jQ-fhp"/>
+                                                        </constraints>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="eco-Wp-Tew" secondAttribute="bottom" constant="14" id="R1Y-7B-iSy"/>
-                                                    <constraint firstItem="eco-Wp-Tew" firstAttribute="leading" secondItem="uhG-iZ-Tdh" secondAttribute="leading" constant="8" id="lFL-3b-bat"/>
+                                                    <constraint firstItem="UAf-tn-Exd" firstAttribute="leading" secondItem="uhG-iZ-Tdh" secondAttribute="leading" id="E6z-Ne-NK4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="UAf-tn-Exd" secondAttribute="bottom" id="YQu-2B-lXh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="UAf-tn-Exd" secondAttribute="trailing" id="eTq-cm-Epa"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="uhG-iZ-Tdh" firstAttribute="leading" secondItem="r5k-rs-1kx" secondAttribute="leading" id="9lU-IG-Agw"/>
+                                            <constraint firstAttribute="bottom" secondItem="uhG-iZ-Tdh" secondAttribute="bottom" id="Eiq-Ek-n3S"/>
+                                            <constraint firstItem="uhG-iZ-Tdh" firstAttribute="top" secondItem="r5k-rs-1kx" secondAttribute="top" id="WcJ-UG-I1f"/>
+                                            <constraint firstAttribute="trailing" secondItem="uhG-iZ-Tdh" secondAttribute="trailing" id="bY4-ZA-7aS"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ihn-un-nsI" firstAttribute="bottom" secondItem="dbS-NM-jRb" secondAttribute="bottom" id="BEi-D8-8Qr"/>
+                            <constraint firstItem="Ihn-un-nsI" firstAttribute="bottom" secondItem="LNP-Im-pd3" secondAttribute="bottom" id="BEi-D8-8Qr"/>
                             <constraint firstAttribute="trailing" secondItem="Ihn-un-nsI" secondAttribute="trailing" id="Woa-K4-3Pp"/>
-                            <constraint firstItem="Ihn-un-nsI" firstAttribute="top" secondItem="dbS-NM-jRb" secondAttribute="top" id="mKI-oa-Qrc"/>
-                            <constraint firstItem="Ihn-un-nsI" firstAttribute="leading" secondItem="dbS-NM-jRb" secondAttribute="leading" id="mZF-FU-Xl4"/>
+                            <constraint firstItem="Ihn-un-nsI" firstAttribute="top" secondItem="LNP-Im-pd3" secondAttribute="top" id="mKI-oa-Qrc"/>
+                            <constraint firstItem="Ihn-un-nsI" firstAttribute="leading" secondItem="LNP-Im-pd3" secondAttribute="leading" id="mZF-FU-Xl4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dbS-NM-jRb"/>
                     </view>
@@ -664,8 +672,11 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AG-ys-B2W">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Single1" translatesAutoresizingMaskIntoConstraints="NO" id="XRG-4S-BR7">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpM-HX-Tcn">
-                                                <rect key="frame" x="24" y="32" width="53" height="42.5"/>
+                                                <rect key="frame" x="24" y="32" width="53" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Back "/>
                                                 <connections>
@@ -673,44 +684,34 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTI-f5-KXh">
-                                                <rect key="frame" x="940" y="32" width="55" height="42.5"/>
+                                                <rect key="frame" x="940" y="32" width="55" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Reset"/>
                                                 <connections>
                                                     <action selector="resetTapped:" destination="bo1-os-NbK" eventType="touchUpInside" id="mgf-AS-nB3"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8W-rP-nqc">
-                                                <rect key="frame" x="-8" y="82.5" width="1442.5" height="185.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="1442.5" id="Sxa-6n-vBF"/>
-                                                    <constraint firstAttribute="height" constant="185.5" id="TC5-KN-OCR"/>
-                                                </constraints>
-                                                <string key="text">____________________________________________________________________________________________________________________________________________________________________________________________________________</string>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-zh-bCc">
-                                                <rect key="frame" x="429" y="8" width="163" height="167.5"/>
+                                                <rect key="frame" x="429" y="8" width="177" height="205"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="163" id="cmo-8A-hGN"/>
+                                                    <constraint firstAttribute="width" constant="177" id="7kK-dx-wol"/>
+                                                    <constraint firstAttribute="height" constant="205" id="Shp-O6-Kny"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="XRG-4S-BR7" firstAttribute="top" secondItem="3AG-ys-B2W" secondAttribute="top" id="0cu-gq-U41"/>
                                             <constraint firstItem="zhf-zh-bCc" firstAttribute="top" secondItem="3AG-ys-B2W" secondAttribute="topMargin" id="38V-gr-zjX"/>
                                             <constraint firstItem="XTI-f5-KXh" firstAttribute="top" secondItem="3AG-ys-B2W" secondAttribute="top" constant="32" id="8If-r5-5BG"/>
                                             <constraint firstAttribute="trailing" secondItem="XTI-f5-KXh" secondAttribute="trailing" constant="29" id="AJ1-Hr-GB9"/>
-                                            <constraint firstItem="a8W-rP-nqc" firstAttribute="top" secondItem="XTI-f5-KXh" secondAttribute="bottom" constant="8" symbolic="YES" id="G9H-7r-T0n"/>
-                                            <constraint firstItem="zhf-zh-bCc" firstAttribute="centerY" secondItem="3AG-ys-B2W" secondAttribute="centerY" constant="-18.75" id="LND-sj-Owt"/>
+                                            <constraint firstItem="XRG-4S-BR7" firstAttribute="leading" secondItem="3AG-ys-B2W" secondAttribute="leading" id="Bau-PQ-6Fd"/>
+                                            <constraint firstItem="zhf-zh-bCc" firstAttribute="centerY" secondItem="3AG-ys-B2W" secondAttribute="centerY" id="LND-sj-Owt"/>
                                             <constraint firstItem="XpM-HX-Tcn" firstAttribute="top" secondItem="3AG-ys-B2W" secondAttribute="top" constant="32" id="LVL-Vl-IMD"/>
-                                            <constraint firstAttribute="bottom" secondItem="a8W-rP-nqc" secondAttribute="bottom" constant="-47" id="Tzb-D3-Zpn"/>
-                                            <constraint firstItem="a8W-rP-nqc" firstAttribute="top" secondItem="XpM-HX-Tcn" secondAttribute="bottom" constant="8" symbolic="YES" id="YFX-L5-bo4"/>
                                             <constraint firstItem="XpM-HX-Tcn" firstAttribute="leading" secondItem="3AG-ys-B2W" secondAttribute="leading" constant="24" id="a60-eh-Pyj"/>
-                                            <constraint firstItem="zhf-zh-bCc" firstAttribute="centerX" secondItem="3AG-ys-B2W" secondAttribute="centerX" constant="-1.5" id="csf-AA-ppx"/>
-                                            <constraint firstItem="a8W-rP-nqc" firstAttribute="leading" secondItem="3AG-ys-B2W" secondAttribute="leading" constant="-8" id="uEr-fv-kQV"/>
+                                            <constraint firstItem="zhf-zh-bCc" firstAttribute="centerX" secondItem="3AG-ys-B2W" secondAttribute="centerX" constant="5.5" id="csf-AA-ppx"/>
+                                            <constraint firstAttribute="bottom" secondItem="XRG-4S-BR7" secondAttribute="bottom" id="ebE-Gv-Vp9"/>
+                                            <constraint firstAttribute="trailing" secondItem="XRG-4S-BR7" secondAttribute="trailing" id="qwe-Ha-Xmu"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="fyN-Ke-ggZ">
@@ -718,6 +719,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WFh-s3-r4R">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="221"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2VI-Gv-4k5">
                                                 <rect key="frame" x="206" y="0.0" width="200" height="221"/>
@@ -732,6 +734,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <rect key="frame" x="824" y="0.0" width="200" height="221"/>
                                             </imageView>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Vay-uD-Sk4">
                                         <rect key="frame" x="0.0" y="458" width="1024" height="221"/>
@@ -835,7 +838,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="s6K-Eu-T42" firstAttribute="leading" secondItem="uuB-5o-m8W" secondAttribute="leading" id="3dH-k9-UwY"/>
                             <constraint firstItem="s6K-Eu-T42" firstAttribute="trailing" secondItem="uuB-5o-m8W" secondAttribute="trailing" id="Du9-Kd-vZn"/>
                             <constraint firstItem="uuB-5o-m8W" firstAttribute="bottom" secondItem="gna-42-fz5" secondAttribute="bottom" id="LXf-Ro-ZJ8"/>
-                            <constraint firstItem="gna-42-fz5" firstAttribute="top" secondItem="uuB-5o-m8W" secondAttribute="top" id="Wdj-zw-BnA"/>
+                            <constraint firstItem="gna-42-fz5" firstAttribute="top" secondItem="EvR-fa-1BI" secondAttribute="top" id="Wdj-zw-BnA"/>
                             <constraint firstAttribute="bottom" secondItem="s6K-Eu-T42" secondAttribute="bottom" id="bqt-hZ-sgQ"/>
                             <constraint firstItem="uuB-5o-m8W" firstAttribute="trailing" secondItem="gna-42-fz5" secondAttribute="trailing" id="fEX-tY-7kl"/>
                             <constraint firstItem="gna-42-fz5" firstAttribute="leading" secondItem="EvR-fa-1BI" secondAttribute="leading" id="poi-KZ-WaQ"/>
@@ -846,7 +849,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="xuR-9b-W4d"/>
                     <connections>
                         <outlet property="instructionImageView" destination="zhf-zh-bCc" id="x2e-zX-ucs"/>
-                        <outlet property="lineLabel" destination="a8W-rP-nqc" id="Y3W-Sd-Bjj"/>
                         <outlet property="rowFiveCardFiveImageView" destination="Wnl-ie-6Qj" id="eMz-yJ-Zz1"/>
                         <outlet property="rowFiveCardFourImageView" destination="u1B-iY-iit" id="dJh-yg-Vgt"/>
                         <outlet property="rowFiveCardOneImageView" destination="3KN-aW-ufn" id="BN8-r4-9vV"/>
@@ -872,6 +874,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoCardOneImageView" destination="5b1-JT-Obl" id="tfB-cW-zGf"/>
                         <outlet property="rowTwoCardThreeImageView" destination="sLK-H0-GNm" id="zsi-X9-458"/>
                         <outlet property="rowTwoCardTwoImageView" destination="ga7-vA-H2F" id="Q3I-Bl-OKw"/>
+                        <outlet property="topBoarder" destination="XRG-4S-BR7" id="1YA-5j-YoB"/>
                         <outlet property="youWinPic" destination="s6K-Eu-T42" id="yQi-nm-0t9"/>
                         <segue destination="e2i-hj-zRG" kind="show" identifier="mainMenu" id="41T-yv-9Ha"/>
                     </connections>
@@ -1466,7 +1469,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7C-5P-5fz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2147" y="2333"/>
+            <point key="canvasLocation" x="2147" y="2219"/>
         </scene>
         <!--Home-->
         <scene sceneID="Rds-js-1Tg">
@@ -2061,7 +2064,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zs-eJ-h0h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1437" y="2333"/>
+            <point key="canvasLocation" x="1432" y="2223"/>
         </scene>
         <!--Level2ViewController-->
         <scene sceneID="4gW-fi-lk1">
@@ -2245,7 +2248,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR4-yb-HWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="1596"/>
+            <point key="canvasLocation" x="2865" y="1530"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="BXQ-lc-9JC">
@@ -2495,8 +2498,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <constraint firstAttribute="width" constant="100" id="aE3-mX-L6P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" backgroundImage="Reset">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="EbW-Xz-ygt" kind="show" identifier="vc3toHomeScreen" id="IF0-Kw-T9V">
@@ -2696,6 +2699,159 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXN-U1-EdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1468" y="-597"/>
+        </scene>
+        <!--Puzzle View Controller-->
+        <scene sceneID="gqk-KF-gzS">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="jSx-6p-9lS" customClass="PuzzleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HDR-hN-AbO">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4KR-Qy-MRp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NzD-AD-Ygc"/>
+                    <connections>
+                        <segue destination="t6x-o2-efZ" kind="show" identifier="assessmentPage" id="WgY-Xn-BEO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ed8-7O-nxo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2230.6640625" y="-604.39238653001462"/>
+        </scene>
+        <!--Assessment Selection-->
+        <scene sceneID="MCO-F2-DlT">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="t6x-o2-efZ" customClass="AssessmentSelection" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iOH-Jr-oFd">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94B-L0-qLU">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gkO-S8-ihR">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFm-sW-TEc">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="894"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PuzzleImage_2" translatesAutoresizingMaskIntoConstraints="NO" id="DOd-0P-S0b">
+                                                        <rect key="frame" x="8" y="17" width="1008" height="869"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="DOd-0P-S0b" firstAttribute="leading" secondItem="QFm-sW-TEc" secondAttribute="leading" constant="8" id="YZB-6Z-Zcz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DOd-0P-S0b" secondAttribute="trailing" constant="8" id="gRc-Rp-M6q"/>
+                                                    <constraint firstItem="DOd-0P-S0b" firstAttribute="top" secondItem="QFm-sW-TEc" secondAttribute="top" constant="17" id="nDS-tf-5rr"/>
+                                                    <constraint firstItem="DOd-0P-S0b" firstAttribute="bottom" secondItem="QFm-sW-TEc" secondAttribute="bottomMargin" id="sq3-Zc-Y5D"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pgd-71-xFu">
+                                                <rect key="frame" x="0.0" y="902" width="1024" height="464"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koE-ij-pjq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="228"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JY0-kK-fbR">
+                                                                <rect key="frame" x="416.5" y="14" width="191" height="200"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="200" id="atE-JZ-PtN"/>
+                                                                    <constraint firstAttribute="width" constant="191" id="h3S-pW-4mC"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="JY0-kK-fbR" firstAttribute="centerX" secondItem="koE-ij-pjq" secondAttribute="centerX" id="65N-6u-zr8"/>
+                                                            <constraint firstItem="JY0-kK-fbR" firstAttribute="top" secondItem="koE-ij-pjq" secondAttribute="top" constant="14" id="eV1-Nr-Daz"/>
+                                                            <constraint firstItem="JY0-kK-fbR" firstAttribute="centerY" secondItem="koE-ij-pjq" secondAttribute="centerY" id="iqd-Z3-pdP"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45c-hU-EiF">
+                                                        <rect key="frame" x="0.0" y="236" width="1024" height="228"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Afa-Nt-tao">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="228"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="91m-2V-KNE">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="164" height="228"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qVl-A9-HsK">
+                                                                        <rect key="frame" x="172" y="0.0" width="164" height="228"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Glt-ii-7BF">
+                                                                        <rect key="frame" x="344" y="0.0" width="164" height="228"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jsa-cW-QxJ">
+                                                                        <rect key="frame" x="516" y="0.0" width="164" height="228"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5uA-gL-n92">
+                                                                        <rect key="frame" x="688" y="0.0" width="164" height="228"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ygg-lw-TLS">
+                                                                        <rect key="frame" x="860" y="0.0" width="164" height="228"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="Afa-Nt-tao" secondAttribute="trailing" id="2lE-UP-v8o"/>
+                                                            <constraint firstItem="Afa-Nt-tao" firstAttribute="leading" secondItem="45c-hU-EiF" secondAttribute="leading" id="Kbu-X6-LPR"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Afa-Nt-tao" secondAttribute="bottom" id="Zc0-oG-ib7"/>
+                                                            <constraint firstItem="Afa-Nt-tao" firstAttribute="top" secondItem="45c-hU-EiF" secondAttribute="top" id="hVg-J7-LnI"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="45c-hU-EiF" firstAttribute="top" secondItem="koE-ij-pjq" secondAttribute="bottom" constant="8" id="Lx7-6P-zuM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="45c-hU-EiF" secondAttribute="trailing" id="Sri-Pz-bWG"/>
+                                                    <constraint firstItem="koE-ij-pjq" firstAttribute="leading" secondItem="pgd-71-xFu" secondAttribute="leading" id="W9H-up-o06"/>
+                                                    <constraint firstItem="45c-hU-EiF" firstAttribute="leading" secondItem="pgd-71-xFu" secondAttribute="leading" id="Y3z-AA-GiY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="koE-ij-pjq" secondAttribute="trailing" id="YK3-dq-6Nw"/>
+                                                    <constraint firstItem="koE-ij-pjq" firstAttribute="top" secondItem="pgd-71-xFu" secondAttribute="top" id="cGI-09-y7j"/>
+                                                    <constraint firstAttribute="bottom" secondItem="45c-hU-EiF" secondAttribute="bottom" id="iNP-1D-KfN"/>
+                                                    <constraint firstItem="45c-hU-EiF" firstAttribute="top" secondItem="koE-ij-pjq" secondAttribute="bottom" constant="8" id="kKX-Ck-8dE"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gkO-S8-ihR" secondAttribute="bottom" id="Jq7-dm-8LV"/>
+                                    <constraint firstItem="gkO-S8-ihR" firstAttribute="leading" secondItem="94B-L0-qLU" secondAttribute="leading" id="K3g-ry-Wlx"/>
+                                    <constraint firstAttribute="trailing" secondItem="gkO-S8-ihR" secondAttribute="trailing" id="UtZ-WD-bku"/>
+                                    <constraint firstItem="gkO-S8-ihR" firstAttribute="top" secondItem="94B-L0-qLU" secondAttribute="top" id="dXt-4x-dDw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="94B-L0-qLU" firstAttribute="leading" secondItem="iOH-Jr-oFd" secondAttribute="leading" id="GZe-bR-Dmt"/>
+                            <constraint firstItem="94B-L0-qLU" firstAttribute="top" secondItem="iOH-Jr-oFd" secondAttribute="top" id="TSR-4X-YTU"/>
+                            <constraint firstItem="94B-L0-qLU" firstAttribute="trailing" secondItem="iOH-Jr-oFd" secondAttribute="trailing" id="p13-i5-ucZ"/>
+                            <constraint firstItem="94B-L0-qLU" firstAttribute="bottom" secondItem="iOH-Jr-oFd" secondAttribute="bottom" id="sdV-zk-uRR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="s7h-XQ-21d"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="04d-VQ-YhH"/>
+                    <connections>
+                        <outlet property="cardFive" destination="5uA-gL-n92" id="Mhs-Tj-i9n"/>
+                        <outlet property="cardFour" destination="Jsa-cW-QxJ" id="eDp-Pc-C8C"/>
+                        <outlet property="cardOne" destination="91m-2V-KNE" id="Tio-Kb-4pb"/>
+                        <outlet property="cardSix" destination="Ygg-lw-TLS" id="AVB-zH-lQt"/>
+                        <outlet property="cardThree" destination="Glt-ii-7BF" id="7zd-oN-1cX"/>
+                        <outlet property="cardTwo" destination="qVl-A9-HsK" id="lKJ-L1-xYh"/>
+                        <outlet property="instructionCard" destination="JY0-kK-fbR" id="eVc-IV-FqB"/>
+                        <outlet property="puzzleImageView" destination="DOd-0P-S0b" id="Vg7-lB-L7e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXI-Zx-vci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2913.8671875" y="-604.39238653001462"/>
         </scene>
         <!--Chapter View Controller-->
         <scene sceneID="YK3-VA-dcO">
@@ -3206,7 +3362,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1m5-Pr-zba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2147" y="1596"/>
+            <point key="canvasLocation" x="2138" y="1530"/>
         </scene>
         <!--Letter MatchingDB View Controller-->
         <scene sceneID="9fi-Xo-gHi">
@@ -3225,8 +3381,11 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXV-BZ-2UB">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Single5" translatesAutoresizingMaskIntoConstraints="NO" id="Zmm-Xz-5yA">
+                                                <rect key="frame" x="0.0" y="-182" width="1024" height="414"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYN-dz-Aug">
-                                                <rect key="frame" x="24" y="32" width="53" height="42.5"/>
+                                                <rect key="frame" x="24" y="32" width="53" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Back "/>
                                                 <connections>
@@ -3234,24 +3393,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JD0-dW-t7Q">
-                                                <rect key="frame" x="940" y="32" width="55" height="42.5"/>
+                                                <rect key="frame" x="940" y="32" width="55" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Reset"/>
                                                 <connections>
                                                     <action selector="resetButtonTapped:" destination="C50-TJ-yLr" eventType="touchUpInside" id="teE-pf-ySj"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGv-cz-QCm">
-                                                <rect key="frame" x="-8" y="82.5" width="1442.5" height="185.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="1442.5" id="LLI-3a-WZS"/>
-                                                    <constraint firstAttribute="height" constant="185.5" id="l9X-BC-gb2"/>
-                                                </constraints>
-                                                <string key="text">____________________________________________________________________________________________________________________________________________________________________________________________________________</string>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecI-F4-vj5">
                                                 <rect key="frame" x="429" y="8" width="163" height="167.5"/>
                                                 <constraints>
@@ -3262,15 +3410,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ecI-F4-vj5" firstAttribute="top" secondItem="ZXV-BZ-2UB" secondAttribute="topMargin" id="9yw-lR-Dvr"/>
-                                            <constraint firstAttribute="bottom" secondItem="qGv-cz-QCm" secondAttribute="bottom" constant="-47" id="Ezh-PR-9LX"/>
                                             <constraint firstItem="ecI-F4-vj5" firstAttribute="centerX" secondItem="ZXV-BZ-2UB" secondAttribute="centerX" constant="-1.5" id="Hgg-2x-2hz"/>
                                             <constraint firstAttribute="trailing" secondItem="JD0-dW-t7Q" secondAttribute="trailing" constant="29" id="Idg-92-YVS"/>
-                                            <constraint firstItem="qGv-cz-QCm" firstAttribute="leading" secondItem="ZXV-BZ-2UB" secondAttribute="leading" constant="-8" id="SDP-Ba-fGY"/>
+                                            <constraint firstItem="Zmm-Xz-5yA" firstAttribute="leading" secondItem="ZXV-BZ-2UB" secondAttribute="leading" id="N8I-hp-Vhm"/>
                                             <constraint firstItem="JD0-dW-t7Q" firstAttribute="top" secondItem="ZXV-BZ-2UB" secondAttribute="top" constant="32" id="VEs-5n-Khc"/>
                                             <constraint firstItem="IYN-dz-Aug" firstAttribute="leading" secondItem="ZXV-BZ-2UB" secondAttribute="leading" constant="24" id="ePL-BO-sl0"/>
                                             <constraint firstItem="IYN-dz-Aug" firstAttribute="top" secondItem="ZXV-BZ-2UB" secondAttribute="top" constant="32" id="elN-gJ-cEn"/>
-                                            <constraint firstItem="qGv-cz-QCm" firstAttribute="top" secondItem="JD0-dW-t7Q" secondAttribute="bottom" constant="8" symbolic="YES" id="gCb-yh-Whw"/>
-                                            <constraint firstItem="qGv-cz-QCm" firstAttribute="top" secondItem="IYN-dz-Aug" secondAttribute="bottom" constant="8" symbolic="YES" id="jRJ-hE-PsY"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zmm-Xz-5yA" secondAttribute="trailing" id="ioX-G6-LB4"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zmm-Xz-5yA" secondAttribute="bottom" constant="-11" id="ogZ-0p-YVv"/>
                                             <constraint firstItem="ecI-F4-vj5" firstAttribute="centerY" secondItem="ZXV-BZ-2UB" secondAttribute="centerY" constant="-18.75" id="p0b-pg-iHF"/>
                                         </constraints>
                                     </view>
@@ -3399,7 +3546,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="jmc-HE-4Wk" firstAttribute="bottom" secondItem="sAb-BD-MOJ" secondAttribute="bottom" id="Wee-Km-Cal"/>
                             <constraint firstItem="jmc-HE-4Wk" firstAttribute="trailing" secondItem="sAb-BD-MOJ" secondAttribute="trailing" id="aXa-rL-i0h"/>
                             <constraint firstItem="5kq-ek-TAs" firstAttribute="bottom" secondItem="PlK-pe-Cxo" secondAttribute="bottom" id="dOd-Ry-UBM"/>
-                            <constraint firstItem="sAb-BD-MOJ" firstAttribute="top" secondItem="jmc-HE-4Wk" secondAttribute="top" id="gsH-F2-8qp"/>
+                            <constraint firstItem="sAb-BD-MOJ" firstAttribute="top" secondItem="PlK-pe-Cxo" secondAttribute="top" id="gsH-F2-8qp"/>
                             <constraint firstItem="sAb-BD-MOJ" firstAttribute="leading" secondItem="PlK-pe-Cxo" secondAttribute="leading" id="wqi-n4-phg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jmc-HE-4Wk"/>
@@ -3407,7 +3554,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="gKX-MA-HX7"/>
                     <connections>
                         <outlet property="instructionImageView" destination="ecI-F4-vj5" id="3pw-aT-tTV"/>
-                        <outlet property="lineLabel" destination="qGv-cz-QCm" id="PYn-bG-NBi"/>
                         <outlet property="rowFiveCardFiveImageView" destination="wg4-Q2-Rqa" id="xxQ-hG-pPn"/>
                         <outlet property="rowFiveCardFourImageView" destination="Twh-MK-UsF" id="wqT-GC-x0L"/>
                         <outlet property="rowFiveCardOneImageView" destination="eae-fF-FhR" id="w80-XJ-mTR"/>
@@ -3433,6 +3579,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoCardOneImageView" destination="TbN-Io-R5T" id="VDm-bZ-f1t"/>
                         <outlet property="rowTwoCardThreeImageView" destination="vT3-6P-MaX" id="lpe-p5-JmD"/>
                         <outlet property="rowTwoCardTwoImageView" destination="Li7-ai-NgT" id="8M4-L2-BFF"/>
+                        <outlet property="topBorder" destination="Zmm-Xz-5yA" id="fa9-74-0wa"/>
                         <outlet property="youWinPic" destination="5kq-ek-TAs" id="Psh-Ei-a4n"/>
                         <segue destination="e2i-hj-zRG" kind="show" identifier="mainMenu" id="RMR-yy-ZbG"/>
                     </connections>
@@ -3458,8 +3605,11 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1f-KV-mm5">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Single5" translatesAutoresizingMaskIntoConstraints="NO" id="c4G-ql-4qg">
+                                                <rect key="frame" x="0.0" y="-177" width="1024" height="414"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="na9-K6-Iw8">
-                                                <rect key="frame" x="24" y="32" width="53" height="42.5"/>
+                                                <rect key="frame" x="24" y="32" width="53" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Back "/>
                                                 <connections>
@@ -3467,28 +3617,18 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IG-f3-wkZ">
-                                                <rect key="frame" x="940" y="32" width="55" height="42.5"/>
+                                                <rect key="frame" x="940" y="32" width="55" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Reset"/>
                                                 <connections>
                                                     <action selector="resetButtonTapped:" destination="mfT-s6-ldz" eventType="touchUpInside" id="gDs-Xs-TiZ"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwT-Ij-cxx">
-                                                <rect key="frame" x="-8" y="82.5" width="1442.5" height="185.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="185.5" id="9Cp-vd-i9u"/>
-                                                    <constraint firstAttribute="width" constant="1442.5" id="KHk-yk-FRM"/>
-                                                </constraints>
-                                                <string key="text">____________________________________________________________________________________________________________________________________________________________________________________________________________</string>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3OP-Ua-j8H">
-                                                <rect key="frame" x="429" y="8" width="163" height="167.5"/>
+                                                <rect key="frame" x="429" y="8" width="163" height="205"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="163" id="8Dj-SH-urF"/>
+                                                    <constraint firstAttribute="height" constant="205" id="Z4L-07-oz2"/>
+                                                    <constraint firstAttribute="width" constant="163" id="gax-4G-KTF"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -3496,15 +3636,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <constraints>
                                             <constraint firstItem="3OP-Ua-j8H" firstAttribute="centerX" secondItem="l1f-KV-mm5" secondAttribute="centerX" constant="-1.5" id="2ik-3t-UDG"/>
                                             <constraint firstItem="na9-K6-Iw8" firstAttribute="top" secondItem="l1f-KV-mm5" secondAttribute="top" constant="32" id="6EO-xA-ghs"/>
-                                            <constraint firstItem="3OP-Ua-j8H" firstAttribute="centerY" secondItem="l1f-KV-mm5" secondAttribute="centerY" constant="-18.75" id="HG0-Gs-hws"/>
-                                            <constraint firstItem="cwT-Ij-cxx" firstAttribute="leading" secondItem="l1f-KV-mm5" secondAttribute="leading" constant="-8" id="I9E-of-8v7"/>
+                                            <constraint firstItem="3OP-Ua-j8H" firstAttribute="centerY" secondItem="l1f-KV-mm5" secondAttribute="centerY" id="HG0-Gs-hws"/>
                                             <constraint firstItem="3OP-Ua-j8H" firstAttribute="top" secondItem="l1f-KV-mm5" secondAttribute="topMargin" id="IbO-Og-epF"/>
-                                            <constraint firstItem="cwT-Ij-cxx" firstAttribute="top" secondItem="8IG-f3-wkZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Ptd-kG-k5s"/>
+                                            <constraint firstItem="c4G-ql-4qg" firstAttribute="leading" secondItem="l1f-KV-mm5" secondAttribute="leading" id="In6-w8-ohN"/>
                                             <constraint firstItem="na9-K6-Iw8" firstAttribute="leading" secondItem="l1f-KV-mm5" secondAttribute="leading" constant="24" id="S3s-GR-eJg"/>
                                             <constraint firstItem="8IG-f3-wkZ" firstAttribute="top" secondItem="l1f-KV-mm5" secondAttribute="top" constant="32" id="STg-PZ-4qv"/>
                                             <constraint firstAttribute="trailing" secondItem="8IG-f3-wkZ" secondAttribute="trailing" constant="29" id="mv8-No-qrq"/>
-                                            <constraint firstAttribute="bottom" secondItem="cwT-Ij-cxx" secondAttribute="bottom" constant="-47" id="t4v-Yu-07i"/>
-                                            <constraint firstItem="cwT-Ij-cxx" firstAttribute="top" secondItem="na9-K6-Iw8" secondAttribute="bottom" constant="8" symbolic="YES" id="x2U-Dw-DAJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="c4G-ql-4qg" secondAttribute="bottom" constant="-16" id="t7D-O6-PoU"/>
+                                            <constraint firstAttribute="trailing" secondItem="c4G-ql-4qg" secondAttribute="trailing" id="zMj-xs-W2L"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HCK-5n-sQz">
@@ -3628,7 +3767,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <constraints>
                             <constraint firstItem="ENW-Da-4AW" firstAttribute="top" secondItem="ZYx-U3-bgO" secondAttribute="top" id="58H-qa-9rf"/>
                             <constraint firstItem="ENW-Da-4AW" firstAttribute="bottom" secondItem="ZYx-U3-bgO" secondAttribute="bottom" id="IPx-BC-oM5"/>
-                            <constraint firstItem="Rlt-1c-VOF" firstAttribute="top" secondItem="c0J-gV-WoU" secondAttribute="top" id="NlM-Kd-4Vi"/>
+                            <constraint firstItem="Rlt-1c-VOF" firstAttribute="top" secondItem="ZYx-U3-bgO" secondAttribute="top" id="NlM-Kd-4Vi"/>
                             <constraint firstItem="ENW-Da-4AW" firstAttribute="leading" secondItem="c0J-gV-WoU" secondAttribute="leading" id="Nt9-O5-www"/>
                             <constraint firstItem="ENW-Da-4AW" firstAttribute="trailing" secondItem="c0J-gV-WoU" secondAttribute="trailing" id="Pl7-0v-KLy"/>
                             <constraint firstItem="c0J-gV-WoU" firstAttribute="trailing" secondItem="Rlt-1c-VOF" secondAttribute="trailing" id="U7b-3L-6gJ"/>
@@ -3640,7 +3779,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="0sR-nt-VPk"/>
                     <connections>
                         <outlet property="instructionImageView" destination="3OP-Ua-j8H" id="DbJ-Ro-nNN"/>
-                        <outlet property="lineLabel" destination="cwT-Ij-cxx" id="Yyw-I2-Q4Z"/>
                         <outlet property="rowFiveCardFiveImageView" destination="DvT-3N-Rzw" id="TM5-FS-gKJ"/>
                         <outlet property="rowFiveCardFourImageView" destination="2Ci-he-ODv" id="nXO-K1-FZg"/>
                         <outlet property="rowFiveCardOneImageView" destination="uIP-rm-yOS" id="IhQ-S3-8fU"/>
@@ -3666,6 +3804,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoCardOneImageView" destination="RlG-Zv-Zoa" id="kXH-Hm-dti"/>
                         <outlet property="rowTwoCardThreeImageView" destination="VfB-92-IbR" id="Tf5-Xs-deT"/>
                         <outlet property="rowTwoCardTwoImageView" destination="1fK-Cm-5ek" id="0i5-Nl-U84"/>
+                        <outlet property="topBorder" destination="c4G-ql-4qg" id="tKc-ih-BBk"/>
                         <outlet property="youWinPic" destination="ENW-Da-4AW" id="NQ1-9b-6rC"/>
                         <segue destination="e2i-hj-zRG" kind="show" identifier="mainMenu" id="tKi-lD-GsJ"/>
                     </connections>
@@ -3681,9 +3820,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <segue reference="8ur-bC-BBV"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="50s-gS-NCU"/>
-        <segue reference="Rq7-uf-zJ1"/>
-        <segue reference="tKi-lD-GsJ"/>
-        <segue reference="2O5-wy-OoL"/>
+        <segue reference="YSj-T5-laj"/>
+        <segue reference="77j-iz-6Lf"/>
+        <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024.png" width="1024" height="1024"/>
@@ -3694,6 +3833,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="BookLine" width="375" height="500"/>
         <image name="BookLower" width="480" height="270"/>
         <image name="BookUpper" width="480" height="270"/>
+        <image name="Bri_Double1.1" width="1536" height="414"/>
+        <image name="Bri_Double1.2" width="1536" height="414"/>
+        <image name="Bri_Single1" width="1536" height="414"/>
+        <image name="Bri_Single5" width="1536" height="414"/>
         <image name="Circle" width="375" height="500"/>
         <image name="Coin" width="176.5" height="177"/>
         <image name="DiagonalCross" width="375" height="500"/>
@@ -3702,8 +3845,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="FlyerImage1" width="406" height="332"/>
         <image name="FlyerImage2" width="317.5" height="247.5"/>
         <image name="Horizontal" width="375" height="500"/>
+        <image name="Jamey_Single5" width="1536" height="414"/>
         <image name="PerpCross" width="375" height="500"/>
         <image name="PlayBtn" width="256" height="256"/>
+        <image name="PuzzleImage_2" width="1024" height="1366"/>
         <image name="Reset" width="256" height="256"/>
         <image name="ShowBtn" width="256" height="256"/>
         <image name="Square" width="375" height="500"/>

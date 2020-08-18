@@ -49,7 +49,9 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
     //end of image view set up
     
     //setting up Line Label
-    @IBOutlet weak var lineLabel: UILabel!
+  //  @IBOutlet weak var lineLabel: UILabel!
+    
+    @IBOutlet weak var topBoarder: UIImageView!
     
     
     
@@ -139,7 +141,8 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
     
     @IBAction func resetTapped(_ sender: Any) {
         viewDidLoad()
-        lineLabel.isHidden = false
+       // lineLabel.isHidden = false
+        topBoarder.isHidden = false
         
         let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageView, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageView, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView, rowFiveCardOneImageView, rowFiveCardTwoImageView, rowFiveCardThreeImageView, rowFiveCardFourImageView, rowFiveCardFiveImageView, instructionImageView]
         
@@ -204,8 +207,10 @@ class LetterMatchingViewController: UIViewController, UIGestureRecognizerDelegat
             }
             workItem2 = DispatchWorkItem{
                 self.youWinPic.isHidden = false
+                self.topBoarder.isHidden = true
                 //self.youWinPic.image = #imageLiteral(resourceName: "YouWin.png")
-                self.lineLabel.isHidden = true
+                //self.lineLabel.isHidden = true
+                
                 
                 let imageViews = [self.rowOneCardOneImageView, self.rowOneCardTwoImageView, self.rowOneCardThreeImageView, self.rowOneCardFourImageView, self.rowOneCardFiveImageView, self.rowTwoCardOneImageView, self.rowTwoCardTwoImageView, self.rowTwoCardThreeImageView, self.rowTwoCardFourImageView, self.rowTwoCardFiveImageView, self.rowThreeCardOneImageView, self.rowThreeCardTwoImageView, self.rowThreeCardThreeImageView, self.rowThreeCardFourImageView, self.rowThreeCardFiveImageView, self.rowFourCardOneImageView, self.rowFourCardTwoImageView, self.rowFourCardThreeImageView, self.rowFourCardFourImageView, self.rowFourCardFiveImageView,self.rowFiveCardOneImageView, self.rowFiveCardTwoImageView, self.rowFiveCardThreeImageView, self.rowFiveCardFourImageView, self.rowFiveCardFiveImageView, self.instructionImageView]
                 
