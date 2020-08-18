@@ -2737,15 +2737,17 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="894"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PuzzleImage_2" translatesAutoresizingMaskIntoConstraints="NO" id="DOd-0P-S0b">
-                                                        <rect key="frame" x="8" y="17" width="1008" height="869"/>
+                                                        <rect key="frame" x="188" y="15" width="648" height="864"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="864" id="DoC-qH-VoH"/>
+                                                            <constraint firstAttribute="width" constant="648" id="sMI-rN-u5X"/>
+                                                        </constraints>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="DOd-0P-S0b" firstAttribute="leading" secondItem="QFm-sW-TEc" secondAttribute="leading" constant="8" id="YZB-6Z-Zcz"/>
-                                                    <constraint firstAttribute="trailing" secondItem="DOd-0P-S0b" secondAttribute="trailing" constant="8" id="gRc-Rp-M6q"/>
-                                                    <constraint firstItem="DOd-0P-S0b" firstAttribute="top" secondItem="QFm-sW-TEc" secondAttribute="top" constant="17" id="nDS-tf-5rr"/>
-                                                    <constraint firstItem="DOd-0P-S0b" firstAttribute="bottom" secondItem="QFm-sW-TEc" secondAttribute="bottomMargin" id="sq3-Zc-Y5D"/>
+                                                    <constraint firstItem="DOd-0P-S0b" firstAttribute="centerY" secondItem="QFm-sW-TEc" secondAttribute="centerY" id="IT2-8g-kPN"/>
+                                                    <constraint firstItem="DOd-0P-S0b" firstAttribute="centerX" secondItem="QFm-sW-TEc" secondAttribute="centerX" id="X2c-pd-P0U"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pgd-71-xFu">
