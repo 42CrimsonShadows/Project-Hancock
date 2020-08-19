@@ -68,7 +68,7 @@ class AssessmentSelection: UIViewController {
         radius = puzzleImageView.bounds.size.width * cutOutPercent
         shapemask.frame = puzzleImageView.bounds
         shapemask.masksToBounds = true
-        puzzleNum = 1
+        puzzleNum = 3
         
         createPieceMask(puzzle: puzzleNum!, piece: pieceToCreate())
         createPieceMask(puzzle: puzzleNum!, piece: pieceToCreate())
@@ -119,7 +119,7 @@ class AssessmentSelection: UIViewController {
                     default:
                         print("Invalid Piece Index: \(piece)")
                         return
-            }
+                }
             case 2:
                 switch piece {
                     case 1:
@@ -135,7 +135,7 @@ class AssessmentSelection: UIViewController {
                     default:
                         print("Invalid Piece Index: \(piece)")
                         return
-            }
+                }
             case 3:
                 switch piece {
                     case 1:
@@ -151,7 +151,21 @@ class AssessmentSelection: UIViewController {
                     default:
                         print("Invalid Piece Index: \(piece)")
                         return
-            }
+                }
+            case 4:
+                switch piece {
+                    case 1:
+                        curve = createPuzzle4Piece1()
+                    case 2:
+                        curve = createPuzzle4Piece2()
+                    case 3:
+                        curve = createPuzzle4Piece3()
+                    case 4:
+                        curve = createPuzzle4Piece4()
+                    default:
+                        print("Invalid Piece Index: \(piece)")
+                        return
+                }
             default:
                 print("Invalid Puzzle Index: \(puzzle)")
                 return
@@ -521,7 +535,7 @@ class AssessmentSelection: UIViewController {
     }
     
     private func createPuzzle2Piece4() -> UIBezierPath {
-        print("Creating Puzzle 2 Piece 5")
+        print("Creating Puzzle 2 Piece 4")
         // -- COL 1 ROW 3
         
         let curve = UIBezierPath()
@@ -545,7 +559,7 @@ class AssessmentSelection: UIViewController {
     }
     
     private func createPuzzle2Piece5() -> UIBezierPath {
-        print("Creating Puzzle 2 Piece 6")
+        print("Creating Puzzle 2 Piece 5")
         // -- COL 2 ROW 3
         let curve = UIBezierPath()
         // point NW
@@ -670,7 +684,7 @@ class AssessmentSelection: UIViewController {
     
     private func createPuzzle3Piece5() -> UIBezierPath {
         print("Creating Puzzle 3 Piece 5")
-        // -- COL 1 ROW 3
+        // -- ROW 3 ( Full Width because Puzzle 3 only has 5 pieces)
         
         let curve = UIBezierPath()
         // point NW
@@ -687,6 +701,103 @@ class AssessmentSelection: UIViewController {
         curve.addLine(to: CGPoint(x: 0, y:  height!))
         // to NW
         curve.addLine(to: CGPoint(x: 0, y: height!/1.5))
+        // close shape
+        curve.close()
+        return curve
+    }
+    
+    // MARK: - Puzzle4 Piece1
+    private func createPuzzle4Piece1() -> UIBezierPath {
+        print("Creating Puzzle 4 Piece 1")
+        // -- COL 1 ROW 1
+        
+        let curve = UIBezierPath()
+        // point NW
+        curve.move(to: CGPoint(x: 0, y: 0))
+        // to NE
+        curve.addLine(to: CGPoint(x: width!/2, y: 0))
+        // E female connector
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/4), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
+        // to SE
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/2))
+        // S male connector
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/2), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: true)
+        // to SW
+        curve.addLine(to: CGPoint(x: 0, y:  height!/2))
+        // to NW
+        curve.addLine(to: CGPoint(x: 0, y: 0))
+        // close shape
+        curve.close()
+        return curve
+    }
+    
+    private func createPuzzle4Piece2() -> UIBezierPath {
+        print("Creating Puzzle 4 Piece 2")
+        // -- COL 2 ROW 1
+        
+        let curve = UIBezierPath()
+        // point NW
+        curve.move(to: CGPoint(x: width!/2, y: 0))
+        // to NE
+        curve.addLine(to: CGPoint(x: width!, y: 0))
+        // to SE
+        curve.addLine(to: CGPoint(x: width!, y: height!/2))
+        // S female connector
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/2), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
+        // to SW
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!/2))
+        // W male connector
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/4), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
+        // to NW
+        curve.addLine(to: CGPoint(x: width!/2, y: 0))
+        // close shape
+        curve.close()
+        return curve
+    }
+    
+    private func createPuzzle4Piece3() -> UIBezierPath {
+        print("Creating Puzzle 4 Piece 3")
+        // -- COL 1 ROW 2
+        
+        let curve = UIBezierPath()
+        // point NW
+        curve.move(to: CGPoint(x: 0, y: height!/2))
+        // N female connector
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/2), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: false)
+        // to NE
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/2))
+        // E female connector
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height! - height!/4), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
+        // to SE
+        curve.addLine(to: CGPoint(x: width!/2, y: height!))
+        // to SW
+        curve.addLine(to: CGPoint(x: 0, y:  height!))
+        // to NW
+        curve.addLine(to: CGPoint(x: 0, y: height!/2))
+        // close shape
+        curve.close()
+        return curve
+    }
+    
+    private func createPuzzle4Piece4() -> UIBezierPath {
+        print("Creating Puzzle 4 Piece 4")
+        // -- COL 2 ROW 2
+        
+        let curve = UIBezierPath()
+        // point NW
+        curve.move(to: CGPoint(x: width!/2, y: height!/2))
+        // N male connector
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/2), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
+        // to NE
+        curve.addLine(to: CGPoint(x: width!, y: height!/2))
+        // to SE
+        curve.addLine(to: CGPoint(x: width!, y: height!))
+        // to SW
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!))
+        // W male connector
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height! - height!/4), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
+        // to NW
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/2))
         // close shape
         curve.close()
         return curve
