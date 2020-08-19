@@ -37,11 +37,13 @@ class AssessmentSelection: UIViewController {
     
     
     // for puzzle mask
+    private var height: CGFloat?
+    private var width: CGFloat?
     let cutOutPercent: CGFloat = 100/720
     private var radius: CGFloat?
     let maskPath = UIBezierPath()
     let shapemask = CAShapeLayer()
-    var puzzleNum: Int?
+    private var puzzleNum: Int?
     private var puzzlePieces = [6,6,5,5,4]
     private var puzzlePiecesShown : [Int] = []
     
@@ -61,6 +63,8 @@ class AssessmentSelection: UIViewController {
         
         // puzzle mask setup
         print(puzzleImageView.bounds.size) // should be 648.0 x 864.0 important for the mask to work
+        height = puzzleImageView.bounds.size.height
+        width = puzzleImageView.bounds.size.width
         radius = puzzleImageView.bounds.size.width * cutOutPercent
         shapemask.frame = puzzleImageView.bounds
         shapemask.masksToBounds = true
@@ -116,21 +120,34 @@ class AssessmentSelection: UIViewController {
                         print("Invalid Piece Index: \(piece)")
                         return
             }
+            case 2:
+                switch piece {
+                    case 1:
+                        curve = createPuzzle2Piece1()
+                    case 2:
+                        curve = createPuzzle2Piece2()
+                    case 3:
+                        curve = createPuzzle2Piece3()
+                    case 4:
+                        curve = createPuzzle2Piece4()
+                    case 5:
+                        curve = createPuzzle2Piece5()
+                    default:
+                        print("Invalid Piece Index: \(piece)")
+                        return
+            }
             default:
                 print("Invalid Puzzle Index: \(puzzle)")
                 return
         }
         
-        // add new piece to mask
         maskPath.append(curve)
         shapemask.path = maskPath.cgPath
-        // add mask to image view
         puzzleImageView.layer.mask = shapemask
-        // add shown piece to array (for randomization loop)
         puzzlePiecesShown.append(piece)
     }
     
-    // MARK: - Puzzle0
+    // MARK: - Puzzle0 Piece1
     private func createPuzzle0Piece1() -> UIBezierPath {
         print("Creating Puzzle 0 Piece 1")
         // -- COL 1 ROW 1
@@ -139,15 +156,15 @@ class AssessmentSelection: UIViewController {
         // point NW
         curve.move(to: CGPoint(x: 0, y: 0))
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: 0))
+        curve.addLine(to: CGPoint(x: width!/2, y: 0))
         // E female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/3))
         // S male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: true)
         // to SW
-        curve.addLine(to: CGPoint(x: 0, y:  puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: 0, y:  height!/3))
         // to NW
         curve.addLine(to: CGPoint(x: 0, y: 0))
         // close shape
@@ -161,19 +178,19 @@ class AssessmentSelection: UIViewController {
         
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: 0))
+        curve.move(to: CGPoint(x: width!/2, y: 0))
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: 0))
+        curve.addLine(to: CGPoint(x: width!, y: 0))
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!, y: height!/3))
         // S female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width - puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
         // to SW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y:  puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!/3))
         // W male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
         // to NW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: 0))
+        curve.addLine(to: CGPoint(x: width!/2, y: 0))
         // close shape
         curve.close()
         return curve
@@ -185,17 +202,17 @@ class AssessmentSelection: UIViewController {
         
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: 0, y: puzzleImageView.bounds.size.height/3))
+        curve.move(to: CGPoint(x: 0, y: height!/3))
         // N female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: false)
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/3))
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/1.5))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/1.5))
         // to SW
-        curve.addLine(to: CGPoint(x: 0, y:  puzzleImageView.bounds.size.height/1.5))
+        curve.addLine(to: CGPoint(x: 0, y:  height!/1.5))
         // to NW
-        curve.addLine(to: CGPoint(x: 0, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: 0, y: height!/3))
         // close shape
         curve.close()
         return curve
@@ -207,17 +224,17 @@ class AssessmentSelection: UIViewController {
         
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/3))
+        curve.move(to: CGPoint(x: width!/2, y: height!/3))
         // N male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width - puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!, y: height!/3))
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height/1.5))
+        curve.addLine(to: CGPoint(x: width!, y: height!/1.5))
         // to SW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y:  puzzleImageView.bounds.size.height/1.5))
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!/1.5))
         // to NW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/3))
         // close shape
         curve.close()
         return curve
@@ -229,17 +246,17 @@ class AssessmentSelection: UIViewController {
         
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: 0, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.move(to: CGPoint(x: 0, y: height!/1.5))
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/1.5))
         // E male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/1.2), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: true)
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!))
         // to SW
-        curve.addLine(to: CGPoint(x: 0, y:  puzzleImageView.bounds.size.height))
+        curve.addLine(to: CGPoint(x: 0, y:  height!))
         // to NW
-        curve.addLine(to: CGPoint(x: 0, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: 0, y: height!/1.5))
         // close shape
         curve.close()
         return curve
@@ -250,40 +267,40 @@ class AssessmentSelection: UIViewController {
         // -- COL 2 ROW 3
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.move(to: CGPoint(x: width!/2, y: height!/1.5))
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!, y: height!/1.5))
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height))
+        curve.addLine(to: CGPoint(x: width!, y: height!))
         // to SW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y:  puzzleImageView.bounds.size.height))
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!))
         // W female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/1.2), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: false)
         // to NW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/1.5))
         // close shape
         curve.close()
         return curve
     }
     
-    // MARK: - Puzzle1
+    // MARK: - Puzzle1 Piece1
     private func createPuzzle1Piece1() -> UIBezierPath {
-        print("Creating Puzzle 0 Piece 1")
+        print("Creating Puzzle 1 Piece 1")
         // -- COL 1 ROW 1
         
         let curve = UIBezierPath()
         // point NW
         curve.move(to: CGPoint(x: 0, y: 0))
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: 0))
+        curve.addLine(to: CGPoint(x: width!/2, y: 0))
         // E male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: true)
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/3))
         // S male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: true)
         // to SW
-        curve.addLine(to: CGPoint(x: 0, y:  puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: 0, y:  height!/3))
         // to NW
         curve.addLine(to: CGPoint(x: 0, y: 0))
         // close shape
@@ -292,123 +309,243 @@ class AssessmentSelection: UIViewController {
     }
     
     private func createPuzzle1Piece2() -> UIBezierPath {
-        print("Creating Puzzle 0 Piece 2")
+        print("Creating Puzzle 1 Piece 2")
         // -- COL 2 ROW 1
         
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: 0))
+        curve.move(to: CGPoint(x: width!/2, y: 0))
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: 0))
+        curve.addLine(to: CGPoint(x: width!, y: 0))
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!, y: height!/3))
         // S female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width - puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
         // to SW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y:  puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!/3))
         // W female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: false)
         // to NW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: 0))
+        curve.addLine(to: CGPoint(x: width!/2, y: 0))
         // close shape
         curve.close()
         return curve
     }
     
     private func createPuzzle1Piece3() -> UIBezierPath {
-        print("Creating Puzzle 0 Piece 3")
+        print("Creating Puzzle 1 Piece 3")
         // -- COL 1 ROW 2
         
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: 0, y: puzzleImageView.bounds.size.height/3))
+        curve.move(to: CGPoint(x: 0, y: height!/3))
         // N female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: false)
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/3))
         // E female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/2), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/2), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/1.5))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/1.5))
         // S female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/1.5), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
         // to SW
-        curve.addLine(to: CGPoint(x: 0, y:  puzzleImageView.bounds.size.height/1.5))
+        curve.addLine(to: CGPoint(x: 0, y:  height!/1.5))
         // to NW
-        curve.addLine(to: CGPoint(x: 0, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: 0, y: height!/3))
         // close shape
         curve.close()
         return curve
     }
     
     private func createPuzzle1Piece4() -> UIBezierPath {
-        print("Creating Puzzle 0 Piece 4")
+        print("Creating Puzzle 1 Piece 4")
         // -- COL 2 ROW 2
         
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/3))
+        curve.move(to: CGPoint(x: width!/2, y: height!/3))
         // N male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width - puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!, y: height!/3))
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height/1.5))
+        curve.addLine(to: CGPoint(x: width!, y: height!/1.5))
         // S female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width - puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/1.5), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
         // to SW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y:  puzzleImageView.bounds.size.height/1.5))
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!/1.5))
         // W male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/2), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/2), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
         // to NW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/3))
         // close shape
         curve.close()
         return curve
     }
     
     private func createPuzzle1Piece5() -> UIBezierPath {
-        print("Creating Puzzle 0 Piece 5")
+        print("Creating Puzzle 1 Piece 5")
         // -- COL 1 ROW 3
         
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: 0, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.move(to: CGPoint(x: 0, y: height!/1.5))
         // N male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/1.5), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/1.5))
         // E male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/1.2), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: true)
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!))
         // to SW
-        curve.addLine(to: CGPoint(x: 0, y:  puzzleImageView.bounds.size.height))
+        curve.addLine(to: CGPoint(x: 0, y:  height!))
         // to NW
-        curve.addLine(to: CGPoint(x: 0, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: 0, y: height!/1.5))
         // close shape
         curve.close()
         return curve
     }
     
     private func createPuzzle1Piece6() -> UIBezierPath {
-        print("Creating Puzzle 0 Piece 6")
+        print("Creating Puzzle 1 Piece 6")
         // -- COL 2 ROW 3
         let curve = UIBezierPath()
         // point NW
-        curve.move(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.move(to: CGPoint(x: width!/2, y: height!/1.5))
         // N male connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width - puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/1.5), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
         // to NE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!, y: height!/1.5))
         // to SE
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width, y: puzzleImageView.bounds.size.height))
+        curve.addLine(to: CGPoint(x: width!, y: height!))
         // to SW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y:  puzzleImageView.bounds.size.height))
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!))
         // W female connector
-        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: false)
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/1.2), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: false)
         // to NW
-        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height - puzzleImageView.bounds.size.height/3))
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/1.5))
+        // close shape
+        curve.close()
+        return curve
+    }
+    
+    // MARK: - Puzzle2 Piece1
+    private func createPuzzle2Piece1() -> UIBezierPath {
+        print("Creating Puzzle 2 Piece 1")
+        // -- COL 1 ROW 1
+        
+        let curve = UIBezierPath()
+        // point NW
+        curve.move(to: CGPoint(x: 0, y: 0))
+        // to NE
+        curve.addLine(to: CGPoint(x: width!/2, y: 0))
+        // E female connector
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
+        // to SE
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/3))
+        // S female connector
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
+        // to SW
+        curve.addLine(to: CGPoint(x: 0, y:  height!/3))
+        // to NW
+        curve.addLine(to: CGPoint(x: 0, y: 0))
+        // close shape
+        curve.close()
+        return curve
+    }
+    
+    private func createPuzzle2Piece2() -> UIBezierPath {
+        print("Creating Puzzle 2 Piece 2")
+        // -- COL 2 ROW 1
+        
+        let curve = UIBezierPath()
+        // point NW
+        curve.move(to: CGPoint(x: width!/2, y: 0))
+        // to NE
+        curve.addLine(to: CGPoint(x: width!, y: 0))
+        // to SE
+        curve.addLine(to: CGPoint(x: width!, y: height!/3))
+        // to SW
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!/3))
+        // W male connector
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
+        // to NW
+        curve.addLine(to: CGPoint(x: width!/2, y: 0))
+        // close shape
+        curve.close()
+        return curve
+    }
+    
+    private func createPuzzle2Piece3() -> UIBezierPath {
+        print("Creating Puzzle 2 Piece 3")
+        // -- ROW 2 ( Full Width because Puzzle 2 only has 5 pieces)
+        
+        let curve = UIBezierPath()
+        // point NW
+        curve.move(to: CGPoint(x: 0, y: height!/3))
+        // N male connector
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/3), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
+        // to NE
+        curve.addLine(to: CGPoint(x: width!, y: height!/3))
+        // to SE
+        curve.addLine(to: CGPoint(x: width!, y: height!/1.5))
+        // S female connector 1
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/1.5), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
+        // S female connector 2
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/1.5), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
+        // to SW
+        curve.addLine(to: CGPoint(x: 0, y:  height!/1.5))
+        // to NW
+        curve.addLine(to: CGPoint(x: 0, y: height!/3))
+        // close shape
+        curve.close()
+        return curve
+    }
+    
+    private func createPuzzle2Piece4() -> UIBezierPath {
+        print("Creating Puzzle 2 Piece 5")
+        // -- COL 1 ROW 3
+        
+        let curve = UIBezierPath()
+        // point NW
+        curve.move(to: CGPoint(x: 0, y: height!/1.5))
+        // N male connector
+        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/1.5), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
+        // to NE
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/1.5))
+        // E female connector
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/1.2), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
+        // to SE
+        curve.addLine(to: CGPoint(x: width!/2, y: height!))
+        // to SW
+        curve.addLine(to: CGPoint(x: 0, y:  height!))
+        // to NW
+        curve.addLine(to: CGPoint(x: 0, y: height!/1.5))
+        // close shape
+        curve.close()
+        return curve
+    }
+    
+    private func createPuzzle2Piece5() -> UIBezierPath {
+        print("Creating Puzzle 2 Piece 6")
+        // -- COL 2 ROW 3
+        let curve = UIBezierPath()
+        // point NW
+        curve.move(to: CGPoint(x: width!/2, y: height!/1.5))
+        // N male connector
+        curve.addArc(withCenter: CGPoint(x: width! - width!/4, y: height!/1.5), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
+        // to NE
+        curve.addLine(to: CGPoint(x: width!, y: height!/1.5))
+        // to SE
+        curve.addLine(to: CGPoint(x: width!, y: height!))
+        // to SW
+        curve.addLine(to: CGPoint(x: width!/2, y:  height!))
+        // W male connector
+        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/1.2), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
+        // to NW
+        curve.addLine(to: CGPoint(x: width!/2, y: height!/1.5))
         // close shape
         curve.close()
         return curve
@@ -441,16 +578,17 @@ class AssessmentSelection: UIViewController {
 
 
 // MARK: - Puzzle Piece Template
+
 //        // BASE
 //        let curve = UIBezierPath()
 //        // point NW
 //        curve.move(to: CGPoint(x: 0, y: 0))
 //        // to NE
-//        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: 0))
+//        curve.addLine(to: CGPoint(x: width!/2, y: 0))
 //        // to SE
-//        curve.addLine(to: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/3))
+//        curve.addLine(to: CGPoint(x: width!/2, y: height!/3))
 //        // to SW
-//        curve.addLine(to: CGPoint(x: 0, y:  puzzleImageView.bounds.size.height/3))
+//        curve.addLine(to: CGPoint(x: 0, y:  height!/3))
 //        // to NW
 //        curve.addLine(to: CGPoint(x: 0, y: 0))
 //         // close shape
@@ -458,21 +596,21 @@ class AssessmentSelection: UIViewController {
 //
 //        // CONNECTORS
 //        // N male connector
-//        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: 0), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
+//        curve.addArc(withCenter: CGPoint(x: width!/4, y: 0), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: true)
 //        // N female connector
-//        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: 0), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: false)
+//        curve.addArc(withCenter: CGPoint(x: width!/4, y: 0), radius: radius!, startAngle: .pi, endAngle: 0, clockwise: false)
 //
 //        // E male connector
-//        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: true)
+//        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: true)
 //        // E female connector
-//        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/2, y: puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
+//        curve.addArc(withCenter: CGPoint(x: width!/2, y: height!/6), radius: radius!, startAngle: (3 * .pi)/2, endAngle: .pi/2, clockwise: false)
 //
 //        // S male connector
-//        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: true)
+//        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: true)
 //        // S female connector
-//        curve.addArc(withCenter: CGPoint(x: puzzleImageView.bounds.size.width/4, y: puzzleImageView.bounds.size.height/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
+//        curve.addArc(withCenter: CGPoint(x: width!/4, y: height!/3), radius: radius!, startAngle: 0, endAngle: .pi, clockwise: false)
 //
 //        // W male connector
-//        curve.addArc(withCenter: CGPoint(x: 0, y: puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
+//        curve.addArc(withCenter: CGPoint(x: 0, y: height!/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: true)
 //        // W female connector
-//        curve.addArc(withCenter: CGPoint(x: 0, y: puzzleImageView.bounds.size.height/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: false)
+//        curve.addArc(withCenter: CGPoint(x: 0, y: height!/6), radius: radius!, startAngle: .pi/2, endAngle: (3 * .pi)/2, clockwise: false)
