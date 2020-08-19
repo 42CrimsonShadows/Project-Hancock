@@ -215,9 +215,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="KI7-J2-7xP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="KI7-J2-7xP">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S0V-F7-tnM" userLabel="Grass View">
                                 <rect key="frame" x="0.0" y="1041" width="543.5" height="325"/>
@@ -226,7 +225,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <constraint firstAttribute="height" constant="325" id="VEs-BB-mR0"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aO0-GI-co4" userLabel="Ant Chill View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aO0-GI-co4" userLabel="Ant Chill View">
                                 <rect key="frame" x="675" y="1010" width="349" height="356"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aO0-GI-co4" secondAttribute="height" multiplier="50:51" id="tNA-z1-dJL"/>
@@ -278,8 +277,12 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="ghC-kx-OUn" secondAttribute="trailing" id="5Ch-Ca-OFq"/>
                             <constraint firstItem="S0V-F7-tnM" firstAttribute="leading" secondItem="cXE-hm-SxM" secondAttribute="leading" id="8VY-Ra-C6d"/>
                             <constraint firstItem="Jib-iA-ZV1" firstAttribute="top" secondItem="cXE-hm-SxM" secondAttribute="top" id="F1n-Zx-z7t"/>
+                            <constraint firstItem="KI7-J2-7xP" firstAttribute="leading" secondItem="bbg-FV-2dh" secondAttribute="leading" id="M75-jk-mzp"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="trailing" secondItem="aO0-GI-co4" secondAttribute="trailing" id="Nnr-qz-1ba"/>
+                            <constraint firstItem="KI7-J2-7xP" firstAttribute="trailing" secondItem="bbg-FV-2dh" secondAttribute="trailing" id="QUE-Of-tjs"/>
+                            <constraint firstItem="KI7-J2-7xP" firstAttribute="bottom" secondItem="bbg-FV-2dh" secondAttribute="bottom" id="aiX-2U-94d"/>
                             <constraint firstItem="ghC-kx-OUn" firstAttribute="top" secondItem="cXE-hm-SxM" secondAttribute="top" id="peL-Pj-rY9"/>
+                            <constraint firstItem="KI7-J2-7xP" firstAttribute="top" secondItem="bbg-FV-2dh" secondAttribute="top" id="qjZ-te-ChM"/>
                             <constraint firstItem="Jib-iA-ZV1" firstAttribute="leading" secondItem="cXE-hm-SxM" secondAttribute="leading" id="xfK-9N-eGi"/>
                             <constraint firstItem="cXE-hm-SxM" firstAttribute="bottom" secondItem="S0V-F7-tnM" secondAttribute="bottom" id="yGs-f8-Fge"/>
                         </constraints>
@@ -530,7 +533,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" red="0.97554832700000005" green="0.95501548049999996" blue="0.85880929230000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstItem="f6D-Kv-xcM" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" constant="108" id="7fS-UN-7L1"/>
                                                     <constraint firstItem="pGH-xJ-djh" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" constant="38" id="8Xv-b1-LSX"/>
@@ -634,7 +637,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.97554832700000005" green="0.95501548049999996" blue="0.85880929230000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ihn-un-nsI" firstAttribute="bottom" secondItem="LNP-Im-pd3" secondAttribute="bottom" id="BEi-D8-8Qr"/>
                             <constraint firstAttribute="trailing" secondItem="Ihn-un-nsI" secondAttribute="trailing" id="Woa-K4-3Pp"/>
@@ -723,15 +726,19 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2VI-Gv-4k5">
                                                 <rect key="frame" x="206" y="0.0" width="200" height="221"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Unc-LC-DYS">
                                                 <rect key="frame" x="412" y="0.0" width="200" height="221"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2UB-rQ-Kln">
                                                 <rect key="frame" x="618" y="0.0" width="200" height="221"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eVr-yR-YZF">
                                                 <rect key="frame" x="824" y="0.0" width="200" height="221"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -833,7 +840,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.82656377550000004" green="0.6937169433" blue="0.71372586490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="s6K-Eu-T42" firstAttribute="leading" secondItem="uuB-5o-m8W" secondAttribute="leading" id="3dH-k9-UwY"/>
                             <constraint firstItem="s6K-Eu-T42" firstAttribute="trailing" secondItem="uuB-5o-m8W" secondAttribute="trailing" id="Du9-Kd-vZn"/>
@@ -3821,7 +3828,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="bRp-7B-ZAM"/>
         <segue reference="YSj-T5-laj"/>
-        <segue reference="77j-iz-6Lf"/>
+        <segue reference="41T-yv-9Ha"/>
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>
     <resources>
