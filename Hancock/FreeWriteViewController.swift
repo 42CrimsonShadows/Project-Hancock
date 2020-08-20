@@ -103,7 +103,7 @@ class FreeWriteViewController: UIViewController {
         }
         else if (sender.currentTitle == "Blank") {
             // white copy paper (no image)
-            backgroundIV.image = nil
+            backgroundIV.image = UIImage(named: "blankPaper")
             paperTypeBtn1.layer.borderWidth = 1
             paperTypeBtn2.layer.borderWidth = 1
             paperTypeBtn3.layer.borderWidth = 4
