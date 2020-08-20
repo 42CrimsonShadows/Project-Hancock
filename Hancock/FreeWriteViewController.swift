@@ -28,9 +28,12 @@ class FreeWriteViewController: UIViewController {
     private var paperNum: Int = 1
     
         
+    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 
         // make button corners rounded
         doneBtn.layer.cornerRadius = 10
@@ -57,6 +60,15 @@ class FreeWriteViewController: UIViewController {
         // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Don't forget to reset when view is being removed
+        AppDelegate.AppUtility.lockOrientation(.all)
+    }
+    
+    
     
     // MARK: - Touches
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
