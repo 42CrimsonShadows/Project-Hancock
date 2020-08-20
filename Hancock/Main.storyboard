@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t6x-o2-efZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jmb-Cg-UZK">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -3859,7 +3859,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="YouWin" width="1024" height="1024"/>
         <image name="dashLetterBG" width="489" height="700"/>
         <image name="linedPaper1" width="2100" height="1449"/>
-        <image name="paper3" width="1005" height="686"/>
+        <image name="paper3" width="2100" height="1449"/>
         <image name="profilePic.png" width="225" height="225"/>
     </resources>
 </document>
