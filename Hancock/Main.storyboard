@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7N0-2m-uqw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EbW-Xz-ygt">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -3676,13 +3676,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="36Q-7A-Vdg"/>
         <segue reference="qRq-Ku-gCI"/>
         <segue reference="lk7-ni-Qgd"/>
         <segue reference="8ur-bC-BBV"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="50s-gS-NCU"/>
         <segue reference="Rq7-uf-zJ1"/>
-        <segue reference="tKi-lD-GsJ"/>
+        <segue reference="77j-iz-6Lf"/>
         <segue reference="2O5-wy-OoL"/>
     </inferredMetricsTieBreakers>
     <resources>
