@@ -166,6 +166,13 @@ extension ViewController{
                         letterSix!.isPaused = false
                         animateLetterHide(fadeThis: letterSix!)
                         playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
+                         //self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")
+                         // DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:self.workItem1!)
+                                            
+                      //  workItem1 = DispatchWorkItem{
+                                               // self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish"]!, fileExtension: "mp3")
+                                               // }
+                                    
                     default:
                         break
                 }
@@ -192,7 +199,7 @@ extension ViewController{
                         workItem5 = DispatchWorkItem{
                             //play flute clip
                             //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
-                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "wav")
                         
                             DispatchQueue.main.asyncAfter(deadline: .now() + 14.7, execute: self.workItem6!)
                         }
@@ -339,14 +346,18 @@ extension ViewController{
                             self.startAnimateSideCharacter(key: "SideCharacter4Dance1", sideCharacter: "Eric")
                             self.charcterFourIdle.parent?.position = SCNVector3(x: 19.5, y: 2, z: 7.5)
                             self.charcterFourIdle.parent?.eulerAngles = SCNVector3(x: 0, y: GLKMathDegreesToRadians(180), z: 0)
+                            
+                            
                         }
                         workItem1 = DispatchWorkItem{
                             self.letterFive!.isPaused = false
                             self.animateLetterHide(fadeThis: self.letterFive!)
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
-                            
+                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter5Finish"]!, fileExtension: "mp3")//LM
                             //wait 5 seconds
+                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute:self.workItem2!)
+                            
                                 
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 12.5, execute:self.workItem1!)
@@ -375,7 +386,7 @@ extension ViewController{
                             butterstick!.isHidden = false
                             //play quill sound clip
                             //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration36"]!, type: "wav", rate: 1)
-                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "wav")
                                     
                             DispatchQueue.main.asyncAfter(deadline: .now() + 8.5, execute:self.workItem4!)
                                     
@@ -595,6 +606,7 @@ extension ViewController{
                             
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute:self.workItem4!)
+                             
                         }
                         workItem2 = DispatchWorkItem{
                             self.stopAnimateSideCharacter(key: "SideCharacter3Walk", sideCharacter: "Francine")
@@ -602,6 +614,7 @@ extension ViewController{
                             
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem3!)
+                           
                         }
                         workItem1 = DispatchWorkItem{
                             self.stopAnimateSideCharacter(key: "SideCharacter3Jump", sideCharacter: "Francine")
@@ -614,6 +627,8 @@ extension ViewController{
                             let move1 = SCNAction.move(to: endSpot1, duration: 1.5)
                             let francineMoveSeq1 = SCNAction.sequence([rotate1, move1])
                             self.charcterThreeIdle.parent?.runAction(francineMoveSeq1)
+                            
+                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter4Finish"]!, fileExtension: "mp3")//LM
                             
                             //play for 3 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.1, execute:self.workItem2!)
@@ -652,7 +667,7 @@ extension ViewController{
                              mallet2!.isHidden = false
                              //play quill sound clip
                             //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration35"]!, type: "wav", rate: 1)
-                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3")
+                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "wav")
                              DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute:self.workItem5!)
                         }
                         workItem3 = DispatchWorkItem{
@@ -677,6 +692,10 @@ extension ViewController{
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration25"]!, fileExtension: "mp3")
                         
                         workItem1 = DispatchWorkItem{
+                            self.particleItem3?.cancel()
+                            self.patricia7!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                            self.patriciaNumber = 0
+                            self.patriciaFlying = false
                             self.patricia7!.isPaused = true
                             self.playWalkAnimation()
                         }
@@ -829,6 +848,7 @@ extension ViewController{
                             //TO-DO: Fix Bone structure for Lin so that transitions of animations work correctly
                             //self.stopAnimateSideCharacter(key: "SideCharacter2Walking", sideCharacter: "Lin")
                             //self.startAnimateSideCharacter(key: "SideCharacter2Dancing", sideCharacter: "Lin")
+                            
                         }
                         workItem2 = DispatchWorkItem{
                             //play Lin through a sequence of movements so he turns and then walks to the Letter H
@@ -849,6 +869,7 @@ extension ViewController{
                         workItem1 = DispatchWorkItem{
                             //drop side Lin down from letter L
                             self.charcterTwoIdle.parent?.runAction(SCNAction.moveBy(x:0, y: -0.8, z: 0, duration: 0.5))
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter3Finish"]!, fileExtension: "mp3")//LM
                             
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute:self.workItem2!)
@@ -883,7 +904,7 @@ extension ViewController{
                         workItem5 = DispatchWorkItem{
                             //play quill sound clip
                             //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration34"]!, type: "wav", rate: 1)
-                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "wav")
                         
                             DispatchQueue.main.asyncAfter(deadline: .now() + 20.8, execute:self.workItem6!)
                         }
@@ -916,12 +937,20 @@ extension ViewController{
                         print("Nothing to shatter for this chapter")
                     case .Chapter9:
                         //Patricia flies down to Ryan and asks where Brennon is
+                        self.particleItem3?.cancel()
+                        self.patricia2!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                        self.patriciaNumber = 3
+                        self.patriciaFlying = true
                         self.patricia3!.isHidden = false
                         self.patricia3!.isPaused = false
                         self.patricia2!.isHidden = true
                         
                         workItem2 = DispatchWorkItem{
                             //Patricia idles on the track while talking to Ryan
+                            self.particleItem3?.cancel()
+                            self.patricia3!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                            self.patriciaNumber = 0
+                            self.patriciaFlying = false
                             self.patricia4!.isHidden = false
                             self.patricia4!.isPaused = false
                             self.patricia3!.isHidden = true
@@ -1000,6 +1029,18 @@ extension ViewController{
                         
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
                         
+                        // create yellow spotlight to shine on Yarn
+                        let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                        lightNode.position = SCNVector3Make(0, 5, 0)
+                        lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                        lightItem2 = DispatchWorkItem{
+                            lightNode.removeFromParentNode()
+                        }
+                        lightItem1 = DispatchWorkItem{
+                            self.charcterThreeIdle.addChildNode(lightNode)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.lightItem1!)
                         workItem1 = DispatchWorkItem{
                          self.playWalkAnimation()
                         }
@@ -1083,10 +1124,10 @@ extension ViewController{
                         letterTwo!.isPaused = false
                         animateLetterHide(fadeThis: letterTwo!)
                         playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
-                        
                         workItem3 = DispatchWorkItem{
                             self.stopAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
                             self.startAnimateSideCharacter(key: "SideCharacter1Waving", sideCharacter: "Terry")
+                           
                         }
                         workItem2 = DispatchWorkItem{
                             //play Terry through a sequence of movements so he turns and then walks to the Letter H
@@ -1099,14 +1140,14 @@ extension ViewController{
                             
                             //play side character animation
                             self.startAnimateSideCharacter(key: "SideCharacter1Walking", sideCharacter: "Terry")
-                            
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter2Finish"]!, fileExtension: "mp3")//LM
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute:self.workItem3!)
                         }
                         workItem1 = DispatchWorkItem{
                             //drop side terry down from the top of the letter T
                             self.charcterOneIdle.parent?.runAction(SCNAction.moveBy(x:0, y: -4.1, z: 0.2, duration: 1))
-                            
+                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration16"]!, fileExtension: "mp3")//LM
                             //wait 5 seconds
                             DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute:self.workItem2!)
                         }
@@ -1143,7 +1184,7 @@ extension ViewController{
                         workItem5 = DispatchWorkItem{
                             //play flute clip
                                 //self.toggleAudioFXFile(file: chapterSelectedSoundDict!["Narration33"]!, type: "wav", rate: 1)
-                                self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
+                                self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "wav")
                             
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 14.7, execute:self.workItem6!)
                         }
@@ -1196,6 +1237,8 @@ extension ViewController{
                             
                             //Patricia flies into the air to get the balloon
                             self.patricia1!.isPaused = false
+                            self.patriciaFlying = true
+                            self.patriciaNumber = 1
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem2!)
                         }
@@ -1258,6 +1301,18 @@ extension ViewController{
                         
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration11"]!, fileExtension: "mp3")
                         
+                        // create yellow spotlight to shine on Zebra Clock
+                        let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                        lightNode.position = SCNVector3Make(-2.5, 0, 15)
+                        
+                        lightItem2 = DispatchWorkItem{
+                            lightNode.removeFromParentNode()
+                        }
+                        lightItem1 = DispatchWorkItem{
+                            self.charcterTwoIdle.addChildNode(lightNode)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: self.lightItem1!)
                         workItem1 = DispatchWorkItem{
                             self.playWalkAnimation()
                         }
@@ -1324,6 +1379,11 @@ extension ViewController{
                         letterOne!.isPaused = false
                         animateLetterHide(fadeThis: letterOne!)
                         playAudio(type: .Effect, file: chapterSelectedSoundDict!["Shatter1"]!, fileExtension: "wav", rate: 1.5)
+                        workItem1 = DispatchWorkItem{
+                            //self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration9"]!, fileExtension: "mp3") // LM needs more spacing. Do we want this when Indie starts walking?
+                    }
+                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:self.workItem1!)
+                      
                     default:
                         break
                 }

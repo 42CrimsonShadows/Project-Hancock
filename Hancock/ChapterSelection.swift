@@ -305,7 +305,7 @@ class ChapterSelection {
     func loadChapter1SoundFiles() -> [String: String] {
         let chapter1SoundArray = [ //sounds for Letter I
                                   "Narration1" : "ch1-I-Intro1",
-                                  "Narration2" : "ch1-I-Intro2",
+                                  "Narration2" : "ch1-I-Intro2", 
                                   "Narration3" : "ch1-I-Line1",     //1 narration3
                                   "Narration4" : "ch1-I-Line2_01",  //2 narration4
                                   "Narration5" : "ch1-I-Line2_02",
@@ -314,7 +314,7 @@ class ChapterSelection {
                                   //Narration5" : "ch1-E-Line3_02", //"Next" yellow to purple
                                   "Narration7" : "ch1-F-Line3_02", //"Finally" yellow to purple
                                   "Narration8" : "ch1-I-Line4_01",  //4 narration8
-                                  "Narration9" : "ch1-I-Line4_02",
+                                  "Narration9" : "ch1-I-Line4_02", //You have traced the letter I and Indie is on his way
                                   
                                   //sounds for Letter T
                                   "Narration10" : "ch1-T-Intro1",
@@ -323,6 +323,7 @@ class ChapterSelection {
                                   "Narration13" : "ch1-T-Line2_01", //2 narration13
                                   "Narration14" : "ch1-T-Line2_02",
                                   "Narration15" : "ch1-T-Line3_01", //3 narration14
+                                   "Narration16": "ch1-T-Line3_02", //You have traced the Letter T and Terry is free
             
                                   //sounds for Letter L
                                   "Narration17" : "ch1-L-Intro1",
@@ -357,7 +358,7 @@ class ChapterSelection {
                                   //sounds for Letter H
                                   "Narration42" : "ch1-H-Intro1",
                                   "Narration43" : "ch1-H-Intro2",
-                                  "Narration44" : "ch1-H-Intro3",
+                                  "Narration44" : "ch1-H-Intro3", //Can you trace the letter H to help all her friends say happy birthday
                                   "Narration45" : "ch1-H-Line1",    //1 narration45
                                   "Narration46" : "ch1-H-Line2_01", //2 narration46
                                   "Narration47" : "ch1-H-Line2_02",
@@ -469,37 +470,37 @@ class ChapterSelection {
     
     func loadChapter2SoundFiles() -> [String: String] {
         let chapter2SoundArray = [ //sounds for Letter P
-                                    "Narration1" : "ch2-P-Intro1",
-                                    "Narration2" : "ch2-P-Intro2",
-                                    "Narration2_1" : "ch2-P-Intro3",
-                                    "Narration3" : "ch2-P-Line0",
-                                    "Narration4" : "ch2-P-Line1",
-                                    "Narration6" : "ch2-P-Line2",
+                                    "Narration1" : "ch2-P-Intro1", //"Hi, I'm Piper" LM
+                                    "Narration2" : "ch2-P-Intro2",//"Thank you, I look great!" LM
+                                    "Narration2_1" : "ch2-P-Intro3", //"Sometimes when I am learning something new..." LM
+                                    "Narration3" : "ch2-P-Line0",//"Trace the P to start my journey" LM
+                                    "Narration4" : "ch1-E-Line1",//"Trace the green dot to the red dot LM
+                                    "Narration6" : "ch1-E-Line2_02",//"Trace the blue dot to the orange dot" LM
                                     
                                     //sounds for Letter R
-                                    "Narration11" : "ch2-R-Line0",
-                                    "Narration12" : "ch2-R-Line1",
-                                    "Narration13" : "ch2-R-Line2",
-                                    "Narration14" : "ch2-B-Line3",
+                                    "Narration11" : "ch2-R-Line0", //"Trace the R to help me go far" LM
+                                    "Narration12" : "ch1-E-Line1",//"Trace the green dot to the red dot" LM
+                                    "Narration13" : "ch1-E-Line2_02",//Trace the blue dot to the orange dot LM
+                                    "Narration14" : "ch1-E-Line3_02",//"Trace the yellow do to the purple dot" LM
                                     
                                     //sounds for Letter B
-                                    "Narration18" : "ch2-B-Line0",
-                                    "Narration19" : "ch2-B-Line1",
-                                    "Narration20" : "ch2-B-Line2",
-                                    "Narration22" : "ch2-B-Line3",
+                                    "Narration18" : "ch2-B-Line0",//"Trace the B, this move is hard for me" LM
+                                    "Narration19" : "ch1-E-Line1",//Trace the green dot to the red dot" LM
+                                    "Narration20" : "ch1-E-Line2_02",//"Trace the blue dot to the orange dot" LM
+                                    "Narration22" : "ch1-E-Line3_02",//Trace the yellow dot to the purple dot" LM
                                     
                                     //sounds for Letter C
-                                    "Narration24" : "ch2-C-Line0",
-                                    "Narration25" : "ch2-C-Line1",
-                                    
+                                    "Narration24" : "ch2-C-Line0",//"Trace the c so I don't scrape my knee" LM
+                                    "Narration25" : "ch1-E-Line1",//"Trace the green dot to the red dot" LM
+                                     
                                     //sounds for Letter D
-                                    "Narration32" : "ch2-D-Line0",
-                                    "Narration33" : "ch2-D-Line1",
-                                    "Narration34" : "ch2-D-Line2",
+                                    "Narration32" : "ch2-D-Line0",//"This move is the key" LM
+                                    "Narration33" : "ch1-E-Line1",//"trace the green dot to the red dot" LM
+                                    "Narration34" : "ch1-E-Line2_02",//"trace the blue dot to the orange dot" LM
                                     
                                     //sounds for Letter U
-                                    "Narration44" : "ch2-U-Line0",
-                                    "Narration45" : "ch2-U-Line1",
+                                    "Narration44" : "ch2-U-Line0",//"Trace the u to help my dreams come true" LM
+                                    "Narration45" : "ch1-E-Line1",//"Trace the green dot to the red dot" LM
             
                                     //letter finish sounds
                                     "ThankYou" : "ch2-ThankYou",
@@ -645,7 +646,7 @@ class ChapterSelection {
                                 "Narration4" : "ch1-I-Line2_01",  //2 narration4 Great Job
                                 //"Narration5" : "ch1-I-Line2_02", //purple to yellow X.X
                                 //"Narration5" : "ch1-E-Line3_02", //"Next" yellow to purple
-                                "Narration5" : "ch1-F-Line3_02", //"Finally" yellow to purple
+                                "Narration5" : "ch1-E-Line2_02", //"Finally" blue to orange
                                 "Narration6" : "ch1-I-Line3_01", //Fantastic
             
                                 //sounds for Letter Q

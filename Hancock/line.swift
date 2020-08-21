@@ -22,6 +22,8 @@ class Line: NSObject {
     var isComplete: Bool {
         return pointsWaitingForUpdatesByEstimationIndex.isEmpty
     }
+    
+    var lineWidth:CGFloat = 10
 
     func updateWithTouch(_ touch: UITouch) -> (Bool, CGRect) {
         if let estimationUpdateIndex = touch.estimationUpdateIndex,
@@ -126,7 +128,7 @@ class Line: NSObject {
             context.move(to: CGPoint(x: priorLocation.x, y: priorLocation.y))
             context.addLine(to: CGPoint(x: location.x, y: location.y))
 
-            context.setLineWidth(point.magnitude + 10)
+            context.setLineWidth(point.magnitude + lineWidth)
             
             context.strokePath()
 
@@ -176,6 +178,7 @@ class Line: NSObject {
 
         let committedLine = Line()
         committedLine.points = committing
+        committedLine.lineWidth = lineWidth
         committedLine.drawInContext(context, isDebuggingEnabled: isDebuggingEnabled, usePreciseLocation: usePreciseLocation)
 
         if !committedPoints.isEmpty {
@@ -189,6 +192,7 @@ class Line: NSObject {
 
     func drawCommitedPoints(in context: CGContext, isDebuggingEnabled: Bool, usePreciseLocation: Bool) {
         let committedLine = Line()
+        committedLine.lineWidth = lineWidth
         committedLine.points = committedPoints
         committedLine.drawInContext(context, isDebuggingEnabled: isDebuggingEnabled, usePreciseLocation: usePreciseLocation)
     }
@@ -227,9 +231,9 @@ class Line: NSObject {
 
         let arrayIndex = point.sequenceNumber - points.first!.sequenceNumber
 
-        if arrayIndex > 0 {
-            rect = rect.union(updateRectForLinePoint(point, previousPoint: points[arrayIndex - 1]))
-        }
+       // if arrayIndex > 0 {
+         //   rect = rect.union(updateRectForLinePoint(point, previousPoint: points[arrayIndex - 1]))
+      //  }
         if arrayIndex + 1 < points.count {
             rect = rect.union(updateRectForLinePoint(point, previousPoint: points[arrayIndex + 1]))
         }

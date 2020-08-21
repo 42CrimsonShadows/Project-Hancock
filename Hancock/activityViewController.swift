@@ -19,6 +19,7 @@ import UIKit
 // MARK: - Game State
 public var selectedActivity = ""
 
+
 public var totalCoins = 0
 // total coins user can get on letter
 public var coinsPossible: Int32 = 0
@@ -61,6 +62,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     @IBOutlet weak var grassImage: UIImageView!
     @IBOutlet weak var antChillImage: UIImageView!
     @IBOutlet weak var CoinCountLabel: UILabel!
+    
+    //LMTest
+    @IBOutlet weak var testImage: UIImageView! //LM
     
     let BlueDotView: UIImageView = {
         //Add the Blue Dot image to the canvas
@@ -192,6 +196,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }()
     
     
+    
     //MARK: - ACTIONS
     
     @IBAction func backButton(_ sender: Any) {
@@ -209,6 +214,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         canvasView.addSubview(reticleView)
+                               
         
         //to toggle on on start, uncomment this line
         //toggleDebugDrawing(debugButton)
@@ -231,7 +237,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         //load animations
         antChillImage.loadGif(name: "Anthony-Chillaxing") //can be set to different images for different chapters
         grassImage.loadGif(name: "Grass-Blowing")
-        
+               
         antFace.isHidden = true
         
         //antChillImage.contentMode = .scaleAspectFit
@@ -855,6 +861,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             activitySelection.loadActivityH()
         case "I":
             activitySelection.loadActivityI()
+             //testImage.image = #imageLiteral(resourceName: "Image") //LM Test
         case "J":
             activitySelection.loadActivityJ()
         case "K":
@@ -962,4 +969,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         default: return
         }
     }
+    
+ 
+
 }

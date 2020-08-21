@@ -43,4 +43,10 @@ class HomeViewController: UIViewController {
         //action to perform segue
         performSegue(withIdentifier: "toLinePage", sender: self)
     }
+    
+    @IBAction func letterMatchingTapped(_ sender: Any) {
+        //action to perform segue
+        performSegue(withIdentifier: "letterMatching", sender: self)
+    }
+    
 }
