@@ -56,15 +56,6 @@ extension ViewController{
                 //letter l intro
                 playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration4"]!, fileExtension: "mp3")
                 
-                // Light on Patricia
-                let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
-                lightNode.position = SCNVector3Make(0, 10, 0)
-                lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
-                lightItem1 = DispatchWorkItem{
-                    lightNode.removeFromParentNode()
-                }
-                self.mainCharacterIdle.childNode(withName: "Patricia", recursively: false)!.addChildNode(lightNode)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem1!)
                 //get ready to shatter the first letter when ViewDidAppear() is called again (letter activity page disappears)
                 self.shatterLetterOne = true
                 
@@ -442,26 +433,9 @@ extension ViewController{
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration12"]!, fileExtension: "mp3")
                     //patricia idles in the air looking for Brennon
                     
-                    // Light on Ryan
-                    let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
-                    lightNode.position = SCNVector3Make(0, 15, 0)
-                    lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
-                    lightItem2 = DispatchWorkItem{
-                        lightNode.removeFromParentNode()
-                    }
-                    lightItem1 = DispatchWorkItem{
-                        self.charcterThreeIdle.childNode(withName: "Ryan", recursively: false)!.addChildNode(lightNode)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.lightItem1!)
-                    
                     self.shatterLetterTwo = true
                     
                     workItem1 = DispatchWorkItem{
-                        self.particleItem3?.cancel()
-                        self.patricia2!.childNode(withName: "Patricia", recursively: true)!.removeAllParticleSystems()
-                        self.patriciaNumber = 3
-                        self.patriciaFlying = true
                         self.patricia2!.isHidden = true
                         self.patricia3!.isHidden = false
                         //load first letter for activityView page
@@ -830,7 +804,7 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self!.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: workItem1!) //LM Test
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -890,24 +864,7 @@ extension ViewController{
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
                     self.shatterLetterThree = true
                     
-                    // Light on Nikki
-                    let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
-                    lightNode.position = SCNVector3Make(0, 10, 0)
-                    lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
-                    lightItem2 = DispatchWorkItem{
-                        lightNode.removeFromParentNode()
-                    }
-                    lightItem1 = DispatchWorkItem{
-                        self.charcterFourIdle.addChildNode(lightNode)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.lightItem1!)
-                    
                     workItem1 = DispatchWorkItem{
-                        self.particleItem3?.cancel()
-                        self.patricia6!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
-                        self.patriciaNumber = 7
-                        self.patriciaFlying = true
                         self.patricia6!.isHidden = true
                         self.patricia7!.isHidden = false
                         //load first letter for activityView page
@@ -1346,10 +1303,6 @@ extension ViewController{
                     self.shatterLetterFour = true
                     
                     workItem1 = DispatchWorkItem{
-                        self.particleItem3?.cancel()
-                        self.patricia8!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
-                        self.patriciaNumber = 9
-                        self.patriciaFlying = true
                         self.patricia8!.isHidden = true
                         self.patricia9!.isHidden = false
                         
@@ -1847,7 +1800,7 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)//LM
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -1886,19 +1839,6 @@ extension ViewController{
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "mp3")
                     
                     self.shatterLetterFive = true
-                    
-                    // Light on Patricia
-                    let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
-                    lightNode.position = SCNVector3Make(0, 5, 0)
-                    lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
-                    lightItem2 = DispatchWorkItem{
-                        lightNode.removeFromParentNode()
-                    }
-                    lightItem1 = DispatchWorkItem{
-                        self.patricia1?.childNode(withName: "Patricia", recursively: false)!.addChildNode(lightNode)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.lightItem1!)
                     
                     workItem5 = DispatchWorkItem{
                         self.resetGame()
@@ -1951,10 +1891,6 @@ extension ViewController{
                     workItem1 = DispatchWorkItem{
                         self.patricia10!.isHidden = false
                         self.patricia10!.isPaused = false
-                        self.particleItem3?.cancel()
-                        self.patricia9!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
-                        self.patriciaNumber = 0
-                        self.patriciaFlying = false
                         self.patricia9!.isHidden = true
                         self.patricia9!.isPaused = true
                                                                 
@@ -2253,18 +2189,17 @@ extension ViewController{
                         
                         print("Loading activity \(chapterSelectedLetterArray![4])")
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
-                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3") //LM
+                        
                         //wait 6 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem3!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem3!)
                     }
                     workItem1 = DispatchWorkItem{
-                        //self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3")
-                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3")
                         //wait 4 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: self.workItem2!)//LM
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)//LM
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -2411,45 +2346,32 @@ extension ViewController{
 //                            })
 //                        })
 //                    })
-                case .Chapter1://LM 
+                case .Chapter1:
                     fadeoutWalkingSound()
                     
                     stopTransitionAnimation(key: "MainCharacterWalking")
                     
-                    workItem5 = DispatchWorkItem {
+                    workItem3 = DispatchWorkItem{
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration45"]!, fileExtension: "mp3")
                     }
-                    workItem3 = DispatchWorkItem{
-                        //self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration45"]!, fileExtension: "mp3")
-                        print("Prepare to shatter letter 6")
-                                               self.shatterLetterSix = true
-                                               
-                                               print("Loading activity \(chapterSelectedLetterArray![5])")
-                                               self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem5!)
-                                               
-                    }
                     workItem2 = DispatchWorkItem{
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3")
                         //get ready to shatter a when ViewDidAppear() is called
-                      //  print("Prepare to shatter letter 6")
-                       // self.shatterLetterSix = true
+                        print("Prepare to shatter letter 6")
+                        self.shatterLetterSix = true
                         
-                       // print("Loading activity \(chapterSelectedLetterArray![5])")
-                       // self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
+                        print("Loading activity \(chapterSelectedLetterArray![5])")
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
                         
                         //wait 6 seconds
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem3!)
                     }
                     workItem1 = DispatchWorkItem{
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration43"]!, fileExtension: "mp3")
-                       // self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3")
                         //wait 4 seconds
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute:self.workItem2!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
                     
                     //wait 2 seconds
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {

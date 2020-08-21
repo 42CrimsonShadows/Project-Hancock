@@ -143,42 +143,42 @@ class ChapterViewController: UIViewController {
     
     @IBAction func lineType1Clicked(_ sender: Any) {
         currentChapter = .LineType1
-        chapterSelector.chapterLoader(picked: 14)
+        chapterSelector.chapterLoader(picked: 11)
         tappedThis()
     }
     @IBAction func lineType2Clicked(_ sender: Any) {
         currentChapter = .LineType2
-        chapterSelector.chapterLoader(picked: 11)
+        chapterSelector.chapterLoader(picked: 12)
         tappedThis()
     }
     @IBAction func lineType3Clicked(_ sender: Any) {
         currentChapter = .LineType3
-        chapterSelector.chapterLoader(picked: 18)
+        chapterSelector.chapterLoader(picked: 13)
         tappedThis()
     }
     @IBAction func lineType4Clicked(_ sender: Any) {
         currentChapter = .LineType4
-        chapterSelector.chapterLoader(picked: 15)
+        chapterSelector.chapterLoader(picked: 14)
         tappedThis()
     }
     @IBAction func lineType5Clicked(_ sender: Any) {
         currentChapter = .LineType5
-        chapterSelector.chapterLoader(picked: 17)
+        chapterSelector.chapterLoader(picked: 15)
         tappedThis()
     }
     @IBAction func lineType6Clicked(_ sender: Any) {
         currentChapter = .LineType6
-        chapterSelector.chapterLoader(picked: 12)
+        chapterSelector.chapterLoader(picked: 16)
         tappedThis()
     }
     @IBAction func lineType7Clicked(_ sender: Any) {
         currentChapter = .LineType7
-        chapterSelector.chapterLoader(picked: 13)
+        chapterSelector.chapterLoader(picked: 17)
         tappedThis()
     }
     @IBAction func lineType8Clicked(_ sender: Any) {
         currentChapter = .LineType8
-        chapterSelector.chapterLoader(picked: 16)
+        chapterSelector.chapterLoader(picked: 18)
         tappedThis()
     }
     @IBAction func lineType9Clicked(_ sender: Any) {
