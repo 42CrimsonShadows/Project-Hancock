@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EbW-Xz-ygt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EbW-Xz-ygt">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -3675,17 +3675,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
             <point key="canvasLocation" x="725.9765625" y="2228.6969253294287"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="36Q-7A-Vdg"/>
-        <segue reference="qRq-Ku-gCI"/>
-        <segue reference="lk7-ni-Qgd"/>
-        <segue reference="8ur-bC-BBV"/>
-        <segue reference="2Q2-TJ-gJR"/>
-        <segue reference="50s-gS-NCU"/>
-        <segue reference="Rq7-uf-zJ1"/>
-        <segue reference="77j-iz-6Lf"/>
-        <segue reference="2O5-wy-OoL"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="1024.png" width="1024" height="1024"/>
         <image name="ARexample" width="682.5" height="384"/>
@@ -3716,4 +3705,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="paper3" width="1005" height="686"/>
         <image name="profilePic.png" width="225" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qRq-Ku-gCI"/>
+        <segue reference="lk7-ni-Qgd"/>
+        <segue reference="8ur-bC-BBV"/>
+        <segue reference="2Q2-TJ-gJR"/>
+        <segue reference="50s-gS-NCU"/>
+        <segue reference="Rq7-uf-zJ1"/>
+        <segue reference="77j-iz-6Lf"/>
+        <segue reference="2O5-wy-OoL"/>
+    </inferredMetricsTieBreakers>
 </document>
