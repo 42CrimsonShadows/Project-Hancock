@@ -185,7 +185,7 @@ class ChapterViewController: UIViewController {
         
         GifView?.loadGif(name: "BookAnimation")
         
-        loadingGifView?.loadGif(name: "Loading")
+        loadingGifView?.loadGif(name: "FlowerLoading")
         loadingGifView?.isHidden = true
         conceptView?.isHidden = true
         

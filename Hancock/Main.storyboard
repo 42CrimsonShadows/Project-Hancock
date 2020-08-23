@@ -100,8 +100,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnd-S8-8gH">
-                                <rect key="frame" x="849" y="1191" width="125" height="125"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnd-S8-8gH">
+                                <rect key="frame" x="849" y="1192" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="cIn-6z-IKs"/>
                                     <constraint firstAttribute="width" constant="125" id="wJk-fB-jNX"/>
@@ -205,7 +205,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="846"/>
+            <point key="canvasLocation" x="1467.7734375" y="845.9736456808198"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="UCZ-aa-5Qc">
@@ -263,11 +263,11 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <constraint firstAttribute="height" constant="100" id="m8N-FI-nQH"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AntFace" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-iA-ZV1">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="275"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HappyFace" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-iA-ZV1">
+                                <rect key="frame" x="0.0" y="0.0" width="197" height="188"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="275" id="Cij-aJ-XcH"/>
-                                    <constraint firstAttribute="width" constant="300" id="Qkf-Kn-YUc"/>
+                                    <constraint firstAttribute="height" constant="188" id="Cij-aJ-XcH"/>
+                                    <constraint firstAttribute="width" constant="197" id="Qkf-Kn-YUc"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -494,170 +494,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
             </objects>
             <point key="canvasLocation" x="66" y="834"/>
         </scene>
-        <!--Letter Matching Menu View Controller-->
-        <scene sceneID="diD-jf-hqS">
-            <objects>
-                <viewController storyboardIdentifier="letterMatchingMeniViewController" modalPresentationStyle="fullScreen" id="e2i-hj-zRG" customClass="letterMatchingMenuViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LNP-Im-pd3">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ihn-un-nsI">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fnq-qz-54Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="450"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pv-Ev-LWA">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="450"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double1.1" translatesAutoresizingMaskIntoConstraints="NO" id="3Fo-I3-tQP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="276" id="GxP-HJ-5st"/>
-                                                            <constraint firstAttribute="width" constant="1024" id="vBl-lX-N8d"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGH-xJ-djh">
-                                                        <rect key="frame" x="20" y="38" width="58" height="39"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                        <state key="normal" title="Home"/>
-                                                        <connections>
-                                                            <action selector="homeButtonTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="qrn-1I-G8Y"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Letter Matching" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6D-Kv-xcM">
-                                                        <rect key="frame" x="0.0" y="108" width="1024" height="60"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                                        <color key="textColor" red="0.51027148960000002" green="0.47504884000000003" blue="0.72672432659999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.97554832700000005" green="0.95501548049999996" blue="0.85880929230000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstItem="f6D-Kv-xcM" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" constant="108" id="7fS-UN-7L1"/>
-                                                    <constraint firstItem="pGH-xJ-djh" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" constant="38" id="8Xv-b1-LSX"/>
-                                                    <constraint firstItem="pGH-xJ-djh" firstAttribute="leading" secondItem="0Pv-Ev-LWA" secondAttribute="leading" constant="20" id="A31-Nm-vdx"/>
-                                                    <constraint firstItem="3Fo-I3-tQP" firstAttribute="top" secondItem="0Pv-Ev-LWA" secondAttribute="top" id="Azl-9J-daD"/>
-                                                    <constraint firstItem="f6D-Kv-xcM" firstAttribute="leading" secondItem="0Pv-Ev-LWA" secondAttribute="leading" id="DMG-Xa-Ctw"/>
-                                                    <constraint firstAttribute="trailing" secondItem="f6D-Kv-xcM" secondAttribute="trailing" id="N55-KX-Ft0"/>
-                                                    <constraint firstItem="3Fo-I3-tQP" firstAttribute="leading" secondItem="0Pv-Ev-LWA" secondAttribute="leading" id="OuV-KB-N3S"/>
-                                                    <constraint firstAttribute="trailing" secondItem="3Fo-I3-tQP" secondAttribute="trailing" id="qsq-4o-CPL"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="0Pv-Ev-LWA" secondAttribute="trailing" id="9ky-eM-Vxs"/>
-                                            <constraint firstItem="0Pv-Ev-LWA" firstAttribute="leading" secondItem="fnq-qz-54Z" secondAttribute="leading" id="Zdd-9Z-nSq"/>
-                                            <constraint firstAttribute="bottom" secondItem="0Pv-Ev-LWA" secondAttribute="bottom" id="oUA-MX-W94"/>
-                                            <constraint firstItem="0Pv-Ev-LWA" firstAttribute="top" secondItem="fnq-qz-54Z" secondAttribute="top" id="wwz-q2-ECg"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uwi-rf-sFv">
-                                        <rect key="frame" x="0.0" y="458" width="1024" height="450"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlU-AI-6YK">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="450"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="pDn-RN-Isf">
-                                                        <rect key="frame" x="437" y="88" width="150" height="274"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vh-Tn-hhh">
-                                                                <rect key="frame" x="28" y="0.0" width="94" height="60"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                                <state key="normal" title="A - Z ">
-                                                                    <color key="titleColor" red="0.74844872949999997" green="0.68137478829999998" blue="0.43056520819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="aThroughZTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="cJb-Py-Vqt"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POC-nw-fgQ">
-                                                                <rect key="frame" x="26.5" y="107" width="97" height="60"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                                <state key="normal" title="B &amp; D">
-                                                                    <color key="titleColor" red="0.46236735579999999" green="0.64952975509999999" blue="0.73771816489999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="bAndDTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="pYf-qq-RKG"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEa-1W-i53">
-                                                                <rect key="frame" x="0.0" y="214" width="150" height="60"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                                <state key="normal" title="P, G, &amp; Q">
-                                                                    <color key="titleColor" red="0.63155335189999995" green="0.45282793049999998" blue="0.81937450170000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="pGQTapped:" destination="e2i-hj-zRG" eventType="touchUpInside" id="jj1-F6-nao"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="pDn-RN-Isf" firstAttribute="centerX" secondItem="NlU-AI-6YK" secondAttribute="centerX" id="l8f-og-N8N"/>
-                                                    <constraint firstItem="pDn-RN-Isf" firstAttribute="centerY" secondItem="NlU-AI-6YK" secondAttribute="centerY" id="xOQ-vg-NPK"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r5k-rs-1kx">
-                                        <rect key="frame" x="0.0" y="916" width="1024" height="450"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-iZ-Tdh">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="450"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double1.2" translatesAutoresizingMaskIntoConstraints="NO" id="UAf-tn-Exd">
-                                                        <rect key="frame" x="0.0" y="174" width="1024" height="276"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="276" id="HFc-ak-yPW"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1024" id="UJi-EY-fiR"/>
-                                                            <constraint firstAttribute="width" constant="1024" id="td5-gQ-SRa"/>
-                                                            <constraint firstAttribute="height" constant="276" id="yJk-jQ-fhp"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="UAf-tn-Exd" firstAttribute="leading" secondItem="uhG-iZ-Tdh" secondAttribute="leading" id="E6z-Ne-NK4"/>
-                                                    <constraint firstAttribute="bottom" secondItem="UAf-tn-Exd" secondAttribute="bottom" id="YQu-2B-lXh"/>
-                                                    <constraint firstAttribute="trailing" secondItem="UAf-tn-Exd" secondAttribute="trailing" id="eTq-cm-Epa"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="uhG-iZ-Tdh" firstAttribute="leading" secondItem="r5k-rs-1kx" secondAttribute="leading" id="9lU-IG-Agw"/>
-                                            <constraint firstAttribute="bottom" secondItem="uhG-iZ-Tdh" secondAttribute="bottom" id="Eiq-Ek-n3S"/>
-                                            <constraint firstItem="uhG-iZ-Tdh" firstAttribute="top" secondItem="r5k-rs-1kx" secondAttribute="top" id="WcJ-UG-I1f"/>
-                                            <constraint firstAttribute="trailing" secondItem="uhG-iZ-Tdh" secondAttribute="trailing" id="bY4-ZA-7aS"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.97554832700000005" green="0.95501548049999996" blue="0.85880929230000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="Ihn-un-nsI" firstAttribute="bottom" secondItem="LNP-Im-pd3" secondAttribute="bottom" id="BEi-D8-8Qr"/>
-                            <constraint firstAttribute="trailing" secondItem="Ihn-un-nsI" secondAttribute="trailing" id="Woa-K4-3Pp"/>
-                            <constraint firstItem="Ihn-un-nsI" firstAttribute="top" secondItem="LNP-Im-pd3" secondAttribute="top" id="mKI-oa-Qrc"/>
-                            <constraint firstItem="Ihn-un-nsI" firstAttribute="leading" secondItem="LNP-Im-pd3" secondAttribute="leading" id="mZF-FU-Xl4"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="dbS-NM-jRb"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="bgN-tc-iIb"/>
-                    <connections>
-                        <segue destination="EbW-Xz-ygt" kind="presentation" identifier="home" id="PoJ-fZ-qZg"/>
-                        <segue destination="bo1-os-NbK" kind="show" identifier="aThroughZ" id="OPN-y0-hTm"/>
-                        <segue destination="C50-TJ-yLr" kind="show" identifier="bAndDTapped" id="gGi-K6-LLY"/>
-                        <segue destination="mfT-s6-ldz" kind="show" identifier="pGAndQTapped" id="Zx7-Dr-RJa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="efH-bA-CgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="602.9296875" y="1529.8682284040995"/>
-        </scene>
         <!--Letter Matching View Controller-->
         <scene sceneID="ycI-5k-zdo">
             <objects>
@@ -675,7 +511,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AG-ys-B2W">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Single1" translatesAutoresizingMaskIntoConstraints="NO" id="XRG-4S-BR7">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Single5" translatesAutoresizingMaskIntoConstraints="NO" id="XRG-4S-BR7">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpM-HX-Tcn">
@@ -840,7 +676,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.82656377550000004" green="0.6937169433" blue="0.71372586490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="s6K-Eu-T42" firstAttribute="leading" secondItem="uuB-5o-m8W" secondAttribute="leading" id="3dH-k9-UwY"/>
                             <constraint firstItem="s6K-Eu-T42" firstAttribute="trailing" secondItem="uuB-5o-m8W" secondAttribute="trailing" id="Du9-Kd-vZn"/>
@@ -883,12 +719,12 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoCardTwoImageView" destination="ga7-vA-H2F" id="Q3I-Bl-OKw"/>
                         <outlet property="topBoarder" destination="XRG-4S-BR7" id="1YA-5j-YoB"/>
                         <outlet property="youWinPic" destination="s6K-Eu-T42" id="yQi-nm-0t9"/>
-                        <segue destination="e2i-hj-zRG" kind="show" identifier="mainMenu" id="41T-yv-9Ha"/>
+                        <segue destination="nCQ-Xj-tZf" kind="show" identifier="mainMenu" id="zh7-Sl-7PY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHh-JH-XcF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273.828125" y="1529.8682284040995"/>
+            <point key="canvasLocation" x="1308" y="1515"/>
         </scene>
         <!--Registration-->
         <scene sceneID="NE0-vK-vox">
@@ -1487,23 +1323,23 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1of-YF-n3I">
-                                <rect key="frame" x="0.0" y="319" width="1024" height="728"/>
+                                <rect key="frame" x="0.0" y="319" width="1125" height="728"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-25" translatesAutoresizingMaskIntoConstraints="NO" id="4Zx-mB-L4d">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="354"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="354"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KWr-r1-H1A" userLabel="UpperStack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="354"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="354"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="BookUpper" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bm-28-E92">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="300" id="AHS-7x-sBd"/>
                                                             <constraint firstAttribute="height" constant="300" id="FbH-O5-4LD"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7K3-EC-sGn">
-                                                        <rect key="frame" x="0.0" y="308" width="275" height="46"/>
+                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="UPPERCASE">
@@ -1519,17 +1355,17 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cQ1-tM-qrc" userLabel="LowerStack View">
-                                                <rect key="frame" x="250" y="0.0" width="274.5" height="354"/>
+                                                <rect key="frame" x="275" y="0.0" width="300" height="354"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookLower" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTt-i8-Ewr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="274.5" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" id="nlV-S5-XdT"/>
                                                             <constraint firstAttribute="width" constant="300" id="wNf-Om-ft2"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQW-eG-frl">
-                                                        <rect key="frame" x="0.0" y="308" width="274.5" height="46"/>
+                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="LOWERCASE">
@@ -1545,17 +1381,17 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dhs-j3-gQR" userLabel="LinesStack View">
-                                                <rect key="frame" x="499.5" y="0.0" width="275" height="354"/>
+                                                <rect key="frame" x="550" y="0.0" width="300" height="354"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="BookLine" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0AM-fW-844" userLabel="Lines Image">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="300" id="AHX-N9-7uj"/>
                                                             <constraint firstAttribute="height" constant="300" id="mVE-9M-XB5"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uja-Wx-X2r" userLabel="Lines">
-                                                        <rect key="frame" x="0.0" y="308" width="275" height="46"/>
+                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="LINES">
@@ -1571,17 +1407,17 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zKL-0y-5Mo">
-                                                <rect key="frame" x="749.5" y="0.0" width="274.5" height="354"/>
+                                                <rect key="frame" x="825" y="0.0" width="300" height="354"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="B" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3f-rn-P5z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="274.5" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="300" id="Nz0-bZ-3IH"/>
                                                             <constraint firstAttribute="height" constant="300" id="d6E-Ea-R41"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzc-iT-c95">
-                                                        <rect key="frame" x="0.0" y="308" width="274.5" height="46"/>
+                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="Matching">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1599,10 +1435,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zXT-4Z-7uC">
-                                        <rect key="frame" x="0.0" y="374" width="1024" height="354"/>
+                                        <rect key="frame" x="0.0" y="374" width="1125" height="354"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndy-YQ-zil">
-                                                <rect key="frame" x="0.0" y="0.0" width="341.5" height="354"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="354"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="LEVEL 2 UPPER">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1612,7 +1448,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fy-y5-Zyg">
-                                                <rect key="frame" x="341.5" y="0.0" width="341" height="354"/>
+                                                <rect key="frame" x="375" y="0.0" width="375" height="354"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="LEVEL 2 LOWER">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1622,7 +1458,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nv-hu-mkg">
-                                                <rect key="frame" x="682.5" y="0.0" width="341.5" height="354"/>
+                                                <rect key="frame" x="750" y="0.0" width="375" height="354"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="FREE WRITE">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1636,7 +1472,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </subviews>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6U-v0-2US">
-                                <rect key="frame" x="856" y="41" width="121" height="60"/>
+                                <rect key="frame" x="957" y="41" width="121" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="l2e-Le-AE8"/>
                                 </constraints>
@@ -1665,7 +1501,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="lineCaseImage" destination="0AM-fW-844" id="3gc-4N-ANB"/>
                         <outlet property="lowerCaseImage" destination="UTt-i8-Ewr" id="cxx-bp-Fkt"/>
                         <outlet property="upperCaseImage" destination="1bm-28-E92" id="RPo-Nc-bl5"/>
-                        <segue destination="e2i-hj-zRG" kind="presentation" identifier="letterMatching" modalPresentationStyle="fullScreen" id="77j-iz-6Lf"/>
+                        <segue destination="nCQ-Xj-tZf" kind="show" identifier="letterMatching" id="bKv-c4-Yp3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vug-pQ-4AZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2492,20 +2328,19 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <rect key="frame" x="0.0" y="171" width="1024" height="1024"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nyC-Yu-V0h">
-                                <rect key="frame" x="924" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="833" y="0.0" width="191" height="121"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="8fe-YD-7qF"/>
-                                    <constraint firstAttribute="width" constant="100" id="Jmo-5v-tE4"/>
+                                    <constraint firstAttribute="height" constant="121" id="8fe-YD-7qF"/>
+                                    <constraint firstAttribute="width" constant="191" id="Jmo-5v-tE4"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BT-AN-5wz">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BT-AN-5wz">
+                                <rect key="frame" x="0.0" y="14" width="131" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="1XP-m1-Fhh"/>
-                                    <constraint firstAttribute="width" constant="100" id="aE3-mX-L6P"/>
+                                    <constraint firstAttribute="height" constant="52" id="1XP-m1-Fhh"/>
+                                    <constraint firstAttribute="width" constant="131" id="aE3-mX-L6P"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" image="UI Buttons_Back_Blue">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -2523,7 +2358,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="SnS-eC-TCy" firstAttribute="top" secondItem="FPw-kR-OSp" secondAttribute="top" constant="20" id="8a7-IU-KFS"/>
                             <constraint firstItem="t80-ww-KYb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="upf-Uj-sZY" secondAttribute="leading" id="Bc9-eb-wdV"/>
                             <constraint firstItem="t80-ww-KYb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="upf-Uj-sZY" secondAttribute="top" constant="-8.5" id="EzJ-8a-LNQ"/>
-                            <constraint firstItem="2BT-AN-5wz" firstAttribute="top" secondItem="FPw-kR-OSp" secondAttribute="top" id="LWa-bQ-SEW"/>
+                            <constraint firstItem="2BT-AN-5wz" firstAttribute="top" secondItem="FPw-kR-OSp" secondAttribute="top" constant="14" id="LWa-bQ-SEW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SnS-eC-TCy" secondAttribute="trailing" constant="100" id="MVX-bS-ZMm"/>
                             <constraint firstItem="SnS-eC-TCy" firstAttribute="centerX" secondItem="upf-Uj-sZY" secondAttribute="centerX" id="UMi-Y1-HeR"/>
                             <constraint firstItem="LJU-aR-2aU" firstAttribute="centerX" secondItem="upf-Uj-sZY" secondAttribute="centerX" constant="-200" id="Xso-GN-eQU"/>
@@ -2532,7 +2367,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="t80-ww-KYb" firstAttribute="leading" secondItem="2BT-AN-5wz" secondAttribute="leading" id="aHu-vy-P6I"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="t80-ww-KYb" secondAttribute="bottom" id="lnW-ud-2yI"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t80-ww-KYb" secondAttribute="trailing" id="p31-rP-XXs"/>
-                            <constraint firstItem="t80-ww-KYb" firstAttribute="top" secondItem="nyC-Yu-V0h" secondAttribute="bottom" constant="71" id="vXv-lX-jF5"/>
+                            <constraint firstItem="t80-ww-KYb" firstAttribute="top" secondItem="nyC-Yu-V0h" secondAttribute="bottom" constant="50" id="vXv-lX-jF5"/>
                             <constraint firstItem="FPw-kR-OSp" firstAttribute="trailing" secondItem="nyC-Yu-V0h" secondAttribute="trailing" id="vrl-DI-w6g"/>
                             <constraint firstItem="t80-ww-KYb" firstAttribute="centerX" secondItem="upf-Uj-sZY" secondAttribute="centerX" id="xKn-KE-dfc"/>
                         </constraints>
@@ -2552,7 +2387,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8l-IK-xen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797" y="846"/>
+            <point key="canvasLocation" x="796.875" y="845.9736456808198"/>
         </scene>
         <!--Chapter View Controller-->
         <scene sceneID="jMd-WJ-55A">
@@ -2868,100 +2703,159 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a9j-KB-RBi">
-                                <rect key="frame" x="20" y="20" width="984" height="1326"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cQd-FM-gs0">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qCd-Wo-gua">
-                                        <rect key="frame" x="0.0" y="0.0" width="984" height="442"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LY3-XA-p3b">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEb-2T-cZV">
-                                                <rect key="frame" x="0.0" y="0.0" width="314.5" height="442"/>
-                                                <state key="normal" image="Vertical"/>
-                                                <connections>
-                                                    <action selector="lineType1Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="p7p-B3-BsH"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctf-OS-NDj">
-                                                <rect key="frame" x="334.5" y="0.0" width="315" height="442"/>
-                                                <state key="normal" image="Horizontal"/>
-                                                <connections>
-                                                    <action selector="lineType2Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="scQ-D4-awy"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOK-2f-C89">
-                                                <rect key="frame" x="669.5" y="0.0" width="314.5" height="442"/>
-                                                <state key="normal" image="Circle"/>
-                                                <connections>
-                                                    <action selector="lineType3Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="u2P-C9-qSO"/>
-                                                </connections>
-                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Double3.1" translatesAutoresizingMaskIntoConstraints="NO" id="VgC-sI-09h">
+                                                <rect key="frame" x="0.0" y="-1" width="1024" height="278"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Practice" translatesAutoresizingMaskIntoConstraints="NO" id="Gmw-nc-XVz">
+                                                <rect key="frame" x="275" y="63" width="474" height="150"/>
+                                            </imageView>
                                         </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ujZ-0C-SAb">
-                                        <rect key="frame" x="0.0" y="442" width="984" height="442"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="VgC-sI-09h" firstAttribute="top" secondItem="LY3-XA-p3b" secondAttribute="top" constant="-1" id="Pwn-vU-OH7"/>
+                                            <constraint firstAttribute="trailing" secondItem="VgC-sI-09h" secondAttribute="trailing" id="XdF-A0-41E"/>
+                                            <constraint firstItem="VgC-sI-09h" firstAttribute="centerY" secondItem="LY3-XA-p3b" secondAttribute="centerY" id="cdG-hl-Vf6"/>
+                                            <constraint firstItem="Gmw-nc-XVz" firstAttribute="centerY" secondItem="LY3-XA-p3b" secondAttribute="centerY" id="eOo-1l-0lN"/>
+                                            <constraint firstItem="Gmw-nc-XVz" firstAttribute="centerX" secondItem="LY3-XA-p3b" secondAttribute="centerX" id="mgp-1W-pHo"/>
+                                            <constraint firstItem="VgC-sI-09h" firstAttribute="leading" secondItem="LY3-XA-p3b" secondAttribute="leading" id="qhl-YO-kAS"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jb-ni-WQe">
+                                        <rect key="frame" x="0.0" y="284" width="1024" height="798"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPv-N8-dh7">
-                                                <rect key="frame" x="0.0" y="0.0" width="314.5" height="442"/>
-                                                <state key="normal" image="PerpCross"/>
-                                                <connections>
-                                                    <action selector="lineType4Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="4jq-WQ-eYO"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gde-RX-DxV">
-                                                <rect key="frame" x="334.5" y="0.0" width="315" height="442"/>
-                                                <state key="normal" image="Square"/>
-                                                <connections>
-                                                    <action selector="lineType5Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="cf3-nF-ZIp"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8al-Di-Xft">
-                                                <rect key="frame" x="669.5" y="0.0" width="314.5" height="442"/>
-                                                <state key="normal" image="DiagonalRight"/>
-                                                <connections>
-                                                    <action selector="lineType6Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="P1D-tI-HoL"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="FP0-xU-2W7">
+                                                <rect key="frame" x="0.0" y="8" width="1016" height="782"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="IFW-xy-om0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1016" height="256"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtT-xQ-exk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="212" height="256"/>
+                                                                <state key="normal" image="Vertical.png"/>
+                                                                <connections>
+                                                                    <action selector="lineType1Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="XDc-gK-Icv"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-zn-6Rs">
+                                                                <rect key="frame" x="402" y="0.0" width="212" height="256"/>
+                                                                <state key="normal" image="Horizontal.png"/>
+                                                                <connections>
+                                                                    <action selector="lineType2Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="vzg-KC-LXp"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-bU-WIB">
+                                                                <rect key="frame" x="804" y="0.0" width="212" height="256"/>
+                                                                <state key="normal" image="Circle.png"/>
+                                                                <connections>
+                                                                    <action selector="lineType3Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="4Fm-6s-gCK"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="6Es-HJ-3mK">
+                                                        <rect key="frame" x="0.0" y="263" width="1016" height="256"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIY-Vv-TWp">
+                                                                <rect key="frame" x="0.0" y="0.0" width="212" height="256"/>
+                                                                <state key="normal" image="PerpCross"/>
+                                                                <connections>
+                                                                    <action selector="lineType4Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="LDd-HS-k8h"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilB-g0-VN5">
+                                                                <rect key="frame" x="402" y="0.0" width="212" height="256"/>
+                                                                <state key="normal" image="Square.png"/>
+                                                                <connections>
+                                                                    <action selector="lineType5Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="Mid-mv-ILx"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvF-AP-7GG">
+                                                                <rect key="frame" x="804" y="0.0" width="212" height="256"/>
+                                                                <state key="normal" image="DiagonalLeft.png"/>
+                                                                <connections>
+                                                                    <action selector="lineType6Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="2uD-oh-GIT"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-pl-ilq">
+                                                        <rect key="frame" x="0.0" y="526" width="1016" height="256"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OT0-fs-KBv">
+                                                                <rect key="frame" x="0.0" y="0.0" width="212" height="256"/>
+                                                                <state key="normal" image="DiagonalLeft.png"/>
+                                                                <connections>
+                                                                    <action selector="lineType7Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="Vjt-xy-RI5"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ky-QX-eB9">
+                                                                <rect key="frame" x="402" y="0.0" width="212" height="256"/>
+                                                                <state key="normal" image="DiagonalCross.png"/>
+                                                                <connections>
+                                                                    <action selector="lineType8Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="TjD-tI-IuN"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODZ-vX-WZv">
+                                                                <rect key="frame" x="804" y="0.0" width="212" height="256"/>
+                                                                <state key="normal" image="Triangle.png"/>
+                                                                <connections>
+                                                                    <action selector="lineType9Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="APE-yR-Nm0"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ATd-yK-jrD">
-                                        <rect key="frame" x="0.0" y="884" width="984" height="442"/>
+                                        <color key="backgroundColor" red="0.98316866160000005" green="0.95549327139999995" blue="0.83527582879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="FP0-xU-2W7" secondAttribute="trailing" constant="8" id="HjV-Bo-cOF"/>
+                                            <constraint firstItem="FP0-xU-2W7" firstAttribute="leading" secondItem="8Jb-ni-WQe" secondAttribute="leading" id="M4J-Ro-0Fp"/>
+                                            <constraint firstItem="FP0-xU-2W7" firstAttribute="bottom" secondItem="8Jb-ni-WQe" secondAttribute="bottomMargin" id="Osc-Ex-mur"/>
+                                            <constraint firstItem="FP0-xU-2W7" firstAttribute="top" secondItem="8Jb-ni-WQe" secondAttribute="topMargin" id="oXN-M4-wVI"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SK7-Cy-bnd">
+                                        <rect key="frame" x="0.0" y="1090" width="1024" height="276"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mth-tp-wGe">
-                                                <rect key="frame" x="0.0" y="0.0" width="314.5" height="442"/>
-                                                <state key="normal" image="DiagonalLeft"/>
-                                                <connections>
-                                                    <action selector="lineType7Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="Xmw-hX-tpQ"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v14-vL-t5I">
-                                                <rect key="frame" x="334.5" y="0.0" width="315" height="442"/>
-                                                <state key="normal" image="DiagonalCross"/>
-                                                <connections>
-                                                    <action selector="lineType8Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="OlN-T6-Z4J"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rI7-wb-Qn6">
-                                                <rect key="frame" x="669.5" y="0.0" width="314.5" height="442"/>
-                                                <state key="normal" image="Triangle"/>
-                                                <connections>
-                                                    <action selector="lineType9Clicked:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="eqI-mF-yKl"/>
-                                                </connections>
-                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Double3.2" translatesAutoresizingMaskIntoConstraints="NO" id="yRY-zZ-3dB">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
+                                            </imageView>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="yRY-zZ-3dB" secondAttribute="trailing" id="5gp-dY-M6j"/>
+                                            <constraint firstItem="yRY-zZ-3dB" firstAttribute="centerY" secondItem="SK7-Cy-bnd" secondAttribute="centerY" id="glV-an-wnd"/>
+                                            <constraint firstItem="yRY-zZ-3dB" firstAttribute="leading" secondItem="SK7-Cy-bnd" secondAttribute="leading" id="lHI-tN-riI"/>
+                                            <constraint firstItem="yRY-zZ-3dB" firstAttribute="top" secondItem="SK7-Cy-bnd" secondAttribute="top" id="ruc-YL-Dkr"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="a9j-KB-RBi" secondAttribute="height" multiplier="164:221" id="BjK-ar-lKW"/>
+                                    <constraint firstAttribute="trailing" secondItem="LY3-XA-p3b" secondAttribute="trailing" id="5K7-x3-kJQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="SK7-Cy-bnd" secondAttribute="bottom" id="Ecm-nd-SPI"/>
+                                    <constraint firstItem="LY3-XA-p3b" firstAttribute="top" secondItem="cQd-FM-gs0" secondAttribute="top" id="OQJ-nK-Vet"/>
+                                    <constraint firstItem="8Jb-ni-WQe" firstAttribute="centerY" secondItem="cQd-FM-gs0" secondAttribute="centerY" id="PRE-5p-OQB"/>
+                                    <constraint firstItem="LY3-XA-p3b" firstAttribute="leading" secondItem="cQd-FM-gs0" secondAttribute="leading" id="arw-Ob-V3S"/>
+                                    <constraint firstItem="8Jb-ni-WQe" firstAttribute="top" secondItem="cQd-FM-gs0" secondAttribute="top" constant="284" id="sEs-XA-KVl"/>
+                                    <constraint firstAttribute="trailing" secondItem="SK7-Cy-bnd" secondAttribute="trailing" id="tHz-D8-SU8"/>
+                                    <constraint firstItem="SK7-Cy-bnd" firstAttribute="leading" secondItem="cQd-FM-gs0" secondAttribute="leading" id="y1o-0X-a6X"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3o-Mk-CSV">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="20" width="131" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="RZx-Gi-gF4"/>
-                                    <constraint firstAttribute="width" constant="100" id="bvt-yz-Xjr"/>
+                                    <constraint firstAttribute="height" constant="52" id="RZx-Gi-gF4"/>
+                                    <constraint firstAttribute="width" constant="131" id="bvt-yz-Xjr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" backgroundImage="Reset">
+                                <state key="normal" backgroundImage="UI Buttons_Back_Violet">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -2972,35 +2866,22 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.97935718299999996" green="0.95525664089999995" blue="0.84704262019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="a9j-KB-RBi" firstAttribute="centerX" secondItem="Lbg-wc-MJe" secondAttribute="centerX" id="1Jr-A6-ZaQ"/>
                             <constraint firstItem="Y3o-Mk-CSV" firstAttribute="leading" secondItem="2qD-bu-7p1" secondAttribute="leading" id="9Qg-hR-r6c"/>
-                            <constraint firstItem="Y3o-Mk-CSV" firstAttribute="top" secondItem="2qD-bu-7p1" secondAttribute="top" id="EcG-5C-1Pr"/>
-                            <constraint firstItem="a9j-KB-RBi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2qD-bu-7p1" secondAttribute="leading" constant="20" id="HT7-YO-HOk"/>
-                            <constraint firstItem="a9j-KB-RBi" firstAttribute="centerY" secondItem="Lbg-wc-MJe" secondAttribute="centerY" id="mDK-5C-o5b"/>
-                            <constraint firstItem="2qD-bu-7p1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a9j-KB-RBi" secondAttribute="trailing" constant="20" id="nnd-DB-2Fg"/>
-                            <constraint firstItem="2qD-bu-7p1" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="a9j-KB-RBi" secondAttribute="bottom" constant="20" id="q53-U7-YiS"/>
-                            <constraint firstItem="a9j-KB-RBi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2qD-bu-7p1" secondAttribute="top" constant="20" id="yX3-kV-YBb"/>
+                            <constraint firstItem="cQd-FM-gs0" firstAttribute="bottom" secondItem="Lbg-wc-MJe" secondAttribute="bottom" id="Dbt-Ob-W0b"/>
+                            <constraint firstItem="Y3o-Mk-CSV" firstAttribute="top" secondItem="2qD-bu-7p1" secondAttribute="top" constant="20" id="EcG-5C-1Pr"/>
+                            <constraint firstItem="cQd-FM-gs0" firstAttribute="top" secondItem="Lbg-wc-MJe" secondAttribute="top" id="QRL-pT-qFJ"/>
+                            <constraint firstItem="cQd-FM-gs0" firstAttribute="leading" secondItem="Lbg-wc-MJe" secondAttribute="leading" id="VUF-op-XlW"/>
+                            <constraint firstItem="cQd-FM-gs0" firstAttribute="trailing" secondItem="Lbg-wc-MJe" secondAttribute="trailing" id="hLM-wf-ycH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2qD-bu-7p1"/>
                     </view>
                     <navigationItem key="navigationItem" id="iTf-Pv-gas"/>
-                    <connections>
-                        <outlet property="lineType1Label" destination="dEb-2T-cZV" id="MA3-bO-eqB"/>
-                        <outlet property="lineType2Label" destination="Ctf-OS-NDj" id="R3v-Xl-1tP"/>
-                        <outlet property="lineType3Label" destination="gOK-2f-C89" id="AzV-Fr-una"/>
-                        <outlet property="lineType4Label" destination="UPv-N8-dh7" id="GHx-Jt-yLE"/>
-                        <outlet property="lineType5Label" destination="gde-RX-DxV" id="Aej-ce-Xo1"/>
-                        <outlet property="lineType6Label" destination="8al-Di-Xft" id="dTB-fG-MxJ"/>
-                        <outlet property="lineType7Label" destination="mth-tp-wGe" id="LQl-eO-v1R"/>
-                        <outlet property="lineType8Label" destination="v14-vL-t5I" id="pXx-U1-9MT"/>
-                        <outlet property="lineType9Label" destination="rI7-wb-Qn6" id="0I3-aH-WJg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f95-4p-OmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="132"/>
+            <point key="canvasLocation" x="1468" y="139"/>
         </scene>
         <!--Level Two Menu View Controller-->
         <scene sceneID="rNj-Em-liW">
@@ -3388,7 +3269,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXV-BZ-2UB">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Single5" translatesAutoresizingMaskIntoConstraints="NO" id="Zmm-Xz-5yA">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Single5" translatesAutoresizingMaskIntoConstraints="NO" id="Zmm-Xz-5yA">
                                                 <rect key="frame" x="0.0" y="-182" width="1024" height="414"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYN-dz-Aug">
@@ -3408,16 +3289,16 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecI-F4-vj5">
-                                                <rect key="frame" x="429" y="8" width="163" height="167.5"/>
+                                                <rect key="frame" x="429" y="8" width="158" height="213"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="163" id="tNU-oB-lyD"/>
+                                                    <constraint firstAttribute="width" constant="158" id="tNU-oB-lyD"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ecI-F4-vj5" firstAttribute="top" secondItem="ZXV-BZ-2UB" secondAttribute="topMargin" id="9yw-lR-Dvr"/>
-                                            <constraint firstItem="ecI-F4-vj5" firstAttribute="centerX" secondItem="ZXV-BZ-2UB" secondAttribute="centerX" constant="-1.5" id="Hgg-2x-2hz"/>
+                                            <constraint firstItem="ecI-F4-vj5" firstAttribute="centerX" secondItem="ZXV-BZ-2UB" secondAttribute="centerX" constant="-4" id="Hgg-2x-2hz"/>
                                             <constraint firstAttribute="trailing" secondItem="JD0-dW-t7Q" secondAttribute="trailing" constant="29" id="Idg-92-YVS"/>
                                             <constraint firstItem="Zmm-Xz-5yA" firstAttribute="leading" secondItem="ZXV-BZ-2UB" secondAttribute="leading" id="N8I-hp-Vhm"/>
                                             <constraint firstItem="JD0-dW-t7Q" firstAttribute="top" secondItem="ZXV-BZ-2UB" secondAttribute="top" constant="32" id="VEs-5n-Khc"/>
@@ -3425,7 +3306,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <constraint firstItem="IYN-dz-Aug" firstAttribute="top" secondItem="ZXV-BZ-2UB" secondAttribute="top" constant="32" id="elN-gJ-cEn"/>
                                             <constraint firstAttribute="trailing" secondItem="Zmm-Xz-5yA" secondAttribute="trailing" id="ioX-G6-LB4"/>
                                             <constraint firstAttribute="bottom" secondItem="Zmm-Xz-5yA" secondAttribute="bottom" constant="-11" id="ogZ-0p-YVv"/>
-                                            <constraint firstItem="ecI-F4-vj5" firstAttribute="centerY" secondItem="ZXV-BZ-2UB" secondAttribute="centerY" constant="-18.75" id="p0b-pg-iHF"/>
+                                            <constraint firstItem="ecI-F4-vj5" firstAttribute="centerY" secondItem="ZXV-BZ-2UB" secondAttribute="centerY" constant="4" id="p0b-pg-iHF"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="1nM-eL-ot1">
@@ -3588,7 +3469,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoCardTwoImageView" destination="Li7-ai-NgT" id="8M4-L2-BFF"/>
                         <outlet property="topBorder" destination="Zmm-Xz-5yA" id="fa9-74-0wa"/>
                         <outlet property="youWinPic" destination="5kq-ek-TAs" id="Psh-Ei-a4n"/>
-                        <segue destination="e2i-hj-zRG" kind="show" identifier="mainMenu" id="RMR-yy-ZbG"/>
+                        <segue destination="nCQ-Xj-tZf" kind="show" identifier="mainMenu" id="IRd-9B-Gyb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R12-af-GLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3612,7 +3493,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1f-KV-mm5">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Single5" translatesAutoresizingMaskIntoConstraints="NO" id="c4G-ql-4qg">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Single5" translatesAutoresizingMaskIntoConstraints="NO" id="c4G-ql-4qg">
                                                 <rect key="frame" x="0.0" y="-177" width="1024" height="414"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="na9-K6-Iw8">
@@ -3632,10 +3513,11 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3OP-Ua-j8H">
-                                                <rect key="frame" x="429" y="8" width="163" height="205"/>
+                                                <rect key="frame" x="428.5" y="0.0" width="164" height="228"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="205" id="Z4L-07-oz2"/>
-                                                    <constraint firstAttribute="width" constant="163" id="gax-4G-KTF"/>
+                                                    <constraint firstAttribute="height" constant="228" id="Z4L-07-oz2"/>
+                                                    <constraint firstAttribute="width" constant="164" id="gax-4G-KTF"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -3643,8 +3525,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         <constraints>
                                             <constraint firstItem="3OP-Ua-j8H" firstAttribute="centerX" secondItem="l1f-KV-mm5" secondAttribute="centerX" constant="-1.5" id="2ik-3t-UDG"/>
                                             <constraint firstItem="na9-K6-Iw8" firstAttribute="top" secondItem="l1f-KV-mm5" secondAttribute="top" constant="32" id="6EO-xA-ghs"/>
-                                            <constraint firstItem="3OP-Ua-j8H" firstAttribute="centerY" secondItem="l1f-KV-mm5" secondAttribute="centerY" id="HG0-Gs-hws"/>
-                                            <constraint firstItem="3OP-Ua-j8H" firstAttribute="top" secondItem="l1f-KV-mm5" secondAttribute="topMargin" id="IbO-Og-epF"/>
+                                            <constraint firstItem="3OP-Ua-j8H" firstAttribute="centerY" secondItem="l1f-KV-mm5" secondAttribute="centerY" constant="3.5" id="HG0-Gs-hws"/>
+                                            <constraint firstItem="3OP-Ua-j8H" firstAttribute="top" secondItem="l1f-KV-mm5" secondAttribute="topMargin" constant="-8" id="IbO-Og-epF"/>
                                             <constraint firstItem="c4G-ql-4qg" firstAttribute="leading" secondItem="l1f-KV-mm5" secondAttribute="leading" id="In6-w8-ohN"/>
                                             <constraint firstItem="na9-K6-Iw8" firstAttribute="leading" secondItem="l1f-KV-mm5" secondAttribute="leading" constant="24" id="S3s-GR-eJg"/>
                                             <constraint firstItem="8IG-f3-wkZ" firstAttribute="top" secondItem="l1f-KV-mm5" secondAttribute="top" constant="32" id="STg-PZ-4qv"/>
@@ -3813,54 +3695,209 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoCardTwoImageView" destination="1fK-Cm-5ek" id="0i5-Nl-U84"/>
                         <outlet property="topBorder" destination="c4G-ql-4qg" id="tKc-ih-BBk"/>
                         <outlet property="youWinPic" destination="ENW-Da-4AW" id="NQ1-9b-6rC"/>
-                        <segue destination="e2i-hj-zRG" kind="show" identifier="mainMenu" id="tKi-lD-GsJ"/>
+                        <segue destination="nCQ-Xj-tZf" kind="show" identifier="mainMenu" id="ieL-p1-jog"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Y9-hz-Hbz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="725.9765625" y="2228.6969253294287"/>
         </scene>
+        <!--Letter Matching Menu View Controller-->
+        <scene sceneID="eQb-oS-En0">
+            <objects>
+                <viewController storyboardIdentifier="letterMatchingMainMenu" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nCQ-Xj-tZf" customClass="letterMatchingMenuViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9LL-eJ-fu7">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ACd-E9-cGE">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcj-VH-Owv">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double5.1" translatesAutoresizingMaskIntoConstraints="NO" id="hs9-zd-7a2">
+                                                <rect key="frame" x="0.0" y="-1" width="1024" height="278"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LetterMatching" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-Ww-Ifd">
+                                                <rect key="frame" x="167" y="96" width="690" height="110"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="hs9-zd-7a2" firstAttribute="centerY" secondItem="Pcj-VH-Owv" secondAttribute="centerY" id="AdM-KU-PCi"/>
+                                            <constraint firstItem="hs9-zd-7a2" firstAttribute="top" secondItem="Pcj-VH-Owv" secondAttribute="top" constant="-1" id="TYU-9z-sUA"/>
+                                            <constraint firstAttribute="trailing" secondItem="hs9-zd-7a2" secondAttribute="trailing" id="bbR-UH-MIh"/>
+                                            <constraint firstItem="hs9-zd-7a2" firstAttribute="leading" secondItem="Pcj-VH-Owv" secondAttribute="leading" id="oRg-UU-Wbn"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQK-gw-DAW">
+                                        <rect key="frame" x="0.0" y="284" width="1024" height="798"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="oul-tU-Spb">
+                                                <rect key="frame" x="0.0" y="8" width="1016" height="782"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="g8k-zr-nU4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1016" height="256"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNN-II-Q2t">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1016" height="256"/>
+                                                                <state key="normal" title="Button" image="LetterMatchingAZ"/>
+                                                                <connections>
+                                                                    <action selector="aThroughZTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="t4p-5d-ELU"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="zZA-Gx-h1z">
+                                                        <rect key="frame" x="0.0" y="263" width="1016" height="256"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8b-ez-biw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1016" height="256"/>
+                                                                <state key="normal" title="Button" image="LetterMatchingbd"/>
+                                                                <connections>
+                                                                    <action selector="bAndDTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="uZn-Rx-m41"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="wiZ-V5-Ca6">
+                                                        <rect key="frame" x="0.0" y="526" width="1016" height="256"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhO-7j-9jo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1016" height="256"/>
+                                                                <state key="normal" title="Button" image="LetterMatchingpgq"/>
+                                                                <connections>
+                                                                    <action selector="pGQTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="Lo6-3J-5a0"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.98316866160000005" green="0.95549327139999995" blue="0.83527582879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="oul-tU-Spb" firstAttribute="bottom" secondItem="BQK-gw-DAW" secondAttribute="bottomMargin" id="KTd-8f-asl"/>
+                                            <constraint firstItem="oul-tU-Spb" firstAttribute="leading" secondItem="BQK-gw-DAW" secondAttribute="leading" id="QnJ-CG-QSw"/>
+                                            <constraint firstAttribute="trailing" secondItem="oul-tU-Spb" secondAttribute="trailing" constant="8" id="TrV-0z-ss6"/>
+                                            <constraint firstItem="oul-tU-Spb" firstAttribute="top" secondItem="BQK-gw-DAW" secondAttribute="topMargin" id="km7-ce-KCb"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otk-OZ-0Uw">
+                                        <rect key="frame" x="0.0" y="1090" width="1024" height="276"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double5.2" translatesAutoresizingMaskIntoConstraints="NO" id="ZGa-EN-ia0">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ZGa-EN-ia0" firstAttribute="centerY" secondItem="otk-OZ-0Uw" secondAttribute="centerY" id="6ZL-EB-eWz"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZGa-EN-ia0" secondAttribute="trailing" id="9q2-yC-J9s"/>
+                                            <constraint firstItem="ZGa-EN-ia0" firstAttribute="leading" secondItem="otk-OZ-0Uw" secondAttribute="leading" id="Rd5-y8-Bse"/>
+                                            <constraint firstItem="ZGa-EN-ia0" firstAttribute="top" secondItem="otk-OZ-0Uw" secondAttribute="top" id="Sdq-Mn-nlD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="otk-OZ-0Uw" secondAttribute="trailing" id="8Ck-KP-fRg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pcj-VH-Owv" secondAttribute="trailing" id="EYn-jF-CZy"/>
+                                    <constraint firstItem="Pcj-VH-Owv" firstAttribute="top" secondItem="ACd-E9-cGE" secondAttribute="top" id="L4A-Hn-ncr"/>
+                                    <constraint firstItem="Pcj-VH-Owv" firstAttribute="leading" secondItem="ACd-E9-cGE" secondAttribute="leading" id="Z0u-Bn-aNQ"/>
+                                    <constraint firstItem="otk-OZ-0Uw" firstAttribute="leading" secondItem="ACd-E9-cGE" secondAttribute="leading" id="anq-5Z-Kbb"/>
+                                    <constraint firstItem="BQK-gw-DAW" firstAttribute="top" secondItem="ACd-E9-cGE" secondAttribute="top" constant="284" id="gfR-Xv-iWT"/>
+                                    <constraint firstAttribute="bottom" secondItem="otk-OZ-0Uw" secondAttribute="bottom" id="oIj-ph-ftK"/>
+                                    <constraint firstItem="BQK-gw-DAW" firstAttribute="centerY" secondItem="ACd-E9-cGE" secondAttribute="centerY" id="sPI-tl-Bp1"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z2-Ig-cBD">
+                                <rect key="frame" x="0.0" y="20" width="131" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="b8U-1U-5m2"/>
+                                    <constraint firstAttribute="height" constant="52" id="vuw-Hj-qz2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" backgroundImage="UI Buttons_Back_Orange">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="homeButtonTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="Uys-MO-BiX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97935718299999996" green="0.95525664089999995" blue="0.84704262019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="9z2-Ig-cBD" firstAttribute="leading" secondItem="v4q-5R-4vR" secondAttribute="leading" id="b9P-Qt-sAH"/>
+                            <constraint firstItem="ACd-E9-cGE" firstAttribute="leading" secondItem="9LL-eJ-fu7" secondAttribute="leading" id="hr1-8p-iOP"/>
+                            <constraint firstItem="9z2-Ig-cBD" firstAttribute="top" secondItem="v4q-5R-4vR" secondAttribute="top" constant="20" id="q4c-wc-Wcp"/>
+                            <constraint firstItem="ACd-E9-cGE" firstAttribute="top" secondItem="9LL-eJ-fu7" secondAttribute="top" id="wXN-bz-TWn"/>
+                            <constraint firstItem="ACd-E9-cGE" firstAttribute="bottom" secondItem="9LL-eJ-fu7" secondAttribute="bottom" id="xGG-rz-p94"/>
+                            <constraint firstItem="ACd-E9-cGE" firstAttribute="trailing" secondItem="9LL-eJ-fu7" secondAttribute="trailing" id="zzZ-mQ-dVp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v4q-5R-4vR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0XE-zV-TVE"/>
+                    <connections>
+                        <segue destination="bo1-os-NbK" kind="show" identifier="aThroughZ" id="W6R-O7-liG"/>
+                        <segue destination="C50-TJ-yLr" kind="show" identifier="bAndDTapped" id="KpZ-Zf-0PD"/>
+                        <segue destination="mfT-s6-ldz" kind="show" identifier="pGAndQTapped" id="6Av-KY-mRl"/>
+                        <segue destination="EbW-Xz-ygt" kind="show" identifier="home" id="W2e-zT-pKg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6M-cn-sV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="485" y="1515"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="IRd-9B-Gyb"/>
         <segue reference="qRq-Ku-gCI"/>
         <segue reference="lk7-ni-Qgd"/>
         <segue reference="8ur-bC-BBV"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="bRp-7B-ZAM"/>
-        <segue reference="YSj-T5-laj"/>
-        <segue reference="41T-yv-9Ha"/>
+        <segue reference="5IO-Gm-Cu4"/>
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024.png" width="1024" height="1024"/>
         <image name="ARexample" width="682.5" height="384"/>
-        <image name="AntFace" width="243" height="281.5"/>
         <image name="B" width="750" height="1000"/>
         <image name="BookAnimation.gif" width="960" height="540"/>
         <image name="BookLine" width="375" height="500"/>
         <image name="BookLower" width="480" height="270"/>
         <image name="BookUpper" width="480" height="270"/>
-        <image name="Bri_Double1.1" width="1536" height="414"/>
-        <image name="Bri_Double1.2" width="1536" height="414"/>
-        <image name="Bri_Single1" width="1536" height="414"/>
-        <image name="Bri_Single5" width="1536" height="414"/>
-        <image name="Circle" width="375" height="500"/>
+        <image name="Bri_Double5.1" width="1536" height="414"/>
+        <image name="Bri_Double5.2" width="1536" height="414"/>
+        <image name="Circle.png" width="180" height="240"/>
         <image name="Coin" width="176.5" height="177"/>
-        <image name="DiagonalCross" width="375" height="500"/>
-        <image name="DiagonalLeft" width="375" height="500"/>
-        <image name="DiagonalRight" width="375" height="500"/>
+        <image name="DiagonalCross.png" width="180" height="240"/>
+        <image name="DiagonalLeft.png" width="180" height="240"/>
         <image name="FlyerImage1" width="406" height="332"/>
         <image name="FlyerImage2" width="317.5" height="247.5"/>
-        <image name="Horizontal" width="375" height="500"/>
+        <image name="HappyFace" width="193" height="193"/>
+        <image name="Horizontal.png" width="180" height="240"/>
+        <image name="Jamey_Double3.1" width="1536" height="414"/>
+        <image name="Jamey_Double3.2" width="1536" height="414"/>
         <image name="Jamey_Single5" width="1536" height="414"/>
+        <image name="LetterMatching" width="900" height="150"/>
+        <image name="LetterMatchingAZ" width="1200" height="150"/>
+        <image name="LetterMatchingbd" width="1200" height="150"/>
+        <image name="LetterMatchingpgq" width="1300" height="150"/>
         <image name="PerpCross" width="375" height="500"/>
         <image name="PlayBtn" width="256" height="256"/>
+        <image name="Practice" width="474" height="150"/>
         <image name="PuzzleImage_2" width="1024" height="1366"/>
         <image name="Reset" width="256" height="256"/>
         <image name="ShowBtn" width="256" height="256"/>
-        <image name="Square" width="375" height="500"/>
-        <image name="Triangle" width="375" height="500"/>
-        <image name="Vertical" width="375" height="500"/>
+        <image name="Square.png" width="180" height="240"/>
+        <image name="Triangle.png" width="180" height="240"/>
+        <image name="UI Buttons_Back_Blue" width="509" height="200"/>
+        <image name="UI Buttons_Back_Orange" width="509" height="200"/>
+        <image name="UI Buttons_Back_Violet" width="509" height="200"/>
+        <image name="Vertical.png" width="180" height="240"/>
         <image name="YouWin" width="1024" height="1024"/>
         <image name="dashLetterBG" width="489" height="700"/>
         <image name="linedPaper1" width="2100" height="1449"/>

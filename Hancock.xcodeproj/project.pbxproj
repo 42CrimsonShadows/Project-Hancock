@@ -44,6 +44,8 @@
 		A0E9B7B623EBA70200929F4A /* PlayWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B523EBA70200929F4A /* PlayWalk.swift */; };
 		A0E9B7B823EBAAA600929F4A /* StopWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B723EBAAA600929F4A /* StopWalk.swift */; };
 		A0E9B7BA23EBAAE500929F4A /* LetterComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */; };
+		A0FDC33124F19B1300748E18 /* FlowerLoading.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0FDC32F24F19B1200748E18 /* FlowerLoading.gif */; };
+		A0FDC33224F19B1300748E18 /* RainbowLoadGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0FDC33024F19B1200748E18 /* RainbowLoadGIF.gif */; };
 		A713540624ACC7CE00E6D656 /* FreeWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713540524ACC7CE00E6D656 /* FreeWriteViewController.swift */; };
 		A72C3B8824E5984F001BAE9D /* V.gif in Resources */ = {isa = PBXBuildFile; fileRef = A72C3B8724E5984F001BAE9D /* V.gif */; };
 		A78A6C5324A0F7E200F32D3D /* LevelTwoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A6C5224A0F7E200F32D3D /* LevelTwoMenuViewController.swift */; };
@@ -148,6 +150,8 @@
 		A0E9B7B523EBA70200929F4A /* PlayWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWalk.swift; sourceTree = "<group>"; };
 		A0E9B7B723EBAAA600929F4A /* StopWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWalk.swift; sourceTree = "<group>"; };
 		A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterComplete.swift; sourceTree = "<group>"; };
+		A0FDC32F24F19B1200748E18 /* FlowerLoading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FlowerLoading.gif; sourceTree = "<group>"; };
+		A0FDC33024F19B1200748E18 /* RainbowLoadGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = RainbowLoadGIF.gif; sourceTree = "<group>"; };
 		A713540524ACC7CE00E6D656 /* FreeWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeWriteViewController.swift; sourceTree = "<group>"; };
 		A72C3B8724E5984F001BAE9D /* V.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = V.gif; sourceTree = "<group>"; };
 		A78A6C5224A0F7E200F32D3D /* LevelTwoMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoMenuViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 		A0A028BA227CA9F500A7C787 /* Hancock */ = {
 			isa = PBXGroup;
 			children = (
+				A0FDC32F24F19B1200748E18 /* FlowerLoading.gif */,
+				A0FDC33024F19B1200748E18 /* RainbowLoadGIF.gif */,
 				A072B02324EDCC4100736A74 /* 2DLetterAnimation */,
 				A7CBF4F324E4DD950066988F /* LetterGifs */,
 				A0E86BE122C08F150009A214 /* Loading.gif */,
@@ -476,6 +482,7 @@
 				A7ACFFE024E5CAB3004F1E87 /* qLower.gif in Resources */,
 				A7CBF51C24E594150066988F /* F.gif in Resources */,
 				A7CBF52224E594150066988F /* A.gif in Resources */,
+				A0FDC33224F19B1300748E18 /* RainbowLoadGIF.gif in Resources */,
 				A7CBF52324E594150066988F /* D.gif in Resources */,
 				A7ACFFE324E5CAB3004F1E87 /* fLower.gif in Resources */,
 				A7ACFFEC24E5CAB3004F1E87 /* wLower.gif in Resources */,
@@ -484,6 +491,7 @@
 				A051592623957A070026485B /* LaunchScreen.storyboard in Resources */,
 				A7CBF52124E594150066988F /* Z.gif in Resources */,
 				A7CBF52024E594150066988F /* X.gif in Resources */,
+				A0FDC33124F19B1300748E18 /* FlowerLoading.gif in Resources */,
 				A08A2D5522C02AA40076B814 /* Anthony-Chillaxing.gif in Resources */,
 				A7ACFFDF24E5CAB3004F1E87 /* jLower.gif in Resources */,
 				A7CBF51D24E594150066988F /* N.gif in Resources */,
