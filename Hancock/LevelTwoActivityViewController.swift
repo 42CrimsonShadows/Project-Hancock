@@ -151,7 +151,7 @@ class LevelTwoActivityViewController: UIViewController {
             
         }
         // make button corners rounded
-        doneBtn.layer.cornerRadius = 10
+       // doneBtn.layer.cornerRadius = 10
         replaySoundBtn.layer.cornerRadius = 10
         resetCanvasBtn.layer.cornerRadius = 10
         
@@ -318,7 +318,7 @@ class LevelTwoActivityViewController: UIViewController {
     }
     
     private func goBack() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute:{
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute:{
             self.dismiss(animated: false, completion: nil)
         })
     }
