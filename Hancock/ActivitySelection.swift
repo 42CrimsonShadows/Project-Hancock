@@ -584,16 +584,16 @@ public class ActivitySelection {
         //add the B CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
         
         //Line #1
-        activityPoints = [[CGFloat(0.23),CGFloat(0.12)], //first point x, y
-            [CGFloat(0.23),CGFloat(0.35)], //first MidPoint1 x, y
-            [CGFloat(0.23),CGFloat(0.6)], //first MidPoint2 x, y
-            [CGFloat(0.23),CGFloat(0.85)], //second point x, y
+        activityPoints = [[CGFloat(0.33),CGFloat(0.12)], //first point x, y
+            [CGFloat(0.35),CGFloat(0.35)], //first MidPoint1 x, y
+            [CGFloat(0.35),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.35),CGFloat(0.9)], //second point x, y
             
             //Line #2
-            [CGFloat(0.22),CGFloat(0.12)], //third point x, y... (actually first point again)
-            [CGFloat(0.6),CGFloat(0.15)], //third MidPoint1 x, y
-            [CGFloat(0.6),CGFloat(0.45)], //third MidPoint2 x, y
-            [CGFloat(0.22),CGFloat(0.5)]] //fourth point
+            [CGFloat(0.35),CGFloat(0.50)], //third point x, y... (actually first point again)
+            [CGFloat(0.70),CGFloat(0.60)], //third MidPoint1 x, y
+            [CGFloat(0.70),CGFloat(0.85)], //third MidPoint2 x, y
+            [CGFloat(0.35),CGFloat(0.9)]] //fourth point
         
         let Underlayb = UIImage(named: "art.scnassets/LetterImages/b-.png")
         letterUnderlay = UIImageView(image: Underlayb)
