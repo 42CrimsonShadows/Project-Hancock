@@ -775,7 +775,7 @@ extension ViewController {
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration18"]!, fileExtension: "mp3")
                 
                 workItem3 = DispatchWorkItem{
-                        //Patricia looks arounf for Nikki
+                        //Patricia looks around for Nikki
                         self.patricia6!.isPaused = true
                         self.stopWalkAnimation()
                 }
@@ -1092,75 +1092,11 @@ extension ViewController {
 
             case .Chapter9:
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
+                //self.charcterSixIdle.isPaused = true
+                print("This is after 4.1 seconds")
+                self.startAnimateSideCharacter(key: "SideCharacter5Approach", sideCharacter: "Mikkena")
+                self.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Mikkena")
                 
-                // Put Particles on Heidi
-                let particles = self.createParticleSystem()
-                particleItem2 = DispatchWorkItem {
-                    self.charcterFiveIdle.childNode(withName: "HeidiGroup", recursively: false)!.removeParticleSystem(particles)
-                }
-                particleItem1 = DispatchWorkItem {
-                    self.charcterFiveIdle.childNode(withName: "HeidiGroup", recursively: false)!.addParticleSystem(particles)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.particleItem2!)
-                }
-
-                workItem2 = DispatchWorkItem{
-                    self.stopWalkAnimation()
-                }
-                workItem1 = DispatchWorkItem{
-                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
-                    
-                    //Patricia flies back up to find Heidi
-                    self.patricia8!.isHidden = false
-                    self.patricia8!.isPaused = false
-                    self.patriciaNumber = 8
-                    self.patriciaFlying = true
-                    self.patricia7!.isHidden = true
-                    self.patricia7!.isPaused = true
-                    
-                    //Brennon gets a new Balloon
-                    let balloon = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
-                    balloon!.isHidden = false
-                    
-                    //Brennon comes out from the Balloon stand
-                    let move1 = SCNAction.move(to: SCNVector3(-9.7,  0.25, -8), duration: 2)
-                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-55)), z: 0, duration: 1)
-                    let move2 = SCNAction.move(to: SCNVector3(-11.15, 0.25, -7), duration: 2)
-                    let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
-
-                    self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.particleItem1!)
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: self.workItem2!)
-                }
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: workItem1!)
-                
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
-//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
-//
-//                    //Patricia flies back up to find Heidi
-//                    self.patricia8!.isHidden = false
-//                    self.patricia8!.isPaused = false
-//                    self.patricia7!.isHidden = true
-//                    self.patricia7!.isPaused = true
-//
-//                    //Brennon gets a new Balloon
-//                    let balloon = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
-//                    balloon!.isHidden = false
-//
-//                    //Brennon comes out from the Balloon stand
-//                    let move1 = SCNAction.move(to: SCNVector3(-9.7,  0.25, -8), duration: 2)
-//                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-55)), z: 0, duration: 1)
-//                    let move2 = SCNAction.move(to: SCNVector3(-11.15, 0.25, -7), duration: 2)
-//                    let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
-//
-//                    self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
-//
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {
-//                        self.stopWalkAnimation()
-//                    })
-//                })
                 print("do chapter 9 stuff")
             case .Chapter10:
                 workItem2 = DispatchWorkItem{
@@ -1656,10 +1592,76 @@ extension ViewController {
                 
                 print("do chapter 8 stuff")
             case .Chapter9:
-                self.patricia9!.isPaused = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: {
-                    self.stopWalkAnimation()
-                })
+                // Put Particles on Heidi
+            let particles = self.createParticleSystem()
+            particleItem2 = DispatchWorkItem {
+                self.charcterSixIdle.childNode(withName: "HeidiGroup", recursively: false)!.removeParticleSystem(particles)
+            }
+            particleItem1 = DispatchWorkItem {
+                self.charcterSixIdle.childNode(withName: "HeidiGroup", recursively: false)!.addParticleSystem(particles)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.particleItem2!)
+            }
+
+            workItem2 = DispatchWorkItem{
+                self.stopWalkAnimation()
+            }
+            workItem1 = DispatchWorkItem{
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
+                
+                //Patricia flies back up to find Heidi
+                self.patricia8!.isHidden = false
+                self.patricia8!.isPaused = false
+                self.patriciaNumber = 8
+                self.patriciaFlying = true
+                self.patricia7!.isHidden = true
+                self.patricia7!.isPaused = true
+                
+                //Brennon gets a new Balloon
+                let balloon = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
+                balloon!.isHidden = false
+                
+                //Brennon comes out from the Balloon stand
+                let move1 = SCNAction.move(to: SCNVector3(-9.7,  0.25, -8), duration: 2)
+                let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-55)), z: 0, duration: 1)
+                let move2 = SCNAction.move(to: SCNVector3(-11.15, 0.25, -7), duration: 2)
+                let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
+
+                self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.particleItem1!)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: self.workItem2!)
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: workItem1!)
+            
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
+//                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
+//
+//                    //Patricia flies back up to find Heidi
+//                    self.patricia8!.isHidden = false
+//                    self.patricia8!.isPaused = false
+//                    self.patricia7!.isHidden = true
+//                    self.patricia7!.isPaused = true
+//
+//                    //Brennon gets a new Balloon
+//                    let balloon = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
+//                    balloon!.isHidden = false
+//
+//                    //Brennon comes out from the Balloon stand
+//                    let move1 = SCNAction.move(to: SCNVector3(-9.7,  0.25, -8), duration: 2)
+//                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(-55)), z: 0, duration: 1)
+//                    let move2 = SCNAction.move(to: SCNVector3(-11.15, 0.25, -7), duration: 2)
+//                    let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
+//
+//                    self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+//
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {
+//                        self.stopWalkAnimation()
+//                    })
+//                })
+                
+                
                 
                 print("do chapter 9 stuff")
             case .Chapter10:
@@ -2002,6 +2004,10 @@ extension ViewController {
             case .Chapter8:
                 print("do chapter 8 stuff")
             case .Chapter9:
+                self.patricia9!.isPaused = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: {
+                    self.stopWalkAnimation()
+                })
                 print("do chapter 9 stuff")
             case .Chapter10:
                 print("do chapter 10 stuf")

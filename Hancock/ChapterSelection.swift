@@ -20,6 +20,7 @@ class ChapterSelection {
     let SideCharacter3idleNode = SCNNode()
     let SideCharacter4idleNode = SCNNode()
     let SideCharacter5idleNode = SCNNode()
+    let SideCharacter6idleNode = SCNNode()
     let animationNode = SCNNode()
     let letter1Node = SCNNode()
     let letter2Node = SCNNode()
@@ -1513,14 +1514,24 @@ class ChapterSelection {
         SideCharacter4idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(30), 0)
         
         //Load Idle Animation Node
-        let idleHeidiScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed.dae")!
-        for child in idleHeidiScene.rootNode.childNodes {
+        let idleMikkenaScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@FigureEightFixed.dae")!
+        for child in idleMikkenaScene.rootNode.childNodes {
             SideCharacter5idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter5idleNode)
         SideCharacter5idleNode.scale = SCNVector3(1, 1, 1)
         SideCharacter5idleNode.position = SCNVector3(0, 0, 0)
-        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        SideCharacter5idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(0), 0)
+
+        //Load Idle Animation Node
+        let idleHeidiScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed.dae")!
+        for child in idleHeidiScene.rootNode.childNodes {
+            SideCharacter6idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter6idleNode)
+        SideCharacter6idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter6idleNode.position = SCNVector3(0, 0, 0)
+        SideCharacter6idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         
         
         //load all the DAE animations for this Chapter
@@ -1547,7 +1558,12 @@ class ChapterSelection {
         prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Nikki/Nikki@IdleFixed", animationIdentifier: "Nikki@IdleFixed-1")
 
         //load animation for side character 5
-        prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed", animationIdentifier: "Heidi@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@FigureEightFixed", animationIdentifier: "Mikkena@FigureEightFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Approach", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@ApproachFixed", animationIdentifier: "Mikkena@ApproachFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Return", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@ReturnFixed", animationIdentifier: "Mikkena@ReturnFixed-1")
+
+        //load animation for side character 6
+        prepareAnimation(withKey: "SideCharacter6Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed", animationIdentifier: "Heidi@IdleFixed-1")
 
         chapter9NodeArray.append(storyNode)
         
@@ -1588,21 +1604,34 @@ class ChapterSelection {
                                   "Narration23" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration24" : "ch1-E-Line3_01", //3 Amazing
                                   
+                                  //letter m
+                                  "Narration25" : "ch4L-M-Transition1",
+                                  "Narration26" : "ch4L-M-Transition2",
+                                  "Narration27" : "ch4L-M-Intro1",
+                                  "Narration28" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration29" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration30" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration31" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration32" : "ch1-E-Line3_02", //Yellow to Purple
+                                  "Narration33" : "ch1-E-Line4_01", //4 Perfect
+                                  "Narration34" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                  "Narration35" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+                                  
                                   //letter h
-                                  "Narration25" : "ch4L-H-Transition1",
-                                  "Narration26" : "ch4L-H-Transition2",
-                                  "Narration27" : "ch4L-H-Transition3",
-                                  "Narration28" : "ch4L-H-Intro1",
-                                  "Narration29" : "ch1-E-Line1",    //1 Green to Red
-                                  "Narration30" : "ch1-E-Line2_01", //2 Great Job
-                                  "Narration31" : "ch1-E-Line2_02", //Blue to Orange
-                                  "Narration32" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration36" : "ch4L-H-Transition1",
+                                  "Narration37" : "ch4L-H-Transition2",
+                                  "Narration38" : "ch4L-H-Transition3",
+                                  "Narration39" : "ch4L-H-Intro1",
+                                  "Narration40" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration41" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration42" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration43" : "ch1-E-Line3_01", //3 Amazing
                                   
                                   //Final
-                                  "Narration33" : "ch4L-Final1",
-                                  "Narration34" : "ch4L-Final2",
-                                  "Narration35" : "ch4L-Final3",
-                                  "Narration36" : "ch4L-Final4",
+                                  "Narration44" : "ch4L-Final1",
+                                  "Narration45" : "ch4L-Final2",
+                                  "Narration46" : "ch4L-Final3",
+                                  "Narration47" : "ch4L-Final4",
                                   
                                   //FIXME: Add background sound for fairground/racetrack
                                   //FIXME: Add sound for patricia flying
