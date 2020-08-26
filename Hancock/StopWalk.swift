@@ -1340,7 +1340,7 @@ extension ViewController{
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
                     playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
-                    
+                    self.shatterLetterFour = true
                     workItem1 = DispatchWorkItem {
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
@@ -1859,7 +1859,7 @@ extension ViewController{
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration39"]!, fileExtension: "mp3")
                     self.patricia8!.isPaused = true
                     
-                    self.shatterLetterFour = true
+                    self.shatterLetterFive = true
                     
                     workItem1 = DispatchWorkItem{
                         self.particleItem3?.cancel()
@@ -2172,7 +2172,7 @@ extension ViewController{
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
                     playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration45"]!, fileExtension: "mp3")
-                    
+                    self.shatterLetterSix = true
                     workItem1 = DispatchWorkItem {
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration46"]!, fileExtension: "mp3")

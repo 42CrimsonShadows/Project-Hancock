@@ -862,6 +862,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         charcterFourIdle?.isHidden = false
         charcterFiveIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter5", recursively: true)
         charcterFiveIdle?.isHidden = false
+        charcterSixIdle = sceneView.scene.rootNode.childNode(withName: "SideCharacter6", recursively: true)
+        charcterSixIdle?.isHidden = false
         
         //generic variable for level floor
         mainFloor = sceneView.scene.rootNode.childNode(withName: "LVLFloor", recursively: true)

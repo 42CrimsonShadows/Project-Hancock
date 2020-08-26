@@ -551,7 +551,6 @@ extension ViewController{
 
                         print("Nothing to shatter for this chapter")
                     case .Chapter9:
-                        // TODO: NARRATION
                         playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3")
                         workItem1 = DispatchWorkItem {
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration37"]!, fileExtension: "mp3")
