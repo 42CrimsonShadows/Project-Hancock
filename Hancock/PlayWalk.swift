@@ -1095,14 +1095,18 @@ extension ViewController {
                 // Mikkena approaches Patricia
                 self.startAnimateSideCharacter(key: "SideCharacter5Approach", sideCharacter: "Mikkena")
                 self.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Mikkena")
-                self.charcterFiveIdle.isPaused = true
+                
                 // TODO: Patricia turn to mikenna animation
                 
                 
-                workItem1 = DispatchWorkItem{
+                workItem2 = DispatchWorkItem{
                    self.stopWalkAnimation()
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute:self.workItem1!)
+                workItem1 = DispatchWorkItem{
+                    self.charcterFiveIdle.isPaused = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute:self.workItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem1!)
                 
                 print("do chapter 9 stuff playWalk4")
             case .Chapter10:
