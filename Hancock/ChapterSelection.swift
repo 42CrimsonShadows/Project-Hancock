@@ -82,7 +82,7 @@ class ChapterSelection {
         case 9:
             print("Loading Chapter ", picked)
             chapterSelectedNodeArray = loadChapter9NodeFiles()
-            chapterSelectedLetterArray = ["p", "r", "n", "h", "B"]
+            chapterSelectedLetterArray = ["p", "r", "n", "m", "h", "b"]
             chapterSelectedSoundDict = loadChapter9SoundFiles()
         case 10:
             print("Loading Chapter ", picked)
@@ -1626,12 +1626,20 @@ class ChapterSelection {
                                   "Narration41" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration42" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration43" : "ch1-E-Line3_01", //3 Amazing
+            
+                                  //letter b
+                                  "Narration44" : "ch4L-H-Outro1",
+                                  "Narration45" : "ch4L-Final1",
+                                  "Narration46" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration47" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration48" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration49" : "ch1-E-Line3_01", //3 Amazing
                                   
                                   //Final
-                                  "Narration44" : "ch4L-Final1",
-                                  "Narration45" : "ch4L-Final2",
-                                  "Narration46" : "ch4L-Final3",
-                                  "Narration47" : "ch4L-Final4",
+                                  "Narration50" : "ch4L-Final2",
+                                  "Narration51" : "ch4L-Final3",
+                                  "Narration52" : "ch4L-Final4",
+                                  "Narration53" : "ch4L-Final5",
                                   
                                   //FIXME: Add background sound for fairground/racetrack
                                   //FIXME: Add sound for patricia flying

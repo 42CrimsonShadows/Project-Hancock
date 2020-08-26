@@ -1092,12 +1092,19 @@ extension ViewController {
 
             case .Chapter9:
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
-                //self.charcterSixIdle.isPaused = true
-                print("This is after 4.1 seconds")
+                // Mikkena approaches Patricia
                 self.startAnimateSideCharacter(key: "SideCharacter5Approach", sideCharacter: "Mikkena")
                 self.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Mikkena")
+                self.charcterFiveIdle.isPaused = true
+                // TODO: Patricia turn to mikenna animation
                 
-                print("do chapter 9 stuff")
+                
+                workItem1 = DispatchWorkItem{
+                   self.stopWalkAnimation()
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute:self.workItem1!)
+                
+                print("do chapter 9 stuff playWalk4")
             case .Chapter10:
                 workItem2 = DispatchWorkItem{
                         //Finn walks over to the Zambomba
@@ -1606,7 +1613,7 @@ extension ViewController {
                 self.stopWalkAnimation()
             }
             workItem1 = DispatchWorkItem{
-                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration38"]!, fileExtension: "mp3")
                 
                 //Patricia flies back up to find Heidi
                 self.patricia8!.isHidden = false

@@ -23,6 +23,141 @@ extension ViewController{
                     case .Chapter10:
                         print("Nothing to shatter for this chapter")
                     case .Chapter9:
+                        //patricia lands by Brennon
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration50"]!, fileExtension: "mp3")
+                    
+                    self.shatterLetterFive = true
+                    
+                    // Light on Patricia
+                    let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                    lightNode.position = SCNVector3Make(0, 5, 0)
+                    lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                    lightItem2 = DispatchWorkItem{
+                        lightNode.removeFromParentNode()
+                    }
+                    lightItem1 = DispatchWorkItem{
+                        self.patricia1?.childNode(withName: "Patricia", recursively: false)!.addChildNode(lightNode)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.lightItem1!)
+                    
+                    workItem6 = DispatchWorkItem{
+                        self.resetGame()
+                    }
+                    workItem5 = DispatchWorkItem{
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration53"]!, fileExtension: "mp3")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem6!)
+                    }
+                    workItem4 = DispatchWorkItem{
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration52"]!, fileExtension: "mp3")
+                        
+                        //Patricia is off to the races
+                        self.patricia11!.isHidden = false
+                        self.patricia11!.isPaused = false
+                        self.patricia10!.isHidden = true
+                        self.patricia10!.isPaused = true
+                        
+                        //Brennon is off to the races
+                        let rotate1 = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)
+                        let move1 = SCNAction.move(to: SCNVector3(-9.7, 0.25, 13.7), duration: 8)
+                        let brennonMoveSeq = SCNAction.sequence([rotate1, move1])
+                         
+                         self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem5!)
+                            
+                    }
+                    workItem3 = DispatchWorkItem{
+                        //Brennon gives Patricia her Balloon
+                        let balloon4Patricia = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
+                        balloon4Patricia!.isHidden = true
+                        
+                        //Patricia Recieves her Balloon
+                        let returnedBalloon = self.patricia10?.childNode(withName: "BrennonsBalloon", recursively: true)
+                        returnedBalloon!.isHidden = false
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem4!)
+                            
+                    }
+                    workItem2 = DispatchWorkItem{
+                        //Patricia give Brennon back his Balloon
+                        let returnedBalloon = self.patricia10?.childNode(withName: "BrennonsBalloon", recursively: true)
+                        returnedBalloon!.isHidden = true
+                        
+                        //Brennon receives his Balloon
+                        let balloon = self.charcterOneIdle.childNode(withName: "Balloon", recursively: true)
+                        balloon!.isHidden = false
+                        
+                        //Brennon thanks Patricia and gives her a Balloon too
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration51"]!, fileExtension: "mp3")
+                                                
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem3!)
+                    }
+                    workItem1 = DispatchWorkItem{
+                        self.patricia10!.isHidden = false
+                        self.patricia10!.isPaused = false
+                        self.particleItem3?.cancel()
+                        self.patricia9!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                        self.patriciaNumber = 0
+                        self.patriciaFlying = false
+                        self.patricia9!.isHidden = true
+                        self.patricia9!.isPaused = true
+                                                                
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem2!)
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: workItem1!)
+                    
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
+//                        self.patricia10!.isHidden = false
+//                        self.patricia10!.isPaused = false
+//                        self.patricia9!.isHidden = true
+//                        self.patricia9!.isPaused = true
+//
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//
+//                            //Patricia give Brennon back his Balloon
+//                            let returnedBalloon = self.patricia10?.childNode(withName: "BrennonsBalloon", recursively: true)
+//                            returnedBalloon!.isHidden = true
+//
+//                            //Brennon receives his Balloon
+//                            let balloon = self.charcterOneIdle.childNode(withName: "Balloon", recursively: true)
+//                            balloon!.isHidden = false
+//
+//                            //Brennon thanks Patricia and gives her a Balloon too
+//                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3")
+//
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+//                                //Brennon gives Patricia her Balloon
+//                                let balloon4Patricia = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
+//                                balloon4Patricia!.isHidden = true
+//
+//                                //Patricia Recieves her Balloon
+//                                returnedBalloon!.isHidden = false
+//
+//                                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+//                                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3")
+//
+//                                    //Patricia is off to the races
+//                                    self.patricia11!.isHidden = false
+//                                    self.patricia11!.isPaused = false
+//                                    self.patricia10!.isHidden = true
+//                                    self.patricia10!.isPaused = true
+//
+//                                    //Brennon is off to the races
+//                                    let rotate1 = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)
+//                                    let move1 = SCNAction.move(to: SCNVector3(-9.7, 0.25, 13.7), duration: 8)
+//                                    let brennonMoveSeq = SCNAction.sequence([rotate1, move1])
+//
+//                                     self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+//
+//                                    DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
+//                                        self.resetGame()
+//                                    })
+//                                })
+//                            })
+//                        })
+//                    })
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
                         
@@ -233,6 +368,17 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem1!)
                         print("Nothing to shatter for this chapter")
                     case .Chapter9:
+                        //Patricia thanks Heidi after she tells him where Brennon is and flies off
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3")
+                        
+                        workItem1 = DispatchWorkItem{
+                            self.playWalkAnimation()
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute:self.workItem1!)
+                        
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+//                            self.playWalkAnimation()
+//                        })
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
                         print("Nothing to shatter for this chapter")
@@ -405,18 +551,13 @@ extension ViewController{
 
                         print("Nothing to shatter for this chapter")
                     case .Chapter9:
-                        //Patricia thanks Heidi after she tells him where Brennon is and flies off
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
-                        
-                        workItem1 = DispatchWorkItem{
+                        // TODO: NARRATION
+                        playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3")
+                        workItem1 = DispatchWorkItem {
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration37"]!, fileExtension: "mp3")
                             self.playWalkAnimation()
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute:self.workItem1!)
-                        
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
-//                            self.playWalkAnimation()
-//                        })
-                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
                         //letter E completed, starting final sequence
@@ -689,12 +830,10 @@ extension ViewController{
                     case .Chapter9:
                         //Patricia lands down by Nikki
                         self.patricia7!.isPaused = false
-                        self.startAnimateSideCharacter(key: "SideCharacter5Approach", sideCharacter: "Mikkena")
-                        self.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Mikkena")
                         
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration25"]!, fileExtension: "mp3")
                         
-                        workItem2 = DispatchWorkItem{
+                        workItem1 = DispatchWorkItem{
                             self.particleItem3?.cancel()
                             self.patricia7!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
                             self.patriciaNumber = 0
@@ -703,18 +842,13 @@ extension ViewController{
                             self.playWalkAnimation()
                         }
                         
-                        workItem1 = DispatchWorkItem{
-                           self.charcterFiveIdle.isPaused = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 8.3, execute:self.workItem2!)
-
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.1, execute:self.workItem1!)
-                        
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {
-//                            self.patricia7!.isPaused = true
-//
-//                            self.playWalkAnimation()
-//                        })
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute:self.workItem1!)
+                                                
+                        //                        DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: {
+                        //                            self.patricia7!.isPaused = true
+                        //
+                        //                            self.playWalkAnimation()
+                        //                        })
                         
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
