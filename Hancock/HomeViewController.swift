@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         print("Successfully logged out")
         user = ""
         pass = ""
-        self.dismiss(animated: false, completion: nil)
+        performSegue(withIdentifier: "backToLogin", sender: self)
     }
     
     @objc func tappedUpper(){
