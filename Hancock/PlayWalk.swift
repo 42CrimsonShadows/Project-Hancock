@@ -1096,9 +1096,6 @@ extension ViewController {
                 self.startAnimateSideCharacter(key: "SideCharacter5Approach", sideCharacter: "Mikkena")
                 self.stopAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Mikkena")
                 
-                // TODO: Patricia turn to mikenna animation
-                
-                
                 workItem2 = DispatchWorkItem{
                    self.stopWalkAnimation()
                 }
@@ -1613,11 +1610,14 @@ extension ViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.particleItem2!)
             }
 
-            workItem2 = DispatchWorkItem{
+            workItem3 = DispatchWorkItem{
                 self.stopWalkAnimation()
             }
-            workItem1 = DispatchWorkItem{
+            workItem2 = DispatchWorkItem{
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration38"]!, fileExtension: "mp3")
+                // Mikkena goes back to idle
+                self.startAnimateSideCharacter(key: "SideCharacter5Idle", sideCharacter: "Mikkena")
+                self.stopAnimateSideCharacter(key: "SideCharacter5Return", sideCharacter: "Mikkena")
                 
                 //Patricia flies back up to find Heidi
                 self.patricia8!.isHidden = false
@@ -1641,10 +1641,16 @@ extension ViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.particleItem1!)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: self.workItem2!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: self.workItem3!)
+            }
+            workItem1 = DispatchWorkItem {
+                // Mikkena returns
+                self.startAnimateSideCharacter(key: "SideCharacter5Return", sideCharacter: "Mikkena")
+                self.stopAnimateSideCharacter(key: "SideCharacter5Approach", sideCharacter: "Mikkena")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: self.workItem2!)
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: workItem1!)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 7.5, execute: workItem1!)
             
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: {
 //                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")

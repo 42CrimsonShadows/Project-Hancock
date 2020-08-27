@@ -2173,11 +2173,16 @@ extension ViewController{
                 case .Chapter9:
                     playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration45"]!, fileExtension: "mp3")
                     self.shatterLetterSix = true
-                    workItem1 = DispatchWorkItem {
+                    workItem2 = DispatchWorkItem {
+                        self.patricia9!.isPaused = true
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration46"]!, fileExtension: "mp3")
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: workItem1!)
+                    workItem1 = DispatchWorkItem {
+                        self.patricia9!.isPaused = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem2!)
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
                     print("stopwalk chapter 8 stuff")
