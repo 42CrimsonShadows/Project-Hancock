@@ -14,6 +14,7 @@ class FreeWriteViewController: UIViewController {
     @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var writingView: UIView!
     @IBOutlet weak var backgroundIV: UIImageView!
+    //@IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var paperTypeBtn1: UIButton!
     @IBOutlet weak var paperTypeBtn2: UIButton!
@@ -27,8 +28,11 @@ class FreeWriteViewController: UIViewController {
     @IBOutlet weak var penScaleBtn4: UIButton!
     private var paperNum: Int = 1
     
-        
-    // MARK: - ViewDidLoad
+    //LM TEst
+    
+  
+    
+            // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -121,7 +125,7 @@ class FreeWriteViewController: UIViewController {
     @IBAction func lineScalePressed(_ sender: UIButton) {
         // line scale is currently only used for paper type 1
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
-        if(sender.currentTitle == "Small") {
+        if(sender.currentTitle == "-") {
             // change background image
             if (paperNum == 1) {
                 paperScaleBtn1.layer.borderWidth = 4
@@ -136,7 +140,7 @@ class FreeWriteViewController: UIViewController {
                 backgroundIV.image = UIImage(named: "linedPaper1")
             }
         }
-        else if (sender.currentTitle == "Med") {
+        else if (sender.currentTitle == "--") {
             if (paperNum == 1) {
                 paperScaleBtn1.layer.borderWidth = 1
                 paperScaleBtn2.layer.borderWidth = 4
@@ -150,7 +154,7 @@ class FreeWriteViewController: UIViewController {
                 backgroundIV.image = UIImage(named: "linedPaper2")
             }
         }
-        else if (sender.currentTitle == "Big") {
+        else if (sender.currentTitle == "---") {
             if (paperNum == 1) {
                 paperScaleBtn1.layer.borderWidth = 1
                 paperScaleBtn2.layer.borderWidth = 1
@@ -174,28 +178,28 @@ class FreeWriteViewController: UIViewController {
     @IBAction func penLinePressed(_ sender: UIButton) {
         // pen linewidth probably needs size adjustments based on feedback
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
-        if(sender.currentTitle == "Tiny") {
+        if(sender.currentTitle == ".") {
             penScaleBtn1.layer.borderWidth = 4
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 1
             canvasView.lineWidth = 10
         }
-        else if (sender.currentTitle == "Small") {
+        else if (sender.currentTitle == "..") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 4
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 1
             canvasView.lineWidth = 20
         }
-        else if (sender.currentTitle == "Med") {
+        else if (sender.currentTitle == "...") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 4
             penScaleBtn4.layer.borderWidth = 1
             canvasView.lineWidth = 30
         }
-        else if (sender.currentTitle == "Big") {
+        else if (sender.currentTitle == "....") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 1
@@ -243,6 +247,7 @@ class FreeWriteViewController: UIViewController {
     private func goBack() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute:{
             self.dismiss(animated: false, completion: nil)
+       
         })
     }
 }

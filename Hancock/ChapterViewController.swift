@@ -68,6 +68,11 @@ class ChapterViewController: UIViewController {
 //    let concept9 = UIImage (imageLiteralResourceName: "concept9")
 //    let concept10 = UIImage (imageLiteralResourceName: "concept10")
     
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "vc3toHomeScreen", sender: self)
+    }
+    
+    
     @IBAction func cpt1Clicked(_ sender: Any) {
         currentChapter = .Chapter1
         //conceptView.image = concept1

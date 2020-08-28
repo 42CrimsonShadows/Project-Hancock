@@ -1000,22 +1000,31 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
              testImage.image = #imageLiteral(resourceName: "Chapter 10 Background")
         case "-":
             activitySelection.loadActivityHorizontal()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "/":
             activitySelection.loadActivityDiagonalRight()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "|":
             activitySelection.loadActivityVertical()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "'\'":
             activitySelection.loadActivityDiagonalLeft()
+            testImage.image = #imageLiteral(resourceName: "Chapter 4 Background")
         case "cross+":
             activitySelection.loadActivityPerpendicularCross()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "crossx":
             activitySelection.loadActivityDiagonalCross()
+            testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "square":
             activitySelection.loadActivitySquare()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "circle":
             activitySelection.loadActivityCircle()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "triangle":
             activitySelection.loadActivityTriangle()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         default: return
         }
     }
