@@ -77,7 +77,7 @@ class ChapterSelection {
         case 8:
             print("Loading Chapter ", picked)
             chapterSelectedNodeArray = loadChapter8NodeFiles()
-            chapterSelectedLetterArray = ["l", "y", "k", "e"]
+            chapterSelectedLetterArray = ["l", "y", "k", "j", "e"]
             chapterSelectedSoundDict = loadChapter8SoundFiles()
         case 9:
             print("Loading Chapter ", picked)
@@ -1382,6 +1382,7 @@ class ChapterSelection {
         let chapter8SoundArray = [
                                   //Intro to chapter
                                   "Narration1" : "ch3L-Intro1", //Lionel lives in the back of the fridge (11)
+                                  "Narration2" : "ch3L-L-Transition1.old",
             
                                   //letter l
                                   "Narration3" : "ch3L-L-Intro1", //trace L to help Lionel get up (10)
@@ -1407,33 +1408,44 @@ class ChapterSelection {
                                   "Narration18" : "ch1-E-Line3_02", //Yellow to Purple
                                   "Narration19" : "ch1-E-Line4_01", //4 Perfect
             
+                                  //Letter j
+                                  "Narration20" : "ch3L-J-Transition1",
+                                  "Narration21" : "ch3L-J-Intro1",
+                                
+                                  "Narration22" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration23" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration24" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration25" : "ch1-E-Line3_01", //3 Amazing
+            
                                   //Letter e
-                                  "Narration20" : "ch3L-E-Transition1",
-                                  "Narration21" : "ch3L-E-Transition2",
-                                  "Narration22" : "ch3L-E-Intro1",
-                                  
-                                  "Narration23" : "ch1-E-Line1",    //1 Green to Red
-                                  "Narration24" : "ch1-E-Line2_01", //2 Great Job
-                                  "Narration25" : "ch1-E-Line2_02", //Blue to Orange
-                                  "Narration26" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration26" : "ch3L-E-Transition1",
+                                  "Narration27" : "ch3L-E-Transition2",
+                                  "Narration28" : "ch3L-E-Intro1",
+                                
+                                  "Narration29" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration30" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration31" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration32" : "ch1-E-Line3_01", //3 Amazing
             
                                   //transition to Final
-                                  "Narration27" : "ch3L-Final1",
-                                  "Narration28" : "ch3L-Final2",
+                                  "Narration33" : "ch3L-Final1",
+                                  "Narration34" : "ch3L-Final2",
                                   
                                   
                                   //Breakfast Plate interaction
-                                  "Narration29" : "ch3L-Final3-TapLemon1", //(4sec)
-                                  "Narration30" : "ch3L-Final3-TapLemon2", //Good job (1sec)
-                                  "Narration31" : "ch3L-Final3-TapYogurt1", //(4sec)
-                                  "Narration32" : "ch3L-Final3-TapYogurt2", //Amazing (1.5sec)
-                                  "Narration33" : "ch3L-Final3-TapKiwi1", //(4sec)
-                                  "Narration34" : "ch3L-Final3-TapKiwi2", //Good job (1sec)
-                                  "Narration35" : "ch3L-Final3-TapEBar1", //(5sec)
-                                  "Narration36" : "ch3L-Final3-TapEbar2", //You did it (1sec)
+                                  "Narration35" : "ch3L-Final3-TapLemon1", //(4sec)
+                                  "Narration36" : "ch3L-Final3-TapLemon2", //Good job (1sec)
+                                  "Narration37" : "ch3L-Final3-TapYogurt1", //(4sec)
+                                  "Narration38" : "ch3L-Final3-TapYogurt2", //Amazing (1.5sec)
+                                  "Narration39" : "ch3L-Final3-TapKiwi1", //(4sec)
+                                  "Narration40" : "ch3L-Final3-TapKiwi2", //Good job (1sec)
+                                  "Narration41" : "ch3L-Final3-TapJam1",
+                                  "Narration42" : "ch3L-Final3-TapJam2",// Fantastic
+                                  "Narration43" : "ch3L-Final3-TapEBar1", //(5sec)
+                                  "Narration44" : "ch3L-Final3-TapEbar2", //You did it (1sec)
                                   
                                   //Final
-                                  "Narration37" : "ch3L-Final4",
+                                  "Narration45" : "ch3L-Final4",
                                   
                                   //extra chapter FX sounds
                                   "BackgroundSound" : "Small_refrigerator",
