@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jmb-Cg-UZK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jmb-Cg-UZK">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -2446,7 +2446,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <constraint firstAttribute="height" constant="60" id="awx-1G-e7y"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <state key="normal" title="CHAPTER 3: l, y, k, e">
+                                        <state key="normal" title="CHAPTER 3: l, y, k, j, e">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -2459,7 +2459,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <constraint firstAttribute="height" constant="60" id="oMK-XR-t5O"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <state key="normal" title="CHAPTER 4: p, r, n, h, b">
+                                        <state key="normal" title="CHAPTER 4: p, r, n, m, h, b">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -3822,7 +3822,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <segue reference="8ur-bC-BBV"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="bRp-7B-ZAM"/>
-        <segue reference="YSj-T5-laj"/>
+        <segue reference="Rq7-uf-zJ1"/>
         <segue reference="77j-iz-6Lf"/>
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>

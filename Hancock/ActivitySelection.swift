@@ -732,15 +732,15 @@ public class ActivitySelection {
     public func loadActivityj() {
         print("Called loadActivityj")
         //Line #1
-        activityPoints = [[CGFloat(0.64),CGFloat(0.11)], //first point x, y
-            [CGFloat(0.66),CGFloat(0.6)], //first MidPoint1 x, y
-            [CGFloat(0.31),CGFloat(0.85)], //first MidPoint2 x, y
-            [CGFloat(0.13),CGFloat(0.52)], //second point x, y
-            //Line #2
-            [CGFloat(0.36),CGFloat(0.12)], //fifth point
-            [CGFloat(0.54),CGFloat(0.12)], //fifth MidPoint1 x, y
-            [CGFloat(0.71),CGFloat(0.12)], //fifth MidPoint2 x, y
-            [CGFloat(0.89),CGFloat(0.12)]] //sixth point
+        activityPoints = [[CGFloat(0.65),CGFloat(0.43)], //first point x, y
+                        [CGFloat(0.65),CGFloat(0.70)], //first MidPoint1 x, y
+                        [CGFloat(0.48),CGFloat(0.93)], //first MidPoint2 x, y D
+                        [CGFloat(0.23),CGFloat(0.87)], //second point x, y
+                        //Line #2
+                        [CGFloat(0.64),CGFloat(0.21)], //fifth point
+                        [CGFloat(0.64),CGFloat(0.21)], //fifth MidPoint1 x, y
+                        [CGFloat(0.64),CGFloat(0.21)], //fifth MidPoint2 x, y
+                        [CGFloat(0.64),CGFloat(0.21)]] //sixth point
         
         let Underlayj = UIImage(named: "art.scnassets/LetterImages/j-.png")
         letterUnderlay = UIImageView(image: Underlayj)

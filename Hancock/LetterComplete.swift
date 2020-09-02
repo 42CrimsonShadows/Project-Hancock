@@ -161,7 +161,7 @@ extension ViewController{
 //                    })
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
-                        
+                        // TODO: FIX NARRATION
                         workItem2 = DispatchWorkItem{
                             self.resetGame()
                         }
@@ -382,6 +382,34 @@ extension ViewController{
 //                        })
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
+                        
+                        // TODO: FIX NARRATION
+                        //letter E completed, starting final sequence
+                        print("Nothing to shatter for this chapter")
+                        print("Ernie gets up and turns to Lionel and they cheer")
+                        
+                        self.startAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
+                        
+                        workItem2 = DispatchWorkItem{
+                            //Ernie stops cheering and looks back toward camera
+                            self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
+                            self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
+                            self.playWalkAnimation()
+                        }
+                        workItem1 = DispatchWorkItem{
+                            //Ernie turns to Lionel and they both cheer
+                            self.stopAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
+                            self.startAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
+                            self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5))
+                            
+                            self.startTransitionAnimation(key: "MainCharacterCheering")
+                            
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute:self.workItem2!)
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute:self.workItem1!)
+                        
                         print("Nothing to shatter for this chapter")
                     case .Chapter7:
                         //Isaac goes back to what he was doing
@@ -560,32 +588,8 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
-                        //letter E completed, starting final sequence
-                        print("Nothing to shatter for this chapter")
-                        print("Ernie gets up and turns to Lionel and they cheer")
-                        
-                        self.startAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
-                        
-                        workItem2 = DispatchWorkItem{
-                            //Ernie stops cheering and looks back toward camera
-                            self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
-                            self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
-                            self.playWalkAnimation()
-                        }
-                        workItem1 = DispatchWorkItem{
-                            //Ernie turns to Lionel and they both cheer
-                            self.stopAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
-                            self.startAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
-                            self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5))
-                            
-                            self.startTransitionAnimation(key: "MainCharacterCheering")
-                            
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute:self.workItem2!)
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute:self.workItem1!)
-                        
+                        // letter j complete starting letter e
+                        // TODO: ADD JASMINE OUTRO
                         print("Nothing to shatter for this chapter")
                     case .Chapter7:
                         //Windsor goes back to what he was doing
@@ -852,9 +856,10 @@ extension ViewController{
                         
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
-                        //letter k completed, starting letter e
+                        //letter k completed, starting letter j
                         print("Nothing to shatter for this chapter")
                         print("Kimi turns to Lionel and they cheer")
+                        // TODO: ADD JASMINE TRANSITION??
                         
                         workItem2 = DispatchWorkItem{
                             //Kimi stops cheering and looks back toward camera
