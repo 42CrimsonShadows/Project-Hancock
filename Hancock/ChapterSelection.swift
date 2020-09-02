@@ -1330,16 +1330,26 @@ class ChapterSelection {
             SideCharacter2idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
             SideCharacter2idleNode.position = SCNVector3(-3, 5, 1.25)
             SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(35), GLKMathDegreesToRadians(0))
-        
+            
             //Load Idle Animation Node
-            let idleErnieScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed.dae")!
-            for child in idleErnieScene.rootNode.childNodes {
+            let idleJasmineScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@LeaningFixed.dae")!
+            for child in idleJasmineScene.rootNode.childNodes {
                 SideCharacter3idleNode.addChildNode(child)
             }
             lvlFloor.addChildNode(SideCharacter3idleNode)
             SideCharacter3idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
-            SideCharacter3idleNode.position = SCNVector3(-2.75, 0.75, 2.75)
+            SideCharacter3idleNode.position = SCNVector3(0,0,0)
             SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(10), GLKMathDegreesToRadians(0))
+        
+            //Load Idle Animation Node
+            let idleErnieScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed.dae")!
+            for child in idleErnieScene.rootNode.childNodes {
+                SideCharacter4idleNode.addChildNode(child)
+            }
+            lvlFloor.addChildNode(SideCharacter4idleNode)
+            SideCharacter4idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
+            SideCharacter4idleNode.position = SCNVector3(-2.75, 0.75, 2.75)
+            SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(10), GLKMathDegreesToRadians(0))
         
             //load all the DAE animations for this Chapter
             //load animations for mainCharacter
@@ -1364,15 +1374,20 @@ class ChapterSelection {
             prepareAnimation(withKey: "SideCharacter2Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@LayingFixed", animationIdentifier: "Kim@LayingFixed-1")
             prepareAnimation(withKey: "SideCharacter2Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@StairwalkFixed", animationIdentifier: "Kim@StairwalkFixed-1")
             prepareAnimation(withKey: "SideCharacter2Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@WalkingFixed", animationIdentifier: "Kim@WalkingFixed-1")
-        
-            //load animation for side character 3
-            prepareAnimation(withKey: "SideCharacter3Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@HappyFixed", animationIdentifier: "Ernie@HappyFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@IdleFixed", animationIdentifier: "Ernie@IdleFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed", animationIdentifier: "Ernie@LayingFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StairwalkFixed", animationIdentifier: "Ernie@StairwalkFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Standup", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StandupFixed", animationIdentifier: "Ernie@StandupFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@WalkingFixed", animationIdentifier: "Ernie@WalkingFixed-1")
-        prepareAnimation(withKey: "SideCharacter3Sitting", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@SittingFixed", animationIdentifier: "Ernie@SittingFixed-1")
+            
+            //load animation for siede character 3
+            prepareAnimation(withKey: "SideCharacter3Leaning", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@LeaningFixed", animationIdentifier: "Jasmine@LeaningFixed-1")
+            prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@IdleFixed", animationIdentifier: "Jasmine@IdleFixed-1")
+            prepareAnimation(withKey: "SideCharacter3Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@WalkingFixed", animationIdentifier: "Jasmine@WalkingFixed-1")
+                
+            //load animation for side character 4
+            prepareAnimation(withKey: "SideCharacter4Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@HappyFixed", animationIdentifier: "Ernie@HappyFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@IdleFixed", animationIdentifier: "Ernie@IdleFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed", animationIdentifier: "Ernie@LayingFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StairwalkFixed", animationIdentifier: "Ernie@StairwalkFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Standup", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StandupFixed", animationIdentifier: "Ernie@StandupFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@WalkingFixed", animationIdentifier: "Ernie@WalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Sitting", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@SittingFixed", animationIdentifier: "Ernie@SittingFixed-1")
         
             chapter8NodeArray.append(storyNode)
         return chapter8NodeArray

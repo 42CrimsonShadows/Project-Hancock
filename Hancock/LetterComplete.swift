@@ -388,19 +388,19 @@ extension ViewController{
                         print("Nothing to shatter for this chapter")
                         print("Ernie gets up and turns to Lionel and they cheer")
                         
-                        self.startAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
+                        self.startAnimateSideCharacter(key: "SideCharacter4Standup", sideCharacter: "Ernie")
                         
                         workItem2 = DispatchWorkItem{
                             //Ernie stops cheering and looks back toward camera
-                            self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
-                            self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
+                            self.stopAnimateSideCharacter(key: "SideCharacter4Cheering", sideCharacter: "Ernie")
+                            self.startAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Ernie")
                             self.playWalkAnimation()
                         }
                         workItem1 = DispatchWorkItem{
                             //Ernie turns to Lionel and they both cheer
-                            self.stopAnimateSideCharacter(key: "SideCharacter3Standup", sideCharacter: "Ernie")
-                            self.startAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
-                            self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5))
+                            self.stopAnimateSideCharacter(key: "SideCharacter4Standup", sideCharacter: "Ernie")
+                            self.startAnimateSideCharacter(key: "SideCharacter4Cheering", sideCharacter: "Ernie")
+                            self.charcterFourIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(115)), z: 0, duration: 0.5))
                             
                             self.startTransitionAnimation(key: "MainCharacterCheering")
                             

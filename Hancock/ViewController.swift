@@ -499,11 +499,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     case "EnergyBar":
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && ErnieOnPlate == false{
-                        self.startAnimateSideCharacter(key: "SideCharacter3Sitting", sideCharacter: "Ernie")
+                        self.startAnimateSideCharacter(key: "SideCharacter4Sitting", sideCharacter: "Ernie")
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3") //"You did it"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing4"]!, fileExtension: "mp3", rate: 1)
-                            charcterThreeIdle.parent?.position = SCNVector3(-1.5, 8.5, 7)
-                            charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(125), GLKMathDegreesToRadians(0))
+                            charcterFourIdle.parent?.position = SCNVector3(-1.5, 8.5, 7)
+                            charcterFourIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(125), GLKMathDegreesToRadians(0))
                             self.ErnieOnPlate = true
                             self.shatterLetterSix = true
                             
@@ -1362,10 +1362,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case "Lin", "Quinn", "Wallace", "Vivian", "Kimi":
             print("Do sideCharacter2 stuff")
             charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Francine", "Simon", "Winona", "Windsor", "Ernie":
+        case "Francine", "Simon", "Winona", "Windsor", "Jasmine":
             print("Do sideCharacter3 stuff")
             charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
-        case "Eric", "Jillian", "Manny", "Isaac":
+        case "Eric", "Jillian", "Manny", "Isaac", "Ernie":
             print("Do sideCharacter4 stuff")
             charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
         case "Hannah", "InnerTube", "Ashton", "Tyler", "Mikkena":
@@ -1388,11 +1388,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("Remove stuff")
             //charcterTwoIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
             charcterTwoIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
-        case "Francine", "Simon", "Winona", "Windsor", "Ernie":
+        case "Francine", "Simon", "Winona", "Windsor", "Jasmine":
             print("Remove stuff")
             //charcterThreeIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
             charcterThreeIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
-        case "Eric", "Jillian", "Manny", "Isaac":
+        case "Eric", "Jillian", "Manny", "Isaac", "Ernie":
             print("Remove stuff")
             //charcterFourIdle.addAnimation(chapterSelectedAnimationDict[key]!, forKey: key)
             charcterFourIdle.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))

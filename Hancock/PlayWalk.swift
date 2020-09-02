@@ -1829,8 +1829,8 @@ extension ViewController {
 //                    })
                 
                 workItem11 = DispatchWorkItem{
-                    self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-                    self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+                    self.stopAnimateSideCharacter(key: "SideCharacter4Stairwalk", sideCharacter: "Ernie")
+                    self.startAnimateSideCharacter(key: "SideCharacter4Walking", sideCharacter: "Ernie")
                     
                     let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Ernie turns to the center of the level floor
                     let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)
@@ -1838,47 +1838,47 @@ extension ViewController {
                     let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Ernie turns to the front of the fridge
                     let move3 = SCNAction.move(to: SCNVector3(-0.34, 9.25, 0.45), duration: 3)  //Ernie walks to the front of the fridge
                     let chapter8Letter5RotMovSeq4 = SCNAction.sequence([rotate3, move2, rotate4, move3])
-                    self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq4), completionHandler: self.stopWalkAnimation)
+                    self.charcterFourIdle?.parent?.runAction((chapter8Letter5RotMovSeq4), completionHandler: self.stopWalkAnimation)
 
                 }
                 workItem10 = DispatchWorkItem{
                     //walking up the stairs
-                    self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-                    self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
+                    self.startAnimateSideCharacter(key: "SideCharacter4Stairwalk", sideCharacter: "Ernie")
+                    self.charcterFourIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
                     
                     //Ernie Level 1
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem11!)
                 }
                 workItem9 = DispatchWorkItem{
-                        self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-                        self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+                        self.stopAnimateSideCharacter(key: "SideCharacter4Stairwalk", sideCharacter: "Ernie")
+                        self.startAnimateSideCharacter(key: "SideCharacter4Walking", sideCharacter: "Ernie")
                         let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(205)), z: 0, duration: 0.5) //Ernie turns toward the bottom of the stairs to level 1
                         let move1 = SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)  //Ernie walks to the bottom of the stairs to level 1
                         let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Ernie looks up the stairs
                         let chapter8Letter5RotMovSeq3 = SCNAction.sequence([rotate1, move1, rotate2])
-                        self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq3))
+                        self.charcterFourIdle?.parent?.runAction((chapter8Letter5RotMovSeq3))
                         
                         //Ernie walks up the stairs to level 1
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem10!)
                 }
                 workItem8 = DispatchWorkItem{
                         //walking up the stairs
-                        self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-                        self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3))
+                        self.startAnimateSideCharacter(key: "SideCharacter4Stairwalk", sideCharacter: "Ernie")
+                        self.charcterFourIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3))
                         
                         //Ernie level 2
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem9!)
                 }
                 workItem7 = DispatchWorkItem{
-                    self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))
+                    self.charcterFourIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))
                                             
                     //Ernie walks up the stairs to Level 2
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: self.workItem8!)
                 }
                 workItem6 = DispatchWorkItem{
-                    self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
-                    self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
-                    self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 1))
+                    self.stopAnimateSideCharacter(key: "SideCharacter4Cheering", sideCharacter: "Ernie")
+                    self.startAnimateSideCharacter(key: "SideCharacter4Walking", sideCharacter: "Ernie")
+                    self.charcterFourIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 1))
                     
                     //Ernie looks up the stairs
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem7!)
@@ -1889,40 +1889,40 @@ extension ViewController {
                 //Ernie's walk
                 //Ernie walks to the bottom of the stairs
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//                    self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Ernie")
-//                    self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
-//                    self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 1))
+//                    self.stopAnimateSideCharacter(key: "SideCharacter4Cheering", sideCharacter: "Ernie")
+//                    self.startAnimateSideCharacter(key: "SideCharacter4Walking", sideCharacter: "Ernie")
+//                    self.charcterFourIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 1))
 //
 //                    //Ernie looks up the stairs
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//                        self.charcterThreeIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))
+//                        self.charcterFourIdle.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 0.5))
 //
 //                        //Ernie walks up the stairs to Level 2
 //                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
 //                            //walking up the stairs
-//                            self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-//                            self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3))
+//                            self.startAnimateSideCharacter(key: "SideCharacter4Stairwalk", sideCharacter: "Ernie")
+//                            self.charcterFourIdle.parent?.runAction(SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3))
 //
 //                            //Ernie level 2
 //                            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//                                self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-//                                self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+//                                self.stopAnimateSideCharacter(key: "SideCharacter4Stairwalk", sideCharacter: "Ernie")
+//                                self.startAnimateSideCharacter(key: "SideCharacter4Walking", sideCharacter: "Ernie")
 //                                let rotate1 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(205)), z: 0, duration: 0.5) //Ernie turns toward the bottom of the stairs to level 1
 //                                let move1 = SCNAction.move(to: SCNVector3(1.1, 5, -2.1), duration: 3)  //Ernie walks to the bottom of the stairs to level 1
 //                                let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Ernie looks up the stairs
 //                                let chapter8Letter5RotMovSeq3 = SCNAction.sequence([rotate1, move1, rotate2])
-//                                self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq3))
+//                                self.charcterFourIdle?.parent?.runAction((chapter8Letter5RotMovSeq3))
 //
 //                                //Ernie walks up the stairs to level 1
 //                                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
 //                                    //walking up the stairs
-//                                    self.startAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-//                                    self.charcterThreeIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
+//                                    self.startAnimateSideCharacter(key: "SideCharacter4Stairwalk", sideCharacter: "Ernie")
+//                                    self.charcterFourIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-3, 9.25, -1.75), duration: 3))
 //
 //                                    //Ernie Level 1
 //                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//                                        self.stopAnimateSideCharacter(key: "SideCharacter3Stairwalk", sideCharacter: "Ernie")
-//                                        self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
+//                                        self.stopAnimateSideCharacter(key: "SideCharacter4Stairwalk", sideCharacter: "Ernie")
+//                                        self.startAnimateSideCharacter(key: "SideCharacter4Walking", sideCharacter: "Ernie")
 //
 //                                        let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Ernie turns to the center of the level floor
 //                                        let move2 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)
@@ -1930,7 +1930,7 @@ extension ViewController {
 //                                        let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Ernie turns to the front of the fridge
 //                                        let move3 = SCNAction.move(to: SCNVector3(-0.34, 9.25, 0.45), duration: 3)  //Ernie walks to the front of the fridge
 //                                        let chapter8Letter5RotMovSeq4 = SCNAction.sequence([rotate3, move2, rotate4, move3])
-//                                        self.charcterThreeIdle?.parent?.runAction((chapter8Letter5RotMovSeq4), completionHandler: self.stopWalkAnimation)
+//                                        self.charcterFourIdle?.parent?.runAction((chapter8Letter5RotMovSeq4), completionHandler: self.stopWalkAnimation)
 //
 //                                    })
 //                                })

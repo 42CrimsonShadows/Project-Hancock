@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2020-09-02T21:22:44Z</created>
-  <modified>2020-09-02T21:22:44Z</modified>
+  <created>2020-09-02T21:43:20Z</created>
+  <modified>2020-09-02T21:43:20Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -429,71 +429,73 @@
  </library_controllers>
  <library_visual_scenes>
   <visual_scene id="scene85">
-   <node id="Armature" name="Jasmine">
-    <matrix sid="SID_1">0.987994 0.1469992 -0.04753093 0.07418325 -0.1436366 0.9873071 0.06777273 1.209644 0.05689016 -0.06013186 0.9965679 -0.002495141 0 0 0 1 </matrix>
-    <node id="Armature_Bone" name="Bone" sid="SID_14" type="JOINT">
-     <matrix>1 2.384189e-07 0 2.38419e-07 -2.842171e-14 1.788139e-07 -0.9999998 -0.5040367 -2.38419e-07 0.9999998 1.788139e-07 -3.09199e-07 0 0 0 1 </matrix>
-     <node id="Armature_Bone_001" name="Bone-001" sid="SID_15" type="JOINT">
-      <matrix sid="SID_2">0.9886088 -0.01668416 0.1495802 -7.10543e-15 0.006789053 0.9977686 0.06642061 0 -0.1503547 -0.06464849 0.986516 -0.7999976 0 0 0 1 </matrix>
-      <node id="Armature_Bone_002" name="Bone-002" sid="SID_16" type="JOINT">
-       <matrix sid="SID_3">0.9998419 -0.004657128 -0.01715864 -7.45058e-09 0.00210325 0.9892895 -0.1459515 3.72529e-09 0.01765458 0.1458924 0.9891429 -0.5047678 0 0 0 1 </matrix>
-       <node id="Armature_Bone_002_end" name="Bone-002_end" type="JOINT">
-        <matrix>1 0 0 0 0 1 0 2.84217e-14 0 0 1 -0.6142927 0 0 0 1 </matrix>
+   <node id="SideCharacter3" name="SideCharacter3">
+    <node id="Armature" name="Jasmine">
+     <matrix sid="SID_1">0.987994 0.1469992 -0.04753093 0.07418325 -0.1436366 0.9873071 0.06777273 1.209644 0.05689016 -0.06013186 0.9965679 -0.002495141 0 0 0 1 </matrix>
+     <node id="Armature_Bone" name="Bone" sid="SID_14" type="JOINT">
+      <matrix>1 2.384189e-07 0 2.38419e-07 -2.842171e-14 1.788139e-07 -0.9999998 -0.5040367 -2.38419e-07 0.9999998 1.788139e-07 -3.09199e-07 0 0 0 1 </matrix>
+      <node id="Armature_Bone_001" name="Bone-001" sid="SID_15" type="JOINT">
+       <matrix sid="SID_2">0.9886088 -0.01668416 0.1495802 -7.10543e-15 0.006789053 0.9977686 0.06642061 0 -0.1503547 -0.06464849 0.986516 -0.7999976 0 0 0 1 </matrix>
+       <node id="Armature_Bone_002" name="Bone-002" sid="SID_16" type="JOINT">
+        <matrix sid="SID_3">0.9998419 -0.004657128 -0.01715864 -7.45058e-09 0.00210325 0.9892895 -0.1459515 3.72529e-09 0.01765458 0.1458924 0.9891429 -0.5047678 0 0 0 1 </matrix>
+        <node id="Armature_Bone_002_end" name="Bone-002_end" type="JOINT">
+         <matrix>1 0 0 0 0 1 0 2.84217e-14 0 0 1 -0.6142927 0 0 0 1 </matrix>
+        </node>
        </node>
-      </node>
-      <node id="Armature_upperarm_l" name="upperarm-l" sid="SID_17" type="JOINT">
-       <matrix sid="SID_4">-0.9939254 0.01055807 -0.109547 0.4922341 -0.009551249 0.9833567 0.1814343 0.01200995 0.1096393 0.1813785 -0.9772824 -0.06867187 0 0 0 1 </matrix>
-       <node id="Armature_forearm_l" name="forearm-l" sid="SID_18" type="JOINT">
-        <matrix sid="SID_5">0.9999999 1.468731e-07 2.576516e-07 -5.96046e-08 -4.125372e-08 0.9292017 -0.3695728 -3.72529e-09 -2.936907e-07 0.3695728 0.9292017 -0.4475861 0 0 0 1 </matrix>
-        <node id="Armature_forearm_l_end" name="forearm-l_end" type="JOINT">
-         <matrix>1 0 0 0 0 1 0 0 0 0 1 -0.4422877 0 0 0 1 </matrix>
+       <node id="Armature_upperarm_l" name="upperarm-l" sid="SID_17" type="JOINT">
+        <matrix sid="SID_4">-0.9939254 0.01055807 -0.109547 0.4922341 -0.009551249 0.9833567 0.1814343 0.01200995 0.1096393 0.1813785 -0.9772824 -0.06867187 0 0 0 1 </matrix>
+        <node id="Armature_forearm_l" name="forearm-l" sid="SID_18" type="JOINT">
+         <matrix sid="SID_5">0.9999999 1.468731e-07 2.576516e-07 -5.96046e-08 -4.125372e-08 0.9292017 -0.3695728 -3.72529e-09 -2.936907e-07 0.3695728 0.9292017 -0.4475861 0 0 0 1 </matrix>
+         <node id="Armature_forearm_l_end" name="forearm-l_end" type="JOINT">
+          <matrix>1 0 0 0 0 1 0 0 0 0 1 -0.4422877 0 0 0 1 </matrix>
+         </node>
+        </node>
+       </node>
+       <node id="Armature_upperarm_r" name="upperarm-r" sid="SID_19" type="JOINT">
+        <matrix sid="SID_6">-0.9758294 0.1330851 0.1733322 -0.4922341 0.1641534 0.9699847 0.1793974 0.01200971 -0.1442544 0.2035144 -0.9683858 -0.06867187 0 0 0 1 </matrix>
+        <node id="Armature_forearm_r" name="forearm-r" sid="SID_20" type="JOINT">
+         <matrix sid="SID_7">1 -8.678941e-08 -1.972093e-07 -2.98023e-08 -1.55432e-08 0.8838428 -0.4677841 7.45058e-09 2.149008e-07 0.4677841 0.8838428 -0.4475865 0 0 0 1 </matrix>
+         <node id="Armature_forearm_r_end" name="forearm-r_end" type="JOINT">
+          <matrix>1 0 0 5.96046e-08 0 0.9999999 0 -9.31323e-10 0 0 0.9999999 -0.4422875 0 0 0 1 </matrix>
+         </node>
         </node>
        </node>
       </node>
-      <node id="Armature_upperarm_r" name="upperarm-r" sid="SID_19" type="JOINT">
-       <matrix sid="SID_6">-0.9758294 0.1330851 0.1733322 -0.4922341 0.1641534 0.9699847 0.1793974 0.01200971 -0.1442544 0.2035144 -0.9683858 -0.06867187 0 0 0 1 </matrix>
-       <node id="Armature_forearm_r" name="forearm-r" sid="SID_20" type="JOINT">
-        <matrix sid="SID_7">1 -8.678941e-08 -1.972093e-07 -2.98023e-08 -1.55432e-08 0.8838428 -0.4677841 7.45058e-09 2.149008e-07 0.4677841 0.8838428 -0.4475865 0 0 0 1 </matrix>
-        <node id="Armature_forearm_r_end" name="forearm-r_end" type="JOINT">
-         <matrix>1 0 0 5.96046e-08 0 0.9999999 0 -9.31323e-10 0 0 0.9999999 -0.4422875 0 0 0 1 </matrix>
+      <node id="Armature_thigh_l" name="thigh-l" sid="SID_21" type="JOINT">
+       <matrix sid="SID_8">-0.9690493 0.09404787 -0.228405 0.3366645 0.1556623 0.9504785 -0.2690105 -0.03748269 0.1918006 -0.2962278 -0.9356641 -0.008563343 0 0 0 1 </matrix>
+       <node id="Armature_calf_l" name="calf-l" sid="SID_22" type="JOINT">
+        <matrix sid="SID_9">0.9922999 -0.08383384 -0.09117278 0 0.1214118 0.5128366 0.8498573 1.49012e-08 -0.02449008 -0.8543822 0.5190666 -0.4076506 0 0 0 1 </matrix>
+        <node id="Armature_foot_l" name="foot-l" sid="SID_23" type="JOINT">
+         <matrix sid="SID_10">0.9997488 -0.02131346 0.006912269 5.96046e-08 -0.005982387 -0.5512069 -0.8343472 9.68575e-08 0.02159291 0.8340966 -0.5511959 -0.3464155 0 0 0 1 </matrix>
+         <node id="Armature_foot_l_end" name="foot-l_end" type="JOINT">
+          <matrix>1 0 0 5.96046e-08 0 1 0 2.23517e-08 0 0 1 -0.1776717 0 0 0 1 </matrix>
+         </node>
+        </node>
+       </node>
+      </node>
+      <node id="Armature_thigh_r" name="thigh-r" sid="SID_24" type="JOINT">
+       <matrix sid="SID_11">-0.9821498 -0.1135024 -0.1502478 -0.3366645 -0.1296839 0.9862334 0.1026295 -0.03748286 0.1365357 0.1202779 -0.9833069 -0.008563343 0 0 0 1 </matrix>
+       <node id="Armature_calf_r" name="calf-r" sid="SID_25" type="JOINT">
+        <matrix sid="SID_12">0.9932038 0.0956128 0.06636241 0 -0.1043325 0.9841228 0.1435872 3.72529e-09 -0.05157996 -0.1495352 0.9874101 -0.4076506 0 0 0 1 </matrix>
+        <node id="Armature_foot_r" name="foot-r" sid="SID_26" type="JOINT">
+         <matrix sid="SID_13">0.9971857 -0.05508185 0.0508584 5.96046e-08 0.04539021 -0.09634168 -0.9943128 -1.49012e-08 0.05966838 0.9938229 -0.09357037 -0.3464153 0 0 0 1 </matrix>
+         <node id="Armature_foot_r_end" name="foot-r_end" type="JOINT">
+          <matrix>1 0 0 -2.98023e-08 0 1 0 -5.12227e-08 0 0 1 -0.1776717 0 0 0 1 </matrix>
+         </node>
         </node>
        </node>
       </node>
      </node>
-     <node id="Armature_thigh_l" name="thigh-l" sid="SID_21" type="JOINT">
-      <matrix sid="SID_8">-0.9690493 0.09404787 -0.228405 0.3366645 0.1556623 0.9504785 -0.2690105 -0.03748269 0.1918006 -0.2962278 -0.9356641 -0.008563343 0 0 0 1 </matrix>
-      <node id="Armature_calf_l" name="calf-l" sid="SID_22" type="JOINT">
-       <matrix sid="SID_9">0.9922999 -0.08383384 -0.09117278 0 0.1214118 0.5128366 0.8498573 1.49012e-08 -0.02449008 -0.8543822 0.5190666 -0.4076506 0 0 0 1 </matrix>
-       <node id="Armature_foot_l" name="foot-l" sid="SID_23" type="JOINT">
-        <matrix sid="SID_10">0.9997488 -0.02131346 0.006912269 5.96046e-08 -0.005982387 -0.5512069 -0.8343472 9.68575e-08 0.02159291 0.8340966 -0.5511959 -0.3464155 0 0 0 1 </matrix>
-        <node id="Armature_foot_l_end" name="foot-l_end" type="JOINT">
-         <matrix>1 0 0 5.96046e-08 0 1 0 2.23517e-08 0 0 1 -0.1776717 0 0 0 1 </matrix>
-        </node>
-       </node>
-      </node>
+     <node id="Cylinder" name="Cylinder">
+      <instance_controller url="#Cylinder_001">
+       <skeleton>#Armature_Bone</skeleton>
+       <bind_material>
+        <technique_common>
+         <instance_material symbol="geometryElement83" target="#initialShadingGroup_001-material"/>
+        </technique_common>
+       </bind_material>
+      </instance_controller>
      </node>
-     <node id="Armature_thigh_r" name="thigh-r" sid="SID_24" type="JOINT">
-      <matrix sid="SID_11">-0.9821498 -0.1135024 -0.1502478 -0.3366645 -0.1296839 0.9862334 0.1026295 -0.03748286 0.1365357 0.1202779 -0.9833069 -0.008563343 0 0 0 1 </matrix>
-      <node id="Armature_calf_r" name="calf-r" sid="SID_25" type="JOINT">
-       <matrix sid="SID_12">0.9932038 0.0956128 0.06636241 0 -0.1043325 0.9841228 0.1435872 3.72529e-09 -0.05157996 -0.1495352 0.9874101 -0.4076506 0 0 0 1 </matrix>
-       <node id="Armature_foot_r" name="foot-r" sid="SID_26" type="JOINT">
-        <matrix sid="SID_13">0.9971857 -0.05508185 0.0508584 5.96046e-08 0.04539021 -0.09634168 -0.9943128 -1.49012e-08 0.05966838 0.9938229 -0.09357037 -0.3464153 0 0 0 1 </matrix>
-        <node id="Armature_foot_r_end" name="foot-r_end" type="JOINT">
-         <matrix>1 0 0 -2.98023e-08 0 1 0 -5.12227e-08 0 0 1 -0.1776717 0 0 0 1 </matrix>
-        </node>
-       </node>
-      </node>
-     </node>
-    </node>
-    <node id="Cylinder" name="Cylinder">
-     <instance_controller url="#Cylinder_001">
-      <skeleton>#Armature_Bone</skeleton>
-      <bind_material>
-       <technique_common>
-        <instance_material symbol="geometryElement83" target="#initialShadingGroup_001-material"/>
-       </technique_common>
-      </bind_material>
-     </instance_controller>
     </node>
    </node>
   </visual_scene>

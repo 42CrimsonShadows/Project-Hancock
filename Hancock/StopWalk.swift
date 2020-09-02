@@ -2176,8 +2176,8 @@ extension ViewController{
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
                     // TODO: FIX NARRATION
-                    self.stopAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
-                    self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
+                    self.stopAnimateSideCharacter(key: "SideCharacter4Walking", sideCharacter: "Ernie")
+                    self.startAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Ernie")
                     
                     
                     //play instructions to touch Lionel the lemon
