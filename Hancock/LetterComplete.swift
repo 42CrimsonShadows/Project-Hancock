@@ -161,13 +161,12 @@ extension ViewController{
 //                    })
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
-                        // TODO: FIX NARRATION
                         workItem2 = DispatchWorkItem{
                             self.resetGame()
                         }
                         workItem1 = DispatchWorkItem{
                             //play the final narration
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration37"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: self.workItem2!)
                         }
@@ -382,8 +381,6 @@ extension ViewController{
 //                        })
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
-                        
-                        // TODO: FIX NARRATION
                         //letter E completed, starting final sequence
                         print("Nothing to shatter for this chapter")
                         print("Ernie gets up and turns to Lionel and they cheer")
@@ -404,7 +401,7 @@ extension ViewController{
                             
                             self.startTransitionAnimation(key: "MainCharacterCheering")
                             
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration33"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute:self.workItem2!)
                         }
@@ -590,6 +587,15 @@ extension ViewController{
                     case .Chapter8:
                         // letter j complete starting letter e
                         // TODO: ADD JASMINE OUTRO
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
+                        workItem2 = DispatchWorkItem {
+                            self.stopWalkAnimation()
+                        }
+                        workItem1 = DispatchWorkItem {
+                            self.startTransitionAnimation(key: "MainCharacterCheering")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem2!)
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: workItem1!)
                         print("Nothing to shatter for this chapter")
                     case .Chapter7:
                         //Windsor goes back to what he was doing
@@ -859,7 +865,6 @@ extension ViewController{
                         //letter k completed, starting letter j
                         print("Nothing to shatter for this chapter")
                         print("Kimi turns to Lionel and they cheer")
-                        // TODO: ADD JASMINE TRANSITION??
                         
                         workItem2 = DispatchWorkItem{
                             //Kimi stops cheering and looks back toward camera

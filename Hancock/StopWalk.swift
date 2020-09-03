@@ -1349,6 +1349,14 @@ extension ViewController{
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
                     // TODO: ADD JASMINE ACTIVITY TRANSITION
+                    self.shatterLetterFour = true
+                    stopTransitionAnimation(key: "MainCharacterWalking")
+                    startTransitionAnimation(key: "MainCharacterIdle")
+                    workItem1 = DispatchWorkItem {
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration22"]!, fileExtension: "mp3")
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
                     print("stopwalk chapter 8 stuff")
                 case .Chapter7:
                     fadeoutWalkingSound()
@@ -1861,18 +1869,17 @@ extension ViewController{
                     
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
-                    // TODO: FIX NARRATION
                     workItem2 = DispatchWorkItem{
                         //load first letter for activityView page
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration23"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
                     }
                     workItem1 = DispatchWorkItem{
                         //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration22"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
                         
-                        self.shatterLetterFour = true
+                        self.shatterLetterFive = true
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem2!)
                     }
@@ -2175,14 +2182,13 @@ extension ViewController{
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
-                    // TODO: FIX NARRATION
                     self.stopAnimateSideCharacter(key: "SideCharacter4Walking", sideCharacter: "Ernie")
                     self.startAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Ernie")
                     
                     
                     //play instructions to touch Lionel the lemon
-                    playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3") //can you tap the lemon?
-                    shatterLetterFive = true
+                    playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3") //can you tap the lemon?
+                    //shatterLetterSix = true // unneeded after adding Jasmine the Jam in
                     
                     //Find and unhide the plate
                     let plate =  mainFloor.childNode(withName: "Plate", recursively: true)

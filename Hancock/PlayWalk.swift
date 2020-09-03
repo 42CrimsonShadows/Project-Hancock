@@ -1051,7 +1051,23 @@ extension ViewController {
                 print("Ursa walks to Windsor")
                 
             case .Chapter8:
-                // TODO: ADD JASMINE STUFF
+                // TODO: Lionel moves towards Jasmine
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
+                
+                //show the main character as walking
+                self.stopTransitionAnimation(key: "MainCharacterCheering")
+                self.startTransitionAnimation(key: "MainCharacterWalking")
+                
+                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(33)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) // Lionel turns toward right wall
+                let move1 = SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3)  //Lionel heads to Jasmine
+                
+                let chapter8Letter4RotMovSeq = SCNAction.sequence([rotate1, move1])
+                mainCharacterIdle?.parent?.runAction((chapter8Letter4RotMovSeq))
+                workItem1 = DispatchWorkItem {
+                    self.stopWalkAnimation()
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)
                 print("do chapter 8 stuff")
             case .Chapter9:
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
@@ -1270,17 +1286,15 @@ extension ViewController {
                 print("Ursa walks to top of the hill and sees Isaac")
                 
             case .Chapter8:
-                // TODO: FIX NARRATION
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
                 
-                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(33)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) // Lionel turns toward right wall
                 let move1 = SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3)  //Lionel heads to stairs
-                let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-90)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks down the stairs
+                let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(-90)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //looks down the stairs
                 
-                let chapter8Letter4RotMovSeq = SCNAction.sequence([rotate1, move1, rotate2])
-                mainCharacterIdle?.parent?.runAction((chapter8Letter4RotMovSeq))
+                let chapter8Letter5RotMovSeq = SCNAction.sequence([move1, rotate1])
+                mainCharacterIdle?.parent?.runAction((chapter8Letter5RotMovSeq))
                 
                 workItem2 = DispatchWorkItem{
                     self.stopTransitionAnimation(key: "MainCharacterStairwalk")
@@ -1289,7 +1303,7 @@ extension ViewController {
                 }
                 workItem1 = DispatchWorkItem{
                     self.startTransitionAnimation(key: "MainCharacterStairwalk")
-                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
                     self.mainCharacterIdle.parent?.runAction(SCNAction.move(to: SCNVector3(-1.1, 0.75, 2), duration: 3)) //Lionel heads down to level 1
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem2!)
@@ -1729,14 +1743,13 @@ extension ViewController {
                 print("Ursa walk over the log and goes to Tyler")
                 
             case .Chapter8:
-                // TODO: FIX NARRATION
                 //Final Walk
                                 
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
                 
-                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "mp3")
                 
                 workItem5 = DispatchWorkItem{
                     self.stopTransitionAnimation(key: "MainCharacterWalking")

@@ -1339,7 +1339,7 @@ class ChapterSelection {
             lvlFloor.addChildNode(SideCharacter3idleNode)
             SideCharacter3idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
             SideCharacter3idleNode.position = SCNVector3(0,0,0)
-            SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(10), GLKMathDegreesToRadians(0))
+            SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(200), GLKMathDegreesToRadians(0))
         
             //Load Idle Animation Node
             let idleErnieScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed.dae")!
@@ -1463,7 +1463,7 @@ class ChapterSelection {
                                   "Narration45" : "ch3L-Final4",
                                   
                                   //extra chapter FX sounds
-                                  "BackgroundSound" : "Small_refrigerator",
+                                  "BackgroundSound" : "",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing1" : "bell-ding_01",
                                   "CoinDing2" : "bell-ding_02",
