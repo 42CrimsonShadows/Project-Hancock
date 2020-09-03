@@ -500,16 +500,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     case "Jasmine":
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && JasmineOnPlate == false{
-                        self.startAnimateSideCharacter(key: "SideCharacter2Laying", sideCharacter: "Kimi")
+                        self.startAnimateSideCharacter(key: "SideCharacter3Leaning", sideCharacter: "Jasmine")
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration41"]!, fileExtension: "mp3") //"Good job"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing3"]!, fileExtension: "mp3", rate: 1)
-                            charcterTwoIdle.parent?.position = SCNVector3(-0.8, 8.5, 4.9)
-                            charcterTwoIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(25), GLKMathDegreesToRadians(0))
-                            print("Kimi to plate")
+                            charcterThreeIdle.parent?.position = SCNVector3(-0.8, 8.5, 4.9)
+                            charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(25), GLKMathDegreesToRadians(0))
+                            print("Jasmine to plate")
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
-                                self.KimiOnPlate = true
-                                print("Kimi on plate = ", self.KimiOnPlate)
+                                self.JasmineOnPlate = true
+                                print("Jasmine on plate = ", self.JasmineOnPlate)
                             })
                         }
                     case "EnergyBar":
