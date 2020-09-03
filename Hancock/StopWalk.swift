@@ -2187,7 +2187,7 @@ extension ViewController{
                     //play instructions to touch Lionel the lemon
                     playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3") //can you tap the lemon?
                     //shatterLetterSix = true // unneeded after adding Jasmine the Jam in
-                    
+                    canTapOnFood = true
                     //Find and unhide the plate
                     let plate =  mainFloor.childNode(withName: "Plate", recursively: true)
                     plate!.isHidden = false

@@ -168,7 +168,7 @@ extension ViewController{
                             //play the final narration
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration45"]!, fileExtension: "mp3")
                             
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: self.workItem2!)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 17, execute: self.workItem2!)
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute:self.workItem1!)
                         print("Nothing to shatter for this chapter")
@@ -593,6 +593,7 @@ extension ViewController{
                         }
                         workItem1 = DispatchWorkItem {
                             self.startTransitionAnimation(key: "MainCharacterCheering")
+                            self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Jasmine")
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem2!)
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: workItem1!)

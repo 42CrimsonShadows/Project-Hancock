@@ -153,6 +153,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var isMoving: Bool = false
     
     //Bools for special chapter8 tap-handler
+    var canTapOnFood = false
     var LionelOnPlate = false
     var YogiOnPlate = false
     var KimiOnPlate = false
@@ -190,6 +191,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var workItem13:DispatchWorkItem? = nil
     var workItem14:DispatchWorkItem? = nil
     var workItem15:DispatchWorkItem? = nil
+    var workItem16:DispatchWorkItem? = nil
+    var workItem17:DispatchWorkItem? = nil
     var lightItem1:DispatchWorkItem? = nil
     var lightItem2:DispatchWorkItem? = nil
     var particleItem1:DispatchWorkItem? = nil
@@ -447,7 +450,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             switch currentChapter {
             case .Chapter8:
-                if shatterLetterFive == true{
+                if canTapOnFood == true{
                     switch hitTestResult.node.parent?.name {
                     case "Lemon":
                         print("Tapped: ", hitTestResult.node.parent?.name)
@@ -455,8 +458,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             startTransitionAnimation(key: "MainCharacterLaying")
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3") //"Good job"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing1"]!, fileExtension: "mp3", rate: 1)
-                            mainCharacterIdle.parent?.position = SCNVector3(0.7, 8.42, 7.1)
-                            mainCharacterIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(237), GLKMathDegreesToRadians(0))
+                            mainCharacterIdle.parent?.position = SCNVector3(0.85, 8.42, 7.4)
+                            mainCharacterIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(243), GLKMathDegreesToRadians(0))
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration37"]!, fileExtension: "mp3")
@@ -503,8 +506,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Jasmine")
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3") //"Good job"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing3"]!, fileExtension: "mp3", rate: 1)
-                            charcterThreeIdle.parent?.position = SCNVector3(-0.8, 8.5, 4.9)
-                            charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(25), GLKMathDegreesToRadians(0))
+                            charcterThreeIdle.parent?.position = SCNVector3(-1.5, 8.5, 6.5)
+                            charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(35), GLKMathDegreesToRadians(0))
                             print("Jasmine to plate")
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration43"]!, fileExtension: "mp3")
@@ -518,7 +521,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         self.startAnimateSideCharacter(key: "SideCharacter4Sitting", sideCharacter: "Ernie")
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3") //"You did it"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing4"]!, fileExtension: "mp3", rate: 1)
-                            charcterFourIdle.parent?.position = SCNVector3(-1.5, 8.5, 7)
+                            charcterFourIdle.parent?.position = SCNVector3(-1, 8.5, 7.5)
                             charcterFourIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(125), GLKMathDegreesToRadians(0))
                             self.ErnieOnPlate = true
                             self.shatterLetterSix = true
@@ -805,6 +808,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.particleItem1?.cancel()
             self.lightItem2?.cancel()
             self.lightItem1?.cancel()
+            self.workItem17?.cancel()
+            self.workItem16?.cancel()
             self.workItem15?.cancel()
             self.workItem14?.cancel()
             self.workItem13?.cancel()
