@@ -1056,12 +1056,11 @@ extension ViewController {
                 
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
-                self.startTransitionAnimation(key: "MainCharacterWalking")
+                self.startTransitionAnimation(key: "MainCharacterIdle")
                 
                 let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(33)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) // Lionel turns toward right wall
-                let move1 = SCNAction.move(to: SCNVector3(3, 5, 2), duration: 3)  //Lionel heads to Jasmine
                 
-                let chapter8Letter4RotMovSeq = SCNAction.sequence([rotate1, move1])
+                let chapter8Letter4RotMovSeq = SCNAction.sequence([rotate1])
                 mainCharacterIdle?.parent?.runAction((chapter8Letter4RotMovSeq))
                 workItem1 = DispatchWorkItem {
                     self.stopWalkAnimation()

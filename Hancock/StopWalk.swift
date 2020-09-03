@@ -1350,8 +1350,6 @@ extension ViewController{
                 case .Chapter8:
                     // TODO: ADD JASMINE ACTIVITY TRANSITION
                     self.shatterLetterFour = true
-                    stopTransitionAnimation(key: "MainCharacterWalking")
-                    startTransitionAnimation(key: "MainCharacterIdle")
                     workItem1 = DispatchWorkItem {
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration22"]!, fileExtension: "mp3")
@@ -1873,11 +1871,11 @@ extension ViewController{
                         //load first letter for activityView page
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
                     }
                     workItem1 = DispatchWorkItem{
                         //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
                         
                         self.shatterLetterFive = true
                         

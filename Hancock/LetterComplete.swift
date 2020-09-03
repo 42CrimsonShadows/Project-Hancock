@@ -166,7 +166,7 @@ extension ViewController{
                         }
                         workItem1 = DispatchWorkItem{
                             //play the final narration
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration45"]!, fileExtension: "mp3")
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 15, execute: self.workItem2!)
                         }
@@ -589,7 +589,7 @@ extension ViewController{
                         // TODO: ADD JASMINE OUTRO
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
                         workItem2 = DispatchWorkItem {
-                            self.stopWalkAnimation()
+                            self.playWalkAnimation()
                         }
                         workItem1 = DispatchWorkItem {
                             self.startTransitionAnimation(key: "MainCharacterCheering")

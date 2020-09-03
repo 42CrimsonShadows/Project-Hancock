@@ -453,13 +453,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == false{
                             startTransitionAnimation(key: "MainCharacterLaying")
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration30"]!, fileExtension: "mp3") //"Good job"
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3") //"Good job"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing1"]!, fileExtension: "mp3", rate: 1)
                             mainCharacterIdle.parent?.position = SCNVector3(0.7, 8.42, 7.1)
                             mainCharacterIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(237), GLKMathDegreesToRadians(0))
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3")
+                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration37"]!, fileExtension: "mp3")
                                 self.LionelOnPlate = true
                                 print("Lionel on plate = ", self.LionelOnPlate)
                             })
@@ -471,13 +471,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         if LionelOnPlate == true && YogiOnPlate == false{
                         self.startAnimateSideCharacter(key: "SideCharacter1Sitting", sideCharacter: "Yogi")
                         
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration37"]!, fileExtension: "mp3") //"Amazing"
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration38"]!, fileExtension: "mp3") //"Amazing"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing2"]!, fileExtension: "mp3", rate: 1)
                             charcterOneIdle.parent?.position = SCNVector3(1, 8.45, 4.8)
                             charcterOneIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(-40), GLKMathDegreesToRadians(0))
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration38"]!, fileExtension: "mp3")
+                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration39"]!, fileExtension: "mp3")
                                 self.YogiOnPlate = true
                                 print("Yogi on plate = ", self.YogiOnPlate)
                             })
@@ -486,13 +486,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == false{
                         self.startAnimateSideCharacter(key: "SideCharacter2Laying", sideCharacter: "Kimi")
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration39"]!, fileExtension: "mp3") //"Good job"
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration40"]!, fileExtension: "mp3") //"Good job"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing3"]!, fileExtension: "mp3", rate: 1)
                             charcterTwoIdle.parent?.position = SCNVector3(-0.8, 8.5, 4.9)
                             charcterTwoIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(25), GLKMathDegreesToRadians(0))
                             print("Kimi to plate")
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration40"]!, fileExtension: "mp3")
+                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration41"]!, fileExtension: "mp3")
                                 self.KimiOnPlate = true
                                 print("Kimi on plate = ", self.KimiOnPlate)
                             })
@@ -500,14 +500,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     case "Jasmine":
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && JasmineOnPlate == false{
-                        self.startAnimateSideCharacter(key: "SideCharacter3Leaning", sideCharacter: "Jasmine")
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration41"]!, fileExtension: "mp3") //"Good job"
+                            self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Jasmine")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3") //"Good job"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing3"]!, fileExtension: "mp3", rate: 1)
                             charcterThreeIdle.parent?.position = SCNVector3(-0.8, 8.5, 4.9)
                             charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(25), GLKMathDegreesToRadians(0))
                             print("Jasmine to plate")
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
+                                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration43"]!, fileExtension: "mp3")
                                 self.JasmineOnPlate = true
                                 print("Jasmine on plate = ", self.JasmineOnPlate)
                             })
@@ -516,7 +516,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && JasmineOnPlate == true && ErnieOnPlate == false{
                         self.startAnimateSideCharacter(key: "SideCharacter4Sitting", sideCharacter: "Ernie")
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration43"]!, fileExtension: "mp3") //"You did it"
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3") //"You did it"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing4"]!, fileExtension: "mp3", rate: 1)
                             charcterFourIdle.parent?.position = SCNVector3(-1.5, 8.5, 7)
                             charcterFourIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(125), GLKMathDegreesToRadians(0))
@@ -1191,7 +1191,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 workItem1 = DispatchWorkItem{
                     //play game intro 1
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration1"]!, fileExtension: "mp3")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: self.workItem2!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 13, execute: self.workItem2!)
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: {

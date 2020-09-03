@@ -1338,7 +1338,7 @@ class ChapterSelection {
             }
             lvlFloor.addChildNode(SideCharacter3idleNode)
             SideCharacter3idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
-            SideCharacter3idleNode.position = SCNVector3(0,0,0)
+            SideCharacter3idleNode.position = SCNVector3(3,5,0)
             SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(200), GLKMathDegreesToRadians(0))
         
             //Load Idle Animation Node
@@ -1376,9 +1376,9 @@ class ChapterSelection {
             prepareAnimation(withKey: "SideCharacter2Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@WalkingFixed", animationIdentifier: "Kim@WalkingFixed-1")
             
             //load animation for siede character 3
-            prepareAnimation(withKey: "SideCharacter3Leaning", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@LeaningFixed", animationIdentifier: "Jasmine@LeaningFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@IdleFixed", animationIdentifier: "Jasmine@IdleFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@WalkingFixed", animationIdentifier: "Jasmine@WalkingFixed-1")
+            prepareAnimation(withKey: "SideCharacter3Leaning", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@LeaningFixed", animationIdentifier: "action_container-Armature")
+            prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@IdleFixed", animationIdentifier: "action_container-Armature")
+            prepareAnimation(withKey: "SideCharacter3Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@WalkingFixed", animationIdentifier: "action_container-Armature")
                 
             //load animation for side character 4
             prepareAnimation(withKey: "SideCharacter4Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@HappyFixed", animationIdentifier: "Ernie@HappyFixed-1")
@@ -1463,7 +1463,7 @@ class ChapterSelection {
                                   "Narration45" : "ch3L-Final4",
                                   
                                   //extra chapter FX sounds
-                                  "BackgroundSound" : "",
+                                  "BackgroundSound" : "RoomToneOffice",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing1" : "bell-ding_01",
                                   "CoinDing2" : "bell-ding_02",
