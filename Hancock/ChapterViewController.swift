@@ -221,7 +221,8 @@ class ChapterViewController: UIViewController {
     func pauseAfterPlay(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.75, execute: {
             self.GifView?.stopAnimating()
-            self.GifView?.image = UIImage(named: "BookOpened")
+           // self.GifView?.image = UIImage(named: "BookOpened")
+            self.GifView?.image = UIImage(named: "LBookOpen")
             self.chapter1Label?.isHidden = false
             self.chapter6Label?.isHidden = false
             self.lineType1Label?.isHidden = false

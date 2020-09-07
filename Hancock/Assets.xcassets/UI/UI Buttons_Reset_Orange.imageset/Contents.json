@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "UI Buttons_Reset_Orange.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "BookOpen.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
