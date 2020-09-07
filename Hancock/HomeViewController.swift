@@ -4,7 +4,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var upperCaseImage: UIImageView!
     @IBOutlet weak var lowerCaseImage: UIImageView!
-    @IBOutlet weak var lineCaseImage: UIImageView!
+    @IBOutlet weak var PracticeImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
         lowerCaseImage.isUserInteractionEnabled = true
         lowerCaseImage.addGestureRecognizer(tap2)
         
-        lineCaseImage.isUserInteractionEnabled = true
-        lineCaseImage.addGestureRecognizer(tap3)
+        PracticeImage.isUserInteractionEnabled = true
+        PracticeImage.addGestureRecognizer(tap3)
     }
     
     @IBAction func logoutHandler(_ sender: Any) {
@@ -39,12 +39,12 @@ class HomeViewController: UIViewController {
     }
     @objc func tappedLine(){
         //action to perform segue
-        performSegue(withIdentifier: "toLinePage", sender: self)
+        performSegue(withIdentifier: "toPracticePage", sender: self)
     }
     
-    @IBAction func letterMatchingTapped(_ sender: Any) {
+    /*@IBAction func letterMatchingTapped(_ sender: Any) {
         //action to perform segue
         performSegue(withIdentifier: "letterMatching", sender: self)
-    }
+    }*/
     
 }

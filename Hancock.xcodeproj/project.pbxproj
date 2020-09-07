@@ -27,6 +27,7 @@
 		A072B02924EDCCCE00736A74 /* Ch6_g.gif in Resources */ = {isa = PBXBuildFile; fileRef = A072B02524EDCCCA00736A74 /* Ch6_g.gif */; };
 		A072B02B24EDCCCE00736A74 /* Ch6_d.gif in Resources */ = {isa = PBXBuildFile; fileRef = A072B02724EDCCCE00736A74 /* Ch6_d.gif */; };
 		A072B02D24EDCF2000736A74 /* Ch6_a.gif in Resources */ = {isa = PBXBuildFile; fileRef = A072B02C24EDCF2000736A74 /* Ch6_a.gif */; };
+		A076E3AD2506CF9E00DE0F47 /* PracticeMainMeniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A076E3AC2506CF9E00DE0F47 /* PracticeMainMeniViewController.swift */; };
 		A07974B12285FC4A00606889 /* StudentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */; };
 		A07974B322861DB000606889 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B222861DB000606889 /* StudentTableViewController.swift */; };
 		A08A2D3F22BEA2C60076B814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */; };
@@ -130,6 +131,7 @@
 		A072B02524EDCCCA00736A74 /* Ch6_g.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Ch6_g.gif; sourceTree = "<group>"; };
 		A072B02724EDCCCE00736A74 /* Ch6_d.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Ch6_d.gif; sourceTree = "<group>"; };
 		A072B02C24EDCF2000736A74 /* Ch6_a.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Ch6_a.gif; sourceTree = "<group>"; };
+		A076E3AC2506CF9E00DE0F47 /* PracticeMainMeniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeMainMeniViewController.swift; sourceTree = "<group>"; };
 		A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsTableViewCell.swift; sourceTree = "<group>"; };
 		A07974B222861DB000606889 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
 		A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		A0A028AF227CA9F500A7C787 = {
 			isa = PBXGroup;
 			children = (
+				A076E3AC2506CF9E00DE0F47 /* PracticeMainMeniViewController.swift */,
 				C939B55A229EF96200D15A2B /* Authentication */,
 				A0A028BA227CA9F500A7C787 /* Hancock */,
 				A0A028B9227CA9F500A7C787 /* Products */,
@@ -566,6 +569,7 @@
 				A713540624ACC7CE00E6D656 /* FreeWriteViewController.swift in Sources */,
 				A0A028BC227CA9F500A7C787 /* AppDelegate.swift in Sources */,
 				A03BF89224EB3E6C00962960 /* AssessmentSelection.swift in Sources */,
+				A076E3AD2506CF9E00DE0F47 /* PracticeMainMeniViewController.swift in Sources */,
 				A0DEC69C24BCBD15008A38F1 /* letterMatchingMenuViewController.swift in Sources */,
 				C939B560229F305900D15A2B /* RegisterViewController.swift in Sources */,
 				A03BF89024EB396200962960 /* PuzzleViewController.swift in Sources */,

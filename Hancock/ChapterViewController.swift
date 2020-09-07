@@ -45,7 +45,9 @@ class ChapterViewController: UIViewController {
     @IBOutlet weak var chapter8Label: UIButton!
     @IBOutlet weak var chapter9Label: UIButton!
     @IBOutlet weak var chapter10Label: UIButton!
+    @IBOutlet weak var linePracticeBackButton: UIButton!
     
+    //not connecting the below - they make it take too long to load
     @IBOutlet weak var lineType1Label: UIButton!
     @IBOutlet weak var lineType2Label: UIButton!
     @IBOutlet weak var lineType3Label: UIButton!
@@ -68,8 +70,8 @@ class ChapterViewController: UIViewController {
 //    let concept9 = UIImage (imageLiteralResourceName: "concept9")
 //    let concept10 = UIImage (imageLiteralResourceName: "concept10")
     
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "vc3toHomeScreen", sender: self)
+    @IBAction func linePracticeButtonTapped (_ sender: UIButton) {
+        performSegue(withIdentifier: "practiceMainMenu", sender: self)
     }
     
     

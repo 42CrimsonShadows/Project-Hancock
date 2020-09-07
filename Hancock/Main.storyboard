@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EbW-Xz-ygt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UWV-D1-EGe">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -81,9 +81,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JJv-Jb-Y9k"/>
                     </view>
-                    <connections>
-                        <segue destination="EbW-Xz-ygt" kind="presentation" identifier="toHomeScreen" id="YSj-T5-laj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2J-AN-RMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -713,201 +710,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juF-hh-CnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-619" y="1494"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="Rds-js-1Tg">
-            <objects>
-                <viewController storyboardIdentifier="bookARViewController" title="Home" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EbW-Xz-ygt" customClass="HomeViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tJ9-Cq-86R" userLabel="HomeView">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1of-YF-n3I">
-                                <rect key="frame" x="0.0" y="319" width="1125" height="728"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-25" translatesAutoresizingMaskIntoConstraints="NO" id="4Zx-mB-L4d">
-                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="354"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KWr-r1-H1A" userLabel="UpperStack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="354"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="BookUpper" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bm-28-E92">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="300" id="AHS-7x-sBd"/>
-                                                            <constraint firstAttribute="height" constant="300" id="FbH-O5-4LD"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7K3-EC-sGn">
-                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                        <state key="normal" title="UPPERCASE">
-                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="qjk-4A-XvH" kind="show" identifier="toChapterPageUpper" id="lk7-ni-Qgd">
-                                                                <segue key="commit" inheritsFrom="parent" id="sjQ-ay-lE1"/>
-                                                                <segue key="preview" inheritsFrom="commit" id="qFl-48-Rdz"/>
-                                                            </segue>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cQ1-tM-qrc" userLabel="LowerStack View">
-                                                <rect key="frame" x="275" y="0.0" width="300" height="354"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookLower" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTt-i8-Ewr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="300" id="nlV-S5-XdT"/>
-                                                            <constraint firstAttribute="width" constant="300" id="wNf-Om-ft2"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQW-eG-frl">
-                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                        <state key="normal" title="LOWERCASE">
-                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="YVu-Eb-vnP" kind="show" identifier="toChapterPageLower" id="tkb-zN-uOx">
-                                                                <segue key="commit" inheritsFrom="parent" id="y4X-Cu-DTd"/>
-                                                                <segue key="preview" inheritsFrom="commit" id="8ur-bC-BBV"/>
-                                                            </segue>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dhs-j3-gQR" userLabel="LinesStack View">
-                                                <rect key="frame" x="550" y="0.0" width="300" height="354"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="BookLine" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0AM-fW-844" userLabel="Lines Image">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="300" id="AHX-N9-7uj"/>
-                                                            <constraint firstAttribute="height" constant="300" id="mVE-9M-XB5"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uja-Wx-X2r" userLabel="Lines">
-                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                        <state key="normal" title="LINES">
-                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="hNX-2Z-0AR" kind="show" identifier="toLinePage" id="qRq-Ku-gCI">
-                                                                <segue key="commit" inheritsFrom="parent" id="hEh-fM-hqf"/>
-                                                                <segue key="preview" inheritsFrom="commit" id="XGA-EV-T2C"/>
-                                                            </segue>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zKL-0y-5Mo">
-                                                <rect key="frame" x="825" y="0.0" width="300" height="354"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="B" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3f-rn-P5z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="300" id="Nz0-bZ-3IH"/>
-                                                            <constraint firstAttribute="height" constant="300" id="d6E-Ea-R41"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzc-iT-c95">
-                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                        <state key="normal" title="Matching">
-                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="letterMatchingTapped:" destination="EbW-Xz-ygt" eventType="touchUpInside" id="09M-Yb-xhs"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Dhs-j3-gQR" firstAttribute="leading" secondItem="cQ1-tM-qrc" secondAttribute="trailing" id="qZU-TU-1Uy"/>
-                                            <constraint firstItem="cQ1-tM-qrc" firstAttribute="leading" secondItem="KWr-r1-H1A" secondAttribute="trailing" id="tcO-re-fWR"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zXT-4Z-7uC">
-                                        <rect key="frame" x="0.0" y="374" width="1125" height="354"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndy-YQ-zil">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="354"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <state key="normal" title="LEVEL 2 UPPER">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="kNy-92-C3p" kind="presentation" modalPresentationStyle="fullScreen" id="qUU-Yi-L4d"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fy-y5-Zyg">
-                                                <rect key="frame" x="375" y="0.0" width="375" height="354"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <state key="normal" title="LEVEL 2 LOWER">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="YFC-RS-cfq" kind="presentation" modalPresentationStyle="fullScreen" id="Lue-0a-zch"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nv-hu-mkg">
-                                                <rect key="frame" x="750" y="0.0" width="375" height="354"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <state key="normal" title="FREE WRITE">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="2Mk-AN-UIc" kind="presentation" identifier="toFreeWrite" modalPresentationStyle="fullScreen" id="Xe7-lz-aWI"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6U-v0-2US">
-                                <rect key="frame" x="957" y="41" width="121" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="l2e-Le-AE8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="logoutHandler:" destination="F1u-gX-TPZ" eventType="touchUpInside" id="nrv-QB-mWo"/>
-                                    <action selector="logoutHandler:" destination="EbW-Xz-ygt" eventType="touchUpInside" id="unI-sx-gxT"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="N6U-v0-2US" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ct3-2u-7PZ" secondAttribute="leading" symbolic="YES" id="4hs-hc-Upr"/>
-                            <constraint firstItem="1of-YF-n3I" firstAttribute="centerY" secondItem="tJ9-Cq-86R" secondAttribute="centerY" id="7vt-V1-Ibn"/>
-                            <constraint firstItem="ct3-2u-7PZ" firstAttribute="trailing" secondItem="N6U-v0-2US" secondAttribute="trailing" constant="47" id="V6y-mc-xtg"/>
-                            <constraint firstItem="1of-YF-n3I" firstAttribute="leading" secondItem="tJ9-Cq-86R" secondAttribute="leading" id="ZO7-QK-y3F"/>
-                            <constraint firstItem="N6U-v0-2US" firstAttribute="top" secondItem="ct3-2u-7PZ" secondAttribute="top" constant="41" id="fZW-zp-8BB"/>
-                            <constraint firstItem="1of-YF-n3I" firstAttribute="centerX" secondItem="tJ9-Cq-86R" secondAttribute="centerX" id="mIY-mB-pWM"/>
-                            <constraint firstAttribute="trailing" secondItem="1of-YF-n3I" secondAttribute="trailing" id="nJf-8D-c6N"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ct3-2u-7PZ"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="8UY-MC-Hbm"/>
-                    <connections>
-                        <outlet property="lineCaseImage" destination="0AM-fW-844" id="3gc-4N-ANB"/>
-                        <outlet property="lowerCaseImage" destination="UTt-i8-Ewr" id="cxx-bp-Fkt"/>
-                        <outlet property="upperCaseImage" destination="1bm-28-E92" id="RPo-Nc-bl5"/>
-                        <segue destination="nCQ-Xj-tZf" kind="show" identifier="letterMatching" id="bKv-c4-Yp3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vug-pQ-4AZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="F1u-gX-TPZ" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="770" y="155"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="WUO-Ec-vU0">
@@ -2202,12 +2004,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <state key="normal" image="UI Buttons_Back_Blue">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="EbW-Xz-ygt" kind="show" identifier="vc3toHomeScreen" id="IF0-Kw-T9V">
-                                        <segue key="commit" inheritsFrom="parent" id="Rq7-uf-zJ1"/>
-                                        <segue key="preview" inheritsFrom="commit" id="aeR-De-qzQ"/>
-                                    </segue>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2242,6 +2038,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="chapter9Label" destination="Ygd-aC-dJO" id="enj-NT-4rg"/>
                         <outlet property="conceptView" destination="t80-ww-KYb" id="BVK-cq-hTb"/>
                         <outlet property="loadingGifView" destination="nyC-Yu-V0h" id="YAP-6j-u7w"/>
+                        <segue destination="UWV-D1-EGe" kind="presentation" identifier="vc3toHomeScreen" modalPresentationStyle="fullScreen" id="DpL-vY-wJm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8l-IK-xen" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2355,12 +2152,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <state key="normal" backgroundImage="Reset">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="EbW-Xz-ygt" kind="show" identifier="vc1toHomeScreen" id="tLB-MI-V1M">
-                                        <segue key="commit" inheritsFrom="parent" id="h6u-ja-gmB"/>
-                                        <segue key="preview" inheritsFrom="commit" id="5IO-Gm-Cu4"/>
-                                    </segue>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2395,6 +2186,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="chapter5Label" destination="Jwf-9S-6jg" id="s9Z-lf-s3h"/>
                         <outlet property="conceptView" destination="aFP-Q0-NWu" id="MTs-wf-ae5"/>
                         <outlet property="loadingGifView" destination="bLv-tY-SIT" id="uKa-GJ-Qt4"/>
+                        <segue destination="UWV-D1-EGe" kind="presentation" identifier="vc3toHomeScreen" modalPresentationStyle="fullScreen" id="a2q-lS-aw2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXN-U1-EdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2572,12 +2364,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <state key="normal" backgroundImage="UI Buttons_Back_Violet">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="EbW-Xz-ygt" kind="show" identifier="vc3toHomeScreen" id="aag-E1-0Ec">
-                                        <segue key="commit" inheritsFrom="parent" id="gZX-6y-kAP"/>
-                                        <segue key="preview" inheritsFrom="commit" id="muF-6D-w0P"/>
-                                    </segue>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s0Z-5e-d9M">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
@@ -2601,7 +2387,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </constraints>
                                                 <state key="normal" image="UI Buttons_Back_Violet"/>
                                                 <connections>
-                                                    <action selector="backButtonTapped:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="mjy-OY-Rjt"/>
+                                                    <action selector="linePracticeButtonTapped:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="4k2-XE-iAt"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2796,41 +2582,123 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <viewLayoutGuide key="safeArea" id="2qD-bu-7p1"/>
                     </view>
                     <navigationItem key="navigationItem" id="iTf-Pv-gas"/>
+                    <connections>
+                        <outlet property="linePracticeBackButton" destination="l93-GX-CP8" id="G7c-ua-fc2"/>
+                        <segue destination="l4a-el-CtU" kind="presentation" identifier="practiceMainMenu" id="R4w-BH-xtA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f95-4p-OmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494" y="155"/>
+            <point key="canvasLocation" x="2321" y="155"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="0dJ-9r-NZL">
             <objects>
-                <viewController id="UWV-D1-EGe" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1w3-xt-zQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="UWV-D1-EGe" customClass="HomeViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EST-sl-smT">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UI_MainMenuImage" translatesAutoresizingMaskIntoConstraints="NO" id="Hrv-rz-5yf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainMenuImage" translatesAutoresizingMaskIntoConstraints="NO" id="eQa-om-QNe">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LH7-U4-3hQ">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rne-MZ-RQT">
+                                <rect key="frame" x="0.0" y="966" width="1024" height="400"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0rN-aW-7oG">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="400"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="TzZ-QY-xUO" userLabel="Lines Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="400"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UI_MainMenu_P" translatesAutoresizingMaskIntoConstraints="NO" id="Wyo-AI-4Ju">
+                                                        <rect key="frame" x="75" y="0.0" width="188" height="311"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVW-C6-pD1">
+                                                        <rect key="frame" x="79.5" y="329" width="179.5" height="71"/>
+                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="50"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NBd-AG-ycy" userLabel="Uppercase Stack View">
+                                                <rect key="frame" x="343" y="0.0" width="338" height="400"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="UI_MainMenu_U" translatesAutoresizingMaskIntoConstraints="NO" id="JCK-qz-1T9">
+                                                        <rect key="frame" x="119" y="0.0" width="100" height="321"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uppercase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMb-lB-ZTH">
+                                                        <rect key="frame" x="52.5" y="329" width="233" height="71"/>
+                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="50"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mwa-s4-SoT" userLabel="Lowercase Stack View">
+                                                <rect key="frame" x="686" y="0.0" width="338" height="400"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="UI_MainMenu_L" translatesAutoresizingMaskIntoConstraints="NO" id="HfY-cd-R5d">
+                                                        <rect key="frame" x="125" y="0.0" width="88" height="321"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lowercase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yz-5d-SUh">
+                                                        <rect key="frame" x="52" y="329" width="234.5" height="71"/>
+                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="50"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0rN-aW-7oG" secondAttribute="trailing" id="EUX-0z-DfA"/>
+                                    <constraint firstItem="0rN-aW-7oG" firstAttribute="top" secondItem="Rne-MZ-RQT" secondAttribute="top" id="N2x-QZ-Py0"/>
+                                    <constraint firstItem="0rN-aW-7oG" firstAttribute="leading" secondItem="Rne-MZ-RQT" secondAttribute="leading" id="aMp-dY-pbo"/>
+                                    <constraint firstAttribute="bottom" secondItem="0rN-aW-7oG" secondAttribute="bottom" id="voD-cB-6c3"/>
+                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCw-Yn-Wep">
+                                <rect key="frame" x="20" y="20" width="91" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qCw-Yn-Wep" secondAttribute="height" multiplier="91:55" id="h2O-1J-kTx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutHandler:" destination="UWV-D1-EGe" eventType="touchUpInside" id="VKI-JS-VHy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Hrv-rz-5yf" firstAttribute="bottom" secondItem="qVS-6P-H0M" secondAttribute="bottom" id="FHu-5u-MXL"/>
-                            <constraint firstItem="Hrv-rz-5yf" firstAttribute="leading" secondItem="qVS-6P-H0M" secondAttribute="leading" id="nhX-Ck-sBf"/>
-                            <constraint firstItem="Hrv-rz-5yf" firstAttribute="top" secondItem="qVS-6P-H0M" secondAttribute="top" id="uwz-kf-VSt"/>
-                            <constraint firstItem="Hrv-rz-5yf" firstAttribute="trailing" secondItem="qVS-6P-H0M" secondAttribute="trailing" id="yra-G6-XQG"/>
+                            <constraint firstItem="eQa-om-QNe" firstAttribute="bottom" secondItem="EST-sl-smT" secondAttribute="bottom" id="3Xu-xc-lhg"/>
+                            <constraint firstItem="Rne-MZ-RQT" firstAttribute="trailing" secondItem="qVS-6P-H0M" secondAttribute="trailing" id="9tg-Sl-odS"/>
+                            <constraint firstItem="eQa-om-QNe" firstAttribute="leading" secondItem="qVS-6P-H0M" secondAttribute="leading" id="UOl-nn-Nqc"/>
+                            <constraint firstItem="qCw-Yn-Wep" firstAttribute="leading" secondItem="EST-sl-smT" secondAttribute="leadingMargin" id="ZUZ-nQ-Uhj"/>
+                            <constraint firstItem="eQa-om-QNe" firstAttribute="top" secondItem="EST-sl-smT" secondAttribute="top" id="Zre-eU-qwE"/>
+                            <constraint firstItem="Rne-MZ-RQT" firstAttribute="bottom" secondItem="qVS-6P-H0M" secondAttribute="bottom" id="aB8-NS-dua"/>
+                            <constraint firstItem="Rne-MZ-RQT" firstAttribute="leading" secondItem="qVS-6P-H0M" secondAttribute="leading" id="cwi-Ng-HBs"/>
+                            <constraint firstItem="eQa-om-QNe" firstAttribute="trailing" secondItem="qVS-6P-H0M" secondAttribute="trailing" id="g3z-3Y-oB2"/>
+                            <constraint firstItem="qCw-Yn-Wep" firstAttribute="top" secondItem="qVS-6P-H0M" secondAttribute="top" constant="20" id="lvi-yG-iAz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qVS-6P-H0M"/>
                     </view>
+                    <connections>
+                        <outlet property="PracticeImage" destination="Wyo-AI-4Ju" id="O4i-Xc-tyy"/>
+                        <outlet property="lowerCaseImage" destination="HfY-cd-R5d" id="dlH-Z5-d1I"/>
+                        <outlet property="upperCaseImage" destination="JCK-qz-1T9" id="469-Fv-gr4"/>
+                        <segue destination="qjk-4A-XvH" kind="presentation" identifier="toChapterPageUpper" modalPresentationStyle="fullScreen" id="2Oi-Mx-xWA"/>
+                        <segue destination="YVu-Eb-vnP" kind="presentation" identifier="toChapterPageLower" id="oPS-nh-soZ"/>
+                        <segue destination="l4a-el-CtU" kind="presentation" identifier="toPracticePage" id="ZYl-JC-vYx"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1w3-xt-zQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2272.265625" y="154.61200585651537"/>
+            <point key="canvasLocation" x="797" y="155"/>
         </scene>
         <!--Letter Matching Menu View Controller-->
         <scene sceneID="eQb-oS-En0">
@@ -2849,16 +2717,17 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double5.1" translatesAutoresizingMaskIntoConstraints="NO" id="hs9-zd-7a2">
                                                 <rect key="frame" x="0.0" y="-1" width="1024" height="278"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LetterMatching" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-Ww-Ifd">
-                                                <rect key="frame" x="167" y="96" width="690" height="110"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LetterMatching" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-Ww-Ifd">
+                                                <rect key="frame" x="62" y="63" width="900" height="150"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="eUr-Ww-Ifd" firstAttribute="centerY" secondItem="Pcj-VH-Owv" secondAttribute="centerY" id="8a3-gB-j80"/>
                                             <constraint firstItem="hs9-zd-7a2" firstAttribute="centerY" secondItem="Pcj-VH-Owv" secondAttribute="centerY" id="AdM-KU-PCi"/>
                                             <constraint firstItem="hs9-zd-7a2" firstAttribute="top" secondItem="Pcj-VH-Owv" secondAttribute="top" constant="-1" id="TYU-9z-sUA"/>
                                             <constraint firstAttribute="trailing" secondItem="hs9-zd-7a2" secondAttribute="trailing" id="bbR-UH-MIh"/>
+                                            <constraint firstItem="eUr-Ww-Ifd" firstAttribute="centerX" secondItem="Pcj-VH-Owv" secondAttribute="centerX" id="hF2-XK-DUz"/>
                                             <constraint firstItem="hs9-zd-7a2" firstAttribute="leading" secondItem="Pcj-VH-Owv" secondAttribute="leading" id="oRg-UU-Wbn"/>
                                         </constraints>
                                     </view>
@@ -2873,7 +2742,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNN-II-Q2t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="258.5"/>
-                                                                <state key="normal" title="Button" image="LetterMatchingAZ"/>
+                                                                <state key="normal" image="LetterMatchingAZ"/>
                                                                 <connections>
                                                                     <action selector="aThroughZTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="t4p-5d-ELU"/>
                                                                 </connections>
@@ -2885,7 +2754,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8b-ez-biw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="259"/>
-                                                                <state key="normal" title="Button" image="LetterMatchingbd"/>
+                                                                <state key="normal" image="LetterMatchingbd"/>
                                                                 <connections>
                                                                     <action selector="bAndDTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="uZn-Rx-m41"/>
                                                                 </connections>
@@ -2897,7 +2766,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhO-7j-9jo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="258.5"/>
-                                                                <state key="normal" title="Button" image="LetterMatchingpgq"/>
+                                                                <state key="normal" image="LetterMatchingpgq"/>
                                                                 <connections>
                                                                     <action selector="pGQTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="Lo6-3J-5a0"/>
                                                                 </connections>
@@ -2970,10 +2839,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     </view>
                     <navigationItem key="navigationItem" id="0XE-zV-TVE"/>
                     <connections>
-                        <segue destination="EbW-Xz-ygt" kind="show" identifier="home" id="W2e-zT-pKg"/>
                         <segue destination="4gj-ve-Fvs" kind="presentation" identifier="aThroughZ" id="TRX-xz-z1V"/>
                         <segue destination="SaZ-Vc-SCs" kind="presentation" identifier="bAndDTapped" id="xyc-Ip-wj1"/>
                         <segue destination="CY4-xv-roP" kind="presentation" identifier="pGAndQTapped" id="xHn-cy-dwX"/>
+                        <segue destination="l4a-el-CtU" kind="presentation" identifier="home" id="hTv-ik-76y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6M-cn-sV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4371,26 +4240,218 @@ point the device toward a flat surface to see your Augmented Reality story conte
             </objects>
             <point key="canvasLocation" x="967" y="2253"/>
         </scene>
+        <!--Practice Main Meni View Controller-->
+        <scene sceneID="XDt-m0-ymy">
+            <objects>
+                <viewController storyboardIdentifier="PracticeMainMenu" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l4a-el-CtU" customClass="PracticeMainMeniViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jRd-9T-WRj">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hm8-Ru-CSg">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBz-kc-smo">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double2.1" translatesAutoresizingMaskIntoConstraints="NO" id="MIb-Eg-9OL">
+                                                <rect key="frame" x="0.0" y="-1" width="1024" height="278"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Practice" translatesAutoresizingMaskIntoConstraints="NO" id="TqC-9s-bNV">
+                                                <rect key="frame" x="275" y="63" width="474" height="150"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="MIb-Eg-9OL" firstAttribute="leading" secondItem="jBz-kc-smo" secondAttribute="leading" id="4ef-eI-dTP"/>
+                                            <constraint firstAttribute="trailing" secondItem="MIb-Eg-9OL" secondAttribute="trailing" id="Tfj-Pr-wJF"/>
+                                            <constraint firstItem="MIb-Eg-9OL" firstAttribute="top" secondItem="jBz-kc-smo" secondAttribute="top" constant="-1" id="cOB-Fb-qoI"/>
+                                            <constraint firstItem="TqC-9s-bNV" firstAttribute="centerX" secondItem="jBz-kc-smo" secondAttribute="centerX" id="iqS-da-Ky2"/>
+                                            <constraint firstItem="TqC-9s-bNV" firstAttribute="centerY" secondItem="jBz-kc-smo" secondAttribute="centerY" id="jwN-u8-qmk"/>
+                                            <constraint firstItem="MIb-Eg-9OL" firstAttribute="centerY" secondItem="jBz-kc-smo" secondAttribute="centerY" id="us1-Ox-P8d"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYr-4F-mfK">
+                                        <rect key="frame" x="0.0" y="284" width="1024" height="798"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="84z-tF-n3t">
+                                                <rect key="frame" x="12" y="8" width="1000" height="790"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="Jrh-ue-oAL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdd-kb-YYf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
+                                                                <state key="normal" title="Line Practice ">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="linePracticeTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="ves-xZ-NuM"/>
+                                                                    <segue destination="hNX-2Z-0AR" kind="presentation" identifier="linePractice" id="MZS-bI-R3u"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="Bwg-5v-99i">
+                                                        <rect key="frame" x="0.0" y="159.5" width="1000" height="152.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDQ-OE-wmp">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
+                                                                <state key="normal" title="Letter Matching">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="letterMatchingTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="MaY-5I-qSz"/>
+                                                                    <segue destination="nCQ-Xj-tZf" kind="presentation" identifier="letterMatching" id="ltz-MU-Lz7"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="w7a-9a-Db1">
+                                                        <rect key="frame" x="0.0" y="319" width="1000" height="152"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-D4-TOR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
+                                                                <state key="normal" title="Uppercase Letters">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="letterImitationUpperTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="2Vp-69-wVG"/>
+                                                                    <segue destination="kNy-92-C3p" kind="presentation" identifier="letterImitationUpper" modalPresentationStyle="fullScreen" id="PCO-Ju-Ycb"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="r12-Dw-0ag">
+                                                        <rect key="frame" x="0.0" y="478" width="1000" height="152.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXt-CW-ID4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
+                                                                <state key="normal" title="Lowercase Letters">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="letterImitationLowerTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="NNu-Gk-eQa"/>
+                                                                    <segue destination="YFC-RS-cfq" kind="presentation" identifier="letterImitationLower" modalPresentationStyle="fullScreen" id="lQp-1a-5mo"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="vVb-RX-qLM">
+                                                        <rect key="frame" x="0.0" y="637.5" width="1000" height="152.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQK-9u-82Z">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
+                                                                <state key="normal" title="Free Draw">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="freeDrawTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="xJW-XT-gsA"/>
+                                                                    <segue destination="2Mk-AN-UIc" kind="presentation" identifier="freeDraw" modalPresentationStyle="fullScreen" id="8YE-ef-vB8"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.98316866160000005" green="0.95549327139999995" blue="0.83527582879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="84z-tF-n3t" firstAttribute="top" secondItem="xYr-4F-mfK" secondAttribute="topMargin" id="5R1-ZN-9pk"/>
+                                            <constraint firstAttribute="bottom" secondItem="84z-tF-n3t" secondAttribute="bottom" id="9yp-cj-zXI"/>
+                                            <constraint firstItem="84z-tF-n3t" firstAttribute="leading" secondItem="xYr-4F-mfK" secondAttribute="leading" constant="12" id="L9f-dN-bdt"/>
+                                            <constraint firstAttribute="trailing" secondItem="84z-tF-n3t" secondAttribute="trailing" constant="12" id="Tv1-y3-px4"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDS-Ps-wQB">
+                                        <rect key="frame" x="0.0" y="1090" width="1024" height="276"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double2.2" translatesAutoresizingMaskIntoConstraints="NO" id="ymP-ZO-UPQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ymP-ZO-UPQ" secondAttribute="trailing" id="UYm-XO-a2I"/>
+                                            <constraint firstItem="ymP-ZO-UPQ" firstAttribute="leading" secondItem="mDS-Ps-wQB" secondAttribute="leading" id="Zqi-1w-Muy"/>
+                                            <constraint firstItem="ymP-ZO-UPQ" firstAttribute="centerY" secondItem="mDS-Ps-wQB" secondAttribute="centerY" id="dQx-Kl-7wW"/>
+                                            <constraint firstItem="ymP-ZO-UPQ" firstAttribute="top" secondItem="mDS-Ps-wQB" secondAttribute="top" id="oO9-AE-Wm6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jBz-kc-smo" firstAttribute="top" secondItem="hm8-Ru-CSg" secondAttribute="top" id="ICG-3l-ax3"/>
+                                    <constraint firstItem="mDS-Ps-wQB" firstAttribute="leading" secondItem="hm8-Ru-CSg" secondAttribute="leading" id="Rya-ur-PcN"/>
+                                    <constraint firstAttribute="trailing" secondItem="mDS-Ps-wQB" secondAttribute="trailing" id="UI1-py-fud"/>
+                                    <constraint firstItem="jBz-kc-smo" firstAttribute="leading" secondItem="hm8-Ru-CSg" secondAttribute="leading" id="dT0-Ly-Og6"/>
+                                    <constraint firstItem="xYr-4F-mfK" firstAttribute="centerY" secondItem="hm8-Ru-CSg" secondAttribute="centerY" id="kjF-8C-i0q"/>
+                                    <constraint firstAttribute="bottom" secondItem="mDS-Ps-wQB" secondAttribute="bottom" id="laB-6O-Ujg"/>
+                                    <constraint firstAttribute="trailing" secondItem="jBz-kc-smo" secondAttribute="trailing" id="uub-gA-o7s"/>
+                                    <constraint firstItem="xYr-4F-mfK" firstAttribute="top" secondItem="hm8-Ru-CSg" secondAttribute="top" constant="284" id="xKe-cT-2sW"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpL-Qw-8Ho">
+                                <rect key="frame" x="0.0" y="20" width="131" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="TGP-vt-6YD"/>
+                                    <constraint firstAttribute="width" constant="131" id="lpv-h1-O7t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" backgroundImage="UI Buttons_Back_Red">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="od0-W9-kHu"/>
+                                    <segue destination="UWV-D1-EGe" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="Hzk-Aa-xBV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97935718299999996" green="0.95525664089999995" blue="0.84704262019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="dpL-Qw-8Ho" firstAttribute="leading" secondItem="kZq-X7-ipx" secondAttribute="leading" id="eQd-so-0n8"/>
+                            <constraint firstItem="hm8-Ru-CSg" firstAttribute="top" secondItem="jRd-9T-WRj" secondAttribute="top" id="mgc-Wn-s7F"/>
+                            <constraint firstItem="hm8-Ru-CSg" firstAttribute="bottom" secondItem="jRd-9T-WRj" secondAttribute="bottom" id="ndh-T4-8zl"/>
+                            <constraint firstItem="dpL-Qw-8Ho" firstAttribute="top" secondItem="kZq-X7-ipx" secondAttribute="top" constant="20" id="tsp-vV-yAw"/>
+                            <constraint firstItem="hm8-Ru-CSg" firstAttribute="trailing" secondItem="jRd-9T-WRj" secondAttribute="trailing" id="xGE-3V-KY9"/>
+                            <constraint firstItem="hm8-Ru-CSg" firstAttribute="leading" secondItem="jRd-9T-WRj" secondAttribute="leading" id="xf2-sy-tn1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kZq-X7-ipx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BV7-z9-Ndi"/>
+                    <connections>
+                        <outlet property="backButton" destination="dpL-Qw-8Ho" id="7Bx-PP-D6g"/>
+                        <outlet property="freeDrawButton" destination="aQK-9u-82Z" id="soI-3x-SVQ"/>
+                        <outlet property="letterImitationLower" destination="kXt-CW-ID4" id="fln-UH-D7F"/>
+                        <outlet property="letterImitationUpper" destination="mY8-D4-TOR" id="L5b-Fr-Mok"/>
+                        <outlet property="letterMatchingButton" destination="cDQ-OE-wmp" id="JGg-wD-QGg"/>
+                        <outlet property="linePracticeButton" destination="Tdd-kb-YYf" id="yZA-xY-bxm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AYs-9L-QO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542" y="155"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bKv-c4-Yp3"/>
-        <segue reference="qRq-Ku-gCI"/>
-        <segue reference="lk7-ni-Qgd"/>
-        <segue reference="8ur-bC-BBV"/>
+        <segue reference="R4w-BH-xtA"/>
+        <segue reference="ltz-MU-Lz7"/>
+        <segue reference="a2q-lS-aw2"/>
         <segue reference="2Q2-TJ-gJR"/>
-        <segue reference="LDW-Gb-u1z"/>
-        <segue reference="5IO-Gm-Cu4"/>
+        <segue reference="Aw8-c9-Drp"/>
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024.png" width="1024" height="1024"/>
         <image name="ABC_Go_UI_ReplayButton_Graphic" width="400" height="400"/>
         <image name="ARexample" width="682.5" height="384"/>
-        <image name="B" width="750" height="1000"/>
         <image name="BookAnimation.gif" width="960" height="540"/>
-        <image name="BookLine" width="375" height="500"/>
-        <image name="BookLower" width="480" height="270"/>
-        <image name="BookUpper" width="480" height="270"/>
+        <image name="Bri_Double2.1" width="1536" height="414"/>
+        <image name="Bri_Double2.2" width="1536" height="414"/>
         <image name="Bri_Double4.1" width="1536" height="414"/>
         <image name="Bri_Double4.2" width="1536" height="414"/>
         <image name="Bri_Double5.1" width="1536" height="414"/>
@@ -4418,6 +4479,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="LetterMatchingAZ" width="1200" height="150"/>
         <image name="LetterMatchingbd" width="1200" height="150"/>
         <image name="LetterMatchingpgq" width="1300" height="150"/>
+        <image name="MainMenuImage" width="1024" height="1366"/>
         <image name="PerpCross" width="375" height="500"/>
         <image name="PlayBtn" width="256" height="256"/>
         <image name="Practice" width="474" height="150"/>
@@ -4439,7 +4501,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="UI Buttons_Back_Violet" width="509" height="200"/>
         <image name="UI Buttons_Done-1" width="509" height="200"/>
         <image name="UI Buttons_Reset_Red" width="509" height="200"/>
-        <image name="UI_MainMenuImage" width="878" height="1171"/>
+        <image name="UI_MainMenu_L" width="88" height="319"/>
+        <image name="UI_MainMenu_P" width="188" height="311"/>
+        <image name="UI_MainMenu_U" width="100" height="319"/>
         <image name="Vertical.png" width="180" height="240"/>
         <image name="YouWin" width="1024" height="1024"/>
         <image name="linedPaper1" width="2100" height="1449"/>
