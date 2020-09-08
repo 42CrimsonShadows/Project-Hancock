@@ -2594,7 +2594,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--Home View Controller-->
         <scene sceneID="0dJ-9r-NZL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1w3-xt-zQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="UWV-D1-EGe" customClass="HomeViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EST-sl-smT">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
@@ -2697,6 +2696,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <segue destination="l4a-el-CtU" kind="presentation" identifier="toPracticePage" id="ZYl-JC-vYx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1w3-xt-zQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="797" y="155"/>
         </scene>
