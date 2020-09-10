@@ -59,6 +59,7 @@ class FreeWriteViewController: UIViewController {
         backgroundIV.image = UIImage(named: "paper2")
         // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
+        canvasView.lineWidth = 10
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -191,28 +192,28 @@ class FreeWriteViewController: UIViewController {
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 1
-            canvasView.lineWidth = 10
+            canvasView.lineWidth = 5
         }
         else if (sender.currentTitle == "Small") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 4
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 1
-            canvasView.lineWidth = 20
+            canvasView.lineWidth = 10
         }
         else if (sender.currentTitle == "Med") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 4
             penScaleBtn4.layer.borderWidth = 1
-            canvasView.lineWidth = 30
+            canvasView.lineWidth = 15
         }
         else if (sender.currentTitle == "Big") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 4
-            canvasView.lineWidth = 40
+            canvasView.lineWidth = 20
         }
         else {
             print("No Pen Button Title Match: \(sender.currentTitle)")
