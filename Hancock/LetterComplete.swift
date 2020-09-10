@@ -586,17 +586,18 @@ extension ViewController{
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
                         // letter j complete starting letter e
-                        // TODO: ADD JASMINE OUTRO
+                        // TODO: ADD JASMINE Cheering
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
                         workItem2 = DispatchWorkItem {
                             self.playWalkAnimation()
                         }
                         workItem1 = DispatchWorkItem {
                             self.startTransitionAnimation(key: "MainCharacterCheering")
-                            self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Jasmine")
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem2!)
+                            self.startAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Jasmine")
+//                            self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Jasmine")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem2!)
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: workItem1!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
                         print("Nothing to shatter for this chapter")
                     case .Chapter7:
                         //Windsor goes back to what he was doing

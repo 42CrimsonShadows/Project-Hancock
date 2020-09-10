@@ -1332,7 +1332,7 @@ class ChapterSelection {
             SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(35), GLKMathDegreesToRadians(0))
             
             //Load Idle Animation Node
-            let idleJasmineScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@LeaningFixed.dae")!
+            let idleJasmineScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@Leaning2Fixed.dae")!
             for child in idleJasmineScene.rootNode.childNodes {
                 SideCharacter3idleNode.addChildNode(child)
             }
@@ -1376,9 +1376,11 @@ class ChapterSelection {
             prepareAnimation(withKey: "SideCharacter2Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@WalkingFixed", animationIdentifier: "Kim@WalkingFixed-1")
             
             //load animation for siede character 3
-            prepareAnimation(withKey: "SideCharacter3Leaning", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@LeaningFixed", animationIdentifier: "action_container-Armature")
+            prepareAnimation(withKey: "SideCharacter3Leaning", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@Leaning2Fixed", animationIdentifier: "action_container-Armature")
             prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@IdleFixed", animationIdentifier: "action_container-Armature")
             prepareAnimation(withKey: "SideCharacter3Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@WalkingFixed", animationIdentifier: "action_container-Armature")
+            prepareAnimation(withKey: "SideCharacter3Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@CheeringFixed", animationIdentifier: "action_container-Armature")
+            prepareAnimation(withKey: "SideCharacter3Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@LayingDown", animationIdentifier: "action_container-Armature")
                 
             //load animation for side character 4
             prepareAnimation(withKey: "SideCharacter4Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@HappyFixed", animationIdentifier: "Ernie@HappyFixed-1")

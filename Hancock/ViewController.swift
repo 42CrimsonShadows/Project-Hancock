@@ -458,7 +458,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             startTransitionAnimation(key: "MainCharacterLaying")
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3") //"Good job"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing1"]!, fileExtension: "mp3", rate: 1)
-                            mainCharacterIdle.parent?.position = SCNVector3(0.85, 8.42, 7.4)
+                            mainCharacterIdle.parent?.position = SCNVector3(0.85, 8.42, 6.5)
                             mainCharacterIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(243), GLKMathDegreesToRadians(0))
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -501,16 +501,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             })
                         }
                     case "Jasmine":
+                        // TODO: ADD JASMINE SITTING
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && JasmineOnPlate == false{
-                            self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Jasmine")
+                            self.startAnimateSideCharacter(key: "SideCharacter3Laying", sideCharacter: "Jasmine")
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3") //"Good job"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing3"]!, fileExtension: "mp3", rate: 1)
                             charcterThreeIdle.parent?.position = SCNVector3(-1.5, 8.5, 6.5)
-                            charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(35), GLKMathDegreesToRadians(0))
+                            charcterThreeIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(60), GLKMathDegreesToRadians(0))
                             print("Jasmine to plate")
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration43"]!, fileExtension: "mp3")
+                                self.charcterThreeIdle.isPaused = true
                                 self.JasmineOnPlate = true
                                 print("Jasmine on plate = ", self.JasmineOnPlate)
                             })
@@ -521,8 +523,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         self.startAnimateSideCharacter(key: "SideCharacter4Sitting", sideCharacter: "Ernie")
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration44"]!, fileExtension: "mp3") //"You did it"
                             self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["CoinDing4"]!, fileExtension: "mp3", rate: 1)
-                            charcterFourIdle.parent?.position = SCNVector3(-1, 8.5, 7.5)
-                            charcterFourIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(125), GLKMathDegreesToRadians(0))
+                            charcterFourIdle.parent?.position = SCNVector3(-0.5, 8.5, 7.5)
+                            charcterFourIdle.parent?.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(180), GLKMathDegreesToRadians(0))
                             self.ErnieOnPlate = true
                             self.shatterLetterSix = true
                             

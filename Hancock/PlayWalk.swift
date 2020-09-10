@@ -1285,6 +1285,10 @@ extension ViewController {
                 print("Ursa walks to top of the hill and sees Isaac")
                 
             case .Chapter8:
+                // TODO: STOP JASMINE CHEERING AND START IDLE (TURN TO FRONT)
+                self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Jasmine")
+                self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Jasmine")
+                self.charcterThreeIdle?.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 2))
                 //show the main character as walking
                 self.stopTransitionAnimation(key: "MainCharacterCheering")
                 self.startTransitionAnimation(key: "MainCharacterWalking")
@@ -2037,18 +2041,18 @@ extension ViewController {
                     self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Jasmine")
                     self.stopAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Jasmine")
                 }
-                
                 workItem16 = DispatchWorkItem {
                     self.startAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Jasmine")
+                    let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(200)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5)
                     let move1 = SCNAction.move(to: SCNVector3(1.2, 5, -1.8), duration: 1) //Jasmine walks to the bottom of the stairs to level 1
-                    let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Jasmine looks up the stairs
+                    let rotate2 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(0)), y: CGFloat(GLKMathDegreesToRadians(270)), z: CGFloat(GLKMathDegreesToRadians(0)), duration: 0.5) //Jasmine looks up the stairs
                     let move2 = SCNAction.move(to:SCNVector3(-3, 9.25, -1.75), duration: 3) // Jasmine walks up the stairs
-                    let rotate2 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Jasmine looks at the center of the fridge
+                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(430)), z: 0, duration: 0.5) //Jasmine looks at the center of the fridge
                     let move3 = SCNAction.move(to: SCNVector3(-1, 9.25, -1), duration: 3)
                         //Jasmine walks to the center of the fridge
-                    let rotate3 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Jasmine looks to the front of the fridge
+                    let rotate4 = SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 0.5) //Jasmine looks to the front of the fridge
                     let move4 = SCNAction.move(to: SCNVector3(0, 9.25, 1.5), duration: 3)  //Jasmine walks to the front of the fridge
-                    let chapter8Letter6RotMovSeq7 = SCNAction.sequence([move1, rotate1, move2, rotate2, move3, rotate3, move4])
+                    let chapter8Letter6RotMovSeq7 = SCNAction.sequence([rotate1, move1, rotate2, move2, rotate3, move3, rotate4, move4])
                     self.charcterThreeIdle?.parent?.runAction(chapter8Letter6RotMovSeq7)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: self.workItem17!)
                 }
