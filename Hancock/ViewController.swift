@@ -109,6 +109,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var focusPoint: CGPoint!
     var focusNode: SCNNode!
     var chapterNodeArray: [SCNNode]!
+    let scene = SCNScene(named: "art.scnassets/Arrow.scn")
+    var arrowVisible: Bool = false
+    var arrow: SCNNode?
+    var patriciaFlying: Bool = false
+    var patriciaNumber:Int = 0
     
     //main movement nodes for every story
     var rootStoryNode: SCNNode!
@@ -183,6 +188,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var workItem13:DispatchWorkItem? = nil
     var workItem14:DispatchWorkItem? = nil
     var workItem15:DispatchWorkItem? = nil
+    var lightItem1:DispatchWorkItem? = nil
+    var lightItem2:DispatchWorkItem? = nil
+    var particleItem1:DispatchWorkItem? = nil
+    var particleItem2:DispatchWorkItem? = nil
+    var particleItem3:DispatchWorkItem? = nil
     
     //variables for sound files and audio players
     var audioPlayers: Set<AVAudioPlayer> = Set<AVAudioPlayer>()
@@ -196,6 +206,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.initARSession()
         self.loadModels(chapterNode: chapterNodeArray!)
         self.referenceMainNodes()
+        arrow = scene?.rootNode.childNode(withName: "obelisk", recursively: false)
+        //arrow!.position = SCNVector3Make(0, -1, -1)
         
         //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
@@ -772,6 +784,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //dispatchMain.async tasks that are setup as dispatchWorkItems named workItem are canceled
             //this prevents background tasks from continueing if the chapter is quit and another is loaded
+            self.particleItem2?.cancel()
+            self.particleItem1?.cancel()
+            self.lightItem2?.cancel()
+            self.lightItem1?.cancel()
             self.workItem15?.cancel()
             self.workItem14?.cancel()
             self.workItem13?.cancel()
@@ -890,29 +906,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .toLetter2:
             print("Do nothing")
         case .toLetter3:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            print("Do nothing") //LM
+           /* DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 //play game intro 1
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter2Finish"]!, fileExtension: "mp3")
-            })
+            })*/
         case .toLetter4:
+             print("Do nothing") //LM
             //play narration for finishing letter 4
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+           /* DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter3Finish"]!, fileExtension: "mp3")
-                })
+                })*/
         case .toLetter5:
+             print("Do nothing") //LM
             //play narration for finishing letter 5
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+               /* DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter4Finish"]!, fileExtension: "mp3")
-                    })
+                    })*/
         case .toLetter6:
+             print("Do nothing") //LM
             //play narration for finishing letter 6
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+             /*   DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter5Finish"]!, fileExtension: "mp3")
-                    })
-        case .chapterFinished :
+                    })*/
+        case .chapterFinished : //LM
+            print("Do nothing")//LM - this all needs to be moved to LetterComplete - leaving here because I cant get it to integrate properly. It keeps calling the letter H draw
             //play narration for finishing the chapter
-           DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+              self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["letter6Finish"]!, fileExtension: "mp3")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish"]!, fileExtension: "mp3")
                     })
@@ -1168,6 +1189,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //set Brennon's fly away Balloon to paused
                 charcterTwoIdle.isHidden = true
                 
+                // Light on Brennon
+                let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
+                lightNode.position = SCNVector3Make(0, 25, 0)
+                lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                lightItem2 = DispatchWorkItem{
+                    lightNode.removeFromParentNode()
+                }
+                lightItem1 = DispatchWorkItem{
+                    self.charcterOneIdle.childNode(withName: "Brennon", recursively: false)!.addChildNode(lightNode)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 17.0, execute: self.lightItem1!)
+                
                 workItem3 = DispatchWorkItem{
                     self.playWalkAnimation()
                 }
@@ -1371,6 +1405,150 @@ class ViewController: UIViewController, UITextFieldDelegate {
             break
         }
     }
+    func findCharacter() {
+        if gameState == .playGame {
+            if currentChapter == .Chapter4 {
+                // if for some reason we're in game but the character isn't there
+                guard let characterNode = mainCharacterIdle else {
+                    print("View Controller - Find Character: Could Not Find Main Character")
+                    return
+                }
+                
+                //arrow.constraints = [SCNLookAtConstraint.init(target: characterNode)]
+                // if the camera is active in the scene, the point of view is what's on screen
+                if let pointOfView = sceneView.pointOfView{
+                    // ifVisible = Keelie is visible on the screen
+                    let isVisible = sceneView.isNode((characterNode.presentation), insideFrustumOf: pointOfView)
+                    if isVisible{
+                        // if we have established that keelie wasn't on screen
+                        if arrowVisible{
+                            //arrow.removeFromParentNode()
+                            arrowVisible = false
+                            // create yellow spotlight to shine on Keelie
+                            let lightNode = createSpotLightNode(intensity: 50, spotInnerAngle: 45, spotOuterAngle: 45)
+                            lightNode.position = SCNVector3Make(0, 500, 0)
+                            lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                            lightItem1 = DispatchWorkItem{
+                                lightNode.removeFromParentNode()
+                            }
+                            characterNode.addChildNode(lightNode)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem1!)
+                            print("View Controller - Find Character: Arrow Removed")
+                        }
+                    }
+                    else {
+                        // if we haven't already established that Keelie isn't on screen
+                        if !arrowVisible{
+                            //sceneView.pointOfView?.addChildNode(arrow)
+                            arrowVisible = true
+                            print("View Controller - Find Character: Arrow Added")
+                        }
+                    }
+                }
+            }
+            else if currentChapter == .Chapter9 {
+                if patriciaFlying {
+                    var characterNode = mainCharacterIdle!
+                    switch patriciaNumber {
+                        case 1 :
+                            characterNode = patricia1!.childNode(withName: "Patricia", recursively: false)!
+                        case 2 :
+                            characterNode = patricia2!.childNode(withName: "Patricia", recursively: false)!
+                        case 3 :
+                            characterNode = patricia3!.childNode(withName: "Patricia", recursively: false)!
+                        case 4 :
+                            characterNode = patricia4!.childNode(withName: "Patricia", recursively: false)!
+                        case 5 :
+                            characterNode = patricia5!.childNode(withName: "Patricia", recursively: false)!
+                        case 6 :
+                            characterNode = patricia6!.childNode(withName: "Patricia", recursively: false)!
+                        case 7 :
+                            characterNode = patricia7!.childNode(withName: "Patricia", recursively: false)!
+                        case 8 :
+                            characterNode = patricia8!.childNode(withName: "Patricia", recursively: false)!
+                        case 9 :
+                            characterNode = patricia9!.childNode(withName: "Patricia", recursively: false)!
+                        case 10 :
+                            characterNode = patricia10!.childNode(withName: "Patricia", recursively: false)!
+                        case 11 :
+                            characterNode = patricia11!.childNode(withName: "Patricia", recursively: false)!
+                        case 12 :
+                            characterNode = patricia12!.childNode(withName: "Patricia", recursively: false)!
+                        default :
+                            characterNode = mainCharacterIdle!
+                    }
+                
+                    arrow!.constraints = [SCNLookAtConstraint.init(target: characterNode)]
+                    // if the camera is active in the scene, the point of view is what's on screen
+                    if let pointOfView = sceneView.pointOfView{
+                        // ifVisible = Patricia is visible on the screen
+                        let isVisible = sceneView.isNode((characterNode.presentation), insideFrustumOf: pointOfView)
+                        if isVisible{
+                            // if we have established that patricia wasn't on screen
+                            if arrowVisible{
+//                                arrow!.removeFromParentNode()
+                                arrowVisible = false
+                                // create yellow spotlight to shine on Patricia
+                                let particles = createParticleSystem()
+                                particleItem3 = DispatchWorkItem{
+                                    characterNode.removeParticleSystem(particles)
+                                }
+                                characterNode.addParticleSystem(particles)
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.particleItem3!)
+                                print("View Controller - Find Character: Arrow Removed \(patriciaNumber)")
+                            }
+                        }
+                        else {
+                            // if we haven't already established that Patricia isn't on screen
+                            if !arrowVisible{
+//                                pointOfView.addChildNode(arrow!)
+//                                var yVal = pointOfView.worldPosition.y + 0.5
+//                                if pointOfView.worldPosition.y < mainFloor.worldPosition.y {
+//                                    yVal = mainFloor!.worldPosition.y + 0.5
+//                                }
+//                                arrow!.worldPosition = SCNVector3Make(pointOfView.worldPosition.x - 2, yVal, pointOfView.worldPosition.z - 2)
+//                                print(arrow!.worldPosition)
+//                                print(mainFloor!.worldPosition)
+//                                arrow!.constraints = [SCNLookAtConstraint.init(target: characterNode)]
+                                arrowVisible = true
+                                print("View Controller - Find Character: Arrow Added \(patriciaNumber)")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    func createSpotLightNode(intensity: CGFloat, spotInnerAngle: CGFloat, spotOuterAngle: CGFloat) -> SCNNode {
+        // create yellow spotlight
+        let light = SCNLight()
+        light.type = SCNLight.LightType.spot
+        light.intensity = intensity
+        light.color = UIColor.yellow
+        light.spotInnerAngle = spotInnerAngle
+        light.spotOuterAngle = spotOuterAngle
+        // create node to add light to
+        let lightNode = SCNNode()
+        lightNode.light = light
+        return lightNode
+    }
+    func createParticleSystem() -> SCNParticleSystem {
+        let particles = SCNParticleSystem()
+        particles.birthRate = 20.0
+        particles.birthLocation = .surface
+        particles.birthDirection = .random
+        particles.particleLifeSpan = 0.3
+        particles.particleVelocity = 0.5
+        particles.speedFactor = 1.0
+        particles.particleImage = UIImage(named: "art.scnassets/DotImages/YellowDot.png")
+        particles.particleColor = UIColor.yellow
+        particles.particleColorVariation = SCNVector4(0,0,0,0)
+        particles.particleSize = 0.002
+        particles.particleIntensity = 1.0
+        particles.emissionDuration = 1.0
+        particles.loops = true
+        return particles
+    }
 }
 
 extension ViewController : ARSCNViewDelegate {
@@ -1381,6 +1559,7 @@ extension ViewController : ARSCNViewDelegate {
         DispatchQueue.main.async {
             self.updateStatus()
             self.updateFocusNode()
+            self.findCharacter() // chapter 4 to find Keelie
         }
     }
     

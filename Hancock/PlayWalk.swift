@@ -35,6 +35,8 @@ extension ViewController {
                 startTransitionAnimation(key: "MainCharacterWalking")
                 //play walk sound
                 walkSound = playAudio(type: .Effect, file: chapterSelectedSoundDict!["WalkSound"]!, fileExtension: "wav", rate: 0.5)
+                                                                 
+                                   
                 //animate the main character to rotate a bit on the y axis
                 mainCharacterIdle?.runAction(SCNAction.rotateBy(x: 0, y: 0.0, z: 0, duration: 1)) //new chapter 1
                 //animate the mainFloor node to move and stop when the translation is complete
@@ -112,9 +114,21 @@ extension ViewController {
                 //play game intro 1
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration2"]!, fileExtension: "mp3")
                 
+                // create yellow spotlight to shine on Nails
+                let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 30)
+                lightNode.position = SCNVector3Make(5, 20, 2)
+                lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
+                
                 workItem2 = DispatchWorkItem{
                     //move the main character to the first letter
                     self.stopWalkAnimation()
+                }
+                lightItem2 = DispatchWorkItem{
+                    lightNode.removeFromParentNode()
+                }
+                lightItem1 = DispatchWorkItem{
+                    self.charcterOneIdle.addChildNode(lightNode)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
                 }
                 workItem1 = DispatchWorkItem{
                     //show busted Xylophone
@@ -131,7 +145,9 @@ extension ViewController {
 
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration3"]!, fileExtension: "mp3")
                     //TODO: ADD touches and raytracing to select Nails
-
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: self.lightItem1!)
+                    
                     //look around for nails at teachers desk
                     DispatchQueue.main.asyncAfter(deadline: .now() + 18, execute: self.workItem2!)
                 }
@@ -310,9 +326,15 @@ extension ViewController {
                 
                 workItem1 = DispatchWorkItem{
                     //play narration for finishing letter 2
-                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
+                    //self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")
+                    self.playAudio(type: .Effect, file: chapterSelectedSoundDict!["Narration9"]!, fileExtension: "mp3") //LM TEST
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem2!)//LM TEST
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: workItem1!)
+                
+                workItem2 = DispatchWorkItem{//LM TEST
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration10"]!, fileExtension: "mp3")//LM TEST
+                }
                 
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
 //                    //play narration for finishing letter 2
@@ -467,6 +489,10 @@ extension ViewController {
                 workItem2 = DispatchWorkItem{
                     self.patricia2!.isHidden = false
                     self.patricia2!.isPaused = false
+                    self.particleItem3?.cancel()
+                    self.patricia1!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                    self.patriciaNumber = 2
+                    self.patriciaFlying = true
                     self.patricia1!.isHidden = true
                     self.patricia1!.isPaused = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: self.workItem3!)
@@ -759,6 +785,10 @@ extension ViewController {
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration19"]!, fileExtension: "mp3")
                         self.patricia6!.isHidden = false
                         self.patricia6!.isPaused = false
+                        self.particleItem3?.cancel()
+                        self.patricia5!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                        self.patriciaNumber = 6
+                        self.patriciaFlying = true
                         self.patricia5!.isHidden = true
                         self.patricia5!.isPaused = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 10.7, execute:self.workItem3!)
@@ -767,6 +797,10 @@ extension ViewController {
                     //Patricia scoots back to take off again
                     self.patricia5!.isHidden = false
                     self.patricia5!.isPaused = false
+                    self.particleItem3?.cancel()
+                    self.patricia4!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                    self.patriciaNumber = 5
+                    self.patriciaFlying = true
                     self.patricia4!.isHidden = true
                     self.patricia4!.isPaused = true
                     
@@ -858,7 +892,7 @@ extension ViewController {
                 
                 //show the main character as idle and hide the walking version of him (temporary; will fix animation system later)
                 startTransitionAnimation(key: "MainCharacterWalking")
-                
+                                 
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate a bit on the y axis
                 // x= (-)west/(+)east, z= (-)north/(+)south
@@ -874,6 +908,12 @@ extension ViewController {
                 let rotate4 = SCNAction.rotateBy(x: 0, y: CGFloat(GLKMathDegreesToRadians(90)), z: 0, duration: 1)
                 let chapter1Letter4RotSeq = SCNAction.sequence([rotate1, rotate2, rotate3, rotate4])
                 mainCharacterIdle?.runAction(chapter1Letter4RotSeq)
+                
+                workItem1 = DispatchWorkItem{
+                      self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration23"]!, fileExtension: "mp3") //LM TEST
+                }
+                
+                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: workItem1!) //LM TEST
                 
             case .Chapter2:
                 //C (chapter2 - letter4)
@@ -1053,6 +1093,16 @@ extension ViewController {
 
             case .Chapter9:
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
+                
+                // Put Particles on Heidi
+                let particles = self.createParticleSystem()
+                particleItem2 = DispatchWorkItem {
+                    self.charcterFiveIdle.childNode(withName: "HeidiGroup", recursively: false)!.removeParticleSystem(particles)
+                }
+                particleItem1 = DispatchWorkItem {
+                    self.charcterFiveIdle.childNode(withName: "HeidiGroup", recursively: false)!.addParticleSystem(particles)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.particleItem2!)
+                }
 
                 workItem2 = DispatchWorkItem{
                     self.stopWalkAnimation()
@@ -1063,6 +1113,8 @@ extension ViewController {
                     //Patricia flies back up to find Heidi
                     self.patricia8!.isHidden = false
                     self.patricia8!.isPaused = false
+                    self.patriciaNumber = 8
+                    self.patriciaFlying = true
                     self.patricia7!.isHidden = true
                     self.patricia7!.isPaused = true
                     
@@ -1077,6 +1129,8 @@ extension ViewController {
                     let brennonMoveSeq = SCNAction.sequence([move1, rotate2, move2])
 
                     self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.particleItem1!)
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 12.4, execute: self.workItem2!)
                 }
