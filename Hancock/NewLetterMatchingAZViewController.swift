@@ -167,14 +167,19 @@ class NewLetterMatchingAZViewController: UIViewController, UIGestureRecognizerDe
         print(correctTaps)
         
         if tempLabelArray.count == testArray.count {
-            print("You win")
-            for (_, UILabel) in labelArray.enumerated(){
-                UILabel?.isHidden = true
-                
-            }
-            youWinPic.isHidden = false
-            topBorder.isHidden = true
-            instructionLabel.isHidden = true
+         print("You win")
+                        for (_, UILabel) in labelArray.enumerated(){
+                           UILabel?.isHidden = true
+                            workItem1 = DispatchWorkItem {
+                                           self.youWinPic.isHidden = false
+                                           self.topBorder.isHidden = true
+                                           self.instructionLabel.isHidden = true
+                                           print("made it here")
+                                           }
+                        }
+                      
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: self.workItem1!)
+                     
             
         }
 

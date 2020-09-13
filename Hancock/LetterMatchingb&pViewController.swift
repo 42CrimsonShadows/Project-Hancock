@@ -79,7 +79,7 @@ class LetterMatchingb_pViewController: UIViewController, UIGestureRecognizerDele
         for (_, UILabel) in labelArray.enumerated(){
               UILabel?.text = letterMatchingArray.randomElement()
                UILabel?.font = UIFont(name: "Chalkboard SE", size: 115)
-                         UILabel?.textColor = UIColor(red: 240/255.0, green: 125/255.0, blue: 114/255.0, alpha: 1.0)
+                         UILabel?.textColor = UIColor(red: 99/255.0, green: 171/255.0, blue: 183, alpha: 1.0)
               
           }
           
@@ -144,12 +144,17 @@ class LetterMatchingb_pViewController: UIViewController, UIGestureRecognizerDele
           if tempLabelArray.count == tapArray.count {
               print("You win")
               for (_, UILabel) in labelArray.enumerated(){
-                  UILabel?.isHidden = true
-                  
+                 UILabel?.isHidden = true
+                  workItem1 = DispatchWorkItem {
+                                 self.youWinPic.isHidden = false
+                                 self.topBorder.isHidden = true
+                                 self.instructionLabel.isHidden = true
+                                 print("made it here")
+                                 }
               }
-              youWinPic.isHidden = false
-              topBorder.isHidden = true
-              instructionLabel.isHidden = true
+            
+              DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: self.workItem1!)
+           
               
           }
 

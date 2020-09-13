@@ -2603,19 +2603,19 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rne-MZ-RQT">
-                                <rect key="frame" x="0.0" y="966" width="1024" height="400"/>
+                                <rect key="frame" x="0.0" y="967" width="1024" height="399"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0rN-aW-7oG">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="399"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="TzZ-QY-xUO" userLabel="Lines Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="338" height="400"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="TzZ-QY-xUO" userLabel="Lines Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="399"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UI_MainMenu_P" translatesAutoresizingMaskIntoConstraints="NO" id="Wyo-AI-4Ju">
                                                         <rect key="frame" x="75" y="0.0" width="188" height="311"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVW-C6-pD1">
-                                                        <rect key="frame" x="79.5" y="329" width="179.5" height="71"/>
+                                                        <rect key="frame" x="79.5" y="328" width="179.5" height="71"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="50"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2623,13 +2623,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NBd-AG-ycy" userLabel="Uppercase Stack View">
-                                                <rect key="frame" x="343" y="0.0" width="338" height="400"/>
+                                                <rect key="frame" x="343" y="0.0" width="338" height="399"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="UI_MainMenu_U" translatesAutoresizingMaskIntoConstraints="NO" id="JCK-qz-1T9">
-                                                        <rect key="frame" x="119" y="0.0" width="100" height="321"/>
+                                                        <rect key="frame" x="119" y="0.0" width="100" height="320"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uppercase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMb-lB-ZTH">
-                                                        <rect key="frame" x="52.5" y="329" width="233" height="71"/>
+                                                        <rect key="frame" x="52.5" y="328" width="233" height="71"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="50"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2637,13 +2637,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mwa-s4-SoT" userLabel="Lowercase Stack View">
-                                                <rect key="frame" x="686" y="0.0" width="338" height="400"/>
+                                                <rect key="frame" x="686" y="0.0" width="338" height="399"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="UI_MainMenu_L" translatesAutoresizingMaskIntoConstraints="NO" id="HfY-cd-R5d">
-                                                        <rect key="frame" x="125" y="0.0" width="88" height="321"/>
+                                                        <rect key="frame" x="125" y="0.0" width="88" height="320"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lowercase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yz-5d-SUh">
-                                                        <rect key="frame" x="52" y="329" width="234.5" height="71"/>
+                                                        <rect key="frame" x="52" y="328" width="234.5" height="71"/>
                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="50"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3620,7 +3620,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouWin" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-38-e0d">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b+d_YouWinScreen" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-38-e0d">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -3630,7 +3630,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBV-BB-eoG">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Single5" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-BE-xZl">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Single4" translatesAutoresizingMaskIntoConstraints="NO" id="cLf-BE-xZl">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-3l-WAt">
@@ -3747,7 +3747,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8v-3G-7TF">
                                                 <rect key="frame" x="824" y="0.0" width="200" height="221"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.38880878689999998" green="0.66930687430000002" blue="0.71765786409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -3944,7 +3944,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJd-Xv-nwP">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Single5" translatesAutoresizingMaskIntoConstraints="NO" id="RTa-r2-wYf">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Single1" translatesAutoresizingMaskIntoConstraints="NO" id="RTa-r2-wYf">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="221"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fI-uD-e6I">
@@ -4025,7 +4025,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <rect key="frame" x="824" y="0.0" width="200" height="221"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.27450980392156865" green="0.49001228810000003" blue="0.49412173030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -4438,8 +4438,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="R4w-BH-xtA"/>
-        <segue reference="ltz-MU-Lz7"/>
+        <segue reference="ZYl-JC-vYx"/>
+        <segue reference="U5g-Wc-Qn0"/>
         <segue reference="a2q-lS-aw2"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="Aw8-c9-Drp"/>
@@ -4459,6 +4459,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Bri_Double7.1" width="1536" height="414"/>
         <image name="Bri_Double7.2" width="1536" height="414"/>
         <image name="Bri_Single3" width="1536" height="414"/>
+        <image name="Bri_Single4" width="1536" height="414"/>
         <image name="Bri_Single5" width="1536" height="414"/>
         <image name="Circle.png" width="180" height="240"/>
         <image name="Coin" width="176.5" height="177"/>
@@ -4474,6 +4475,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Jamey_Double2.2" width="1536" height="414"/>
         <image name="Jamey_Double3.1" width="1536" height="414"/>
         <image name="Jamey_Double3.2" width="1536" height="414"/>
+        <image name="Jamey_Single1" width="1536" height="414"/>
         <image name="LetterImitation" width="1000" height="150"/>
         <image name="LetterMatching" width="900" height="150"/>
         <image name="LetterMatchingAZ" width="1200" height="150"/>
@@ -4506,6 +4508,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="UI_MainMenu_U" width="100" height="319"/>
         <image name="Vertical.png" width="180" height="240"/>
         <image name="YouWin" width="1024" height="1024"/>
+        <image name="b+d_YouWinScreen" width="1221" height="1536"/>
         <image name="linedPaper1" width="2100" height="1449"/>
         <image name="paper3" width="1005" height="686"/>
         <image name="profilePic.png" width="225" height="225"/>
