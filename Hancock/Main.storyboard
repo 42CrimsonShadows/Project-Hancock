@@ -3306,7 +3306,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouWin" translatesAutoresizingMaskIntoConstraints="NO" id="dUX-oO-aEZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b+d_YouWinScreen" translatesAutoresizingMaskIntoConstraints="NO" id="dUX-oO-aEZ">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -3934,7 +3934,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouWin" translatesAutoresizingMaskIntoConstraints="NO" id="yHe-ID-kQr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b+d_YouWinScreen" translatesAutoresizingMaskIntoConstraints="NO" id="yHe-ID-kQr">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -4438,8 +4438,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZYl-JC-vYx"/>
-        <segue reference="U5g-Wc-Qn0"/>
+        <segue reference="TRX-xz-z1V"/>
+        <segue reference="hTv-ik-76y"/>
+        <segue reference="1vJ-ch-688"/>
         <segue reference="a2q-lS-aw2"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="Aw8-c9-Drp"/>
@@ -4507,7 +4508,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="UI_MainMenu_P" width="188" height="311"/>
         <image name="UI_MainMenu_U" width="100" height="319"/>
         <image name="Vertical.png" width="180" height="240"/>
-        <image name="YouWin" width="1024" height="1024"/>
         <image name="b+d_YouWinScreen" width="1221" height="1536"/>
         <image name="linedPaper1" width="2100" height="1449"/>
         <image name="paper3" width="1005" height="686"/>
