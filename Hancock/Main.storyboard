@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jmb-Cg-UZK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jSx-6p-9lS">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -2703,11 +2703,96 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--Puzzle View Controller-->
         <scene sceneID="gqk-KF-gzS">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="jSx-6p-9lS" customClass="PuzzleViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="jSx-6p-9lS" customClass="PuzzleViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HDR-hN-AbO">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="x2H-hG-Zxn">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-4s-LLY">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="136.5"/>
+                                        <state key="normal" title="Chapter1"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="hXT-Of-9NC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4e-4L-8dI">
+                                        <rect key="frame" x="0.0" y="136.5" width="1024" height="136.5"/>
+                                        <state key="normal" title="Chapter2"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="WRt-pi-BmH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLM-vb-bNE">
+                                        <rect key="frame" x="0.0" y="273" width="1024" height="137"/>
+                                        <state key="normal" title="Chapter3"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="BG8-Oh-PpS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-NV-WKf">
+                                        <rect key="frame" x="0.0" y="410" width="1024" height="136.5"/>
+                                        <state key="normal" title="Chapter4"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="SDk-O4-8mV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="god-1K-xfa">
+                                        <rect key="frame" x="0.0" y="546.5" width="1024" height="136.5"/>
+                                        <state key="normal" title="Chapter5"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="c0J-Ru-h08"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYv-ga-6gJ">
+                                        <rect key="frame" x="0.0" y="683" width="1024" height="136.5"/>
+                                        <state key="normal" title="Chapter6"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="9Mt-IP-eN0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcA-Ap-xRo">
+                                        <rect key="frame" x="0.0" y="819.5" width="1024" height="136.5"/>
+                                        <state key="normal" title="Chapter7"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="YmY-lU-wSI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulC-jE-yhE">
+                                        <rect key="frame" x="0.0" y="956" width="1024" height="137"/>
+                                        <state key="normal" title="Chapter8"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="IXp-9c-dUN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-lv-c9e">
+                                        <rect key="frame" x="0.0" y="1093" width="1024" height="136.5"/>
+                                        <state key="normal" title="Chapter9"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="htg-Bb-uPT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-jj-lNA">
+                                        <rect key="frame" x="0.0" y="1229.5" width="1024" height="136.5"/>
+                                        <state key="normal" title="Chapter10"/>
+                                        <connections>
+                                            <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="cmV-gt-9Nb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="centerX" secondItem="HDR-hN-AbO" secondAttribute="centerX" id="XHm-iK-Hv6"/>
+                            <constraint firstItem="4KR-Qy-MRp" firstAttribute="bottom" secondItem="x2H-hG-Zxn" secondAttribute="bottom" id="Xjy-Kl-zco"/>
+                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="centerY" secondItem="HDR-hN-AbO" secondAttribute="centerY" id="gwV-gR-tY0"/>
+                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="leading" secondItem="4KR-Qy-MRp" secondAttribute="leading" id="jqJ-ZW-7xw"/>
+                            <constraint firstItem="4KR-Qy-MRp" firstAttribute="trailing" secondItem="x2H-hG-Zxn" secondAttribute="trailing" id="mfD-sb-iey"/>
+                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="top" secondItem="4KR-Qy-MRp" secondAttribute="top" id="nXp-97-5eY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4KR-Qy-MRp"/>
                     </view>
                     <navigationItem key="navigationItem" id="NzD-AD-Ygc"/>
@@ -2736,18 +2821,31 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFm-sW-TEc">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="894"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PuzzleImage_2" translatesAutoresizingMaskIntoConstraints="NO" id="DOd-0P-S0b">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PuzzleImage_8" translatesAutoresizingMaskIntoConstraints="NO" id="DOd-0P-S0b">
                                                         <rect key="frame" x="188" y="15" width="648" height="864"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="864" id="DoC-qH-VoH"/>
                                                             <constraint firstAttribute="width" constant="648" id="sMI-rN-u5X"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4O-JP-5wb">
+                                                        <rect key="frame" x="15" y="15" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="OPb-Pv-6Al"/>
+                                                            <constraint firstAttribute="height" constant="100" id="Xfh-uD-z1K"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Reset"/>
+                                                        <connections>
+                                                            <action selector="backPressed:" destination="t6x-o2-efZ" eventType="touchUpInside" id="wil-nM-1oN"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstItem="DOd-0P-S0b" firstAttribute="centerY" secondItem="QFm-sW-TEc" secondAttribute="centerY" id="IT2-8g-kPN"/>
                                                     <constraint firstItem="DOd-0P-S0b" firstAttribute="centerX" secondItem="QFm-sW-TEc" secondAttribute="centerX" id="X2c-pd-P0U"/>
+                                                    <constraint firstItem="c4O-JP-5wb" firstAttribute="top" secondItem="QFm-sW-TEc" secondAttribute="top" constant="15" id="YOp-fo-4aT"/>
+                                                    <constraint firstItem="c4O-JP-5wb" firstAttribute="leading" secondItem="QFm-sW-TEc" secondAttribute="leading" constant="15" id="uzp-Ru-FWx"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pgd-71-xFu">
@@ -2756,19 +2854,32 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koE-ij-pjq">
                                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="228"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JY0-kK-fbR">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="A" translatesAutoresizingMaskIntoConstraints="NO" id="GML-Al-uMS">
                                                                 <rect key="frame" x="416.5" y="14" width="191" height="200"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="200" id="atE-JZ-PtN"/>
-                                                                    <constraint firstAttribute="width" constant="191" id="h3S-pW-4mC"/>
+                                                                    <constraint firstAttribute="width" constant="191" id="LYe-Qy-8eO"/>
+                                                                    <constraint firstAttribute="height" constant="200" id="Mm8-T4-poN"/>
                                                                 </constraints>
                                                             </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx2-tH-tEC">
+                                                                <rect key="frame" x="740.5" y="81" width="253.5" height="66"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="253.5" id="hMn-ZH-JL9"/>
+                                                                    <constraint firstAttribute="height" constant="66" id="noc-9D-Jc8"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="60"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="JY0-kK-fbR" firstAttribute="centerX" secondItem="koE-ij-pjq" secondAttribute="centerX" id="65N-6u-zr8"/>
-                                                            <constraint firstItem="JY0-kK-fbR" firstAttribute="top" secondItem="koE-ij-pjq" secondAttribute="top" constant="14" id="eV1-Nr-Daz"/>
-                                                            <constraint firstItem="JY0-kK-fbR" firstAttribute="centerY" secondItem="koE-ij-pjq" secondAttribute="centerY" id="iqd-Z3-pdP"/>
+                                                            <constraint firstAttribute="trailing" secondItem="rx2-tH-tEC" secondAttribute="trailing" constant="30" id="Rwd-03-ujn"/>
+                                                            <constraint firstItem="GML-Al-uMS" firstAttribute="top" secondItem="koE-ij-pjq" secondAttribute="top" constant="14" id="a9j-3e-Fle"/>
+                                                            <constraint firstAttribute="bottom" secondItem="rx2-tH-tEC" secondAttribute="bottom" constant="81" id="bUa-Gz-i87"/>
+                                                            <constraint firstItem="GML-Al-uMS" firstAttribute="centerX" secondItem="koE-ij-pjq" secondAttribute="centerX" id="cLe-ae-wmc"/>
+                                                            <constraint firstItem="rx2-tH-tEC" firstAttribute="top" secondItem="koE-ij-pjq" secondAttribute="top" constant="81" id="xaF-Mb-wsP"/>
+                                                            <constraint firstItem="GML-Al-uMS" firstAttribute="centerY" secondItem="koE-ij-pjq" secondAttribute="centerY" id="zG6-C8-Mkb"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45c-hU-EiF">
@@ -2777,24 +2888,48 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Afa-Nt-tao">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="228"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="91m-2V-KNE">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1e-DW-Dpw">
                                                                         <rect key="frame" x="0.0" y="0.0" width="164" height="228"/>
-                                                                    </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qVl-A9-HsK">
+                                                                        <state key="normal" title="0" image="A"/>
+                                                                        <connections>
+                                                                            <action selector="imagePressed:" destination="t6x-o2-efZ" eventType="touchUpInside" id="NLr-fA-b9K"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9A-no-sbT">
                                                                         <rect key="frame" x="172" y="0.0" width="164" height="228"/>
-                                                                    </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Glt-ii-7BF">
+                                                                        <state key="normal" title="1" image="a-"/>
+                                                                        <connections>
+                                                                            <action selector="imagePressed:" destination="t6x-o2-efZ" eventType="touchUpInside" id="Lnv-BB-sxL"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viA-Vo-4ik">
                                                                         <rect key="frame" x="344" y="0.0" width="164" height="228"/>
-                                                                    </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jsa-cW-QxJ">
+                                                                        <state key="normal" title="2" image="B"/>
+                                                                        <connections>
+                                                                            <action selector="imagePressed:" destination="t6x-o2-efZ" eventType="touchUpInside" id="NKR-h5-K6l"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDj-0P-Hlz">
                                                                         <rect key="frame" x="516" y="0.0" width="164" height="228"/>
-                                                                    </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5uA-gL-n92">
+                                                                        <state key="normal" title="3" image="b-"/>
+                                                                        <connections>
+                                                                            <action selector="imagePressed:" destination="t6x-o2-efZ" eventType="touchUpInside" id="dzk-k5-ioj"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaC-9j-c0a">
                                                                         <rect key="frame" x="688" y="0.0" width="164" height="228"/>
-                                                                    </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ygg-lw-TLS">
+                                                                        <state key="normal" title="4" image="C"/>
+                                                                        <connections>
+                                                                            <action selector="imagePressed:" destination="t6x-o2-efZ" eventType="touchUpInside" id="r58-jq-pWe"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wng-an-TxZ">
                                                                         <rect key="frame" x="860" y="0.0" width="164" height="228"/>
-                                                                    </imageView>
+                                                                        <state key="normal" title="5" image="c-"/>
+                                                                        <connections>
+                                                                            <action selector="imagePressed:" destination="t6x-o2-efZ" eventType="touchUpInside" id="Mph-nA-SPd"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
@@ -2841,14 +2976,15 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     </view>
                     <navigationItem key="navigationItem" id="04d-VQ-YhH"/>
                     <connections>
-                        <outlet property="cardFive" destination="5uA-gL-n92" id="Mhs-Tj-i9n"/>
-                        <outlet property="cardFour" destination="Jsa-cW-QxJ" id="eDp-Pc-C8C"/>
-                        <outlet property="cardOne" destination="91m-2V-KNE" id="Tio-Kb-4pb"/>
-                        <outlet property="cardSix" destination="Ygg-lw-TLS" id="AVB-zH-lQt"/>
-                        <outlet property="cardThree" destination="Glt-ii-7BF" id="7zd-oN-1cX"/>
-                        <outlet property="cardTwo" destination="qVl-A9-HsK" id="lKJ-L1-xYh"/>
-                        <outlet property="instructionCard" destination="JY0-kK-fbR" id="eVc-IV-FqB"/>
+                        <outlet property="cardFive" destination="NaC-9j-c0a" id="xnq-PL-0Wz"/>
+                        <outlet property="cardFour" destination="gDj-0P-Hlz" id="qpA-A3-J8k"/>
+                        <outlet property="cardOne" destination="C1e-DW-Dpw" id="oMC-ef-qdo"/>
+                        <outlet property="cardSix" destination="wng-an-TxZ" id="2Pg-j9-nUJ"/>
+                        <outlet property="cardThree" destination="viA-Vo-4ik" id="lCy-ZA-xcc"/>
+                        <outlet property="cardTwo" destination="v9A-no-sbT" id="YeI-NX-8xv"/>
+                        <outlet property="instructionCard" destination="GML-Al-uMS" id="iBy-Y7-now"/>
                         <outlet property="puzzleImageView" destination="DOd-0P-S0b" id="Vg7-lB-L7e"/>
+                        <outlet property="successLabel" destination="rx2-tH-tEC" id="ISf-70-nAh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXI-Zx-vci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3828,6 +3964,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024.png" width="1024" height="1024"/>
+        <image name="A" width="750" height="1000"/>
         <image name="ARexample" width="682.5" height="384"/>
         <image name="AntFace" width="243" height="281.5"/>
         <image name="B" width="750" height="1000"/>
@@ -3839,6 +3976,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Bri_Double1.2" width="1536" height="414"/>
         <image name="Bri_Single1" width="1536" height="414"/>
         <image name="Bri_Single5" width="1536" height="414"/>
+        <image name="C" width="750" height="1000"/>
         <image name="Circle" width="375" height="500"/>
         <image name="Coin" width="176.5" height="177"/>
         <image name="DiagonalCross" width="375" height="500"/>
@@ -3850,13 +3988,16 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Jamey_Single5" width="1536" height="414"/>
         <image name="PerpCross" width="375" height="500"/>
         <image name="PlayBtn" width="256" height="256"/>
-        <image name="PuzzleImage_2" width="1024" height="1366"/>
+        <image name="PuzzleImage_8" width="1024" height="1366"/>
         <image name="Reset" width="256" height="256"/>
         <image name="ShowBtn" width="256" height="256"/>
         <image name="Square" width="375" height="500"/>
         <image name="Triangle" width="375" height="500"/>
         <image name="Vertical" width="375" height="500"/>
         <image name="YouWin" width="1024" height="1024"/>
+        <image name="a-" width="750" height="1000"/>
+        <image name="b-" width="750" height="1000"/>
+        <image name="c-" width="750" height="1000"/>
         <image name="dashLetterBG" width="489" height="700"/>
         <image name="linedPaper1" width="2100" height="1449"/>
         <image name="paper3" width="2100" height="1449"/>
