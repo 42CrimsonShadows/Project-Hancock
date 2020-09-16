@@ -109,6 +109,9 @@ class AssessmentSelection: UIViewController {
     private var UIImages:[UIButton]?
     private var match:Int?
     
+    private var guesses = 0
+    private var correctGuesses = 0
+    
     // MARK: - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,7 +208,9 @@ class AssessmentSelection: UIViewController {
     
     @IBAction func imagePressed(_ sender: UIButton) {
         print("\(match!)")
+        guesses += 1
         if(sender.currentTitle == "\(match!)") {
+            correctGuesses += 1
             letterArray!.remove(at: letterArray!.firstIndex(of: instructionCard.image!)!)
             successLabel.text = "Correct!"
             self.createPieceMask(puzzle: self.puzzleNum!, piece: self.pieceToCreate())
