@@ -1051,7 +1051,6 @@ extension ViewController {
                 print("Ursa walks to Windsor")
                 
             case .Chapter8:
-                // TODO: Lionel moves towards Jasmine
                 self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
                 
                 //show the main character as walking
@@ -1285,7 +1284,6 @@ extension ViewController {
                 print("Ursa walks to top of the hill and sees Isaac")
                 
             case .Chapter8:
-                // TODO: STOP JASMINE CHEERING AND START IDLE (TURN TO FRONT)
                 self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Jasmine")
                 self.stopAnimateSideCharacter(key: "SideCharacter3Cheering", sideCharacter: "Jasmine")
                 self.charcterThreeIdle?.parent?.runAction(SCNAction.rotateTo(x: 0, y: CGFloat(GLKMathDegreesToRadians(365)), z: 0, duration: 2))

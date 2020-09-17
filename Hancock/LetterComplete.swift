@@ -586,7 +586,6 @@ extension ViewController{
                         print("Nothing to shatter for this chapter")
                     case .Chapter8:
                         // letter j complete starting letter e
-                        // TODO: ADD JASMINE Cheering
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration26"]!, fileExtension: "mp3")
                         workItem2 = DispatchWorkItem {
                             self.playWalkAnimation()

@@ -26,7 +26,6 @@ class LevelTwoActivityViewController: UIViewController {
     var letterToDraw:String? // set in LevelTwoMenuVC in prepare: forSegue
     
     // MARK: - Dictionaries
-    // TODO: Get videos and link them
     // dictionary to grab letter video
     private let letterAnimationDictionary = [
         "a":"aLower",

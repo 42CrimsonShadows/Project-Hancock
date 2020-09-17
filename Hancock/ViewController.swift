@@ -501,7 +501,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             })
                         }
                     case "Jasmine":
-                        // TODO: ADD JASMINE SITTING
                         print("Tapped: ", hitTestResult.node.parent?.name)
                         if LionelOnPlate == true && YogiOnPlate == true && KimiOnPlate == true && JasmineOnPlate == false{
                             self.startAnimateSideCharacter(key: "SideCharacter3Laying", sideCharacter: "Jasmine")

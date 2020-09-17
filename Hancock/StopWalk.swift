@@ -1348,7 +1348,6 @@ extension ViewController{
                     DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: workItem1!)
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
-                    // TODO: ADD JASMINE ACTIVITY TRANSITION
                     self.shatterLetterFour = true
                     workItem1 = DispatchWorkItem {
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
