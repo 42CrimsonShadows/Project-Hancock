@@ -111,6 +111,7 @@ class AssessmentSelection: UIViewController {
     
     private var guesses = 0
     private var correctGuesses = 0
+    private var hasGuessed = false
     
     // MARK: - Setup
     override func viewDidLoad() {
@@ -195,7 +196,7 @@ class AssessmentSelection: UIViewController {
     private func setupPuzzleView() {
         // puzzle mask setup
             puzzleImageView.image = puzzleImage!
-            print(puzzleImageView.bounds.size) // should be 648.0 x 864.0 or equivalent ratio - important for the mask to work
+            print(puzzleImageView.bounds.size) // should be 486.0 x 648.0 or equivalent ratio - important for the mask to work
             height = puzzleImageView.bounds.size.height
             width = puzzleImageView.bounds.size.width
             radius = puzzleImageView.bounds.size.width * cutOutPercent
@@ -208,19 +209,23 @@ class AssessmentSelection: UIViewController {
     
     @IBAction func imagePressed(_ sender: UIButton) {
         print("\(match!)")
-        guesses += 1
-        if(sender.currentTitle == "\(match!)") {
-            correctGuesses += 1
-            letterArray!.remove(at: letterArray!.firstIndex(of: instructionCard.image!)!)
-            successLabel.text = "Correct!"
-            self.createPieceMask(puzzle: self.puzzleNum!, piece: self.pieceToCreate())
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                self.successLabel.text = ""
-                self.setupLetterImages()
+        if(!hasGuessed) {
+            guesses += 1
+            if(sender.currentTitle == "\(match!)") {
+                hasGuessed = true
+                correctGuesses += 1
+                letterArray!.remove(at: letterArray!.firstIndex(of: instructionCard.image!)!)
+                successLabel.text = "Correct!"
+                self.createPieceMask(puzzle: self.puzzleNum!, piece: self.pieceToCreate())
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                    self.successLabel.text = ""
+                    self.setupLetterImages()
+                    self.hasGuessed = false
+                }
             }
-        }
-        else {
-            successLabel.text = "Try Again!"
+            else {
+                successLabel.text = "Try Again!"
+            }
         }
     }
     

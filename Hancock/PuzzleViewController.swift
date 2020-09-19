@@ -20,25 +20,25 @@ class PuzzleViewController: UIViewController {
     @IBAction func chapterPressed(_ sender: UIButton) {
         
         switch sender.currentTitle {
-            case "Chapter1":
+            case "I, T, L, F, E, H":
                 chapter = 1
-            case "Chapter2":
+            case "P, R, B, C, D, U":
                 chapter = 2
-            case "Chapter3":
+            case "G, O, Q, S, J":
                 chapter = 3
-            case "Chapter4":
+            case "K, V, W, M, A":
                 chapter = 4
-            case "Chapter5":
+            case "N, Z, Y, X":
                 chapter = 5
-            case "Chapter6":
+            case "c, a, d, g, o":
                 chapter = 6
-            case "Chapter7":
+            case "u, s, v, w, i, t":
                 chapter = 7
-            case "Chapter8":
+            case "l, y, k, j, e":
                 chapter = 8
-            case "Chapter9":
+            case "p, r, n, m, h, b":
                 chapter = 9
-            case "Chapter10":
+            case "f, q, x, z":
                 chapter = 10
             default:
                 chapter = 1

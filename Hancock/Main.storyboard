@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EbW-Xz-ygt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jSx-6p-9lS">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1480,23 +1480,23 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1of-YF-n3I">
-                                <rect key="frame" x="0.0" y="319" width="1125" height="728"/>
+                                <rect key="frame" x="0.0" y="319" width="1024" height="728"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-25" translatesAutoresizingMaskIntoConstraints="NO" id="4Zx-mB-L4d">
-                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="354"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="354"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KWr-r1-H1A" userLabel="UpperStack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="354"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="354"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="BookUpper" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bm-28-E92">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="300" id="AHS-7x-sBd"/>
                                                             <constraint firstAttribute="height" constant="300" id="FbH-O5-4LD"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7K3-EC-sGn">
-                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
+                                                        <rect key="frame" x="0.0" y="308" width="275" height="46"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="UPPERCASE">
@@ -1512,17 +1512,17 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cQ1-tM-qrc" userLabel="LowerStack View">
-                                                <rect key="frame" x="275" y="0.0" width="300" height="354"/>
+                                                <rect key="frame" x="250" y="0.0" width="274.5" height="354"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookLower" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTt-i8-Ewr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="274.5" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" id="nlV-S5-XdT"/>
                                                             <constraint firstAttribute="width" constant="300" id="wNf-Om-ft2"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQW-eG-frl">
-                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
+                                                        <rect key="frame" x="0.0" y="308" width="274.5" height="46"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="LOWERCASE">
@@ -1538,17 +1538,17 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dhs-j3-gQR" userLabel="LinesStack View">
-                                                <rect key="frame" x="550" y="0.0" width="300" height="354"/>
+                                                <rect key="frame" x="499.5" y="0.0" width="275" height="354"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="BookLine" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0AM-fW-844" userLabel="Lines Image">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="300" id="AHX-N9-7uj"/>
                                                             <constraint firstAttribute="height" constant="300" id="mVE-9M-XB5"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uja-Wx-X2r" userLabel="Lines">
-                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
+                                                        <rect key="frame" x="0.0" y="308" width="275" height="46"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="LINES">
@@ -1564,17 +1564,17 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zKL-0y-5Mo">
-                                                <rect key="frame" x="825" y="0.0" width="300" height="354"/>
+                                                <rect key="frame" x="749.5" y="0.0" width="274.5" height="354"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="B" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3f-rn-P5z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="274.5" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="300" id="Nz0-bZ-3IH"/>
                                                             <constraint firstAttribute="height" constant="300" id="d6E-Ea-R41"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzc-iT-c95">
-                                                        <rect key="frame" x="0.0" y="308" width="300" height="46"/>
+                                                        <rect key="frame" x="0.0" y="308" width="274.5" height="46"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <state key="normal" title="Matching">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1592,10 +1592,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zXT-4Z-7uC">
-                                        <rect key="frame" x="0.0" y="374" width="1125" height="354"/>
+                                        <rect key="frame" x="0.0" y="374" width="1024" height="354"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndy-YQ-zil">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="354"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="341.5" height="354"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="LEVEL 2 UPPER">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1605,7 +1605,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fy-y5-Zyg">
-                                                <rect key="frame" x="375" y="0.0" width="375" height="354"/>
+                                                <rect key="frame" x="341.5" y="0.0" width="341" height="354"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="LEVEL 2 LOWER">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1615,7 +1615,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nv-hu-mkg">
-                                                <rect key="frame" x="750" y="0.0" width="375" height="354"/>
+                                                <rect key="frame" x="682.5" y="0.0" width="341.5" height="354"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="FREE WRITE">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1629,7 +1629,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </subviews>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6U-v0-2US">
-                                <rect key="frame" x="957" y="41" width="121" height="60"/>
+                                <rect key="frame" x="856" y="41" width="121" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="l2e-Le-AE8"/>
                                 </constraints>
@@ -2704,139 +2704,214 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <scene sceneID="gqk-KF-gzS">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="jSx-6p-9lS" customClass="PuzzleViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HDR-hN-AbO">
+                    <view key="view" tag="8" contentMode="scaleToFill" id="HDR-hN-AbO">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="x2H-hG-Zxn">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="x2H-hG-Zxn">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxJ-sG-jGF">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="341"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="414"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double6.1" translatesAutoresizingMaskIntoConstraints="NO" id="kZB-IR-y3d">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="414"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Bri_Double6.1" translatesAutoresizingMaskIntoConstraints="NO" id="kZB-IR-y3d">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="283"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="kZB-IR-y3d" firstAttribute="top" secondItem="KxJ-sG-jGF" secondAttribute="top" id="CjN-Ho-zuR"/>
                                             <constraint firstItem="kZB-IR-y3d" firstAttribute="leading" secondItem="KxJ-sG-jGF" secondAttribute="leading" id="L21-PR-zYJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="kZB-IR-y3d" secondAttribute="bottom" id="lHL-F4-Xiu"/>
                                             <constraint firstAttribute="trailing" secondItem="kZB-IR-y3d" secondAttribute="trailing" id="q7b-mk-uic"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eMm-kF-pXl">
-                                        <rect key="frame" x="0.0" y="342" width="1024" height="340.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7J-H7-iIU">
+                                        <rect key="frame" x="0.0" y="414" width="1024" height="538"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-4s-LLY">
-                                                <rect key="frame" x="0.0" y="0.0" width="205" height="340.5"/>
-                                                <state key="normal" title="Chapter1"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="hXT-Of-9NC"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4e-4L-8dI">
-                                                <rect key="frame" x="205" y="0.0" width="204.5" height="340.5"/>
-                                                <state key="normal" title="Chapter2"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="WRt-pi-BmH"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLM-vb-bNE">
-                                                <rect key="frame" x="409.5" y="0.0" width="205" height="340.5"/>
-                                                <state key="normal" title="Chapter3"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="BG8-Oh-PpS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-NV-WKf">
-                                                <rect key="frame" x="614.5" y="0.0" width="204.5" height="340.5"/>
-                                                <state key="normal" title="Chapter4"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="SDk-O4-8mV"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="god-1K-xfa">
-                                                <rect key="frame" x="819" y="0.0" width="205" height="340.5"/>
-                                                <state key="normal" title="Chapter5"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="c0J-Ru-h08"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nzs-5t-ac6">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="538"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uppercase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I9-ti-pPk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="128.5"/>
+                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="70"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eMm-kF-pXl">
+                                                        <rect key="frame" x="0.0" y="136.5" width="1024" height="128.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-4s-LLY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="205" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="I, T, L, F, E, H">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="hXT-Of-9NC"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4e-4L-8dI">
+                                                                <rect key="frame" x="205" y="0.0" width="204.5" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="P, R, B, C, D, U">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="WRt-pi-BmH"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLM-vb-bNE">
+                                                                <rect key="frame" x="409.5" y="0.0" width="205" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="G, O, Q, S, J">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="BG8-Oh-PpS"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-NV-WKf">
+                                                                <rect key="frame" x="614.5" y="0.0" width="204.5" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="K, V, W, M, A">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="SDk-O4-8mV"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="god-1K-xfa">
+                                                                <rect key="frame" x="819" y="0.0" width="205" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="N, Z, Y, X">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="c0J-Ru-h08"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lowercase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5M-nl-Unq">
+                                                        <rect key="frame" x="0.0" y="273" width="1024" height="128.5"/>
+                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="70"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-Qi-Kev">
+                                                        <rect key="frame" x="0.0" y="409.5" width="1024" height="128.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYv-ga-6gJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="205" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="c, a, d, g, o">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="9Mt-IP-eN0"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcA-Ap-xRo">
+                                                                <rect key="frame" x="205" y="0.0" width="204.5" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="u, s, v, w, i, t">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="YmY-lU-wSI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulC-jE-yhE">
+                                                                <rect key="frame" x="409.5" y="0.0" width="205" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="l, y, k, j, e">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="IXp-9c-dUN"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-lv-c9e">
+                                                                <rect key="frame" x="614.5" y="0.0" width="204.5" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="p, r, n, m, h, b">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="htg-Bb-uPT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-jj-lNA">
+                                                                <rect key="frame" x="819" y="0.0" width="205" height="128.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <state key="normal" title="f, q, x, z">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="cmV-gt-9Nb"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="5I9-ti-pPk" firstAttribute="leading" secondItem="nzs-5t-ac6" secondAttribute="leading" id="0ec-LS-QNc"/>
+                                                    <constraint firstItem="H5M-nl-Unq" firstAttribute="leading" secondItem="nzs-5t-ac6" secondAttribute="leading" id="2TJ-1A-LVJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eMm-kF-pXl" secondAttribute="trailing" id="5j4-WV-s1G"/>
+                                                    <constraint firstItem="wbx-Qi-Kev" firstAttribute="leading" secondItem="nzs-5t-ac6" secondAttribute="leading" id="LJH-GS-nK1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wbx-Qi-Kev" secondAttribute="trailing" id="h8U-cQ-wq7"/>
+                                                    <constraint firstItem="eMm-kF-pXl" firstAttribute="leading" secondItem="nzs-5t-ac6" secondAttribute="leading" id="ivc-x6-WcO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wbx-Qi-Kev" secondAttribute="bottom" id="p9H-30-2AB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="H5M-nl-Unq" secondAttribute="trailing" id="pFY-Zj-APg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5I9-ti-pPk" secondAttribute="trailing" id="rRL-EZ-KAK"/>
+                                                    <constraint firstItem="5I9-ti-pPk" firstAttribute="top" secondItem="nzs-5t-ac6" secondAttribute="top" id="y0e-7g-jBm"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-Qi-Kev">
-                                        <rect key="frame" x="0.0" y="683.5" width="1024" height="341"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYv-ga-6gJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="205" height="341"/>
-                                                <state key="normal" title="Chapter6"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="9Mt-IP-eN0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcA-Ap-xRo">
-                                                <rect key="frame" x="205" y="0.0" width="204.5" height="341"/>
-                                                <state key="normal" title="Chapter7"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="YmY-lU-wSI"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulC-jE-yhE">
-                                                <rect key="frame" x="409.5" y="0.0" width="205" height="341"/>
-                                                <state key="normal" title="Chapter8"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="IXp-9c-dUN"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-lv-c9e">
-                                                <rect key="frame" x="614.5" y="0.0" width="204.5" height="341"/>
-                                                <state key="normal" title="Chapter9"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="htg-Bb-uPT"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-jj-lNA">
-                                                <rect key="frame" x="819" y="0.0" width="205" height="341"/>
-                                                <state key="normal" title="Chapter10"/>
-                                                <connections>
-                                                    <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="cmV-gt-9Nb"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="nzs-5t-ac6" secondAttribute="trailing" id="IeS-j4-hvF"/>
+                                            <constraint firstItem="nzs-5t-ac6" firstAttribute="top" secondItem="v7J-H7-iIU" secondAttribute="top" id="Zwk-Mb-Rft"/>
+                                            <constraint firstItem="nzs-5t-ac6" firstAttribute="leading" secondItem="v7J-H7-iIU" secondAttribute="leading" id="c1i-Zy-WMk"/>
+                                            <constraint firstAttribute="bottom" secondItem="nzs-5t-ac6" secondAttribute="bottom" id="i7k-c5-7ik"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okm-9C-TPS">
-                                        <rect key="frame" x="0.0" y="1025.5" width="1024" height="340.5"/>
+                                        <rect key="frame" x="0.0" y="952" width="1024" height="414"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double6.2" translatesAutoresizingMaskIntoConstraints="NO" id="6Wa-zf-cP6">
-                                                <rect key="frame" x="0.0" y="-73.5" width="1024" height="414"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Bri_Double6.2" translatesAutoresizingMaskIntoConstraints="NO" id="6Wa-zf-cP6">
+                                                <rect key="frame" x="0.0" y="131" width="1024" height="283"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="6Wa-zf-cP6" secondAttribute="trailing" id="OIj-y3-Gf1"/>
                                             <constraint firstAttribute="bottom" secondItem="6Wa-zf-cP6" secondAttribute="bottom" id="QbU-Ma-zZN"/>
+                                            <constraint firstItem="6Wa-zf-cP6" firstAttribute="top" secondItem="Okm-9C-TPS" secondAttribute="top" id="ppn-he-7Fl"/>
                                             <constraint firstItem="6Wa-zf-cP6" firstAttribute="leading" secondItem="Okm-9C-TPS" secondAttribute="leading" id="wTJ-Ak-WcK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="KxJ-sG-jGF" firstAttribute="leading" secondItem="x2H-hG-Zxn" secondAttribute="leading" id="8Vx-VM-3ws"/>
+                                    <constraint firstAttribute="trailing" secondItem="v7J-H7-iIU" secondAttribute="trailing" id="GRs-hO-Zb7"/>
                                     <constraint firstItem="Okm-9C-TPS" firstAttribute="leading" secondItem="x2H-hG-Zxn" secondAttribute="leading" id="Ikf-4q-wGI"/>
                                     <constraint firstAttribute="trailing" secondItem="Okm-9C-TPS" secondAttribute="trailing" id="IoL-67-6pU"/>
+                                    <constraint firstItem="v7J-H7-iIU" firstAttribute="top" secondItem="KxJ-sG-jGF" secondAttribute="bottom" id="PyA-AJ-zcz"/>
+                                    <constraint firstItem="Okm-9C-TPS" firstAttribute="top" secondItem="v7J-H7-iIU" secondAttribute="bottom" id="TQl-f2-rUH"/>
                                     <constraint firstAttribute="bottom" secondItem="Okm-9C-TPS" secondAttribute="bottom" id="U76-aa-9So"/>
                                     <constraint firstItem="KxJ-sG-jGF" firstAttribute="top" secondItem="x2H-hG-Zxn" secondAttribute="top" id="fzo-M9-oD6"/>
+                                    <constraint firstItem="v7J-H7-iIU" firstAttribute="leading" secondItem="x2H-hG-Zxn" secondAttribute="leading" id="g65-gU-BKO"/>
                                     <constraint firstAttribute="trailing" secondItem="KxJ-sG-jGF" secondAttribute="trailing" id="xNM-ki-JD9"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.96078431372549022" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="top" secondItem="4KR-Qy-MRp" secondAttribute="top" id="ROg-io-9vr"/>
-                            <constraint firstItem="4KR-Qy-MRp" firstAttribute="bottom" secondItem="x2H-hG-Zxn" secondAttribute="bottom" id="Vkc-gI-6Gb"/>
+                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="centerY" secondItem="HDR-hN-AbO" secondAttribute="centerY" id="BEq-VR-8tX"/>
+                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="top" secondItem="HDR-hN-AbO" secondAttribute="top" id="ROg-io-9vr"/>
+                            <constraint firstAttribute="bottom" secondItem="x2H-hG-Zxn" secondAttribute="bottom" id="Vkc-gI-6Gb"/>
                             <constraint firstItem="x2H-hG-Zxn" firstAttribute="centerX" secondItem="HDR-hN-AbO" secondAttribute="centerX" id="XHm-iK-Hv6"/>
-                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="leading" secondItem="4KR-Qy-MRp" secondAttribute="leading" id="jqJ-ZW-7xw"/>
-                            <constraint firstItem="4KR-Qy-MRp" firstAttribute="trailing" secondItem="x2H-hG-Zxn" secondAttribute="trailing" id="mfD-sb-iey"/>
+                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="leading" secondItem="HDR-hN-AbO" secondAttribute="leading" id="jqJ-ZW-7xw"/>
+                            <constraint firstAttribute="trailing" secondItem="x2H-hG-Zxn" secondAttribute="trailing" id="mfD-sb-iey"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4KR-Qy-MRp"/>
                     </view>
@@ -2867,14 +2942,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="894"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Jamey_Single3" translatesAutoresizingMaskIntoConstraints="NO" id="XHF-j0-buj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="284"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PuzzleImage_8" translatesAutoresizingMaskIntoConstraints="NO" id="DOd-0P-S0b">
-                                                        <rect key="frame" x="188" y="15" width="648" height="864"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="864" id="DoC-qH-VoH"/>
-                                                            <constraint firstAttribute="width" constant="648" id="sMI-rN-u5X"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="283"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4O-JP-5wb">
                                                         <rect key="frame" x="15" y="15" width="100" height="100"/>
@@ -2887,10 +2955,15 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <action selector="backPressed:" destination="t6x-o2-efZ" eventType="touchUpInside" id="wil-nM-1oN"/>
                                                         </connections>
                                                     </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PuzzleImage_8" translatesAutoresizingMaskIntoConstraints="NO" id="DOd-0P-S0b">
+                                                        <rect key="frame" x="269" y="123" width="486" height="648"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="648" id="DoC-qH-VoH"/>
+                                                            <constraint firstAttribute="width" constant="486" id="sMI-rN-u5X"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="XHF-j0-buj" secondAttribute="bottom" constant="766" id="13Z-ug-Tc8"/>
                                                     <constraint firstItem="DOd-0P-S0b" firstAttribute="centerY" secondItem="QFm-sW-TEc" secondAttribute="centerY" id="IT2-8g-kPN"/>
                                                     <constraint firstAttribute="trailing" secondItem="XHF-j0-buj" secondAttribute="trailing" id="PMS-Bm-6vX"/>
                                                     <constraint firstItem="DOd-0P-S0b" firstAttribute="centerX" secondItem="QFm-sW-TEc" secondAttribute="centerX" id="X2c-pd-P0U"/>
@@ -3015,7 +3088,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.96078431372549022" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="94B-L0-qLU" firstAttribute="leading" secondItem="iOH-Jr-oFd" secondAttribute="leading" id="GZe-bR-Dmt"/>
                             <constraint firstItem="94B-L0-qLU" firstAttribute="top" secondItem="iOH-Jr-oFd" secondAttribute="top" id="TSR-4X-YTU"/>
