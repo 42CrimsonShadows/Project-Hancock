@@ -46,6 +46,9 @@ class PuzzleViewController: UIViewController {
         self.performSegue(withIdentifier: "assessmentPage", sender: self)
     }
     
+    @IBAction func goBack(_ sender: UIButton) {
+        self.dismiss(animated: false, completion: nil)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AssessmentSelection {
             destination.selectedChapter = chapter!
