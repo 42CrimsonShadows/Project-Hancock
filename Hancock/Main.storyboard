@@ -2708,45 +2708,56 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Bri_Double6.1" translatesAutoresizingMaskIntoConstraints="NO" id="kZB-IR-y3d">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="x2H-hG-Zxn">
-                                <rect key="frame" x="0.0" y="419" width="1024" height="528"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxJ-sG-jGF">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="341"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double6.1" translatesAutoresizingMaskIntoConstraints="NO" id="kZB-IR-y3d">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="414"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="kZB-IR-y3d" firstAttribute="top" secondItem="KxJ-sG-jGF" secondAttribute="top" id="CjN-Ho-zuR"/>
+                                            <constraint firstItem="kZB-IR-y3d" firstAttribute="leading" secondItem="KxJ-sG-jGF" secondAttribute="leading" id="L21-PR-zYJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="kZB-IR-y3d" secondAttribute="trailing" id="q7b-mk-uic"/>
+                                        </constraints>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eMm-kF-pXl">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="263.5"/>
+                                        <rect key="frame" x="0.0" y="342" width="1024" height="340.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-4s-LLY">
-                                                <rect key="frame" x="0.0" y="0.0" width="205" height="263.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="205" height="340.5"/>
                                                 <state key="normal" title="Chapter1"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="hXT-Of-9NC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4e-4L-8dI">
-                                                <rect key="frame" x="205" y="0.0" width="204.5" height="263.5"/>
+                                                <rect key="frame" x="205" y="0.0" width="204.5" height="340.5"/>
                                                 <state key="normal" title="Chapter2"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="WRt-pi-BmH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLM-vb-bNE">
-                                                <rect key="frame" x="409.5" y="0.0" width="205" height="263.5"/>
+                                                <rect key="frame" x="409.5" y="0.0" width="205" height="340.5"/>
                                                 <state key="normal" title="Chapter3"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="BG8-Oh-PpS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-NV-WKf">
-                                                <rect key="frame" x="614.5" y="0.0" width="204.5" height="263.5"/>
+                                                <rect key="frame" x="614.5" y="0.0" width="204.5" height="340.5"/>
                                                 <state key="normal" title="Chapter4"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="SDk-O4-8mV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="god-1K-xfa">
-                                                <rect key="frame" x="819" y="0.0" width="205" height="263.5"/>
+                                                <rect key="frame" x="819" y="0.0" width="205" height="340.5"/>
                                                 <state key="normal" title="Chapter5"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="c0J-Ru-h08"/>
@@ -2755,38 +2766,38 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-Qi-Kev">
-                                        <rect key="frame" x="0.0" y="264.5" width="1024" height="263.5"/>
+                                        <rect key="frame" x="0.0" y="683.5" width="1024" height="341"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYv-ga-6gJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="205" height="263.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="205" height="341"/>
                                                 <state key="normal" title="Chapter6"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="9Mt-IP-eN0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcA-Ap-xRo">
-                                                <rect key="frame" x="205" y="0.0" width="204.5" height="263.5"/>
+                                                <rect key="frame" x="205" y="0.0" width="204.5" height="341"/>
                                                 <state key="normal" title="Chapter7"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="YmY-lU-wSI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulC-jE-yhE">
-                                                <rect key="frame" x="409.5" y="0.0" width="205" height="263.5"/>
+                                                <rect key="frame" x="409.5" y="0.0" width="205" height="341"/>
                                                 <state key="normal" title="Chapter8"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="IXp-9c-dUN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-lv-c9e">
-                                                <rect key="frame" x="614.5" y="0.0" width="204.5" height="263.5"/>
+                                                <rect key="frame" x="614.5" y="0.0" width="204.5" height="341"/>
                                                 <state key="normal" title="Chapter9"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="htg-Bb-uPT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-jj-lNA">
-                                                <rect key="frame" x="819" y="0.0" width="205" height="263.5"/>
+                                                <rect key="frame" x="819" y="0.0" width="205" height="341"/>
                                                 <state key="normal" title="Chapter10"/>
                                                 <connections>
                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="cmV-gt-9Nb"/>
@@ -2794,25 +2805,38 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okm-9C-TPS">
+                                        <rect key="frame" x="0.0" y="1025.5" width="1024" height="340.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double6.2" translatesAutoresizingMaskIntoConstraints="NO" id="6Wa-zf-cP6">
+                                                <rect key="frame" x="0.0" y="-73.5" width="1024" height="414"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6Wa-zf-cP6" secondAttribute="trailing" id="OIj-y3-Gf1"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Wa-zf-cP6" secondAttribute="bottom" id="QbU-Ma-zZN"/>
+                                            <constraint firstItem="6Wa-zf-cP6" firstAttribute="leading" secondItem="Okm-9C-TPS" secondAttribute="leading" id="wTJ-Ak-WcK"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="KxJ-sG-jGF" firstAttribute="leading" secondItem="x2H-hG-Zxn" secondAttribute="leading" id="8Vx-VM-3ws"/>
+                                    <constraint firstItem="Okm-9C-TPS" firstAttribute="leading" secondItem="x2H-hG-Zxn" secondAttribute="leading" id="Ikf-4q-wGI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Okm-9C-TPS" secondAttribute="trailing" id="IoL-67-6pU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Okm-9C-TPS" secondAttribute="bottom" id="U76-aa-9So"/>
+                                    <constraint firstItem="KxJ-sG-jGF" firstAttribute="top" secondItem="x2H-hG-Zxn" secondAttribute="top" id="fzo-M9-oD6"/>
+                                    <constraint firstAttribute="trailing" secondItem="KxJ-sG-jGF" secondAttribute="trailing" id="xNM-ki-JD9"/>
+                                </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Bri_Double6.2" translatesAutoresizingMaskIntoConstraints="NO" id="6Wa-zf-cP6">
-                                <rect key="frame" x="0.0" y="1085" width="1024" height="283"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Wa-zf-cP6" firstAttribute="leading" secondItem="4KR-Qy-MRp" secondAttribute="leading" id="3Co-ME-ndH"/>
-                            <constraint firstItem="kZB-IR-y3d" firstAttribute="leading" secondItem="4KR-Qy-MRp" secondAttribute="leading" id="9Vd-mG-e7B"/>
+                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="top" secondItem="4KR-Qy-MRp" secondAttribute="top" id="ROg-io-9vr"/>
+                            <constraint firstItem="4KR-Qy-MRp" firstAttribute="bottom" secondItem="x2H-hG-Zxn" secondAttribute="bottom" id="Vkc-gI-6Gb"/>
                             <constraint firstItem="x2H-hG-Zxn" firstAttribute="centerX" secondItem="HDR-hN-AbO" secondAttribute="centerX" id="XHm-iK-Hv6"/>
-                            <constraint firstItem="kZB-IR-y3d" firstAttribute="trailing" secondItem="4KR-Qy-MRp" secondAttribute="trailing" id="eb9-6l-03S"/>
-                            <constraint firstItem="6Wa-zf-cP6" firstAttribute="bottom" secondItem="4KR-Qy-MRp" secondAttribute="bottom" id="ipR-nY-5jq"/>
-                            <constraint firstItem="6Wa-zf-cP6" firstAttribute="top" secondItem="x2H-hG-Zxn" secondAttribute="bottom" constant="5" id="jXd-dp-it3"/>
                             <constraint firstItem="x2H-hG-Zxn" firstAttribute="leading" secondItem="4KR-Qy-MRp" secondAttribute="leading" id="jqJ-ZW-7xw"/>
                             <constraint firstItem="4KR-Qy-MRp" firstAttribute="trailing" secondItem="x2H-hG-Zxn" secondAttribute="trailing" id="mfD-sb-iey"/>
-                            <constraint firstItem="6Wa-zf-cP6" firstAttribute="trailing" secondItem="4KR-Qy-MRp" secondAttribute="trailing" id="s4N-Ek-4dv"/>
-                            <constraint firstItem="x2H-hG-Zxn" firstAttribute="top" secondItem="kZB-IR-y3d" secondAttribute="bottom" constant="5" id="vYV-kC-khx"/>
-                            <constraint firstItem="kZB-IR-y3d" firstAttribute="top" secondItem="4KR-Qy-MRp" secondAttribute="top" id="wny-rx-rXx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4KR-Qy-MRp"/>
                     </view>
