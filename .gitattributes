@@ -4,3 +4,4 @@ Environment4Scene.scn filter=lfs diff=lfs merge=lfs -text
 Environment7Scene.scn filter=lfs diff=lfs merge=lfs -text
 Environment10Scene.scn filter=lfs diff=lfs merge=lfs -text
 *.scn filter=lfs diff=lfs merge=lfs -text
+*.dae filter=lfs diff=lfs merge=lfs -text
