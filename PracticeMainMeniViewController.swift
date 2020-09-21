@@ -22,6 +22,9 @@ class PracticeMainMeniViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 
         // Do any additional setup after loading the view.
     }
@@ -57,6 +60,13 @@ class PracticeMainMeniViewController: UIViewController {
     
     @IBAction func backButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "home", sender: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Don't forget to reset when view is being removed
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
 }

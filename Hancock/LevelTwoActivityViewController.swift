@@ -140,6 +140,10 @@ class LevelTwoActivityViewController: UIViewController {
     // MARK: - ViewDidLoad/Appear and Setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        
         if letterToDraw != nil {
             print("Setup Letter \(letterToDraw!)")
             // show letter to draw
@@ -321,5 +325,12 @@ class LevelTwoActivityViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute:{
             self.dismiss(animated: false, completion: nil)
         })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Don't forget to reset when view is being removed
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
 }

@@ -59,6 +59,9 @@ class LetterMatchingb_pViewController: UIViewController, UIGestureRecognizerDele
      
       override func viewDidLoad() {
           super.viewDidLoad()
+        
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
           
           youWinPic.isHidden = true
           
@@ -171,6 +174,13 @@ class LetterMatchingb_pViewController: UIViewController, UIGestureRecognizerDele
           topBorder.isHidden = false
           instructionLabel.isHidden = false
       }//end of resetButtonTapped
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Don't forget to reset when view is being removed
+        AppDelegate.AppUtility.lockOrientation(.all)
+    }
       
       }//end of class
       

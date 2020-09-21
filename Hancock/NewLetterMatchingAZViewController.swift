@@ -65,6 +65,9 @@ class NewLetterMatchingAZViewController: UIViewController, UIGestureRecognizerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        
         youWinPic.isHidden = true
         
         let letterMatchingArray = ["A" , "B" , "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -196,6 +199,13 @@ class NewLetterMatchingAZViewController: UIViewController, UIGestureRecognizerDe
         topBorder.isHidden = false
         instructionLabel.isHidden = false
     }//end of resetButtonTapped
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Don't forget to reset when view is being removed
+        AppDelegate.AppUtility.lockOrientation(.all)
+    }
     
     }//end of class
     

@@ -190,6 +190,9 @@ class ChapterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        
         GifView?.loadGif(name: "BookAnimation")
         
         loadingGifView?.loadGif(name: "FlowerLoading")
@@ -284,5 +287,12 @@ class ChapterViewController: UIViewController {
             let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
             self.present(activityBoardView, animated: true)
         })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Don't forget to reset when view is being removed
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
 }

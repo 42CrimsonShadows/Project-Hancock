@@ -9,6 +9,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        
         //set up to perform segue programmatically
         let tap1 =  UITapGestureRecognizer(target: self, action: #selector(tappedUpper))
         let tap2 =  UITapGestureRecognizer(target: self, action: #selector(tappedLower))
@@ -42,9 +45,5 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "toPracticePage", sender: self)
     }
     
-    /*@IBAction func letterMatchingTapped(_ sender: Any) {
-        //action to perform segue
-        performSegue(withIdentifier: "letterMatching", sender: self)
-    }*/
-    
+
 }

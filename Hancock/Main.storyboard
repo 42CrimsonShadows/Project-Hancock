@@ -2595,7 +2595,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--Home View Controller-->
         <scene sceneID="0dJ-9r-NZL">
             <objects>
-                <viewController id="UWV-D1-EGe" customClass="HomeViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="UWV-D1-EGe" customClass="HomeViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EST-sl-smT">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4279,13 +4279,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <rect key="frame" x="12" y="8" width="1000" height="790"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="Jrh-ue-oAL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1000" height="126"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdd-kb-YYf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="126"/>
                                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
                                                                 <state key="normal" title="Line Practice ">
-                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="titleColor" red="0.80217951539999999" green="0.40509057040000002" blue="0.36956784129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="linePracticeTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="ves-xZ-NuM"/>
@@ -4295,13 +4295,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="Bwg-5v-99i">
-                                                        <rect key="frame" x="0.0" y="159.5" width="1000" height="152.5"/>
+                                                        <rect key="frame" x="0.0" y="133" width="1000" height="125.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDQ-OE-wmp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="125.5"/>
                                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
                                                                 <state key="normal" title="Letter Matching">
-                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="titleColor" red="0.80555599929999999" green="0.40504592659999999" blue="0.36960017680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="letterMatchingTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="MaY-5I-qSz"/>
@@ -4311,13 +4311,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="w7a-9a-Db1">
-                                                        <rect key="frame" x="0.0" y="319" width="1000" height="152"/>
+                                                        <rect key="frame" x="0.0" y="265.5" width="1000" height="126"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-D4-TOR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="126"/>
                                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
                                                                 <state key="normal" title="Uppercase Letters">
-                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="titleColor" red="0.79877609009999995" green="0.4052286148" blue="0.36544561390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="letterImitationUpperTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="2Vp-69-wVG"/>
@@ -4327,13 +4327,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="r12-Dw-0ag">
-                                                        <rect key="frame" x="0.0" y="478" width="1000" height="152.5"/>
+                                                        <rect key="frame" x="0.0" y="398.5" width="1000" height="126"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXt-CW-ID4">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="126"/>
                                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
                                                                 <state key="normal" title="Lowercase Letters">
-                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="titleColor" red="0.8021553159" green="0.40518420929999999" blue="0.36547821759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="letterImitationLowerTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="NNu-Gk-eQa"/>
@@ -4343,13 +4343,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="vVb-RX-qLM">
-                                                        <rect key="frame" x="0.0" y="637.5" width="1000" height="152.5"/>
+                                                        <rect key="frame" x="0.0" y="531.5" width="1000" height="125.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQK-9u-82Z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="152.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="125.5"/>
                                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
                                                                 <state key="normal" title="Free Draw">
-                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="titleColor" red="0.79877609009999995" green="0.4052286148" blue="0.36544561390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="freeDrawTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="xJW-XT-gsA"/>
@@ -4358,6 +4358,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             </button>
                                                         </subviews>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5i-m6-aJf">
+                                                        <rect key="frame" x="0.0" y="664" width="1000" height="126"/>
+                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
+                                                        <state key="normal" title="Puzzles">
+                                                            <color key="titleColor" red="0.8021553159" green="0.40518420929999999" blue="0.36547821759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -4439,9 +4446,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hTv-ik-76y"/>
-        <segue reference="1vJ-ch-688"/>
-        <segue reference="a2q-lS-aw2"/>
+        <segue reference="MZS-bI-R3u"/>
+        <segue reference="R4w-BH-xtA"/>
+        <segue reference="ltz-MU-Lz7"/>
+        <segue reference="Hzk-Aa-xBV"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="Aw8-c9-Drp"/>
         <segue reference="9M1-xs-ghF"/>
