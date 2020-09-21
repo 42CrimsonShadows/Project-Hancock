@@ -199,7 +199,7 @@ extension ViewController{
                     self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration5"]!, fileExtension: "mp3")
                 }
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: workItem1!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)
                 
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
 //                    //load first letter for activityView page
@@ -600,7 +600,7 @@ extension ViewController{
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration13"]!, fileExtension: "mp3")
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
                     
                     //look around for nails at teachers desk
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
@@ -1517,7 +1517,7 @@ extension ViewController{
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: self.workItem2!)
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
                     
                     //look around for nails at teachers desk
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {

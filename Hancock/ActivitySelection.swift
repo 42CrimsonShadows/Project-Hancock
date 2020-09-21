@@ -11,7 +11,7 @@ public class ActivitySelection {
    
     //MARK: - UPPERCASE LETTERS
     public func loadActivityA() {
-        print("Called loadActivityA")
+    print("Called loadActivityA")
         //add the A CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
                         //Line #1
         activityPoints = [[CGFloat(0.5),CGFloat(0.15)], //first point x, y
@@ -200,6 +200,7 @@ public class ActivitySelection {
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
     }
     public func loadActivityI() {
+        
         print("Called loadActivityI")
                         //Line #1
         activityPoints = [[CGFloat(0.48),CGFloat(0.12)], //first point x, y
@@ -241,6 +242,8 @@ public class ActivitySelection {
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
     }
     public func loadActivityK() {
+        
+      
         print("Called loadActivityK")
                         //Line #1
         activityPoints = [[CGFloat(0.25),CGFloat(0.11)], //first point x, y

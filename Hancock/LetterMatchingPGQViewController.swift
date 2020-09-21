@@ -2,7 +2,7 @@
 //  LetterMatchingPGQViewController.swift
 //  Hancock
 //
-//  Created by Lauren  Matthews on 7/16/20.
+//  Created by Lauren  Matthews on 9/6/20.
 //  Copyright © 2020 Chris Ross. All rights reserved.
 //
 
@@ -10,90 +10,81 @@ import UIKit
 
 class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDelegate {
     
-    //setting up instructionImageView
-    @IBOutlet weak var instructionImageView: UIImageView!
-    //setting up first row
-    @IBOutlet weak var rowOneCardOneImageView: UIImageView!
-    @IBOutlet weak var rowOneCardTwoImageView: UIImageView!
-    @IBOutlet weak var rowOneCardThreeImageView: UIImageView!
-    @IBOutlet weak var rowOneCardFourImageView: UIImageView!
-    @IBOutlet weak var rowOneCardFiveImageView: UIImageView!
-    //end of row one set up
-    //setting up second row
-    @IBOutlet weak var rowTwoCardOneImageView: UIImageView!
-    @IBOutlet weak var rowTwoCardTwoImageView: UIImageView!
-    @IBOutlet weak var rowTwoCardThreeImageView: UIImageView!
-    @IBOutlet weak var rowTwoCardFourImageView: UIImageView!
-    @IBOutlet weak var rowTwoCardFiveImageView: UIImageView!
-    //end of row two set up
-    //setting up row three
-    @IBOutlet weak var rowThreeCardOneImageVIew: UIImageView!
-    @IBOutlet weak var rowThreeCardTwoImageView: UIImageView!
-    @IBOutlet weak var rowThreeCardThreeImageView: UIImageView!
-    @IBOutlet weak var rowThreeCardFourImageView: UIImageView!
-    @IBOutlet weak var rowThreeCardFiveImageVIew: UIImageView!
-    //end of row three set up
-    //setting up row four
-    @IBOutlet weak var rowFourCardOneImageView: UIImageView!
-    @IBOutlet weak var rowFourCardTwoImageView: UIImageView!
-    @IBOutlet weak var rowFourCardThreeImageView: UIImageView!
-    @IBOutlet weak var rowFourCardFourImageView: UIImageView!
-    @IBOutlet weak var rowFourCardFiveImageView: UIImageView!
-    //end of row four setup
-    //setting up row five
-    @IBOutlet weak var rowFiveCardOneImageView: UIImageView!
-    @IBOutlet weak var rowFiveCardTwoImageView: UIImageView!
-    @IBOutlet weak var rowFiveCardThreeImageView: UIImageView!
-    @IBOutlet weak var rowFiveCardFourImageView: UIImageView!
-    @IBOutlet weak var rowFiveCardFiveImageView: UIImageView!
-    //end of row five setup
-    //end of image view setup
+    @IBOutlet weak var instructionLabel: UILabel!
     
-    //set up work item for delay
-    var workItem1:DispatchWorkItem? = nil
-    var workItem2:DispatchWorkItem? = nil
+    @IBOutlet weak var rowOneLabelOne: UILabel!
+    @IBOutlet weak var rowOneLabelTwo: UILabel!
+    @IBOutlet weak var rowOneLabelThree: UILabel!
+    @IBOutlet weak var rowOneLabelFour: UILabel!
+    @IBOutlet weak var rowOneLabelFive: UILabel!
     
-    //setting up line label so it can be hidden when win condition is met
-    @IBOutlet weak var lineLabel: UILabel!
+    @IBOutlet weak var rowTwoLabelOne: UILabel!
+    @IBOutlet weak var rowTwoLabelTwo: UILabel!
+    @IBOutlet weak var rowTwoLabelThree: UILabel!
+    @IBOutlet weak var rowTwoLabelFour: UILabel!
+    @IBOutlet weak var rowTwoLabelFive: UILabel!
     
-    //setting up youWinPic
+    @IBOutlet weak var rowThreeLabelOne: UILabel!
+    @IBOutlet weak var rowThreeLabelTwo: UILabel!
+    @IBOutlet weak var rowThreeLabelThree: UILabel!
+    @IBOutlet weak var rowThreeLabelFour: UILabel!
+    @IBOutlet weak var rowThreeLabelFive: UILabel!
+    
+    @IBOutlet weak var rowFourLabelOne: UILabel!
+    @IBOutlet weak var rowFourLabelTwo: UILabel!
+    @IBOutlet weak var rowFourLabelThree: UILabel!
+    @IBOutlet weak var rowFourLabelFour: UILabel!
+    @IBOutlet weak var rowFourLabelFive: UILabel!
+    
+    @IBOutlet weak var rowFiveLabelOne: UILabel!
+    @IBOutlet weak var rowFiveLabelTwo: UILabel!
+    @IBOutlet weak var rowFiveLabelThree: UILabel!
+    @IBOutlet weak var rowFiveLabelFour: UILabel!
+    @IBOutlet weak var rowFiveLabelFive: UILabel!
+    
+    //setting up imageViews
+    @IBOutlet weak var topBorder: UIImageView!
     @IBOutlet weak var youWinPic: UIImageView!
     
+    //setting up workItem
+    var workItem1:DispatchWorkItem? = nil
     
-    //tappedImage variable setup
-    var tappedImage:UIImage? = nil
+    //Setting up outlets for buttons
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
-    //setup image array using image literals
-    let letterMatchingArray = [ #imageLiteral(resourceName: "p-"), #imageLiteral(resourceName: "q-"), #imageLiteral(resourceName: "g-")]
+    //setting up score
+    var tapArray =  [String]()
     
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "mainMenu", sender: self)
-    }
-    @IBAction func resetButtonTapped(_ sender: Any) {
-        viewDidLoad()
-        
-        lineLabel.isHidden = false 
-        
-        let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageVIew, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageVIew, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView, rowFiveCardOneImageView, rowFiveCardTwoImageView, rowFiveCardThreeImageView, rowFiveCardFourImageView, rowFiveCardFiveImageView, instructionImageView]
-        
-        for imageView in imageViews {
-            imageView?.isHidden = false
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         youWinPic.isHidden = true
         
-        instructionImageView.image = letterMatchingArray.randomElement()
+        let letterMatchingArray = [ "p",  "g", "q"]
         
-        let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageVIew, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageVIew, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView, rowFiveCardOneImageView, rowFiveCardTwoImageView, rowFiveCardThreeImageView, rowFiveCardFourImageView, rowFiveCardFiveImageView]
+        instructionLabel.text = letterMatchingArray.randomElement()
+        instructionLabel.font = UIFont(name: "Chalkboard SE", size: 120)
+        instructionLabel.textColor = UIColor.white
         
-        for imageView in imageViews {
-            imageView?.image = letterMatchingArray.randomElement()
+        let labelArray = [rowOneLabelOne, rowOneLabelTwo, rowOneLabelThree, rowOneLabelFour, rowOneLabelFive, rowTwoLabelOne, rowTwoLabelTwo, rowTwoLabelThree, rowTwoLabelFour, rowTwoLabelFive, rowThreeLabelOne, rowThreeLabelTwo, rowThreeLabelThree, rowThreeLabelFour, rowThreeLabelFive, rowFourLabelOne, rowFourLabelTwo, rowFourLabelThree, rowFourLabelFour, rowFourLabelFive, rowFiveLabelOne, rowFiveLabelTwo, rowFiveLabelThree, rowFiveLabelFour, rowFiveLabelFive]
+        
+        //setting up a temporary array to ensure that there are at least three of each match in the game.
+        for (_, UILabel) in labelArray.enumerated(){
+            UILabel?.isHidden = false
         }
         
-        for  imageView in imageViews {
+        
+        for (_, UILabel) in labelArray.enumerated(){
+            UILabel?.text = letterMatchingArray.randomElement()
+            UILabel?.font = UIFont(name: "Chalkboard SE", size: 115)
+            UILabel?.textColor = UIColor(red: 70/255.0, green: 125/255.0, blue: 126, alpha: 1.0)
+            
+        }
+        
+        
+        for  UILabel in labelArray {
             // 3
             let tapGesture = UITapGestureRecognizer(
                 target: self,
@@ -103,84 +94,83 @@ class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDele
             
             // 4
             tapGesture.delegate = self
-            imageView?.addGestureRecognizer(tapGesture)
-            imageView?.alpha = 1.00
+            UILabel?.addGestureRecognizer(tapGesture)
+            UILabel?.alpha = 1.00
             
         }
-        
         
         // Do any additional setup after loading the view.
-    }
+    }//end of viewDidLoad
     
-    @objc func matchTapped(__ sender: UITapGestureRecognizer) {
+    @objc func matchTapped(  __ sender: UITapGestureRecognizer ){
         
-        let tappedImageView = sender.view as! UIImageView
-        var winningImage = [UIImage]()
-        var winningImageCount = winningImage.count
-        var newTempImages = [UIImage]()
-        var newTempImagesCount  = newTempImages.count
+        //setting up two arrays to compare for winning conditions
+        let tappedLabel = sender.view as! UILabel
         
-        let imageViews = [rowOneCardOneImageView, rowOneCardTwoImageView, rowOneCardThreeImageView, rowOneCardFourImageView, rowOneCardFiveImageView, rowTwoCardOneImageView, rowTwoCardTwoImageView, rowTwoCardThreeImageView, rowTwoCardFourImageView, rowTwoCardFiveImageView, rowThreeCardOneImageVIew, rowThreeCardTwoImageView, rowThreeCardThreeImageView, rowThreeCardFourImageView, rowThreeCardFiveImageVIew, rowFourCardOneImageView, rowFourCardTwoImageView, rowFourCardThreeImageView, rowFourCardFourImageView, rowFourCardFiveImageView, rowFiveCardOneImageView, rowFiveCardTwoImageView, rowFiveCardThreeImageView, rowFiveCardFourImageView, rowFiveCardFiveImageView]
+        //redeclaring labelArray to use for winning conditions
+        let labelArray = [rowOneLabelOne, rowOneLabelTwo, rowOneLabelThree, rowOneLabelFour, rowOneLabelFive, rowTwoLabelOne, rowTwoLabelTwo, rowTwoLabelThree, rowTwoLabelFour, rowTwoLabelFive, rowThreeLabelOne, rowThreeLabelTwo, rowThreeLabelThree, rowThreeLabelFour, rowThreeLabelFive, rowFourLabelOne, rowFourLabelTwo, rowFourLabelThree, rowFourLabelFour, rowFourLabelFive, rowFiveLabelOne, rowFiveLabelTwo, rowFiveLabelThree, rowFiveLabelFour, rowFiveLabelFive]
         
-        print(sender.view!)
-        print("I have been tapped")
+        var tempLabelArray = [UILabel]()
         
+        //what happens when a letter is tapped
+        if tappedLabel.text == instructionLabel.text {
+            print("Correct")
+            tappedLabel.text = "🥇"
+        }
+        else {
+            print("wrong")
+            tappedLabel.alpha = 0.5
+            workItem1 = DispatchWorkItem{
+                tappedLabel.alpha = 1.0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute:self.workItem1!)
+        }
         
-        for _ in imageViews {
-            if tappedImageView.image == instructionImageView.image {
-                print("you win")
-                tappedImageView.image = #imageLiteral(resourceName: "Coin")
-            }
-            for _ in imageViews {
-                if tappedImageView.image != instructionImageView.image {
-                    tappedImageView.alpha = 0.10
-                    print ("no")
-                    
-                    workItem1 = DispatchWorkItem{
-                        //play the final narration
-                        tappedImageView.alpha = 1.0
-                        print("test")
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute:self.workItem1!)
-                }
-            }
-            
-            for (index, imageView) in imageViews.enumerated(){
-                if tappedImageView.image == instructionImageView.image {
-                    winningImage.append(imageView!.image!)
-                    
-                }
-                
-                
-            }
-            
-            for (index, imageView) in imageViews.enumerated(){
-                if imageView!.image == instructionImageView.image {
-                    newTempImages.append(imageView!.image!)
-                    print("this works")
-                }
-            }
-            
-            if newTempImages.count == winningImage.count {
-                print("you win")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.55, execute:self.workItem2!)
-            }
-            workItem2 = DispatchWorkItem{
-                self.youWinPic.isHidden = false
-                self.youWinPic.image = #imageLiteral(resourceName: "YouWin.png")
-                self.lineLabel.isHidden = true
-                
-                let imageViews = [self.rowOneCardOneImageView, self.rowOneCardTwoImageView, self.rowOneCardThreeImageView, self.rowOneCardFourImageView, self.rowOneCardFiveImageView, self.rowTwoCardOneImageView, self.rowTwoCardTwoImageView, self.rowTwoCardThreeImageView, self.rowTwoCardFourImageView, self.rowTwoCardFiveImageView, self.rowThreeCardOneImageVIew, self.rowThreeCardTwoImageView, self.rowThreeCardThreeImageView, self.rowThreeCardFourImageView, self.rowThreeCardFiveImageVIew, self.rowFourCardOneImageView, self.rowFourCardTwoImageView, self.rowFourCardThreeImageView, self.rowFourCardFourImageView, self.rowFourCardFiveImageView,self.rowFiveCardOneImageView, self.rowFiveCardTwoImageView, self.rowFiveCardThreeImageView, self.rowFiveCardFourImageView, self.rowFiveCardFiveImageView, self.instructionImageView]
-                
-                
-                for imageView in imageViews {
-                    imageView?.isHidden = true
-                }
-                
+        //code to add matches to arrays to check for winning conditions
+        for (_, UILabel) in labelArray.enumerated(){
+            if UILabel!.text == instructionLabel.text{
+                tempLabelArray.append(UILabel!)
             }
         }
         
-    }//end of matchTapped
-    
-    
-}
+        print(tempLabelArray.count)
+        
+        if tappedLabel.text == instructionLabel.text {
+            tapArray.append(tappedLabel.text!)
+            
+        }
+        
+        
+        if tempLabelArray.count == tapArray.count {
+            print("You win")
+            for (_, UILabel) in labelArray.enumerated(){
+                UILabel?.isHidden = true
+                workItem1 = DispatchWorkItem {
+                    self.youWinPic.isHidden = false
+                    self.topBorder.isHidden = true
+                    self.instructionLabel.isHidden = true
+                    print("made it here")
+                }
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: self.workItem1!)
+            
+            }
+            
+        }//end of matchedTapped
+        
+        //backButton
+        @IBAction func backButtonTapped(_ sender: UIButton) {
+            performSegue(withIdentifier: "letterMatchingMenu", sender: self)
+        }//end of backButtonTapped
+        
+        //reset Button
+        @IBAction func resetButtonTapped(_ sender: Any) {
+            viewDidLoad()
+            topBorder.isHidden = false
+            instructionLabel.isHidden = false
+        }//end of resetButtonTapped
+        
+}//end of class
+
+
