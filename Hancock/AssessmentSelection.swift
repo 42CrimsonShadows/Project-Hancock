@@ -121,7 +121,7 @@ class AssessmentSelection: UIViewController {
             case 1:
                 letterArray = [ #imageLiteral(resourceName: "I") , #imageLiteral(resourceName: "T"), #imageLiteral(resourceName: "L") , #imageLiteral(resourceName: "E") , #imageLiteral(resourceName: "F") , #imageLiteral(resourceName: "H")]
                 puzzleNum = Int.random(in: 0...1)
-                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_2") // change to 1
+                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_1")
             case 2:
                 letterArray = [ #imageLiteral(resourceName: "P") , #imageLiteral(resourceName: "R"), #imageLiteral(resourceName: "B") , #imageLiteral(resourceName: "C") , #imageLiteral(resourceName: "D") , #imageLiteral(resourceName: "U")]
                 puzzleNum = Int.random(in: 0...1)
@@ -137,7 +137,7 @@ class AssessmentSelection: UIViewController {
             case 5:
                 letterArray = [ #imageLiteral(resourceName: "N") , #imageLiteral(resourceName: "Z"), #imageLiteral(resourceName: "Y") , #imageLiteral(resourceName: "X")]
                 puzzleNum = 4
-                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_2") // change to 5
+                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_5")
             case 6:
                 letterArray = [ #imageLiteral(resourceName: "c-") , #imageLiteral(resourceName: "a-"), #imageLiteral(resourceName: "d-") , #imageLiteral(resourceName: "g-") , #imageLiteral(resourceName: "o-")]
                 puzzleNum = Int.random(in: 2...3)
@@ -157,11 +157,11 @@ class AssessmentSelection: UIViewController {
             case 10:
                 letterArray = [ #imageLiteral(resourceName: "f-") , #imageLiteral(resourceName: "q-"), #imageLiteral(resourceName: "x-") , #imageLiteral(resourceName: "z-")]
                 puzzleNum = 4
-                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_2") // change to 10
+                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_10")
             default:
                 letterArray = [ #imageLiteral(resourceName: "I") , #imageLiteral(resourceName: "T"), #imageLiteral(resourceName: "L") , #imageLiteral(resourceName: "E") , #imageLiteral(resourceName: "F") , #imageLiteral(resourceName: "H")]
                 puzzleNum = 0
-                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_2") // change to 1
+                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_1")
         }
         
         UIImages = [cardOne, cardTwo, cardThree, cardFour, cardFive, cardSix]
