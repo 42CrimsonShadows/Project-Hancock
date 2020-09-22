@@ -53,8 +53,10 @@ class CanvasView: UIView {
     var purpleDot: UIImageView?
     var yellowDot: UIImageView?
     //Line #4 dots
-    var pinkDot: UIImageView?
-    var whiteDot: UIImageView?
+//    var pinkDot: UIImageView?
+//    var whiteDot: UIImageView?
+    var blue2Dot: UIImageView?
+    var orange2Dot: UIImageView?
     //middle dots 1, 2, 3, & 4
     var blackDot1: UIImageView?
     var blackDot2: UIImageView?
@@ -235,9 +237,9 @@ class CanvasView: UIView {
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[15][0], y: bounds.maxY * activityPoints[15][1])
                 
                 purpleDot?.isHidden = true
-                pinkDot?.isHidden = false
+                blue2Dot?.isHidden = false
                 yellowDot?.isHidden = true
-                whiteDot?.isHidden = false
+                orange2Dot?.isHidden = false
                 
                 if coin1Collected == false {
                     blackDot7?.isHidden = false
@@ -423,8 +425,8 @@ class CanvasView: UIView {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                 self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[7]]!, type: "mp3")
                                 
-                                self.pinkDot?.isHidden = true
-                                self.whiteDot?.isHidden = true
+                                self.blue2Dot?.isHidden = true
+                                self.orange2Dot?.isHidden = true
                             })
                         }
                     })
@@ -452,11 +454,11 @@ class CanvasView: UIView {
                                     
                                     //wait 2 seconds
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                        self.pinkDot?.pulsate(duration: 0.6)
+                                        self.blue2Dot?.pulsate(duration: 0.6)
                                         
                                         //wait 2 seconds
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                            self.whiteDot?.pulsate(duration: 0.6)
+                                            self.orange2Dot?.pulsate(duration: 0.6)
                                         })
                                     })
                                 })

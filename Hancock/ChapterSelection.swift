@@ -353,7 +353,7 @@ class ChapterSelection {
                                   "Narration36" : "ch1-E-Line3_01", //3 narration36
                                   "Narration37" : "ch1-E-Line3_02",
                                   "Narration38" : "ch1-E-Line4_01", //4 narration38
-                                  "Narration39" : "ch1-E-Line4_02",
+                                  "Narration39" : "ch1-E-Line2_02",
                                   "Narration40" : "ch1-E-Line5_01", //5 narration40
             
                                   //sounds for Letter H
@@ -820,7 +820,7 @@ class ChapterSelection {
                                     "Narration6" : "ch1-E-Line3_02", //Yellow to Purple
                                     "Narration7" : "ch1-E-Line4_01", //4 narration38 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration8" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration8" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                     "Narration9" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter V
@@ -841,7 +841,7 @@ class ChapterSelection {
                                     "Narration24" : "ch1-E-Line3_02", //Yellow to Purple
                                     "Narration25" : "ch1-E-Line4_01", //4 narration38 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration26" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration26" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                     "Narration27" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter M
@@ -855,7 +855,7 @@ class ChapterSelection {
                                     "Narration35" : "ch1-E-Line3_02", //Yellow to Purple
                                     "Narration36" : "ch1-E-Line4_01", //4 narration38 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration37" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration37" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                     "Narration38" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter A
@@ -1250,7 +1250,7 @@ class ChapterSelection {
                                     "Narration25" : "ch1-E-Line3_02", //Yellow to Purple
                                     "Narration26" : "ch1-E-Line4_01", //4 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration27" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration27" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                     "Narration28" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter i lowercase
@@ -1642,7 +1642,7 @@ class ChapterSelection {
                                   "Narration31" : "ch1-E-Line3_01", //3 Amazing
                                   "Narration32" : "ch1-E-Line3_02", //Yellow to Purple
                                   "Narration33" : "ch1-E-Line4_01", //4 Perfect
-                                  "Narration34" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                  "Narration34" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                   "Narration35" : "ch1-E-Line5_01", //5 narration40 Awesome Job
                                   
                                   //letter h
@@ -1805,7 +1805,7 @@ class ChapterSelection {
                                   "YellowToPurple" : "ch1-E-Line3_02", //Yellow to Purple
                                   "Fantastic" : "ch1-F-Line3_01", //3  Fantastic
                                   //TODO: ADD PINK TO WHITE DOT NARRATION
-                                  //"Narration27" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                  //"Narration27" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                   "AwesomeJob" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                   //Extra Template
