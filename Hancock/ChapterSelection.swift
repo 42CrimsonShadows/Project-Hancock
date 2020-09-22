@@ -1611,6 +1611,8 @@ class ChapterSelection {
                                   "Narration6" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration7" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration8" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration54": "ch1-E-Line3_02",//yellow dot to purple dot
+                                  "Narration55": "ch1-E-Line4_01", //perfect
                                   
                                   //letter r
                                   "Narration9" : "ch4L-R-Transition1",
@@ -1621,6 +1623,8 @@ class ChapterSelection {
                                   "Narration14" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration15" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration16" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration56": "ch1-E-Line3_02",//yellow dot to purple dot
+                                  "Narration57": "ch1-E-Line4_01", //perfect
                                   
                                   //letter n
                                   "Narration17" : "ch4L-N-Transition1",
@@ -1631,7 +1635,8 @@ class ChapterSelection {
                                   "Narration22" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration23" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration24" : "ch1-E-Line3_01", //3 Amazing
-                                  
+                                  "Narration58": "ch1-E-Line3_02",//yellow dot to purple dot
+                                  "Narration59": "ch1-E-Line4_01", //perfect
                                   //letter m
                                   "Narration25" : "ch4L-M-Transition1",
                                   "Narration26" : "ch4L-M-Transition2",
@@ -1654,6 +1659,8 @@ class ChapterSelection {
                                   "Narration41" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration42" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration43" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration60": "ch1-E-Line3_02",//yellow dot to purple dot
+                                  "Narration61": "ch1-E-Line4_01", //perfect
             
                                   //letter b
                                   "Narration44" : "ch4L-H-Outro1",

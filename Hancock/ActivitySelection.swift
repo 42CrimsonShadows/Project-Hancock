@@ -701,7 +701,14 @@ public class ActivitySelection {
                           [CGFloat(0.33),CGFloat(0.35)], //first MidPoint1 x, y
                           [CGFloat(0.33),CGFloat(0.6)], //first MidPoint2 x, y
                           [CGFloat(0.33),CGFloat(0.87)], //second point x,
+                          
                           //Line #2
+                          [CGFloat(0.33),CGFloat(0.87)], //first point x, y
+                          [CGFloat(0.33),CGFloat(0.10)], //first MidPoint1 x, y
+                          [CGFloat(0.33),CGFloat(0.6)], //first MidPoint2 x, y
+                          [CGFloat(0.33),CGFloat(0.54)], //second point x,
+                                                                      
+                          //Line #3
                           [CGFloat(0.34),CGFloat(0.54)], //second point
                           [CGFloat(0.58),CGFloat(0.48)], //second MidPoint1 x, y
                           [CGFloat(0.72),CGFloat(0.69)], //second MidPoint2 x, y
@@ -819,6 +826,12 @@ public class ActivitySelection {
                           [CGFloat(0.36),CGFloat(0.75)], //first MidPoint2 x, y
                           [CGFloat(0.36),CGFloat(0.89)], //second point x, y
                           //Line #2
+                          [CGFloat(0.36),CGFloat(0.89)], //first point x, y
+                          [CGFloat(0.36),CGFloat(0.62)], //first MidPoint1 x, y
+                          [CGFloat(0.36),CGFloat(0.75)], //first MidPoint2 x, y
+                          [CGFloat(0.36),CGFloat(0.54)],
+                          
+                          //Line #3
                           [CGFloat(0.36),CGFloat(0.54)], //fifth point
                           [CGFloat(0.57),CGFloat(0.50)], //fifth MidPoint1 x, y
                           [CGFloat(0.69),CGFloat(0.68)], //fifth MidPoint2 x, y
@@ -849,7 +862,14 @@ public class ActivitySelection {
                           [CGFloat(0.37),CGFloat(0.52)], //first MidPoint1 x, y
                           [CGFloat(0.37),CGFloat(0.71)], //first MidPoint2 x, y
                           [CGFloat(0.37),CGFloat(0.90)], //second point x, y
-                          //Line #2
+                          
+                          //Line 2
+                          [CGFloat(0.37),CGFloat(0.90)], //first point x, y
+                          [CGFloat(0.37),CGFloat(0.52)], //first MidPoint1 x, y
+                          [CGFloat(0.37),CGFloat(0.71)], //first MidPoint2 x, y
+                          [CGFloat(0.37),CGFloat(0.36)], //second point x, y
+                          
+                          //Line #3
                           [CGFloat(0.37),CGFloat(0.36)], //fifth point
                           [CGFloat(0.65),CGFloat(0.40)], //fifth MidPoint1 x, y
                           [CGFloat(0.65),CGFloat(0.61)], //fifth MidPoint2 x, y
@@ -885,7 +905,14 @@ public class ActivitySelection {
                           [CGFloat(0.4),CGFloat(0.62)], //first MidPoint1 x, y
                           [CGFloat(0.4),CGFloat(0.74)], //first MidPoint2 x, y
                           [CGFloat(0.4),CGFloat(0.89)], //second point x, y
-                          //Line #2
+                          
+                          //Line#2
+                          [CGFloat(0.4),CGFloat(0.89)], //first point x, y
+                          [CGFloat(0.4),CGFloat(0.62)], //first MidPoint1 x, y
+                          [CGFloat(0.4),CGFloat(0.74)], //first MidPoint2 x, y
+                          [CGFloat(0.4),CGFloat(0.51)],//second point x, y
+                          
+                          //line #3
                           [CGFloat(0.4),CGFloat(0.51)], //fifth point
                           [CGFloat(0.5),CGFloat(0.50)], //fifth MidPoint1 x, y
                           [CGFloat(0.58),CGFloat(0.50)], //fifth MidPoint2 x, y
