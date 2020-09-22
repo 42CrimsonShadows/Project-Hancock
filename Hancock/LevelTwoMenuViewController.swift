@@ -15,6 +15,9 @@ class LevelTwoMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
     }
     
     @IBAction func loadLetter(_ sender: UIButton) {
@@ -35,4 +38,6 @@ class LevelTwoMenuViewController: UIViewController {
             destination.letterToDraw = letterToLoad! // segue is only performed after letterToLoad is set
         }
     }
+    
+  
 }

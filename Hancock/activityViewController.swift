@@ -127,6 +127,22 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         WhiteDotView.translatesAutoresizingMaskIntoConstraints = false
         return WhiteDotView
     }()
+    let Blue2DotView: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let Blue2Dot = UIImage(named: "art.scnassets/DotImages/BlueDot.png")
+        let Blue2DotView = UIImageView(image: Blue2Dot)
+        //this enables autolayout for our YellowDotView
+        Blue2DotView.translatesAutoresizingMaskIntoConstraints = false
+        return Blue2DotView
+    }()
+    let Orange2DotView: UIImageView = {
+        //Add the Yellow Dot image to the canvas
+        let Orange2Dot = UIImage(named: "art.scnassets/DotImages/OrangeDot.png")
+        let Orange2DotView = UIImageView(image: Orange2Dot)
+        //this enables autolayout for our YellowDotView
+        Orange2DotView.translatesAutoresizingMaskIntoConstraints = false
+        return Orange2DotView
+    }()
     let BlackDotView1: UIImageView = {
         //Add the Yellow Dot image to the canvas
         let BlackDot1 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
@@ -192,7 +208,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         return BlackDotView8
     }()
     
-    
+    let animationDictionary = [
+        "lowercaseA":"ch6_a"
+    ]
     
     //MARK: - ACTIONS
     
@@ -232,8 +250,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         setupMiddleDots()
         
         //load animations
-        antChillImage.loadGif(name: "Anthony-Chillaxing") //can be set to different images for different chapters
-        grassImage.loadGif(name: "Grass-Blowing")
+       // antChillImage.loadGif(name: "Anthony-Chillaxing") //can be set to different images for different chapters
+      //  grassImage.loadGif(name: "Grass-Blowing")
                
         antFace.isHidden = true
         
@@ -252,6 +270,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.Line2 = false
         canvasView.Line3 = false
         canvasView.Line4 = false
+        
+        testImage.alpha = 0.90
         
         //FIXME: if the chapter is one of the line chapters play the first narration
         if (selectedActivity == "-" || selectedActivity == "/" || selectedActivity == "|" || selectedActivity == "'\'" || selectedActivity == "cross+" || selectedActivity == "crossx" || selectedActivity == "square" || selectedActivity == "circle" || selectedActivity == "triangle"){
@@ -340,8 +360,10 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         var orangeDot5: CGPoint?
         var purpleDot6: CGPoint?
         var yellowDot7: CGPoint?
-        var PinkDot8: CGPoint?
-        var WhiteDot9: CGPoint?
+//        var PinkDot8: CGPoint?
+//        var WhiteDot9: CGPoint?
+        var blueDot8: CGPoint?
+        var orangeDot9: CGPoint?
         
         let dotArraySize = activityPoints.count
         
@@ -357,8 +379,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 
                 //if there is more than three lines
                 if dotArraySize > 12 {
-                    PinkDot8 = CGPoint(x: 600 * activityPoints[12][0], y: 900 * activityPoints[12][1])
-                    WhiteDot9 = CGPoint(x: 600 * activityPoints[15][0], y: 900 * activityPoints[15][1])
+                    blueDot8 = CGPoint(x: 600 * activityPoints[12][0], y: 900 * activityPoints[12][1])
+                    orangeDot9 = CGPoint(x: 600 * activityPoints[15][0], y: 900 * activityPoints[15][1])
 
                 }
             }
@@ -390,7 +412,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         BlueDotView.isHidden = true
         canvasView.blueDot = BlueDotView
         
-        ////Set up Orange dot
+        //Set up Orange dot
         view.insertSubview(OrangeDotView, belowSubview: canvasView)
         OrangeDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: orangeDot5?.x ?? 0).isActive = true
         OrangeDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: orangeDot5?.y ?? 0).isActive = true
@@ -418,22 +440,40 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.yellowDot = YellowDotView
         
         //Set up Pink dot
-        view.insertSubview(PinkDotView, belowSubview: canvasView)
-        PinkDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: PinkDot8?.x ?? 0).isActive = true
-        PinkDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: PinkDot8?.y ?? 0).isActive = true
-        PinkDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        PinkDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        PinkDotView.isHidden = true
-        canvasView.pinkDot = PinkDotView
+//        view.insertSubview(PinkDotView, belowSubview: canvasView)
+//        PinkDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: PinkDot8?.x ?? 0).isActive = true
+//        PinkDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: PinkDot8?.y ?? 0).isActive = true
+//        PinkDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        PinkDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        PinkDotView.isHidden = true
+//        canvasView.pinkDot = PinkDotView
         
         //set up white dot
-        view.insertSubview(WhiteDotView, belowSubview: canvasView)
-        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: WhiteDot9?.x ?? 0).isActive = true
-        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: WhiteDot9?.y ?? 0).isActive = true
-        WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        WhiteDotView.isHidden = true
-        canvasView.whiteDot = WhiteDotView
+//        view.insertSubview(WhiteDotView, belowSubview: canvasView)
+//        WhiteDotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: WhiteDot9?.x ?? 0).isActive = true
+//        WhiteDotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: WhiteDot9?.y ?? 0).isActive = true
+//        WhiteDotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+//        WhiteDotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        WhiteDotView.isHidden = true
+//        canvasView.whiteDot = WhiteDotView
+        
+        //Set up BLUE2 dot
+        view.insertSubview(Blue2DotView, belowSubview: canvasView)
+        Blue2DotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant:  blueDot8?.x ?? 0).isActive = true
+        Blue2DotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: blueDot8?.y ?? 0).isActive = true
+        Blue2DotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        Blue2DotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        Blue2DotView.isHidden = true
+        canvasView.blue2Dot = Blue2DotView
+        
+        //Set up Orange2 dot
+        view.insertSubview(Orange2DotView, belowSubview: canvasView)
+        Orange2DotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: orangeDot9?.x ?? 0).isActive = true
+        Orange2DotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: orangeDot9?.y ?? 0).isActive = true
+        Orange2DotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        Orange2DotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        Orange2DotView.isHidden = true
+        canvasView.orange2Dot = Orange2DotView
     }
     
     public func setupMiddleDots(){
@@ -835,127 +875,192 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         switch selectedActivity {
         case "A":
             activitySelection.loadActivityA()
+             testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "B":
             activitySelection.loadActivityB()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "C":
             activitySelection.loadActivityC()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "D":
             activitySelection.loadActivityD()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "E":
             activitySelection.loadActivityE()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "F":
             activitySelection.loadActivityF()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "G":
             activitySelection.loadActivityG()
+             testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "H":
             activitySelection.loadActivityH()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "I":
             activitySelection.loadActivityI()
-             //testImage.image = #imageLiteral(resourceName: "Image") //LM Test
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "J":
             activitySelection.loadActivityJ()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "K":
             activitySelection.loadActivityK()
+            testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "L":
             activitySelection.loadActivityL()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "M":
             activitySelection.loadActivityM()
+             testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "N":
             activitySelection.loadActivityN()
+             testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "O":
             activitySelection.loadActivityO()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "P":
             activitySelection.loadActivityP()
+            testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "Q":
             activitySelection.loadActivityQ()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "R":
             activitySelection.loadActivityR()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "S":
             activitySelection.loadActivityS()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "T":
             activitySelection.loadActivityT()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "U":
             activitySelection.loadActivityU()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "V":
             activitySelection.loadActivityV()
+             testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "W":
             activitySelection.loadActivityW()
+             testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "X":
             activitySelection.loadActivityX()
+            testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "Y":
             activitySelection.loadActivityY()
+            testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "Z":
             activitySelection.loadActivityZ()
+            testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "a":
             activitySelection.loadActivitya()
+            testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+            antChillImage.loadGif(name: "Ch6_a")
         case "b":
             activitySelection.loadActivityb()
+            testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "c":
             activitySelection.loadActivityc()
+             testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+             antChillImage.loadGif(name: "Ch6_c")
         case "d":
             activitySelection.loadActivityd()
+            testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+             antChillImage.loadGif(name: "Ch6_d")
         case "e":
             activitySelection.loadActivitye()
+            testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "f":
             activitySelection.loadActivityf()
+            testImage.image = #imageLiteral(resourceName: "Chapter 10 Background")
         case "g":
             activitySelection.loadActivityg()
+            testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+             antChillImage.loadGif(name: "Ch6_g")
         case "h":
             activitySelection.loadActivityh()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "i":
             activitySelection.loadActivityi()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "j":
             activitySelection.loadActivityj()
+            testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "k":
             activitySelection.loadActivityk()
+            testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "l":
             activitySelection.loadActivityl()
+             testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "m":
             activitySelection.loadActivitym()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "n":
             activitySelection.loadActivityn()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "o":
             activitySelection.loadActivityo()
+            testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+             antChillImage.loadGif(name: "Ch6_o")
         case "p":
             activitySelection.loadActivityp()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "q":
             activitySelection.loadActivityq()
+             testImage.image = #imageLiteral(resourceName: "Chapter 10 Background")
         case "r":
             activitySelection.loadActivityr()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "s":
             activitySelection.loadActivitys()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "t":
             activitySelection.loadActivityt()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "u":
             activitySelection.loadActivityu()
+            testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "v":
             activitySelection.loadActivityv()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "w":
             activitySelection.loadActivityw()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "x":
             activitySelection.loadActivityx()
+             testImage.image = #imageLiteral(resourceName: "Chapter 10 Background")
         case "y":
             activitySelection.loadActivityy()
+            testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "z":
             activitySelection.loadActivityz()
+             testImage.image = #imageLiteral(resourceName: "Chapter 10 Background")
         case "-":
             activitySelection.loadActivityHorizontal()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "/":
             activitySelection.loadActivityDiagonalRight()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "|":
             activitySelection.loadActivityVertical()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "'\'":
             activitySelection.loadActivityDiagonalLeft()
+            testImage.image = #imageLiteral(resourceName: "Chapter 4 Background")
         case "cross+":
             activitySelection.loadActivityPerpendicularCross()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "crossx":
             activitySelection.loadActivityDiagonalCross()
+            testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "square":
             activitySelection.loadActivitySquare()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "circle":
             activitySelection.loadActivityCircle()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "triangle":
             activitySelection.loadActivityTriangle()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         default: return
         }
     }

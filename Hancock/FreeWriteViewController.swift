@@ -28,9 +28,12 @@ class FreeWriteViewController: UIViewController {
     private var paperNum: Int = 1
     
         
+    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 
         // make button corners rounded
         doneBtn.layer.cornerRadius = 10
@@ -56,7 +59,17 @@ class FreeWriteViewController: UIViewController {
         backgroundIV.image = UIImage(named: "paper2")
         // added to stop line clearing after finger/pencil lifts
         canvasView.freeDraw = true
+        canvasView.lineWidth = 10
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Don't forget to reset when view is being removed
+        AppDelegate.AppUtility.lockOrientation(.all)
+    }
+    
+    
     
     // MARK: - Touches
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -103,7 +116,7 @@ class FreeWriteViewController: UIViewController {
         }
         else if (sender.currentTitle == "Blank") {
             // white copy paper (no image)
-            backgroundIV.image = nil
+            backgroundIV.image = UIImage(named: "blankPaper")
             paperTypeBtn1.layer.borderWidth = 1
             paperTypeBtn2.layer.borderWidth = 1
             paperTypeBtn3.layer.borderWidth = 4
@@ -179,28 +192,28 @@ class FreeWriteViewController: UIViewController {
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 1
-            canvasView.lineWidth = 10
+            canvasView.lineWidth = 5
         }
         else if (sender.currentTitle == "Small") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 4
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 1
-            canvasView.lineWidth = 20
+            canvasView.lineWidth = 10
         }
         else if (sender.currentTitle == "Med") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 4
             penScaleBtn4.layer.borderWidth = 1
-            canvasView.lineWidth = 30
+            canvasView.lineWidth = 15
         }
         else if (sender.currentTitle == "Big") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 4
-            canvasView.lineWidth = 40
+            canvasView.lineWidth = 20
         }
         else {
             print("No Pen Button Title Match: \(sender.currentTitle)")

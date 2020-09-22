@@ -45,7 +45,9 @@ class ChapterViewController: UIViewController {
     @IBOutlet weak var chapter8Label: UIButton!
     @IBOutlet weak var chapter9Label: UIButton!
     @IBOutlet weak var chapter10Label: UIButton!
+    @IBOutlet weak var linePracticeBackButton: UIButton!
     
+    //not connecting the below - they make it take too long to load
     @IBOutlet weak var lineType1Label: UIButton!
     @IBOutlet weak var lineType2Label: UIButton!
     @IBOutlet weak var lineType3Label: UIButton!
@@ -67,6 +69,11 @@ class ChapterViewController: UIViewController {
 //    let concept8 = UIImage (imageLiteralResourceName: "concept8")
 //    let concept9 = UIImage (imageLiteralResourceName: "concept9")
 //    let concept10 = UIImage (imageLiteralResourceName: "concept10")
+    
+    @IBAction func linePracticeButtonTapped (_ sender: UIButton) {
+        performSegue(withIdentifier: "practiceMainMenu", sender: self)
+    }
+    
     
     @IBAction func cpt1Clicked(_ sender: Any) {
         currentChapter = .Chapter1
@@ -177,13 +184,18 @@ class ChapterViewController: UIViewController {
     }
     
     
+        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        
         GifView?.loadGif(name: "BookAnimation")
         
-        loadingGifView?.loadGif(name: "Loading")
+        loadingGifView?.loadGif(name: "FlowerLoading")
         loadingGifView?.isHidden = true
         conceptView?.isHidden = true
         
@@ -206,6 +218,7 @@ class ChapterViewController: UIViewController {
         lineType7Label?.isHidden = true
         lineType8Label?.isHidden = true
         lineType9Label?.isHidden = true
+         
         
         pauseAfterPlay()
     }
@@ -213,7 +226,8 @@ class ChapterViewController: UIViewController {
     func pauseAfterPlay(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.75, execute: {
             self.GifView?.stopAnimating()
-            self.GifView?.image = UIImage(named: "BookOpened")
+           // self.GifView?.image = UIImage(named: "BookOpened")
+            self.GifView?.image = UIImage(named: "LBookOpen")
             self.chapter1Label?.isHidden = false
             self.chapter6Label?.isHidden = false
             self.lineType1Label?.isHidden = false
@@ -273,5 +287,12 @@ class ChapterViewController: UIViewController {
             let activityBoardView = self.storyboard?.instantiateViewController(withIdentifier: "ActivityBoardViewController") as! activityViewController
             self.present(activityBoardView, animated: true)
         })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Don't forget to reset when view is being removed
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
 }
