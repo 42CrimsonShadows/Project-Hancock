@@ -20,6 +20,7 @@ class ChapterSelection {
     let SideCharacter3idleNode = SCNNode()
     let SideCharacter4idleNode = SCNNode()
     let SideCharacter5idleNode = SCNNode()
+    let SideCharacter6idleNode = SCNNode()
     let animationNode = SCNNode()
     let letter1Node = SCNNode()
     let letter2Node = SCNNode()
@@ -76,12 +77,12 @@ class ChapterSelection {
         case 8:
             print("Loading Chapter ", picked)
             chapterSelectedNodeArray = loadChapter8NodeFiles()
-            chapterSelectedLetterArray = ["l", "y", "k", "e"]
+            chapterSelectedLetterArray = ["l", "y", "k", "j", "e"]
             chapterSelectedSoundDict = loadChapter8SoundFiles()
         case 9:
             print("Loading Chapter ", picked)
             chapterSelectedNodeArray = loadChapter9NodeFiles()
-            chapterSelectedLetterArray = ["p", "r", "n", "h", "B"]
+            chapterSelectedLetterArray = ["p", "r", "n", "m", "h", "b"]
             chapterSelectedSoundDict = loadChapter9SoundFiles()
         case 10:
             print("Loading Chapter ", picked)
@@ -352,7 +353,7 @@ class ChapterSelection {
                                   "Narration36" : "ch1-E-Line3_01", //3 narration36
                                   "Narration37" : "ch1-E-Line3_02",
                                   "Narration38" : "ch1-E-Line4_01", //4 narration38
-                                  "Narration39" : "ch1-E-Line4_02",
+                                  "Narration39" : "ch1-E-Line2_02",
                                   "Narration40" : "ch1-E-Line5_01", //5 narration40
             
                                   //sounds for Letter H
@@ -819,7 +820,7 @@ class ChapterSelection {
                                     "Narration6" : "ch1-E-Line3_02", //Yellow to Purple
                                     "Narration7" : "ch1-E-Line4_01", //4 narration38 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration8" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration8" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                     "Narration9" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter V
@@ -833,41 +834,40 @@ class ChapterSelection {
                                     //sounds for Letter W
                                     "Narration18" : "ch4-W-Transition1",
                                     "Narration19" : "ch4-W-Transition2",
-                                    "Narration20" : "ch4-W-intro",
-                                    "Narration21" : "ch1-E-Line1",    //1 narration33 Green to Red
-                                    "Narration22" : "ch1-E-Line2_01", //2 narration34 Great Job
-                                    "Narration23" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration24" : "ch1-E-Line3_01", //3 narration36 Amazing
-                                    "Narration25" : "ch1-E-Line3_02", //Yellow to Purple
-                                    "Narration26" : "ch1-E-Line4_01", //4 narration38 Perfect
+                                    "Narration20" : "ch1-E-Line1",    //1 narration33 Green to Red
+                                    "Narration21" : "ch1-E-Line2_01", //2 narration34 Great Job
+                                    "Narration22" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration23" : "ch1-E-Line3_01", //3 narration36 Amazing
+                                    "Narration24" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration25" : "ch1-E-Line4_01", //4 narration38 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration27" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
-                                    "Narration28" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+                                    "Narration26" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
+                                    "Narration27" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter M
-                                    "Narration29" : "ch4-M-Transition1",
-                                    "Narration30" : "ch4-M-Transition2",
-                                    "Narration31" : "ch4-M-Intro",
-                                    "Narration32" : "ch1-E-Line1",    //1 narration33 Green to Red
-                                    "Narration33" : "ch1-E-Line2_01", //2 narration34 Great Job
-                                    "Narration34" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration35" : "ch1-E-Line3_01", //3 narration36 Amazing
-                                    "Narration36" : "ch1-E-Line3_02", //Yellow to Purple
-                                    "Narration37" : "ch1-E-Line4_01", //4 narration38 Perfect
+                                    "Narration28" : "ch4-M-Transition1",
+                                    "Narration29" : "ch4-M-Transition2",
+                                    "Narration30" : "ch4-M-Intro",
+                                    "Narration31" : "ch1-E-Line1",    //1 narration33 Green to Red
+                                    "Narration32" : "ch1-E-Line2_01", //2 narration34 Great Job
+                                    "Narration33" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration34" : "ch1-E-Line3_01", //3 narration36 Amazing
+                                    "Narration35" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration36" : "ch1-E-Line4_01", //4 narration38 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration38" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
-                                    "Narration39" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+                                    "Narration37" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
+                                    "Narration38" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter A
-                                    "Narration40" : "ch4-A-Transition1",
-                                    "Narration41" : "ch4-A-Transition2",
-                                    "Narration42" : "ch4-A-Intro",
-                                    "Narration43" : "ch1-E-Line1",    //1 narration33 Green to Red
-                                    "Narration44" : "ch1-E-Line2_01", //2 narration34 Great Job
-                                    "Narration45" : "ch1-E-Line2_02", //Blue to Orange
-                                    "Narration46" : "ch1-E-Line3_01", //3 narration36 Amazing
-                                    "Narration47" : "ch1-E-Line3_02", //Yellow to Purple
-                                    "Narration48" : "ch1-E-Line4_01", //4 narration38 Perfect
+                                    "Narration39" : "ch4-A-Transition1",
+                                    "Narration40" : "ch4-A-Transition2",
+                                    "Narration41" : "ch4-A-Intro",
+                                    "Narration42" : "ch1-E-Line1",    //1 narration33 Green to Red
+                                    "Narration43" : "ch1-E-Line2_01", //2 narration34 Great Job
+                                    "Narration44" : "ch1-E-Line2_02", //Blue to Orange
+                                    "Narration45" : "ch1-E-Line3_01", //3 narration36 Amazing
+                                    "Narration46" : "ch1-E-Line3_02", //Yellow to Purple
+                                    "Narration47" : "ch1-E-Line4_01", //4 narration38 Perfect
             
                                     //Finishing Narration
                                     "Finish1" : "ch4-Final1",
@@ -1250,7 +1250,7 @@ class ChapterSelection {
                                     "Narration25" : "ch1-E-Line3_02", //Yellow to Purple
                                     "Narration26" : "ch1-E-Line4_01", //4 Perfect
                                     //TODO: ADD PINK TO WHITE DOT NARRATION
-                                    "Narration27" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                    "Narration27" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                     "Narration28" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                     //sounds for Letter i lowercase
@@ -1329,16 +1329,26 @@ class ChapterSelection {
             SideCharacter2idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
             SideCharacter2idleNode.position = SCNVector3(-3, 5, 1.25)
             SideCharacter2idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(35), GLKMathDegreesToRadians(0))
-        
+            
             //Load Idle Animation Node
-            let idleErnieScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed.dae")!
-            for child in idleErnieScene.rootNode.childNodes {
+            let idleJasmineScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@Leaning2Fixed.dae")!
+            for child in idleJasmineScene.rootNode.childNodes {
                 SideCharacter3idleNode.addChildNode(child)
             }
             lvlFloor.addChildNode(SideCharacter3idleNode)
             SideCharacter3idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
-            SideCharacter3idleNode.position = SCNVector3(-2.75, 0.75, 2.75)
-            SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(10), GLKMathDegreesToRadians(0))
+            SideCharacter3idleNode.position = SCNVector3(3,5,0)
+            SideCharacter3idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(200), GLKMathDegreesToRadians(0))
+        
+            //Load Idle Animation Node
+            let idleErnieScene = SCNScene(named: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed.dae")!
+            for child in idleErnieScene.rootNode.childNodes {
+                SideCharacter4idleNode.addChildNode(child)
+            }
+            lvlFloor.addChildNode(SideCharacter4idleNode)
+            SideCharacter4idleNode.scale = SCNVector3(0.75, 0.75, 0.75)
+            SideCharacter4idleNode.position = SCNVector3(-2.75, 0.75, 2.75)
+            SideCharacter4idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(10), GLKMathDegreesToRadians(0))
         
             //load all the DAE animations for this Chapter
             //load animations for mainCharacter
@@ -1363,15 +1373,22 @@ class ChapterSelection {
             prepareAnimation(withKey: "SideCharacter2Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@LayingFixed", animationIdentifier: "Kim@LayingFixed-1")
             prepareAnimation(withKey: "SideCharacter2Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@StairwalkFixed", animationIdentifier: "Kim@StairwalkFixed-1")
             prepareAnimation(withKey: "SideCharacter2Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Kim/Kim@WalkingFixed", animationIdentifier: "Kim@WalkingFixed-1")
-        
-            //load animation for side character 3
-            prepareAnimation(withKey: "SideCharacter3Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@HappyFixed", animationIdentifier: "Ernie@HappyFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@IdleFixed", animationIdentifier: "Ernie@IdleFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed", animationIdentifier: "Ernie@LayingFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StairwalkFixed", animationIdentifier: "Ernie@StairwalkFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Standup", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StandupFixed", animationIdentifier: "Ernie@StandupFixed-1")
-            prepareAnimation(withKey: "SideCharacter3Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@WalkingFixed", animationIdentifier: "Ernie@WalkingFixed-1")
-        prepareAnimation(withKey: "SideCharacter3Sitting", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@SittingFixed", animationIdentifier: "Ernie@SittingFixed-1")
+            
+            //load animation for siede character 3
+            prepareAnimation(withKey: "SideCharacter3Leaning", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@Leaning2Fixed", animationIdentifier: "action_container-Armature")
+            prepareAnimation(withKey: "SideCharacter3Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@IdleFixed", animationIdentifier: "action_container-Armature")
+            prepareAnimation(withKey: "SideCharacter3Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@WalkingFixed", animationIdentifier: "action_container-Armature")
+            prepareAnimation(withKey: "SideCharacter3Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@CheeringFixed", animationIdentifier: "action_container-Armature")
+            prepareAnimation(withKey: "SideCharacter3Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Jasmine/Jasmine@LayingDown", animationIdentifier: "action_container-Armature")
+                
+            //load animation for side character 4
+            prepareAnimation(withKey: "SideCharacter4Cheering", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@HappyFixed", animationIdentifier: "Ernie@HappyFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@IdleFixed", animationIdentifier: "Ernie@IdleFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Laying", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@LayingFixed", animationIdentifier: "Ernie@LayingFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Stairwalk", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StairwalkFixed", animationIdentifier: "Ernie@StairwalkFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Standup", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@StandupFixed", animationIdentifier: "Ernie@StandupFixed-1")
+            prepareAnimation(withKey: "SideCharacter4Walking", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@WalkingFixed", animationIdentifier: "Ernie@WalkingFixed-1")
+        prepareAnimation(withKey: "SideCharacter4Sitting", sceneName: "art.scnassets/3DModels/Chapter8Files/Characters/Ernie/Ernie@SittingFixed", animationIdentifier: "Ernie@SittingFixed-1")
         
             chapter8NodeArray.append(storyNode)
         return chapter8NodeArray
@@ -1381,6 +1398,7 @@ class ChapterSelection {
         let chapter8SoundArray = [
                                   //Intro to chapter
                                   "Narration1" : "ch3L-Intro1", //Lionel lives in the back of the fridge (11)
+                                  "Narration2" : "ch3L-L-Transition1.old",
             
                                   //letter l
                                   "Narration3" : "ch3L-L-Intro1", //trace L to help Lionel get up (10)
@@ -1406,36 +1424,47 @@ class ChapterSelection {
                                   "Narration18" : "ch1-E-Line3_02", //Yellow to Purple
                                   "Narration19" : "ch1-E-Line4_01", //4 Perfect
             
+                                  //Letter j
+                                  "Narration20" : "ch3L-J-Transition1",
+                                  "Narration21" : "ch3L-J-Intro1",
+                                
+                                  "Narration22" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration23" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration24" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration25" : "ch1-E-Line3_01", //3 Amazing
+            
                                   //Letter e
-                                  "Narration20" : "ch3L-E-Transition1",
-                                  "Narration21" : "ch3L-E-Transition2",
-                                  "Narration22" : "ch3L-E-Intro1",
-                                  
-                                  "Narration23" : "ch1-E-Line1",    //1 Green to Red
-                                  "Narration24" : "ch1-E-Line2_01", //2 Great Job
-                                  "Narration25" : "ch1-E-Line2_02", //Blue to Orange
-                                  "Narration26" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration26" : "ch3L-E-Transition1",
+                                  "Narration27" : "ch3L-E-Transition2",
+                                  "Narration28" : "ch3L-E-Intro1",
+                                
+                                  "Narration29" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration30" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration31" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration32" : "ch1-E-Line3_01", //3 Amazing
             
                                   //transition to Final
-                                  "Narration27" : "ch3L-Final1",
-                                  "Narration28" : "ch3L-Final2",
+                                  "Narration33" : "ch3L-Final1",
+                                  "Narration34" : "ch3L-Final2",
                                   
                                   
                                   //Breakfast Plate interaction
-                                  "Narration29" : "ch3L-Final3-TapLemon1", //(4sec)
-                                  "Narration30" : "ch3L-Final3-TapLemon2", //Good job (1sec)
-                                  "Narration31" : "ch3L-Final3-TapYogurt1", //(4sec)
-                                  "Narration32" : "ch3L-Final3-TapYogurt2", //Amazing (1.5sec)
-                                  "Narration33" : "ch3L-Final3-TapKiwi1", //(4sec)
-                                  "Narration34" : "ch3L-Final3-TapKiwi2", //Good job (1sec)
-                                  "Narration35" : "ch3L-Final3-TapEBar1", //(5sec)
-                                  "Narration36" : "ch3L-Final3-TapEbar2", //You did it (1sec)
+                                  "Narration35" : "ch3L-Final3-TapLemon1", //(4sec)
+                                  "Narration36" : "ch3L-Final3-TapLemon2", //Good job (1sec)
+                                  "Narration37" : "ch3L-Final3-TapYogurt1", //(4sec)
+                                  "Narration38" : "ch3L-Final3-TapYogurt2", //Amazing (1.5sec)
+                                  "Narration39" : "ch3L-Final3-TapKiwi1", //(4sec)
+                                  "Narration40" : "ch3L-Final3-TapKiwi2", //Good job (1sec)
+                                  "Narration41" : "ch3L-Final3-TapJam1",
+                                  "Narration42" : "ch3L-Final3-TapJam2",// Fantastic
+                                  "Narration43" : "ch3L-Final3-TapEBar1", //(5sec)
+                                  "Narration44" : "ch3L-Final3-TapEbar2", //You did it (1sec)
                                   
                                   //Final
-                                  "Narration37" : "ch3L-Final4",
+                                  "Narration45" : "ch3L-Final4",
                                   
                                   //extra chapter FX sounds
-                                  "BackgroundSound" : "Small_refrigerator",
+                                  "BackgroundSound" : "RoomToneOffice",
                                   "WalkSound" : "Gravel and Grass Walk",
                                   "CoinDing1" : "bell-ding_01",
                                   "CoinDing2" : "bell-ding_02",
@@ -1513,14 +1542,24 @@ class ChapterSelection {
         SideCharacter4idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(30), 0)
         
         //Load Idle Animation Node
-        let idleHeidiScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed.dae")!
-        for child in idleHeidiScene.rootNode.childNodes {
+        let idleMikkenaScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@FigureEightFixed.dae")!
+        for child in idleMikkenaScene.rootNode.childNodes {
             SideCharacter5idleNode.addChildNode(child)
         }
         lvlFloor.addChildNode(SideCharacter5idleNode)
         SideCharacter5idleNode.scale = SCNVector3(1, 1, 1)
         SideCharacter5idleNode.position = SCNVector3(0, 0, 0)
-        SideCharacter5idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
+        SideCharacter5idleNode.eulerAngles = SCNVector3(0, GLKMathDegreesToRadians(0), 0)
+
+        //Load Idle Animation Node
+        let idleHeidiScene = SCNScene(named: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed.dae")!
+        for child in idleHeidiScene.rootNode.childNodes {
+            SideCharacter6idleNode.addChildNode(child)
+        }
+        lvlFloor.addChildNode(SideCharacter6idleNode)
+        SideCharacter6idleNode.scale = SCNVector3(1, 1, 1)
+        SideCharacter6idleNode.position = SCNVector3(0, 0, 0)
+        SideCharacter6idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         
         
         //load all the DAE animations for this Chapter
@@ -1547,7 +1586,12 @@ class ChapterSelection {
         prepareAnimation(withKey: "SideCharacter4Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Nikki/Nikki@IdleFixed", animationIdentifier: "Nikki@IdleFixed-1")
 
         //load animation for side character 5
-        prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed", animationIdentifier: "Heidi@IdleFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@FigureEightFixed", animationIdentifier: "Mikkena@FigureEightFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Approach", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@ApproachFixed", animationIdentifier: "Mikkena@ApproachFixed-1")
+        prepareAnimation(withKey: "SideCharacter5Return", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Mikkena/Mikkena@ReturnFixed", animationIdentifier: "Mikkena@ReturnFixed-1")
+
+        //load animation for side character 6
+        prepareAnimation(withKey: "SideCharacter6Idle", sceneName: "art.scnassets/3DModels/Chapter9Files/Characters/Heidi/Heidi@FlyingFixed", animationIdentifier: "Heidi@IdleFixed-1")
 
         chapter9NodeArray.append(storyNode)
         
@@ -1588,21 +1632,42 @@ class ChapterSelection {
                                   "Narration23" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration24" : "ch1-E-Line3_01", //3 Amazing
                                   
+                                  //letter m
+                                  "Narration25" : "ch4L-M-Transition1",
+                                  "Narration26" : "ch4L-M-Transition2",
+                                  "Narration27" : "ch4L-M-Intro1",
+                                  "Narration28" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration29" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration30" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration31" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration32" : "ch1-E-Line3_02", //Yellow to Purple
+                                  "Narration33" : "ch1-E-Line4_01", //4 Perfect
+                                  "Narration34" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
+                                  "Narration35" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+                                  
                                   //letter h
-                                  "Narration25" : "ch4L-H-Transition1",
-                                  "Narration26" : "ch4L-H-Transition2",
-                                  "Narration27" : "ch4L-H-Transition3",
-                                  "Narration28" : "ch4L-H-Intro1",
-                                  "Narration29" : "ch1-E-Line1",    //1 Green to Red
-                                  "Narration30" : "ch1-E-Line2_01", //2 Great Job
-                                  "Narration31" : "ch1-E-Line2_02", //Blue to Orange
-                                  "Narration32" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration36" : "ch4L-H-Transition1",
+                                  "Narration37" : "ch4L-H-Transition2",
+                                  "Narration38" : "ch4L-H-Transition3",
+                                  "Narration39" : "ch4L-H-Intro1",
+                                  "Narration40" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration41" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration42" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration43" : "ch1-E-Line3_01", //3 Amazing
+            
+                                  //letter b
+                                  "Narration44" : "ch4L-H-Outro1",
+                                  "Narration45" : "ch4L-Final1",
+                                  "Narration46" : "ch1-E-Line1",    //1 Green to Red
+                                  "Narration47" : "ch1-E-Line2_01", //2 Great Job
+                                  "Narration48" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration49" : "ch1-E-Line3_01", //3 Amazing
                                   
                                   //Final
-                                  "Narration33" : "ch4L-Final1",
-                                  "Narration34" : "ch4L-Final2",
-                                  "Narration35" : "ch4L-Final3",
-                                  "Narration36" : "ch4L-Final4",
+                                  "Narration50" : "ch4L-Final2",
+                                  "Narration51" : "ch4L-Final3",
+                                  "Narration52" : "ch4L-Final4",
+                                  "Narration53" : "ch4L-Final5",
                                   
                                   //FIXME: Add background sound for fairground/racetrack
                                   //FIXME: Add sound for patricia flying
@@ -1740,7 +1805,7 @@ class ChapterSelection {
                                   "YellowToPurple" : "ch1-E-Line3_02", //Yellow to Purple
                                   "Fantastic" : "ch1-F-Line3_01", //3  Fantastic
                                   //TODO: ADD PINK TO WHITE DOT NARRATION
-                                  //"Narration27" : "ch1-E-Line4_02", //Yellow to purple Again (no Pink to White dot)
+                                  //"Narration27" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                   "AwesomeJob" : "ch1-E-Line5_01", //5 narration40 Awesome Job
             
                                   //Extra Template

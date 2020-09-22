@@ -1062,25 +1062,26 @@ extension ViewController{
                     stopTransitionAnimation(key: "MainCharacterJogging")
                     startTransitionAnimation(key: "MainCharacterIdle")
                     
-                    workItem2 = DispatchWorkItem{
+                    workItem1 = DispatchWorkItem{
                         //trasition to the activity page for the first letter
                         print("Loading activity \(chapterSelectedLetterArray![2])")
+                        self.shatterLetterThree = true
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
                         
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
-                    }
-                    workItem1 = DispatchWorkItem{
-                        //play narration for the first audio instructions for the activity
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
-                        print("Prepare to shatter letter 3")
-                        self.shatterLetterThree = true
-                        
-                        //wait 6 seconds for the activity page to load
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: self.workItem2!)
                     }
+//                    workItem1 = DispatchWorkItem{
+//                        //play narration for the first audio instructions for the activity
+//                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
+//                        print("Prepare to shatter letter 3")
+//                        self.shatterLetterThree = true
+//
+//                        //wait 6 seconds for the activity page to load
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: self.workItem2!)
+//                    }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
                     
                     //wait 1 seconds for the activity page to load
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -1339,73 +1340,21 @@ extension ViewController{
 //                    })
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
-                    //patricia stops when she finds Heidi
-                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
-                    self.patricia8!.isPaused = true
-                    
+                    playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration27"]!, fileExtension: "mp3")
                     self.shatterLetterFour = true
-                    
-                    workItem1 = DispatchWorkItem{
-                        self.particleItem3?.cancel()
-                        self.patricia8!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
-                        self.patriciaNumber = 9
-                        self.patriciaFlying = true
-                        self.patricia8!.isHidden = true
-                        self.patricia9!.isHidden = false
-                        
-                        //load first letter for activityView page
+                    workItem1 = DispatchWorkItem {
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
-                        
-                        //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
                     }
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)
-                    
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
-//                        self.patricia8!.isHidden = true
-//                        self.patricia9!.isHidden = false
-//
-//                        //load first letter for activityView page
-//                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
-//
-//                        //play narration for the first audio instructions for the activity
-//                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
-//                    })
-                        
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: workItem1!)
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
-                    workItem2 = DispatchWorkItem{
-                        //load first letter for activityView page
+                    self.shatterLetterFour = true
+                    workItem1 = DispatchWorkItem {
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
-                        //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration23"]!, fileExtension: "mp3")
-                    }
-                    workItem1 = DispatchWorkItem{
-                        //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration22"]!, fileExtension: "mp3")
-                        
-                        self.shatterLetterFour = true
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem2!)
                     }
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: workItem1!)
-                    
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//                        //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
-//                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration22"]!, fileExtension: "mp3")
-//
-//                        self.shatterLetterFour = true
-//
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-//                            //load first letter for activityView page
-//                            self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
-//                            //play narration for the first audio instructions for the activity
-//                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration23"]!, fileExtension: "mp3")
-//                        })
-//                    })
-                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
                     print("stopwalk chapter 8 stuff")
                 case .Chapter7:
                     fadeoutWalkingSound()
@@ -1544,16 +1493,16 @@ extension ViewController{
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
                         
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
                     }
                     workItem1 = DispatchWorkItem{
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration30"]!, fileExtension: "mp3")
                         print("Prepare to shatter letter 4")
                         self.shatterLetterFour = true
                         
                         //wait 6 seconds for the activity page to load
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: self.workItem2!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: self.workItem2!)
                     }
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
@@ -1882,151 +1831,72 @@ extension ViewController{
                     self.playShatterAnimation()
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
-                    //patricia lands by Brennon
-                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration34"]!, fileExtension: "mp3")
+                    //patricia stops when she finds Heidi
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration39"]!, fileExtension: "mp3")
+                    self.patricia8!.isPaused = true
                     
                     self.shatterLetterFive = true
                     
-                    // Light on Patricia
-                    let lightNode = self.createSpotLightNode(intensity: 20, spotInnerAngle: 0, spotOuterAngle: 45)
-                    lightNode.position = SCNVector3Make(0, 5, 0)
-                    lightNode.eulerAngles = SCNVector3Make(-.pi/2, 0, 0)
-                    lightItem2 = DispatchWorkItem{
-                        lightNode.removeFromParentNode()
-                    }
-                    lightItem1 = DispatchWorkItem{
-                        self.patricia1?.childNode(withName: "Patricia", recursively: false)!.addChildNode(lightNode)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: self.lightItem2!)
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.lightItem1!)
-                    
-                    workItem5 = DispatchWorkItem{
-                        self.resetGame()
-                    }
-                    workItem4 = DispatchWorkItem{
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3")
-                        
-                        //Patricia is off to the races
-                        self.patricia11!.isHidden = false
-                        self.patricia11!.isPaused = false
-                        self.patricia10!.isHidden = true
-                        self.patricia10!.isPaused = true
-                        
-                        //Brennon is off to the races
-                        let rotate1 = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)
-                        let move1 = SCNAction.move(to: SCNVector3(-9.7, 0.25, 13.7), duration: 8)
-                        let brennonMoveSeq = SCNAction.sequence([rotate1, move1])
-                         
-                         self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: self.workItem5!)
-                            
-                    }
-                    workItem3 = DispatchWorkItem{
-                        //Brennon gives Patricia her Balloon
-                        let balloon4Patricia = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
-                        balloon4Patricia!.isHidden = true
-                        
-                        //Patricia Recieves her Balloon
-                        let returnedBalloon = self.patricia10?.childNode(withName: "BrennonsBalloon", recursively: true)
-                        returnedBalloon!.isHidden = false
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: self.workItem4!)
-                            
-                    }
-                    workItem2 = DispatchWorkItem{
-                        //Patricia give Brennon back his Balloon
-                        let returnedBalloon = self.patricia10?.childNode(withName: "BrennonsBalloon", recursively: true)
-                        returnedBalloon!.isHidden = true
-                        
-                        //Brennon receives his Balloon
-                        let balloon = self.charcterOneIdle.childNode(withName: "Balloon", recursively: true)
-                        balloon!.isHidden = false
-                        
-                        //Brennon thanks Patricia and gives her a Balloon too
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3")
-                                                
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem3!)
-                    }
                     workItem1 = DispatchWorkItem{
-                        self.patricia10!.isHidden = false
-                        self.patricia10!.isPaused = false
                         self.particleItem3?.cancel()
-                        self.patricia9!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
-                        self.patriciaNumber = 0
-                        self.patriciaFlying = false
-                        self.patricia9!.isHidden = true
-                        self.patricia9!.isPaused = true
-                                                                
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem2!)
+                        self.patricia8!.childNode(withName: "Patricia", recursively: false)!.removeAllParticleSystems()
+                        self.patriciaNumber = 9
+                        self.patriciaFlying = true
+                        self.patricia8!.isHidden = true
+                        self.patricia9!.isHidden = false
+                        
+                        //load first letter for activityView page
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
+                        
+                        //play narration for the first audio instructions for the activity
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration40"]!, fileExtension: "mp3")
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: workItem1!)
                     
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: {
-//                        self.patricia10!.isHidden = false
-//                        self.patricia10!.isPaused = false
-//                        self.patricia9!.isHidden = true
-//                        self.patricia9!.isPaused = true
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+//                        self.patricia8!.isHidden = true
+//                        self.patricia9!.isHidden = false
 //
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//                        //load first letter for activityView page
+//                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
 //
-//                            //Patricia give Brennon back his Balloon
-//                            let returnedBalloon = self.patricia10?.childNode(withName: "BrennonsBalloon", recursively: true)
-//                            returnedBalloon!.isHidden = true
-//
-//                            //Brennon receives his Balloon
-//                            let balloon = self.charcterOneIdle.childNode(withName: "Balloon", recursively: true)
-//                            balloon!.isHidden = false
-//
-//                            //Brennon thanks Patricia and gives her a Balloon too
-//                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3")
-//
-//                            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-//                                //Brennon gives Patricia her Balloon
-//                                let balloon4Patricia = self.charcterOneIdle.childNode(withName: "Balloon2", recursively: true)
-//                                balloon4Patricia!.isHidden = true
-//
-//                                //Patricia Recieves her Balloon
-//                                returnedBalloon!.isHidden = false
-//
-//                                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-//                                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration36"]!, fileExtension: "mp3")
-//
-//                                    //Patricia is off to the races
-//                                    self.patricia11!.isHidden = false
-//                                    self.patricia11!.isPaused = false
-//                                    self.patricia10!.isHidden = true
-//                                    self.patricia10!.isPaused = true
-//
-//                                    //Brennon is off to the races
-//                                    let rotate1 = SCNAction.rotateTo(x: 0, y: 0, z: 0, duration: 1)
-//                                    let move1 = SCNAction.move(to: SCNVector3(-9.7, 0.25, 13.7), duration: 8)
-//                                    let brennonMoveSeq = SCNAction.sequence([rotate1, move1])
-//
-//                                     self.charcterOneIdle.childNode(withName: "Brennon", recursively: true)!.runAction(brennonMoveSeq)
-//
-//                                    DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: {
-//                                        self.resetGame()
-//                                    })
-//                                })
-//                            })
-//                        })
+//                        //play narration for the first audio instructions for the activity
+//                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
 //                    })
                     
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
-                    self.stopAnimateSideCharacter(key: "SideCharacter3Walking", sideCharacter: "Ernie")
-                    self.startAnimateSideCharacter(key: "SideCharacter3Idle", sideCharacter: "Ernie")
+                    workItem2 = DispatchWorkItem{
+                        //load first letter for activityView page
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
+                        //play narration for the first audio instructions for the activity
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
+                    }
+                    workItem1 = DispatchWorkItem{
+                        //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
+                        
+                        self.shatterLetterFive = true
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: self.workItem2!)
+                    }
                     
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: workItem1!)
                     
-                    //play instructions to touch Lionel the lemon
-                    playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3") //can you tap the lemon?
-                    shatterLetterFive = true
-                    
-                    //Find and unhide the plate
-                    let plate =  mainFloor.childNode(withName: "Plate", recursively: true)
-                    plate!.isHidden = false
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//                        //get ready to shatter the first letter when ViewDidAppear() is called again (activity page disappears)
+//                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration22"]!, fileExtension: "mp3")
+//
+//                        self.shatterLetterFour = true
+//
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+//                            //load first letter for activityView page
+//                            self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
+//                            //play narration for the first audio instructions for the activity
+//                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration23"]!, fileExtension: "mp3")
+//                        })
+//                    })
                     
                     print("stopwalk chapter 8 stuff")
                 case .Chapter7:
@@ -2118,16 +1988,16 @@ extension ViewController{
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
                         
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration43"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
                     }
                     workItem1 = DispatchWorkItem{
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration41"]!, fileExtension: "mp3")
                         print("Prepare to shatter letter 5")
                         self.shatterLetterFive = true
                         
                         //wait 6 seconds for the activity page to load
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: self.workItem2!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: self.workItem2!)
                     }
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
@@ -2296,8 +2166,32 @@ extension ViewController{
                 case .Chapter10:
                     print("stopwalk chapter 10 stuff")
                 case .Chapter9:
+                    playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration45"]!, fileExtension: "mp3")
+                    self.shatterLetterSix = true
+                    workItem2 = DispatchWorkItem {
+                        self.patricia9!.isPaused = true
+                        self.loadActivityLetter(activityString: chapterSelectedLetterArray![5])
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration46"]!, fileExtension: "mp3")
+                    }
+                    workItem1 = DispatchWorkItem {
+                        self.patricia9!.isPaused = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: self.workItem2!)
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
                     print("stopwalk chapter 9 stuff")
                 case .Chapter8:
+                    self.stopAnimateSideCharacter(key: "SideCharacter4Walking", sideCharacter: "Ernie")
+                    self.startAnimateSideCharacter(key: "SideCharacter4Idle", sideCharacter: "Ernie")
+                    
+                    
+                    //play instructions to touch Lionel the lemon
+                    playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration35"]!, fileExtension: "mp3") //can you tap the lemon?
+                    //shatterLetterSix = true // unneeded after adding Jasmine the Jam in
+                    canTapOnFood = true
+                    //Find and unhide the plate
+                    let plate =  mainFloor.childNode(withName: "Plate", recursively: true)
+                    plate!.isHidden = false
+                    
                     print("stopwalk chapter 8 stuff")
                 case .Chapter7:
                     fadeoutWalkingSound()

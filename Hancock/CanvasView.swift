@@ -53,8 +53,10 @@ class CanvasView: UIView {
     var purpleDot: UIImageView?
     var yellowDot: UIImageView?
     //Line #4 dots
-    var pinkDot: UIImageView?
-    var whiteDot: UIImageView?
+//    var pinkDot: UIImageView?
+//    var whiteDot: UIImageView?
+    var blue2Dot: UIImageView?
+    var orange2Dot: UIImageView?
     //middle dots 1, 2, 3, & 4
     var blackDot1: UIImageView?
     var blackDot2: UIImageView?
@@ -235,9 +237,9 @@ class CanvasView: UIView {
                 targetPoint = CGPoint(x: bounds.maxX * activityPoints[15][0], y: bounds.maxY * activityPoints[15][1])
                 
                 purpleDot?.isHidden = true
-                pinkDot?.isHidden = false
+                blue2Dot?.isHidden = false
                 yellowDot?.isHidden = true
-                whiteDot?.isHidden = false
+                orange2Dot?.isHidden = false
                 
                 if coin1Collected == false {
                     blackDot7?.isHidden = false
@@ -423,8 +425,8 @@ class CanvasView: UIView {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                                 self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[7]]!, type: "mp3")
                                 
-                                self.pinkDot?.isHidden = true
-                                self.whiteDot?.isHidden = true
+                                self.blue2Dot?.isHidden = true
+                                self.orange2Dot?.isHidden = true
                             })
                         }
                     })
@@ -452,11 +454,11 @@ class CanvasView: UIView {
                                     
                                     //wait 2 seconds
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                        self.pinkDot?.pulsate(duration: 0.6)
+                                        self.blue2Dot?.pulsate(duration: 0.6)
                                         
                                         //wait 2 seconds
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                                            self.whiteDot?.pulsate(duration: 0.6)
+                                            self.orange2Dot?.pulsate(duration: 0.6)
                                         })
                                     })
                                 })
@@ -685,7 +687,7 @@ class CanvasView: UIView {
         switch currentletter {
         case "A":
             print("Load A narration")
-            return ["Narration44", "Narration45", "Narration46", "Narration47", "Narration48"]
+            return ["Narration43", "Narration44", "Narration45", "Narration46", "Narration47"]
         case "B":
             print("Load B narration")
             return ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
@@ -721,7 +723,7 @@ class CanvasView: UIView {
             return ["Narration20", "Narration21", "Narration22"]
         case "M":
             print("Load M narration")
-            return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
+            return ["Narration32", "Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38"]
         case "N":
             print("Load N narration")
             return ["Narration6", "Narration7", "Narration8", "Narration9", "Narration10"]
@@ -751,7 +753,7 @@ class CanvasView: UIView {
             return ["Narration14", "Narration15", "Narration16"]
         case "W":
             print("Load W narration")
-            return ["Narration22", "Narration23", "Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
+            return ["Narration21", "Narration22", "Narration23", "Narration24", "Narration25", "Narration26", "Narration27"]
         case "X":
             print("Load X narration")
             return ["Narration33", "Narration34", "Narration35"]
@@ -766,7 +768,7 @@ class CanvasView: UIView {
             return ["Narration9", "Narration10", "Narration11"]
         case "b":
             print("Load b narration")
-            return ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
+            return ["Narration47", "Narration48", "Narration49"]
         case "c":
             print("Load c narration")
             return ["Narration5"]
@@ -775,7 +777,7 @@ class CanvasView: UIView {
             return ["Narration15", "Narration16", "Narration17"]
         case "e":
             print("Load e narration")
-            return ["Narration24", "Narration25", "Narration26"]
+            return ["Narration30", "Narration31", "Narration32"]
         case "f":
             print("Load f narration")
             return ["Narration6", "Narration7", "Narration8"]
@@ -784,13 +786,13 @@ class CanvasView: UIView {
             return ["Narration21", "Narration22", "Narration23"]
         case "h":
             print("Load h narration")
-            return ["Narration30", "Narration31", "Narration32"]
+            return ["Narration41", "Narration42", "Narration43"]
         case "i":
             print("Load i narration")
             return ["Narration32", "Narration33", "Narration34"]
         case "j":
             print("Load j narration")
-            return ["Narration28", "Narration29", "Narration30"]
+            return ["Narration23", "Narration24", "Narration25"]
         case "k":
             print("Load k narration")
             return ["Narration15", "Narration16", "Narration17", "Narration18", "Narration19"]
@@ -799,7 +801,7 @@ class CanvasView: UIView {
             return ["Narration5"]
         case "m":
             print("Load m narration")
-            return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
+            return ["Narration29", "Narration30", "Narration31", "Narration32", "Narration33", "Narration34", "Narration35"]
         case "n":
             print("Load n narration")
             return ["Narration22", "Narration23", "Narration24"]
