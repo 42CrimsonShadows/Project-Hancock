@@ -685,7 +685,7 @@ class CanvasView: UIView {
         switch currentletter {
         case "A":
             print("Load A narration")
-            return ["Narration44", "Narration45", "Narration46", "Narration47", "Narration48"]
+            return ["Narration43", "Narration44", "Narration45", "Narration46", "Narration47"]
         case "B":
             print("Load B narration")
             return ["letter5Finish", "Narration20", "letter2Finish", "Narration22", "ThankYou"]
@@ -721,7 +721,7 @@ class CanvasView: UIView {
             return ["Narration20", "Narration21", "Narration22"]
         case "M":
             print("Load M narration")
-            return ["Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38", "Narration39"]
+            return ["Narration32", "Narration33", "Narration34", "Narration35", "Narration36", "Narration37", "Narration38"]
         case "N":
             print("Load N narration")
             return ["Narration6", "Narration7", "Narration8", "Narration9", "Narration10"]
@@ -751,7 +751,7 @@ class CanvasView: UIView {
             return ["Narration14", "Narration15", "Narration16"]
         case "W":
             print("Load W narration")
-            return ["Narration22", "Narration23", "Narration24", "Narration25", "Narration26", "Narration27", "Narration28"]
+            return ["Narration21", "Narration22", "Narration23", "Narration24", "Narration25", "Narration26", "Narration27"]
         case "X":
             print("Load X narration")
             return ["Narration33", "Narration34", "Narration35"]

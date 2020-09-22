@@ -963,7 +963,7 @@ extension ViewController {
                 //M (chapter4 - letter4)
                 //animate the mainFloor node to move and stop when the translation is complete
                 //animate the main character to rotate
-                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration30"]!, fileExtension: "mp3")
+                self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
                 
                 stopTransitionAnimation(key: "MainCharacterIdle")
                 startTransitionAnimation(key: "MainCharacterJogging")
@@ -1200,7 +1200,7 @@ extension ViewController {
             case .Chapter4:
                 //A (chapter4 - letter5)
                 workItem1 = DispatchWorkItem{
-                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration41"]!, fileExtension: "mp3")
+                    self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration40"]!, fileExtension: "mp3")
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: workItem1!)
                 

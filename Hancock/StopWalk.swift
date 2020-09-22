@@ -1062,25 +1062,26 @@ extension ViewController{
                     stopTransitionAnimation(key: "MainCharacterJogging")
                     startTransitionAnimation(key: "MainCharacterIdle")
                     
-                    workItem2 = DispatchWorkItem{
+                    workItem1 = DispatchWorkItem{
                         //trasition to the activity page for the first letter
                         print("Loading activity \(chapterSelectedLetterArray![2])")
+                        self.shatterLetterThree = true
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![2])
                         
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
-                    }
-                    workItem1 = DispatchWorkItem{
-                        //play narration for the first audio instructions for the activity
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
-                        print("Prepare to shatter letter 3")
-                        self.shatterLetterThree = true
-                        
-                        //wait 6 seconds for the activity page to load
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: self.workItem2!)
                     }
+//                    workItem1 = DispatchWorkItem{
+//                        //play narration for the first audio instructions for the activity
+//                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration20"]!, fileExtension: "mp3")
+//                        print("Prepare to shatter letter 3")
+//                        self.shatterLetterThree = true
+//
+//                        //wait 6 seconds for the activity page to load
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: self.workItem2!)
+//                    }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
                     
                     //wait 1 seconds for the activity page to load
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -1492,16 +1493,16 @@ extension ViewController{
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![3])
                         
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration32"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
                     }
                     workItem1 = DispatchWorkItem{
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration31"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration30"]!, fileExtension: "mp3")
                         print("Prepare to shatter letter 4")
                         self.shatterLetterFour = true
                         
                         //wait 6 seconds for the activity page to load
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: self.workItem2!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 9, execute: self.workItem2!)
                     }
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)
@@ -1987,16 +1988,16 @@ extension ViewController{
                         self.loadActivityLetter(activityString: chapterSelectedLetterArray![4])
                         
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration43"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
                     }
                     workItem1 = DispatchWorkItem{
                         //play narration for the first audio instructions for the activity
-                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration42"]!, fileExtension: "mp3")
+                        self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration41"]!, fileExtension: "mp3")
                         print("Prepare to shatter letter 5")
                         self.shatterLetterFive = true
                         
                         //wait 6 seconds for the activity page to load
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: self.workItem2!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 8, execute: self.workItem2!)
                     }
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem1!)

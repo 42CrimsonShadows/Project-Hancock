@@ -667,7 +667,7 @@ extension ViewController{
                             self.playWalkAnimation()
                         }
                         workItem1 = DispatchWorkItem{
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration40"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration39"]!, fileExtension: "mp3")
                             self.stopAnimateSideCharacter(key: "SideCharacter4Problem", sideCharacter: "Manny")
                             self.startAnimateSideCharacter(key: "SideCharacter4Happy", sideCharacter: "Manny")
                             DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute:self.workItem2!)
@@ -931,7 +931,7 @@ extension ViewController{
                             self.playWalkAnimation()
                         }
                         workItem1 = DispatchWorkItem{
-                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration29"]!, fileExtension: "mp3")
+                            self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration28"]!, fileExtension: "mp3")
                                 
                             //Keelie helps Velma
                             self.stopAnimateSideCharacter(key: "SideCharacter2Problem", sideCharacter: "Wallace")
@@ -940,7 +940,7 @@ extension ViewController{
                             self.stopAnimateSideCharacter(key: "SideCharacter3Comforting", sideCharacter: "Winona")
                             self.startAnimateSideCharacter(key: "SideCharacter3Clapping", sideCharacter: "Winona")
                             
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem2!)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute:self.workItem2!)
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:self.workItem1!)
                         
