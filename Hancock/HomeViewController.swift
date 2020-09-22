@@ -45,5 +45,11 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "toPracticePage", sender: self)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Don't forget to reset when view is being removed
+        AppDelegate.AppUtility.lockOrientation(.all)
+    }
 
 }
