@@ -1649,6 +1649,8 @@ class ChapterSelection {
                                   "Narration33" : "ch1-E-Line4_01", //4 Perfect
                                   "Narration34" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                   "Narration35" : "ch1-E-Line5_01", //5 narration40 Awesome Job
+                                  "Narration62" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration63" : "ch1-E-Line3_01", //3 Amazing
                                   
                                   //letter h
                                   "Narration36" : "ch4L-H-Transition1",
