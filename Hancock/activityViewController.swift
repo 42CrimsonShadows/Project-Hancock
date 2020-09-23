@@ -21,6 +21,9 @@ public var selectedActivity = ""
 
 
 public var totalCoins = 0
+// total coins user can get on letter
+public var coinsPossible: Int32 = 0
+public var startTime = Date()
 
 enum LetterState: Int16 {
     case P1_P2 //first line
@@ -754,6 +757,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                     //separatorView.isHidden = true
                 }
             }
+            // adding total amount of coins possible to get
+            coinsPossible += 2
             
             if canvasView.letterComplete == true {
                 //play last ding
@@ -761,14 +766,16 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 
                 //play cheer
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
+                    self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
                     
-                //dismiss activity view
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                    self.dismiss(animated: false, completion: nil)
+                    // send character data to db with user credentials from login
+                    Service.updateCharacterData(username: user, password: pass, letter: selectedActivity, score: Int32(totalCoins), timeToComplete: Service.TimeSinceActive(lastActive: startTime), totalPointsEarned: Int32(totalCoins), totalPointsPossible: coinsPossible)
+                    //dismiss activity view
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                        self.dismiss(animated: false, completion: nil)
+                        })
                     })
-                })
-            }
+                }
             
             //removing coins from total if the line was not completed
             guard let lastPoint = touches.first?.location(in: canvasView) else { return }
@@ -782,6 +789,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                         setupCoinLabel()
                     }
                 }
+                // subtracting total amount of coins possible if line wasn't finished
+                coinsPossible -= 2
             }
             //reset collected booleans
             canvasView.coin1Collected = false
@@ -873,6 +882,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     private func loadActivity(){
+        startTime = Date()
         switch selectedActivity {
         case "A":
             activitySelection.loadActivityA()
