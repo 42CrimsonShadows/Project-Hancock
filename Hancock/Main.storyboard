@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UWV-D1-EGe">
-
-
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -4300,9 +4297,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <segue reference="ltz-MU-Lz7"/>
         <segue reference="a2q-lS-aw2"/>
         <segue reference="2Q2-TJ-gJR"/>
-
         <segue reference="Aw8-c9-Drp"/>
-
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>
     <resources>
