@@ -4336,31 +4336,31 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eMm-kF-pXl">
                                                         <rect key="frame" x="0.0" y="132.5" width="1024" height="99.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-4s-LLY">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-4s-LLY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="341.5" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                 <state key="normal" title="I, T, L, F, E, H">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="hXT-Of-9NC"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4e-4L-8dI">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4e-4L-8dI">
                                                                 <rect key="frame" x="341.5" y="0.0" width="341" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                 <state key="normal" title="P, R, B, C, D, U">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="WRt-pi-BmH"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLM-vb-bNE">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLM-vb-bNE">
                                                                 <rect key="frame" x="682.5" y="0.0" width="341.5" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                 <state key="normal" title="G, O, Q, S, J">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="BG8-Oh-PpS"/>
@@ -4371,21 +4371,21 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cgJ-YJ-0ge">
                                                         <rect key="frame" x="0.0" y="265" width="1024" height="99.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-NV-WKf">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-NV-WKf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="512" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                 <state key="normal" title="K, V, W, M, A">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="SDk-O4-8mV"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="god-1K-xfa">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="god-1K-xfa">
                                                                 <rect key="frame" x="512" y="0.0" width="512" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                 <state key="normal" title="N, Z, Y, X">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="c0J-Ru-h08"/>
@@ -4407,31 +4407,31 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-Qi-Kev">
                                                         <rect key="frame" x="0.0" y="530" width="1024" height="99.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYv-ga-6gJ">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYv-ga-6gJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="341.5" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                                 <state key="normal" title="c, a, d, g, o">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="9Mt-IP-eN0"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcA-Ap-xRo">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcA-Ap-xRo">
                                                                 <rect key="frame" x="341.5" y="0.0" width="341" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                                 <state key="normal" title="u, s, v, w, i, t">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="YmY-lU-wSI"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulC-jE-yhE">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulC-jE-yhE">
                                                                 <rect key="frame" x="682.5" y="0.0" width="341.5" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                                 <state key="normal" title="l, y, k, j, e">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="IXp-9c-dUN"/>
@@ -4442,21 +4442,21 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NLt-1O-QGI">
                                                         <rect key="frame" x="0.0" y="662.5" width="1024" height="99.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-lv-c9e">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-lv-c9e">
                                                                 <rect key="frame" x="0.0" y="0.0" width="512" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                                 <state key="normal" title="p, r, n, m, h, b">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="htg-Bb-uPT"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-jj-lNA">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-jj-lNA">
                                                                 <rect key="frame" x="512" y="0.0" width="512" height="99.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                                 <state key="normal" title="f, q, x, z">
-                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="chapterPressed:" destination="jSx-6p-9lS" eventType="touchUpInside" id="cmV-gt-9Nb"/>
@@ -4529,6 +4529,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="4KR-Qy-MRp"/>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.96078431372549022" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="x2H-hG-Zxn" firstAttribute="centerY" secondItem="HDR-hN-AbO" secondAttribute="centerY" id="BEq-VR-8tX"/>
@@ -4540,7 +4541,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="x2H-hG-Zxn" firstAttribute="leading" secondItem="HDR-hN-AbO" secondAttribute="leading" id="jqJ-ZW-7xw"/>
                             <constraint firstAttribute="trailing" secondItem="x2H-hG-Zxn" secondAttribute="trailing" id="mfD-sb-iey"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4KR-Qy-MRp"/>
                     </view>
                     <navigationItem key="navigationItem" id="NzD-AD-Ygc"/>
                     <connections>
@@ -4573,7 +4573,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QFm-sW-TEc">
                                                 <rect key="frame" x="0.0" y="136" width="1024" height="758"/>
@@ -4719,6 +4719,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="s7h-XQ-21d"/>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.96078431372549022" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="94B-L0-qLU" firstAttribute="leading" secondItem="iOH-Jr-oFd" secondAttribute="leading" id="GZe-bR-Dmt"/>
@@ -4726,7 +4727,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="94B-L0-qLU" firstAttribute="trailing" secondItem="iOH-Jr-oFd" secondAttribute="trailing" id="p13-i5-ucZ"/>
                             <constraint firstItem="94B-L0-qLU" firstAttribute="bottom" secondItem="iOH-Jr-oFd" secondAttribute="bottom" id="sdV-zk-uRR"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="s7h-XQ-21d"/>
                     </view>
                     <navigationItem key="navigationItem" id="04d-VQ-YhH"/>
                     <connections>
@@ -4756,8 +4756,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024.png" width="1024" height="1024"/>
+        <image name="A" width="750" height="1000"/>
         <image name="ABC_Go_UI_ReplayButton_Graphic" width="400" height="400"/>
         <image name="ARexample" width="682.5" height="384"/>
+        <image name="B" width="750" height="1000"/>
         <image name="BookAnimation.gif" width="960" height="540"/>
         <image name="Bri_Double2.1" width="1536" height="414"/>
         <image name="Bri_Double2.2" width="1536" height="414"/>
@@ -4765,11 +4767,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Bri_Double4.2" width="1536" height="414"/>
         <image name="Bri_Double5.1" width="1536" height="414"/>
         <image name="Bri_Double5.2" width="1536" height="414"/>
+        <image name="Bri_Double6.1" width="1536" height="414"/>
+        <image name="Bri_Double6.2" width="1536" height="414"/>
         <image name="Bri_Double7.1" width="1536" height="414"/>
         <image name="Bri_Double7.2" width="1536" height="414"/>
         <image name="Bri_Single3" width="1536" height="414"/>
         <image name="Bri_Single4" width="1536" height="414"/>
         <image name="Bri_Single5" width="1536" height="414"/>
+        <image name="C" width="750" height="1000"/>
         <image name="Circle.png" width="180" height="240"/>
         <image name="Coin" width="176.5" height="177"/>
         <image name="DiagonalCross.png" width="180" height="240"/>
@@ -4785,6 +4790,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Jamey_Double3.1" width="1536" height="414"/>
         <image name="Jamey_Double3.2" width="1536" height="414"/>
         <image name="Jamey_Single1" width="1536" height="414"/>
+        <image name="Jamey_Single3" width="1536" height="414"/>
         <image name="LetterImitation" width="1000" height="150"/>
         <image name="LetterMatching" width="900" height="150"/>
         <image name="LetterMatchingAZ" width="1200" height="150"/>
@@ -4794,6 +4800,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="PerpCross" width="375" height="500"/>
         <image name="PlayBtn" width="256" height="256"/>
         <image name="Practice" width="474" height="150"/>
+        <image name="PuzzleImage_8" width="1024" height="1366"/>
         <image name="Reset" width="256" height="256"/>
         <image name="ShowBtn" width="256" height="256"/>
         <image name="Square.png" width="180" height="240"/>
@@ -4810,15 +4817,49 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="UI Buttons_Back_Red" width="509" height="200"/>
         <image name="UI Buttons_Back_Violet" width="509" height="200"/>
         <image name="UI Buttons_Done-1" width="509" height="200"/>
+        <image name="UI Buttons_Home_Indigo" width="509" height="200"/>
         <image name="UI Buttons_Reset_Red" width="509" height="200"/>
         <image name="UI_MainMenu_L" width="88" height="319"/>
         <image name="UI_MainMenu_P" width="188" height="311"/>
         <image name="UI_MainMenu_U" width="100" height="319"/>
         <image name="Vertical.png" width="180" height="240"/>
+        <image name="a-" width="750" height="1000"/>
         <image name="b+d_YouWinScreen" width="1221" height="1536"/>
+        <image name="b-" width="750" height="1000"/>
+        <image name="c-" width="750" height="1000"/>
         <image name="linedPaper1" width="2100" height="1449"/>
         <image name="paper3" width="2100" height="1449"/>
         <image name="profilePic.png" width="225" height="225"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
