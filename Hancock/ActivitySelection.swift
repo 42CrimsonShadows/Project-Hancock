@@ -1109,14 +1109,14 @@ public class ActivitySelection {
         print("Called loadActivityPerpendicularCross")
         //Line #1
         activityPoints = [[CGFloat(0.5),CGFloat(0.11)], //first point x, y
-                                  [CGFloat(0.5),CGFloat(0.35)], //first MidPoint1 x, y
-                                  [CGFloat(0.5),CGFloat(0.6)], //first MidPoint2 x, y
-                                  [CGFloat(0.5),CGFloat(0.88)], //second point x, y
+                          [CGFloat(0.5),CGFloat(0.35)], //first MidPoint1 x, y
+                          [CGFloat(0.5),CGFloat(0.6)], //first MidPoint2 x, y
+                          [CGFloat(0.5),CGFloat(0.88)], //second point x, y
                           //Line #2
-                                  [CGFloat(0.1),CGFloat(0.485)], //first point x, y
-                                  [CGFloat(0.36),CGFloat(0.485)], //first MidPoint1 x, y
-                                  [CGFloat(0.64),CGFloat(0.485)], //first MidPoint2 x, y
-                                  [CGFloat(0.9),CGFloat(0.485)]] //sixth point
+                          [CGFloat(0.1),CGFloat(0.485)], //first point x, y
+                          [CGFloat(0.36),CGFloat(0.485)], //first MidPoint1 x, y
+                          [CGFloat(0.64),CGFloat(0.485)], //first MidPoint2 x, y
+                          [CGFloat(0.9),CGFloat(0.485)]] //sixth point
         
         
         let UnderlayPerpendicularCross = UIImage(named: "art.scnassets/LineTypeImages/PerpendicularCross.png")
