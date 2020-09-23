@@ -300,8 +300,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("*** ViewWillAppear()")
-        
-        //attempt to shatter a letter when the viuew loads
+        AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
+        //attempt to shatter a letter when the view loads
         //(will only happen if a letter shatter boolean is true and ready)
         playShatterAnimation()
     }

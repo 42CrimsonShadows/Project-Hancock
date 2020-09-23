@@ -331,6 +331,6 @@ class LevelTwoActivityViewController: UIViewController {
         super.viewWillDisappear(animated)
 
         // Don't forget to reset when view is being removed
-        AppDelegate.AppUtility.lockOrientation(.all)
+//        AppDelegate.AppUtility.lockOrientation(.all)
     }
 }

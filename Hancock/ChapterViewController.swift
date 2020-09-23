@@ -194,6 +194,9 @@ class ChapterViewController: UIViewController {
         tappedThis()
     }
     
+    @IBAction func goBack(_ sender: UIButton) {
+        self.dismiss(animated: false, completion: nil)
+    }
     
         
     
@@ -303,6 +306,6 @@ class ChapterViewController: UIViewController {
         super.viewWillDisappear(animated)
 
         // Don't forget to reset when view is being removed
-        AppDelegate.AppUtility.lockOrientation(.all)
+        //AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
     }
 }

@@ -1149,7 +1149,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pf1-CN-9TQ" userLabel="Writing View">
                                         <rect key="frame" x="0.0" y="400" width="1024" height="966"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sgs-Pl-iNu" userLabel="BackgroundIV">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sgs-Pl-iNu" userLabel="BackgroundIV">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="966"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="im2-In-LxQ" userLabel="Canvas View " customClass="CanvasView" customModule="ABC_Go_AR" customModuleProvider="target">
@@ -1759,6 +1759,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <state key="normal" image="UI Buttons_Back_Blue">
                                     <color key="titleColor" systemColor="systemBlueColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="goBack:" destination="YVu-Eb-vnP" eventType="touchUpInside" id="umJ-Va-rnB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FPw-kR-OSp"/>
@@ -1907,6 +1910,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <state key="normal" backgroundImage="Reset">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="goBack:" destination="qjk-4A-XvH" eventType="touchUpInside" id="BIV-FW-vju"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gJ0-bq-cKi"/>
@@ -1989,6 +1995,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </constraints>
                                                 <state key="normal" image="UI Buttons_Back_Violet"/>
                                                 <connections>
+                                                    <action selector="goBack:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="zbK-bN-IMX"/>
                                                     <action selector="linePracticeButtonTapped:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="4k2-XE-iAt"/>
                                                 </connections>
                                             </button>
@@ -4501,7 +4508,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZYl-JC-vYx"/>
+        <segue reference="R4w-BH-xtA"/>
         <segue reference="ltz-MU-Lz7"/>
         <segue reference="a2q-lS-aw2"/>
         <segue reference="LDW-Gb-u1z"/>
