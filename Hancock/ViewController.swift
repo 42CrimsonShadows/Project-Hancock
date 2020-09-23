@@ -205,6 +205,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Start Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
         chapterNodeArray = chapterSelectedNodeArray
         self.initSceneView()
         self.initScene()
@@ -306,6 +308,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.portrait)
         print("*** ViewWillDisappear()")
     }
     
@@ -318,9 +321,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeRight
-    }
+    //override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+      //  return .landscapeRight
+  //  }
     
     // MARK: - Init Functions
     

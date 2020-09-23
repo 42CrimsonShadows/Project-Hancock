@@ -2184,7 +2184,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <!--Home View Controller-->
         <scene sceneID="0dJ-9r-NZL">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="UWV-D1-EGe" customClass="HomeViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bookARViewController" modalPresentationStyle="fullScreen" id="UWV-D1-EGe" customClass="HomeViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EST-sl-smT">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2619,7 +2619,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNu-yk-20h">
                                                                         <rect key="frame" x="861.5" y="0.0" width="162.5" height="107.5"/>
                                                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="130"/>
-                                                                        <state key="normal" title="u">
+                                                                        <state key="normal" title="t">
                                                                             <color key="titleColor" red="0.59369355440000005" green="0.28701943159999999" blue="0.30916675929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         </state>
                                                                         <connections>
@@ -4489,10 +4489,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="R4w-BH-xtA"/>
+        <segue reference="ZYl-JC-vYx"/>
         <segue reference="ltz-MU-Lz7"/>
         <segue reference="a2q-lS-aw2"/>
-        <segue reference="Aw8-c9-Drp"/>
+        <segue reference="LDW-Gb-u1z"/>
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>
     <resources>
