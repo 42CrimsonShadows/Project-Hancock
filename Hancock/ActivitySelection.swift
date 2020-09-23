@@ -11,7 +11,7 @@ public class ActivitySelection {
    
     //MARK: - UPPERCASE LETTERS
     public func loadActivityA() {
-        print("Called loadActivityA")
+    print("Called loadActivityA")
         //add the A CGpoints that will be used as startingpoint, midPoint1, midPoint2, and target point to an array
                         //Line #1
         activityPoints = [[CGFloat(0.5),CGFloat(0.15)], //first point x, y
@@ -200,6 +200,7 @@ public class ActivitySelection {
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
     }
     public func loadActivityI() {
+        
         print("Called loadActivityI")
                         //Line #1
         activityPoints = [[CGFloat(0.48),CGFloat(0.12)], //first point x, y
@@ -241,6 +242,8 @@ public class ActivitySelection {
         letterUnderlay.translatesAutoresizingMaskIntoConstraints = false
     }
     public func loadActivityK() {
+        
+      
         print("Called loadActivityK")
                         //Line #1
         activityPoints = [[CGFloat(0.25),CGFloat(0.11)], //first point x, y
@@ -698,7 +701,14 @@ public class ActivitySelection {
                           [CGFloat(0.33),CGFloat(0.35)], //first MidPoint1 x, y
                           [CGFloat(0.33),CGFloat(0.6)], //first MidPoint2 x, y
                           [CGFloat(0.33),CGFloat(0.87)], //second point x,
+                          
                           //Line #2
+                          [CGFloat(0.33),CGFloat(0.87)], //first point x, y
+                          [CGFloat(0.33),CGFloat(0.10)], //first MidPoint1 x, y
+                          [CGFloat(0.33),CGFloat(0.6)], //first MidPoint2 x, y
+                          [CGFloat(0.33),CGFloat(0.54)], //second point x,
+                                                                      
+                          //Line #3
                           [CGFloat(0.34),CGFloat(0.54)], //second point
                           [CGFloat(0.58),CGFloat(0.48)], //second MidPoint1 x, y
                           [CGFloat(0.72),CGFloat(0.69)], //second MidPoint2 x, y
@@ -793,15 +803,32 @@ public class ActivitySelection {
                           [CGFloat(0.24),CGFloat(0.76)], //first MidPoint2 x, y
                           [CGFloat(0.24),CGFloat(0.90)], //second point x, y
                           //Line #2
+                        
+                          [CGFloat(0.90),CGFloat(0.51)], //first point x, y
+                          [CGFloat(0.24),CGFloat(0.63)], //first MidPoint1 x, y
+                          [CGFloat(0.24),CGFloat(0.76)], //first MidPoint2 x, y
+                          [CGFloat(0.24),CGFloat(0.24)], //second point x, y
+                          
+                          //Line #3
                           [CGFloat(0.24),CGFloat(0.54)], //fifth point
                           [CGFloat(0.45),CGFloat(0.50)], //fifth MidPoint1 x, y
                           [CGFloat(0.53),CGFloat(0.68)], //fifth MidPoint2 x, y
                           [CGFloat(0.53),CGFloat(0.90)], //sixth point
-                          //Line #3
-                          [CGFloat(0.49),CGFloat(0.54)], //fifth point
-                          [CGFloat(0.70),CGFloat(0.50)], //fifth MidPoint1 x, y
-                          [CGFloat(0.78),CGFloat(0.68)], //fifth MidPoint2 x, y
-                          [CGFloat(0.78),CGFloat(0.90)]] //sixth point
+                    
+                        //Line #4
+        
+                          [CGFloat(0.24),CGFloat(0.90)], //fifth point
+                          [CGFloat(0.45),CGFloat(0.50)], //fifth MidPoint1 x, y
+                          [CGFloat(0.53),CGFloat(0.68)], //fifth MidPoint2 x, y
+                          [CGFloat(0.53),CGFloat(0.54)], //sixth point
+        
+        
+        
+                        //Line #5
+                         [CGFloat(0.49),CGFloat(0.54)], //fifth point
+                         [CGFloat(0.70),CGFloat(0.50)], //fifth MidPoint1 x, y
+                         [CGFloat(0.78),CGFloat(0.68)], //fifth MidPoint2 x, y
+                         [CGFloat(0.78),CGFloat(0.90)]] //sixth point
         
         let Underlaym = UIImage(named: "art.scnassets/LetterImages/m-.png")
         letterUnderlay = UIImageView(image: Underlaym)
@@ -816,6 +843,12 @@ public class ActivitySelection {
                           [CGFloat(0.36),CGFloat(0.75)], //first MidPoint2 x, y
                           [CGFloat(0.36),CGFloat(0.89)], //second point x, y
                           //Line #2
+                          [CGFloat(0.36),CGFloat(0.89)], //first point x, y
+                          [CGFloat(0.36),CGFloat(0.62)], //first MidPoint1 x, y
+                          [CGFloat(0.36),CGFloat(0.75)], //first MidPoint2 x, y
+                          [CGFloat(0.36),CGFloat(0.54)],
+                          
+                          //Line #3
                           [CGFloat(0.36),CGFloat(0.54)], //fifth point
                           [CGFloat(0.57),CGFloat(0.50)], //fifth MidPoint1 x, y
                           [CGFloat(0.69),CGFloat(0.68)], //fifth MidPoint2 x, y
@@ -846,7 +879,14 @@ public class ActivitySelection {
                           [CGFloat(0.37),CGFloat(0.52)], //first MidPoint1 x, y
                           [CGFloat(0.37),CGFloat(0.71)], //first MidPoint2 x, y
                           [CGFloat(0.37),CGFloat(0.90)], //second point x, y
-                          //Line #2
+                          
+                          //Line 2
+                          [CGFloat(0.37),CGFloat(0.90)], //first point x, y
+                          [CGFloat(0.37),CGFloat(0.52)], //first MidPoint1 x, y
+                          [CGFloat(0.37),CGFloat(0.71)], //first MidPoint2 x, y
+                          [CGFloat(0.37),CGFloat(0.36)], //second point x, y
+                          
+                          //Line #3
                           [CGFloat(0.37),CGFloat(0.36)], //fifth point
                           [CGFloat(0.65),CGFloat(0.40)], //fifth MidPoint1 x, y
                           [CGFloat(0.65),CGFloat(0.61)], //fifth MidPoint2 x, y
@@ -868,7 +908,7 @@ public class ActivitySelection {
                           [CGFloat(0.60),CGFloat(0.34)], //fifth point
                           [CGFloat(0.60),CGFloat(0.48)], //fifth MidPoint1 x, y
                           [CGFloat(0.60),CGFloat(0.74)], //fifth MidPoint2 x, y
-                          [CGFloat(0.76),CGFloat(0.91)]] //sixth point
+                          [CGFloat(0.60),CGFloat(0.91)]] //sixth point
         
         let Underlayq = UIImage(named: "art.scnassets/LetterImages/q-.png")
         letterUnderlay = UIImageView(image: Underlayq)
@@ -882,7 +922,14 @@ public class ActivitySelection {
                           [CGFloat(0.4),CGFloat(0.62)], //first MidPoint1 x, y
                           [CGFloat(0.4),CGFloat(0.74)], //first MidPoint2 x, y
                           [CGFloat(0.4),CGFloat(0.89)], //second point x, y
-                          //Line #2
+                          
+                          //Line#2
+                          [CGFloat(0.4),CGFloat(0.89)], //first point x, y
+                          [CGFloat(0.4),CGFloat(0.62)], //first MidPoint1 x, y
+                          [CGFloat(0.4),CGFloat(0.74)], //first MidPoint2 x, y
+                          [CGFloat(0.4),CGFloat(0.51)],//second point x, y
+                          
+                          //line #3
                           [CGFloat(0.4),CGFloat(0.51)], //fifth point
                           [CGFloat(0.5),CGFloat(0.50)], //fifth MidPoint1 x, y
                           [CGFloat(0.58),CGFloat(0.50)], //fifth MidPoint2 x, y

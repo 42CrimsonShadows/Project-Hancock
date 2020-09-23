@@ -149,7 +149,7 @@ extension ViewController {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 14, execute: self.lightItem1!)
                     
                     //look around for nails at teachers desk
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 18, execute: self.workItem2!)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 22, execute: self.workItem2!)
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute:workItem1!)

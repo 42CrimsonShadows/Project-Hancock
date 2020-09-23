@@ -656,7 +656,7 @@ extension ViewController{
                             self.mainCharacterIdle?.parent?.runAction(SCNAction.scale(to: 0.05, duration: 5))
                             DispatchQueue.main.asyncAfter(deadline: .now() + 90, execute:self.workItem2!)
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute:self.workItem1!)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 6 , execute:self.workItem1!)
                         
                     case .Chapter4:
                         //letter M completed, starting letter A

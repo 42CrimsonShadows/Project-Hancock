@@ -27,6 +27,7 @@ enum LetterState: Int16 {
     case P3_P4 //second
     case P5_P6 //third
     case P7_P8 //fourth
+    case P9_P10//fifth
 }
 
 class activityViewController: UIViewController, UIPencilInteractionDelegate {
@@ -208,7 +209,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         return BlackDotView8
     }()
     
-    
+    let animationDictionary = [
+        "lowercaseA":"ch6_a"
+    ]
     
     //MARK: - ACTIONS
     
@@ -248,8 +251,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         setupMiddleDots()
         
         //load animations
-        antChillImage.loadGif(name: "Anthony-Chillaxing") //can be set to different images for different chapters
-        grassImage.loadGif(name: "Grass-Blowing")
+       // antChillImage.loadGif(name: "Anthony-Chillaxing") //can be set to different images for different chapters
+      //  grassImage.loadGif(name: "Grass-Blowing")
                
         antFace.isHidden = true
         
@@ -268,6 +271,8 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.Line2 = false
         canvasView.Line3 = false
         canvasView.Line4 = false
+        
+        testImage.alpha = 0.90
         
         //FIXME: if the chapter is one of the line chapters play the first narration
         if (selectedActivity == "-" || selectedActivity == "/" || selectedActivity == "|" || selectedActivity == "'\'" || selectedActivity == "cross+" || selectedActivity == "crossx" || selectedActivity == "square" || selectedActivity == "circle" || selectedActivity == "triangle"){
@@ -871,127 +876,192 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         switch selectedActivity {
         case "A":
             activitySelection.loadActivityA()
+             testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "B":
             activitySelection.loadActivityB()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "C":
             activitySelection.loadActivityC()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "D":
             activitySelection.loadActivityD()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "E":
             activitySelection.loadActivityE()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "F":
             activitySelection.loadActivityF()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "G":
             activitySelection.loadActivityG()
+             testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "H":
             activitySelection.loadActivityH()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "I":
             activitySelection.loadActivityI()
-             //testImage.image = #imageLiteral(resourceName: "Image") //LM Test
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "J":
             activitySelection.loadActivityJ()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "K":
             activitySelection.loadActivityK()
+            testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "L":
             activitySelection.loadActivityL()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "M":
             activitySelection.loadActivityM()
+             testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "N":
             activitySelection.loadActivityN()
+             testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "O":
             activitySelection.loadActivityO()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "P":
             activitySelection.loadActivityP()
+            testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "Q":
             activitySelection.loadActivityQ()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "R":
             activitySelection.loadActivityR()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "S":
             activitySelection.loadActivityS()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "T":
             activitySelection.loadActivityT()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "U":
             activitySelection.loadActivityU()
+             testImage.image = #imageLiteral(resourceName: "Chapter 2 Background")
         case "V":
             activitySelection.loadActivityV()
+             testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "W":
             activitySelection.loadActivityW()
+             testImage.image = #imageLiteral(resourceName: "Chapter 4 Background.png")
         case "X":
             activitySelection.loadActivityX()
+            testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "Y":
             activitySelection.loadActivityY()
+            testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "Z":
             activitySelection.loadActivityZ()
+            testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "a":
             activitySelection.loadActivitya()
+            testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+            antChillImage.loadGif(name: "Ch6_a")
         case "b":
             activitySelection.loadActivityb()
+            testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "c":
             activitySelection.loadActivityc()
+             testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+             antChillImage.loadGif(name: "Ch6_c")
         case "d":
             activitySelection.loadActivityd()
+            testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+             antChillImage.loadGif(name: "Ch6_d")
         case "e":
             activitySelection.loadActivitye()
+            testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "f":
             activitySelection.loadActivityf()
+            testImage.image = #imageLiteral(resourceName: "Chapter 10 Background")
         case "g":
             activitySelection.loadActivityg()
+            testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+             antChillImage.loadGif(name: "Ch6_g")
         case "h":
             activitySelection.loadActivityh()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "i":
             activitySelection.loadActivityi()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "j":
             activitySelection.loadActivityj()
+            testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "k":
             activitySelection.loadActivityk()
+            testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "l":
             activitySelection.loadActivityl()
+             testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "m":
             activitySelection.loadActivitym()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "n":
             activitySelection.loadActivityn()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "o":
             activitySelection.loadActivityo()
+            testImage.image = #imageLiteral(resourceName: "Chapter 6 Background")
+             antChillImage.loadGif(name: "Ch6_o")
         case "p":
             activitySelection.loadActivityp()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "q":
             activitySelection.loadActivityq()
+             testImage.image = #imageLiteral(resourceName: "Chapter 10 Background")
         case "r":
             activitySelection.loadActivityr()
+             testImage.image = #imageLiteral(resourceName: "Chapter 9 Background")
         case "s":
             activitySelection.loadActivitys()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "t":
             activitySelection.loadActivityt()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "u":
             activitySelection.loadActivityu()
+            testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "v":
             activitySelection.loadActivityv()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "w":
             activitySelection.loadActivityw()
+             testImage.image = #imageLiteral(resourceName: "Chapter 7 Background")
         case "x":
             activitySelection.loadActivityx()
+             testImage.image = #imageLiteral(resourceName: "Chapter 10 Background")
         case "y":
             activitySelection.loadActivityy()
+            testImage.image = #imageLiteral(resourceName: "Chapter 8 Background")
         case "z":
             activitySelection.loadActivityz()
+             testImage.image = #imageLiteral(resourceName: "Chapter 10 Background")
         case "-":
             activitySelection.loadActivityHorizontal()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "/":
             activitySelection.loadActivityDiagonalRight()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "|":
             activitySelection.loadActivityVertical()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "'\'":
             activitySelection.loadActivityDiagonalLeft()
+            testImage.image = #imageLiteral(resourceName: "Chapter 4 Background")
         case "cross+":
             activitySelection.loadActivityPerpendicularCross()
+            testImage.image = #imageLiteral(resourceName: "Chapter 1 Background")
         case "crossx":
             activitySelection.loadActivityDiagonalCross()
+            testImage.image = #imageLiteral(resourceName: "Chapter 5 Background v1")
         case "square":
             activitySelection.loadActivitySquare()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "circle":
             activitySelection.loadActivityCircle()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         case "triangle":
             activitySelection.loadActivityTriangle()
+            testImage.image = #imageLiteral(resourceName: "Chapter 3 Background")
         default: return
         }
     }
