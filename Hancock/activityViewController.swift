@@ -21,8 +21,6 @@ public var selectedActivity = ""
 
 
 public var totalCoins = 0
-// total coins user can get on letter
-public var coinsPossible: Int32 = 0
 public var startTime = Date()
 
 enum LetterState: Int16 {
@@ -39,6 +37,9 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     private var useDebugDrawing = false
     public var activitySelection = ActivitySelection()
+    private var letterCoins: Int32 = 0
+    // total coins user can get on letter
+    public var coinsPossible: Int32 = 0
     
     private let reticleView: ReticleView = {
         let view = ReticleView(frame: CGRect.null)
@@ -737,6 +738,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin1Collected = true
                             canvasView.blackDot1?.isHidden = true
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             //TODO: add one to the Coin tally
@@ -749,6 +751,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin2Collected = true
                             canvasView.blackDot2?.isHidden = true
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
@@ -762,6 +765,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin1Collected = true
                             canvasView.blackDot3?.isHidden = true
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
@@ -772,6 +776,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin2Collected = true
                             canvasView.blackDot4?.isHidden = true
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
@@ -785,6 +790,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin1Collected = true
                             canvasView.blackDot5?.isHidden = true
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
@@ -795,6 +801,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin2Collected = true
                             canvasView.blackDot6?.isHidden = true
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
@@ -808,6 +815,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin1Collected = true
                             canvasView.blackDot7?.isHidden = true
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
@@ -819,6 +827,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.blackDot8?.isHidden = true
 
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
@@ -830,6 +839,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin1Collected = true
                             canvasView.blackDot9?.isHidden = true
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
@@ -841,6 +851,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.blackDot10?.isHidden = true
 
                             totalCoins += 1
+                            letterCoins += 1
                             setupCoinLabel()
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
@@ -880,7 +891,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                     self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
                     
                     // send character data to db with user credentials from login
-                    Service.updateCharacterData(username: user, password: pass, letter: selectedActivity, score: Int32(totalCoins), timeToComplete: Service.TimeSinceActive(lastActive: startTime), totalPointsEarned: Int32(totalCoins), totalPointsPossible: coinsPossible)
+                    Service.updateCharacterData(username: user, password: pass, letter: selectedActivity, score: self.letterCoins, timeToComplete: Service.TimeSinceActive(lastActive: startTime), totalPointsEarned: self.letterCoins, totalPointsPossible: self.coinsPossible)
                     //dismiss activity view
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                         self.dismiss(animated: false, completion: nil)
@@ -893,10 +904,12 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
             if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 25 {
                 if canvasView.coin1Collected == true {
                     totalCoins -= 1
+                    letterCoins -= 1
                     setupCoinLabel()
                     
                     if canvasView.coin2Collected == true {
                         totalCoins -= 1
+                        letterCoins -= 1
                         setupCoinLabel()
                     }
                 }
