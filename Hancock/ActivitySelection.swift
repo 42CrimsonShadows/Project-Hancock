@@ -7,6 +7,7 @@ public var currentStep = [[CGPoint]]()
 public var activityPoints = [[CGFloat(0),CGFloat(0)]]
 public var letterUnderlay = UIImageView()
 
+
 public class ActivitySelection {
    
     //MARK: - UPPERCASE LETTERS
@@ -156,6 +157,7 @@ public class ActivitySelection {
     }
     public func loadActivityG() {
         print("Called loadActivityG")
+        
                         //Line #1
         activityPoints = [[CGFloat(0.7),CGFloat(0.15)], //first point x, y
                         [CGFloat(0.17),CGFloat(0.42)], //first MidPoint1 x, y

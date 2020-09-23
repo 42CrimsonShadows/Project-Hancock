@@ -1,5 +1,7 @@
 
 import UIKit
+import Foundation
+
 
 enum Chapter: Int {
     case MainMenu = 0
@@ -23,7 +25,6 @@ enum Chapter: Int {
     case LineType8 = 18
     case LineType9 = 19
 }
-
 var currentChapter: Chapter = .MainMenu
 
 class ChapterViewController: UIViewController {
@@ -76,6 +77,7 @@ class ChapterViewController: UIViewController {
     
     
     @IBAction func cpt1Clicked(_ sender: Any) {
+
         currentChapter = .Chapter1
         //conceptView.image = concept1
         chapterSelector.chapterLoader(picked: 1)
@@ -86,6 +88,15 @@ class ChapterViewController: UIViewController {
         //conceptView.image = concept2
         chapterSelector.chapterLoader(picked: 2)
         tappedMe()
+        //lastActive = Date()
+        //Temporarily commented this out for testing the database
+        //Service.StartSession(date: lastActive)
+        //Service.register()
+        //Service.updateCharacterData()
+
+         
+        
+
     }
     @IBAction func cpt3Clicked(_ sender: Any) {
         currentChapter = .Chapter3
@@ -288,7 +299,6 @@ class ChapterViewController: UIViewController {
             self.present(activityBoardView, animated: true)
         })
     }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
