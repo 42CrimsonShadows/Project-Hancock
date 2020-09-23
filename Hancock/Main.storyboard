@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UWV-D1-EGe">
-
-
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -723,7 +720,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="1Zy-eS-gVq">
                                 <rect key="frame" x="20" y="20" width="984" height="326.5"/>
                                 <subviews>
@@ -4297,15 +4293,12 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
- 
         <segue reference="R4w-BH-xtA"/>
         <segue reference="ltz-MU-Lz7"/>
         <segue reference="a2q-lS-aw2"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="Aw8-c9-Drp"/>
         <segue reference="9M1-xs-ghF"/>
-
-    
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024.png" width="1024" height="1024"/>
