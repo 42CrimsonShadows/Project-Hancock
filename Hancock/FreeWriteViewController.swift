@@ -134,7 +134,7 @@ class FreeWriteViewController: UIViewController {
     @IBAction func lineScalePressed(_ sender: UIButton) {
         // line scale is currently only used for paper type 1
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
-        if(sender.currentTitle == "Small") {
+        if(sender.currentTitle == "-") {
             // change background image
             if (paperNum == 1) {
                 paperScaleBtn1.layer.borderWidth = 4
@@ -149,7 +149,7 @@ class FreeWriteViewController: UIViewController {
                 backgroundIV.image = UIImage(named: "linedPaper1")
             }
         }
-        else if (sender.currentTitle == "Med") {
+        else if (sender.currentTitle == "--") {
             if (paperNum == 1) {
                 paperScaleBtn1.layer.borderWidth = 1
                 paperScaleBtn2.layer.borderWidth = 4
@@ -163,7 +163,7 @@ class FreeWriteViewController: UIViewController {
                 backgroundIV.image = UIImage(named: "linedPaper2")
             }
         }
-        else if (sender.currentTitle == "Big") {
+        else if (sender.currentTitle == "---") {
             if (paperNum == 1) {
                 paperScaleBtn1.layer.borderWidth = 1
                 paperScaleBtn2.layer.borderWidth = 1
@@ -187,28 +187,28 @@ class FreeWriteViewController: UIViewController {
     @IBAction func penLinePressed(_ sender: UIButton) {
         // pen linewidth probably needs size adjustments based on feedback
         // if(sender.currentImage == #imageLiteral(resourceName: "UpperCase_Temp"))
-        if(sender.currentTitle == "Tiny") {
+        if(sender.currentTitle == ".") {
             penScaleBtn1.layer.borderWidth = 4
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 1
             canvasView.lineWidth = 5
         }
-        else if (sender.currentTitle == "Small") {
+        else if (sender.currentTitle == "..") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 4
             penScaleBtn3.layer.borderWidth = 1
             penScaleBtn4.layer.borderWidth = 1
             canvasView.lineWidth = 10
         }
-        else if (sender.currentTitle == "Med") {
+        else if (sender.currentTitle == "...") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 4
             penScaleBtn4.layer.borderWidth = 1
             canvasView.lineWidth = 15
         }
-        else if (sender.currentTitle == "Big") {
+        else if (sender.currentTitle == "....") {
             penScaleBtn1.layer.borderWidth = 1
             penScaleBtn2.layer.borderWidth = 1
             penScaleBtn3.layer.borderWidth = 1
