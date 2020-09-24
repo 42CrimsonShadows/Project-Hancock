@@ -44,6 +44,7 @@
 		A0A028C5227CA9F600A7C787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A028C4227CA9F600A7C787 /* Assets.xcassets */; };
 		A0DEC69C24BCBD15008A38F1 /* letterMatchingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DEC69B24BCBD15008A38F1 /* letterMatchingMenuViewController.swift */; };
 		A0E86BE222C08F150009A214 /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0E86BE122C08F150009A214 /* Loading.gif */; };
+		A0E967A9251D31D700757159 /* qLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0E967A8251D31D700757159 /* qLower.gif */; };
 		A0E9B7B623EBA70200929F4A /* PlayWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B523EBA70200929F4A /* PlayWalk.swift */; };
 		A0E9B7B823EBAAA600929F4A /* StopWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B723EBAAA600929F4A /* StopWalk.swift */; };
 		A0E9B7BA23EBAAE500929F4A /* LetterComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */; };
@@ -58,7 +59,6 @@
 		A7ACFFDD24E5CAB3004F1E87 /* mLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFC324E5CAA1004F1E87 /* mLower.gif */; };
 		A7ACFFDE24E5CAB3004F1E87 /* dLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFC424E5CAA2004F1E87 /* dLower.gif */; };
 		A7ACFFDF24E5CAB3004F1E87 /* jLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFC524E5CAA3004F1E87 /* jLower.gif */; };
-		A7ACFFE024E5CAB3004F1E87 /* qLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFC624E5CAA3004F1E87 /* qLower.gif */; };
 		A7ACFFE124E5CAB3004F1E87 /* cLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFC724E5CAA4004F1E87 /* cLower.gif */; };
 		A7ACFFE224E5CAB3004F1E87 /* gLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFC824E5CAA5004F1E87 /* gLower.gif */; };
 		A7ACFFE324E5CAB3004F1E87 /* fLower.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7ACFFC924E5CAA6004F1E87 /* fLower.gif */; };
@@ -153,6 +153,7 @@
 		A0A028C9227CA9F600A7C787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0DEC69B24BCBD15008A38F1 /* letterMatchingMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letterMatchingMenuViewController.swift; sourceTree = "<group>"; };
 		A0E86BE122C08F150009A214 /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
+		A0E967A8251D31D700757159 /* qLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = qLower.gif; path = ../../../../../Desktop/qLower.gif; sourceTree = "<group>"; };
 		A0E9B7B523EBA70200929F4A /* PlayWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWalk.swift; sourceTree = "<group>"; };
 		A0E9B7B723EBAAA600929F4A /* StopWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWalk.swift; sourceTree = "<group>"; };
 		A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterComplete.swift; sourceTree = "<group>"; };
@@ -167,7 +168,6 @@
 		A7ACFFC324E5CAA1004F1E87 /* mLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mLower.gif; sourceTree = "<group>"; };
 		A7ACFFC424E5CAA2004F1E87 /* dLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dLower.gif; sourceTree = "<group>"; };
 		A7ACFFC524E5CAA3004F1E87 /* jLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jLower.gif; sourceTree = "<group>"; };
-		A7ACFFC624E5CAA3004F1E87 /* qLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = qLower.gif; sourceTree = "<group>"; };
 		A7ACFFC724E5CAA4004F1E87 /* cLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cLower.gif; sourceTree = "<group>"; };
 		A7ACFFC824E5CAA5004F1E87 /* gLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gLower.gif; sourceTree = "<group>"; };
 		A7ACFFC924E5CAA6004F1E87 /* fLower.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fLower.gif; sourceTree = "<group>"; };
@@ -343,6 +343,7 @@
 		A7CBF4F324E4DD950066988F /* LetterGifs */ = {
 			isa = PBXGroup;
 			children = (
+				A0E967A8251D31D700757159 /* qLower.gif */,
 				A7ACFFD724E5CAB1004F1E87 /* aLower.gif */,
 				A7ACFFD424E5CAAF004F1E87 /* bLower.gif */,
 				A7ACFFC724E5CAA4004F1E87 /* cLower.gif */,
@@ -359,7 +360,6 @@
 				A7ACFFD924E5CAB3004F1E87 /* nLower.gif */,
 				A7ACFFCD24E5CAA9004F1E87 /* oLower.gif */,
 				A7ACFFD124E5CAAC004F1E87 /* pLower.gif */,
-				A7ACFFC624E5CAA3004F1E87 /* qLower.gif */,
 				A7ACFFC024E5CA9F004F1E87 /* rLower.gif */,
 				A7ACFFCA24E5CAA6004F1E87 /* sLower.gif */,
 				A7ACFFCF24E5CAAB004F1E87 /* tLower.gif */,
@@ -496,7 +496,6 @@
 				A7ACFFE124E5CAB3004F1E87 /* cLower.gif in Resources */,
 				A0E86BE222C08F150009A214 /* Loading.gif in Resources */,
 				A7CBF51424E594150066988F /* P.gif in Resources */,
-				A7ACFFE024E5CAB3004F1E87 /* qLower.gif in Resources */,
 				A7CBF51C24E594150066988F /* F.gif in Resources */,
 				A7CBF52224E594150066988F /* A.gif in Resources */,
 				A0FDC33224F19B1300748E18 /* RainbowLoadGIF.gif in Resources */,
@@ -533,6 +532,7 @@
 				A7CBF51724E594150066988F /* L.gif in Resources */,
 				A072B02B24EDCCCE00736A74 /* Ch6_d.gif in Resources */,
 				A7ACFFED24E5CAB3004F1E87 /* iLower.gif in Resources */,
+				A0E967A9251D31D700757159 /* qLower.gif in Resources */,
 				A02AB3372476ED5500AEC16A /* AppIcon.appiconset in Resources */,
 				A7ACFFE724E5CAB3004F1E87 /* oLower.gif in Resources */,
 				A072B02D24EDCF2000736A74 /* Ch6_a.gif in Resources */,
@@ -740,7 +740,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = F48PPH8BVL;
+				DEVELOPMENT_TEAM = RX5X2KDAVM;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -766,7 +766,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = F48PPH8BVL;
+				DEVELOPMENT_TEAM = RX5X2KDAVM;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (

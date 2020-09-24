@@ -1705,7 +1705,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <constraint firstAttribute="height" constant="60" id="awx-1G-e7y"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <state key="normal" title="CHAPTER 3: l, y, k, e">
+                                        <state key="normal" title="CHAPTER 3: l, y, k, j, e">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -1718,7 +1718,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <constraint firstAttribute="height" constant="60" id="oMK-XR-t5O"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                        <state key="normal" title="CHAPTER 4: p, r, n, h, b">
+                                        <state key="normal" title="CHAPTER 4: p, r, n, m, h, b">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -3972,6 +3972,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <state key="normal" title="Puzzles">
                                                             <color key="titleColor" red="0.8021553159" green="0.40518420929999999" blue="0.36547821759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="puzzlesTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="fAD-Hv-xOt"/>
+                                                            <segue destination="jSx-6p-9lS" kind="presentation" identifier="puzzleTapped" id="tYo-xg-zlL"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -4046,6 +4050,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="letterImitationUpper" destination="mY8-D4-TOR" id="L5b-Fr-Mok"/>
                         <outlet property="letterMatchingButton" destination="cDQ-OE-wmp" id="JGg-wD-QGg"/>
                         <outlet property="linePracticeButton" destination="Tdd-kb-YYf" id="yZA-xY-bxm"/>
+                        <outlet property="puzzlesTapped" destination="l5i-m6-aJf" id="jf8-lS-5gz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYs-9L-QO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4510,7 +4515,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
     <inferredMetricsTieBreakers>
         <segue reference="R4w-BH-xtA"/>
         <segue reference="ltz-MU-Lz7"/>
-        <segue reference="a2q-lS-aw2"/>
+        <segue reference="DpL-vY-wJm"/>
         <segue reference="LDW-Gb-u1z"/>
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>

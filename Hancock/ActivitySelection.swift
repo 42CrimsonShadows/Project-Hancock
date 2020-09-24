@@ -595,10 +595,16 @@ public class ActivitySelection {
             [CGFloat(0.35),CGFloat(0.9)], //second point x, y
             
             //Line #2
-            [CGFloat(0.35),CGFloat(0.50)], //third point x, y... (actually first point again)
-            [CGFloat(0.70),CGFloat(0.60)], //third MidPoint1 x, y
-            [CGFloat(0.70),CGFloat(0.85)], //third MidPoint2 x, y
-            [CGFloat(0.35),CGFloat(0.9)]] //fourth point
+            [CGFloat(0.33),CGFloat(0.9)], //first point x, y
+            [CGFloat(0.35),CGFloat(0.8)], //first MidPoint1 x, y
+            [CGFloat(0.35),CGFloat(0.6)], //first MidPoint2 x, y
+            [CGFloat(0.35),CGFloat(0.50)], //second point x, y
+        
+         //Line #3
+        [CGFloat(0.35),CGFloat(0.50)], //third point x, y... (actually first point again)
+        [CGFloat(0.70),CGFloat(0.60)], //third MidPoint1 x, y
+        [CGFloat(0.70),CGFloat(0.85)], //third MidPoint2 x, y
+        [CGFloat(0.35),CGFloat(0.9)]] //fourth point
         
         let Underlayb = UIImage(named: "art.scnassets/LetterImages/b-.png")
         letterUnderlay = UIImageView(image: Underlayb)
@@ -706,7 +712,7 @@ public class ActivitySelection {
                           
                           //Line #2
                           [CGFloat(0.33),CGFloat(0.87)], //first point x, y
-                          [CGFloat(0.33),CGFloat(0.10)], //first MidPoint1 x, y
+                          [CGFloat(0.33),CGFloat(0.8)], //first MidPoint1 x, y
                           [CGFloat(0.33),CGFloat(0.6)], //first MidPoint2 x, y
                           [CGFloat(0.33),CGFloat(0.54)], //second point x,
                                                                       
