@@ -2590,7 +2590,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNN-II-Q2t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="258.5"/>
-                                                                <state key="normal" image="LetterMatchingAZ"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="150"/>
+                                                                <state key="normal" title="A - Z">
+                                                                    <color key="titleColor" red="0.80555599929999999" green="0.40504592659999999" blue="0.36960017680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="aThroughZTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="t4p-5d-ELU"/>
                                                                 </connections>
@@ -2602,7 +2605,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8b-ez-biw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="259"/>
-                                                                <state key="normal" image="LetterMatchingbd"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="150"/>
+                                                                <state key="normal" title=" b &amp; d">
+                                                                    <color key="titleColor" red="0.80217951539999999" green="0.40509057040000002" blue="0.36956784129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="bAndDTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="uZn-Rx-m41"/>
                                                                 </connections>
@@ -2614,7 +2620,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhO-7j-9jo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="1000" height="258.5"/>
-                                                                <state key="normal" image="LetterMatchingpgq"/>
+                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="150"/>
+                                                                <state key="normal" title="p, g, &amp; q">
+                                                                    <color key="titleColor" red="0.80217951539999999" green="0.40509057040000002" blue="0.36956784129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="pGQTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="Lo6-3J-5a0"/>
                                                                 </connections>
@@ -3927,7 +3936,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <rect key="frame" x="206" y="0.0" width="200" height="221"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
+                                                <color key="highlightedColor" red="0.38002830739999999" green="0.26309406759999998" blue="0.4984940886" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARd-Or-svP">
                                                 <rect key="frame" x="412" y="0.0" width="200" height="221"/>
@@ -4293,9 +4302,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="R4w-BH-xtA"/>
+        <segue reference="ZYl-JC-vYx"/>
         <segue reference="ltz-MU-Lz7"/>
-        <segue reference="a2q-lS-aw2"/>
+        <segue reference="Hzk-Aa-xBV"/>
         <segue reference="2Q2-TJ-gJR"/>
         <segue reference="Aw8-c9-Drp"/>
         <segue reference="9M1-xs-ghF"/>
@@ -4333,9 +4342,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Jamey_Single1" width="1536" height="414"/>
         <image name="LetterImitation" width="1000" height="150"/>
         <image name="LetterMatching" width="900" height="150"/>
-        <image name="LetterMatchingAZ" width="1200" height="150"/>
-        <image name="LetterMatchingbd" width="1200" height="150"/>
-        <image name="LetterMatchingpgq" width="1300" height="150"/>
         <image name="MainMenuImage" width="1024" height="1366"/>
         <image name="PerpCross" width="375" height="500"/>
         <image name="PlayBtn" width="256" height="256"/>
