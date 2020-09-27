@@ -171,7 +171,7 @@ class AssessmentSelection: UIViewController {
     
     private func setupLetterImages() {
         if(letterArray!.isEmpty) {
-            successLabel.text = "Well Done!"
+            successLabel.text = "🎉"
             goBack()
             return
         }
@@ -215,7 +215,8 @@ class AssessmentSelection: UIViewController {
                 hasGuessed = true
                 correctGuesses += 1
                 letterArray!.remove(at: letterArray!.firstIndex(of: instructionCard.image!)!)
-                successLabel.text = "Correct!"
+                successLabel.text = "🤩"
+                print("match")
                 self.createPieceMask(puzzle: self.puzzleNum!, piece: self.pieceToCreate())
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3){
                     self.successLabel.text = ""
@@ -224,7 +225,7 @@ class AssessmentSelection: UIViewController {
                 }
             }
             else {
-                successLabel.text = "Try Again!"
+                successLabel.text = ""
             }
         }
     }

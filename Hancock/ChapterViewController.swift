@@ -207,11 +207,11 @@ class ChapterViewController: UIViewController {
         //lock rotation
         AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         
-        GifView?.loadGif(name: "BookAnimation")
+        //GifView?.loadGif(name: "BookAnimation")
         
-        loadingGifView?.loadGif(name: "FlowerLoading")
-        loadingGifView?.isHidden = true
-        conceptView?.isHidden = true
+       // loadingGifView?.loadGif(name: "FlowerLoading")
+       // loadingGifView?.isHidden = true
+        //conceptView?.isHidden = true
         
         chapter1Label?.isHidden = true
         chapter2Label?.isHidden = true
@@ -239,9 +239,9 @@ class ChapterViewController: UIViewController {
     
     func pauseAfterPlay(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.75, execute: {
-            self.GifView?.stopAnimating()
+           // self.GifView?.stopAnimating()
            // self.GifView?.image = UIImage(named: "BookOpened")
-            self.GifView?.image = UIImage(named: "LBookOpen")
+           // self.GifView?.image = UIImage(named: "LBookOpen")
             self.chapter1Label?.isHidden = false
             self.chapter6Label?.isHidden = false
             self.lineType1Label?.isHidden = false
@@ -281,8 +281,8 @@ class ChapterViewController: UIViewController {
     func tappedMe(){
         print("chapter " + String(currentChapter.rawValue) + " loaded")
         
-        conceptView.isHidden = false
-        loadingGifView.isHidden = false
+      //  conceptView.isHidden = false
+        //loadingGifView.isHidden = false
         
         //self.GifView.stopAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {

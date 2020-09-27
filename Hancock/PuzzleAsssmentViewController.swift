@@ -1,15 +1,15 @@
 //
-//  PuzzleViewController.swift
+//  PuzzleAsssmentViewController.swift
 //  Hancock
 //
-//  Created by Lauren  Matthews on 8/17/20.
+//  Created by Lauren  Matthews on 9/27/20.
 //  Copyright © 2020 Chris Ross. All rights reserved.
 //
 
 import UIKit
 
-class PuzzleViewController: UIViewController {
-    
+class PuzzleAsssmentViewController: UIViewController {
+
     private var chapter:Int?
     
     override func viewDidLoad() {
@@ -55,3 +55,4 @@ class PuzzleViewController: UIViewController {
         }
     }
 }
+
