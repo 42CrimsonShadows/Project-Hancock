@@ -86,7 +86,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.resetGame()
     }
     
-   /* @IBAction func showAllButtonPressed(_ sender: Any) {
+    @IBAction func showAllButtonPressed(_ sender: Any) {
         //toggle the showall button
         if storymask.isHidden == true {
             storymask.isHidden = false
@@ -99,7 +99,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             showAllBtn.alpha = 0.3
         }
         
-    }*/
+    }
     
     // MARK: - VARIABLES
     var trackingStatus: String = ""

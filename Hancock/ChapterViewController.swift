@@ -196,12 +196,6 @@ class ChapterViewController: UIViewController {
     
     @IBAction func goBack(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
-        performSegue(withIdentifier: "vc3toHomeScreen", sender: self)
-    }
-    
-    
-    @IBAction func linesBackButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "practiceMainMenu", sender: self)
     }
     
         
