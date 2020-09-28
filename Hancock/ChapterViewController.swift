@@ -100,19 +100,19 @@ class ChapterViewController: UIViewController {
     }
     @IBAction func cpt3Clicked(_ sender: Any) {
         currentChapter = .Chapter3
-        conceptView.image = concept3
+       // conceptView.image = concept3
         chapterSelector.chapterLoader(picked: 3)
         tappedMe()
     }
     @IBAction func cpt4Clicked(_ sender: Any) {
         currentChapter = .Chapter4
-        conceptView.image = concept4
+       // conceptView.image = concept4
         chapterSelector.chapterLoader(picked: 4)
         tappedMe()
     }
     @IBAction func cpt5Clicked(_ sender: Any) {
         currentChapter = .Chapter5
-        conceptView.image = concept5
+      //  conceptView.image = concept5
         chapterSelector.chapterLoader(picked: 5)
         tappedMe()
     }

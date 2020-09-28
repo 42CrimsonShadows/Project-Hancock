@@ -268,15 +268,17 @@ extension ViewController{
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.workItem4!)
                         }
+                        
+                       
                         workItem2 = DispatchWorkItem{
                             self.startTransitionAnimationOnce(key: "MainCharacterU")
-                            
                             //after the U trick play the walk to next letter animation
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 12, execute: self.workItem3!)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.workItem3!)
                         }
                         workItem1 = DispatchWorkItem{
                             //play game intro 1
                             self.startTransitionAnimationOnce(key: "MainCharacterCheering")
+                            
                             //wait 3 seconds and then play animation
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:self.workItem2!)
                                 
@@ -505,7 +507,6 @@ extension ViewController{
                         workItem1 = DispatchWorkItem{
                             //play game intro 1
                             self.startTransitionAnimationOnce(key: "MainCharacterCheering")
-                            self.stopTransitionAnimation(key: "MainCharacterCheering")//LM TEST
                             //wait 3 seconds and then play animation
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:self.workItem2!)
                         }
