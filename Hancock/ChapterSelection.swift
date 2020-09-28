@@ -1025,7 +1025,7 @@ class ChapterSelection {
             idleNode.addChildNode(child)
         }
         storyNode.addChildNode(idleNode)
-        idleNode.scale = SCNVector3(1, 1, 1)
+        idleNode.scale = SCNVector3(5 , 5, 5)
         idleNode.position = SCNVector3(-2428.747, 0, 1656.2)
         idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(90), GLKMathDegreesToRadians(0))
         
