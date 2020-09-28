@@ -198,6 +198,11 @@ class ChapterViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
+    
+    @IBAction func practiceBackButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "practiceMainMenu", sender: self)
+    }
+    
         
     
     

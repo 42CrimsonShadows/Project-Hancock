@@ -98,28 +98,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnd-S8-8gH">
-                                <rect key="frame" x="849" y="1192" width="125" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="cIn-6z-IKs"/>
-                                    <constraint firstAttribute="width" constant="125" id="wJk-fB-jNX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" backgroundImage="PlayBtn">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="m5c-pt-OLm"/>
-                                </connections>
-                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-dN-ay7">
-                                <rect key="frame" x="50" y="1191" width="125" height="125"/>
+                                <rect key="frame" x="52" y="1232" width="131" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="0jx-zD-7zz"/>
-                                    <constraint firstAttribute="width" constant="125" id="57v-dh-Lns"/>
+                                    <constraint firstAttribute="height" constant="52" id="0jx-zD-7zz"/>
+                                    <constraint firstAttribute="width" constant="131" id="57v-dh-Lns"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" backgroundImage="Reset">
+                                <state key="normal" backgroundImage="UI Buttons_Reset_Indigo">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -158,9 +144,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <constraint firstAttribute="width" constant="125" id="LWH-EN-s8Q"/>
                                     <constraint firstAttribute="height" constant="125" id="a9L-6S-Uot"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" backgroundImage="ShowBtn">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="Show All">
+                                    <color key="titleColor" systemColor="systemBlueColor"/>
                                 </state>
                                 <connections>
                                     <action selector="showAllButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="L7J-Tm-zav"/>
@@ -174,6 +160,20 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <action selector="goToActivity:" destination="BV1-FR-VrT" eventType="touchUpInside" id="32e-ci-KYW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnd-S8-8gH">
+                                <rect key="frame" x="850" y="1232" width="131" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="cIn-6z-IKs"/>
+                                    <constraint firstAttribute="width" constant="131" id="wJk-fB-jNX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" backgroundImage="UI Buttons_Play_Indigo">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="m5c-pt-OLm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,12 +185,12 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="Rdc-Q4-PCO" firstAttribute="leading" secondItem="BrB-h1-WRS" secondAttribute="leading" id="XGI-BW-co3"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
-                            <constraint firstItem="YAe-dA-dqL" firstAttribute="leading" secondItem="eXw-dN-ay7" secondAttribute="trailing" constant="100" id="bBa-JT-5Ia"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="eXw-dN-ay7" secondAttribute="bottom" constant="50" id="dvY-49-dw4"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="Lnd-S8-8gH" secondAttribute="bottom" constant="50" id="ov1-kP-XGq"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="Lnd-S8-8gH" secondAttribute="trailing" constant="50" id="pZe-tl-6Sw"/>
+                            <constraint firstItem="YAe-dA-dqL" firstAttribute="leading" secondItem="eXw-dN-ay7" secondAttribute="trailing" constant="92" id="bBa-JT-5Ia"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="eXw-dN-ay7" secondAttribute="bottom" constant="82" id="dvY-49-dw4"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="Lnd-S8-8gH" secondAttribute="bottom" constant="82" id="ov1-kP-XGq"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="Lnd-S8-8gH" secondAttribute="trailing" constant="43" id="pZe-tl-6Sw"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
-                            <constraint firstItem="eXw-dN-ay7" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="50" id="xfo-ID-2gN"/>
+                            <constraint firstItem="eXw-dN-ay7" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="52" id="xfo-ID-2gN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1696,6 +1696,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <connections>
                                                     <action selector="goBack:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="zbK-bN-IMX"/>
                                                     <action selector="linePracticeButtonTapped:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="4k2-XE-iAt"/>
+                                                    <action selector="practiceBackButtonTapped:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="2cz-RB-h07"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1892,7 +1893,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="iTf-Pv-gas"/>
                     <connections>
                         <outlet property="linePracticeBackButton" destination="l93-GX-CP8" id="G7c-ua-fc2"/>
-                        <segue destination="l4a-el-CtU" kind="presentation" identifier="practiceMainMenu" id="R4w-BH-xtA"/>
+                        <segue destination="COb-DA-oVC" kind="presentation" identifier="practiceMainMenu" id="qKW-vn-12i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f95-4p-OmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1999,9 +2000,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="PracticeImage" destination="Wyo-AI-4Ju" id="O4i-Xc-tyy"/>
                         <outlet property="lowerCaseImage" destination="HfY-cd-R5d" id="dlH-Z5-d1I"/>
                         <outlet property="upperCaseImage" destination="JCK-qz-1T9" id="469-Fv-gr4"/>
-                        <segue destination="l4a-el-CtU" kind="presentation" identifier="toPracticePage" id="ZYl-JC-vYx"/>
                         <segue destination="Xae-Mk-QY7" kind="presentation" identifier="toChapterPageUpper" id="qTA-fI-fbo"/>
                         <segue destination="lDZ-QH-5ri" kind="presentation" identifier="toChapterPageLower" id="aSh-W5-PKA"/>
+                        <segue destination="COb-DA-oVC" kind="presentation" identifier="toPracticePage" id="nLc-ZZ-ho6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1w3-xt-zQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2140,6 +2141,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </state>
                                 <connections>
                                     <action selector="homeButtonTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="Uys-MO-BiX"/>
+                                    <segue destination="COb-DA-oVC" kind="presentation" identifier="home" id="jwe-7m-LOQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2159,7 +2161,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <segue destination="4gj-ve-Fvs" kind="presentation" identifier="aThroughZ" id="TRX-xz-z1V"/>
                         <segue destination="SaZ-Vc-SCs" kind="presentation" identifier="bAndDTapped" id="xyc-Ip-wj1"/>
                         <segue destination="CY4-xv-roP" kind="presentation" identifier="pGAndQTapped" id="xHn-cy-dwX"/>
-                        <segue destination="l4a-el-CtU" kind="presentation" identifier="home" id="hTv-ik-76y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6M-cn-sV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3557,214 +3558,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
             </objects>
             <point key="canvasLocation" x="967" y="2253"/>
         </scene>
-        <!--Practice Main Meni View Controller-->
-        <scene sceneID="XDt-m0-ymy">
-            <objects>
-                <viewController storyboardIdentifier="PracticeMainMenu" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l4a-el-CtU" customClass="PracticeMainMeniViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jRd-9T-WRj">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hm8-Ru-CSg">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBz-kc-smo">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double2.1" translatesAutoresizingMaskIntoConstraints="NO" id="MIb-Eg-9OL">
-                                                <rect key="frame" x="0.0" y="-1" width="1024" height="200"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Practice" translatesAutoresizingMaskIntoConstraints="NO" id="TqC-9s-bNV">
-                                                <rect key="frame" x="275" y="24" width="474" height="150"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="MIb-Eg-9OL" firstAttribute="leading" secondItem="jBz-kc-smo" secondAttribute="leading" id="4ef-eI-dTP"/>
-                                            <constraint firstAttribute="trailing" secondItem="MIb-Eg-9OL" secondAttribute="trailing" id="Tfj-Pr-wJF"/>
-                                            <constraint firstItem="MIb-Eg-9OL" firstAttribute="top" secondItem="jBz-kc-smo" secondAttribute="top" constant="-1" id="cOB-Fb-qoI"/>
-                                            <constraint firstItem="TqC-9s-bNV" firstAttribute="centerX" secondItem="jBz-kc-smo" secondAttribute="centerX" id="iqS-da-Ky2"/>
-                                            <constraint firstItem="TqC-9s-bNV" firstAttribute="centerY" secondItem="jBz-kc-smo" secondAttribute="centerY" constant="-39" id="jwN-u8-qmk"/>
-                                            <constraint firstItem="MIb-Eg-9OL" firstAttribute="centerY" secondItem="jBz-kc-smo" secondAttribute="centerY" constant="-39" id="us1-Ox-P8d"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYr-4F-mfK">
-                                        <rect key="frame" x="0.0" y="284" width="1024" height="798"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="84z-tF-n3t">
-                                                <rect key="frame" x="12" y="8" width="1000" height="790"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="Jrh-ue-oAL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1000" height="126"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdd-kb-YYf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="126"/>
-                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
-                                                                <state key="normal" title="Line Practice ">
-                                                                    <color key="titleColor" red="0.80217951539999999" green="0.40509057040000002" blue="0.36956784129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="linePracticeTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="ves-xZ-NuM"/>
-                                                                    <segue destination="hNX-2Z-0AR" kind="presentation" identifier="linePractice" id="MZS-bI-R3u"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="Bwg-5v-99i">
-                                                        <rect key="frame" x="0.0" y="133" width="1000" height="125.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDQ-OE-wmp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="125.5"/>
-                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
-                                                                <state key="normal" title="Letter Matching">
-                                                                    <color key="titleColor" red="0.80555599929999999" green="0.40504592659999999" blue="0.36960017680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="letterMatchingTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="MaY-5I-qSz"/>
-                                                                    <segue destination="nCQ-Xj-tZf" kind="presentation" identifier="letterMatching" id="ltz-MU-Lz7"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="w7a-9a-Db1">
-                                                        <rect key="frame" x="0.0" y="265.5" width="1000" height="126"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-D4-TOR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="126"/>
-                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
-                                                                <state key="normal" title="Uppercase Letters">
-                                                                    <color key="titleColor" red="0.79877609009999995" green="0.4052286148" blue="0.36544561390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="letterImitationUpperTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="2Vp-69-wVG"/>
-                                                                    <segue destination="kNy-92-C3p" kind="presentation" identifier="letterImitationUpper" modalPresentationStyle="fullScreen" id="PCO-Ju-Ycb"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="r12-Dw-0ag">
-                                                        <rect key="frame" x="0.0" y="398.5" width="1000" height="126"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXt-CW-ID4">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="126"/>
-                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
-                                                                <state key="normal" title="Lowercase Letters">
-                                                                    <color key="titleColor" red="0.8021553159" green="0.40518420929999999" blue="0.36547821759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="letterImitationLowerTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="NNu-Gk-eQa"/>
-                                                                    <segue destination="YFC-RS-cfq" kind="presentation" identifier="letterImitationLower" modalPresentationStyle="fullScreen" id="lQp-1a-5mo"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="vVb-RX-qLM">
-                                                        <rect key="frame" x="0.0" y="531.5" width="1000" height="125.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQK-9u-82Z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="125.5"/>
-                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
-                                                                <state key="normal" title="Free Draw">
-                                                                    <color key="titleColor" red="0.79877609009999995" green="0.4052286148" blue="0.36544561390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="freeDrawTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="xJW-XT-gsA"/>
-                                                                    <segue destination="2Mk-AN-UIc" kind="presentation" identifier="freeDraw" modalPresentationStyle="fullScreen" id="8YE-ef-vB8"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5i-m6-aJf">
-                                                        <rect key="frame" x="0.0" y="664" width="1000" height="126"/>
-                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="80"/>
-                                                        <state key="normal" title="Puzzles">
-                                                            <color key="titleColor" red="0.8021553159" green="0.40518420929999999" blue="0.36547821759999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="puzzlesTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="fAD-Hv-xOt"/>
-                                                            <segue destination="CT6-Ay-RMp" kind="presentation" identifier="puzzleTapped" id="c8c-eN-60q"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.98316866160000005" green="0.95549327139999995" blue="0.83527582879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstItem="84z-tF-n3t" firstAttribute="top" secondItem="xYr-4F-mfK" secondAttribute="topMargin" id="5R1-ZN-9pk"/>
-                                            <constraint firstAttribute="bottom" secondItem="84z-tF-n3t" secondAttribute="bottom" id="9yp-cj-zXI"/>
-                                            <constraint firstItem="84z-tF-n3t" firstAttribute="leading" secondItem="xYr-4F-mfK" secondAttribute="leading" constant="12" id="L9f-dN-bdt"/>
-                                            <constraint firstAttribute="trailing" secondItem="84z-tF-n3t" secondAttribute="trailing" constant="12" id="Tv1-y3-px4"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDS-Ps-wQB">
-                                        <rect key="frame" x="0.0" y="1090" width="1024" height="276"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double2.2" translatesAutoresizingMaskIntoConstraints="NO" id="ymP-ZO-UPQ">
-                                                <rect key="frame" x="0.0" y="76" width="1024" height="200"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ymP-ZO-UPQ" secondAttribute="trailing" id="UYm-XO-a2I"/>
-                                            <constraint firstItem="ymP-ZO-UPQ" firstAttribute="leading" secondItem="mDS-Ps-wQB" secondAttribute="leading" id="Zqi-1w-Muy"/>
-                                            <constraint firstItem="ymP-ZO-UPQ" firstAttribute="centerY" secondItem="mDS-Ps-wQB" secondAttribute="centerY" constant="38" id="dQx-Kl-7wW"/>
-                                            <constraint firstItem="ymP-ZO-UPQ" firstAttribute="top" secondItem="mDS-Ps-wQB" secondAttribute="top" constant="76" id="oO9-AE-Wm6"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="jBz-kc-smo" firstAttribute="top" secondItem="hm8-Ru-CSg" secondAttribute="top" id="ICG-3l-ax3"/>
-                                    <constraint firstItem="mDS-Ps-wQB" firstAttribute="leading" secondItem="hm8-Ru-CSg" secondAttribute="leading" id="Rya-ur-PcN"/>
-                                    <constraint firstAttribute="trailing" secondItem="mDS-Ps-wQB" secondAttribute="trailing" id="UI1-py-fud"/>
-                                    <constraint firstItem="jBz-kc-smo" firstAttribute="leading" secondItem="hm8-Ru-CSg" secondAttribute="leading" id="dT0-Ly-Og6"/>
-                                    <constraint firstItem="xYr-4F-mfK" firstAttribute="centerY" secondItem="hm8-Ru-CSg" secondAttribute="centerY" id="kjF-8C-i0q"/>
-                                    <constraint firstAttribute="bottom" secondItem="mDS-Ps-wQB" secondAttribute="bottom" id="laB-6O-Ujg"/>
-                                    <constraint firstAttribute="trailing" secondItem="jBz-kc-smo" secondAttribute="trailing" id="uub-gA-o7s"/>
-                                    <constraint firstItem="xYr-4F-mfK" firstAttribute="top" secondItem="hm8-Ru-CSg" secondAttribute="top" constant="284" id="xKe-cT-2sW"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpL-Qw-8Ho">
-                                <rect key="frame" x="0.0" y="20" width="131" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="TGP-vt-6YD"/>
-                                    <constraint firstAttribute="width" constant="131" id="lpv-h1-O7t"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" backgroundImage="UI Buttons_Back_Red">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonTapped:" destination="l4a-el-CtU" eventType="touchUpInside" id="od0-W9-kHu"/>
-                                    <segue destination="UWV-D1-EGe" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="Hzk-Aa-xBV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="kZq-X7-ipx"/>
-                        <color key="backgroundColor" red="0.97935718299999996" green="0.95525664089999995" blue="0.84704262019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="dpL-Qw-8Ho" firstAttribute="leading" secondItem="kZq-X7-ipx" secondAttribute="leading" id="eQd-so-0n8"/>
-                            <constraint firstItem="hm8-Ru-CSg" firstAttribute="top" secondItem="jRd-9T-WRj" secondAttribute="top" id="mgc-Wn-s7F"/>
-                            <constraint firstItem="hm8-Ru-CSg" firstAttribute="bottom" secondItem="jRd-9T-WRj" secondAttribute="bottom" id="ndh-T4-8zl"/>
-                            <constraint firstItem="dpL-Qw-8Ho" firstAttribute="top" secondItem="kZq-X7-ipx" secondAttribute="top" constant="20" id="tsp-vV-yAw"/>
-                            <constraint firstItem="hm8-Ru-CSg" firstAttribute="trailing" secondItem="jRd-9T-WRj" secondAttribute="trailing" id="xGE-3V-KY9"/>
-                            <constraint firstItem="hm8-Ru-CSg" firstAttribute="leading" secondItem="jRd-9T-WRj" secondAttribute="leading" id="xf2-sy-tn1"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="BV7-z9-Ndi"/>
-                    <connections>
-                        <outlet property="backButton" destination="dpL-Qw-8Ho" id="7Bx-PP-D6g"/>
-                        <outlet property="freeDrawButton" destination="aQK-9u-82Z" id="soI-3x-SVQ"/>
-                        <outlet property="letterImitationLower" destination="kXt-CW-ID4" id="fln-UH-D7F"/>
-                        <outlet property="letterImitationUpper" destination="mY8-D4-TOR" id="L5b-Fr-Mok"/>
-                        <outlet property="letterMatchingButton" destination="cDQ-OE-wmp" id="JGg-wD-QGg"/>
-                        <outlet property="linePracticeButton" destination="Tdd-kb-YYf" id="yZA-xY-bxm"/>
-                        <outlet property="puzzlesTapped" destination="l5i-m6-aJf" id="jf8-lS-5gz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AYs-9L-QO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1542" y="155"/>
-        </scene>
         <!--PuzzleMainMenu-->
         <scene sceneID="vqa-Ox-eEL">
             <objects>
@@ -3864,7 +3657,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxT-Jn-zMJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="495" height="126"/>
                                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
-                                                                <state key="normal" title="K, V, W ,M, A">
+                                                                <state key="normal" title="K, V, W, M, A">
                                                                     <color key="titleColor" red="0.80555599929999999" green="0.40504592659999999" blue="0.36960017680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
                                                                 <connections>
@@ -4083,25 +3876,23 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gap-6a-ABC">
                                         <rect key="frame" x="0.0" y="284" width="1024" height="798"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="sgh-IS-pBM">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="798"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="PuzzleImage_8" translatesAutoresizingMaskIntoConstraints="NO" id="QAt-bL-MsM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="798"/>
-                                                    </imageView>
-                                                </subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="PuzzleImage_8" translatesAutoresizingMaskIntoConstraints="NO" id="QAt-bL-MsM">
+                                                <rect key="frame" x="330" y="156" width="364.5" height="486"/>
                                                 <constraints>
-                                                    <constraint firstItem="QAt-bL-MsM" firstAttribute="centerY" secondItem="sgh-IS-pBM" secondAttribute="centerY" id="TWj-6K-6kY"/>
-                                                    <constraint firstItem="QAt-bL-MsM" firstAttribute="centerX" secondItem="sgh-IS-pBM" secondAttribute="centerX" id="wPF-wT-Cis"/>
+                                                    <constraint firstAttribute="height" constant="486" id="BI7-go-f2i"/>
+                                                    <constraint firstAttribute="width" constant="364.5" id="vCg-YB-hXY"/>
                                                 </constraints>
-                                            </stackView>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.98316866160000005" green="0.95549327139999995" blue="0.83527582879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="sgh-IS-pBM" secondAttribute="bottom" id="PPX-Q2-Scp"/>
-                                            <constraint firstAttribute="trailing" secondItem="sgh-IS-pBM" secondAttribute="trailing" id="c49-QB-tjP"/>
-                                            <constraint firstItem="sgh-IS-pBM" firstAttribute="top" secondItem="gap-6a-ABC" secondAttribute="top" id="sX8-ts-M6B"/>
-                                            <constraint firstItem="sgh-IS-pBM" firstAttribute="leading" secondItem="gap-6a-ABC" secondAttribute="leading" id="yty-xq-uzJ"/>
+                                            <constraint firstItem="QAt-bL-MsM" firstAttribute="centerY" secondItem="gap-6a-ABC" secondAttribute="centerY" id="M79-cF-AmK"/>
+                                            <constraint firstItem="QAt-bL-MsM" firstAttribute="centerY" secondItem="gap-6a-ABC" secondAttribute="centerY" id="Mvg-Q0-Rf2"/>
+                                            <constraint firstItem="QAt-bL-MsM" firstAttribute="centerX" secondItem="gap-6a-ABC" secondAttribute="centerX" constant="0.25" id="Rtw-Yv-UFB"/>
+                                            <constraint firstItem="QAt-bL-MsM" firstAttribute="centerX" secondItem="gap-6a-ABC" secondAttribute="centerX" constant="0.25" id="XQs-jS-QM8"/>
+                                            <constraint firstItem="QAt-bL-MsM" firstAttribute="centerY" secondItem="gap-6a-ABC" secondAttribute="centerY" id="pAW-B5-bcc"/>
+                                            <constraint firstItem="QAt-bL-MsM" firstAttribute="centerX" secondItem="gap-6a-ABC" secondAttribute="centerX" constant="0.25" id="uYv-VF-gMP"/>
+                                            <constraint firstItem="QAt-bL-MsM" firstAttribute="centerY" secondItem="gap-6a-ABC" secondAttribute="centerY" id="yzi-dw-5g1"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaB-sn-pYT">
@@ -4356,11 +4147,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     </view>
                     <navigationItem key="navigationItem" id="Gav-iL-6q4"/>
                     <connections>
-                        <outlet property="chapter1Label" destination="wdd-pC-5CN" id="k0C-8O-MO8"/>
-                        <outlet property="chapter2Label" destination="mU0-Bo-py6" id="LVr-1v-tV8"/>
-                        <outlet property="chapter3Label" destination="C1f-zT-MFg" id="RAV-9R-cdH"/>
-                        <outlet property="chapter4Label" destination="fTc-Cd-vU1" id="IhQ-jw-iiU"/>
-                        <outlet property="chapter5Label" destination="I7B-6s-GP3" id="4SQ-RZ-dUk"/>
                         <segue destination="UWV-D1-EGe" kind="presentation" identifier="vc3toHomeScreen" id="nXU-wI-dyG"/>
                     </connections>
                 </viewController>
@@ -4511,11 +4297,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     </view>
                     <navigationItem key="navigationItem" id="Jhi-lv-qRJ"/>
                     <connections>
-                        <outlet property="chapter1Label" destination="pc1-sx-5sx" id="bVh-Bt-pyS"/>
-                        <outlet property="chapter2Label" destination="VyY-HI-KhB" id="kVn-5p-BX5"/>
-                        <outlet property="chapter3Label" destination="sEJ-v2-LDT" id="pGO-Df-OTH"/>
-                        <outlet property="chapter4Label" destination="96e-4d-cgy" id="e0F-WL-Rme"/>
-                        <outlet property="chapter5Label" destination="1mB-Gf-7Ql" id="e05-QA-r1y"/>
+                        <segue destination="UWV-D1-EGe" kind="presentation" identifier="vc3toHomeScreen" id="hQX-2b-Izv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCm-A3-ts5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4546,6 +4328,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <state key="normal" backgroundImage="UI Buttons_Back_Orange">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="backButtonTapped:" destination="COb-DA-oVC" eventType="touchUpInside" id="7Vb-nd-prc"/>
+                                                    <segue destination="UWV-D1-EGe" kind="presentation" identifier="home" id="SvW-to-eLU"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJl-Q3-Xh2">
                                                 <rect key="frame" x="368.5" y="-3" width="287" height="114"/>
@@ -4592,7 +4378,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.69369643930000002" green="0.3838787675" blue="0.64315974710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt1Clicked:" destination="COb-DA-oVC" eventType="touchUpInside" id="Aq7-mU-6Z3"/>
+                                                            <action selector="linePracticeTapped:" destination="COb-DA-oVC" eventType="touchUpInside" id="U67-UU-BG0"/>
+                                                            <segue destination="hNX-2Z-0AR" kind="presentation" identifier="linePractice" id="hXZ-tV-gJX"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XIy-Qq-WN7">
@@ -4602,7 +4389,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.69369643930000002" green="0.3838787675" blue="0.64315974710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt2Clicked:" destination="COb-DA-oVC" eventType="touchUpInside" id="Yy2-Hs-Xep"/>
+                                                            <action selector="letterMatchingTapped:" destination="COb-DA-oVC" eventType="touchUpInside" id="MTu-1T-QTa"/>
+                                                            <segue destination="nCQ-Xj-tZf" kind="presentation" identifier="letterMatching" id="3Nf-TW-mvK"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="U7X-Mf-Q02">
@@ -4612,7 +4400,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.69369643930000002" green="0.3838787675" blue="0.64315974710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt3Clicked:" destination="COb-DA-oVC" eventType="touchUpInside" id="jy4-3Y-sjE"/>
+                                                            <action selector="letterImitationUpperTapped:" destination="COb-DA-oVC" eventType="touchUpInside" id="21x-7C-mar"/>
+                                                            <segue destination="kNy-92-C3p" kind="presentation" identifier="letterImitationUpper" modalPresentationStyle="fullScreen" id="RvS-be-7Ch"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="l9U-w5-ain">
@@ -4622,7 +4411,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.69369643930000002" green="0.3838787675" blue="0.64315974710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt4Clicked:" destination="COb-DA-oVC" eventType="touchUpInside" id="B4e-zp-56C"/>
+                                                            <action selector="letterImitationLowerTapped:" destination="COb-DA-oVC" eventType="touchUpInside" id="Lph-io-vf9"/>
+                                                            <segue destination="YFC-RS-cfq" kind="presentation" identifier="letterImitationLower" modalPresentationStyle="fullScreen" id="49D-Oe-Shq"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-Wg-KqC">
@@ -4632,7 +4422,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.69369643930000002" green="0.3838787675" blue="0.64315974710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt5Clicked:" destination="COb-DA-oVC" eventType="touchUpInside" id="lXS-kd-ZaB"/>
+                                                            <action selector="freeDrawTapped:" destination="COb-DA-oVC" eventType="touchUpInside" id="Y9n-8m-9Lx"/>
+                                                            <segue destination="2Mk-AN-UIc" kind="presentation" identifier="freeDraw" modalPresentationStyle="fullScreen" id="tnP-bL-gq6"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="90S-Nm-dpu">
@@ -4642,7 +4433,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.69369643930000002" green="0.3838787675" blue="0.64315974710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt5Clicked:" destination="COb-DA-oVC" eventType="touchUpInside" id="rf7-tB-ABB"/>
+                                                            <action selector="puzzlesTapped:" destination="COb-DA-oVC" eventType="touchUpInside" id="STX-2O-K55"/>
+                                                            <segue destination="CT6-Ay-RMp" kind="presentation" identifier="puzzleTapped" id="Yuc-jD-e1m"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -4670,22 +4462,24 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     </view>
                     <navigationItem key="navigationItem" id="WsF-Sp-9lH"/>
                     <connections>
-                        <outlet property="chapter1Label" destination="jlo-Ia-blf" id="xvf-eM-uYj"/>
-                        <outlet property="chapter2Label" destination="XIy-Qq-WN7" id="cpY-c2-V1D"/>
-                        <outlet property="chapter3Label" destination="U7X-Mf-Q02" id="EwK-op-BOK"/>
-                        <outlet property="chapter4Label" destination="l9U-w5-ain" id="ghJ-dG-iyJ"/>
-                        <outlet property="chapter5Label" destination="90S-Nm-dpu" id="WRR-Tv-3zg"/>
+                        <outlet property="backButton" destination="rle-XA-tpQ" id="kFk-vn-mL8"/>
+                        <outlet property="freeDrawButton" destination="QaP-Wg-KqC" id="AFT-29-Ts4"/>
+                        <outlet property="letterImitationLower" destination="U7X-Mf-Q02" id="9sN-5b-7Jn"/>
+                        <outlet property="letterImitationUpper" destination="l9U-w5-ain" id="sWZ-Aq-QU4"/>
+                        <outlet property="letterMatchingButton" destination="XIy-Qq-WN7" id="Fnn-4N-Bmd"/>
+                        <outlet property="linePracticeButton" destination="jlo-Ia-blf" id="EeQ-O6-kAa"/>
+                        <outlet property="puzzlesTapped" destination="90S-Nm-dpu" id="ln9-nN-8bk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di3-B2-KN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="-597"/>
+            <point key="canvasLocation" x="1516" y="155"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="R4w-BH-xtA"/>
-        <segue reference="ltz-MU-Lz7"/>
-        <segue reference="nXU-wI-dyG"/>
+        <segue reference="jwe-7m-LOQ"/>
+        <segue reference="3Nf-TW-mvK"/>
+        <segue reference="hQX-2b-Izv"/>
         <segue reference="LDW-Gb-u1z"/>
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>
@@ -4695,7 +4489,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="ABC_Go_UI_ReplayButton_Graphic" width="400" height="400"/>
         <image name="ARexample" width="682.5" height="384"/>
         <image name="B" width="750" height="1000"/>
-        <image name="Bri_Double2.1" width="1536" height="414"/>
         <image name="Bri_Double2.2" width="1536" height="414"/>
         <image name="Bri_Double4.1" width="1536" height="414"/>
         <image name="Bri_Double4.2" width="1536" height="414"/>
@@ -4730,12 +4523,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="LetterMatching" width="900" height="150"/>
         <image name="MainMenuImage" width="1024" height="1366"/>
         <image name="PerpCross" width="375" height="500"/>
-        <image name="PlayBtn" width="256" height="256"/>
         <image name="Practice" width="474" height="150"/>
         <image name="Practice Inner Book Cover" width="900" height="900"/>
         <image name="PuzzleImage_8" width="1024" height="1366"/>
-        <image name="Reset" width="256" height="256"/>
-        <image name="ShowBtn" width="256" height="256"/>
         <image name="Square.png" width="180" height="240"/>
         <image name="Triangle.png" width="180" height="240"/>
         <image name="UI Buttons - Line Spacing_1_Narrow" width="509" height="500"/>
@@ -4750,6 +4540,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="UI Buttons_Back_Red" width="509" height="200"/>
         <image name="UI Buttons_Back_Violet" width="509" height="200"/>
         <image name="UI Buttons_Done-1" width="509" height="200"/>
+        <image name="UI Buttons_Play_Indigo" width="509" height="200"/>
+        <image name="UI Buttons_Reset_Indigo" width="509" height="200"/>
         <image name="UI Buttons_Reset_Red" width="509" height="200"/>
         <image name="UI_MainMenu_L" width="88" height="319"/>
         <image name="UI_MainMenu_P" width="188" height="311"/>
@@ -4763,6 +4555,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="paper3" width="2100" height="1449"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

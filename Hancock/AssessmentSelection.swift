@@ -133,7 +133,7 @@ class AssessmentSelection: UIViewController {
             case 4:
                 letterArray = [ #imageLiteral(resourceName: "K") , #imageLiteral(resourceName: "V"), #imageLiteral(resourceName: "W") , #imageLiteral(resourceName: "M") , #imageLiteral(resourceName: "A")]
                 puzzleNum = Int.random(in: 2...3)
-                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_2") // change to 4
+                puzzleImage = #imageLiteral(resourceName: "Chapter 4 Background") // change to 4
             case 5:
                 letterArray = [ #imageLiteral(resourceName: "N") , #imageLiteral(resourceName: "Z"), #imageLiteral(resourceName: "Y") , #imageLiteral(resourceName: "X")]
                 puzzleNum = 4

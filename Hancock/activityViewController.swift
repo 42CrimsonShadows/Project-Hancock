@@ -265,7 +265,7 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
         canvasView.addSubview(reticleView)
                                
         
