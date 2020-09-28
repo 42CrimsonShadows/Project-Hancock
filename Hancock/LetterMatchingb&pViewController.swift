@@ -55,9 +55,6 @@ class LetterMatchingb_pViewController: UIViewController, UIGestureRecognizerDele
       
       //setting up score
       var tapArray =  [String]()
-    
-    //setting up array fgor matches
-    let awesomeArray = ["😄", "😎", "🤩", "🥳", "🥇", "🏆", "🎉"]
       
      
       override func viewDidLoad() {
@@ -121,7 +118,7 @@ class LetterMatchingb_pViewController: UIViewController, UIGestureRecognizerDele
           //what happens when a letter is tapped
                 if tappedLabel.text == instructionLabel.text {
                     print("Correct")
-                    tappedLabel.text = awesomeArray.randomElement()
+                   tappedLabel.text = "🥇"
                 }
                 else {
                     print("wrong")
@@ -182,7 +179,7 @@ class LetterMatchingb_pViewController: UIViewController, UIGestureRecognizerDele
         super.viewWillDisappear(animated)
 
         // Don't forget to reset when view is being removed
-//        AppDelegate.AppUtility.lockOrientation(.all)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
       
       }//end of class

@@ -133,7 +133,7 @@ class AssessmentSelection: UIViewController {
             case 4:
                 letterArray = [ #imageLiteral(resourceName: "K") , #imageLiteral(resourceName: "V"), #imageLiteral(resourceName: "W") , #imageLiteral(resourceName: "M") , #imageLiteral(resourceName: "A")]
                 puzzleNum = Int.random(in: 2...3)
-                puzzleImage = #imageLiteral(resourceName: "Chapter 4 Background") // change to 4
+                puzzleImage = #imageLiteral(resourceName: "PuzzleImage_2") // change to 4
             case 5:
                 letterArray = [ #imageLiteral(resourceName: "N") , #imageLiteral(resourceName: "Z"), #imageLiteral(resourceName: "Y") , #imageLiteral(resourceName: "X")]
                 puzzleNum = 4
@@ -171,7 +171,7 @@ class AssessmentSelection: UIViewController {
     
     private func setupLetterImages() {
         if(letterArray!.isEmpty) {
-            successLabel.text = "🎉"
+            successLabel.text = "Well Done!"
             goBack()
             return
         }
@@ -215,8 +215,7 @@ class AssessmentSelection: UIViewController {
                 hasGuessed = true
                 correctGuesses += 1
                 letterArray!.remove(at: letterArray!.firstIndex(of: instructionCard.image!)!)
-                successLabel.text = "🤩"
-                print("match")
+                successLabel.text = "Correct!"
                 self.createPieceMask(puzzle: self.puzzleNum!, piece: self.pieceToCreate())
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3){
                     self.successLabel.text = ""
@@ -225,7 +224,7 @@ class AssessmentSelection: UIViewController {
                 }
             }
             else {
-                successLabel.text = ""
+                successLabel.text = "Try Again!"
             }
         }
     }

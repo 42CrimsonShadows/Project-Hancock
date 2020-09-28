@@ -56,9 +56,6 @@ class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDele
     //setting up score
     var tapArray =  [String]()
     
-    //setting up array for matching
-    let awesomeArray = ["😄", "😎", "🤩", "🥳", "🥇", "🏆", "🎉"]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +82,7 @@ class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDele
         for (_, UILabel) in labelArray.enumerated(){
             UILabel?.text = letterMatchingArray.randomElement()
             UILabel?.font = UIFont(name: "Chalkboard SE", size: 115)
-            UILabel?.textColor = UIColor(red: 102/255.0, green:40/255.0, blue: 133/255.0, alpha: 1.0)
+            UILabel?.textColor = UIColor(red: 70/255.0, green: 125/255.0, blue: 126, alpha: 1.0)
             
         }
         
@@ -121,7 +118,7 @@ class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDele
         //what happens when a letter is tapped
         if tappedLabel.text == instructionLabel.text {
             print("Correct")
-            tappedLabel.text = awesomeArray.randomElement()
+            tappedLabel.text = "🥇"
         }
         else {
             print("wrong")
@@ -181,7 +178,7 @@ class LetterMatchingPGQViewController: UIViewController, UIGestureRecognizerDele
         super.viewWillDisappear(animated)
 
         // Don't forget to reset when view is being removed
-//        AppDelegate.AppUtility.lockOrientation(.all)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
         
 }//end of class

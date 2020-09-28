@@ -21,7 +21,6 @@ public var selectedActivity = ""
 
 
 public var totalCoins = 0
-public var startTime = Date()
 
 enum LetterState: Int16 {
     case P1_P2 //first line
@@ -37,9 +36,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     private var useDebugDrawing = false
     public var activitySelection = ActivitySelection()
-    private var letterCoins: Int32 = 0
-    // total coins user can get on letter
-    public var coinsPossible: Int32 = 0
     
     private let reticleView: ReticleView = {
         let view = ReticleView(frame: CGRect.null)
@@ -148,22 +144,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         Orange2DotView.translatesAutoresizingMaskIntoConstraints = false
         return Orange2DotView
     }()
-    var purple2DotView: UIImageView = {
-        //Add the Green Dot image to the canvas
-        let purple2Dot = UIImage(named: "art.scnassets/DotImages/PurpleDot.png")
-        let purple2DotView = UIImageView(image: purple2Dot)
-        //this enables autolayout for our GreenDotView
-        purple2DotView.translatesAutoresizingMaskIntoConstraints = false
-        return purple2DotView
-    }()
-    let yellow2DotView: UIImageView = {
-        //Add the Red Dot image to the canvas
-        let yellow2Dot = UIImage(named: "art.scnassets/DotImages/YellowDot.png")
-        let yellow2DotView = UIImageView(image: yellow2Dot)
-        //this enables autolayout for our RedDotView
-        yellow2DotView.translatesAutoresizingMaskIntoConstraints = false
-        return yellow2DotView
-    }()
     let BlackDotView1: UIImageView = {
         //Add the Yellow Dot image to the canvas
         let BlackDot1 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
@@ -228,22 +208,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         BlackDotView8.translatesAutoresizingMaskIntoConstraints = false
         return BlackDotView8
     }()
-    let BlackDotView9: UIImageView = {
-        //Add the Yellow Dot image to the canvas
-        let BlackDot9 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
-        let BlackDotView9 = UIImageView(image: BlackDot9)
-        //this enables autolayout for our YellowDotView
-        BlackDotView9.translatesAutoresizingMaskIntoConstraints = false
-        return BlackDotView9
-    }()
-    let BlackDotView10: UIImageView = {
-        //Add the Yellow Dot image to the canvas
-        let BlackDot10 = UIImage(named: "art.scnassets/UI-art/AnthonyCoin.png")
-        let BlackDotView10 = UIImageView(image: BlackDot10)
-        //this enables autolayout for our YellowDotView
-        BlackDotView10.translatesAutoresizingMaskIntoConstraints = false
-        return BlackDotView10
-    }()
     
     let animationDictionary = [
         "lowercaseA":"ch6_a"
@@ -265,7 +229,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
         canvasView.addSubview(reticleView)
                                
         
@@ -308,7 +271,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         canvasView.Line2 = false
         canvasView.Line3 = false
         canvasView.Line4 = false
-        canvasView.Line5 = false
         
         testImage.alpha = 0.90
         
@@ -330,9 +292,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 self.canvasView.redDot?.pulsate(duration: 0.6)
             })
         })
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        //AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
     }
     
     
@@ -406,8 +365,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
 //        var WhiteDot9: CGPoint?
         var blueDot8: CGPoint?
         var orangeDot9: CGPoint?
-        var purpleDot10: CGPoint?
-        var yellowDot11: CGPoint?
         
         let dotArraySize = activityPoints.count
         
@@ -425,13 +382,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 if dotArraySize > 12 {
                     blueDot8 = CGPoint(x: 600 * activityPoints[12][0], y: 900 * activityPoints[12][1])
                     orangeDot9 = CGPoint(x: 600 * activityPoints[15][0], y: 900 * activityPoints[15][1])
-                    //if there is more than four lines
-                    if dotArraySize > 16 {
-                        yellowDot11 = CGPoint(x: 600 * activityPoints[16][0], y: 900 * activityPoints[16][1])
-                        purpleDot10 = CGPoint(x: 600 * activityPoints[19][0], y: 900 * activityPoints[19][1])
-                        
-
-                    }
 
                 }
             }
@@ -525,24 +475,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         Orange2DotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         Orange2DotView.isHidden = true
         canvasView.orange2Dot = Orange2DotView
-        
-        //Set up purple2 dot
-        view.insertSubview(purple2DotView, belowSubview: canvasView)
-        purple2DotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: purpleDot10?.x ?? 0).isActive = true
-        purple2DotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: purpleDot10?.y ?? 0).isActive = true
-        purple2DotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        purple2DotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        purple2DotView.isHidden = true
-        canvasView.purple2Dot = purple2DotView
-        
-        //Set up yellow2 dot
-        view.insertSubview(yellow2DotView, belowSubview: canvasView)
-        yellow2DotView.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: yellowDot11?.x ?? 0).isActive = true
-        yellow2DotView.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: yellowDot11?.y ?? 0).isActive = true
-        yellow2DotView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        yellow2DotView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        yellow2DotView.isHidden = true
-        canvasView.yellow2Dot = yellow2DotView
     }
     
     public func setupMiddleDots(){
@@ -556,8 +488,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         var coin6: CGPoint?
         var coin7: CGPoint?
         var coin8: CGPoint?
-        var coin9: CGPoint?
-        var coin10: CGPoint?
         
         let coinArraySize = activityPoints.count
         
@@ -575,11 +505,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 if coinArraySize > 12 {
                     coin7 = CGPoint(x: 600 * activityPoints[13][0], y: 900 * activityPoints[13][1])
                     coin8 = CGPoint(x: 600 * activityPoints[14][0], y: 900 * activityPoints[14][1])
-                    //if there is more than three lines
-                    if coinArraySize > 16 {
-                        coin9 = CGPoint(x: 600 * activityPoints[17][0], y: 900 * activityPoints[17][1])
-                        coin10 = CGPoint(x: 600 * activityPoints[18][0], y: 900 * activityPoints[18][1])
-                    }
                 }
             }
         }
@@ -655,24 +580,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
         BlackDotView8.heightAnchor.constraint(equalToConstant: 25).isActive = true
         BlackDotView8.isHidden = true
         canvasView.blackDot8 = BlackDotView8
-        
-        //set up black dot 9
-        view.insertSubview(BlackDotView9, belowSubview: canvasView)
-        BlackDotView9.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin9?.x ?? 0).isActive = true
-        BlackDotView9.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin9?.y ?? 0).isActive = true
-        BlackDotView9.widthAnchor.constraint(equalToConstant: 25).isActive = true
-        BlackDotView9.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        BlackDotView9.isHidden = true
-        canvasView.blackDot9 = BlackDotView9
-        
-        //set up black dot 10
-        view.insertSubview(BlackDotView10, belowSubview: canvasView)
-        BlackDotView10.centerXAnchor.constraint(equalTo: canvasView.leftAnchor, constant: coin10?.x ?? 0).isActive = true
-        BlackDotView10.centerYAnchor.constraint(equalTo: canvasView.topAnchor, constant: coin10?.y ?? 0).isActive = true
-        BlackDotView10.widthAnchor.constraint(equalToConstant: 25).isActive = true
-        BlackDotView10.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        BlackDotView10.isHidden = true
-        canvasView.blackDot10 = BlackDotView10
     }
     
     func setupCoinLabel() {
@@ -738,7 +645,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin1Collected = true
                             canvasView.blackDot1?.isHidden = true
                             totalCoins += 1
-                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             //TODO: add one to the Coin tally
@@ -751,7 +657,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin2Collected = true
                             canvasView.blackDot2?.isHidden = true
                             totalCoins += 1
-                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
@@ -765,7 +670,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin1Collected = true
                             canvasView.blackDot3?.isHidden = true
                             totalCoins += 1
-                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
@@ -776,7 +680,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin2Collected = true
                             canvasView.blackDot4?.isHidden = true
                             totalCoins += 1
-                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
@@ -790,7 +693,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin1Collected = true
                             canvasView.blackDot5?.isHidden = true
                             totalCoins += 1
-                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
@@ -801,7 +703,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin2Collected = true
                             canvasView.blackDot6?.isHidden = true
                             totalCoins += 1
-                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
@@ -815,7 +716,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.coin1Collected = true
                             canvasView.blackDot7?.isHidden = true
                             totalCoins += 1
-                            letterCoins += 1
                             setupCoinLabel()
                             print("***DINGDING***")
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
@@ -827,31 +727,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                             canvasView.blackDot8?.isHidden = true
 
                             totalCoins += 1
-                            letterCoins += 1
-                            setupCoinLabel()
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
-                        }
-                    }
-                }
-                if canvasView.Line5 == true {
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
-                        if canvasView.coin1Collected == false {
-                            canvasView.coin1Collected = true
-                            canvasView.blackDot9?.isHidden = true
-                            totalCoins += 1
-                            letterCoins += 1
-                            setupCoinLabel()
-                            print("***DINGDING***")
-                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
-                        }
-                    }
-                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
-                        if canvasView.coin2Collected == false {
-                            canvasView.coin2Collected = true
-                            canvasView.blackDot10?.isHidden = true
-
-                            totalCoins += 1
-                            letterCoins += 1
                             setupCoinLabel()
                             self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
@@ -879,8 +754,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                     //separatorView.isHidden = true
                 }
             }
-            // adding total amount of coins possible to get
-            coinsPossible += 2
             
             if canvasView.letterComplete == true {
                 //play last ding
@@ -888,33 +761,27 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
                 
                 //play cheer
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
+                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
                     
-                    // send character data to db with user credentials from login
-                    Service.updateCharacterData(username: user, password: pass, letter: selectedActivity, score: self.letterCoins, timeToComplete: Service.TimeSinceActive(lastActive: startTime), totalPointsEarned: self.letterCoins, totalPointsPossible: self.coinsPossible)
-                    //dismiss activity view
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                        self.dismiss(animated: false, completion: nil)
-                        })
+                //dismiss activity view
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                    self.dismiss(animated: false, completion: nil)
                     })
-                }
+                })
+            }
             
             //removing coins from total if the line was not completed
             guard let lastPoint = touches.first?.location(in: canvasView) else { return }
             if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 25 {
                 if canvasView.coin1Collected == true {
                     totalCoins -= 1
-                    letterCoins -= 1
                     setupCoinLabel()
                     
                     if canvasView.coin2Collected == true {
                         totalCoins -= 1
-                        letterCoins -= 1
                         setupCoinLabel()
                     }
                 }
-                // subtracting total amount of coins possible if line wasn't finished
-                coinsPossible -= 2
             }
             //reset collected booleans
             canvasView.coin1Collected = false
@@ -1006,7 +873,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     private func loadActivity(){
-        startTime = Date()
         switch selectedActivity {
         case "A":
             activitySelection.loadActivityA()

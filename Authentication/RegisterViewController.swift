@@ -7,73 +7,90 @@
 //
 
 import UIKit
+//import Firebase
 
 class RegisterViewController: UIViewController {
 
-
-    @IBOutlet weak var FirstNameField: UITextField!
-    @IBOutlet weak var LastNameField: UITextField!
+    @IBOutlet weak var NameField: UITextField!
     @IBOutlet weak var UsernameField: UITextField!
     @IBOutlet weak var PassField: UITextField!
     @IBOutlet weak var CPassField: UITextField!
+    @IBOutlet weak var SchoolIDField: UITextField!
+    @IBOutlet weak var TeacherIDField: UITextField!
     @IBOutlet weak var PEmailField: UITextField!
-    @IBOutlet weak var ErrorLabel: UILabel!
-    var success = false
+    @IBOutlet weak var PNumField: UITextField!
     
+    @IBOutlet weak var SMSLabel: UILabel!
+    @IBOutlet weak var TeacherLabel: UILabel!
+    @IBOutlet weak var StudentLabel: UILabel!
+    
+    var SMSUpdates: Bool = true
+    var isTeacher: Bool = false
+    
+    @IBAction func RequestSMSInfo(_ sender: Any) {
+        print("User requested more info about SMS Updates")
+    }
     
     @IBAction func RequestRegistration(_ sender: Any) {
         print("Attempting to Register")
-        // check for empty fields
-        if((UsernameField.text == "") || (FirstNameField.text == "") || (LastNameField.text == "") || (PassField.text == "") || (CPassField.text == "") || (PEmailField.text == ""))
-        {
-            print("Empty fields")
-            ErrorLabel.text = "Must fill out all fields"
+        guard let username = UsernameField.text else { return }
+        guard let email = PEmailField.text else { return }
+        guard let pass = PassField.text else { return }
+        
+//        Auth.auth().createUser(withEmail: email, password: pass) { user, error in
+//            if error == nil && user != nil {
+//                print("The User was Created")
+//
+//                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//                changeRequest?.displayName = username
+//                changeRequest?.commitChanges { error in
+//                    if error == nil {
+//                        print("displayName has been changed")
+//                        self.dismiss(animated: false, completion: nil)
+//                    }
+//                }
+//            }else {
+//                print("Error Creating the user: \(error!.localizedDescription)")
+//            }
+//
+//        }
+//
+//    }
+    
+        func SMSUpdatesBool(_ sender: Any) {
+        
+        if SMSUpdates {
+            print("User would no longer like SMSUpdates")
+            self.SMSUpdates = false
+            SMSLabel.text = "No"
+            SMSLabel.textColor = UIColor.gray
         }else {
-            if(PassField.text != CPassField.text) // check to make sure passwords match
-            {
-                print("Passwords don't match")
-                ErrorLabel.text = "Passwords need to match"
-            }
-            else{
-                guard let username = UsernameField.text else { return }
-                guard let email = PEmailField.text else { return }
-                guard let password = PassField.text else { return }
-                guard let first = FirstNameField.text else { return }
-                guard let last = LastNameField.text else { return }
-                
-                // api calls run on a background thread, so we use this lambda to get the result from Service and use it in main thread
-                // call register and set success, call segue on main thread
-                Service.register(firstName: first, lastName: last, email: email, username: username, password: password) {(isSuccess) in self.success = isSuccess
-                    DispatchQueue.main.async{
-                        self.doSegue(username: username, password:password)
-                    }
-                }
-            }
+            print("User would like SMSUpdates")
+            self.SMSUpdates = true
+            SMSLabel.text = "Yes"
+            SMSLabel.textColor = UIColor.blue
         }
-        
-        
     }
     
+    func TeacherStudentBool(_ sender: Any) {
+        
+        if isTeacher {
+            print("The user is a Student")
+            isTeacher = false
+            StudentLabel.textColor = UIColor.blue
+            TeacherLabel.textColor = UIColor.gray
+        }else {
+            print("The user is a Teacher")
+            isTeacher = true
+            TeacherLabel.textColor = UIColor.blue
+            StudentLabel.textColor = UIColor.gray
+        }
+    }
     
-    override func viewDidLoad() {
+    func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func doSegue(username: String, password: String)
-    {
-        // check for successful registration, and send to login
-        if(success)
-        {
-            print("REGISTER")
-            ErrorLabel.text = ""
-            self.performSegue(withIdentifier: "toLogin", sender: self)
-        }
-        else
-        {
-            print("Username already exists")
-            ErrorLabel.text = "Username already exists"
-        }
+
     }
 
 }
-
+}
