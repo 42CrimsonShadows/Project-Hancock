@@ -7,13 +7,18 @@
 //
 
 import UIKit
-//import firebase
 
+
+// User State Vars
+public var user = ""
+public var pass = ""
 
 class SignInViewController: UIViewController {
 
     @IBOutlet weak var IDField: UITextField!
     @IBOutlet weak var PassField: UITextField!
+    @IBOutlet weak var ErrorLabel: UILabel!
+    var success = false
     
     @IBAction func ForgotPasswordPopup(_ sender: UIButton) {
         print("forgot password?")
@@ -21,8 +26,8 @@ class SignInViewController: UIViewController {
     @IBAction func Login(_ sender: Any) {
         
     print("Logging in...")
-        guard let email = IDField.text else { return }
-        guard let pass = PassField.text else { return }
+        guard let username = IDField.text else { return }
+        guard let password = PassField.text else { return }
         
 //        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
 //            if error == nil && Auth.auth().currentUser != nil {
@@ -35,29 +40,50 @@ class SignInViewController: UIViewController {
 //
 //            }
 //        }
-//    }
+        
+        // api calls run on a background thread, so we use this lambda to get the result from Service and use it in main thread
+        // Call login, set success, and call segue on main thread
+        Service.login(username:username, password:password) {(isSuccess) in self.success = isSuccess
+            DispatchQueue.main.async{
+                self.doSegue(username: username, password:password)
+            }
+        }
+    }
     
-    func RegisterButton(_ sender: Any) {
+    @IBAction func RegisterButton(_ sender: Any) {
         print("Loading Registration Forms...")
     }
     
     
-   func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-    func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        if let user = Auth.auth().currentUser{
-//            print("Welcome ", Auth.auth().currentUser?.displayName)
-//            }
-        
     }
     
+    func doSegue(username: String, password: String)
+    {
+        // check for successful auth, set error label, and login successful and if not already logged in
+        if(success)
+        {
+            ErrorLabel.text = ""
 
+            if(user == "" && pass == "")
+            {
+                user = username
+                pass = password
+                print("LOGIN")
+                self.performSegue(withIdentifier: "toHomePage", sender: self)
+            }
+        }
+        else
+        {
+            print("Invalid Username or Password")
+            ErrorLabel.text = "Invalid Username or Password"
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -68,5 +94,5 @@ class SignInViewController: UIViewController {
     }
     */
 
-    }
 }
+

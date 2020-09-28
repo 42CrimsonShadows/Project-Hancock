@@ -218,7 +218,7 @@ class ChapterSelection {
         
         //Load Idle Animation Node
         //let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")!
-        let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@TwistDanceFixed.dae")! //temp idle
+        let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")! //temp idle
         for child in idleLinScene.rootNode.childNodes {
             SideCharacter2idleNode.addChildNode(child)
         }
@@ -1649,7 +1649,7 @@ class ChapterSelection {
                                   "Narration33" : "ch1-E-Line4_01", //4 Perfect
                                   "Narration34" : "ch1-E-Line2_02", //blue to orange Again (no Pink to White dot)
                                   "Narration35" : "ch1-E-Line5_01", //5 narration40 Awesome Job
-                                  "Narration62" : "ch1-E-Line2_02", //Blue to Orange
+                                  "Narration62" : "ch1-E-Line3_02", //Yellow to Purple
                                   "Narration63" : "ch1-E-Line3_01", //3 Amazing
                                   
                                   //letter h
@@ -1671,6 +1671,8 @@ class ChapterSelection {
                                   "Narration47" : "ch1-E-Line2_01", //2 Great Job
                                   "Narration48" : "ch1-E-Line2_02", //Blue to Orange
                                   "Narration49" : "ch1-E-Line3_01", //3 Amazing
+                                  "Narration64": "ch1-E-Line3_02",//yellow dot to purple dot
+                                  "Narration65": "ch1-E-Line4_01", //perfect
                                   
                                   //Final
                                   "Narration50" : "ch4L-Final2",
