@@ -505,6 +505,7 @@ extension ViewController{
                         workItem1 = DispatchWorkItem{
                             //play game intro 1
                             self.startTransitionAnimationOnce(key: "MainCharacterCheering")
+                            self.stopTransitionAnimation(key: "MainCharacterCheering")//LM TEST
                             //wait 3 seconds and then play animation
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute:self.workItem2!)
                         }
