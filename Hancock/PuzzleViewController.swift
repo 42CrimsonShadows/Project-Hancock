@@ -10,15 +10,17 @@ import UIKit
 
 class PuzzleViewController: UIViewController {
     
+    // chapter to send to AssessmentSelection
     private var chapter:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
+    // pressed a chapter to load
     @IBAction func chapterPressed(_ sender: UIButton) {
         
+        // set chapter based on title of the button pressed
         switch sender.currentTitle {
             case "I, T, L, F, E, H":
                 chapter = 1
@@ -43,13 +45,16 @@ class PuzzleViewController: UIViewController {
             default:
                 chapter = 1
         }
+        // load assessment now that chapter is chosen
         self.performSegue(withIdentifier: "assessmentPage", sender: self)
     }
     
     @IBAction func goBack(_ sender: UIButton) {
+        // dismiss brings us back to practice page
         self.dismiss(animated: false, completion: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // if destination is to AssessmentSelection set the selectedChapter to chapter
         if let destination = segue.destination as? AssessmentSelection {
             destination.selectedChapter = chapter!
         }

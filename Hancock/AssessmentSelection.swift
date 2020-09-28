@@ -18,39 +18,48 @@ import UIKit
 import Foundation
 import ARKit
 
-
-//setting up variables
-var assessmentArray: [UIImage]?
-
-
 class AssessmentSelection: UIViewController {
     
     // MARK: - Variables
     //Outlets
+    // letters to guess from
     @IBOutlet weak var cardOne: UIButton!
     @IBOutlet weak var cardTwo: UIButton!
     @IBOutlet weak var cardThree: UIButton!
     @IBOutlet weak var cardFour: UIButton!
     @IBOutlet weak var cardFive: UIButton!
     @IBOutlet weak var cardSix: UIButton!
+    // letter to match
     @IBOutlet weak var instructionCard: UIImageView!
+    // puzzle
     @IBOutlet weak var puzzleImageView: UIImageView!
+    // to inform user of success or failure of guess
     @IBOutlet weak var successLabel: UILabel!
     
     
     // for puzzle mask
+    // height and width of puzzleImageView
     private var height: CGFloat?
     private var width: CGFloat?
+    // percentage for equal male/female connectors for image size
     private let cutOutPercent: CGFloat = 100/720
+    // radius of male/female connectors based on size of image and cut-out percent
     private var radius: CGFloat?
+    // the path for the mask to follow
     private let maskPath = UIBezierPath()
+    // mask to hide the puzzle peices not currently earned
     private let shapemask = CAShapeLayer()
+    // number for puzzle layout for pieces
     private var puzzleNum: Int?
+    // how may pieces each puzzle layout has
     private var puzzlePieces = [6,6,5,5,4]
+    // the image to load based on chapter
     private var puzzleImage: UIImage?
+    //  what pieces are currently shown (so we don't show the same one twice)
     private var puzzlePiecesShown : [Int] = []
     
     // for functionality
+    // letter images
     private let letters = [
     #imageLiteral(resourceName: "a-"),
     #imageLiteral(resourceName: "b-"),
@@ -104,19 +113,26 @@ class AssessmentSelection: UIViewController {
         #imageLiteral(resourceName: "X"),
         #imageLiteral(resourceName: "Y"),
         #imageLiteral(resourceName: "Z")]
+    // chapter to load letter array and puzzle image
     var selectedChapter:Int?
+    // letters for this chapter
     private var letterArray:[UIImage]?
+    // the buttons the user can choose
     private var UIImages:[UIButton]?
+    // the number of the button that matches the instruction card
     private var match:Int?
-    
+    // how many times the user has guessed this game
     private var guesses = 0
+    // the number of correct guesses this game
     private var correctGuesses = 0
+    // if we've gotten the correct guess
     private var hasGuessed = false
     
     // MARK: - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // fill letter array with correct chapter letters, pick a puzzle layout based on number of letters in chapter, set chapter puzzle image
         switch selectedChapter {
             case 1:
                 letterArray = [ #imageLiteral(resourceName: "I") , #imageLiteral(resourceName: "T"), #imageLiteral(resourceName: "L") , #imageLiteral(resourceName: "E") , #imageLiteral(resourceName: "F") , #imageLiteral(resourceName: "H")]
@@ -164,20 +180,30 @@ class AssessmentSelection: UIViewController {
                 puzzleImage = #imageLiteral(resourceName: "PuzzleImage_1")
         }
         
+        // filling with buttons
         UIImages = [cardOne, cardTwo, cardThree, cardFour, cardFive, cardSix]
+        // setting the button images
         setupLetterImages()
+        // setting up the puzzle
         setupPuzzleView()
     }
     
+    // Sets up the buttons with letter images (only one matches the instruction card)
     private func setupLetterImages() {
+        // user has completed game, congratulate and return to menu
         if(letterArray!.isEmpty) {
+            hasGuessed = true
             successLabel.text = "Well Done!"
             goBack()
             return
         }
+        
+        // pick a letter from the remaining letters for this chapter
         instructionCard.image = letterArray!.randomElement()
         
+        // pick the card that will match the instruction card
         match = Int.random(in: 0..<UIImages!.count)
+        // set button image to random letter, unless it's the match card, then set to instruction image
         for i in 0..<UIImages!.count {
             var img = letters.randomElement()
             if(i == match) {
@@ -193,30 +219,46 @@ class AssessmentSelection: UIViewController {
         }
     }
     
+    // Set up the puzzleImageView to have a shapemask, and set relevent vars
     private func setupPuzzleView() {
         // puzzle mask setup
-            puzzleImageView.image = puzzleImage!
-            print(puzzleImageView.bounds.size) // should be 486.0 x 648.0 or equivalent ratio - important for the mask to work
-            height = puzzleImageView.bounds.size.height
-            width = puzzleImageView.bounds.size.width
-            radius = puzzleImageView.bounds.size.width * cutOutPercent
-            shapemask.frame = puzzleImageView.bounds
-            shapemask.masksToBounds = true
-            shapemask.path = maskPath.cgPath
-            puzzleImageView.layer.mask = shapemask
+        // put chapter puzzle image in UIImageView
+        puzzleImageView.image = puzzleImage!
+        print(puzzleImageView.bounds.size) // should be 486.0 x 648.0 or equivalent ratio - important for the mask to work
+        // set height and width
+        height = puzzleImageView.bounds.size.height
+        width = puzzleImageView.bounds.size.width
+        // calculate radius
+        radius = puzzleImageView.bounds.size.width * cutOutPercent
+        // set the frame to be the same size as the PuzzleImageView
+        shapemask.frame = puzzleImageView.bounds
+        // mask all the way up to the bounds
+        shapemask.masksToBounds = true
+        // set the path of the mask to the maskPath (this gets added to with each puzzle piece)
+        shapemask.path = maskPath.cgPath
+        // set the puzzleimageviews mask to the shapemask
+        puzzleImageView.layer.mask = shapemask
     }
     
-    
+    // The user has guessed, check success
     @IBAction func imagePressed(_ sender: UIButton) {
         print("\(match!)")
+        // if we haven't gotten the correct guess yet, check for success
         if(!hasGuessed) {
+            // increase number of guesses
             guesses += 1
+            // if user  gotten the correct letter (button titles are numbers)
             if(sender.currentTitle == "\(match!)") {
+                // a correct guess, increase correct guess counter
                 hasGuessed = true
                 correctGuesses += 1
+                // remove this letter from letters to guess
                 letterArray!.remove(at: letterArray!.firstIndex(of: instructionCard.image!)!)
+                // inform user
                 successLabel.text = "Correct!"
+                // add a puzzle piece for the puzzle layout, with a random piece number
                 self.createPieceMask(puzzle: self.puzzleNum!, piece: self.pieceToCreate())
+                // let user see message for 3 seconds then give a new instruction card and reset button images and correct guess bool
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3){
                     self.successLabel.text = ""
                     self.setupLetterImages()
@@ -224,17 +266,20 @@ class AssessmentSelection: UIViewController {
                 }
             }
             else {
+                // user did not guess correctly, inform
                 successLabel.text = "Try Again!"
             }
         }
     }
     
+    // user pressed back button
     @IBAction func backPressed(_ sender: UIButton) {
         goBack()
     }
     
     private func goBack(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            // dismiss and send to puzzle view controller
             self.dismiss(animated: false, completion: nil)
         }
     }
@@ -333,9 +378,13 @@ class AssessmentSelection: UIViewController {
                 return
         }
         
+        // add piece to mask
         maskPath.append(curve)
+        // set mask path to new path
         shapemask.path = maskPath.cgPath
+        // update mask
         puzzleImageView.layer.mask = shapemask
+        // record this piece is shown.
         puzzlePiecesShown.append(piece)
     }
     
