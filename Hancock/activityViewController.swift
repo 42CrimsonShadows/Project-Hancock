@@ -27,7 +27,6 @@ enum LetterState: Int16 {
     case P3_P4 //second
     case P5_P6 //third
     case P7_P8 //fourth
-    case P9_P10//fifth
 }
 
 class activityViewController: UIViewController, UIPencilInteractionDelegate {
