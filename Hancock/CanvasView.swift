@@ -21,6 +21,7 @@ class CanvasView: UIView {
     var Line2: Bool = false
     var Line3: Bool = false
     var Line4: Bool = false
+    var Line5: Bool = false
     
     var lineColor = UIColor.blue.cgColor
     var checkPointColor = UIColor.darkGray.cgColor
@@ -57,6 +58,8 @@ class CanvasView: UIView {
 //    var whiteDot: UIImageView?
     var blue2Dot: UIImageView?
     var orange2Dot: UIImageView?
+    var purple2Dot: UIImageView?
+    var yellow2Dot: UIImageView?
     //middle dots 1, 2, 3, & 4
     var blackDot1: UIImageView?
     var blackDot2: UIImageView?
@@ -66,6 +69,8 @@ class CanvasView: UIView {
     var blackDot6: UIImageView?
     var blackDot7: UIImageView?
     var blackDot8: UIImageView?
+    var blackDot9: UIImageView?
+    var blackDot10: UIImageView?
     
     //var audioPlayer = AVAudioPlayer()
     var narrationPlayer = AVAudioPlayer()
@@ -248,6 +253,35 @@ class CanvasView: UIView {
                     blackDot8?.isHidden = false
                 }
             }
+            
+        case Line5:
+            //put line 5 things here
+        print("5")
+            
+            //count the points in the array to determine how many lines there will be (4 dots = 1 line...)
+            let arraySize = activityPoints.count
+            blackDot7?.isHidden = true
+            blackDot8?.isHidden = true
+
+            if arraySize > 16 {
+                startingPoint = CGPoint(x: bounds.maxX * activityPoints[16][0], y: bounds.maxY * activityPoints[16][1])
+                middlePoint1 = CGPoint(x: bounds.maxX * activityPoints[17][0], y: bounds.maxY * activityPoints[17][1])
+                middlePoint2 = CGPoint(x: bounds.maxX * activityPoints[18][0], y: bounds.maxY * activityPoints[18][1])
+                targetPoint = CGPoint(x: bounds.maxX * activityPoints[19][0], y: bounds.maxY * activityPoints[19][1])
+                
+                purple2Dot?.isHidden = false
+                blue2Dot?.isHidden = true
+                yellow2Dot?.isHidden = false
+                orange2Dot?.isHidden = true
+                
+                if coin1Collected == false {
+                    blackDot9?.isHidden = false
+                }
+                if coin2Collected == false {
+                    blackDot10?.isHidden = false
+                }
+            }
+            
         default:
             break
         }
@@ -411,6 +445,32 @@ class CanvasView: UIView {
                 let myLetterArray = loadletterNarration(currentletter: selectedActivity)
                 
                 switch letterState {
+                
+                case .P9_P10:
+                    playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
+                    
+                    //wait 1 second
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[8]]!, type: "mp3")
+                        
+                        if !self.letterComplete {
+                            //wait 1 second
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[9]]!, type: "mp3")
+                                
+                                self.purple2Dot?.isHidden = true
+                                self.yellow2Dot?.isHidden = true
+                            })
+                        }
+                    })
+                    print("reached .P9_P10")
+                    Line1 = false
+                    Line2 = false
+                    Line3 = false
+                    Line4 = false
+                    Line5 = false
+                    letterComplete = true
+                               
                 case .P7_P8:
                     //A4GreenLine?.isHidden = false
                     //playAudioFile(file: "RockExplode", type: "wav")
@@ -421,21 +481,33 @@ class CanvasView: UIView {
                         self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[6]]!, type: "mp3")
                         
                         if !self.letterComplete {
-                            //wait 1 second
+                            //wait 2 second
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                print("Current Selected Activity = \(self.loadletterNarration(currentletter: selectedActivity)[7])")
                                 self.playAudioNarrationFile(file: chapterSelectedSoundDict![myLetterArray[7]]!, type: "mp3")
                                 
-                                self.blue2Dot?.isHidden = true
-                                self.orange2Dot?.isHidden = true
+                                //wait 2 seconds
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                    self.yellow2Dot?.pulsate(duration: 0.6)
+                                    
+                                    //wait 2 seconds
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                                        self.purple2Dot?.pulsate(duration: 0.6)
+                                    })
+                                })
                             })
                         }
                     })
                     print("reached .P7_P8")
+                    letterState = .P9_P10
                     Line1 = false
                     Line2 = false
                     Line3 = false
                     Line4 = false
-                    letterComplete = true
+                    Line5 = true
+                    if activityPoints.count < 17 {
+                        letterComplete = true
+                    }
                     
                 case .P5_P6:
                     //A3GreenLine?.isHidden = false
@@ -470,6 +542,7 @@ class CanvasView: UIView {
                     Line2 = false
                     Line3 = false
                     Line4 = true
+                    Line5 = false
                     if activityPoints.count < 13 {
                         letterComplete = true
                     }
@@ -516,6 +589,7 @@ class CanvasView: UIView {
                     Line2 = false
                     Line3 = true
                     Line4 = false
+                    Line5 = false
                     if activityPoints.count < 9 {
                         letterComplete = true
                     }
@@ -555,6 +629,7 @@ class CanvasView: UIView {
                     Line2 = true
                     Line3 = false
                     Line4 = false
+                    Line5 = false
                 }
             }
         }
@@ -768,7 +843,7 @@ class CanvasView: UIView {
             return ["Narration9", "Narration10", "Narration11"]
         case "b":
             print("Load b narration")
-            return ["Narration47", "Narration48", "Narration49"]
+            return ["Narration47", "Narration48", "Narration49", "Narration64", "Narration65"]
         case "c":
             print("Load c narration")
             return ["Narration5"]
@@ -786,7 +861,7 @@ class CanvasView: UIView {
             return ["Narration21", "Narration22", "Narration23"]
         case "h":
             print("Load h narration")
-            return ["Narration41", "Narration42", "Narration43"]
+            return ["Narration41", "Narration42", "Narration43", "Narration60", "Narration61"]
         case "i":
             print("Load i narration")
             return ["Narration32", "Narration33", "Narration34"]
@@ -801,22 +876,22 @@ class CanvasView: UIView {
             return ["Narration5"]
         case "m":
             print("Load m narration")
-            return ["Narration29", "Narration30", "Narration31", "Narration32", "Narration33", "Narration34", "Narration35"]
+            return ["Narration29", "Narration30", "Narration31", "Narration32", "Narration33", "Narration34", "Narration35", "Narration62", "Narration63"]
         case "n":
             print("Load n narration")
-            return ["Narration22", "Narration23", "Narration24"]
+            return ["Narration22", "Narration23", "Narration24", "Narration58", "Narration59"]
         case "o":
             print("Load o narration")
             return ["Narration27"]
         case "p":
             print("Load p narration")
-            return ["Narration6", "Narration7", "Narration8"]
+            return ["Narration6", "Narration7", "Narration8", "Narration54", "Narration55"]
         case "q":
             print("Load q narration")
             return ["Narration12", "Narration13", "Narration14"]
         case "r":
             print("Load r narration")
-            return ["Narration14", "Narration15", "Narration16"]
+            return ["Narration14", "Narration15", "Narration16", "Narration56", "Narration57"]
         case "s":
             print("Load s narration")
             return ["Narration10"]
