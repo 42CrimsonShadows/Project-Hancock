@@ -17,6 +17,7 @@ class PracticeMainMeniViewController: UIViewController {
     @IBOutlet weak var letterImitationLower: UIButton!
     @IBOutlet weak var letterImitationUpper: UIButton!
     @IBOutlet weak var freeDrawButton: UIButton!
+    @IBOutlet weak var puzzlesTapped: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
     
@@ -62,11 +63,16 @@ class PracticeMainMeniViewController: UIViewController {
         performSegue(withIdentifier: "home", sender: self)
     }
     
+    
+    @IBAction func puzzlesTapped(_ sender: Any) {
+        performSegue(withIdentifier: "puzzleTapped", sender: self)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         // Don't forget to reset when view is being removed
-        AppDelegate.AppUtility.lockOrientation(.all)
+        //AppDelegate.AppUtility.lockOrientation(.all)
     }
     
 }

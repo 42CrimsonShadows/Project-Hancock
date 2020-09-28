@@ -60,7 +60,7 @@ class NewLetterMatchingAZViewController: UIViewController, UIGestureRecognizerDe
     var score = [Int]()
     var taps = [Int]()
     var testArray =  [String]()
-    
+    let awesomeArray = ["😄", "😎", "🤩", "🥳", "🥇", "🏆", "🎉"]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +142,7 @@ class NewLetterMatchingAZViewController: UIViewController, UIGestureRecognizerDe
         //what happens when a letter is tapped
               if tappedLabel.text == instructionLabel.text {
                   print("Correct")
-                 tappedLabel.text = "🥇"
+                tappedLabel.text = awesomeArray.randomElement()
               }
               else {
                   print("wrong")
@@ -204,7 +204,7 @@ class NewLetterMatchingAZViewController: UIViewController, UIGestureRecognizerDe
         super.viewWillDisappear(animated)
 
         // Don't forget to reset when view is being removed
-        AppDelegate.AppUtility.lockOrientation(.all)
+//        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
     }//end of class

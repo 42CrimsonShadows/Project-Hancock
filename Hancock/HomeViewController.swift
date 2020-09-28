@@ -29,7 +29,9 @@ class HomeViewController: UIViewController {
     @IBAction func logoutHandler(_ sender: Any) {
 //        try! Auth.auth().signOut()
         print("Successfully logged out")
-        self.dismiss(animated: false, completion: nil)
+        user = ""
+        pass = ""
+        performSegue(withIdentifier: "backToLogin", sender: self)
     }
     
     @objc func tappedUpper(){
@@ -49,7 +51,7 @@ class HomeViewController: UIViewController {
         super.viewWillDisappear(animated)
 
         // Don't forget to reset when view is being removed
-        AppDelegate.AppUtility.lockOrientation(.all)
+//        AppDelegate.AppUtility.lockOrientation(.all)
     }
 
 }

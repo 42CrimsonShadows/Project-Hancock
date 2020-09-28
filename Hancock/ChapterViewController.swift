@@ -1,5 +1,7 @@
 
 import UIKit
+import Foundation
+
 
 enum Chapter: Int {
     case MainMenu = 0
@@ -23,7 +25,6 @@ enum Chapter: Int {
     case LineType8 = 18
     case LineType9 = 19
 }
-
 var currentChapter: Chapter = .MainMenu
 
 class ChapterViewController: UIViewController {
@@ -76,6 +77,7 @@ class ChapterViewController: UIViewController {
     
     
     @IBAction func cpt1Clicked(_ sender: Any) {
+
         currentChapter = .Chapter1
         //conceptView.image = concept1
         chapterSelector.chapterLoader(picked: 1)
@@ -86,6 +88,15 @@ class ChapterViewController: UIViewController {
         //conceptView.image = concept2
         chapterSelector.chapterLoader(picked: 2)
         tappedMe()
+        //lastActive = Date()
+        //Temporarily commented this out for testing the database
+        //Service.StartSession(date: lastActive)
+        //Service.register()
+        //Service.updateCharacterData()
+
+         
+        
+
     }
     @IBAction func cpt3Clicked(_ sender: Any) {
         currentChapter = .Chapter3
@@ -183,6 +194,14 @@ class ChapterViewController: UIViewController {
         tappedThis()
     }
     
+    @IBAction func goBack(_ sender: UIButton) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    
+    @IBAction func practiceBackButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "practiceMainMenu", sender: self)
+    }
     
         
     
@@ -193,11 +212,11 @@ class ChapterViewController: UIViewController {
         //lock rotation
         AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         
-        GifView?.loadGif(name: "BookAnimation")
+        //GifView?.loadGif(name: "BookAnimation")
         
-        loadingGifView?.loadGif(name: "FlowerLoading")
-        loadingGifView?.isHidden = true
-        conceptView?.isHidden = true
+       // loadingGifView?.loadGif(name: "FlowerLoading")
+       // loadingGifView?.isHidden = true
+        //conceptView?.isHidden = true
         
         chapter1Label?.isHidden = true
         chapter2Label?.isHidden = true
@@ -225,9 +244,9 @@ class ChapterViewController: UIViewController {
     
     func pauseAfterPlay(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.75, execute: {
-            self.GifView?.stopAnimating()
+           // self.GifView?.stopAnimating()
            // self.GifView?.image = UIImage(named: "BookOpened")
-            self.GifView?.image = UIImage(named: "LBookOpen")
+           // self.GifView?.image = UIImage(named: "LBookOpen")
             self.chapter1Label?.isHidden = false
             self.chapter6Label?.isHidden = false
             self.lineType1Label?.isHidden = false
@@ -267,8 +286,8 @@ class ChapterViewController: UIViewController {
     func tappedMe(){
         print("chapter " + String(currentChapter.rawValue) + " loaded")
         
-        conceptView.isHidden = false
-        loadingGifView.isHidden = false
+      //  conceptView.isHidden = false
+        //loadingGifView.isHidden = false
         
         //self.GifView.stopAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
@@ -288,11 +307,10 @@ class ChapterViewController: UIViewController {
             self.present(activityBoardView, animated: true)
         })
     }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         // Don't forget to reset when view is being removed
-        AppDelegate.AppUtility.lockOrientation(.all)
+        //AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
     }
 }
