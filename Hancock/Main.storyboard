@@ -4224,7 +4224,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.39743661879999997" green="0.69735354189999998" blue="0.52546811100000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt1Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="1A9-oH-SPG"/>
                                                             <action selector="cpt6Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="Gsw-91-GWF"/>
                                                         </connections>
                                                     </button>
@@ -4235,7 +4234,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.39743661879999997" green="0.69735354189999998" blue="0.52546811100000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt2Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="rn8-Rh-f1i"/>
                                                             <action selector="cpt7Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="SXF-wi-UjT"/>
                                                         </connections>
                                                     </button>
@@ -4246,7 +4244,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.39743661879999997" green="0.69735354189999998" blue="0.52546811100000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt3Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="rzp-Bs-x21"/>
                                                             <action selector="cpt8Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="g12-Ii-fWi"/>
                                                         </connections>
                                                     </button>
@@ -4257,7 +4254,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.39743661879999997" green="0.69735354189999998" blue="0.52546811100000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt4Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="5UW-fH-yBx"/>
                                                             <action selector="cpt9Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="WoT-TC-LIc"/>
                                                         </connections>
                                                     </button>
@@ -4268,7 +4264,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.39743661879999997" green="0.69735354189999998" blue="0.52546811100000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt10Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="ugi-vG-xGl"/>
                                                             <action selector="cpt5Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="Cc0-Th-jce"/>
                                                         </connections>
                                                     </button>
