@@ -4033,6 +4033,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <state key="normal" backgroundImage="UI Buttons_Back_Red">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="goBack:" destination="Xae-Mk-QY7" eventType="touchUpInside" id="IZa-Pz-IlF"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uppercase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8q-YI-cg4">
                                                 <rect key="frame" x="325.5" y="-3" width="373" height="114"/>
@@ -4178,6 +4181,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <state key="normal" backgroundImage="UI Buttons_Back_Blue">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="goBack:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="1fg-gh-3rm"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lowercase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tot-NF-44u">
                                                 <rect key="frame" x="324.5" y="-3" width="375" height="114"/>
@@ -4474,7 +4480,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
     <inferredMetricsTieBreakers>
         <segue reference="jwe-7m-LOQ"/>
         <segue reference="3Nf-TW-mvK"/>
-        <segue reference="hQX-2b-Izv"/>
+        <segue reference="nXU-wI-dyG"/>
         <segue reference="LDW-Gb-u1z"/>
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>
