@@ -292,7 +292,12 @@ class ChapterViewController: UIViewController {
         //self.GifView.stopAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             let homeARView = self.storyboard?.instantiateViewController(withIdentifier: "HomeARViewController") as! ViewController
-            self.present(homeARView, animated: true)
+            
+            var top = UIApplication.shared.keyWindow!.rootViewController!
+            while(top.presentedViewController != nil){
+                top = top.presentedViewController!
+            }
+            top.present(homeARView, animated: true)
             
         })
     }
