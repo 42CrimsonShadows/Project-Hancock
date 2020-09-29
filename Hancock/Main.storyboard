@@ -4264,7 +4264,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <color key="titleColor" red="0.39743661879999997" green="0.69735354189999998" blue="0.52546811100000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cpt5Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="Cc0-Th-jce"/>
+                                                            <action selector="cpt10Clicked:" destination="lDZ-QH-5ri" eventType="touchUpInside" id="yU3-NZ-k3l"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
