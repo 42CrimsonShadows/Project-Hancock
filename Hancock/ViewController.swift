@@ -206,7 +206,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //lock rotation
-        AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
+       // AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
         chapterNodeArray = chapterSelectedNodeArray
         self.initSceneView()
         self.initScene()
@@ -300,7 +300,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("*** ViewWillAppear()")
-        AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
+        //AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
         //attempt to shatter a letter when the view loads
         //(will only happen if a letter shatter boolean is true and ready)
         playShatterAnimation()
@@ -308,7 +308,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        AppDelegate.AppUtility.lockOrientation(.portrait)
+       // AppDelegate.AppUtility.lockOrientation(.portrait)
         print("*** ViewWillDisappear()")
     }
     

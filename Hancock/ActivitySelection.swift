@@ -165,10 +165,10 @@ public class ActivitySelection {
                         [CGFloat(0.82),CGFloat(0.5)], //second point x, y
             
                         //Line #2
-                        [CGFloat(0.48),CGFloat(0.49)], //fifth point
+                        [CGFloat(0.82),CGFloat(0.49)], //fifth point 
                         [CGFloat(0.71),CGFloat(0.49)], //fifth MidPoint1 x, y
                         [CGFloat(0.58),CGFloat(0.49)], //fifth MidPoint2 x, y
-                        [CGFloat(0.82),CGFloat(0.49)]] //sixth point
+                        [CGFloat(0.49),CGFloat(0.49)]] //sixth point
         
         let UnderlayG = UIImage(named: "art.scnassets/LetterImages/G.png")
         letterUnderlay = UIImageView(image: UnderlayG)

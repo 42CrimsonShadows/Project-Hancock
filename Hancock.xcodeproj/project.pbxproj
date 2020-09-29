@@ -32,6 +32,7 @@
 		A076E3AD2506CF9E00DE0F47 /* PracticeMainMeniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A076E3AC2506CF9E00DE0F47 /* PracticeMainMeniViewController.swift */; };
 		A07974B12285FC4A00606889 /* StudentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */; };
 		A07974B322861DB000606889 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07974B222861DB000606889 /* StudentTableViewController.swift */; };
+		A08071BD25238814000E2A97 /* G.gif in Resources */ = {isa = PBXBuildFile; fileRef = A08071BC25238813000E2A97 /* G.gif */; };
 		A08134462521161D00D02EF8 /* PuzzleAsssmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08134452521161D00D02EF8 /* PuzzleAsssmentViewController.swift */; };
 		A08A2D3F22BEA2C60076B814 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */; };
 		A08A2D4122BEC4990076B814 /* Swift_Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A2D4022BEC4990076B814 /* Swift_Gif.swift */; };
@@ -101,7 +102,6 @@
 		A7CBF52424E594150066988F /* B.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7CBF50A24E593D30066988F /* B.gif */; };
 		A7CBF52524E594150066988F /* S.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7CBF50B24E593ED0066988F /* S.gif */; };
 		A7CBF52624E594150066988F /* U.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7CBF50C24E593F40066988F /* U.gif */; };
-		A7CBF52724E594150066988F /* G.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7CBF50D24E593FA0066988F /* G.gif */; };
 		A7CBF52824E594150066988F /* W.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7CBF50E24E594040066988F /* W.gif */; };
 		A7CBF52924E594150066988F /* T.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7CBF50F24E594150066988F /* T.gif */; };
 		A7E62789249AAC560031126F /* LevelTwoActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E62788249AAC560031126F /* LevelTwoActivityViewController.swift */; };
@@ -138,6 +138,7 @@
 		A076E3AC2506CF9E00DE0F47 /* PracticeMainMeniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeMainMeniViewController.swift; sourceTree = "<group>"; };
 		A07974B02285FC4A00606889 /* StudentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsTableViewCell.swift; sourceTree = "<group>"; };
 		A07974B222861DB000606889 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
+		A08071BC25238813000E2A97 /* G.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = G.gif; sourceTree = "<group>"; };
 		A08134452521161D00D02EF8 /* PuzzleAsssmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleAsssmentViewController.swift; sourceTree = "<group>"; };
 		A08A2D3E22BEA2C50076B814 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A08A2D4022BEC4990076B814 /* Swift_Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Gif.swift; sourceTree = "<group>"; };
@@ -210,7 +211,6 @@
 		A7CBF50A24E593D30066988F /* B.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = B.gif; sourceTree = "<group>"; };
 		A7CBF50B24E593ED0066988F /* S.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = S.gif; sourceTree = "<group>"; };
 		A7CBF50C24E593F40066988F /* U.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = U.gif; sourceTree = "<group>"; };
-		A7CBF50D24E593FA0066988F /* G.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = G.gif; sourceTree = "<group>"; };
 		A7CBF50E24E594040066988F /* W.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = W.gif; sourceTree = "<group>"; };
 		A7CBF50F24E594150066988F /* T.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = T.gif; sourceTree = "<group>"; };
 		A7E62788249AAC560031126F /* LevelTwoActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoActivityViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +343,7 @@
 		A7CBF4F324E4DD950066988F /* LetterGifs */ = {
 			isa = PBXGroup;
 			children = (
+				A08071BC25238813000E2A97 /* G.gif */,
 				A0030810251EA40D00DF0171 /* qLower.gif */,
 				A7ACFFD724E5CAB1004F1E87 /* aLower.gif */,
 				A7ACFFD424E5CAAF004F1E87 /* bLower.gif */,
@@ -375,7 +376,6 @@
 				A7CBF50924E593CA0066988F /* D.gif */,
 				A7CBF50124E593630066988F /* E.gif */,
 				A7CBF50224E593690066988F /* F.gif */,
-				A7CBF50D24E593FA0066988F /* G.gif */,
 				A7CBF50524E593A20066988F /* H.gif */,
 				A7CBF50024E5935C0066988F /* I.gif */,
 				A7CBF4FB24E593070066988F /* J.gif */,
@@ -474,7 +474,6 @@
 			files = (
 				A7CBF52624E594150066988F /* U.gif in Resources */,
 				A7CBF51B24E594150066988F /* E.gif in Resources */,
-				A7CBF52724E594150066988F /* G.gif in Resources */,
 				A72C3B8824E5984F001BAE9D /* V.gif in Resources */,
 				A7ACFFDD24E5CAB3004F1E87 /* mLower.gif in Resources */,
 				A7ACFFDA24E5CAB3004F1E87 /* rLower.gif in Resources */,
@@ -515,6 +514,7 @@
 				A7ACFFE224E5CAB3004F1E87 /* gLower.gif in Resources */,
 				A072B02924EDCCCE00736A74 /* Ch6_g.gif in Resources */,
 				A7ACFFEB24E5CAB3004F1E87 /* pLower.gif in Resources */,
+				A08071BD25238814000E2A97 /* G.gif in Resources */,
 				A0030811251EA40D00DF0171 /* qLower.gif in Resources */,
 				A7ACFFE924E5CAB3004F1E87 /* tLower.gif in Resources */,
 				A7ACFFDC24E5CAB3004F1E87 /* eLower.gif in Resources */,
