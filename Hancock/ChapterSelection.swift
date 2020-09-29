@@ -1016,7 +1016,7 @@ class ChapterSelection {
         // Load StoryScene Node
         let storyScene = SCNScene(named: "art.scnassets/3DModels/Chapter6Files/Environments/Chapter6Scene.scn")!
         storyNode = storyScene.rootNode.childNode(withName: "LVLContainer", recursively: true)
-        storyNode.scale = SCNVector3(0.0001, 0.0001, 0.0001)
+        storyNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
         storyNode.position = SCNVector3(0, 0, 0)
         
         //Load Idle Animation Node
