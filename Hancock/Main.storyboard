@@ -1105,7 +1105,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <color key="backgroundColor" red="0.99679797889999999" green="0.4640412927" blue="0.42742443079999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="r3b-1g-kSL" secondAttribute="bottom" id="HBX-Pa-Qrj"/>
                                             <constraint firstItem="r3b-1g-kSL" firstAttribute="leading" secondItem="hUL-cN-KLf" secondAttribute="leading" id="IYp-Rk-Bse"/>
@@ -3770,7 +3770,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICO-hn-6RC">
                                         <rect key="frame" x="0.0" y="1090" width="1024" height="276"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double2.2" translatesAutoresizingMaskIntoConstraints="NO" id="jZ9-QJ-IzZ">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double6.2" translatesAutoresizingMaskIntoConstraints="NO" id="jZ9-QJ-IzZ">
                                                 <rect key="frame" x="0.0" y="76" width="1024" height="200"/>
                                             </imageView>
                                         </subviews>
@@ -4479,9 +4479,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jwe-7m-LOQ"/>
-        <segue reference="3Nf-TW-mvK"/>
+        <segue reference="1vJ-ch-688"/>
         <segue reference="nXU-wI-dyG"/>
-        <segue reference="LDW-Gb-u1z"/>
+        <segue reference="Aw8-c9-Drp"/>
         <segue reference="9M1-xs-ghF"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -4490,12 +4490,12 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="ABC_Go_UI_ReplayButton_Graphic" width="400" height="400"/>
         <image name="ARexample" width="682.5" height="384"/>
         <image name="B" width="750" height="1000"/>
-        <image name="Bri_Double2.2" width="1536" height="414"/>
         <image name="Bri_Double4.1" width="1536" height="414"/>
         <image name="Bri_Double4.2" width="1536" height="414"/>
         <image name="Bri_Double5.1" width="1536" height="414"/>
         <image name="Bri_Double5.2" width="1536" height="414"/>
         <image name="Bri_Double6.1" width="1536" height="414"/>
+        <image name="Bri_Double6.2" width="1536" height="414"/>
         <image name="Bri_Double7.1" width="1536" height="414"/>
         <image name="Bri_Double7.2" width="1536" height="414"/>
         <image name="Bri_Single2" width="1536" height="414"/>
