@@ -314,6 +314,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxu-6g-6bz" userLabel="UpperView">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double1.1" translatesAutoresizingMaskIntoConstraints="NO" id="Kv9-se-ptd">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxN-cy-x9n">
                                                 <rect key="frame" x="-417" y="162" width="1858" height="19.5"/>
                                                 <string key="text">____________________________________________________________________________________________________________________________________________________________________________________________________________</string>
@@ -333,9 +336,13 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="bxN-cy-x9n" firstAttribute="bottom" secondItem="yLt-Le-bis" secondAttribute="bottom" constant="16.5" id="3Xd-4u-7lb"/>
+                                            <constraint firstItem="Kv9-se-ptd" firstAttribute="top" secondItem="vxu-6g-6bz" secondAttribute="top" id="6aA-Fq-cMU"/>
                                             <constraint firstAttribute="bottom" secondItem="pRX-mT-DuT" secondAttribute="bottom" constant="15" id="8pT-38-ZIo"/>
+                                            <constraint firstItem="Kv9-se-ptd" firstAttribute="leading" secondItem="vxu-6g-6bz" secondAttribute="leading" id="Aud-jI-a0y"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kv9-se-ptd" secondAttribute="bottom" id="Lya-un-kyn"/>
                                             <constraint firstItem="yLt-Le-bis" firstAttribute="centerX" secondItem="vxu-6g-6bz" secondAttribute="centerX" id="QtE-1Y-dVM"/>
                                             <constraint firstItem="pRX-mT-DuT" firstAttribute="top" secondItem="vxu-6g-6bz" secondAttribute="top" constant="15" id="WpV-Ew-2KC"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kv9-se-ptd" secondAttribute="trailing" id="Z9O-ex-Vd4"/>
                                             <constraint firstAttribute="trailing" secondItem="yLt-Le-bis" secondAttribute="trailing" constant="15" id="aVa-Mc-uHd"/>
                                             <constraint firstItem="bxN-cy-x9n" firstAttribute="top" secondItem="pRX-mT-DuT" secondAttribute="top" constant="147" id="nKz-38-YxY"/>
                                             <constraint firstItem="bxN-cy-x9n" firstAttribute="centerX" secondItem="vxu-6g-6bz" secondAttribute="centerX" id="qB7-gs-5b0"/>
@@ -459,6 +466,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDT-kw-OYc" userLabel="Bottom View">
                                         <rect key="frame" x="0.0" y="1099" width="1024" height="267"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double1.2" translatesAutoresizingMaskIntoConstraints="NO" id="6T8-8m-0tH">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyerImage2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOc-nt-cLM">
                                                 <rect key="frame" x="15" y="-41" width="317.5" height="308"/>
                                                 <constraints>
@@ -467,8 +477,12 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             </imageView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="6T8-8m-0tH" secondAttribute="bottom" id="1P7-Zi-rDN"/>
+                                            <constraint firstAttribute="trailing" secondItem="6T8-8m-0tH" secondAttribute="trailing" id="7Hw-bM-aat"/>
                                             <constraint firstItem="oOc-nt-cLM" firstAttribute="leading" secondItem="LDT-kw-OYc" secondAttribute="leading" constant="15" id="8Xy-N0-RgI"/>
                                             <constraint firstAttribute="bottom" secondItem="oOc-nt-cLM" secondAttribute="bottom" id="Ltn-hy-c8u"/>
+                                            <constraint firstItem="6T8-8m-0tH" firstAttribute="leading" secondItem="LDT-kw-OYc" secondAttribute="leading" id="TDh-eL-wTx"/>
+                                            <constraint firstItem="6T8-8m-0tH" firstAttribute="top" secondItem="LDT-kw-OYc" secondAttribute="top" id="uy7-Kk-HAS"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -511,11 +525,14 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Hu-lR-3yp" userLabel="Super Stack">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J99-uX-41C" userLabel="Upper View">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Double5.1" translatesAutoresizingMaskIntoConstraints="NO" id="baP-23-Ehr">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUZ-gs-UNk">
                                                 <rect key="frame" x="-417" y="162" width="1858" height="19.5"/>
                                                 <string key="text">____________________________________________________________________________________________________________________________________________________________________________________________________________</string>
@@ -534,21 +551,25 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             </imageView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="baP-23-Ehr" firstAttribute="leading" secondItem="J99-uX-41C" secondAttribute="leading" id="DQX-r1-2rj"/>
                                             <constraint firstItem="UUZ-gs-UNk" firstAttribute="bottom" secondItem="vjF-Bk-AHo" secondAttribute="bottom" constant="16.5" id="Jt7-cy-HRh"/>
                                             <constraint firstItem="vjF-Bk-AHo" firstAttribute="centerX" secondItem="J99-uX-41C" secondAttribute="centerX" id="OO3-K7-rGP"/>
                                             <constraint firstAttribute="bottom" secondItem="kYA-jo-NXe" secondAttribute="bottom" constant="15" id="UOW-i7-3rZ"/>
                                             <constraint firstItem="kYA-jo-NXe" firstAttribute="top" secondItem="J99-uX-41C" secondAttribute="top" constant="15" id="XfF-Ee-KpV"/>
+                                            <constraint firstAttribute="trailing" secondItem="baP-23-Ehr" secondAttribute="trailing" id="YXd-1V-QUg"/>
                                             <constraint firstItem="UUZ-gs-UNk" firstAttribute="top" secondItem="kYA-jo-NXe" secondAttribute="top" constant="147" id="gC0-jZ-pZa"/>
+                                            <constraint firstItem="baP-23-Ehr" firstAttribute="top" secondItem="J99-uX-41C" secondAttribute="top" id="tyZ-c7-m2H"/>
                                             <constraint firstAttribute="trailing" secondItem="kYA-jo-NXe" secondAttribute="trailing" constant="15" id="vFD-E6-O91"/>
                                             <constraint firstAttribute="trailing" secondItem="vjF-Bk-AHo" secondAttribute="trailing" constant="15" id="vbE-aa-48G"/>
+                                            <constraint firstAttribute="bottom" secondItem="baP-23-Ehr" secondAttribute="bottom" id="w6T-YC-m1G"/>
                                             <constraint firstItem="UUZ-gs-UNk" firstAttribute="centerX" secondItem="J99-uX-41C" secondAttribute="centerX" id="wXJ-of-vm1"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVs-WS-0QT" userLabel="Form View">
-                                        <rect key="frame" x="0.0" y="267" width="1024" height="812"/>
+                                        <rect key="frame" x="0.0" y="267" width="1024" height="832"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ttT-m0-zan" userLabel="Form Stack">
-                                                <rect key="frame" x="362" y="179" width="300" height="454"/>
+                                                <rect key="frame" x="362" y="189" width="300" height="454"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpS-pO-UnJ" userLabel="ErrorLabel">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -702,8 +723,11 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Im1-J5-Cp7" userLabel="Bottom View">
-                                        <rect key="frame" x="0.0" y="1079" width="1024" height="267"/>
+                                        <rect key="frame" x="0.0" y="1099" width="1024" height="267"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Double5.2" translatesAutoresizingMaskIntoConstraints="NO" id="6gz-Sb-xQc">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyerImage2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBX-lh-G8d">
                                                 <rect key="frame" x="15" y="-41" width="317.5" height="308"/>
                                                 <constraints>
@@ -712,7 +736,11 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             </imageView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6gz-Sb-xQc" secondAttribute="trailing" id="4ti-e9-B2Z"/>
+                                            <constraint firstItem="6gz-Sb-xQc" firstAttribute="top" secondItem="Im1-J5-Cp7" secondAttribute="top" id="7qo-5v-jG8"/>
+                                            <constraint firstItem="6gz-Sb-xQc" firstAttribute="leading" secondItem="Im1-J5-Cp7" secondAttribute="leading" id="AwQ-43-Gup"/>
                                             <constraint firstItem="gBX-lh-G8d" firstAttribute="leading" secondItem="Im1-J5-Cp7" secondAttribute="leading" constant="15" id="NF1-Kw-3vX"/>
+                                            <constraint firstAttribute="bottom" secondItem="6gz-Sb-xQc" secondAttribute="bottom" id="Uth-hN-Uff"/>
                                             <constraint firstAttribute="bottom" secondItem="gBX-lh-G8d" secondAttribute="bottom" id="aJr-83-z93"/>
                                         </constraints>
                                     </view>
@@ -726,10 +754,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <viewLayoutGuide key="safeArea" id="gHf-pL-wDH"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.96078431369999995" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="0Hu-lR-3yp" firstAttribute="top" secondItem="gHf-pL-wDH" secondAttribute="top" id="UMN-mz-5Zq"/>
-                            <constraint firstItem="0Hu-lR-3yp" firstAttribute="leading" secondItem="gHf-pL-wDH" secondAttribute="leading" id="amY-vH-ev9"/>
-                            <constraint firstItem="gHf-pL-wDH" firstAttribute="bottom" secondItem="0Hu-lR-3yp" secondAttribute="bottom" id="su2-EQ-hcG"/>
-                            <constraint firstItem="gHf-pL-wDH" firstAttribute="trailing" secondItem="0Hu-lR-3yp" secondAttribute="trailing" id="wem-Tx-3Li"/>
+                            <constraint firstItem="0Hu-lR-3yp" firstAttribute="top" secondItem="vTK-V2-f2S" secondAttribute="top" id="UMN-mz-5Zq"/>
+                            <constraint firstItem="0Hu-lR-3yp" firstAttribute="leading" secondItem="vTK-V2-f2S" secondAttribute="leading" id="amY-vH-ev9"/>
+                            <constraint firstAttribute="bottom" secondItem="0Hu-lR-3yp" secondAttribute="bottom" id="su2-EQ-hcG"/>
+                            <constraint firstAttribute="trailing" secondItem="0Hu-lR-3yp" secondAttribute="trailing" id="wem-Tx-3Li"/>
                         </constraints>
                     </view>
                     <connections>
@@ -4504,7 +4532,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nLc-ZZ-ho6"/>
+        <segue reference="jwe-7m-LOQ"/>
         <segue reference="3Nf-TW-mvK"/>
         <segue reference="SWm-nu-Xwt"/>
         <segue reference="Aw8-c9-Drp"/>
@@ -4518,6 +4546,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="ABC_Go_UI_ReplayButton_Graphic" width="400" height="400"/>
         <image name="ARexample" width="682.5" height="384"/>
         <image name="B" width="750" height="1000"/>
+        <image name="Bri_Double1.1" width="1536" height="414"/>
+        <image name="Bri_Double1.2" width="1536" height="414"/>
         <image name="Bri_Double4.1" width="1536" height="414"/>
         <image name="Bri_Double4.2" width="1536" height="414"/>
         <image name="Bri_Double5.1" width="1536" height="414"/>
@@ -4547,6 +4577,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Jamey_Double2.2" width="1536" height="414"/>
         <image name="Jamey_Double3.1" width="1536" height="414"/>
         <image name="Jamey_Double3.2" width="1536" height="414"/>
+        <image name="Jamey_Double5.1" width="1536" height="414"/>
+        <image name="Jamey_Double5.2" width="1536" height="414"/>
         <image name="Jamey_Single1" width="1536" height="414"/>
         <image name="LetterImitation" width="1000" height="150"/>
         <image name="LetterMatching" width="900" height="150"/>
