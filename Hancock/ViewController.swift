@@ -39,15 +39,15 @@ enum AudioType: String {
 class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - OUTLETS
-    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var stuNameTextFeild: UITextField!
     @IBOutlet weak var stuDOBTextField: UITextField!
     @IBOutlet weak var stuGradeTextField: UITextField!
     
-    @IBOutlet var statusLabel: UILabel!
-    @IBOutlet var resetButton: UIButton!
-    @IBOutlet var startButton: UIButton!
-    @IBOutlet var showAllBtn: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var showAllBtn: UIButton!
     
     //MARK: - ACTIONS
     @IBAction func goToActivity(_ sender: Any) {
@@ -735,10 +735,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // Show Focus Node
         self.focusNode.isHidden = false
-        let results = self.sceneView.hitTest(self.focusPoint, types: [.existingPlaneUsingExtent])
+        let results = self.sceneView?.hitTest(self.focusPoint, types: [.existingPlaneUsingExtent])
         
-        if results.count >= 1 {
-            if let match = results.first {
+        if results?.count ?? 0 >= 1 {
+            if let match = results?.first {
                 let t = match.worldTransform
                 self.focusNode.position = SCNVector3(x: t.columns.3.x, y: t.columns.3.y, z: t.columns.3.z)
                 self.gameState = .hitStartToPlay
@@ -842,10 +842,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //self.mainCharacterIdle.position = SCNVector3(0, 0, 0)
             //self.mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
             
-            self.removeModels(chapterNode: self.chapterNodeArray!)            
-            
-            let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "bookARViewController") as! HomeViewController
-            self.present(chapterARView, animated: true)
+            self.removeModels(chapterNode: self.chapterNodeArray!)
+            self.sceneView.session.pause()
+            self.sceneView.removeFromSuperview()
+            self.sceneView = nil
+//            let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "bookARViewController") as! HomeViewController
+//            self.present(chapterARView, animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -862,6 +865,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sceneView.scene.rootNode.addChildNode(focusNode)
     }
     func removeModels(chapterNode: [SCNNode]) {
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in node.geometry?.firstMaterial?.normal.contents = nil}
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in node.geometry?.firstMaterial?.diffuse.contents = nil}
         sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in node.removeFromParentNode()}
     }
     

@@ -193,6 +193,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="eXw-dN-ay7" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="52" id="xfo-ID-2gN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="clb-Z1-Moa"/>
                     <connections>
                         <outlet property="resetButton" destination="eXw-dN-ay7" id="Vk1-lY-fWw"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
@@ -203,7 +204,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1467.7734375" y="845.9736456808198"/>
+            <point key="canvasLocation" x="1143" y="846"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="UCZ-aa-5Qc">
@@ -4479,7 +4480,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jwe-7m-LOQ"/>
-        <segue reference="1vJ-ch-688"/>
+        <segue reference="3Nf-TW-mvK"/>
         <segue reference="nXU-wI-dyG"/>
         <segue reference="Aw8-c9-Drp"/>
         <segue reference="9M1-xs-ghF"/>

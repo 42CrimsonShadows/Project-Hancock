@@ -62,9 +62,9 @@ class ChapterViewController: UIViewController {
     
 //    let concept1 = UIImage (imageLiteralResourceName: "concept1")
 //    let concept2 = UIImage (imageLiteralResourceName: "concept2")
-    let concept3 = UIImage (imageLiteralResourceName: "concept3")
-    let concept4 = UIImage (imageLiteralResourceName: "concept4")
-    let concept5 = UIImage (imageLiteralResourceName: "concept5")
+//    let concept3 = UIImage (imageLiteralResourceName: "concept3")
+//    let concept4 = UIImage (imageLiteralResourceName: "concept4")
+//    let concept5 = UIImage (imageLiteralResourceName: "concept5")
 //    let concept6 = UIImage (imageLiteralResourceName: "concept6")
 //    let concept7 = UIImage (imageLiteralResourceName: "concept7")
 //    let concept8 = UIImage (imageLiteralResourceName: "concept8")
@@ -93,11 +93,10 @@ class ChapterViewController: UIViewController {
         //Service.StartSession(date: lastActive)
         //Service.register()
         //Service.updateCharacterData()
-
-         
-        
-
     }
+    
+    
+    
     @IBAction func cpt3Clicked(_ sender: Any) {
         currentChapter = .Chapter3
        // conceptView.image = concept3
@@ -147,7 +146,7 @@ class ChapterViewController: UIViewController {
         tappedMe()
     }
     
-    
+   
     @IBAction func lineType1Clicked(_ sender: Any) {
         currentChapter = .LineType1
         chapterSelector.chapterLoader(picked: 14)
@@ -291,14 +290,15 @@ class ChapterViewController: UIViewController {
         
         //self.GifView.stopAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            //creats a singleton of the ARViewController
             let homeARView = self.storyboard?.instantiateViewController(withIdentifier: "HomeARViewController") as! ViewController
             
-            var top = UIApplication.shared.keyWindow!.rootViewController!
-            while(top.presentedViewController != nil){
-                top = top.presentedViewController!
-            }
-            top.present(homeARView, animated: true)
-            
+//            var top = UIApplication.shared.keyWindow!.rootViewController!
+//            while(top.presentedViewController != nil){
+//                top = top.presentedViewController!
+//            }
+//            top.present(homeARView, animated: true)
+            self.present(homeARView, animated: true)
         })
     }
     
