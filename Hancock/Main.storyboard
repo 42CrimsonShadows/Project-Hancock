@@ -314,50 +314,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxu-6g-6bz" userLabel="UpperView">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
                                         <subviews>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiF-kc-WI4">
-                                                <rect key="frame" x="10" y="32" width="220" height="63"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="63" id="mf3-jP-N8n"/>
-                                                </constraints>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="A">
-                                                        <attributes>
-                                                            <color key="NSColor" red="1" green="0.34979459862224593" blue="0.24538651828222313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="B">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.24850365375110972" green="0.31729306496671217" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="C ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="1" green="0.34979459862224593" blue="0.24538651828222313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="G">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.25013327598571777" green="0.31683585047721863" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="o">
-                                                        <attributes>
-                                                            <color key="NSColor" red="1" green="0.34979459862224593" blue="0.24538651828222313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxN-cy-x9n">
                                                 <rect key="frame" x="-417" y="162" width="1858" height="19.5"/>
                                                 <string key="text">____________________________________________________________________________________________________________________________________________________________________________________________________________</string>
@@ -560,51 +516,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J99-uX-41C" userLabel="Upper View">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
                                         <subviews>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nf-Gm-Ju8">
-                                                <rect key="frame" x="10" y="32" width="220" height="63"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="63" id="1S6-eY-lB7"/>
-                                                    <constraint firstAttribute="width" constant="220" id="hUj-9V-DIC"/>
-                                                </constraints>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="A">
-                                                        <attributes>
-                                                            <color key="NSColor" red="1" green="0.34979459862224593" blue="0.24538651828222313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="B">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.24850365375110972" green="0.31729306496671217" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="C ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="1" green="0.34979459862224593" blue="0.24538651828222313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="G">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.25013327598571777" green="0.31683585047721863" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="o">
-                                                        <attributes>
-                                                            <color key="NSColor" red="1" green="0.34979459862224593" blue="0.24538651828222313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="52"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUZ-gs-UNk">
                                                 <rect key="frame" x="-417" y="162" width="1858" height="19.5"/>
                                                 <string key="text">____________________________________________________________________________________________________________________________________________________________________________________________________________</string>
