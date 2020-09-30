@@ -77,7 +77,6 @@ class ChapterViewController: UIViewController {
     
     
     @IBAction func cpt1Clicked(_ sender: Any) {
-
         currentChapter = .Chapter1
         //conceptView.image = concept1
         chapterSelector.chapterLoader(picked: 1)
@@ -238,7 +237,6 @@ class ChapterViewController: UIViewController {
         lineType8Label?.isHidden = true
         lineType9Label?.isHidden = true
          
-        
         pauseAfterPlay()
     }
     
@@ -291,14 +289,14 @@ class ChapterViewController: UIViewController {
         
         //self.GifView.stopAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-            let homeARView = self.storyboard?.instantiateViewController(withIdentifier: "HomeARViewController") as! ViewController
-            
-            var top = UIApplication.shared.keyWindow!.rootViewController!
-            while(top.presentedViewController != nil){
-                top = top.presentedViewController!
-            }
-            top.present(homeARView, animated: true)
-            
+//            let homeARView = self.storyboard?.instantiateViewController(withIdentifier: "HomeARViewController") as! ViewController
+//
+//            var top = UIApplication.shared.keyWindow!.rootViewController!
+//            while(top.presentedViewController != nil){
+//                top = top.presentedViewController!
+//            }
+//            top.present(homeARView, animated: true)
+            self.performSegue(withIdentifier: "ARSEGUE", sender: self)
         })
     }
     

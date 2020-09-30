@@ -16,6 +16,7 @@ enum GameState: Int16 {
     case detectSurface
     case hitStartToPlay
     case playGame
+    case endGame
 }
 
 enum GameProgress: Int16 {
@@ -39,15 +40,15 @@ enum AudioType: String {
 class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - OUTLETS
-    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var stuNameTextFeild: UITextField!
     @IBOutlet weak var stuDOBTextField: UITextField!
     @IBOutlet weak var stuGradeTextField: UITextField!
     
-    @IBOutlet var statusLabel: UILabel!
-    @IBOutlet var resetButton: UIButton!
-    @IBOutlet var startButton: UIButton!
-    @IBOutlet var showAllBtn: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var showAllBtn: UIButton!
     
     //MARK: - ACTIONS
     @IBAction func goToActivity(_ sender: Any) {
@@ -109,7 +110,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var focusPoint: CGPoint!
     var focusNode: SCNNode!
     var chapterNodeArray: [SCNNode]!
-    let scene = SCNScene(named: "art.scnassets/Arrow.scn")
     var arrowVisible: Bool = false
     var arrow: SCNNode?
     var patriciaFlying: Bool = false
@@ -127,6 +127,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var mainCharacterMoving: SCNNode!
     var mainFloor: SCNNode!
     var storymask: SCNNode!
+    var tapGestureRecognizer = UITapGestureRecognizer()
     
     //last screen tap item
     var lastTapped: SCNNode?
@@ -205,6 +206,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Start Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self)
+        print(view)
         //lock rotation
        // AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
         chapterNodeArray = chapterSelectedNodeArray
@@ -213,11 +216,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.initARSession()
         self.loadModels(chapterNode: chapterNodeArray!)
         self.referenceMainNodes()
-        arrow = scene?.rootNode.childNode(withName: "obelisk", recursively: false)
+        //arrow = scene?.rootNode.childNode(withName: "obelisk", recursively: false)
         //arrow!.position = SCNVector3Make(0, -1, -1)
         
         //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         //select number of taps needed to trigger
         tapGestureRecognizer.numberOfTapsRequired = 1
         //add the gesture recognizer to the scene view
@@ -312,6 +315,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("*** ViewWillDisappear()")
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        // reduce the amount of memory being stored after dismissal
+        sceneView.removeGestureRecognizer(tapGestureRecognizer)
+        self.sceneView.session.pause()
+        self.sceneView.removeFromSuperview()
+        self.sceneView.delegate = nil
+        self.sceneView = nil
+        self.view.removeFromSuperview()
+        self.removeFromParent()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("*** DidReceiveMemoryWarning()")
@@ -716,9 +730,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func updateStatus() {
         switch gameState {
-        case .detectSurface: statusMessage = "Detecting surfaces..."
-        case .hitStartToPlay: statusMessage = "Hit START to play!"
-        case .playGame: statusMessage = "Story Time!"
+            case .detectSurface: statusMessage = "Detecting surfaces..."
+            case .hitStartToPlay: statusMessage = "Hit START to play!"
+            case .playGame: statusMessage = "Story Time!"
+            case .endGame: statusMessage = "Bye!"
         }
         
         self.statusLabel.text = trackingStatus != "" ?
@@ -798,7 +813,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //change game state and show start button
             self.startButton.isHidden = false
-            self.gameState = .detectSurface
+            self.gameState = .endGame
             
             //stop all sound
             for player:AVAudioPlayer in self.audioPlayers {
@@ -842,10 +857,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //self.mainCharacterIdle.position = SCNVector3(0, 0, 0)
             //self.mainCharacterIdle.eulerAngles = SCNVector3(0, 0, 0)
             
-            self.removeModels(chapterNode: self.chapterNodeArray!)            
+            self.removeModels(chapterNode: self.chapterNodeArray!)
             
-            let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "bookARViewController") as! HomeViewController
-            self.present(chapterARView, animated: true)
+            // reduce the amount of memory being stored while not in ar
+            chapterSelectedNodeArray = nil
+            chapterSelectedLetterArray = nil
+            chapterSelectedSoundDict = nil
+            chapterSelectedAnimationDict = [String: CAAnimation]()
+            selectedActivity = ""
+            
+//            let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "bookARViewController") as! HomeViewController
+//            self.present(chapterARView, animated: true)
+            self.dismiss(animated: false, completion: nil)
         }
     }
     
@@ -862,7 +885,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sceneView.scene.rootNode.addChildNode(focusNode)
     }
     func removeModels(chapterNode: [SCNNode]) {
-        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in node.removeFromParentNode()}
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+            print(node.geometry?.firstMaterial?.diffuse.contents ?? "")
+            node.geometry?.firstMaterial?.diffuse.contents = nil
+            node.removeAllAnimations()
+            node.removeAllActions()
+            node.removeFromParentNode()
+        }
     }
     
     func referenceMainNodes() {
@@ -1585,9 +1614,11 @@ extension ViewController : ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         DispatchQueue.main.async {
-            self.updateStatus()
-            self.updateFocusNode()
-            self.findCharacter() // chapter 4 to find Keelie
+            if(self.gameState != .endGame){
+                self.updateStatus()
+                self.updateFocusNode()
+                self.findCharacter() // chapter 4 to find Keelie
+            }
         }
     }
     
@@ -1650,7 +1681,7 @@ extension ViewController : ARSCNViewDelegate {
             node.addChildNode(planeNode)
         }
     }
-    
+        
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
             

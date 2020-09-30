@@ -740,7 +740,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = RX5X2KDAVM;
+				DEVELOPMENT_TEAM = F48PPH8BVL;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -748,7 +748,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 12;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate.abcgoar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasmineyoung.abcgoar;
 				PRODUCT_NAME = "ABC Go AR";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -766,7 +766,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = RX5X2KDAVM;
+				DEVELOPMENT_TEAM = F48PPH8BVL;
 				INFOPLIST_FILE = Hancock/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -774,7 +774,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 12;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.boisestate.abcgoar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasmineyoung.abcgoar;
 				PRODUCT_NAME = "ABC Go AR";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
