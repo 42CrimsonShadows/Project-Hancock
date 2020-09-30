@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UWV-D1-EGe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ofX-cZ-dmU">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -64,9 +64,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <state key="normal" title="NEXT">
                                     <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ofX-cZ-dmU" kind="presentation" identifier="toLogin" id="9M1-xs-ghF"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JJv-Jb-Y9k"/>
@@ -82,6 +79,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                             <constraint firstItem="aJk-j4-2T1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JJv-Jb-Y9k" secondAttribute="leading" symbolic="YES" id="yc4-OU-FAM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="UWV-D1-EGe" kind="presentation" identifier="toLogin" id="jkp-R1-gby"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2J-AN-RMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -498,6 +498,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="ErrorLabel" destination="3jy-CJ-rcy" id="XGA-he-EF8"/>
                         <outlet property="IDField" destination="Wyd-BM-4fX" id="ejE-HR-RDm"/>
                         <outlet property="PassField" destination="h5L-rN-fiH" id="Nwh-tr-ezf"/>
+                        <segue destination="jmb-Cg-UZK" kind="presentation" identifier="toHomePage" modalPresentationStyle="fullScreen" id="BSl-LF-5DQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3q-2t-rfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4482,9 +4483,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
     <inferredMetricsTieBreakers>
         <segue reference="jwe-7m-LOQ"/>
         <segue reference="1vJ-ch-688"/>
-        <segue reference="hQX-2b-Izv"/>
+        <segue reference="jkp-R1-gby"/>
         <segue reference="Aw8-c9-Drp"/>
-        <segue reference="9M1-xs-ghF"/>
         <segue reference="moX-wG-pw1"/>
     </inferredMetricsTieBreakers>
     <resources>
