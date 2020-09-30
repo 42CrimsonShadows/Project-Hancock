@@ -150,6 +150,7 @@ class ChapterSelection {
         storyNode.addChildNode(idleNode)
         idleNode.scale = SCNVector3(0.0002, 0.0002, 0.0002)
         idleNode.position = SCNVector3(0.05, 0, 0)
+        idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         //idleNode.isHidden = true
         
         //Load Scene Mask so we only see immidate area
@@ -215,6 +216,7 @@ class ChapterSelection {
         lvlFloor.addChildNode(SideCharacter1idleNode)
         SideCharacter1idleNode.scale = SCNVector3(0.003, 0.003, 0.003)
         SideCharacter1idleNode.position = SCNVector3(-19.4, 5.45, -0.4)
+        SideCharacter1idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         
         //Load Idle Animation Node
         //let idleLinScene = SCNScene(named: "art.scnassets/3DModels/Chapter1Files/Characters/Lin/Lin@IdleFixed.dae")!
@@ -410,6 +412,7 @@ class ChapterSelection {
         storyNode.addChildNode(idleNode)
         idleNode.scale = SCNVector3(0.008, 0.008, 0.008)
         idleNode.position = SCNVector3(0.092, 0.078, -0.021)
+        idleNode.eulerAngles = SCNVector3(GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0), GLKMathDegreesToRadians(0))
         //idleNode.isHidden = true
         
         let lvlFloor = storyNode.childNode(withName: "LVLFloor", recursively: true)!

@@ -750,10 +750,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // Show Focus Node
         self.focusNode.isHidden = false
-        let results = self.sceneView.hitTest(self.focusPoint, types: [.existingPlaneUsingExtent])
+        let results = self.sceneView?.hitTest(self.focusPoint, types: [.existingPlaneUsingExtent])
         
-        if results.count >= 1 {
-            if let match = results.first {
+        if results?.count ?? 0 >= 1 {
+            if let match = results?.first {
                 let t = match.worldTransform
                 self.focusNode.position = SCNVector3(x: t.columns.3.x, y: t.columns.3.y, z: t.columns.3.z)
                 self.gameState = .hitStartToPlay
@@ -885,13 +885,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sceneView.scene.rootNode.addChildNode(focusNode)
     }
     func removeModels(chapterNode: [SCNNode]) {
-        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
-            print(node.geometry?.firstMaterial?.diffuse.contents ?? "")
-            node.geometry?.firstMaterial?.diffuse.contents = nil
-            node.removeAllAnimations()
-            node.removeAllActions()
-            node.removeFromParentNode()
-        }
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in node.geometry?.firstMaterial?.normal.contents = nil}
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in node.removeFromParentNode()}
     }
     
     func referenceMainNodes() {
