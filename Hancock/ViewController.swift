@@ -317,14 +317,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        // reduce the amount of memory being stored after dismissal
-        sceneView.removeGestureRecognizer(tapGestureRecognizer)
-        self.sceneView.session.pause()
-        self.sceneView.removeFromSuperview()
-        self.sceneView.delegate = nil
-        self.sceneView = nil
-        self.view.removeFromSuperview()
-        self.removeFromParent()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -865,6 +857,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             chapterSelectedSoundDict = nil
             chapterSelectedAnimationDict = [String: CAAnimation]()
             selectedActivity = ""
+            
+            self.sceneView.session.pause()
+            self.sceneView.removeFromSuperview()
+            self.sceneView.delegate = nil
+            self.sceneView = nil
             
 //            let chapterARView = self.storyboard?.instantiateViewController(withIdentifier: "bookARViewController") as! HomeViewController
 //            self.present(chapterARView, animated: true)
