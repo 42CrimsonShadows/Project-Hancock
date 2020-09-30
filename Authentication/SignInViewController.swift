@@ -22,24 +22,26 @@ class SignInViewController: UIViewController {
     
     @IBAction func ForgotPasswordPopup(_ sender: UIButton) {
         print("forgot password?")
+        let alert = UIAlertController(title: "Change Password", message: "To change your password go to 'https://abcgoapp.org/login' and click on 'I've forgotten my username/password.'", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+                case .default:
+                    print("default")
+
+                case .cancel:
+                    print("cancel")
+
+                case .destructive:
+                    print("destructive")
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     @IBAction func Login(_ sender: Any) {
         
     print("Logging in...")
         guard let username = IDField.text else { return }
         guard let password = PassField.text else { return }
-        
-//        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
-//            if error == nil && Auth.auth().currentUser != nil {
-//
-//                self.dismiss(animated: false, completion: nil)
-//                print("Welcome", Auth.auth().currentUser?.email)
-//
-//            } else {
-//                print("There was an issue logging in")
-//
-//            }
-//        }
         
         // api calls run on a background thread, so we use this lambda to get the result from Service and use it in main thread
         // Call login, set success, and call segue on main thread
@@ -57,6 +59,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,15 +88,5 @@ class SignInViewController: UIViewController {
             ErrorLabel.text = "Invalid Username or Password"
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 

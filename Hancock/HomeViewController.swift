@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func logoutHandler(_ sender: Any) {
-//        try! Auth.auth().signOut()
         print("Successfully logged out")
         user = ""
         pass = ""
