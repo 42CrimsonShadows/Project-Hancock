@@ -4151,6 +4151,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="Gav-iL-6q4"/>
                     <connections>
                         <segue destination="UWV-D1-EGe" kind="presentation" identifier="vc3toHomeScreen" id="nXU-wI-dyG"/>
+                        <segue destination="BV1-FR-VrT" kind="presentation" identifier="ARSEGUE" id="nzC-1y-dQf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IT9-l9-pWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4299,6 +4300,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="Jhi-lv-qRJ"/>
                     <connections>
                         <segue destination="UWV-D1-EGe" kind="presentation" identifier="vc3toHomeScreen" id="hQX-2b-Izv"/>
+                        <segue destination="BV1-FR-VrT" kind="presentation" identifier="ARSEGUE" id="moX-wG-pw1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCm-A3-ts5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4480,9 +4482,10 @@ point the device toward a flat surface to see your Augmented Reality story conte
     <inferredMetricsTieBreakers>
         <segue reference="jwe-7m-LOQ"/>
         <segue reference="1vJ-ch-688"/>
-        <segue reference="nXU-wI-dyG"/>
+        <segue reference="hQX-2b-Izv"/>
         <segue reference="Aw8-c9-Drp"/>
         <segue reference="9M1-xs-ghF"/>
+        <segue reference="moX-wG-pw1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1024.png" width="1024" height="1024"/>
