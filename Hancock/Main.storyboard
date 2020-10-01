@@ -364,7 +364,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-eB-0IQ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-eB-0IQ">
                                                         <rect key="frame" x="0.0" y="60" width="300" height="33.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="300" id="Vuh-Bi-U2N"/>
@@ -406,7 +406,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPt-yu-6XE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="36"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <state key="normal" title="Register!">
+                                                                <state key="normal" title="Don't have an account? Register!">
                                                                     <color key="titleColor" systemColor="systemGreenColor"/>
                                                                 </state>
                                                                 <connections>
@@ -684,7 +684,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdQ-XL-nkN" userLabel="returntologin">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
-                                                                <state key="normal" title="Already a user?">
+                                                                <state key="normal" title="Already a user? Login!">
                                                                     <color key="titleColor" systemColor="systemGreenColor"/>
                                                                 </state>
                                                                 <connections>
