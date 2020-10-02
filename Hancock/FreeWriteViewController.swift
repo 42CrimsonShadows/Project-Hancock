@@ -223,13 +223,15 @@ class FreeWriteViewController: UIViewController {
     
     @IBAction func doneBtnPressed(_ sender: UIButton) {
         // done with writing so send data return to menu selection
-        // TODO: Send data to backend
         // this is a screenshot of the canvas view
         if let image = screenShot() {
             if let pngData = image.pngData() {
-                // but we could also try a base64EncodedString
-                    let base64String = pngData.base64EncodedString()
-                print("Did screenshot Free Write and this is the pngData: \(pngData)")
+                let base64String = pngData.base64EncodedString()
+                // send character data to db with user credentials from login
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    Service.updateImageData(username: user, password: pass, base64: base64String)
+                })
+                print("Did screenshot Level2 and this is the pngData: \(pngData)")
             }
         }
         goBack()

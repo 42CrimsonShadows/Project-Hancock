@@ -291,16 +291,14 @@ class LevelTwoActivityViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: UIButton) {
         // done with letter so send data return to menu selection
-        // TODO: Send data to backend
         // this is a screenshot of the canvas view
         if let image = screenShot() {
-            // we could try saving a 'png'
-            // there is also a jpeg option
             if let pngData = image.pngData() {
-                // did some testing and this pngData can be successfully written to a .png file
-                // i'm thinking that we can send the pngData as Data to the db and then be able to display it on the website
-                // but we could also try a base64EncodedString if that doesn't work
                 let base64String = pngData.base64EncodedString()
+                // send character data to db with user credentials from login
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    Service.updateImageData(username: user, password: pass, base64: base64String)
+                })
                 print("Did screenshot Level2 and this is the pngData: \(pngData)")
             }
         }

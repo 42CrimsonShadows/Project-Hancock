@@ -147,6 +147,37 @@ class Service {
         }
     }
     
+    static func updateImageData(username: String, password: String, base64: String){
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let test = SingleImageReport(username: username, password: password, base64: base64)
+        do{
+            let endpoint = "https://abcgoapp.org/api/users/Data"
+            let data = try encoder.encode(test)
+            guard let url = URL(string: endpoint) else {
+                print("Could not set the URL, contact the developer")
+
+                return
+                
+            }
+            print(test)
+            var request = URLRequest(url: url)
+            request.setValue("application/json", forHTTPHeaderField: "content-type")
+            request.httpMethod = "PUT"
+            request.httpBody = data
+        
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                print(response)
+                if let error = error {
+                    print(error)
+                }
+            }.resume()
+        
+        } catch {
+            print("Could not encode")
+        }
+    }
+    
     //MARK: --READ(GET)
     //These functions will return a value from the database
     static func getObject(id: String) {
