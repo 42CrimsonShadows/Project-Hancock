@@ -88,5 +88,10 @@ class SignInViewController: UIViewController {
             ErrorLabel.text = "Invalid Username or Password"
         }
     }
+    
+    @IBAction func creditsButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "creditsTapped", sender: self)
+    }
+    
 }
 

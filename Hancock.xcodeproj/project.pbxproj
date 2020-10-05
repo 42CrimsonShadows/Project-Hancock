@@ -49,6 +49,7 @@
 		A0E9B7B623EBA70200929F4A /* PlayWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B523EBA70200929F4A /* PlayWalk.swift */; };
 		A0E9B7B823EBAAA600929F4A /* StopWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B723EBAAA600929F4A /* StopWalk.swift */; };
 		A0E9B7BA23EBAAE500929F4A /* LetterComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */; };
+		A0F8879E252B73870002B0F1 /* CreditsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F8879D252B73870002B0F1 /* CreditsPageViewController.swift */; };
 		A0FDC33124F19B1300748E18 /* FlowerLoading.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0FDC32F24F19B1200748E18 /* FlowerLoading.gif */; };
 		A0FDC33224F19B1300748E18 /* RainbowLoadGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0FDC33024F19B1200748E18 /* RainbowLoadGIF.gif */; };
 		A713540624ACC7CE00E6D656 /* FreeWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713540524ACC7CE00E6D656 /* FreeWriteViewController.swift */; };
@@ -158,6 +159,7 @@
 		A0E9B7B523EBA70200929F4A /* PlayWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWalk.swift; sourceTree = "<group>"; };
 		A0E9B7B723EBAAA600929F4A /* StopWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWalk.swift; sourceTree = "<group>"; };
 		A0E9B7B923EBAAE500929F4A /* LetterComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterComplete.swift; sourceTree = "<group>"; };
+		A0F8879D252B73870002B0F1 /* CreditsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsPageViewController.swift; sourceTree = "<group>"; };
 		A0FDC32F24F19B1200748E18 /* FlowerLoading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FlowerLoading.gif; sourceTree = "<group>"; };
 		A0FDC33024F19B1200748E18 /* RainbowLoadGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = RainbowLoadGIF.gif; sourceTree = "<group>"; };
 		A713540524ACC7CE00E6D656 /* FreeWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeWriteViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				A0A028C7227CA9F600A7C787 /* LaunchScreen.storyboard */,
 				A0A028C9227CA9F600A7C787 /* Info.plist */,
 				A7ACFFF424E70B3B004F1E87 /* Main.storyboard */,
+				A0F8879D252B73870002B0F1 /* CreditsPageViewController.swift */,
 				A08134452521161D00D02EF8 /* PuzzleAsssmentViewController.swift */,
 				A05D40C82505C3730089CDC7 /* LetterMatchingPGQViewController.swift */,
 				A05D40C62505BE930089CDC7 /* LetterMatchingb&pViewController.swift */,
@@ -445,7 +448,7 @@
 				TargetAttributes = {
 					A0A028B7227CA9F500A7C787 = {
 						CreatedOnToolsVersion = 10.2;
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -602,6 +605,7 @@
 				C99A9BE322A06C0700554D9A /* InitViewController.swift in Sources */,
 				A07974B322861DB000606889 /* StudentTableViewController.swift in Sources */,
 				A08A2D4522BED3A40076B814 /* ChapterViewController.swift in Sources */,
+				A0F8879E252B73870002B0F1 /* CreditsPageViewController.swift in Sources */,
 				A02BCC3B22A86EA70059E3D8 /* activityViewController.swift in Sources */,
 				A7E62789249AAC560031126F /* LevelTwoActivityViewController.swift in Sources */,
 				A07974B12285FC4A00606889 /* StudentsTableViewCell.swift in Sources */,
