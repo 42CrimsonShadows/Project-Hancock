@@ -533,36 +533,19 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Double1.1" translatesAutoresizingMaskIntoConstraints="NO" id="baP-23-Ehr">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUZ-gs-UNk">
-                                                <rect key="frame" x="-417" y="162" width="1858" height="19.5"/>
-                                                <string key="text">____________________________________________________________________________________________________________________________________________________________________________________________________________</string>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABCGo" translatesAutoresizingMaskIntoConstraints="NO" id="vjF-Bk-AHo">
-                                                <rect key="frame" x="15" y="15" width="994" height="150"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyerImage1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kYA-jo-NXe">
-                                                <rect key="frame" x="603" y="15" width="406" height="237"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="237" id="YE8-mC-1sk"/>
-                                                </constraints>
+                                                <rect key="frame" x="15" y="58.5" width="994" height="150"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="baP-23-Ehr" firstAttribute="leading" secondItem="J99-uX-41C" secondAttribute="leading" id="DQX-r1-2rj"/>
-                                            <constraint firstItem="UUZ-gs-UNk" firstAttribute="bottom" secondItem="vjF-Bk-AHo" secondAttribute="bottom" constant="16.5" id="Jt7-cy-HRh"/>
                                             <constraint firstItem="vjF-Bk-AHo" firstAttribute="centerX" secondItem="J99-uX-41C" secondAttribute="centerX" id="OO3-K7-rGP"/>
-                                            <constraint firstAttribute="bottom" secondItem="kYA-jo-NXe" secondAttribute="bottom" constant="15" id="UOW-i7-3rZ"/>
-                                            <constraint firstItem="kYA-jo-NXe" firstAttribute="top" secondItem="J99-uX-41C" secondAttribute="top" constant="15" id="XfF-Ee-KpV"/>
                                             <constraint firstAttribute="trailing" secondItem="baP-23-Ehr" secondAttribute="trailing" id="YXd-1V-QUg"/>
-                                            <constraint firstItem="UUZ-gs-UNk" firstAttribute="top" secondItem="kYA-jo-NXe" secondAttribute="top" constant="147" id="gC0-jZ-pZa"/>
+                                            <constraint firstItem="vjF-Bk-AHo" firstAttribute="centerY" secondItem="J99-uX-41C" secondAttribute="centerY" id="oET-3a-CS3"/>
                                             <constraint firstItem="baP-23-Ehr" firstAttribute="top" secondItem="J99-uX-41C" secondAttribute="top" id="tyZ-c7-m2H"/>
-                                            <constraint firstAttribute="trailing" secondItem="kYA-jo-NXe" secondAttribute="trailing" constant="15" id="vFD-E6-O91"/>
+                                            <constraint firstItem="vjF-Bk-AHo" firstAttribute="centerX" secondItem="J99-uX-41C" secondAttribute="centerX" id="udU-ac-ggs"/>
                                             <constraint firstAttribute="trailing" secondItem="vjF-Bk-AHo" secondAttribute="trailing" constant="15" id="vbE-aa-48G"/>
                                             <constraint firstAttribute="bottom" secondItem="baP-23-Ehr" secondAttribute="bottom" id="w6T-YC-m1G"/>
-                                            <constraint firstItem="UUZ-gs-UNk" firstAttribute="centerX" secondItem="J99-uX-41C" secondAttribute="centerX" id="wXJ-of-vm1"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVs-WS-0QT" userLabel="Form View">
@@ -728,20 +711,12 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Double1.2" translatesAutoresizingMaskIntoConstraints="NO" id="6gz-Sb-xQc">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="267"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyerImage2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBX-lh-G8d">
-                                                <rect key="frame" x="15" y="-41" width="317.5" height="308"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="308" id="PZO-Rr-n89"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="6gz-Sb-xQc" secondAttribute="trailing" id="4ti-e9-B2Z"/>
                                             <constraint firstItem="6gz-Sb-xQc" firstAttribute="top" secondItem="Im1-J5-Cp7" secondAttribute="top" id="7qo-5v-jG8"/>
                                             <constraint firstItem="6gz-Sb-xQc" firstAttribute="leading" secondItem="Im1-J5-Cp7" secondAttribute="leading" id="AwQ-43-Gup"/>
-                                            <constraint firstItem="gBX-lh-G8d" firstAttribute="leading" secondItem="Im1-J5-Cp7" secondAttribute="leading" constant="15" id="NF1-Kw-3vX"/>
                                             <constraint firstAttribute="bottom" secondItem="6gz-Sb-xQc" secondAttribute="bottom" id="Uth-hN-Uff"/>
-                                            <constraint firstAttribute="bottom" secondItem="gBX-lh-G8d" secondAttribute="bottom" id="aJr-83-z93"/>
                                         </constraints>
                                     </view>
                                 </subviews>
