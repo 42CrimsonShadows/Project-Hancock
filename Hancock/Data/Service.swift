@@ -147,10 +147,10 @@ class Service {
         }
     }
     
-    static func updateImageData(username: String, password: String, base64: String){
+    static func updateImageData(username: String, password: String, base64: String, title: String, description: String){
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
-        let test = SingleImageReport(username: username, password: password, base64: base64)
+        let test = SingleImageReport(username: username, password: password, base64: base64, title: title, description: description)
         do{
             let endpoint = "https://abcgoapp.org/api/users/Data"
             let data = try encoder.encode(test)

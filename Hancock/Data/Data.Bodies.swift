@@ -77,6 +77,8 @@ struct SingleImageReport: Codable {
     var username: String
     var password: String
     var base64: String
+    var title: String
+    var description: String
 }
 
 

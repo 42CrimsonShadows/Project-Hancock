@@ -1527,7 +1527,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                             characterNode = mainCharacterIdle!
                     }
                 
-                    arrow!.constraints = [SCNLookAtConstraint.init(target: characterNode)]
+                    //arrow!.constraints = [SCNLookAtConstraint.init(target: characterNode)]
                     // if the camera is active in the scene, the point of view is what's on screen
                     if let pointOfView = sceneView.pointOfView{
                         // ifVisible = Patricia is visible on the screen

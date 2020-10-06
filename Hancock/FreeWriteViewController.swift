@@ -229,7 +229,7 @@ class FreeWriteViewController: UIViewController {
                 let base64String = pngData.base64EncodedString()
                 // send character data to db with user credentials from login
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                    Service.updateImageData(username: user, password: pass, base64: base64String)
+                    Service.updateImageData(username: user, password: pass, base64: base64String, title: "Free Draw", description: "")
                 })
                 print("Did screenshot Level2 and this is the pngData: \(pngData)")
             }
