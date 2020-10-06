@@ -190,7 +190,7 @@ class NewLetterMatchingAZViewController: UIViewController, UIGestureRecognizerDe
     
     //backButton
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "letterMatchingMenu", sender: self)
+        self.dismiss(animated: false, completion: nil)
     }//end of backButtonTapped
     
     //reset Button

@@ -60,7 +60,7 @@ class PracticeMainMeniViewController: UIViewController {
     
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "home", sender: self)
+        self.dismiss(animated: false, completion: nil)
     }
     
     

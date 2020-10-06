@@ -109,7 +109,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 <state key="normal" image="UI Buttons_Back_Red"/>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="QLt-S4-oXg" eventType="touchUpInside" id="tPs-Bt-ldo"/>
-                                    <segue destination="ofX-cZ-dmU" kind="presentation" identifier="backTapped" id="UaC-CI-v2Z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1780,8 +1779,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 <state key="normal" image="UI Buttons_Back_Violet"/>
                                                 <connections>
                                                     <action selector="goBack:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="zbK-bN-IMX"/>
-                                                    <action selector="linePracticeButtonTapped:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="4k2-XE-iAt"/>
-                                                    <action selector="practiceBackButtonTapped:" destination="hNX-2Z-0AR" eventType="touchUpInside" id="2cz-RB-h07"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1978,7 +1975,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     <navigationItem key="navigationItem" id="iTf-Pv-gas"/>
                     <connections>
                         <outlet property="linePracticeBackButton" destination="l93-GX-CP8" id="G7c-ua-fc2"/>
-                        <segue destination="COb-DA-oVC" kind="presentation" identifier="practiceMainMenu" id="qKW-vn-12i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f95-4p-OmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2227,7 +2223,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                 </state>
                                 <connections>
                                     <action selector="homeButtonTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="Uys-MO-BiX"/>
-                                    <segue destination="COb-DA-oVC" kind="presentation" identifier="home" id="jwe-7m-LOQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -3009,7 +3004,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoLabelTwo" destination="Xa4-7N-ygF" id="57H-hJ-uHK"/>
                         <outlet property="topBorder" destination="Ol9-c2-JgZ" id="gZJ-M9-d1Z"/>
                         <outlet property="youWinPic" destination="dUX-oO-aEZ" id="feo-4Q-i7V"/>
-                        <segue destination="nCQ-Xj-tZf" kind="presentation" identifier="letterMatchingMenu" id="1vJ-ch-688"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ir-CA-8S4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3323,7 +3317,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoLabelTwo" destination="4Uj-2C-jAC" id="aRY-mb-fFQ"/>
                         <outlet property="topBorder" destination="cLf-BE-xZl" id="5TW-ej-0UZ"/>
                         <outlet property="youWinPic" destination="aVN-38-e0d" id="CZ1-47-71C"/>
-                        <segue destination="nCQ-Xj-tZf" kind="presentation" identifier="letterMatchingMenu" id="U5g-Wc-Qn0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRU-On-X1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3637,7 +3630,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <outlet property="rowTwoLabelTwo" destination="QcJ-KZ-2XJ" id="GZT-gN-sn6"/>
                         <outlet property="topBorder" destination="RTa-r2-wYf" id="48R-Qk-xKc"/>
                         <outlet property="youWinPic" destination="yHe-ID-kQr" id="hfJ-Qe-bhR"/>
-                        <segue destination="nCQ-Xj-tZf" kind="presentation" identifier="letterMatchingMenu" id="g7b-pu-yn9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hr9-FN-Y72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4236,7 +4228,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     </view>
                     <navigationItem key="navigationItem" id="Gav-iL-6q4"/>
                     <connections>
-                        <segue destination="UWV-D1-EGe" kind="presentation" identifier="vc3toHomeScreen" id="nXU-wI-dyG"/>
                         <segue destination="BV1-FR-VrT" kind="presentation" identifier="ARSEGUE" id="nzC-1y-dQf"/>
                     </connections>
                 </viewController>
@@ -4385,7 +4376,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                     </view>
                     <navigationItem key="navigationItem" id="Jhi-lv-qRJ"/>
                     <connections>
-                        <segue destination="UWV-D1-EGe" kind="presentation" identifier="vc3toHomeScreen" id="hQX-2b-Izv"/>
                         <segue destination="BV1-FR-VrT" kind="presentation" identifier="ARSEGUE" id="moX-wG-pw1"/>
                     </connections>
                 </viewController>
@@ -4419,7 +4409,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                 </state>
                                                 <connections>
                                                     <action selector="backButtonTapped:" destination="COb-DA-oVC" eventType="touchUpInside" id="7Vb-nd-prc"/>
-                                                    <segue destination="UWV-D1-EGe" kind="presentation" identifier="home" id="SvW-to-eLU"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJl-Q3-Xh2">
@@ -4566,10 +4555,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nLc-ZZ-ho6"/>
-        <segue reference="3Nf-TW-mvK"/>
-        <segue reference="SvW-to-eLU"/>
-        <segue reference="Aw8-c9-Drp"/>
+        <segue reference="LDW-Gb-u1z"/>
         <segue reference="j5d-bO-yS9"/>
         <segue reference="nzC-1y-dQf"/>
     </inferredMetricsTieBreakers>

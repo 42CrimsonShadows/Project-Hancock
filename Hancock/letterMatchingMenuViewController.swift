@@ -32,7 +32,7 @@ class letterMatchingMenuViewController: UIViewController {
         performSegue(withIdentifier: "pGAndQTapped", sender: self)
     }
     @IBAction func homeButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "home", sender: self)
+        self.dismiss(animated: false, completion: nil)
     }
     
     

@@ -71,10 +71,7 @@ class ChapterViewController: UIViewController {
 //    let concept9 = UIImage (imageLiteralResourceName: "concept9")
 //    let concept10 = UIImage (imageLiteralResourceName: "concept10")
     
-    @IBAction func linePracticeButtonTapped (_ sender: UIButton) {
-        performSegue(withIdentifier: "practiceMainMenu", sender: self)
-    }
-    
+      
     
     @IBAction func cpt1Clicked(_ sender: Any) {
         currentChapter = .Chapter1
@@ -196,13 +193,7 @@ class ChapterViewController: UIViewController {
     @IBAction func goBack(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
     }
-    
-    
-    @IBAction func practiceBackButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "practiceMainMenu", sender: self)
-    }
-    
-        
+          
     
     
     override func viewDidLoad() {
