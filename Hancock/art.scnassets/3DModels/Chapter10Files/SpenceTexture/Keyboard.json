@@ -1,0 +1,38 @@
+{
+    "format": {
+        "version": "1.0"
+    },
+    "shaders": {
+        "Main shader": {
+            "displacementTessellation": {
+                "displacement": {
+                    "scale": 0,
+                    "source_channel": 0
+                },
+                "enable": true,
+                "tessellation": {
+                    "max_length": 64,
+                    "subdiv_count": 1,
+                    "subdiv_mode": 0
+                }
+            },
+            "parameters": {
+                "Common Parameters": {
+                    "alpha_dither": false,
+                    "alpha_threshold": 0.33000001311302185,
+                    "ao_intensity": 0.75,
+                    "emissive_intensity": 0.5799999833106995,
+                    "horizonFade": 1.2999999523162842,
+                    "nbSamples": 16
+                }
+            },
+            "shader": "adobe-dimension",
+            "shaderInstance": "Main shader"
+        }
+    },
+    "texturesets": {
+        "DefaultMaterial": {
+            "shader": "Main shader"
+        }
+    }
+}
