@@ -128,7 +128,6 @@ class Service {
                 
             }
                 //print(String(data: data, encoding: .utf8)!)
-            print(test)
             var request = URLRequest(url: url)
             request.setValue("application/json", forHTTPHeaderField: "content-type")
             request.httpMethod = "POST"
@@ -160,7 +159,6 @@ class Service {
                 return
                 
             }
-            print(test)
             var request = URLRequest(url: url)
             request.setValue("application/json", forHTTPHeaderField: "content-type")
             request.httpMethod = "PUT"
