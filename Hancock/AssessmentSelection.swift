@@ -217,6 +217,7 @@ class AssessmentSelection: UIViewController {
             }
             UIImages![i].setImage(img, for: .normal)
         }
+        hasGuessed = false
     }
     
     // Set up the puzzleImageView to have a shapemask, and set relevent vars
@@ -262,7 +263,6 @@ class AssessmentSelection: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3){
                     self.successLabel.text = ""
                     self.setupLetterImages()
-                    self.hasGuessed = false
                 }
             }
             else {
