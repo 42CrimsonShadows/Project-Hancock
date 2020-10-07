@@ -596,14 +596,16 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             </imageView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="baP-23-Ehr" firstAttribute="leading" secondItem="J99-uX-41C" secondAttribute="leading" id="DQX-r1-2rj"/>
+                                            <constraint firstAttribute="trailing" secondItem="baP-23-Ehr" secondAttribute="trailing" id="1zN-Kc-TqV"/>
+                                            <constraint firstItem="baP-23-Ehr" firstAttribute="leading" secondItem="J99-uX-41C" secondAttribute="leading" id="5Pi-w7-Ega"/>
+                                            <constraint firstAttribute="bottom" secondItem="baP-23-Ehr" secondAttribute="bottom" id="5wg-GR-QSM"/>
+                                            <constraint firstItem="baP-23-Ehr" firstAttribute="top" secondItem="J99-uX-41C" secondAttribute="top" id="AJt-fa-fk5"/>
+                                            <constraint firstAttribute="width" secondItem="J99-uX-41C" secondAttribute="height" multiplier="1024:267" id="K1h-Ct-BqY"/>
                                             <constraint firstItem="vjF-Bk-AHo" firstAttribute="centerX" secondItem="J99-uX-41C" secondAttribute="centerX" id="OO3-K7-rGP"/>
-                                            <constraint firstAttribute="trailing" secondItem="baP-23-Ehr" secondAttribute="trailing" id="YXd-1V-QUg"/>
                                             <constraint firstItem="vjF-Bk-AHo" firstAttribute="centerY" secondItem="J99-uX-41C" secondAttribute="centerY" id="oET-3a-CS3"/>
                                             <constraint firstItem="baP-23-Ehr" firstAttribute="top" secondItem="J99-uX-41C" secondAttribute="top" id="tyZ-c7-m2H"/>
                                             <constraint firstItem="vjF-Bk-AHo" firstAttribute="centerX" secondItem="J99-uX-41C" secondAttribute="centerX" id="udU-ac-ggs"/>
                                             <constraint firstAttribute="trailing" secondItem="vjF-Bk-AHo" secondAttribute="trailing" constant="15" id="vbE-aa-48G"/>
-                                            <constraint firstAttribute="bottom" secondItem="baP-23-Ehr" secondAttribute="bottom" id="w6T-YC-m1G"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVs-WS-0QT" userLabel="Form View">
@@ -759,8 +761,8 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="ttT-m0-zan" firstAttribute="centerY" secondItem="IVs-WS-0QT" secondAttribute="centerY" id="M5O-cS-LEG"/>
-                                            <constraint firstItem="ttT-m0-zan" firstAttribute="centerX" secondItem="IVs-WS-0QT" secondAttribute="centerX" id="zZR-NI-xed"/>
+                                            <constraint firstItem="ttT-m0-zan" firstAttribute="centerX" secondItem="IVs-WS-0QT" secondAttribute="centerX" id="PPo-ZD-HPQ"/>
+                                            <constraint firstItem="ttT-m0-zan" firstAttribute="centerY" secondItem="IVs-WS-0QT" secondAttribute="centerY" id="oMa-zF-Wxd"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Im1-J5-Cp7" userLabel="Bottom View">
@@ -771,16 +773,23 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             </imageView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="6gz-Sb-xQc" secondAttribute="trailing" id="4ti-e9-B2Z"/>
-                                            <constraint firstItem="6gz-Sb-xQc" firstAttribute="top" secondItem="Im1-J5-Cp7" secondAttribute="top" id="7qo-5v-jG8"/>
-                                            <constraint firstItem="6gz-Sb-xQc" firstAttribute="leading" secondItem="Im1-J5-Cp7" secondAttribute="leading" id="AwQ-43-Gup"/>
-                                            <constraint firstAttribute="bottom" secondItem="6gz-Sb-xQc" secondAttribute="bottom" id="Uth-hN-Uff"/>
+                                            <constraint firstAttribute="width" secondItem="Im1-J5-Cp7" secondAttribute="height" multiplier="1024:267" id="76w-XN-oHl"/>
+                                            <constraint firstAttribute="trailing" secondItem="6gz-Sb-xQc" secondAttribute="trailing" id="NUY-XZ-UOM"/>
+                                            <constraint firstItem="6gz-Sb-xQc" firstAttribute="leading" secondItem="Im1-J5-Cp7" secondAttribute="leading" id="a3K-3f-WPs"/>
+                                            <constraint firstAttribute="bottom" secondItem="6gz-Sb-xQc" secondAttribute="bottom" id="b3c-tC-uyH"/>
+                                            <constraint firstItem="6gz-Sb-xQc" firstAttribute="top" secondItem="Im1-J5-Cp7" secondAttribute="top" id="cPj-FO-fcz"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="J99-uX-41C" firstAttribute="top" secondItem="0Hu-lR-3yp" secondAttribute="top" id="6zM-gO-J8y"/>
+                                    <constraint firstItem="Im1-J5-Cp7" firstAttribute="leading" secondItem="0Hu-lR-3yp" secondAttribute="leading" id="FBp-Mi-NBx"/>
                                     <constraint firstItem="IVs-WS-0QT" firstAttribute="centerY" secondItem="0Hu-lR-3yp" secondAttribute="centerY" id="Hg8-9B-xZP"/>
+                                    <constraint firstAttribute="bottom" secondItem="Im1-J5-Cp7" secondAttribute="bottom" id="Tds-Iy-GFc"/>
                                     <constraint firstItem="IVs-WS-0QT" firstAttribute="centerX" secondItem="0Hu-lR-3yp" secondAttribute="centerX" id="WxZ-5K-5Pe"/>
+                                    <constraint firstItem="J99-uX-41C" firstAttribute="leading" secondItem="0Hu-lR-3yp" secondAttribute="leading" id="XUE-D1-m4r"/>
+                                    <constraint firstAttribute="trailing" secondItem="Im1-J5-Cp7" secondAttribute="trailing" id="vzi-ND-ahV"/>
+                                    <constraint firstAttribute="trailing" secondItem="J99-uX-41C" secondAttribute="trailing" id="w8p-5O-vSX"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -4556,7 +4565,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="LDW-Gb-u1z"/>
-        <segue reference="j5d-bO-yS9"/>
+        <segue reference="2O5-wy-OoL"/>
         <segue reference="nzC-1y-dQf"/>
     </inferredMetricsTieBreakers>
     <resources>
