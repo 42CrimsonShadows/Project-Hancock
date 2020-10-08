@@ -26,6 +26,8 @@ class FreeWriteViewController: UIViewController {
     @IBOutlet weak var penScaleBtn3: UIButton!
     @IBOutlet weak var penScaleBtn4: UIButton!
     private var paperNum: Int = 1
+    private var paperScale: Int = 2
+    private var didPressDone:Bool = false
     
         
     
@@ -97,22 +99,63 @@ class FreeWriteViewController: UIViewController {
             paperTypeBtn1.layer.borderWidth = 4
             paperTypeBtn2.layer.borderWidth = 1
             paperTypeBtn3.layer.borderWidth = 1
-            paperScaleBtn1.layer.borderWidth = 1
-            paperScaleBtn2.layer.borderWidth = 4
-            paperScaleBtn3.layer.borderWidth = 1
-            backgroundIV.image = UIImage(named: "paper2")
             paperNum = 1
+            
+            if(paperScale == 1)
+            {
+                paperScaleBtn1.layer.borderWidth = 4
+                paperScaleBtn2.layer.borderWidth = 1
+                paperScaleBtn3.layer.borderWidth = 1
+                backgroundIV.image = UIImage(named: "paper1")
+                paperScale = 1
+            }
+            else if(paperScale == 3)
+            {
+                paperScaleBtn1.layer.borderWidth = 1
+                paperScaleBtn2.layer.borderWidth = 1
+                paperScaleBtn3.layer.borderWidth = 4
+                backgroundIV.image = UIImage(named: "paper3")
+                paperScale = 3
+            }
+            else
+            {
+                paperScaleBtn1.layer.borderWidth = 1
+                paperScaleBtn2.layer.borderWidth = 4
+                paperScaleBtn3.layer.borderWidth = 1
+                backgroundIV.image = UIImage(named: "paper2")
+                paperScale = 2
+            }
         }
         else if (sender.currentTitle == "Paper2") {
             // this could be taken out if unused
             paperTypeBtn1.layer.borderWidth = 1
             paperTypeBtn2.layer.borderWidth = 4
             paperTypeBtn3.layer.borderWidth = 1
-            paperScaleBtn1.layer.borderWidth = 1
-            paperScaleBtn2.layer.borderWidth = 4
-            paperScaleBtn3.layer.borderWidth = 1
-            backgroundIV.image = UIImage(named: "linedPaper2")
             paperNum = 2
+            if(paperScale == 1)
+            {
+                paperScaleBtn1.layer.borderWidth = 4
+                paperScaleBtn2.layer.borderWidth = 1
+                paperScaleBtn3.layer.borderWidth = 1
+                backgroundIV.image = UIImage(named: "linedPaper1")
+                paperScale = 1
+            }
+            else if(paperScale == 3)
+            {
+                paperScaleBtn1.layer.borderWidth = 1
+                paperScaleBtn2.layer.borderWidth = 1
+                paperScaleBtn3.layer.borderWidth = 4
+                backgroundIV.image = UIImage(named: "linedPaper3")
+                paperScale = 3
+            }
+            else
+            {
+                paperScaleBtn1.layer.borderWidth = 1
+                paperScaleBtn2.layer.borderWidth = 4
+                paperScaleBtn3.layer.borderWidth = 1
+                backgroundIV.image = UIImage(named: "linedPaper2")
+                paperScale = 2
+            }
         }
         else if (sender.currentTitle == "Blank") {
             // white copy paper (no image)
@@ -124,6 +167,7 @@ class FreeWriteViewController: UIViewController {
             paperScaleBtn2.layer.borderWidth = 1
             paperScaleBtn3.layer.borderWidth = 1
             paperNum = 3
+            paperScale = 0
         }
         else {
             print("No Paper Button Title Match: \(sender.currentTitle)")
@@ -148,6 +192,7 @@ class FreeWriteViewController: UIViewController {
                 paperScaleBtn3.layer.borderWidth = 1
                 backgroundIV.image = UIImage(named: "linedPaper1")
             }
+            paperScale = 1
         }
         else if (sender.currentTitle == "--") {
             if (paperNum == 1) {
@@ -162,6 +207,7 @@ class FreeWriteViewController: UIViewController {
                 paperScaleBtn3.layer.borderWidth = 1
                 backgroundIV.image = UIImage(named: "linedPaper2")
             }
+            paperScale = 2
         }
         else if (sender.currentTitle == "---") {
             if (paperNum == 1) {
@@ -176,6 +222,7 @@ class FreeWriteViewController: UIViewController {
                 paperScaleBtn3.layer.borderWidth = 4
                 backgroundIV.image = UIImage(named: "linedPaper3")
             }
+            paperScale = 3
         }
         else {
             print("No Scale Button Title Match: \(sender.currentTitle)")
@@ -222,19 +269,62 @@ class FreeWriteViewController: UIViewController {
     }
     
     @IBAction func doneBtnPressed(_ sender: UIButton) {
-        // done with writing so send data return to menu selection
-        // this is a screenshot of the canvas view
-        if let image = screenShot() {
-            if let pngData = image.pngData() {
-                let base64String = pngData.base64EncodedString()
-                // send character data to db with user credentials from login
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                    Service.updateImageData(username: user, password: pass, base64: base64String, title: "Free Draw", description: "")
-                })
-                print("Did screenshot Level2 and this is the pngData: \(pngData)")
+        if(!didPressDone)
+        {
+            didPressDone = true
+            
+            var description = ""
+            if(paperNum == 3)
+            {
+                description = "On Blank Paper"
             }
+            else if(paperNum == 2)
+            {
+                if(paperScale == 1)
+                {
+                    description = "On Blue Lined Paper with Smallest Lines."
+                }
+                else if(paperScale == 2)
+                {
+                    description = "On Blue Lined Paper with Medium Lines."
+                }
+                else if(paperScale == 3)
+                {
+                    description = "On Blue Lined Paper with Largest Lines."
+                }
+            }
+            else if(paperNum == 1)
+            {
+                if(paperScale == 1)
+                {
+                    description = "On Yellow/White Lined Paper with Smallest Lines."
+                }
+                else if(paperScale == 2)
+                {
+                    description = "On Yellow/White Lined Paper with Medium Lines."
+                }
+                else if(paperScale == 3)
+                {
+                    description = "On Yellow/White Lined Paper with Largest Lines."
+                }
+            }
+            // done with writing so send data return to menu selection
+            // this is a screenshot of the canvas view
+            if let image = screenShot() {
+                if let pngData = image.pngData() {
+                    let base64String = pngData.base64EncodedString()
+    //                 send character data to db with user credentials from login
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        Service.updateImageData(username: user, password: pass, base64: base64String, title: "Free Draw", description: description)
+                    })
+                    print("Did screenshot Level4 and this is the pngData: \(pngData)")
+    //                let fileName = getDocumentDirectory().appendingPathComponent("copy.png")
+    //                try? pngData.write(to: fileName)
+                    
+                }
+            }
+            goBack()
         }
-        goBack()
     }
     
     @IBAction func goBackPressed(_ sender: UIButton) {
