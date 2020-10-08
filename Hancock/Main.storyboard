@@ -1838,26 +1838,30 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                     <action selector="returnToMenu:" destination="bdl-bs-ghi" eventType="touchUpInside" id="xJu-DY-85L"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LetterImitation" translatesAutoresizingMaskIntoConstraints="NO" id="h7Q-zA-3yV">
-                                                <rect key="frame" x="62" y="22" width="900" height="150"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pf5-7T-Riu">
+                                                <rect key="frame" x="115" y="0.0" width="909" height="195"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LetterImitation" translatesAutoresizingMaskIntoConstraints="NO" id="qG0-6t-U9s">
+                                                        <rect key="frame" x="0.0" y="0.0" width="909" height="195"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="h7Q-zA-3yV" secondAttribute="height" multiplier="6:1" id="yp8-Qb-D2f"/>
+                                                    <constraint firstItem="qG0-6t-U9s" firstAttribute="centerX" secondItem="Pf5-7T-Riu" secondAttribute="centerX" id="Muo-An-AfL"/>
+                                                    <constraint firstItem="qG0-6t-U9s" firstAttribute="centerY" secondItem="Pf5-7T-Riu" secondAttribute="centerY" id="gtC-x7-tK1"/>
                                                 </constraints>
-                                            </imageView>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstItem="h7Q-zA-3yV" firstAttribute="centerX" secondItem="mVj-rf-Mun" secondAttribute="centerX" id="0Dt-Yr-tZh"/>
-                                            <constraint firstItem="h7Q-zA-3yV" firstAttribute="centerX" secondItem="mVj-rf-Mun" secondAttribute="centerX" id="0Gf-rX-1uc"/>
                                             <constraint firstAttribute="trailing" secondItem="3fj-bI-mKT" secondAttribute="trailing" id="28k-6q-sVg"/>
-                                            <constraint firstItem="h7Q-zA-3yV" firstAttribute="centerY" secondItem="mVj-rf-Mun" secondAttribute="centerY" id="2Mi-jA-9BS"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pf5-7T-Riu" secondAttribute="trailing" id="8yI-Xn-i1i"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pf5-7T-Riu" secondAttribute="bottom" id="AbO-op-KGD"/>
                                             <constraint firstItem="wpd-jr-Maw" firstAttribute="top" secondItem="mVj-rf-Mun" secondAttribute="topMargin" id="DP3-fD-sRz"/>
                                             <constraint firstItem="3fj-bI-mKT" firstAttribute="top" secondItem="mVj-rf-Mun" secondAttribute="top" id="I5O-Rf-nj2"/>
                                             <constraint firstItem="wpd-jr-Maw" firstAttribute="leading" secondItem="mVj-rf-Mun" secondAttribute="leadingMargin" id="Jqc-de-uNf"/>
-                                            <constraint firstItem="h7Q-zA-3yV" firstAttribute="centerX" secondItem="mVj-rf-Mun" secondAttribute="centerX" id="K5X-Pz-Faz"/>
+                                            <constraint firstItem="Pf5-7T-Riu" firstAttribute="top" secondItem="mVj-rf-Mun" secondAttribute="top" id="Vl5-zV-6m8"/>
                                             <constraint firstItem="3fj-bI-mKT" firstAttribute="leading" secondItem="mVj-rf-Mun" secondAttribute="leading" id="Zts-TG-l4I"/>
-                                            <constraint firstItem="h7Q-zA-3yV" firstAttribute="centerY" secondItem="mVj-rf-Mun" secondAttribute="centerY" id="qZ3-38-7U9"/>
-                                            <constraint firstItem="h7Q-zA-3yV" firstAttribute="centerY" secondItem="mVj-rf-Mun" secondAttribute="centerY" id="vZ1-OL-1OM"/>
+                                            <constraint firstItem="Pf5-7T-Riu" firstAttribute="leading" secondItem="wpd-jr-Maw" secondAttribute="trailing" id="Ztz-52-ijX"/>
                                             <constraint firstAttribute="bottom" secondItem="3fj-bI-mKT" secondAttribute="bottom" id="wPz-fB-PhC"/>
                                         </constraints>
                                     </view>
@@ -2239,7 +2243,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbG-O1-R7U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3743.5546874999995" y="2240.9956076134699"/>
+            <point key="canvasLocation" x="3598" y="2253"/>
         </scene>
         <!--New Letter MatchingAZ View Controller-->
         <scene sceneID="fxF-Yg-xMS">
@@ -4114,14 +4118,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Double2.1" translatesAutoresizingMaskIntoConstraints="NO" id="iEE-O3-iEs">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LetterImitation" translatesAutoresizingMaskIntoConstraints="NO" id="a8L-cI-Vff">
-                                                <rect key="frame" x="113.5" y="33.5" width="797" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="797" id="Yul-Qh-uhG"/>
-                                                    <constraint firstAttribute="height" constant="128" id="xuZ-HD-Oix"/>
-                                                    <constraint firstAttribute="width" secondItem="a8L-cI-Vff" secondAttribute="height" multiplier="797:128" id="yP4-PK-Dhs"/>
-                                                </constraints>
-                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZR-Dp-d0b">
                                                 <rect key="frame" x="8" y="8" width="107" height="42"/>
                                                 <constraints>
@@ -4134,16 +4130,30 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                     <action selector="returnToMenu:" destination="QWY-Kv-ea9" eventType="touchUpInside" id="8CS-cc-mc6"/>
                                                 </connections>
                                             </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwZ-VD-XIA">
+                                                <rect key="frame" x="115" y="0.0" width="909" height="195"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LetterImitation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf0-UI-Zr5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="909" height="195"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Xf0-UI-Zr5" firstAttribute="centerX" secondItem="UwZ-VD-XIA" secondAttribute="centerX" id="R3g-HS-iTy"/>
+                                                    <constraint firstItem="Xf0-UI-Zr5" firstAttribute="centerY" secondItem="UwZ-VD-XIA" secondAttribute="centerY" id="XWn-Yc-kPd"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstItem="a8L-cI-Vff" firstAttribute="centerY" secondItem="vfd-Eg-GRw" secondAttribute="centerY" id="C33-uk-JDR"/>
                                             <constraint firstAttribute="trailing" secondItem="iEE-O3-iEs" secondAttribute="trailing" id="J6j-AV-R6h"/>
+                                            <constraint firstAttribute="bottom" secondItem="UwZ-VD-XIA" secondAttribute="bottom" id="PPH-bp-Vca"/>
                                             <constraint firstAttribute="bottom" secondItem="iEE-O3-iEs" secondAttribute="bottom" id="TZ9-eL-Hty"/>
+                                            <constraint firstAttribute="trailing" secondItem="UwZ-VD-XIA" secondAttribute="trailing" id="UUY-DC-8Gk"/>
                                             <constraint firstItem="iEE-O3-iEs" firstAttribute="top" secondItem="vfd-Eg-GRw" secondAttribute="top" id="Wrg-9x-iTU"/>
+                                            <constraint firstItem="UwZ-VD-XIA" firstAttribute="top" secondItem="vfd-Eg-GRw" secondAttribute="top" id="ZqG-5Z-ZJS"/>
                                             <constraint firstItem="iEE-O3-iEs" firstAttribute="leading" secondItem="vfd-Eg-GRw" secondAttribute="leading" id="bFf-6f-QCO"/>
                                             <constraint firstItem="rZR-Dp-d0b" firstAttribute="top" secondItem="vfd-Eg-GRw" secondAttribute="topMargin" id="kf9-sc-kYx"/>
-                                            <constraint firstItem="a8L-cI-Vff" firstAttribute="centerX" secondItem="vfd-Eg-GRw" secondAttribute="centerX" id="n9u-Tx-7ce"/>
+                                            <constraint firstItem="UwZ-VD-XIA" firstAttribute="leading" secondItem="rZR-Dp-d0b" secondAttribute="trailing" id="yHk-0p-KoL"/>
                                             <constraint firstItem="rZR-Dp-d0b" firstAttribute="leading" secondItem="vfd-Eg-GRw" secondAttribute="leadingMargin" id="yxS-Lf-858"/>
                                         </constraints>
                                     </view>
