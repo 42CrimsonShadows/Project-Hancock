@@ -23,7 +23,6 @@ class LevelTwoActivityViewController: UIViewController {
     @IBOutlet weak var letterIV: UIImageView! // to show gifs instead of videos
     private var audioPlayer = AVAudioPlayer() // for audio instructions
     private var videoPlayer = AVPlayer() // video player
-    private var didPressDone = false
     var letterToDraw:String? // set in LevelTwoMenuVC in prepare: forSegue
     
     // MARK: - Dictionaries
@@ -291,23 +290,19 @@ class LevelTwoActivityViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: UIButton) {
-        if(!didPressDone)
-        {
-            didPressDone = true
-            // done with letter so send data return to menu selection
-            // this is a screenshot of the canvas view
-            if let image = screenShot() {
-                if let pngData = image.pngData() {
-                    let base64String = pngData.base64EncodedString()
-                    // send character data to db with user credentials from login
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                        Service.updateImageData(username: user, password: pass, base64: base64String, title: "Letter: \(self.letterToDraw!)", description: "In Letter Imitation")
-                    })
-                    print("Did screenshot Level2 and this is the pngData: \(pngData)")
-                }
+        // done with letter so send data return to menu selection
+        // this is a screenshot of the canvas view
+        if let image = screenShot() {
+            if let pngData = image.pngData() {
+                let base64String = pngData.base64EncodedString()
+                // send character data to db with user credentials from login
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    Service.updateImageData(username: user, password: pass, base64: base64String, title: self.letterToDraw!, description: "")
+                })
+                print("Did screenshot Level2 and this is the pngData: \(pngData)")
             }
-            goBack()
         }
+        goBack()
     }
     
     @IBAction func goBackPressed(_ sender: UIButton) {

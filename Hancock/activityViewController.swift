@@ -40,7 +40,6 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     private var letterCoins: Int32 = 0
     // total coins user can get on letter
     public var coinsPossible: Int32 = 0
-    private var canDraw = true
     
     private let reticleView: ReticleView = {
         let view = ReticleView(frame: CGRect.null)
@@ -693,174 +692,168 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if(canDraw)
-        {
-            //canvasView.drawTouches(touches, withEvent: event)
-            guard let firstPoint = touches.first?.location(in: canvasView) else { return }
+        //canvasView.drawTouches(touches, withEvent: event)
+        guard let firstPoint = touches.first?.location(in: canvasView) else { return }
+        
+        print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
+        print("My Touch Location = CGpointX", firstPoint.x / canvasView.bounds.maxX, "and CGpointY", firstPoint.y / canvasView.bounds.maxY)
+        
+        if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 25 {
+            // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
+            canvasView.goodTouch = true
+            print("Touch was within 25 units")
+            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing1"]!, type: "mp3")
             
-            print("The distance to the startPoint: ", canvasView.CGPointDistance(from: firstPoint, to: startingPoint))
-            print("My Touch Location = CGpointX", firstPoint.x / canvasView.bounds.maxX, "and CGpointY", firstPoint.y / canvasView.bounds.maxY)
-            
-            if canvasView.CGPointDistance(from: firstPoint, to: startingPoint) < 25 {
-                // lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
-                canvasView.goodTouch = true
-                print("Touch was within 25 units")
-                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing1"]!, type: "mp3")
+            canvasView.drawTouches(touches, withEvent: event)
+            touches.forEach { (touch) in updateGagues(with: touch)
                 
-                canvasView.drawTouches(touches, withEvent: event)
-                touches.forEach { (touch) in updateGagues(with: touch)
-                    
-                    if useDebugDrawing, touch.type == .pencil {
-                        reticleView.isHidden = false
-                        updateReticleView(with: touch)
-                        //separatorView.isHidden = true
-                    }
+                if useDebugDrawing, touch.type == .pencil {
+                    reticleView.isHidden = false
+                    updateReticleView(with: touch)
+                    //separatorView.isHidden = true
                 }
             }
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if(canDraw)
-        {
-            if canvasView.goodTouch {
-                canvasView.drawTouches(touches, withEvent: event)
+        if canvasView.goodTouch {
+            canvasView.drawTouches(touches, withEvent: event)
+            
+            //turn on feedback if the pencil angle is good
+            if reticleView.actualAzimuthAngle >= 0 && reticleView.actualAzimuthAngle <= 1 {
+                self.antFace.isHidden = false
+            }
+            else {
+                self.antFace.isHidden = true
+            }
+            
+            //each time we move the touch...
+            touches.forEach {(touch) in
                 
-                //turn on feedback if the pencil angle is good
-                if reticleView.actualAzimuthAngle >= 0 && reticleView.actualAzimuthAngle <= 1 {
-                    self.antFace.isHidden = false
+                //check to see if we interact with coins
+                if canvasView.Line1 == true {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
+                        if canvasView.coin1Collected == false {
+                            canvasView.coin1Collected = true
+                            canvasView.blackDot1?.isHidden = true
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            //TODO: add one to the Coin tally
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
+                            
+                        }
+                    }
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
+                        if canvasView.coin2Collected == false {
+                            canvasView.coin2Collected = true
+                            canvasView.blackDot2?.isHidden = true
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
+                        }
+                    }
                 }
-                else {
-                    self.antFace.isHidden = true
+                //**************
+                if canvasView.Line2 == true {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
+                        if canvasView.coin1Collected == false {
+                            canvasView.coin1Collected = true
+                            canvasView.blackDot3?.isHidden = true
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
+                        }
+                    }
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
+                        if canvasView.coin2Collected == false {
+                            canvasView.coin2Collected = true
+                            canvasView.blackDot4?.isHidden = true
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
+                        }
+                    }
                 }
-                
-                //each time we move the touch...
-                touches.forEach {(touch) in
-                    
-                    //check to see if we interact with coins
-                    if canvasView.Line1 == true {
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
-                            if canvasView.coin1Collected == false {
-                                canvasView.coin1Collected = true
-                                canvasView.blackDot1?.isHidden = true
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                print("***DINGDING***")
-                                //TODO: add one to the Coin tally
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
-                                
-                            }
-                        }
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
-                            if canvasView.coin2Collected == false {
-                                canvasView.coin2Collected = true
-                                canvasView.blackDot2?.isHidden = true
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                print("***DINGDING***")
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
-                            }
+                //*************
+                if canvasView.Line3 == true {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
+                        if canvasView.coin1Collected == false {
+                            canvasView.coin1Collected = true
+                            canvasView.blackDot5?.isHidden = true
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
-                    //**************
-                    if canvasView.Line2 == true {
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
-                            if canvasView.coin1Collected == false {
-                                canvasView.coin1Collected = true
-                                canvasView.blackDot3?.isHidden = true
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                print("***DINGDING***")
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
-                            }
-                        }
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
-                            if canvasView.coin2Collected == false {
-                                canvasView.coin2Collected = true
-                                canvasView.blackDot4?.isHidden = true
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                print("***DINGDING***")
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
-                            }
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
+                        if canvasView.coin2Collected == false {
+                            canvasView.coin2Collected = true
+                            canvasView.blackDot6?.isHidden = true
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
-                    //*************
-                    if canvasView.Line3 == true {
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
-                            if canvasView.coin1Collected == false {
-                                canvasView.coin1Collected = true
-                                canvasView.blackDot5?.isHidden = true
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                print("***DINGDING***")
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
-                            }
-                        }
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
-                            if canvasView.coin2Collected == false {
-                                canvasView.coin2Collected = true
-                                canvasView.blackDot6?.isHidden = true
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                print("***DINGDING***")
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
-                            }
+                }
+                //************
+                if canvasView.Line4 == true {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
+                        if canvasView.coin1Collected == false {
+                            canvasView.coin1Collected = true
+                            canvasView.blackDot7?.isHidden = true
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
                     }
-                    //************
-                    if canvasView.Line4 == true {
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
-                            if canvasView.coin1Collected == false {
-                                canvasView.coin1Collected = true
-                                canvasView.blackDot7?.isHidden = true
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                print("***DINGDING***")
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
-                            }
-                        }
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
-                            if canvasView.coin2Collected == false {
-                                canvasView.coin2Collected = true
-                                canvasView.blackDot8?.isHidden = true
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
+                        if canvasView.coin2Collected == false {
+                            canvasView.coin2Collected = true
+                            canvasView.blackDot8?.isHidden = true
 
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
-                            }
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
-                    if canvasView.Line5 == true {
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
-                            if canvasView.coin1Collected == false {
-                                canvasView.coin1Collected = true
-                                canvasView.blackDot9?.isHidden = true
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                print("***DINGDING***")
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
-                            }
+                }
+                if canvasView.Line5 == true {
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint1) < 25 {
+                        if canvasView.coin1Collected == false {
+                            canvasView.coin1Collected = true
+                            canvasView.blackDot9?.isHidden = true
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            print("***DINGDING***")
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing2"]!, type: "mp3")
                         }
-                        if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
-                            if canvasView.coin2Collected == false {
-                                canvasView.coin2Collected = true
-                                canvasView.blackDot10?.isHidden = true
+                    }
+                    if canvasView.CGPointDistance(from: touch.location(in: canvasView), to: middlePoint2) < 25 {
+                        if canvasView.coin2Collected == false {
+                            canvasView.coin2Collected = true
+                            canvasView.blackDot10?.isHidden = true
 
-                                totalCoins += 1
-                                letterCoins += 1
-                                setupCoinLabel()
-                                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
-                            }
+                            totalCoins += 1
+                            letterCoins += 1
+                            setupCoinLabel()
+                            self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing3"]!, type: "mp3")
                         }
                     }
                 }
@@ -869,67 +862,63 @@ class activityViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if(canDraw)
-        {
-            //only able to end the line if the start was good (no touching last CGpoint to continue)
-            if canvasView.goodTouch == true {
-                //turn off feedback
-                self.antFace.isHidden = true
-                
-                canvasView.drawTouches(touches, withEvent: event)
-                canvasView.endTouches(touches, cancel: false)
-                canvasView.goodTouch = false
-                
-                //guard let lastPoint = touches.first?.location(in: canvasView) else { return }
-                
-                touches.forEach { (touch) in clearGagues()
-                    if useDebugDrawing, touch.type == .pencil {
-                        reticleView.isHidden = true
-                        //separatorView.isHidden = true
-                    }
+        //only able to end the line if the start was good (no touching last CGpoint to continue)
+        if canvasView.goodTouch == true {
+            //turn off feedback
+            self.antFace.isHidden = true
+            
+            canvasView.drawTouches(touches, withEvent: event)
+            canvasView.endTouches(touches, cancel: false)
+            canvasView.goodTouch = false
+            
+            //guard let lastPoint = touches.first?.location(in: canvasView) else { return }
+            
+            touches.forEach { (touch) in clearGagues()
+                if useDebugDrawing, touch.type == .pencil {
+                    reticleView.isHidden = true
+                    //separatorView.isHidden = true
                 }
-                // adding total amount of coins possible to get
-                coinsPossible += 2
+            }
+            // adding total amount of coins possible to get
+            coinsPossible += 2
+            
+            if canvasView.letterComplete == true {
+                //play last ding
+                self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
                 
-                if canvasView.letterComplete == true {
-                    canDraw = false
-                    //play last ding
-                    self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["CoinDing4"]!, type: "mp3")
+                //play cheer
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
                     
-                    //play cheer
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.canvasView.playAudioFXFile(file: chapterSelectedSoundDict!["LetterComplete"]!, type: "wav")
-                        
-                        // send character data to db with user credentials from login
-                        Service.updateCharacterData(username: user, password: pass, letter: selectedActivity, score: self.letterCoins, timeToComplete: Service.TimeSinceActive(lastActive: startTime), totalPointsEarned: self.letterCoins, totalPointsPossible: self.coinsPossible)
-                        //dismiss activity view
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-                            self.dismiss(animated: false, completion: nil)
-                            })
+                    // send character data to db with user credentials from login
+                    Service.updateCharacterData(username: user, password: pass, letter: selectedActivity, score: self.letterCoins, timeToComplete: Service.TimeSinceActive(lastActive: startTime), totalPointsEarned: self.letterCoins, totalPointsPossible: self.coinsPossible)
+                    //dismiss activity view
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+                        self.dismiss(animated: false, completion: nil)
                         })
-                    }
-                
-                //removing coins from total if the line was not completed
-                guard let lastPoint = touches.first?.location(in: canvasView) else { return }
-                if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 25 {
-                    if canvasView.coin1Collected == true {
+                    })
+                }
+            
+            //removing coins from total if the line was not completed
+            guard let lastPoint = touches.first?.location(in: canvasView) else { return }
+            if canvasView.CGPointDistance(from: lastPoint, to: targetPoint) > 25 {
+                if canvasView.coin1Collected == true {
+                    totalCoins -= 1
+                    letterCoins -= 1
+                    setupCoinLabel()
+                    
+                    if canvasView.coin2Collected == true {
                         totalCoins -= 1
                         letterCoins -= 1
                         setupCoinLabel()
-                        
-                        if canvasView.coin2Collected == true {
-                            totalCoins -= 1
-                            letterCoins -= 1
-                            setupCoinLabel()
-                        }
                     }
-                    // subtracting total amount of coins possible if line wasn't finished
-                    coinsPossible -= 2
                 }
-                //reset collected booleans
-                canvasView.coin1Collected = false
-                canvasView.coin2Collected = false
+                // subtracting total amount of coins possible if line wasn't finished
+                coinsPossible -= 2
             }
+            //reset collected booleans
+            canvasView.coin1Collected = false
+            canvasView.coin2Collected = false
         }
     }
     
