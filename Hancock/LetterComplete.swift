@@ -265,6 +265,7 @@ extension ViewController{
                         workItem3 = DispatchWorkItem{
                             //after the final animation, play the fishing narration
                             self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["chapterFinish"]!, fileExtension: "mp3")
+                            self.mainCharacterIdle.isPaused = true 
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.workItem4!)
                         }
@@ -273,7 +274,7 @@ extension ViewController{
                         workItem2 = DispatchWorkItem{
                             self.startTransitionAnimationOnce(key: "MainCharacterU")
                             //after the U trick play the walk to next letter animation
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: self.workItem3!)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 11.7, execute: self.workItem3!)
                         }
                         workItem1 = DispatchWorkItem{
                             //play game intro 1
