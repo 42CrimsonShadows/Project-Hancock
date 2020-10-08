@@ -619,7 +619,6 @@ extension ViewController {
                 let rotate1 = SCNAction.rotateTo(x: CGFloat(GLKMathDegreesToRadians(30)), y: CGFloat(GLKMathDegreesToRadians(-53.596)), z: CGFloat(GLKMathDegreesToRadians(-36)), duration: 3)
                 let chapter3Letter3RotationSeq = SCNAction.sequence([rotate1])
                 mainCharacterIdle?.parent?.runAction(chapter3Letter3RotationSeq)
-                
                 let move1 = SCNAction.move(to: SCNVector3(0.335, 0.281, 0.479), duration: 8)  //P1 to P2
                 let chapter3Letter3MoveSeq = SCNAction.sequence([move1])
                 mainCharacterIdle?.parent?.runAction((chapter3Letter3MoveSeq), completionHandler: stopWalkAnimation)

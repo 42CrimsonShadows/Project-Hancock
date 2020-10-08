@@ -16,7 +16,5 @@
 	<string>ShowActiveSchemeOnly</string>
 	<key>LiveSourceIssuesEnabled</key>
 	<true/>
-	<key>ShowSharedSchemesAutomaticallyEnabled</key>
-	<true/>
 </dict>
 </plist>
