@@ -915,6 +915,7 @@ extension ViewController{
                         
                         //play narration for the first audio instructions for the activity
                         self.playAudio(type: .Narration, file: chapterSelectedSoundDict!["Narration21"]!, fileExtension: "mp3")
+                        
                     }
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: workItem1!)
