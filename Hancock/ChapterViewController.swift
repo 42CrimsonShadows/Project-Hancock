@@ -71,123 +71,197 @@ class ChapterViewController: UIViewController {
 //    let concept9 = UIImage (imageLiteralResourceName: "concept9")
 //    let concept10 = UIImage (imageLiteralResourceName: "concept10")
     
+    var hasChosen = false
+    
       
     
     @IBAction func cpt1Clicked(_ sender: Any) {
-        currentChapter = .Chapter1
-        //conceptView.image = concept1
-        chapterSelector.chapterLoader(picked: 1)
-        tappedMe()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter1
+            //conceptView.image = concept1
+            chapterSelector.chapterLoader(picked: 1)
+            tappedMe()
+        }
     }
     @IBAction func cpt2Clicked(_ sender: Any) {
-        currentChapter = .Chapter2
-        //conceptView.image = concept2
-        chapterSelector.chapterLoader(picked: 2)
-        tappedMe()
-        //lastActive = Date()
-        //Temporarily commented this out for testing the database
-        //Service.StartSession(date: lastActive)
-        //Service.register()
-        //Service.updateCharacterData()
-
-         
-        
-
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter2
+            //conceptView.image = concept2
+            chapterSelector.chapterLoader(picked: 2)
+            tappedMe()
+            //lastActive = Date()
+            //Temporarily commented this out for testing the database
+            //Service.StartSession(date: lastActive)
+            //Service.register()
+            //Service.updateCharacterData()
+        }
     }
     @IBAction func cpt3Clicked(_ sender: Any) {
-        currentChapter = .Chapter3
-       // conceptView.image = concept3
-        chapterSelector.chapterLoader(picked: 3)
-        tappedMe()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter3
+           // conceptView.image = concept3
+            chapterSelector.chapterLoader(picked: 3)
+            tappedMe()
+        }
     }
     @IBAction func cpt4Clicked(_ sender: Any) {
-        currentChapter = .Chapter4
-       // conceptView.image = concept4
-        chapterSelector.chapterLoader(picked: 4)
-        tappedMe()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter4
+           // conceptView.image = concept4
+            chapterSelector.chapterLoader(picked: 4)
+            tappedMe()
+        }
     }
     @IBAction func cpt5Clicked(_ sender: Any) {
-        currentChapter = .Chapter5
-      //  conceptView.image = concept5
-        chapterSelector.chapterLoader(picked: 5)
-        tappedMe()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter5
+          //  conceptView.image = concept5
+            chapterSelector.chapterLoader(picked: 5)
+            tappedMe()
+        }
     }
     @IBAction func cpt6Clicked(_ sender: Any) {
-        currentChapter = .Chapter6
-        //conceptView.image = concept6
-        chapterSelector.chapterLoader(picked: 6)
-        tappedMe()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter6
+            //conceptView.image = concept6
+            chapterSelector.chapterLoader(picked: 6)
+            tappedMe()
+        }
     }
     @IBAction func cpt7Clicked(_ sender: Any) {
-        currentChapter = .Chapter7
-        //conceptView.image = concept7
-        chapterSelector.chapterLoader(picked: 7)
-        tappedMe()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter7
+            //conceptView.image = concept7
+            chapterSelector.chapterLoader(picked: 7)
+            tappedMe()
+        }
     }
     @IBAction func cpt8Clicked(_ sender: Any) {
-        currentChapter = .Chapter8
-        //conceptView.image = concept8
-        chapterSelector.chapterLoader(picked: 8)
-        tappedMe()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter8
+            //conceptView.image = concept8
+            chapterSelector.chapterLoader(picked: 8)
+            tappedMe()
+        }
     }
     @IBAction func cpt9Clicked(_ sender: Any) {
-        currentChapter = .Chapter9
-        //conceptView.image = concept9
-        chapterSelector.chapterLoader(picked: 9)
-        tappedMe()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter9
+            //conceptView.image = concept9
+            chapterSelector.chapterLoader(picked: 9)
+            tappedMe()
+        }
     }
     @IBAction func cpt10Clicked(_ sender: Any) {
-        currentChapter = .Chapter10
-        //conceptView.image = concept10
-        chapterSelector.chapterLoader(picked: 10)
-        tappedMe()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .Chapter10
+            //conceptView.image = concept10
+            chapterSelector.chapterLoader(picked: 10)
+            tappedMe()
+        }
     }
     
     
     @IBAction func lineType1Clicked(_ sender: Any) {
-        currentChapter = .LineType1
-        chapterSelector.chapterLoader(picked: 14)
-        tappedThis()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .LineType1
+            chapterSelector.chapterLoader(picked: 14)
+            tappedThis()
+        }
     }
     @IBAction func lineType2Clicked(_ sender: Any) {
-        currentChapter = .LineType2
-        chapterSelector.chapterLoader(picked: 11)
-        tappedThis()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .LineType2
+            chapterSelector.chapterLoader(picked: 11)
+            tappedThis()
+        }
     }
     @IBAction func lineType3Clicked(_ sender: Any) {
-        currentChapter = .LineType3
-        chapterSelector.chapterLoader(picked: 18)
-        tappedThis()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .LineType3
+            chapterSelector.chapterLoader(picked: 18)
+            tappedThis()
+        }
     }
     @IBAction func lineType4Clicked(_ sender: Any) {
-        currentChapter = .LineType4
-        chapterSelector.chapterLoader(picked: 15)
-        tappedThis()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .LineType4
+            chapterSelector.chapterLoader(picked: 15)
+            tappedThis()
+        }
     }
     @IBAction func lineType5Clicked(_ sender: Any) {
-        currentChapter = .LineType5
-        chapterSelector.chapterLoader(picked: 17)
-        tappedThis()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .LineType5
+            chapterSelector.chapterLoader(picked: 17)
+            tappedThis()
+        }
     }
     @IBAction func lineType6Clicked(_ sender: Any) {
-        currentChapter = .LineType6
-        chapterSelector.chapterLoader(picked: 12)
-        tappedThis()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .LineType6
+            chapterSelector.chapterLoader(picked: 12)
+            tappedThis()
+        }
     }
     @IBAction func lineType7Clicked(_ sender: Any) {
-        currentChapter = .LineType7
-        chapterSelector.chapterLoader(picked: 13)
-        tappedThis()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .LineType7
+            chapterSelector.chapterLoader(picked: 13)
+            tappedThis()
+        }
     }
     @IBAction func lineType8Clicked(_ sender: Any) {
-        currentChapter = .LineType8
-        chapterSelector.chapterLoader(picked: 16)
-        tappedThis()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .LineType8
+            chapterSelector.chapterLoader(picked: 16)
+            tappedThis()
+        }
     }
     @IBAction func lineType9Clicked(_ sender: Any) {
-        currentChapter = .LineType9
-        chapterSelector.chapterLoader(picked: 19)
-        tappedThis()
+        if(!hasChosen)
+        {
+            hasChosen = true
+            currentChapter = .LineType9
+            chapterSelector.chapterLoader(picked: 19)
+            tappedThis()
+        }
     }
     
     @IBAction func goBack(_ sender: UIButton) {
@@ -229,6 +303,10 @@ class ChapterViewController: UIViewController {
         lineType9Label?.isHidden = true
          
         pauseAfterPlay()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hasChosen = false
     }
     
     func pauseAfterPlay(){
