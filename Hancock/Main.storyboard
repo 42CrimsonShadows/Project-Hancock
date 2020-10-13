@@ -964,7 +964,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eX-cu-hol" userLabel="Writing View">
                                                                 <rect key="frame" x="507" y="0.0" width="501" height="778"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eHa-OR-39a" userLabel="CanvasBGIV">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImitationCanvasBG" translatesAutoresizingMaskIntoConstraints="NO" id="eHa-OR-39a" userLabel="CanvasBGIV">
                                                                         <rect key="frame" x="0.0" y="0.0" width="501" height="778"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psd-Yv-AAq" userLabel="Canvas View" customClass="CanvasView" customModule="ABC_Go_AR" customModuleProvider="target">
@@ -4575,6 +4575,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="FreeDraw" width="700" height="150"/>
         <image name="HappyFace" width="193" height="193"/>
         <image name="Horizontal.png" width="180" height="240"/>
+        <image name="ImitationCanvasBG" width="489" height="700"/>
         <image name="Inner Image 01" width="900" height="900"/>
         <image name="Inner Image 02" width="900" height="900"/>
         <image name="Jamey_Double1.1" width="1536" height="414"/>
