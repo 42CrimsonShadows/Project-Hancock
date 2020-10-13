@@ -1639,9 +1639,9 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="PracticeImage" destination="Wyo-AI-4Ju" id="O4i-Xc-tyy"/>
-                        <outlet property="lowerCaseImage" destination="HfY-cd-R5d" id="dlH-Z5-d1I"/>
-                        <outlet property="upperCaseImage" destination="JCK-qz-1T9" id="469-Fv-gr4"/>
+                        <outlet property="lowercaseTapped" destination="Mwa-s4-SoT" id="Ha1-U4-6va"/>
+                        <outlet property="practiceTapped" destination="TzZ-QY-xUO" id="4Uz-N3-TQE"/>
+                        <outlet property="uppercaseTapped" destination="NBd-AG-ycy" id="HY2-g5-1oc"/>
                         <segue destination="Xae-Mk-QY7" kind="presentation" identifier="toChapterPageUpper" id="qTA-fI-fbo"/>
                         <segue destination="lDZ-QH-5ri" kind="presentation" identifier="toChapterPageLower" id="aSh-W5-PKA"/>
                         <segue destination="COb-DA-oVC" kind="presentation" identifier="toPracticePage" id="nLc-ZZ-ho6"/>
@@ -1651,163 +1651,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1w3-xt-zQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="797" y="155"/>
-        </scene>
-        <!--Letter Matching Menu View Controller-->
-        <scene sceneID="eQb-oS-En0">
-            <objects>
-                <viewController storyboardIdentifier="letterMatchingMainMenu" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nCQ-Xj-tZf" customClass="letterMatchingMenuViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9LL-eJ-fu7">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ACd-E9-cGE">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcj-VH-Owv">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double5.1" translatesAutoresizingMaskIntoConstraints="NO" id="hs9-zd-7a2">
-                                                <rect key="frame" x="0.0" y="-1" width="1024" height="278"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LetterMatching" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-Ww-Ifd">
-                                                <rect key="frame" x="62" y="63" width="900" height="150"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstItem="eUr-Ww-Ifd" firstAttribute="centerY" secondItem="Pcj-VH-Owv" secondAttribute="centerY" id="8a3-gB-j80"/>
-                                            <constraint firstItem="hs9-zd-7a2" firstAttribute="centerY" secondItem="Pcj-VH-Owv" secondAttribute="centerY" id="AdM-KU-PCi"/>
-                                            <constraint firstItem="hs9-zd-7a2" firstAttribute="top" secondItem="Pcj-VH-Owv" secondAttribute="top" constant="-1" id="TYU-9z-sUA"/>
-                                            <constraint firstAttribute="trailing" secondItem="hs9-zd-7a2" secondAttribute="trailing" id="bbR-UH-MIh"/>
-                                            <constraint firstItem="eUr-Ww-Ifd" firstAttribute="centerX" secondItem="Pcj-VH-Owv" secondAttribute="centerX" id="hF2-XK-DUz"/>
-                                            <constraint firstItem="hs9-zd-7a2" firstAttribute="leading" secondItem="Pcj-VH-Owv" secondAttribute="leading" id="oRg-UU-Wbn"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQK-gw-DAW">
-                                        <rect key="frame" x="0.0" y="284" width="1024" height="798"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="oul-tU-Spb">
-                                                <rect key="frame" x="12" y="8" width="1000" height="790"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="g8k-zr-nU4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1000" height="258.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNN-II-Q2t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="258.5"/>
-                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="150"/>
-                                                                <state key="normal" title="A - Z">
-                                                                    <color key="titleColor" red="0.80217951539999999" green="0.40509057040000002" blue="0.36956784129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="aThroughZTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="t4p-5d-ELU"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="zZA-Gx-h1z">
-                                                        <rect key="frame" x="0.0" y="265.5" width="1000" height="259"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8b-ez-biw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="259"/>
-                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="150"/>
-                                                                <state key="normal" title="b &amp; d">
-                                                                    <color key="titleColor" red="0.80217951539999999" green="0.40509057040000002" blue="0.36956784129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="bAndDTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="uZn-Rx-m41"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="190" translatesAutoresizingMaskIntoConstraints="NO" id="wiZ-V5-Ca6">
-                                                        <rect key="frame" x="0.0" y="531.5" width="1000" height="258.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhO-7j-9jo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="258.5"/>
-                                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="150"/>
-                                                                <state key="normal" title="p, g, &amp; q">
-                                                                    <color key="titleColor" red="0.80217951539999999" green="0.40509057040000002" blue="0.36956784129999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="pGQTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="Lo6-3J-5a0"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.98316866160000005" green="0.95549327139999995" blue="0.83527582879999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="oul-tU-Spb" secondAttribute="trailing" constant="12" id="XlW-Rm-aQ1"/>
-                                            <constraint firstItem="oul-tU-Spb" firstAttribute="leading" secondItem="BQK-gw-DAW" secondAttribute="leading" constant="12" id="cn9-bJ-ou0"/>
-                                            <constraint firstItem="oul-tU-Spb" firstAttribute="top" secondItem="BQK-gw-DAW" secondAttribute="topMargin" id="km7-ce-KCb"/>
-                                            <constraint firstAttribute="bottom" secondItem="oul-tU-Spb" secondAttribute="bottom" id="r25-WC-viC"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otk-OZ-0Uw">
-                                        <rect key="frame" x="0.0" y="1090" width="1024" height="276"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bri_Double5.2" translatesAutoresizingMaskIntoConstraints="NO" id="ZGa-EN-ia0">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="276"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstItem="ZGa-EN-ia0" firstAttribute="centerY" secondItem="otk-OZ-0Uw" secondAttribute="centerY" id="6ZL-EB-eWz"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZGa-EN-ia0" secondAttribute="trailing" id="9q2-yC-J9s"/>
-                                            <constraint firstItem="ZGa-EN-ia0" firstAttribute="leading" secondItem="otk-OZ-0Uw" secondAttribute="leading" id="Rd5-y8-Bse"/>
-                                            <constraint firstItem="ZGa-EN-ia0" firstAttribute="top" secondItem="otk-OZ-0Uw" secondAttribute="top" id="Sdq-Mn-nlD"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="otk-OZ-0Uw" secondAttribute="trailing" id="8Ck-KP-fRg"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pcj-VH-Owv" secondAttribute="trailing" id="EYn-jF-CZy"/>
-                                    <constraint firstItem="Pcj-VH-Owv" firstAttribute="top" secondItem="ACd-E9-cGE" secondAttribute="top" id="L4A-Hn-ncr"/>
-                                    <constraint firstItem="Pcj-VH-Owv" firstAttribute="leading" secondItem="ACd-E9-cGE" secondAttribute="leading" id="Z0u-Bn-aNQ"/>
-                                    <constraint firstItem="otk-OZ-0Uw" firstAttribute="leading" secondItem="ACd-E9-cGE" secondAttribute="leading" id="anq-5Z-Kbb"/>
-                                    <constraint firstItem="BQK-gw-DAW" firstAttribute="top" secondItem="ACd-E9-cGE" secondAttribute="top" constant="284" id="gfR-Xv-iWT"/>
-                                    <constraint firstAttribute="bottom" secondItem="otk-OZ-0Uw" secondAttribute="bottom" id="oIj-ph-ftK"/>
-                                    <constraint firstItem="BQK-gw-DAW" firstAttribute="centerY" secondItem="ACd-E9-cGE" secondAttribute="centerY" id="sPI-tl-Bp1"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z2-Ig-cBD">
-                                <rect key="frame" x="0.0" y="20" width="131" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="b8U-1U-5m2"/>
-                                    <constraint firstAttribute="height" constant="52" id="vuw-Hj-qz2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" backgroundImage="UI Buttons_Back_Red">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="homeButtonTapped:" destination="nCQ-Xj-tZf" eventType="touchUpInside" id="Uys-MO-BiX"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="v4q-5R-4vR"/>
-                        <color key="backgroundColor" red="0.97935718299999996" green="0.95525664089999995" blue="0.84704262019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="9z2-Ig-cBD" firstAttribute="leading" secondItem="v4q-5R-4vR" secondAttribute="leading" id="b9P-Qt-sAH"/>
-                            <constraint firstItem="ACd-E9-cGE" firstAttribute="leading" secondItem="9LL-eJ-fu7" secondAttribute="leading" id="hr1-8p-iOP"/>
-                            <constraint firstItem="9z2-Ig-cBD" firstAttribute="top" secondItem="v4q-5R-4vR" secondAttribute="top" constant="20" id="q4c-wc-Wcp"/>
-                            <constraint firstItem="ACd-E9-cGE" firstAttribute="top" secondItem="9LL-eJ-fu7" secondAttribute="top" id="wXN-bz-TWn"/>
-                            <constraint firstItem="ACd-E9-cGE" firstAttribute="bottom" secondItem="9LL-eJ-fu7" secondAttribute="bottom" id="xGG-rz-p94"/>
-                            <constraint firstItem="ACd-E9-cGE" firstAttribute="trailing" secondItem="9LL-eJ-fu7" secondAttribute="trailing" id="zzZ-mQ-dVp"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="0XE-zV-TVE"/>
-                    <connections>
-                        <segue destination="4gj-ve-Fvs" kind="presentation" identifier="aThroughZ" id="TRX-xz-z1V"/>
-                        <segue destination="SaZ-Vc-SCs" kind="presentation" identifier="bAndDTapped" id="xyc-Ip-wj1"/>
-                        <segue destination="CY4-xv-roP" kind="presentation" identifier="pGAndQTapped" id="xHn-cy-dwX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j6M-cn-sV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="530" y="1565"/>
         </scene>
         <!--Level Two Menu View Controller-->
         <scene sceneID="Yjk-Hb-Wvi">
@@ -2556,7 +2399,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ir-CA-8S4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1387" y="1565"/>
+            <point key="canvasLocation" x="1420" y="1532"/>
         </scene>
         <!--Letter Matchingb p View Controller-->
         <scene sceneID="djw-nF-aw8">
@@ -3182,7 +3025,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hr9-FN-Y72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="967" y="2253"/>
+            <point key="canvasLocation" x="932" y="2198"/>
         </scene>
         <!--PuzzleMainMenu-->
         <scene sceneID="vqa-Ox-eEL">
@@ -4016,7 +3859,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                                                         </state>
                                                         <connections>
                                                             <action selector="letterMatchingTapped:" destination="COb-DA-oVC" eventType="touchUpInside" id="MTu-1T-QTa"/>
-                                                            <segue destination="nCQ-Xj-tZf" kind="presentation" identifier="letterMatching" id="3Nf-TW-mvK"/>
+                                                            <segue destination="gku-U1-KwT" kind="presentation" identifier="letterMatching" id="q75-WB-tJm"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="U7X-Mf-Q02">
@@ -4537,10 +4380,212 @@ point the device toward a flat surface to see your Augmented Reality story conte
             </objects>
             <point key="canvasLocation" x="2913" y="2253"/>
         </scene>
+        <!--Letter Matching Menu View Controller-->
+        <scene sceneID="GZb-TI-i1N">
+            <objects>
+                <viewController storyboardIdentifier="lettermatchingmain" modalPresentationStyle="fullScreen" id="gku-U1-KwT" customClass="letterMatchingMenuViewController" customModule="ABC_Go_AR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S3e-Pv-bP0">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="H5E-Ur-bb2">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ef0-ho-OVQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Double2.1" translatesAutoresizingMaskIntoConstraints="NO" id="eXg-pi-IwC">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEW-Cn-bDz">
+                                                <rect key="frame" x="8" y="8" width="107" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="jEW-Cn-bDz" secondAttribute="height" multiplier="107:42" id="0ss-IZ-z0A"/>
+                                                    <constraint firstAttribute="height" constant="42" id="5lD-Cd-Mas"/>
+                                                    <constraint firstAttribute="width" constant="107" id="s0c-3L-v7q"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="UI Buttons_Back_Violet"/>
+                                                <connections>
+                                                    <action selector="homeButtonTapped:" destination="gku-U1-KwT" eventType="touchUpInside" id="VL2-O1-BIS"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BY-J2-Bsz">
+                                                <rect key="frame" x="115" y="0.0" width="909" height="195"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LetterMatching" translatesAutoresizingMaskIntoConstraints="NO" id="y12-xX-axc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="909" height="195"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="y12-xX-axc" firstAttribute="centerY" secondItem="2BY-J2-Bsz" secondAttribute="centerY" id="Hat-8h-blT"/>
+                                                    <constraint firstItem="y12-xX-axc" firstAttribute="centerX" secondItem="2BY-J2-Bsz" secondAttribute="centerX" id="niv-0E-9T8"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="eXg-pi-IwC" secondAttribute="bottom" id="4xU-F0-8Dm"/>
+                                            <constraint firstItem="eXg-pi-IwC" firstAttribute="leading" secondItem="Ef0-ho-OVQ" secondAttribute="leading" id="70L-1v-e8m"/>
+                                            <constraint firstAttribute="trailing" secondItem="eXg-pi-IwC" secondAttribute="trailing" id="OzB-Aa-GFk"/>
+                                            <constraint firstAttribute="bottom" secondItem="2BY-J2-Bsz" secondAttribute="bottom" id="V8v-Tm-lnM"/>
+                                            <constraint firstAttribute="trailing" secondItem="2BY-J2-Bsz" secondAttribute="trailing" id="XkQ-Bk-JdA"/>
+                                            <constraint firstItem="jEW-Cn-bDz" firstAttribute="top" secondItem="Ef0-ho-OVQ" secondAttribute="topMargin" id="Zgj-mL-dFw"/>
+                                            <constraint firstItem="jEW-Cn-bDz" firstAttribute="leading" secondItem="Ef0-ho-OVQ" secondAttribute="leadingMargin" id="gwd-PP-Riu"/>
+                                            <constraint firstItem="eXg-pi-IwC" firstAttribute="top" secondItem="Ef0-ho-OVQ" secondAttribute="top" id="lnG-Mx-Yvw"/>
+                                            <constraint firstItem="2BY-J2-Bsz" firstAttribute="leading" secondItem="jEW-Cn-bDz" secondAttribute="trailing" id="rrd-PT-J2C"/>
+                                            <constraint firstItem="2BY-J2-Bsz" firstAttribute="top" secondItem="Ef0-ho-OVQ" secondAttribute="top" id="wzl-Ml-Obt"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVe-WK-mKj">
+                                        <rect key="frame" x="0.0" y="195" width="1024" height="195.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Dh-h5-J0T">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="195.5"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="7Dh-h5-J0T" secondAttribute="bottom" id="NzA-iJ-Cor"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Dh-h5-J0T" secondAttribute="trailing" id="Xkl-5u-54t"/>
+                                            <constraint firstItem="7Dh-h5-J0T" firstAttribute="top" secondItem="zVe-WK-mKj" secondAttribute="top" id="YmC-hN-pGI"/>
+                                            <constraint firstItem="7Dh-h5-J0T" firstAttribute="leading" secondItem="zVe-WK-mKj" secondAttribute="leading" id="v4S-cf-OEg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOA-jb-5l2">
+                                        <rect key="frame" x="0.0" y="390.5" width="1024" height="195"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6sL-CG-xuC">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTW-Lj-wpS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
+                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="150"/>
+                                                        <state key="normal" title="A - Z ">
+                                                            <color key="titleColor" red="0.44840186830000001" green="0.76825004819999998" blue="0.78429406879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="aThroughZTapped:" destination="gku-U1-KwT" eventType="touchUpInside" id="6L3-rk-e1N"/>
+                                                            <segue destination="4gj-ve-Fvs" kind="presentation" identifier="aThroughZ" id="HWA-KS-uoG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="6sL-CG-xuC" firstAttribute="top" secondItem="MOA-jb-5l2" secondAttribute="top" id="0cW-xA-ojK"/>
+                                            <constraint firstItem="6sL-CG-xuC" firstAttribute="leading" secondItem="MOA-jb-5l2" secondAttribute="leading" id="1UN-J4-j5D"/>
+                                            <constraint firstAttribute="bottom" secondItem="6sL-CG-xuC" secondAttribute="bottom" id="Hjd-wP-RYd"/>
+                                            <constraint firstAttribute="trailing" secondItem="6sL-CG-xuC" secondAttribute="trailing" id="l4m-m1-l6d"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqZ-4M-vGd">
+                                        <rect key="frame" x="0.0" y="585.5" width="1024" height="195"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j9h-FS-P2n">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iY8-ee-fRq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
+                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="150"/>
+                                                        <state key="normal" title="b &amp; d ">
+                                                            <color key="titleColor" red="0.44840186830000001" green="0.76825004819999998" blue="0.78429406879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bAndDTapped:" destination="gku-U1-KwT" eventType="touchUpInside" id="93W-Q8-Vwn"/>
+                                                            <segue destination="SaZ-Vc-SCs" kind="presentation" identifier="bAndDTapped" id="opM-Ue-nBb"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="j9h-FS-P2n" firstAttribute="top" secondItem="cqZ-4M-vGd" secondAttribute="top" id="OgI-SF-Aqx"/>
+                                            <constraint firstAttribute="trailing" secondItem="j9h-FS-P2n" secondAttribute="trailing" id="Pd3-gV-bSz"/>
+                                            <constraint firstAttribute="bottom" secondItem="j9h-FS-P2n" secondAttribute="bottom" id="oik-TZ-k6z"/>
+                                            <constraint firstItem="j9h-FS-P2n" firstAttribute="leading" secondItem="cqZ-4M-vGd" secondAttribute="leading" id="scj-ec-oc8"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkT-CR-RuT">
+                                        <rect key="frame" x="0.0" y="780.5" width="1024" height="195"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GFU-cE-DFX">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5i-JQ-UJ4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
+                                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="150"/>
+                                                        <state key="normal" title="p, g, &amp; q">
+                                                            <color key="titleColor" red="0.44840186830000001" green="0.76825004819999998" blue="0.78429406879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="pGQTapped:" destination="gku-U1-KwT" eventType="touchUpInside" id="nG2-wd-R9o"/>
+                                                            <segue destination="CY4-xv-roP" kind="presentation" identifier="pGAndQTapped" id="lgS-3e-4ND"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="GFU-cE-DFX" secondAttribute="bottom" id="48b-WP-vqC"/>
+                                            <constraint firstItem="GFU-cE-DFX" firstAttribute="top" secondItem="rkT-CR-RuT" secondAttribute="top" id="PzY-mN-4pi"/>
+                                            <constraint firstItem="GFU-cE-DFX" firstAttribute="leading" secondItem="rkT-CR-RuT" secondAttribute="leading" id="vQl-9f-Qte"/>
+                                            <constraint firstAttribute="trailing" secondItem="GFU-cE-DFX" secondAttribute="trailing" id="xLd-70-qBU"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiA-IU-z1C">
+                                        <rect key="frame" x="0.0" y="975.5" width="1024" height="195.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KKX-nu-erH">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="195.5"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="KKX-nu-erH" firstAttribute="leading" secondItem="FiA-IU-z1C" secondAttribute="leading" id="JAZ-if-5la"/>
+                                            <constraint firstAttribute="bottom" secondItem="KKX-nu-erH" secondAttribute="bottom" id="NMr-hp-HAl"/>
+                                            <constraint firstAttribute="trailing" secondItem="KKX-nu-erH" secondAttribute="trailing" id="YZz-sH-9dE"/>
+                                            <constraint firstItem="KKX-nu-erH" firstAttribute="top" secondItem="FiA-IU-z1C" secondAttribute="top" id="yXl-Fl-qls"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiH-Zo-JMJ">
+                                        <rect key="frame" x="0.0" y="1171" width="1024" height="195"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jamey_Double2.2" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-TM-GAX">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="195"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="kNY-TM-GAX" secondAttribute="bottom" id="28V-X4-SYl"/>
+                                            <constraint firstItem="kNY-TM-GAX" firstAttribute="top" secondItem="eiH-Zo-JMJ" secondAttribute="top" id="6Gj-Vs-Bnd"/>
+                                            <constraint firstItem="kNY-TM-GAX" firstAttribute="leading" secondItem="eiH-Zo-JMJ" secondAttribute="leading" id="7k9-xp-Dht"/>
+                                            <constraint firstAttribute="trailing" secondItem="kNY-TM-GAX" secondAttribute="trailing" id="w4v-cM-NmM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="K5r-nB-Dr2"/>
+                        <color key="backgroundColor" red="0.98959583039999999" green="0.96869581940000005" blue="0.84962272640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="H5E-Ur-bb2" secondAttribute="bottom" id="0AW-2F-DEr"/>
+                            <constraint firstItem="H5E-Ur-bb2" firstAttribute="trailing" secondItem="K5r-nB-Dr2" secondAttribute="trailing" id="9Ag-dq-vMp"/>
+                            <constraint firstItem="H5E-Ur-bb2" firstAttribute="top" secondItem="S3e-Pv-bP0" secondAttribute="top" id="AQF-No-9Mo"/>
+                            <constraint firstItem="H5E-Ur-bb2" firstAttribute="leading" secondItem="K5r-nB-Dr2" secondAttribute="leading" id="GGv-T7-phO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXM-eq-zUK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="674" y="1532"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NrP-LR-XCc"/>
-        <segue reference="2O5-wy-OoL"/>
+        <segue reference="aoi-rC-XX7"/>
+        <segue reference="j5d-bO-yS9"/>
         <segue reference="nzC-1y-dQf"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -4554,8 +4599,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Bri_Double1.2" width="1536" height="414"/>
         <image name="Bri_Double4.1" width="1536" height="414"/>
         <image name="Bri_Double4.2" width="1536" height="414"/>
-        <image name="Bri_Double5.1" width="1536" height="414"/>
-        <image name="Bri_Double5.2" width="1536" height="414"/>
         <image name="Bri_Double6.1" width="1536" height="414"/>
         <image name="Bri_Double6.2" width="1536" height="414"/>
         <image name="Bri_Double7.1" width="1536" height="414"/>

@@ -35,7 +35,7 @@ class FreeWriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        //AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
 
         // make button corners rounded
         doneBtn.layer.cornerRadius = 10
@@ -68,7 +68,7 @@ class FreeWriteViewController: UIViewController {
         super.viewWillDisappear(animated)
 
         // Don't forget to reset when view is being removed
-//        AppDelegate.AppUtility.lockOrientation(.all)
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
     }
     
     
