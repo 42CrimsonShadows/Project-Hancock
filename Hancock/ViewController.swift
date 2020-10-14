@@ -209,7 +209,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print(self)
         print(view)
         //lock rotation
-       // AppDelegate.AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)
+        AppDelegate.AppUtility.lockOrientation(.all, andRotateTo: .landscapeRight)
         chapterNodeArray = chapterSelectedNodeArray
         self.initSceneView()
         self.initScene()

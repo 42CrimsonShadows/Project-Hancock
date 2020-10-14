@@ -306,6 +306,8 @@ class ChapterViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //lock rotation
+        AppDelegate.AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         hasChosen = false
     }
     
