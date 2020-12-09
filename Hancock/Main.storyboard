@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ofX-cZ-dmU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UWV-D1-EGe">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -96,7 +96,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StoriesCredit" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-by-OUe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CreditsPage" translatesAutoresizingMaskIntoConstraints="NO" id="dfJ-by-OUe">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8R-n9-eu7">
@@ -4614,6 +4614,7 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="C" width="750" height="1000"/>
         <image name="Circle.png" width="180" height="240"/>
         <image name="Coin" width="176.5" height="177"/>
+        <image name="CreditsPage" width="692" height="847"/>
         <image name="DiagonalCross.png" width="180" height="240"/>
         <image name="DiagonalLeft.png" width="180" height="240"/>
         <image name="DiagonalRight.png" width="180" height="240"/>
@@ -4639,7 +4640,6 @@ point the device toward a flat surface to see your Augmented Reality story conte
         <image name="Practice Inner Book Cover" width="900" height="900"/>
         <image name="PuzzleImage_8" width="1024" height="1366"/>
         <image name="Square.png" width="180" height="240"/>
-        <image name="StoriesCredit" width="713" height="901"/>
         <image name="Triangle.png" width="180" height="240"/>
         <image name="UI Buttons - Line Spacing_1_Narrow" width="509" height="500"/>
         <image name="UI Buttons - Line Spacing_2_Medium" width="509" height="500"/>
